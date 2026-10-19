@@ -22,7 +22,7 @@ export interface ChineseTaskSpec {
 }
 
 export interface ChineseUnitSpec {
-  grade?: 1 | 2 | 3;
+  grade?: 1 | 2 | 3 | 4 | 5 | 6;
   term?: 1 | 2;
   formalUnitNumber: number | null;
   entryId?: string;

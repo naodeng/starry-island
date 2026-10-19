@@ -1,12 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import grade2LedgerText from '../../docs/curriculum/grade-2-question-review.tsv?raw';
 import addedLedgerText from '../../docs/curriculum/grade-1-and-3-question-review.tsv?raw';
+import grade4To6LedgerText from '../../docs/curriculum/grade-4-to-6-question-review.tsv?raw';
 import { curriculum } from './curriculum';
 
 type ReviewRow = Record<string, string>;
 
-const questionIdPattern = /grade-[123]\/term-[12]\/chinese\/unit-\d{2}\/(?:basic|advanced|high)\/task-\d{2}\/session-\d{2}\/question-\d{2}|grade-[123]\/term-[12]\/math\/(?:unit-\d{2}|integrated-practice-\d{2})\/(?:basic|advanced|high)\/task-\d{2}\/session-\d{2}\/question-\d{2}|grade-[123]\/term-[12]\/english\/(?:unit-\d{2}|review-\d{2})\/(?:basic|advanced|high)\/task-\d{2}\/session-\d{2}\/question-\d{2}/;
-const questionIdRangePattern = /(grade-[123]\/term-[12]\/chinese\/unit-\d{2}|grade-[123]\/term-[12]\/math\/(?:unit-\d{2}|integrated-practice-\d{2})|grade-[123]\/term-[12]\/english\/(?:unit-\d{2}|review-\d{2}))\/\{basic\|advanced\|high\}\/task-\{01\|02\}\/session-01\/question-\{01\.\.08\}/;
+const questionIdPattern = /grade-[1-6]\/term-[12]\/chinese\/(?:unit-\d{2}|integrated-practice-\d{2})\/(?:basic|advanced|high)\/task-\d{2}\/session-\d{2}\/question-\d{2}|grade-[1-6]\/term-[12]\/math\/(?:unit-\d{2}|integrated-practice-\d{2})\/(?:basic|advanced|high)\/task-\d{2}\/session-\d{2}\/question-\d{2}|grade-[1-6]\/term-[12]\/english\/(?:unit-\d{2}|review-\d{2})\/(?:basic|advanced|high)\/task-\d{2}\/session-\d{2}\/question-\d{2}/;
+const questionIdRangePattern = /(grade-[1-6]\/term-[12]\/chinese\/(?:unit-\d{2}|integrated-practice-\d{2})|grade-[1-6]\/term-[12]\/math\/(?:unit-\d{2}|integrated-practice-\d{2})|grade-[1-6]\/term-[12]\/english\/(?:unit-\d{2}|review-\d{2}))\/\{basic\|advanced\|high\}\/task-\{01\|02\}\/session-01\/question-\{01\.\.08\}/;
 
 function parseRows(ledgerText: string): ReviewRow[] {
   const [headerLine, ...dataLines] = ledgerText.trim().split(/\r?\n/);
@@ -19,7 +20,7 @@ function parseRows(ledgerText: string): ReviewRow[] {
 }
 
 function readRows(): ReviewRow[] {
-  return [...parseRows(grade2LedgerText), ...parseRows(addedLedgerText)];
+  return [...parseRows(grade2LedgerText), ...parseRows(addedLedgerText), ...parseRows(grade4To6LedgerText)];
 }
 
 function questionCount(unitKey: string): number {
@@ -60,6 +61,54 @@ describe('curriculum question review ledger', () => {
         `${unitId}/{basic|advanced|high}/task-{01|02}/session-01/question-{01..08}`,
       );
       expect(evidence, `${unitId} audit report reference`).toContain('grade-1-and-3-question-audit-report.md');
+    });
+  });
+
+  it('records a dated question ID range and source evidence for each grade 2 audit', () => {
+    const grade2Rows = readRows().filter(({ '课程ID': id }) => id.startsWith('grade-2/'));
+
+    expect(grade2Rows).toHaveLength(53);
+    grade2Rows.forEach((row) => {
+      const unitId = row['课程ID'];
+      const questionTotal = row['题目总数'];
+      const evidence = row['复核证据']?.trim();
+      expect(evidence, `${unitId} review evidence`).toBeTruthy();
+      expect(evidence, `${unitId} original audit date`).toContain('2026-10-15');
+      expect(evidence, `${unitId} question total`).toContain(`已审：${questionTotal}/${questionTotal}`);
+      expect(evidence, `${unitId} textbook source`).toContain('grade-2-textbook-inventory.md');
+      expect(evidence, `${unitId} question review rule`).toContain('course-content-review-rules.md');
+      expect(evidence, `${unitId} original audit basis`).toContain('已有逐题审校台账与审校记录');
+      expect(evidence, `${unitId} current re-review`).toContain('本轮复读：2026-10-19');
+      expect(evidence, `${unitId} current review dimensions`).toContain('逐题复核题干、答案、解释及题型键');
+
+      if (questionTotal === '56') {
+        expect(evidence, `${unitId} third basic task range`).toContain(
+          `${unitId}/basic/task-{01..03}/session-01/question-{01..08}`,
+        );
+        expect(evidence, `${unitId} advanced/high task ranges`).toContain(
+          `${unitId}/{advanced|high}/task-{01|02}/session-01/question-{01..08}`,
+        );
+      } else {
+        expect(evidence, `${unitId} basic task range`).toContain(
+          `${unitId}/basic/task-{01|02}/session-01/question-{01..08}`,
+        );
+        expect(evidence, `${unitId} advanced and high task range`).toContain(
+          `${unitId}/{advanced|high}/task-{01|02}/session-01/question-{01..08}`,
+        );
+      }
+    });
+  });
+
+  it('records source evidence and the complete question range for each grade 4 to 6 audit', () => {
+    readRows().filter(({ '课程ID': id }) => id.startsWith('grade-4/') || id.startsWith('grade-5/') || id.startsWith('grade-6/')).forEach((row) => {
+      const unitId = row['课程ID'];
+      const evidence = row['复核证据']?.trim();
+      expect(evidence, `${unitId} review evidence`).toBeTruthy();
+      expect(evidence, `${unitId} audit date`).toContain('2026-10-19');
+      expect(evidence, `${unitId} exact ID range`).toContain(
+        `${unitId}/{basic|advanced|high}/task-{01|02}/session-01/question-{01..08}`,
+      );
+      expect(evidence, `${unitId} fixed snapshot evidence`).toContain('5a80345f2043ba6f8db8d7be9cf3db82725ff1f7');
     });
   });
 

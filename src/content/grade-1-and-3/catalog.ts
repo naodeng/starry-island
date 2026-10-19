@@ -72,7 +72,7 @@ const addedCourseEntries: AddedCourseEntry[] = [
   ]),
   ...book(1, 2, 'chinese', [
     ['unit-01', '主题组 01 · 春夏秋冬与识字', null, '四季、天气和常见自然现象', 'g1-seasons'],
-    ['unit-02', '主题组 02 · 家庭与愿望', null, '家庭、家乡和愿望表达', 'g1-family'],
+    ['unit-02', '主题组 02 · 家庭与愿望', null, '家庭成员、共同经历和愿望表达', 'g1-family'],
     ['unit-03', '主题组 03 · 友谊与游戏', null, '伙伴关系、互助和游戏规则', 'g1-friends'],
     ['unit-04', '主题组 04 · 夜色与节日', null, '夜晚观察、节日习俗和礼貌表达', 'g1-festival'],
     ['unit-05', '主题组 05 · 动物与校园', null, '动物特点、校园活动和生活识字', 'g1-animal-campus'],

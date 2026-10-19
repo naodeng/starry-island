@@ -557,15 +557,20 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const matchPairs = taskIndex === 0
     ? words.map(([word, meaning]) => [word, meaning] as const)
     : words.map(([word, meaning]) => [meaning, word] as const);
+  const orderedWords = (items: readonly string[], order: readonly number[]): string => order
+    .map((index) => items[index])
+    .join(' ')
+    .replace(/ ([?.!,])/g, '$1');
+  const withoutChineseQuotes = (text: string): string => text.replace(/[“”]/g, '');
   const phraseRepair = (target: Phrase): EnglishQuestionSpec => {
     if (taskIndex === 0) return choose(target.prompt, target.options, target.correct, target.hint, target.explanation);
     const wrongIndex = (target.correct + 1) % target.options.length;
     const otherWrongIndex = (target.correct + 2) % target.options.length;
-    return choose(`同伴为“${target.prompt}”选了“${target.options[wrongIndex]}”，应该改成哪一项？`, [
+    return choose(`题目要求：${withoutChineseQuotes(target.prompt)} 同伴选了“${target.options[wrongIndex]}”，应该改成哪一项？`, [
       target.options[target.correct],
       target.options[otherWrongIndex],
       '不看题意，保留原来的选择。',
-    ], 0, '回到题目中的英文和中文线索，核对选项是否符合要求。', `${target.options[target.correct]}符合“${target.prompt}”的要求。`);
+    ], 0, '回到题目中的英文和中文线索，核对选项是否符合要求。', `正确选项“${target.options[target.correct]}”符合题意。`);
   };
   const classificationQuestion: EnglishQuestionSpec = primaryClassificationChunk
     ? classifyChunk(primaryClassificationChunk, taskClassificationChunkIndex)
@@ -574,17 +579,17 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
       return choose(`“${label}”belongs to which group?`, [selected.categories[categoryIndex]!, selected.categories[1 - categoryIndex]!, '两组都不符合'], 0, '读懂这个英文词，再对照两个小组的名称。', `“${label}”属于“${selected.categories[categoryIndex]}”这一组。`);
     })();
   const wordStudyOrder: EnglishQuestionSpec = difficulty === 'basic'
-    ? arrange('Put the word cards in the correct order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先找句子的开头，再检查词序和句末标点。', `正确表达是：${firstPhrase.correctOrder.map((index) => firstPhrase.orderItems[index]).join(' ')}。`)
+    ? arrange('Put the word cards in the correct order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先找句子的开头，再检查词序和句末标点。', `正确表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}。`)
     : difficulty === 'advanced'
-      ? arrange('Choose the word cards that fit the scene, then put them in order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先联系题目情境，再检查词序和句末标点。', `符合情境的表达是：${firstPhrase.correctOrder.map((index) => firstPhrase.orderItems[index]).join(' ')}。`)
-      : arrange('Put the word cards in order and check that the sentence matches the meaning.', firstPhrase.orderItems, firstPhrase.correctOrder, '排列后读一遍，再对照词义和标点检查。', `正确表达是：${firstPhrase.correctOrder.map((index) => firstPhrase.orderItems[index]).join(' ')}；词义和标点都符合。`);
+      ? arrange('Choose the word cards that fit the scene, then put them in order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先联系题目情境，再检查词序和句末标点。', `符合情境的表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}。`)
+      : arrange('Put the word cards in order and check that the sentence matches the meaning.', firstPhrase.orderItems, firstPhrase.correctOrder, '排列后读一遍，再对照词义和标点检查。', `正确表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}；词义和标点都符合。`);
   const phraseStrategy: EnglishQuestionSpec = taskIndex === 0
-    ? choose(`要判断“${secondPhrase.options[secondPhrase.correct]}”是否符合“${secondPhrase.prompt}”，哪条线索最有帮助？`, [
+    ? choose(`要判断词句“${secondPhrase.options[secondPhrase.correct]}”是否符合题目要求（${withoutChineseQuotes(secondPhrase.prompt)}），哪条线索最有帮助？`, [
       secondPhrase.hint,
       '只比较句子的长短，不看英文词义。',
       '不读题目和词卡，直接猜答案。',
     ], 0, '把题意、英文词语和中文线索放在一起核对。', secondPhrase.hint)
-    : choose(`要判断“${secondPhrase.options[secondPhrase.correct]}”是否符合“${secondPhrase.prompt}”，先做什么？`, [
+    : choose(`要判断词句“${secondPhrase.options[secondPhrase.correct]}”是否符合题目要求（${withoutChineseQuotes(secondPhrase.prompt)}），先做什么？`, [
       secondPhrase.hint,
       '只比较选项的长短，不看英文词义。',
       '不读题目和词卡，直接猜答案。',
@@ -602,14 +607,12 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
       '先保留已核对的词卡，再分别核对另外两个英文词和中文意思；每个意思只用一次。',
       `“${third[0]}”表示“${third[1]}”，“${first[0]}”表示“${first[1]}”，“${second[0]}”表示“${second[1]}”。`);
 
-  const orderedSentence = (target: Phrase): string => target.correctOrder
-    .map((index) => target.orderItems[index])
-    .join(' ')
-    .replace(/ ([?.!,])/g, '$1');
+  const orderedSentence = (target: Phrase): string => orderedWords(target.orderItems, target.correctOrder);
   const sentencePurpose = (target: Phrase): { label: string; alternatives: readonly [string, string] } => {
     const sentence = orderedSentence(target);
     if (/^Can I have\b/i.test(sentence)) return { label: '礼貌地提出请求', alternatives: ['询问地点', '陈述物品'] };
     if (/^(Touch|Raise|Give|Put)\b/i.test(sentence)) return { label: '发出指令', alternatives: ['询问问题', '表达喜好'] };
+    if (/^Yes, I do\b/i.test(sentence)) return { label: '肯定回答', alternatives: ['否定回答', '询问喜好'] };
     if (/^(Where|What|How|Which|Do you)\b/i.test(sentence)) return { label: '询问信息', alternatives: ['陈述或描述', '发出指令'] };
     return { label: '陈述或描述', alternatives: ['询问信息', '发出指令'] };
   };
@@ -619,7 +622,7 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     return advanced
       ? choose(`“${sentence}”在交流中的主要作用是什么？`, [purpose.label, ...purpose.alternatives], 0,
         '结合句子的意思和标点判断它在交流中完成什么任务。', `“${sentence}”主要用于${purpose.label}。`)
-      : choose(`同伴要完成“${secondPhrase.prompt}”，还要说明句子的用途。哪条记录最完整？`, [
+      : choose(`同伴要完成${withoutChineseQuotes(secondPhrase.prompt)}，还要说明句子的用途。哪条记录最完整？`, [
         `“${sentence}”用于${purpose.label}。`,
         `“${sentence}”用于${purpose.alternatives[0]}。`,
         '不核对句意和交流目的。',
@@ -725,9 +728,9 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     : difficulty === 'basic'
     ? phraseRepair(firstPhrase)
     : difficulty === 'advanced'
-      ? choose(`在“${firstPhrase.explanation}”的情境中，哪句话表达合适？`, firstPhrase.options, firstPhrase.correct,
+      ? choose(`情境提示：${withoutChineseQuotes(firstPhrase.explanation)} 哪句话表达合适？`, firstPhrase.options, firstPhrase.correct,
         '把情境中的意思和每个英文选项逐一核对。', firstPhrase.explanation)
-      : choose(`同伴选了“${firstPhrase.options[(firstPhrase.correct + 1) % firstPhrase.options.length]}”来回答“${firstPhrase.prompt}”，哪条记录能改正？`, [
+      : choose(`同伴选了“${firstPhrase.options[(firstPhrase.correct + 1) % firstPhrase.options.length]}”来回答${withoutChineseQuotes(firstPhrase.prompt)}，哪条记录能改正？`, [
         `“${firstPhrase.options[firstPhrase.correct]}”符合题意。`,
         `“${firstPhrase.options[(firstPhrase.correct + 2) % firstPhrase.options.length]}”符合题意。`,
         '不检查题目意思，保留原来的选项。',
@@ -753,7 +756,11 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
             ? choose('按数数的顺序接着填：one, two, three, __。', ['two', 'four', 'five'], 1,
               '从 three 后面继续按顺序数。', 'one, two, three 后面接 four。')
           : phrasePurposeQuestion(true))
-        : starterQuestion ?? (taskIndex === 0 ? highQuestion : phrasePurposeQuestion(false)),
+        : starterQuestion ?? (taskIndex === 0 ? highQuestion : entry.profileKey === 'numbers'
+          ? choose('同伴数数说“one, two, three, five”，哪项改正了遗漏？', [
+            'one, two, three, four, five', 'one, two, four, three, five', 'one, three, two, four, five',
+          ], 0, 'three 后面先接 four，再接 five。', '正确顺序是 one, two, three, four, five；three 后漏掉了 four。')
+          : phrasePurposeQuestion(false)),
   ];
   return varyChoicePositions(questions, courseSeed(entry, difficulty, taskIndex));
 }

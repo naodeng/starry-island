@@ -52,8 +52,16 @@ import { unit as englishTerm2Unit05 } from './grade-2/term-2/english/unit-05';
 import { unit as englishTerm2Unit06 } from './grade-2/term-2/english/unit-06';
 import { unit as englishTerm2Review02 } from './grade-2/term-2/english/review-02';
 import { addedCourseCatalog } from './grade-1-and-3/catalog';
+import { grade4To6CourseCatalog } from './grade-4-to-6/catalog';
 import { textbooks } from './textbooks';
 import type { Curriculum, CurriculumUnit, SubjectId } from './types';
+
+const grade4To6CourseModules = Object.fromEntries(
+  Object.values(import.meta.glob<CurriculumUnit>(
+    ['./grade-4/term-*/**/index.ts', './grade-5/term-*/**/index.ts', './grade-6/term-*/**/index.ts'],
+    { eager: true, import: 'unit' },
+  )).map((unit) => [unit.id, unit]),
+) as Record<string, CurriculumUnit>;
 
 const addedCourseModules = import.meta.glob<CurriculumUnit>(
   ['./grade-1/term-*/**/index.ts', './grade-3/term-*/**/index.ts'],
@@ -89,6 +97,40 @@ function buildAddedGrade(gradeNumber: 1 | 3): Curriculum['grades'][number] {
             textbookEditionId: `grade-${gradeNumber}/term-${termNumber}/${subjectId}`,
             curriculumUnitKey: entry.id,
           })),
+      })),
+    })),
+  };
+}
+
+export function buildPlannedGrade(
+  gradeNumber: 4 | 5 | 6,
+  courseModules: Record<string, CurriculumUnit> = grade4To6CourseModules,
+): Curriculum['grades'][number] {
+  return {
+    id: `grade-${gradeNumber}`,
+    title: `${gradeNumber}年级`,
+    terms: ([1, 2] as const).map((termNumber) => ({
+      id: `term-${termNumber}` as const,
+      title: termNumber === 1 ? '上学期' : '下学期',
+      subjects: (['chinese', 'math', 'english'] as const).map((subjectId: SubjectId) => ({
+        id: subjectId,
+        title: subjectId === 'chinese' ? '语文' : subjectId === 'math' ? '数学' : '英语',
+        units: grade4To6CourseCatalog
+          .filter((entry) => entry.grade === gradeNumber && entry.term === termNumber && entry.subject === subjectId)
+          .map((entry) => {
+            const curriculumUnitKey = `grade-${gradeNumber}/term-${termNumber}/${subjectId}/${entry.slug}`;
+            const module = courseModules[curriculumUnitKey];
+            return {
+              id: entry.slug,
+              title: module?.title ?? entry.title,
+              status: module ? 'active' as const : 'comingSoon' as const,
+              type: entry.type,
+              formalUnitNumber: entry.formalUnitNumber,
+              achievementEligible: entry.type === 'unit' && entry.formalUnitNumber !== null,
+              textbookEditionId: `grade-${gradeNumber}/term-${termNumber}/${subjectId}`,
+              ...(module ? { curriculumUnitKey } : {}),
+            };
+          }),
       })),
     })),
   };
@@ -206,9 +248,13 @@ export const curriculum: Curriculum = {
       ],
     },
     buildAddedGrade(3),
+    buildPlannedGrade(4),
+    buildPlannedGrade(5),
+    buildPlannedGrade(6),
   ],
   units: {
     ...Object.fromEntries(addedCourseCatalog.map((entry) => [entry.id, getAddedCourseUnit(entry.id)])),
+    ...grade4To6CourseModules,
     'grade-2/term-1/chinese/unit-01': chineseUnit01,
     'grade-2/term-1/chinese/unit-02': chineseUnit02,
     'grade-2/term-1/chinese/unit-03': chineseUnit03,

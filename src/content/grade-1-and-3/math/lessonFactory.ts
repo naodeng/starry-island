@@ -199,7 +199,15 @@ function makeArithmetic(entry: AddedCourseEntry, p: MathProfile, difficulty: 'ba
       }
       equations.push({ expression: `${a} - ${b}`, answer: a - b });
     } else if (operator === '×') {
-      if (limit >= 90) {
+      if (p.context.includes('多位数乘一位数') && index === 0) {
+        const a = (2 + (seed % 8)) * 10;
+        const b = 2 + (seed % 8);
+        equations.push({ expression: `${a} × ${b}`, answer: a * b });
+      } else if (p.context.includes('多位数乘一位数') && index === 1) {
+        const a = (1 + (seed % 8)) * 100;
+        const b = 2 + ((seed + 1) % 8);
+        equations.push({ expression: `${a} × ${b}`, answer: a * b });
+      } else if (limit >= 90) {
         const a = 11 + (seed % 28);
         const b = 11 + index * 3;
         equations.push({ expression: `${a} × ${b}`, answer: a * b });
@@ -548,7 +556,7 @@ function makeLocation(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' 
           ? choose('从教室门口看，书架在你的左边。转向书架看时，书架的位置怎样说？', ['在你前面', '在你后面', '在你右边'], 0, '面向书架后，它就在你面对的方向。', '面向书架时，书架在你前面。')
           : choose('站在教室门口看，窗户在你的右边。转向窗户后，窗户在你的什么方向？', ['在你前面', '在你后面', '在你左边'], 0, '转向窗户后，它就在你面对的方向。', '面向窗户时，窗户在你前面。')
         : difficulty === 'advanced'
-          ? choose(taskIndex === 0 ? '书放在桌子的上面。以桌子为参照，书在哪里？' : '小狗在椅子下面。以小狗为参照，椅子在哪里？', ['上面', '下面', '后面'], 0, '先确定参照物，再判断相对方向。', '书在桌子上面；椅子在小狗的上面。')
+          ? choose(taskIndex === 0 ? '书放在桌子的上面。以桌子为参照，书在哪里？' : '小狗在椅子下面。以小狗为参照，椅子在哪里？', ['上面', '下面', '后面'], 0, '先确定参照物，再判断相对方向。', taskIndex === 0 ? '书在桌子的上面。' : '小狗在椅子下面，所以椅子在小狗的上面。')
           : choose(taskIndex === 0 ? '小猫要从教室门口找到书架，路线说明先写什么？' : '同学只说“书在左边”，伙伴还是找不到。还需要补充什么？', taskIndex === 0
             ? ['起点和相对方向，再按顺序说步骤', '只说书架的颜色', '不说从哪里出发']
             : ['从谁的位置看，以及参照物是什么', '把“左边”改成物品颜色', '让伙伴自己猜'], 0,
@@ -718,7 +726,7 @@ function makeClock(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
         ? choose(`上午 ${hour} 时开始一项活动，经过 30 分钟后，结束钟面上的分针指向哪里？`, ['6', '12', '3'], 0, '30 分钟是半小时，分针走半圈。', `经过 30 分钟是半小时，分针指向 6。`)
         : choose(`活动从 ${hour} 时开始，到 ${nextHour} 时结束，经过了多久？`, ['1 小时', '30 分钟', '2 小时'], 0, '用结束时刻减去开始时刻。', `${nextHour} 时比 ${hour} 时晚 1 小时。`)
       : taskIndex === 0
-        ? chooseNumber(`活动 A 用 ${elapsed} 分钟，活动 B 用 ${60 - elapsed} 分钟。B 比 A 多用多少分钟？`, 60 - 2 * elapsed, [70 - 2 * elapsed, Math.max(0, 50 - 2 * elapsed)], '先比较两段时间，再用较长时间减较短时间。', `${60 - elapsed} - ${elapsed} = ${60 - 2 * elapsed} 分钟。`)
+        ? choose(`活动 A 用 ${elapsed} 分钟，活动 B 用 ${60 - elapsed} 分钟。B 比 A 多用多少分钟？`, [`${60 - 2 * elapsed} 分钟`, `${70 - 2 * elapsed} 分钟`, `${Math.max(0, 50 - 2 * elapsed)} 分钟`], 0, '先比较两段时间，再用较长时间减较短时间。', `${60 - elapsed} - ${elapsed} = ${60 - 2 * elapsed} 分钟。`)
         : choose(`同伴把从 ${hour} 时到 ${nextHour} 时的活动记成“30 分钟”，怎样核对并改正？`, ['把两个整时时刻的间隔换成分钟，改记为 60 分钟', '只看活动名称，不检查时刻', '把结束时刻减去日期'], 0, '先求两个时刻相差几小时，再换成分钟。', `${nextHour} 时比 ${hour} 时晚 1 小时，1 小时是 60 分钟。`);
   return [
     choose(`钟面上，时针指向 ${hour}，分针指向 12，表示几时？`, [`${hour} 时`, `${hour} 时半`, `${nextHour} 时`], 0, '分针指向 12 表示整时。', `时针指向 ${hour}，分针指向 12，是 ${hour} 时。`),
@@ -764,7 +772,7 @@ function makeMoney(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
         : `小明付了 ${payment} 角，买了共 ${price} 角的文具，零钱是多少？`, change, [change + 1, change - 1], '用付款的钱减去商品总价。', `${payment} - ${price} = ${change} 角。`)
       : difficulty === 'advanced'
         ? taskIndex === 0
-          ? choose(`怎样核对找回的 ${change} 角是否正确？`, [`商品价 ${price} 角加找零 ${change} 角，应等于付款 ${payment} 角`, '只看找零硬币的颜色', '商品价和找零相减应等于付款'], 0, '把商品价和找零合起来，与付款金额比较。', `${price} + ${change} = ${payment} 角，找零记录正确。`)
+          ? choose(`一件商品标价 ${price} 角，顾客付 ${payment} 角，收银员找回 ${change} 角。怎样核对找零是否正确？`, [`商品价 ${price} 角加找零 ${change} 角，应等于付款 ${payment} 角`, '只看找零硬币的颜色', '商品价和找零相减应等于付款'], 0, '把商品价和找零合起来，与付款金额比较。', `${price} + ${change} = ${payment} 角，找零记录正确。`)
           : choose(`商品价 ${price} 角，付款 ${payment} 角，找回 ${change} 角。哪种算式能检验付款记录？`, [`${price} + ${change} = ${payment}`, `${payment} + ${change} = ${price}`, `${price} - ${change} = ${payment}`], 0, '商品价和找零合起来应等于付款金额。', `${price} + ${change} = ${payment} 角，记录一致。`)
         : taskIndex === 0
           ? choose(`商品共 ${price} 角，顾客付 ${payment} 角。收银员说找零 ${change + 1} 角，怎样改正？`, [`应找 ${change} 角，因为付款减去商品价是 ${change}`, `应找 ${change + 2} 角`, '不用检查，照收银员说的记录'], 0, '用付款金额减去商品总价重新计算。', `${payment} - ${price} = ${change} 角，原记录多了 1 角。`)
@@ -942,7 +950,7 @@ function makeSets(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 'h
         ? chooseNumber(`A 组有 ${groupA} 人，B 组有 ${groupB} 人，其中 ${both} 人同时属于两组。至少属于一组的有多少人？`, union, [union + 1, union - 1], '先把两组人数相加，再减去重复计算的交集人数。', `${groupA} + ${groupB} - ${both} = ${union} 人。`)
         : chooseNumber(`调查中 ${groupA} 人参加 A 活动、${groupB} 人参加 B 活动，有 ${both} 人两种都参加。共有多少人至少参加一种？`, union, [groupA + groupB, union - 1], '两组相加后，重叠的人需要减去一次。', `${groupA} + ${groupB} - ${both} = ${union} 人。`)
       : taskIndex === 0
-        ? choose(`小组把 A 组 ${groupA} 人和 B 组 ${groupB} 人直接相加，得到 ${groupA + groupB} 人；其中 ${both} 人两组都参加。怎样修正？`, [`减去重复的 ${both} 人，至少参加一种的有 ${union} 人`, '再加上重复的 ${both} 人', '不看重叠人数，直接保留总数'], 0, '重叠的人在两个组人数中被算了两次。', `${groupA} + ${groupB} - ${both} = ${union} 人。`)
+        ? choose(`小组把 A 组 ${groupA} 人和 B 组 ${groupB} 人直接相加，得到 ${groupA + groupB} 人；其中 ${both} 人两组都参加。怎样修正？`, [`减去重复的 ${both} 人，至少参加一种的有 ${union} 人`, '保留重复计算的交集人数', '不看重叠人数，直接保留总数'], 0, '重叠的人在两个组人数中被算了两次。', `${groupA} + ${groupB} - ${both} = ${union} 人。`)
         : choose(`要核对“至少参加一种”的人数，哪种解释最完整？`, [`分别统计只参加 A、只参加 B 和两种都参加的人，再与全班人数核对`, '把 A 组和 B 组总数直接相加，不检查重复', '只统计两种都参加的人'], 0, '按集合图的三个区域求和，再检查未参加者。', `把 ${onlyA}、${onlyB} 和 ${both} 相加得到 ${union} 人，再加上两种都不参加的 2 人，正好是 ${total} 人。`);
   return [
     taskIndex === 0
@@ -993,11 +1001,30 @@ function makeTable(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
         ? choose('准备向同学介绍这张复式统计表，怎样安排说明更清楚？', ['先说调查的活动和班级，再按活动逐行比较数据', '只报最大的一个数字', '不说明数字对应哪个班'], 0, '先交代表格记录什么，再按行说明发现。', '说明调查内容和行列信息后，听者能跟着表格核对。')
         : choose(`绘画这一行记录一班 ${rows[1]!.classOne} 人、二班 ${rows[1]!.classTwo} 人，合计却写成 ${rows[1]!.classOne + rows[1]!.classTwo + 1} 人。怎样修正？`, [`合计应为 ${rows[1]!.classOne + rows[1]!.classTwo} 人，并回看记录核实`, '把二班人数也改成合计数', '不检查，保留原合计'], 0, '把两个班的人数相加，再回到记录核实。', `${rows[1]!.classOne} + ${rows[1]!.classTwo} = ${rows[1]!.classOne + rows[1]!.classTwo} 人。`);
   return [
-    choose(`“${reading.activity}”有一班 ${reading.classOne} 人、二班 ${reading.classTwo} 人，哪个班更多？`, ['二班', '一班', '一样多'], 0, '对照同一活动行中的两个班级数据。', `二班 ${reading.classTwo} 人，比一班 ${reading.classOne} 人多。`),
+    choose(`“${reading.activity}”有一班 ${reading.classOne} 人、二班 ${reading.classTwo} 人，哪个班更多？`,
+      reading.classOne === reading.classTwo ? ['一样多', '一班', '二班'] : reading.classOne > reading.classTwo ? ['一班', '二班', '一样多'] : ['二班', '一班', '一样多'],
+      0, '对照同一活动行中的两个班级数据。', reading.classOne === reading.classTwo
+        ? `一班和二班各有 ${reading.classOne} 人，人数一样多。`
+        : reading.classOne > reading.classTwo
+          ? `一班 ${reading.classOne} 人，比二班 ${reading.classTwo} 人多。`
+          : `二班 ${reading.classTwo} 人，比一班 ${reading.classOne} 人多。`),
     calculate(`“${reading.activity}”两个班一共有多少人？`, `${reading.classOne} + ${reading.classTwo}`, readingTotal, '把同一活动行中的两个班人数相加。', `${reading.classOne} + ${reading.classTwo} = ${readingTotal} 人。`),
     pair('把活动和两个班对应的人数连起来。', rows.map(({ activity, classOne, classTwo }) => [activity, `一班 ${classOne} 人、二班 ${classTwo} 人`] as const), '按活动名称逐行核对两个班的人数。', '每项活动都要和同一行的两个班级数据对应。'),
     sortInto('把活动按“ 一班更多”“二班更多”或“两班一样多”分类。', ['一班更多', '二班更多', '两班一样多'], rows.map((row) => ({ label: row.activity, categoryIndex: compareClassOne(row) })), '比较同一活动行的两个班级人数。', '逐行比较一班和二班的数据，再按人数关系分类。'),
-    arrange('按两个班参加人数的总和从少到多排列活动。', rows.map(({ activity }) => activity), orderedRows.map(({ activity }) => rows.findIndex((row) => row.activity === activity)), '先把每项活动的两个班人数相加，再比较总数。', `总人数从少到多的活动是 ${orderedRows.map(({ activity }) => activity).join('、')}。`),
+    arrange(
+      difficulty === 'basic' ? '按两个班参加人数的总和从少到多排列活动。'
+        : difficulty === 'advanced' ? '先核对每项活动的合计人数，再从少到多排列。'
+          : '检查每项活动的合计后，从少到多排出完整顺序。',
+      rows.map(({ activity, classOne, classTwo }) => difficulty === 'basic'
+        ? activity
+        : `${activity}（${classOne + classTwo} 人）`),
+      orderedRows.map(({ activity }) => rows.findIndex((row) => row.activity === activity)),
+      difficulty === 'high' ? '逐项核对两个班的人数合计，再检查相邻活动的总人数次序。'
+        : '先把每项活动的两个班人数相加，再比较总数。',
+      `总人数从少到多的活动是 ${orderedRows.map(({ activity, classOne, classTwo }) => difficulty === 'basic'
+        ? activity
+        : `${activity}（${classOne + classTwo} 人）`).join('、')}。`,
+    ),
     chooseNumber(`跳绳活动一班 ${jumping.classOne} 人、二班 ${jumping.classTwo} 人，二班比一班多几人？`, jumping.classTwo - jumping.classOne, [jumping.classTwo - jumping.classOne + 1, Math.max(0, jumping.classTwo - jumping.classOne - 1)], '用二班人数减去一班人数。', `${jumping.classTwo} - ${jumping.classOne} = ${jumping.classTwo - jumping.classOne} 人。`),
     taskIndex === 0
       ? choose('想比较两组数据，先看什么？', ['比较项目和统计标准是否相同', '只看表格颜色', '把不同项目的数量直接当成相同项目'], 0, '比较前要确认数据的项目和标准一致。', '比较相同项目、相同口径的数据，结论才有意义。')
@@ -1061,7 +1088,7 @@ function makeDecimals(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' 
       ? choose('0.4 和 0.5 哪个大？', ['0.5 大', '0.4 大', '两个数相等'], 0, '比较十分位上的数字。', '5 个十分之一大于 4 个十分之一，所以 0.5 大。')
       : choose('0.2 和 0.9 哪个大？', ['0.9 大', '0.2 大', '两个数相等'], 0, '比较十分位上的数字。', '9 个十分之一大于 2 个十分之一，所以 0.9 大。'),
     pair('把小数和它的读法连起来。', [['0.2', '零点二'], ['0.5', '零点五'], ['0.8', '零点八'], ['0.3', '零点三']], '小数点右边只有一位，按这一位读。', '0.2、0.5、0.8、0.3 分别读作零点二、零点五、零点八、零点三。'),
-    choose(`哪个数比 0.${tenths} 大？`, [`0.${nextTenth}`, `0.${tenths - 1}`, `0.${Math.min(9, nextTenth + 1)}`], 0, '比较十分位上的数字。', `十分位 ${nextTenth} 大于 ${tenths}，所以 0.${nextTenth} 更大。`),
+    choose(`下列选项中，哪个是比 0.${tenths} 大且最接近它的十分位小数？`, [`0.${nextTenth}`, `0.${tenths - 1}`, `0.${Math.min(9, nextTenth + 1)}`], 0, '比较十分位上的数字和它们相差多少。', `0.${nextTenth} 比 0.${tenths} 大一个十分之一，是选项中大于它且最接近的数。`),
     taskIndex === 0
       ? sortInto('按“十分位是 0”和“十分位不是 0”分类。', ['十分位是 0', '十分位不是 0'], [{ label: '1.0', categoryIndex: 0 }, { label: '2.0', categoryIndex: 0 }, { label: '0.3', categoryIndex: 1 }, { label: '0.7', categoryIndex: 1 }], '十分位是小数点右边第一位。', '1.0、2.0 的十分位是 0；0.3、0.7 的十分位不是 0。')
       : sortInto('按“十分位是 0”和“十分位不是 0”分类。', ['十分位是 0', '十分位不是 0'], [{ label: '3.0', categoryIndex: 0 }, { label: '5.0', categoryIndex: 0 }, { label: '0.2', categoryIndex: 1 }, { label: '1.7', categoryIndex: 1 }], '十分位是小数点右边第一位。', '3.0、5.0 的十分位是 0；0.2、1.7 的十分位不是 0。'),
@@ -1090,9 +1117,25 @@ function makeCombinations(_entry: AddedCourseEntry, difficulty: 'basic' | 'advan
         : choose('准备把搭配结果交给同学核对，怎样整理最清楚？', ['按一种饮料分组，再列出每种点心', '把卡片随意混在一起', '只报一个总数，不展示组合'], 0, '固定一种饮料并列出对应点心，伙伴更容易检查。', '分组列出每种组合，伙伴能检查是否不重不漏。');
   return [
     chooseNumber(`${firstChoices.length} 种${taskIndex === 0 ? '上衣' : '饮料'}和 ${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}，每次各选一种，有几种搭配？`, total, [total - 1, total + 1], '每种第一类选择都要和第二类的每一种配一次。', `${firstChoices.length} × ${secondChoices.length} = ${total} 种搭配。`),
-    calculate(`${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}分别和 ${firstChoices.length} 种${taskIndex === 0 ? '上衣' : '饮料'}配对，一共多少种？`, `${firstChoices.length} × ${secondChoices.length}`, total, '交换列出顺序，检查每一种组合是否都出现。', `一共是 ${firstChoices.length} × ${secondChoices.length} = ${total} 种。`),
+    difficulty === 'basic'
+      ? calculate(`${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}分别和 ${firstChoices.length} 种${taskIndex === 0 ? '上衣' : '饮料'}配对，一共多少种？`, `${firstChoices.length} × ${secondChoices.length}`, total, '交换列出顺序，检查每一种组合是否都出现。', `一共是 ${firstChoices.length} × ${secondChoices.length} = ${total} 种。`)
+      : difficulty === 'advanced'
+        ? calculate(`再增加 1 种${taskIndex === 0 ? '裤子' : '点心'}后，全部${taskIndex === 0 ? '上衣' : '饮料'}搭配一共有多少种？`, `${firstChoices.length} × ${secondChoices.length + 1}`, firstChoices.length * (secondChoices.length + 1), '新增一种第二类选择后，它要和第一类的每一种选择分别搭配。', `${firstChoices.length} × ${secondChoices.length + 1} = ${firstChoices.length * (secondChoices.length + 1)} 种。`)
+        : calculate(`原有 ${total} 种搭配；新增 1 种${taskIndex === 0 ? '裤子' : '点心'}后，会多出多少种搭配并得到新总数？`, `${total} + ${firstChoices.length}`, total + firstChoices.length, '新增的第二类选择要和第一类中的每一种选择各搭配一次。', `新增 ${firstChoices.length} 种搭配：${total} + ${firstChoices.length} = ${total + firstChoices.length} 种。`),
     pair('把每种搭配和它的文字记录连起来。', combinations, '固定一种第一类选择，再逐个核对第二类。', '每一种组合都只出现一次。'),
-    arrange(`按顺序列出“${firstChoices[0]}”的前两种搭配。`, [`${firstChoices[0]} + ${secondChoices[1]}`, `${firstChoices[0]} + ${secondChoices[0]}`], [1, 0], '先固定第一类选择，再按题目给出的第二类顺序排列。', `先配 ${secondChoices[0]}，再配 ${secondChoices[1]}。`),
+    difficulty === 'basic'
+      ? arrange(`按顺序列出“${firstChoices[0]}”的前两种搭配。`, [`${firstChoices[0]} + ${secondChoices[1]}`, `${firstChoices[0]} + ${secondChoices[0]}`], [1, 0], '先固定第一类选择，再按题目给出的第二类顺序排列。', `先配 ${secondChoices[0]}，再配 ${secondChoices[1]}。`)
+      : difficulty === 'advanced'
+        ? arrange(`固定“${firstChoices[0]}”，按顺序列出与每一种${taskIndex === 0 ? '裤子' : '点心'}的完整搭配。`,
+          [...secondChoices].reverse().map((second) => `${firstChoices[0]} + ${second}`),
+          secondChoices.map((_, index) => secondChoices.length - index - 1),
+          '固定第一类选择，再逐项核对第二类的每一种选择。',
+          `“${firstChoices[0]}”依次与${secondChoices.join('、')}搭配，共 ${secondChoices.length} 种。`)
+        : arrange(`把全部 ${total} 种搭配卡按第一类、第二类选择的顺序排好。`,
+          combinations.map(([label]) => label).reverse(),
+          combinations.map((_, index) => combinations.length - index - 1),
+          '先固定一种第一类选择，列完第二类后再换下一种，并检查不重不漏。',
+          `按顺序列全是：${combinations.map(([label]) => label).join('、')}，共 ${total} 种。`),
     sortInto('把搭配按第一类选择分类。', [firstChoices[0]!, firstChoices[1]!], focusedItems.map((label) => ({ label, categoryIndex: label.startsWith(firstChoices[0]!) ? 0 : 1 })), '看每个组合中的第一类选择。', '按同一个选择标准分组。'),
     chooseNumber(`固定${firstChoices[0]}，和每一种${taskIndex === 0 ? '裤子' : '点心'}各搭配一次，有几种组合？`, secondChoices.length, [secondChoices.length - 1, secondChoices.length + 1], '第一类选择固定后，逐一数第二类有几种选择。', `固定${firstChoices[0]}，有 ${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}可选，所以有 ${secondChoices.length} 种组合。`),
     taskIndex === 0
@@ -1570,18 +1613,10 @@ function createSecondTaskMatchVariant(question: MathQuestionSpec, entry: AddedCo
 
 function choiceFromQuestion(
   question: MathQuestionSpec,
-  entry: AddedCourseEntry,
   difficulty: 'advanced' | 'high',
   taskIndex: number,
   questionIndex: number,
 ): MathQuestionSpec {
-  const context = profiles[entry.profileKey]!.context;
-  const lead = difficulty === 'advanced'
-    ? `在“${context}”的新情境中，`
-    : `同伴完成“${context}”题目时，`;
-  const intro = difficulty === 'advanced'
-    ? '哪项判断正确？'
-    : '下面哪项能帮助核对并改正？';
   let prompt: string;
   let options: [string, string, string];
   let correctOptionIndex: 0 | 1 | 2 = 0;
@@ -1592,8 +1627,8 @@ function choiceFromQuestion(
     const correct = question.options[question.correctOptionIndex]!;
     const wrong = question.options.filter((_, index) => index !== question.correctOptionIndex);
     prompt = difficulty === 'advanced'
-      ? `${lead}${question.prompt} ${intro}`
-      : `${lead}把“${wrong[0]}”作为答案。针对“${question.prompt}”，${intro}`;
+      ? question.prompt
+      : `同伴回答${question.prompt}时选了“${wrong[0]}”，应该改成哪一项？`;
     options = [correct, wrong[0]!, wrong[1]!];
     explanation = question.explanation;
     hint = question.hint;
@@ -1604,10 +1639,27 @@ function choiceFromQuestion(
       if (candidate >= 0 && candidate !== answer && !distractors.includes(candidate)) distractors.push(candidate);
       if (distractors.length === 2) break;
     }
+    if (difficulty === 'high') {
+      const operation = (['+', '-', '×', '÷'] as const).find((symbol) => question.expression.includes(` ${symbol} `));
+      if (operation) {
+        const [left, right] = question.expression.split(` ${operation} `).map(Number);
+        const remainder = operation === '÷' ? left! % right! : 0;
+        const inverseExpression = operation === '+'
+          ? `${answer} - ${right}`
+          : operation === '-'
+            ? `${answer} + ${right}`
+            : operation === '×'
+              ? `${answer} ÷ ${right}`
+              : `${answer} × ${right}${remainder === 0 ? '' : ` + ${remainder}`}`;
+        return calculate(`同伴算出 ${question.expression} = ${answer}。用逆运算核对后，应回到哪个数？`, inverseExpression, left!,
+          '根据原算式选择相反的运算，再检查能否回到原来的数量。',
+          `${inverseExpression} = ${left}，逆运算回到了原算式中的 ${left}。`);
+      }
+    }
     prompt = difficulty === 'advanced'
-      ? `${lead}计算 ${question.expression} 并核对结果，得数是多少？`
-      : `${lead}把 ${question.expression} 算成 ${distractors[0]}。重新计算后，正确得数是多少？`;
-    explanation = `${question.expression} = ${answer}。`;
+      ? `${question.prompt} 列式计算并核对，得数是多少？`
+      : `同伴解答“${question.prompt}”时把 ${question.expression} 算成 ${distractors[0]}。正确得数是多少？`;
+    explanation = question.explanation;
     hint = question.hint;
     return calculate(prompt, question.expression, answer, hint, explanation);
   } else if (question.kind === 'match') {
@@ -1618,8 +1670,8 @@ function choiceFromQuestion(
       ? distinctRightLabels.slice(0, 2)
       : [...distinctRightLabels, '没有对应项'].slice(0, 2);
     prompt = difficulty === 'advanced'
-      ? `${lead}词条“${pair[0]}”应该和哪项信息对应？`
-      : `${lead}把“${pair[0]}”错连到“${wrongRightLabels[0]}”。应该改连到哪项？`;
+      ? `词条“${pair[0]}”应该和哪项信息对应？`
+      : `同伴把“${pair[0]}”错连到“${wrongRightLabels[0]}”。应该改连到哪项？`;
     options = [`${pair[0]} — ${pair[1]}`, `${pair[0]} — ${wrongRightLabels[0]}`, `${pair[0]} — ${wrongRightLabels[1]}`];
     explanation = `“${pair[0]}”对应“${pair[1]}”。`;
     hint = question.hint;
@@ -1632,8 +1684,8 @@ function choiceFromQuestion(
     [swappedOrder[0], swappedOrder[1]] = [swappedOrder[1]!, swappedOrder[0]!];
     const otherWrongOrder = swappedOrder.join(' → ');
     prompt = difficulty === 'advanced'
-      ? `${lead}${question.prompt} 哪种排列符合要求？`
-      : `${lead}同伴排成“${reversedOrder}”。按照“${question.prompt}”的要求，哪项排列正确？`;
+      ? question.prompt
+      : `同伴的排列顺序是“${reversedOrder}”。按“${question.prompt}”的要求，哪项排列正确？`;
     options = [expectedOrder, reversedOrder, otherWrongOrder === reversedOrder ? '不符合题目要求的排列' : otherWrongOrder];
     explanation = question.explanation;
     hint = question.hint;
@@ -1642,11 +1694,12 @@ function choiceFromQuestion(
     if (!item) return question;
     const category = question.categories[item.categoryIndex];
     if (category === undefined) return question;
-    const otherCategory = question.categories.find((candidate) => candidate !== category) ?? '不属于这些类别';
+    const otherCategories = question.categories.filter((candidate) => candidate !== category).slice(0, 2);
+    while (otherCategories.length < 2) otherCategories.push('不符合分类标准');
     prompt = difficulty === 'advanced'
-      ? `${lead}词条“${item.label}”符合哪一项分类标准？`
-      : `${lead}把“${item.label}”分错了组。应该放进哪一组？`;
-    options = [category, otherCategory, '两组都不符合'];
+      ? `词条“${item.label}”符合哪一项分类标准？`
+      : `同伴把“${item.label}”分错了组，应该放进哪一组？`;
+    options = [category, ...otherCategories] as [string, string, string];
     explanation = `“${item.label}”符合“${category}”这一类。`;
     hint = question.hint;
   } else {
@@ -1656,8 +1709,8 @@ function choiceFromQuestion(
       .slice(0, 2);
     if (distractors.length < 2) return question;
     prompt = difficulty === 'advanced'
-      ? `${lead}量出的 ${question.objectLabel} 长度是多少厘米？`
-      : `${lead}把 ${question.objectLabel} 的长度记错了。正确长度是多少厘米？`;
+      ? `${question.prompt} 量出的长度是多少厘米？`
+      : `同伴把${question.objectLabel}的长度记错了。正确长度是多少厘米？`;
     options = [`${answer} 厘米`, `${distractors[0]} 厘米`, `${distractors[1]} 厘米`];
     explanation = `${question.objectLabel} 的目标长度是 ${answer} 厘米。`;
     hint = question.hint;
@@ -1671,13 +1724,12 @@ function choiceFromQuestion(
 
 function differentiateMathQuestions(
   questions: MathQuestionSpec[],
-  entry: AddedCourseEntry,
   difficulty: 'basic' | 'advanced' | 'high',
   taskIndex: number,
 ): MathQuestionSpec[] {
   if (difficulty === 'basic') return questions;
   return questions.map((question, index) => [2, 3, 5].includes(index)
-    ? choiceFromQuestion(question, entry, difficulty, taskIndex, index)
+    ? choiceFromQuestion(question, difficulty, taskIndex, index)
     : question);
 }
 
@@ -1714,7 +1766,7 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   if (taskIndex === 1 && questions[2]?.kind === 'match') {
     questions = questions.map((question, index) => index === 2 ? createSecondTaskMatchVariant(question, entry) : question);
   }
-  return differentiateMathQuestions(questions, entry, difficulty, taskIndex);
+  return differentiateMathQuestions(questions, difficulty, taskIndex);
 }
 
 function makeTaskSpec(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 'high', index: number): MathTaskSpec {

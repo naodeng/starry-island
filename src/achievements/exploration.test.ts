@@ -32,7 +32,8 @@ describe('exploration map', () => {
   });
 
   it('opensAStartZoneEvenWhenNoCourseNodesAreRegisteredThere', () => {
-    const zones = getExplorationZones([], { grade: 6, term: 2, unit: 1 });
+    const source = createOneVerifiedUnit();
+    const zones = getExplorationZones([], { grade: 6, term: 2, unit: 1 }, source);
 
     expect(zones[11]).toMatchObject({ hasCurriculum: false, isStartZone: true, startUnit: 1, isOpen: true });
   });

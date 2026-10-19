@@ -327,7 +327,7 @@ describe('added English vocabulary and textbook alignment', () => {
     });
 
     const matchingActivities = activities.filter((activity) => activity.kind === 'match');
-    expect(matchingActivities).toHaveLength(2);
+    expect(matchingActivities).toHaveLength(1);
     matchingActivities.forEach((activity) => {
       if (activity.kind !== 'match') return;
       const matchedEnglishWords = new Set(activity.pairs.flatMap(({ left, right }) => [left, right])
@@ -404,6 +404,23 @@ describe('added English vocabulary and textbook alignment', () => {
         });
       }
     }
+    expect(failures).toEqual([]);
+  });
+
+  it('keeps English punctuation attached and avoids nested quotation marks in explanations', () => {
+    const failures: string[] = [];
+
+    for (const entry of addedCourseCatalog.filter(({ subject }) => subject === 'english')) {
+      for (const activity of activitiesFor(entry.id)) {
+        if (activity.kind === 'order' && /\s[?.!,]/.test(activity.explanation)) {
+          failures.push(`${activity.id}: punctuation spacing`);
+        }
+        if (/[“”]{2}/.test(activity.explanation)) {
+          failures.push(`${activity.id}: nested quotation marks`);
+        }
+      }
+    }
+
     expect(failures).toEqual([]);
   });
 

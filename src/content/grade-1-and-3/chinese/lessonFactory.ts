@@ -129,7 +129,7 @@ const profiles: Record<string, ChineseProfile> = {
     { prompt: '想知道雨后池塘边有什么变化，最合适的办法是什么？', options: ['雨前雨后各观察一次并记下变化', '只在晴天猜一猜', '把昨天的记录当作今天的观察'], correct: 0, explanation: '对照雨前雨后的观察记录，才能发现变化。' },
   ),
   'g1-habits': profile(
-    [['文具', '学习时会用到的用品'], ['整理', '把物品放回合适的位置'], ['分钟', '表示较短时间的单位'], ['先后', '事情发生的顺序']],
+    [['文具', '学习时会用到的用品'], ['整理', '把物品放回合适的位置'], ['分钟', '表示时间的单位'], ['先后', '事情发生的顺序']],
     ['物品管理', '时间信息'], [['文具', 0], ['整理', 0], ['分钟', 1], ['先后', 1]],
     ['看清今天要做的事', '按顺序完成一件小事', '把物品放回原处', '检查有没有遗漏'],
     { prompt: '要减少忘带文具的情况，哪种办法更有帮助？', options: ['放学前对照清单检查书包', '把文具随手放在不同地方', '第二天到了学校再想'], correct: 0, explanation: '对照清单检查，能帮助养成整理习惯。' },
@@ -358,11 +358,11 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const scenarioRepair = difficulty === 'basic'
     ? taskIndex === 0
       ? choose(selected.scenario.prompt, selected.scenario.options, selected.scenario.correct, '回想本组主题和观察、表达的要求。', selected.scenario.explanation)
-      : choose(`同学建议“${selected.scenario.options[scenarioWrongIndex]}”，但这可能无法解决“${selected.scenario.prompt}”中的问题。哪种做法更合适？`, [
-        selected.scenario.options[selected.scenario.correct]!,
-        selected.scenario.options[scenarioOtherWrongIndex]!,
-        '不再看问题，也不核对任何线索。',
-      ], 0, '回到问题要求，比较哪种办法能提供需要的信息。', selected.scenario.explanation)
+      : choose(`要核对“${selected.scenario.options[selected.scenario.correct]}”是否解决了“${selected.scenario.prompt}”，哪条记录最有用？`, [
+        '记下观察到的具体线索和处理后的结果，再对照问题要求。',
+        '只记下自己的判断，不记录线索。',
+        '用猜测代替实际记录。',
+      ], 0, '把实际线索和处理结果记下来，再看它们是否回应了问题。', '记录具体线索和处理结果，才能检查做法是否解决了问题。')
     : taskIndex === 1
       ? taskTwoScenarioRepair
       : difficulty === 'advanced'
@@ -425,8 +425,14 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
         ], 0, '先核对两类的标准，再逐张检查词卡。', `“${outsideCategoryItem}”应放在“${selected.categories[otherCategory.categoryIndex]}”一栏。`);
   const expressionOrderQuestion = isPinyinProfile
     ? (() => {
-      const steps = difficulty === 'basic'
-        ? sequence
+      const orderedSteps = difficulty === 'basic'
+        ? entry.profileKey === 'pinyin-initials'
+          ? taskIndex === 0
+            ? ['认清音节 ba 的声母 b', '找到和它相拼的单韵母 a', '按要求给 a 标上第一声', '读出 bā 并核对调号']
+            : ['认清音节 pa 的声母 p', '找到和它相拼的单韵母 a', '按要求给 a 标上第四声', '读出 pà 并核对调号']
+          : taskIndex === 0
+            ? ['看清拼音卡上的完整拼写', '判断卡片是韵母还是整体认读音节', '按类别选择拼读或整体认读', '核对声调后读完整音节']
+            : ['并排写出前鼻韵母 an 和后鼻韵母 ang', '圈出 an 的韵尾 n', '圈出 ang 的韵尾 ng', '分别读出两种韵母并核对拼写']
         : entry.profileKey === 'pinyin-initials'
           ? difficulty === 'advanced'
             ? taskIndex === 0
@@ -442,8 +448,17 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
             : taskIndex === 0
               ? ['逐个核对拼音卡的类别', '复韵母或鼻韵母按拼写认读', '整体认读音节不拆开读', '检查声调并读准完整音节']
               : ['并排写出前鼻韵母 an 和后鼻韵母 ang', '圈出 an 的韵尾 n', '圈出 ang 的韵尾 ng', '完整读出两张卡并检查拼写'];
+      const steps = difficulty === 'basic' && taskIndex === 1
+        ? [orderedSteps[2]!, orderedSteps[0]!, orderedSteps[3]!, orderedSteps[1]!]
+        : orderedSteps;
       const prompt = difficulty === 'basic'
-        ? '把拼音学习卡按合适的先后顺序排好。'
+        ? entry.profileKey === 'pinyin-initials'
+          ? taskIndex === 0
+            ? '按步骤拼读 ba 并标出第一声。'
+            : '按步骤拼读 pa 并标出第四声。'
+          : taskIndex === 0
+            ? '按步骤判断并读准韵母或整体认读音节。'
+            : '按步骤比较前鼻韵母 an 和后鼻韵母 ang。'
         : entry.profileKey === 'pinyin-initials'
           ? taskIndex === 0
             ? '按要求拼读并核对音节 ba 的步骤排列。'
@@ -451,7 +466,8 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
           : taskIndex === 0
             ? '按步骤判断并读准韵母或整体认读音节。'
             : '按步骤比较前鼻韵母 an 和后鼻韵母 ang。';
-      return arrange(prompt, steps, [0, 1, 2, 3], '按题目要求先认清类别和拼音，再检查调号。', `正确顺序是：${steps.join('，')}。`);
+      const order = difficulty === 'basic' ? correctOrder : [0, 1, 2, 3];
+      return arrange(prompt, steps, order, '按题目要求先认清类别和拼音，再检查调号。', `正确顺序是：${order.map((index) => steps[index]).join('，')}。`);
     })()
     : taskIndex === 0 && difficulty === 'basic'
       ? arrange('把主题学习卡按合适的先后顺序排好。', sequence, correctOrder, '先找开始的一步，再逐步检查后面的顺序。', `本次主题卡的顺序是：${correctOrder.map((index) => sequence[index]).join('，')}。`)
@@ -479,6 +495,9 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const classificationEvidence = firstCategory === secondCategory
     ? `并逐项对照“${selected.categories[firstCategory]}”的标准。`
     : `并分别对照“${selected.categories[firstCategory]}”和“${selected.categories[secondCategory]}”的标准。`;
+  const classificationConclusion = firstCategory === secondCategory
+    ? `“${first[0]}”和“${second[0]}”都符合“${selected.categories[firstCategory]}”这一类。`
+    : `“${first[0]}”符合“${selected.categories[firstCategory]}”，“${second[0]}”符合“${selected.categories[secondCategory]}”。`;
   const themeApplicationQuestion = isPinyinProfile
     ? pinyinClassification(taskIndex * 2 + 1)
     : difficulty === 'basic'
@@ -512,10 +531,10 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const correctPair = `“${first[0]}”表示“${first[1]}”；“${second[0]}”表示“${second[1]}”。`;
   const swappedPair = `“${first[0]}”表示“${second[1]}”；“${second[0]}”表示“${first[1]}”。`;
   const repeatedPair = `“${first[0]}”表示“${first[1]}”；“${second[0]}”也表示“${first[1]}”。`;
-  const pinyinRemainderPairs = pinyinRemainder.map(([label, categoryIndex]) => [label, selected.categories[categoryIndex]] as const);
-  const matchingQuestion = pinyinRemainderPairs.length > 0
-    ? pair('把补充拼音卡和类别连起来。', pinyinRemainderPairs,
-      '先读拼音卡，再按本单元的分类名称连线。', '补充卡片分别属于对应的拼音类别。')
+  const matchingQuestion = pinyinRemainder.length > 0
+    ? sortInto('把补充拼音卡按类别放好。', selected.categories,
+      pinyinRemainder.map(([label, categoryIndex]) => [label, categoryIndex + 1] as const),
+      '先读拼音卡，再按本单元的分类名称放置。', '每张补充卡都要按自己的拼音类别判断。')
     : difficulty === 'basic'
     ? pair(taskIndex === 0 ? '把词语和意思连起来。' : '根据意思找出相应的词语。', matchPairs, '先读清词语或意思，再逐个核对对应关系。', '每个词语都要和它自己的意思配对。')
     : difficulty === 'advanced'
@@ -588,16 +607,16 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
         ? pinyinChallengeQuestion()
         : difficulty === 'advanced'
         ? taskIndex === 0
-          ? choose(`把“${first[0]}”用在新的${selected.categories[firstCategory]}情境中，怎样判断用得合适？`, [
-            '把词语意思和实际线索一起核对。',
+          ? choose(`要核对“${selected.scenario.options[selected.scenario.correct]}”是否解决了“${selected.scenario.prompt}”，哪条记录最有用？`, [
+            '记录观察到的具体线索和处理后的结果，再对照问题要求。',
             scenarioWrongB,
-            '不看意思和线索，只凭字形判断。',
-          ], 0, '换到新情境时，词义和上下文都要对得上。', `结合“${first[0]}”的词义和情境线索核对，才能判断表达是否合适。`)
+            '只记结论，不记录线索或结果。',
+          ], 0, '把实际线索和处理结果记下来，再看它们是否回应了问题。', '记录具体线索和处理结果，才能检查做法是否解决了问题。')
           : choose(`介绍“${first[0]}”和“${second[0]}”时，怎样比较两条信息是否准确？`, [
             `分别核对词义，再按同一标准判断它们属于哪一类。`,
             `只核对“${first[0]}”，不看“${second[0]}”。`,
             '按自己喜欢哪个来决定意思。',
-          ], 0, '逐项核对词义，并使用同一个分类标准。', `先核对两个词的意思，再根据“${selected.categories[firstCategory]}”和“${selected.categories[secondCategory]}”的标准判断。`)
+          ], 0, '逐项核对词义，并使用同一个分类标准。', `先核对两个词的意思，再判断分类是否符合标准。${classificationConclusion}`)
         : taskIndex === 0
         ? choose('想把本组内容介绍给同学，怎样说更准确也更有条理？', [
           `按“${selected.sequence[0]}、${selected.sequence[1]}”的顺序介绍，再用词义或主题线索说明依据。`,

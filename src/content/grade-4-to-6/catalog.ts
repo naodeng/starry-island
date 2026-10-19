@@ -1,0 +1,233 @@
+import type { CatalogEntryType, SubjectId } from '../types';
+
+export interface PlannedCourseEntry {
+  id: string;
+  grade: 4 | 5 | 6;
+  term: 1 | 2;
+  subject: SubjectId;
+  slug: string;
+  title: string;
+  type: CatalogEntryType;
+  formalUnitNumber: number | null;
+}
+
+type EntryInput = readonly [
+  slug: string,
+  title: string,
+  formalUnitNumber: number | null,
+  type?: CatalogEntryType,
+];
+
+function book(
+  grade: 4 | 5 | 6,
+  term: 1 | 2,
+  subject: SubjectId,
+  rows: readonly EntryInput[],
+): PlannedCourseEntry[] {
+  return rows.map(([slug, title, formalUnitNumber, type = 'unit']) => ({
+    id: `grade-${grade}/term-${term}/${subject}/${slug}`,
+    grade,
+    term,
+    subject,
+    slug,
+    title,
+    type,
+    formalUnitNumber,
+  }));
+}
+
+export const grade4To6CourseCatalog: PlannedCourseEntry[] = [
+  ...book(4, 1, 'chinese', [
+    ['unit-01', '第一单元 · 观潮与自然景色', 1],
+    ['unit-02', '第二单元 · 科学探索', 2],
+    ['unit-03', '第三单元 · 连续观察', 3],
+    ['unit-04', '第四单元 · 神话故事', 4],
+    ['unit-05', '第五单元 · 生活观察', 5],
+    ['unit-06', '第六单元 · 童年成长', 6],
+    ['unit-07', '第七单元 · 家国情怀', 7],
+    ['unit-08', '第八单元 · 历史故事', 8],
+  ]),
+  ...book(4, 2, 'chinese', [
+    ['unit-01', '第一单元 · 乡村与自然', 1],
+    ['unit-02', '第二单元 · 科技与梦想', 2],
+    ['unit-03', '第三单元 · 现代诗歌', 3],
+    ['unit-04', '第四单元 · 动物与观察', 4],
+    ['unit-05', '第五单元 · 日出与探游', 5],
+    ['unit-06', '第六单元 · 英雄与成长', 6],
+    ['unit-07', '第七单元 · 诗歌与人物', 7],
+    ['unit-08', '第八单元 · 中外故事', 8],
+  ]),
+  ...book(4, 1, 'math', [
+    ['unit-01', '第一单元 · 大数的认识', 1],
+    ['unit-02', '第二单元 · 公顷和平方千米', 2],
+    ['unit-03', '第三单元 · 角的度量', 3],
+    ['unit-04', '第四单元 · 三位数乘两位数', 4],
+    ['unit-05', '第五单元 · 平行四边形和梯形', 5],
+    ['unit-06', '第六单元 · 除数是两位数的除法', 6],
+    ['unit-07', '第七单元 · 条形统计图', 7],
+    ['unit-08', '第八单元 · 数学广角——优化', 8],
+    ['integrated-practice-01', '综合实践 · 亿有多大', null, 'integrated-practice'],
+    ['unit-09', '第九单元 · 总复习', 9],
+  ]),
+  ...book(4, 2, 'math', [
+    ['unit-01', '第一单元 · 四则运算', 1],
+    ['unit-02', '第二单元 · 观察物体（二）', 2],
+    ['unit-03', '第三单元 · 运算律', 3],
+    ['unit-04', '第四单元 · 小数的意义和性质', 4],
+    ['unit-05', '第五单元 · 三角形', 5],
+    ['unit-06', '第六单元 · 小数的加法和减法', 6],
+    ['unit-07', '第七单元 · 图形的运动（二）', 7],
+    ['unit-08', '第八单元 · 平均数与条形统计图', 8],
+    ['integrated-practice-01', '综合实践 · 营养午餐', null, 'integrated-practice'],
+    ['unit-09', '第九单元 · 数学广角——鸡兔同笼', 9],
+    ['unit-10', '第十单元 · 总复习', 10],
+  ]),
+  ...book(4, 1, 'english', [
+    ['unit-01', 'Unit 1 · Sports and Games', 1],
+    ['unit-02', 'Unit 2 · On the Weekend', 2],
+    ['unit-03', 'Unit 3 · Transportation', 3],
+    ['review-01', 'Revision 1 · Units 1–3', null, 'review'],
+    ['unit-04', 'Unit 4 · Asking for Help', 4],
+    ['unit-05', 'Unit 5 · Safety', 5],
+    ['unit-06', 'Unit 6 · Jobs', 6],
+    ['review-02', 'Revision 2 · Units 4–6', null, 'review'],
+  ]),
+  ...book(4, 2, 'english', [
+    ['unit-01', 'Unit 1 · My Neighbourhood', 1],
+    ['unit-02', 'Unit 2 · Cities', 2],
+    ['unit-03', 'Unit 3 · Travel Plans', 3],
+    ['review-01', 'Revision 1 · Units 1–3', null, 'review'],
+    ['unit-04', 'Unit 4 · Hobbies', 4],
+    ['unit-05', 'Unit 5 · Free Time', 5],
+    ['unit-06', 'Unit 6 · Countries', 6],
+    ['review-02', 'Revision 2 · Units 4–6', null, 'review'],
+  ]),
+  ...book(5, 1, 'chinese', [
+    ['unit-01', '第一单元 · 四时景物', 1],
+    ['unit-02', '第二单元 · 阅读与说明', 2],
+    ['unit-03', '第三单元 · 民间故事', 3],
+    ['unit-04', '第四单元 · 家国情怀', 4],
+    ['unit-05', '第五单元 · 太阳与松鼠', 5],
+    ['unit-06', '第六单元 · 父母之爱', 6],
+    ['unit-07', '第七单元 · 四时景致', 7],
+    ['unit-08', '第八单元 · 读书与成长', 8],
+  ]),
+  ...book(5, 2, 'chinese', [
+    ['unit-01', '第一单元 · 田园与乡愁', 1],
+    ['unit-02', '第二单元 · 古典名著', 2],
+    ['integrated-practice-01', '综合实践 · 遨游汉字王国', null, 'integrated-practice'],
+    ['unit-04', '第四单元 · 古诗与家国', 4],
+    ['unit-05', '第五单元 · 人物描写', 5],
+    ['unit-06', '第六单元 · 思维与选择', 6],
+    ['unit-07', '第七单元 · 异域风情', 7],
+    ['unit-08', '第八单元 · 语言与童年', 8],
+  ]),
+  ...book(5, 1, 'math', [
+    ['unit-01', '第一单元 · 小数乘法', 1],
+    ['unit-02', '第二单元 · 位置', 2],
+    ['unit-03', '第三单元 · 小数除法', 3],
+    ['unit-04', '第四单元 · 可能性', 4],
+    ['unit-05', '第五单元 · 简易方程', 5],
+    ['unit-06', '第六单元 · 多边形的面积', 6],
+    ['unit-07', '第七单元 · 数学广角——植树问题', 7],
+    ['unit-08', '第八单元 · 总复习', 8],
+    ['integrated-practice-01', '综合实践 · 掷一掷', null, 'integrated-practice'],
+  ]),
+  ...book(5, 2, 'math', [
+    ['unit-01', '第一单元 · 观察物体（三）', 1],
+    ['unit-02', '第二单元 · 因数和倍数', 2],
+    ['unit-03', '第三单元 · 长方体和正方体', 3],
+    ['integrated-practice-01', '综合实践 · 探索图形', null, 'integrated-practice'],
+    ['unit-04', '第四单元 · 分数的意义和性质', 4],
+    ['unit-05', '第五单元 · 图形的运动（三）', 5],
+    ['unit-06', '第六单元 · 分数的加法和减法', 6],
+    ['unit-07', '第七单元 · 折线统计图', 7],
+    ['unit-08', '第八单元 · 数学广角——找次品', 8],
+    ['unit-09', '第九单元 · 总复习', 9],
+    ['integrated-practice-02', '综合实践 · 怎样通知最快', null, 'integrated-practice'],
+  ]),
+  ...book(5, 1, 'english', [
+    ['unit-01', 'Unit 1 · Classmates', 1],
+    ['unit-02', 'Unit 2 · Teachers', 2],
+    ['unit-03', 'Unit 3 · Animals', 3],
+    ['review-01', 'Revision 1 · Units 1–3', null, 'review'],
+    ['unit-04', 'Unit 4 · Shopping Day', 4],
+    ['unit-05', 'Unit 5 · TV Shows', 5],
+    ['unit-06', 'Unit 6 · Chores', 6],
+    ['review-02', 'Revision 2 · Units 4–6', null, 'review'],
+  ]),
+  ...book(5, 2, 'english', [
+    ['unit-01', 'Unit 1 · Keeping Healthy', 1],
+    ['unit-02', 'Unit 2 · Special Days', 2],
+    ['unit-03', 'Unit 3 · Making Contact', 3],
+    ['review-01', 'Revision 1 · Units 1–3', null, 'review'],
+    ['unit-04', 'Unit 4 · Last Weekend', 4],
+    ['unit-05', 'Unit 5 · Have a Great Trip', 5],
+    ['unit-06', 'Unit 6 · Growing Up', 6],
+    ['review-02', 'Revision 2 · Units 4–6', null, 'review'],
+  ]),
+  ...book(6, 1, 'chinese', [
+    ['unit-01', '第一单元 · 草原与诗歌', 1],
+    ['unit-02', '第二单元 · 革命岁月', 2],
+    ['unit-03', '第三单元 · 竹节人与宇宙', 3],
+    ['unit-04', '第四单元 · 小说与人物', 4],
+    ['unit-05', '第五单元 · 夏日与期盼', 5],
+    ['unit-06', '第六单元 · 土地与生命', 6],
+    ['unit-07', '第七单元 · 音乐与戏曲', 7],
+    ['unit-08', '第八单元 · 鲁迅与童年', 8],
+  ]),
+  ...book(6, 2, 'chinese', [
+    ['unit-01', '第一单元 · 民俗与节日', 1],
+    ['unit-02', '第二单元 · 外国文学名著', 2],
+    ['unit-03', '第三单元 · 时光与成长', 3],
+    ['unit-04', '第四单元 · 革命与理想', 4],
+    ['unit-05', '第五单元 · 科学与思考', 5],
+    ['integrated-practice-01', '综合实践 · 难忘小学生活', null, 'integrated-practice'],
+    ['unit-06', '主题组 · 古诗词诵读', null],
+  ]),
+  ...book(6, 1, 'math', [
+    ['unit-01', '第一单元 · 分数乘法', 1],
+    ['unit-02', '第二单元 · 位置与方向（二）', 2],
+    ['unit-03', '第三单元 · 分数除法', 3],
+    ['unit-04', '第四单元 · 比', 4],
+    ['unit-05', '第五单元 · 圆', 5],
+    ['integrated-practice-01', '综合实践 · 确定起跑线', null, 'integrated-practice'],
+    ['unit-06', '第六单元 · 百分数（一）', 6],
+    ['unit-07', '第七单元 · 扇形统计图', 7],
+    ['integrated-practice-02', '综合实践 · 节约用水', null, 'integrated-practice'],
+    ['unit-08', '第八单元 · 数学广角——数与形', 8],
+    ['unit-09', '第九单元 · 总复习', 9],
+  ]),
+  ...book(6, 2, 'math', [
+    ['unit-01', '第一单元 · 负数', 1],
+    ['unit-02', '第二单元 · 百分数（二）', 2],
+    ['integrated-practice-01', '综合实践 · 生活与百分数', null, 'integrated-practice'],
+    ['unit-03', '第三单元 · 圆柱与圆锥', 3],
+    ['unit-04', '第四单元 · 比例', 4],
+    ['integrated-practice-02', '综合实践 · 自行车里的数学', null, 'integrated-practice'],
+    ['unit-05', '第五单元 · 数学广角——鸽巢问题', 5],
+    ['unit-06', '第六单元 · 整理和复习', 6],
+  ]),
+  ...book(6, 1, 'english', [
+    ['unit-01', 'Unit 1 · In China', 1],
+    ['unit-02', 'Unit 2 · Around the World', 2],
+    ['unit-03', 'Unit 3 · Animal World', 3],
+    ['review-01', 'Revision 1 · Units 1–3', null, 'review'],
+    ['unit-04', 'Unit 4 · Feelings', 4],
+    ['unit-05', 'Unit 5 · Famous People', 5],
+    ['unit-06', 'Unit 6 · Winter Vacation', 6],
+    ['review-02', 'Revision 2 · Units 4–6', null, 'review'],
+  ]),
+  ...book(6, 2, 'english', [
+    ['unit-01', 'Unit 1 · Visiting Canada', 1],
+    ['unit-02', 'Unit 2 · All Around Me', 2],
+    ['unit-03', 'Unit 3 · Daily Life', 3],
+    ['unit-04', 'Unit 4 · Free Time', 4],
+    ['unit-05', 'Unit 5 · Nature and Culture', 5],
+    ['unit-06', 'Unit 6 · Summer Vacation', 6],
+  ]),
+];
+
+export const grade4To6CourseById = Object.fromEntries(
+  grade4To6CourseCatalog.map((entry) => [entry.id, entry]),
+) as Record<string, PlannedCourseEntry>;

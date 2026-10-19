@@ -44,7 +44,7 @@ export function chooseNumber(
   hint: string,
   explanation: string,
 ): MathQuestionSpec {
-  const correctOptionIndex = Math.abs(answer) % 3 as 0 | 1 | 2;
+  const correctOptionIndex = Math.round(Math.abs(answer) * 1_000) % 3 as 0 | 1 | 2;
   const options = [...distractors] as number[];
   options.splice(correctOptionIndex, 0, answer);
   return choose(prompt, options.map(String) as [string, string, string], correctOptionIndex, hint, explanation);
