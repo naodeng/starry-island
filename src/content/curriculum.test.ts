@@ -650,6 +650,31 @@ describe('curriculum registry', () => {
     expect(entry).toMatchObject({ status: 'active', curriculumUnitKey: id, achievementEligible: true });
   });
 
+  it('categorizes zero and nonzero place-value digits correctly in grade-four math', () => {
+    const unit = curriculum.units['grade-4/term-1/math/unit-01'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const activity = unit.difficultyTracks.basic.tasks[0]?.sessions[0]?.activities.find(
+      (candidate) => candidate.kind === 'categorize'
+        && candidate.prompt === '看每个数位上的数字，把记录分到“数字是0”或“数字不是0”。',
+    );
+    expect(activity?.kind).toBe('categorize');
+    if (!activity || activity.kind !== 'categorize') return;
+
+    const categoryLabelById = new Map(activity.categories.map(({ id, label }) => [id, label]));
+    const categoryByItem = Object.fromEntries(
+      activity.items.map(({ label, categoryId }) => [label, categoryLabelById.get(categoryId)]),
+    );
+    expect(categoryByItem).toEqual({
+      '420,005的万位数字': '数字不是0',
+      '420,005的个位数字': '数字不是0',
+      '7,031,060的百位数字': '数字是0',
+      '7,031,060的十位数字': '数字不是0',
+    });
+    expect(activity.explanation).toBe('420,005的万位是2、个位是5；7,031,060的百位是0、十位是6。');
+  });
+
   it('opens the second and third grade-four Chinese units with complete authored lessons', () => {
     const expectedUnits = [
       {
