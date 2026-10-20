@@ -1644,6 +1644,7 @@ function choiceFromQuestion(
       if (operation) {
         const [left, right] = question.expression.split(` ${operation} `).map(Number);
         const remainder = operation === '÷' ? left! % right! : 0;
+        const unit = question.prompt.match(/\d+(?:\.\d+)?\s*(分钟|厘米|分米|千米|千克|角|分|米|克|本|个|只|条|份|秒)/)?.[1];
         const inverseExpression = operation === '+'
           ? `${answer} - ${right}`
           : operation === '-'
@@ -1651,9 +1652,13 @@ function choiceFromQuestion(
             : operation === '×'
               ? `${answer} ÷ ${right}`
               : `${answer} × ${right}${remainder === 0 ? '' : ` + ${remainder}`}`;
-        return calculate(`同伴算出 ${question.expression} = ${answer}。用逆运算核对后，应回到哪个数？`, inverseExpression, left!,
+        const displayUnit = unit && ['+', '-'].includes(operation) ? ` ${unit}` : '';
+        const originalEquation = `${left}${displayUnit} ${operation} ${right}${displayUnit} = ${answer}${displayUnit}`;
+        const inverseSign = operation === '+' ? '−' : operation === '-' ? '+' : operation === '×' ? '÷' : '×';
+        const inverseEquation = `${answer}${displayUnit} ${inverseSign} ${right}${displayUnit}${operation === '÷' && remainder !== 0 ? ` + ${remainder}` : ''} = ${left}${displayUnit}`;
+        return calculate(`同伴算出 ${unit && ['+', '-'].includes(operation) ? originalEquation : `${question.expression} = ${answer}`}。用逆运算核对后，应回到哪个数？`, inverseExpression, left!,
           '根据原算式选择相反的运算，再检查能否回到原来的数量。',
-          `${inverseExpression} = ${left}，逆运算回到了原算式中的 ${left}。`);
+          `${unit && ['+', '-'].includes(operation) ? inverseEquation : `${inverseExpression} = ${left}`}，逆运算回到了原算式中的 ${left}${displayUnit}。`);
       }
     }
     prompt = difficulty === 'advanced'

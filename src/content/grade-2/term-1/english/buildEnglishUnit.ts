@@ -16,34 +16,59 @@ export interface EnglishUnitSpec {
   highTasks: readonly [EnglishTaskSpec, EnglishTaskSpec];
 }
 
+function normalizeChineseQuoteNesting(text: string): string {
+  let depth = 0;
+  for (const mark of text.match(/[“”]/gu) ?? []) {
+    if (mark === '“') {
+      depth += 1;
+    } else {
+      depth -= 1;
+      if (depth < 0) return text;
+    }
+  }
+  if (depth !== 0) return text;
+
+  depth = 0;
+  return text.replace(/[“”]/gu, (mark) => {
+    if (mark === '“') {
+      const opening = depth % 2 === 0 ? '“' : '‘';
+      depth += 1;
+      return opening;
+    }
+    depth -= 1;
+    return depth % 2 === 0 ? '”' : '’';
+  });
+}
+
 function createActivity(question: EnglishQuestionSpec, id: string): ActivityDefinition {
-  const base = { id, prompt: question.prompt, hint: question.hint, explanation: question.explanation };
+  const quoted = (text: string) => normalizeChineseQuoteNesting(text);
+  const base = { id, prompt: quoted(question.prompt), hint: quoted(question.hint), explanation: quoted(question.explanation) };
   if (question.kind === 'choice') {
     return {
       ...base,
       kind: 'choice',
-      options: question.options.map((label, index) => ({ id: `${id}/option-${formatCurriculumSequence(index + 1)}`, label })),
+      options: question.options.map((label, index) => ({ id: `${id}/option-${formatCurriculumSequence(index + 1)}`, label: quoted(label) })),
       correctOptionId: `${id}/option-${formatCurriculumSequence(question.correctOptionIndex + 1)}`,
     };
   }
   if (question.kind === 'match') {
-    return { ...base, kind: 'match', pairs: question.pairs.map(([left, right], index) => ({ id: `${id}/pair-${formatCurriculumSequence(index + 1)}`, left, right })) };
+    return { ...base, kind: 'match', pairs: question.pairs.map(([left, right], index) => ({ id: `${id}/pair-${formatCurriculumSequence(index + 1)}`, left: quoted(left), right: quoted(right) })) };
   }
   if (question.kind === 'order') {
     return {
       ...base,
       kind: 'order',
-      items: question.items.map((label, index) => ({ id: `${id}/item-${formatCurriculumSequence(index + 1)}`, label })),
+      items: question.items.map((label, index) => ({ id: `${id}/item-${formatCurriculumSequence(index + 1)}`, label: quoted(label) })),
       correctOrder: question.correctOrderIndices.map((index) => `${id}/item-${formatCurriculumSequence(index + 1)}`),
     };
   }
   return {
     ...base,
     kind: 'categorize',
-    categories: question.categories.map((label, index) => ({ id: `${id}/category-${formatCurriculumSequence(index + 1)}`, label })),
+    categories: question.categories.map((label, index) => ({ id: `${id}/category-${formatCurriculumSequence(index + 1)}`, label: quoted(label) })),
     items: question.items.map((item, index) => ({
       id: `${id}/item-${formatCurriculumSequence(index + 1)}`,
-      label: item.label,
+      label: quoted(item.label),
       categoryId: `${id}/category-${formatCurriculumSequence(item.categoryIndex + 1)}`,
     })),
   };
@@ -70,80 +95,110 @@ function reviewSecondTaskMatch(task: EnglishTaskSpec, taskIndex: number): Englis
   if (new Set([target[1], ...distractors]).size !== 3) return task;
 
   const questions = [...task.questions] as EnglishQuestionSpec[];
+  const cardName = matchQuestion.prompt.includes('时刻卡片') ? '时刻卡片' : '词卡';
+  const matchEvidence = cardName === '时刻卡片' ? '对应的时间读数' : '对应的中文意思';
   questions[2] = {
     kind: 'choice',
-    prompt: `同伴把词卡“${target[0]}”连到了“${distractors[0]}”。哪一项能改正并核对这组配对？`,
+    prompt: `同伴把${cardName}“${target[0]}”连到了“${distractors[0]}”。哪一项能改正并核对这组配对？`,
     options: [`${target[0]} — ${target[1]}`, `${target[0]} — ${distractors[1]}`, `${target[0]} — ${distractors[0]}`],
     correctOptionIndex: 0,
-    hint: '先查这张英文词卡的中文意思，再检查连线。',
-    explanation: `“${target[0]}”表示“${target[1]}”，应与这项中文意思对应。`,
+    hint: `先核对这张${cardName}的${matchEvidence}，再检查连线。`,
+    explanation: `“${target[0]}”对应“${target[1]}”，应与这项${matchEvidence}相符。`,
   };
   return { ...task, questions: q8(questions) };
 }
 
-function addHighTierEvidenceCheck(task: EnglishTaskSpec, taskIndex: number): EnglishTaskSpec {
+function addHighTierEvidenceCheck(task: EnglishTaskSpec, taskIndex: number, sourceTask: EnglishTaskSpec): EnglishTaskSpec {
   const questions = [...task.questions] as EnglishQuestionSpec[];
-  for (const questionIndex of [0, 1, 4, 5]) {
-    const question = questions[questionIndex]!;
-    if (question.kind !== 'choice') continue;
+  const firstQuestion = sourceTask.questions[0]!;
+  const secondQuestion = sourceTask.questions[1]!;
+  const firstPhrase = sourceTask.questions[4]!;
+  const secondPhrase = sourceTask.questions[5]!;
 
-    if (taskIndex === 1 && questionIndex < 2) {
-      const pairedQuestion = task.questions[questionIndex === 0 ? 1 : 0]!;
-      questions[questionIndex] = {
+  if (firstQuestion.kind === 'choice' && secondQuestion.kind === 'choice') {
+    const answerA = firstQuestion.options[firstQuestion.correctOptionIndex];
+    const answerB = secondQuestion.options[secondQuestion.correctOptionIndex];
+    const wrongA = firstQuestion.options.filter((_, index) => index !== firstQuestion.correctOptionIndex);
+    const wrongB = secondQuestion.options.filter((_, index) => index !== secondQuestion.correctOptionIndex);
+    const record = (valueA: string, valueB: string) => `A：“${valueA}”；B：“${valueB}”`;
+    const pairedOptions = [
+      record(answerA, answerB),
+      record(answerA, wrongB[0]!),
+      record(wrongA[0]!, answerB),
+      record(wrongA[0]!, wrongB[0]!),
+      record(answerB, answerA),
+      record(answerA, wrongB[1]!),
+      record(wrongA[1]!, answerB),
+    ];
+    const uniquePairedOptions = [...new Set(pairedOptions)];
+    if (uniquePairedOptions.length >= 3) {
+      questions[0] = {
         kind: 'choice',
-        prompt: questionIndex === 0
-          ? `准备核对两题：${question.prompt}；${pairedQuestion.prompt}。先怎样分开记录，避免把词义混在一起？`
-          : `核对完这两题：${pairedQuestion.prompt}；${question.prompt}。若两个答案相同，先检查什么？`,
-        options: questionIndex === 0
-          ? [
-            '逐题圈出目标词，再分别查找对应的中文意思或信息。',
-            '把两题都写成同一个答案，不必查看词卡。',
-            '只按选项长度选择，不比较词义。',
-          ]
-          : [
-            '回看两题各自的目标词卡和释义，确认有没有混用。',
-            '直接把其中一题改成不同答案。',
-            '不看题目，按字母顺序选择。',
-          ],
+        prompt: `两条记录分别对应：A「${firstQuestion.prompt}」B「${secondQuestion.prompt}」。哪组答案按顺序同时符合两题的要求？`,
+        options: uniquePairedOptions.slice(0, 3) as [string, string, string],
         correctOptionIndex: 0,
-        hint: '每道题都要把目标词和自己的中文意思对应起来。',
-        explanation: questionIndex === 0
-          ? '逐题核对目标词卡，能避免把两道题的中文意思互相套用。'
-          : '答案相同时先回看两道题各自的目标词卡和释义，再判断是否有混用。',
+        hint: '分别核对两道题的对象和意思，再检查A、B的答案顺序。',
+        explanation: `A应为“${answerA}”，B应为“${answerB}”；两条记录都要符合各自题意。`,
       };
-      continue;
-    }
-
-    const answer = question.options[question.correctOptionIndex];
-    const distractors = question.options.filter((_, index) => index !== question.correctOptionIndex);
-    if (questionIndex < 2) {
-      questions[questionIndex] = {
+      questions[1] = {
         kind: 'choice',
-        prompt: `核对词卡记录：${question.prompt} 哪条记录写出了正确意思并说明了核对方法？`,
+        prompt: `同伴给B题「${secondQuestion.prompt}」选了“${wrongB[0]}”，A题“${answerA}”已核对正确。哪项只改正B题并保留A题？`,
         options: [
-          `“${answer}”正确；再对照词卡逐项核实词义或信息。`,
-          `“${distractors[0]}”正确；只看英文单词的首字母。`,
-          `“${distractors[1]}”正确；不必核对英文词卡。`,
+          `A保留“${answerA}”；B从“${wrongB[0]}”改为“${answerB}”。`,
+          `A保留“${answerA}”；B从“${wrongB[0]}”改为“${wrongB[1]}”。`,
+          `A从“${answerA}”改为“${wrongA[0]}”；B仍选“${wrongB[0]}”。`,
         ],
         correctOptionIndex: 0,
-        hint: '先核对词义，再确认记录与英文词卡相符。',
-        explanation: `答案是“${answer}”；将它与词卡对应的中文意思或信息逐项核对，才能确认记录准确。`,
-      };
-    } else {
-      questions[questionIndex] = {
-        kind: 'choice',
-        prompt: `同伴完成这道题时需要说明依据：${question.prompt} 哪条记录同时符合题意并给出核对理由？`,
-        options: [
-          `选择“${answer}”，依据是：${question.explanation}`,
-          `选择“${distractors[0]}”，因为只看词句长度，不用核对题意。`,
-          `选择“${distractors[1]}”，不读题目也能确定答案。`,
-        ],
-        correctOptionIndex: 0,
-        hint: '把题目要求、英语表达和解释依据一起核对。',
-        explanation: `“${answer}”符合题意。${question.explanation}`,
+        hint: '先确认已核对无误的A题，再根据B题的目标修正答案。',
+        explanation: `A题记录“${answerA}”无需更改；B题应改为“${answerB}”，以符合题目要求。`,
       };
     }
   }
+
+  if (firstPhrase.kind === 'choice' && secondPhrase.kind === 'choice') {
+    const answerA = firstPhrase.options[firstPhrase.correctOptionIndex];
+    const answerB = secondPhrase.options[secondPhrase.correctOptionIndex];
+    const wrongA = firstPhrase.options.find((_, index) => index !== firstPhrase.correctOptionIndex)!;
+    const wrongB = secondPhrase.options.find((_, index) => index !== secondPhrase.correctOptionIndex)!;
+    const pairedOptions = [
+      `A：${answerA}；B：${answerB}`,
+      `A：${answerA}；B：${wrongB}`,
+      `A：${wrongA}；B：${answerB}`,
+    ] as const;
+    questions[4] = {
+      kind: 'choice',
+      prompt: `两条记录分别对应：A：${firstPhrase.prompt} B：${secondPhrase.prompt}。哪组答案按顺序同时符合两题的要求？`,
+      options: pairedOptions,
+      correctOptionIndex: 0,
+      hint: '分别核对两道题的对象和意思，再检查A、B的答案顺序。',
+      explanation: `A应为“${answerA}”，B应为“${answerB}”；两条记录都要符合各自题意。`,
+    };
+
+    const targetPhrase = taskIndex === 0 ? firstPhrase : secondPhrase;
+    const otherPhrase = taskIndex === 0 ? secondPhrase : firstPhrase;
+    const targetAnswer = targetPhrase.options[targetPhrase.correctOptionIndex];
+    const otherAnswer = otherPhrase.options[otherPhrase.correctOptionIndex];
+    const targetWrong = targetPhrase.options.find((_, index) => index !== targetPhrase.correctOptionIndex)!;
+    const otherWrong = otherPhrase.options.find((_, index) => index !== otherPhrase.correctOptionIndex)!;
+    const correctedRecord = taskIndex === 0
+      ? `A改为“${targetAnswer}”，B保留“${otherAnswer}”。`
+      : `A保留“${otherAnswer}”，B改为“${targetAnswer}”。`;
+    const unchangedRecord = taskIndex === 0
+      ? `A保留“${targetWrong}”，B保留“${otherAnswer}”。`
+      : `A保留“${otherAnswer}”，B保留“${targetWrong}”。`;
+    const wrongOtherRecord = taskIndex === 0
+      ? `A改为“${targetAnswer}”，B改为“${otherWrong}”。`
+      : `A改为“${otherWrong}”，B改为“${targetAnswer}”。`;
+    questions[5] = {
+      kind: 'choice',
+      prompt: `同伴的答题记录中有一处错误：A：${firstPhrase.prompt} B：${secondPhrase.prompt}。哪项反馈只改正错选的一项并保留正确的一项？`,
+      options: [correctedRecord, unchangedRecord, wrongOtherRecord],
+      correctOptionIndex: 0,
+      hint: '先确认哪一项与题目要求不符，再保留已经核对正确的记录。',
+      explanation: `核对后，A应为“${answerA}”，B应为“${answerB}”；只修改错误的一项。`,
+    };
+  }
+
   return { ...task, questions: q8(questions) };
 }
 
@@ -155,7 +210,7 @@ export function buildEnglishUnit(spec: EnglishUnitSpec): CurriculumUnit {
   const id = `${textbookEditionId}/${spec.entryId}`;
   const basicTasks = spec.basicTasks.map((task, index) => reviewSecondTaskMatch(task, index));
   const advancedTasks = spec.advancedTasks.map((task, index) => reviewSecondTaskMatch(task, index));
-  const highTasks = spec.highTasks.map((task, index) => addHighTierEvidenceCheck(reviewSecondTaskMatch(task, index), index));
+  const highTasks = spec.highTasks.map((task, index) => addHighTierEvidenceCheck(reviewSecondTaskMatch(task, index), index, task));
   return {
     id,
     subject: 'english',

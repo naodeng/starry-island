@@ -155,6 +155,87 @@ describe('course review regression cases', () => {
     expect(activity.explanation).not.toContain('新增一行5格和新增一列6格');
   });
 
+  it('pairs the triangular sequence with its next increase of five', () => {
+    const match = activityById('grade-6/term-1/math/unit-08/advanced/task-02/session-01/question-04');
+    const categories = activityById('grade-6/term-1/math/unit-08/advanced/task-02/session-01/question-05');
+
+    expect(match.kind).toBe('match');
+    if (match.kind === 'match') {
+      expect(match.pairs.find(({ left }) => left === '1、3、6、10')?.right).toBe('5');
+    }
+    expect(categories.explanation).toContain('第1、3个数列');
+    expect(categories.explanation).toContain('第2、4个数列');
+  });
+
+  it('requires two congruent triangles for the parallelogram composition', () => {
+    const activity = activityById('grade-5/term-1/math/unit-08/high/task-01/session-01/question-05');
+
+    expect(activity.kind).toBe('match');
+    if (activity.kind === 'match') {
+      expect(activity.pairs.find(({ left }) => left.includes('三角形'))?.left).toContain('完全相同');
+    }
+    expect(activity.explanation).toContain('完全相同的三角形');
+  });
+
+  it('states the whole length in the grade-five fraction remainder scenario', () => {
+    const activity = activityById('grade-5/term-2/math/unit-06/advanced/task-01/session-01/question-05');
+
+    expect(activity.kind).toBe('match');
+    if (activity.kind === 'match') {
+      expect(activity.pairs.find(({ left }) => left.includes('用掉1/2米'))?.left).toContain('1米长');
+    }
+  });
+
+  it('keeps the grade-four term-two review within that textbook scope', () => {
+    const ids = [
+      'grade-4/term-2/math/unit-10/advanced/task-02/session-01/question-01',
+      'grade-4/term-2/math/unit-10/advanced/task-02/session-01/question-05',
+      'grade-4/term-2/math/unit-10/high/task-01/session-01/question-06',
+      'grade-4/term-2/math/unit-10/high/task-02/session-01/question-05',
+    ];
+
+    for (const id of ids) {
+      const activity = activityById(id);
+      expect(JSON.stringify(activity)).not.toContain('平行四边形');
+    }
+  });
+
+  it('uses the response to thanks for the second grade-two holiday dialogue', () => {
+    const activity = activityById('grade-2/term-1/english/unit-06/basic/task-02/session-01/question-06');
+
+    expect(activity.kind).toBe('choice');
+    if (activity.kind === 'choice') {
+      expect(activity.options.find(({ id }) => id === activity.correctOptionId)?.label).toBe('You are welcome.');
+    }
+  });
+
+  it('keeps English targets and plausible responses in generated high-tier questions', () => {
+    const activities = [
+      activityById('grade-2/term-1/english/unit-06/high/task-02/session-01/question-01'),
+      activityById('grade-2/term-1/english/unit-06/high/task-02/session-01/question-02'),
+      activityById('grade-2/term-1/english/unit-06/high/task-02/session-01/question-05'),
+      activityById('grade-2/term-1/english/unit-06/high/task-02/session-01/question-06'),
+    ];
+
+    for (const activity of activities) {
+      expect(activity.kind).toBe('choice');
+      if (activity.kind !== 'choice') continue;
+      const correct = activity.options.find(({ id }) => id === activity.correctOptionId)?.label ?? '';
+      expect(correct).toMatch(/[a-z]/i);
+      expect(correct).not.toContain('依据是');
+      expect(correct).not.toContain('逐题圈出');
+      expect(correct).not.toContain('不读题目');
+    }
+  });
+
+  it('shows currency units in generated high-tier money questions', () => {
+    for (const task of ['01', '02']) {
+      const activity = activityById(`grade-1/term-2/math/unit-05/high/task-${task}/session-01/question-04`);
+      expect(activity.prompt).toContain('角');
+      expect(activity.explanation).toContain('角');
+    }
+  });
+
   it('describes the grade-two willow scene without saying the sister rides the branch', () => {
     const activity = activityById('grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-05');
 
@@ -308,17 +389,64 @@ describe('course review regression cases', () => {
     expect(firstTask.kind).toBe('match');
     expect(secondTask.kind).toBe('choice');
     expect(secondTask.prompt).toContain('同伴把词卡');
-    expect(secondTask.explanation).toContain('表示');
+    expect(secondTask.explanation).toContain('对应');
   });
 
-  it('adds evidence checking to high-tier English vocabulary and sentence items', () => {
+  it('uses paired word meanings and response purposes in high-tier English items', () => {
     const unit = curriculum.units['grade-6/term-1/english/unit-01'];
     const highTask = unit?.difficultyTracks.high?.tasks[0];
     const questions = highTask?.sessions.flatMap(({ activities }) => activities) ?? [];
 
-    expect(questions[0]?.prompt).toContain('核对词卡记录');
-    expect(questions[4]?.prompt).toContain('同时符合题意并给出核对理由');
-    expect(questions[0]?.explanation).toContain('逐项核对');
+    expect(questions[0]?.prompt).toContain('两条记录');
+    expect(questions[0]?.prompt).toContain('同时符合两题');
+    expect(questions[4]?.prompt).toContain('两条记录');
+    expect(questions[4]?.explanation).toContain('A应为');
+    expect(questions[4]?.explanation).toContain('B应为');
+  });
+
+  it('uses nested Chinese quotation marks correctly throughout English questions', () => {
+    const englishActivities = Object.entries(curriculum.units)
+      .filter(([, unit]) => unit.subject === 'english')
+      .flatMap(([, unit]) => Object.values(unit.difficultyTracks))
+      .flatMap(({ tasks }) => tasks)
+      .flatMap(({ sessions }) => sessions)
+      .flatMap(({ activities }) => activities);
+    const questionText = englishActivities.flatMap((activity) => {
+      const values = [activity.prompt, activity.hint, activity.explanation];
+      if (activity.kind === 'choice') values.push(...activity.options.map(({ label }) => label));
+      if (activity.kind === 'match') values.push(...activity.pairs.flatMap(({ left, right }) => [left, right]));
+      if (activity.kind === 'order') values.push(...activity.items.map(({ label }) => label));
+      if (activity.kind === 'categorize') {
+        values.push(...activity.categories.map(({ label }) => label), ...activity.items.map(({ label }) => label));
+      }
+      return values;
+    });
+    const nestedQuotes = questionText.filter((value) => /“[^”]*“/.test(value));
+    const unbalancedQuotes = questionText.filter((value) => {
+      const opening = (value.match(/“/gu) ?? []).length;
+      const closing = (value.match(/”/gu) ?? []).length;
+      return opening !== closing;
+    });
+
+    expect(nestedQuotes.slice(0, 5), `found ${nestedQuotes.length} strings with nested opening quotes`).toEqual([]);
+    expect(unbalancedQuotes.slice(0, 5), `found ${unbalancedQuotes.length} strings with unbalanced Chinese quotation marks`).toEqual([]);
+  });
+
+  it('calls numeric clock cards time cards rather than vocabulary words', () => {
+    const unit = curriculum.units['grade-2/term-2/english/unit-04'];
+    const activities = Object.values(unit.difficultyTracks)
+      .flatMap(({ tasks }) => tasks)
+      .flatMap(({ sessions }) => sessions)
+      .flatMap(({ activities: sessionActivities }) => sessionActivities);
+
+    for (const activity of activities) {
+      const text = `${activity.prompt} ${activity.hint} ${activity.explanation}`;
+      expect(text).not.toContain('词卡');
+      expect(text).not.toContain('英文词卡');
+    }
+
+    expect(activityById('grade-2/term-2/english/unit-04/basic/task-01/session-01/question-01').prompt).toContain('表示几点');
+    expect(activityById('grade-2/term-2/english/unit-04/basic/task-01/session-01/question-04').prompt).toContain('表示几点');
   });
 
   it('uses an actual two-step expression in the grade-two mixed-operation task', () => {
