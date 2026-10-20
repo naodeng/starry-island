@@ -561,7 +561,10 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     .map((index) => items[index])
     .join(' ')
     .replace(/ ([?.!,])/g, '$1');
-  const withoutChineseQuotes = (text: string): string => text.replace(/[“”]/g, '');
+  const withoutChineseQuotes = (text: string): string => text
+    .replace(/“([^”]*[?？])”([，。])/gu, "'$1'$2")
+    .replace(/[“”]/g, '');
+  const withoutTerminalPunctuation = (text: string): string => text.replace(/[？?。.!！]+$/u, '');
   const phraseRepair = (target: Phrase): EnglishQuestionSpec => {
     if (taskIndex === 0) return choose(target.prompt, target.options, target.correct, target.hint, target.explanation);
     const wrongIndex = (target.correct + 1) % target.options.length;
@@ -581,7 +584,7 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const wordStudyOrder: EnglishQuestionSpec = difficulty === 'basic'
     ? arrange('Put the word cards in the correct order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先找句子的开头，再检查词序和句末标点。', `正确表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}。`)
     : difficulty === 'advanced'
-      ? arrange('Choose the word cards that fit the scene, then put them in order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先联系题目情境，再检查词序和句末标点。', `符合情境的表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}。`)
+      ? arrange('Arrange the word cards to make a sentence that fits the scene.', firstPhrase.orderItems, firstPhrase.correctOrder, '先联系题目情境，再检查词序和句末标点。', `符合情境的表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}。`)
       : arrange('Put the word cards in order and check that the sentence matches the meaning.', firstPhrase.orderItems, firstPhrase.correctOrder, '排列后读一遍，再对照词义和标点检查。', `正确表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}；词义和标点都符合。`);
   const phraseStrategy: EnglishQuestionSpec = taskIndex === 0
     ? choose(`要判断词句“${secondPhrase.options[secondPhrase.correct]}”是否符合题目要求（${withoutChineseQuotes(secondPhrase.prompt)}），哪条线索最有帮助？`, [
@@ -622,7 +625,7 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     return advanced
       ? choose(`“${sentence}”在交流中的主要作用是什么？`, [purpose.label, ...purpose.alternatives], 0,
         '结合句子的意思和标点判断它在交流中完成什么任务。', `“${sentence}”主要用于${purpose.label}。`)
-      : choose(`同伴要完成${withoutChineseQuotes(secondPhrase.prompt)}，还要说明句子的用途。哪条记录最完整？`, [
+      : choose(`同伴要完成题目“${withoutTerminalPunctuation(withoutChineseQuotes(secondPhrase.prompt))}”并说明句子的用途，哪条记录最完整？`, [
         `“${sentence}”用于${purpose.label}。`,
         `“${sentence}”用于${purpose.alternatives[0]}。`,
         '不核对句意和交流目的。',
@@ -730,7 +733,7 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     : difficulty === 'advanced'
       ? choose(`情境提示：${withoutChineseQuotes(firstPhrase.explanation)} 哪句话表达合适？`, firstPhrase.options, firstPhrase.correct,
         '把情境中的意思和每个英文选项逐一核对。', firstPhrase.explanation)
-      : choose(`同伴选了“${firstPhrase.options[(firstPhrase.correct + 1) % firstPhrase.options.length]}”来回答${withoutChineseQuotes(firstPhrase.prompt)}，哪条记录能改正？`, [
+      : choose(`同伴选了“${firstPhrase.options[(firstPhrase.correct + 1) % firstPhrase.options.length]}”来回答题目“${withoutTerminalPunctuation(withoutChineseQuotes(firstPhrase.prompt))}”，哪条记录能改正？`, [
         `“${firstPhrase.options[firstPhrase.correct]}”符合题意。`,
         `“${firstPhrase.options[(firstPhrase.correct + 2) % firstPhrase.options.length]}”符合题意。`,
         '不检查题目意思，保留原来的选项。',

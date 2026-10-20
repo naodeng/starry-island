@@ -26,6 +26,247 @@ function allActivities(): ActivityDefinition[] {
 }
 
 describe('course review regression cases', () => {
+  it('states the original relation in the grade-one inverse check', () => {
+    const advanced = activityById('grade-1/term-2/math/unit-06/advanced/task-02/session-01/question-04');
+    const high = activityById('grade-1/term-2/math/unit-06/high/task-02/session-01/question-04');
+
+    expect(advanced.kind).toBe('choice');
+    expect(advanced.prompt).toContain('30 + 10 = 40');
+    expect(advanced.prompt).toContain('40 - 10 = ?');
+    if (advanced.kind === 'choice') {
+      expect(advanced.options.find(({ id }) => id === advanced.correctOptionId)?.label).toBe('30');
+      expect(advanced.explanation).toContain('回到了原算式中的 30');
+    }
+
+    expect(high.kind).toBe('choice');
+    expect(high.prompt).toContain('50 + 20 = 70');
+    expect(high.prompt).toContain('70 - 20 = ?');
+    if (high.kind === 'choice') {
+      expect(high.options.find(({ id }) => id === high.correctOptionId)?.label).toBe('50');
+      expect(high.explanation).toContain('回到了原算式中的 50');
+    }
+  });
+
+  it('checks grade-three multiplication by splitting the factor within the unit scope', () => {
+    const advanced = activityById('grade-3/term-1/math/unit-06/advanced/task-02/session-01/question-04');
+    const high = activityById('grade-3/term-1/math/unit-06/high/task-02/session-01/question-04');
+
+    expect(advanced.kind).toBe('choice');
+    expect(advanced.prompt).toContain('28 × 4 = 112');
+    expect(advanced.prompt).toContain('把 28 拆成 20 和 8');
+    expect(advanced.prompt).toContain('20 × 4 + 8 × 4 = ?');
+    expect(advanced.prompt).not.toContain('÷');
+    if (advanced.kind === 'choice') {
+      expect(advanced.options.find(({ id }) => id === advanced.correctOptionId)?.label).toBe('112');
+      expect(advanced.explanation).toContain('与原算式 28 × 4 = 112 一致');
+    }
+
+    expect(high.kind).toBe('choice');
+    expect(high.prompt).toContain('46 × 4 = 184');
+    expect(high.prompt).toContain('把 46 拆成 40 和 6');
+    expect(high.prompt).toContain('40 × 4 + 6 × 4 = ?');
+    expect(high.prompt).not.toContain('÷');
+    if (high.kind === 'choice') {
+      expect(high.options.find(({ id }) => id === high.correctOptionId)?.label).toBe('184');
+      expect(high.explanation).toContain('与原算式 46 × 4 = 184 一致');
+    }
+  });
+
+  it('keeps generated prompts free of adjacent question and sentence punctuation', () => {
+    const malformed = allActivities().filter(({ prompt }) => /[？?][，。]/u.test(prompt));
+
+    expect(malformed.map(({ id }) => id)).toEqual([]);
+  });
+
+  it('separates both source questions in the grade-four high-tier evidence prompt', () => {
+    const activity = activityById('grade-4/term-1/english/review-01/high/task-01/session-01/question-05');
+
+    expect(activity.prompt).toContain('以下两题：（A题：');
+    expect(activity.prompt).toContain('；B题：');
+    expect(activity.prompt).toContain('）。哪组答案按顺序同时符合两题的要求？');
+  });
+
+  it('asks learners to arrange the grade-one and grade-three English word cards', () => {
+    const questions = allActivities().filter(({ id }) => /^grade-[13]\/term-[12]\/english\/.+\/advanced\/task-\d{2}\/session-01\/question-06$/u.test(id));
+
+    expect(questions).toHaveLength(64);
+    for (const question of questions) {
+      expect(question.kind).toBe('order');
+      expect(question.prompt).toMatch(/Arrange the word cards/u);
+      expect(question.prompt).not.toMatch(/Choose the word cards/u);
+    }
+  });
+
+  it('describes You are welcome as a response to thanks', () => {
+    const activity = activityById('grade-2/term-1/english/unit-06/high/task-01/session-01/question-08');
+
+    expect(activity.kind).toBe('order');
+    expect(activity.prompt).toContain('回应感谢');
+  });
+
+  it('uses weather words for the second grade-two seasons lesson', () => {
+    const seasons = activityById('grade-2/term-2/english/unit-03/basic/task-01/session-01/question-07');
+    const weather = activityById('grade-2/term-2/english/unit-03/basic/task-02/session-01/question-07');
+
+    expect(seasons.kind).toBe('categorize');
+    expect(weather.kind).toBe('categorize');
+    if (seasons.kind === 'categorize' && weather.kind === 'categorize') {
+      expect(seasons.items.map(({ label }) => label)).toEqual(['spring', 'summer', 'autumn', 'winter']);
+      expect(weather.items.map(({ label }) => label)).toEqual(['warm', 'hot', 'cool', 'cold']);
+      expect(seasons.categories.map(({ label }) => label)).toEqual(['春天和夏天', '秋天和冬天']);
+      expect(weather.categories.map(({ label }) => label)).toEqual(['温暖或炎热的天气', '凉爽或寒冷的天气']);
+      const weatherCategories = new Map(weather.categories.map(({ id, label }) => [id, label]));
+      expect(weather.items.map(({ label, categoryId }) => [label, weatherCategories.get(categoryId)])).toEqual([
+        ['warm', '温暖或炎热的天气'],
+        ['hot', '温暖或炎热的天气'],
+        ['cool', '凉爽或寒冷的天气'],
+        ['cold', '凉爽或寒冷的天气'],
+      ]);
+    }
+  });
+
+  it('includes the statistics data on each grade-three comparison activity card', () => {
+    const categories = [
+      activityById('grade-3/term-2/math/unit-03/basic/task-01/session-01/question-04'),
+      activityById('grade-3/term-2/math/unit-03/basic/task-02/session-01/question-04'),
+    ];
+    const orderedActivities = [
+      activityById('grade-3/term-2/math/unit-03/basic/task-01/session-01/question-05'),
+      activityById('grade-3/term-2/math/unit-03/basic/task-02/session-01/question-05'),
+    ];
+
+    for (const activity of categories) {
+      expect(activity.kind).toBe('categorize');
+      if (activity.kind === 'categorize') {
+        expect(activity.items.length).toBeGreaterThan(0);
+        expect(activity.items.every(({ label }) => /一班 \d+ 人、二班 \d+ 人/u.test(label))).toBe(true);
+        const categories = new Map(activity.categories.map(({ id, label }) => [id, label]));
+        for (const item of activity.items) {
+          const [classOne = 0, classTwo = 0] = item.label.match(/\d+/gu)?.map(Number) ?? [];
+          const expected = classOne > classTwo ? '一班更多' : classOne < classTwo ? '二班更多' : '两班一样多';
+          expect(categories.get(item.categoryId)).toBe(expected);
+        }
+      }
+    }
+
+    for (const activity of orderedActivities) {
+      expect(activity.kind).toBe('order');
+      if (activity.kind === 'order') {
+        expect(activity.items.length).toBeGreaterThan(0);
+        expect(activity.items.every(({ label }) => /（\d+ 人）$/u.test(label))).toBe(true);
+        const totalsById = new Map(activity.items.map(({ id, label }) => [id, Number(label.match(/（(\d+) 人）$/u)?.[1]) ]));
+        const orderedTotals = activity.correctOrder.map((id) => totalsById.get(id));
+        expect(orderedTotals.every((total) => total !== undefined)).toBe(true);
+        expect(orderedTotals).toEqual([...orderedTotals].sort((left, right) => (left ?? 0) - (right ?? 0)));
+      }
+    }
+  });
+
+  it('keeps bar-chart comparison prompts self-contained', () => {
+    const prompts = [
+      activityById('grade-4/term-1/math/unit-07/basic/task-01/session-01/question-03').prompt,
+      activityById('grade-4/term-1/math/unit-07/basic/task-01/session-01/question-08').prompt,
+      activityById('grade-4/term-1/math/unit-07/basic/task-02/session-01/question-03').prompt,
+      activityById('grade-4/term-1/math/unit-07/basic/task-02/session-01/question-08').prompt,
+    ];
+
+    expect(prompts[0]).toContain('科普书8本、绘本5本、故事书7本、漫画书4本');
+    expect(prompts[1]).toContain('科普书8本、绘本5本、故事书7本、漫画书4本');
+    expect(prompts[2]).toContain('周一回收3个、周二5个、周三2个、周四6个');
+    expect(prompts[3]).toContain('周一回收3个、周二5个、周三2个、周四6个');
+  });
+
+  it('matches the grade-five coordinate question instruction to its ordering activity', () => {
+    const activity = activityById('grade-5/term-1/math/unit-02/basic/task-02/session-01/question-06');
+
+    expect(activity.kind).toBe('order');
+    expect(activity.prompt).toContain('步骤排好');
+  });
+
+  it('separates the grade-five trial from the previous experiment record', () => {
+    const activity = activityById('grade-5/term-1/math/unit-04/advanced/task-01/session-01/question-03');
+
+    expect(activity.prompt).toContain('另一次20次试验');
+    expect(activity.prompt).not.toContain('刚才');
+  });
+
+  it('keeps the grade-five card probability question independent of the prior prompt', () => {
+    const activity = activityById('grade-5/term-1/math/unit-04/advanced/task-02/session-01/question-04');
+
+    expect(activity.prompt).toContain('5张讲故事卡、3张唱歌卡、1张跳舞卡');
+    expect(activity.prompt).not.toContain('上题');
+  });
+
+  it('makes each repaired cross-question math prompt self-contained', () => {
+    const cubeChange = activityById('grade-4/term-2/math/unit-02/basic/task-01/session-01/question-05');
+    const cubePosition = activityById('grade-4/term-2/math/unit-02/basic/task-02/session-01/question-08');
+    const chickens = activityById('grade-4/term-2/math/unit-09/advanced/task-02/session-01/question-02');
+    const cookingSchedule = activityById('grade-4/term-1/math/unit-08/advanced/task-02/session-01/question-07');
+    const treeSpacing = activityById('grade-5/term-1/math/unit-07/high/task-01/session-01/question-02');
+    const budget = activityById('grade-6/term-2/math/integrated-practice-01/high/task-01/session-01/question-02');
+    const suppliesBudget = activityById('grade-4/term-1/math/unit-04/high/task-01/session-01/question-02');
+    const fieldArea = activityById('grade-4/term-1/math/unit-09/high/task-01/session-01/question-03');
+    const mealBudget = activityById('grade-4/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-02');
+    const artBudget = activityById('grade-4/term-2/math/unit-10/high/task-01/session-01/question-02');
+    const waterSaving = activityById('grade-6/term-1/math/integrated-practice-02/advanced/task-02/session-01/question-02');
+    const waterTarget = activityById('grade-6/term-1/math/integrated-practice-02/high/task-01/session-01/question-02');
+    const cylinderBase = activityById('grade-6/term-2/math/unit-03/advanced/task-01/session-01/question-02');
+    const cylinderSurface = activityById('grade-6/term-2/math/unit-03/advanced/task-01/session-01/question-03');
+    const bucketVolume = activityById('grade-6/term-2/math/unit-06/high/task-01/session-01/question-02');
+    const sportsVotes = activityById('grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-02');
+    const readingVotes = activityById('grade-2/term-2/math/unit-01/high/task-01/session-01/question-02');
+    const seating = activityById('grade-2/term-2/math/unit-06/high/task-02/session-01/question-02');
+    const shapeReason = activityById('grade-2/term-2/math/unit-09/advanced/task-01/session-01/question-02');
+
+    expect(cubeChange.prompt).toContain('左、中、右三摞原来分别高1、2、1格');
+    expect(cubePosition.prompt).toContain('甲2、1、1格，乙1、2、1格，丙1、1、2格');
+    expect(chickens.prompt).toContain('比实际多10条');
+    expect(chickens.kind).toBe('choice');
+    if (chickens.kind === 'choice') {
+      expect(chickens.options.find(({ id }) => id === chickens.correctOptionId)?.label).toBe('5');
+      expect(chickens.explanation).toContain('10÷2=5');
+    }
+    expect(cookingSchedule.prompt).toContain('每道菜需4分钟');
+    expect(treeSpacing.prompt).toContain('一条72米的直路');
+    expect(budget.prompt).toContain('原价200元打八折');
+    expect(budget.prompt).toContain('袜子40元');
+    expect(budget.kind).toBe('choice');
+    if (budget.kind === 'choice') {
+      expect(budget.options.find(({ id }) => id === budget.correctOptionId)?.label).toContain('超出10元');
+      expect(budget.explanation).toContain('共200元');
+    }
+
+    expect(suppliesBudget.prompt).toContain('24盒彩笔（每盒135元）和16本画册（每本28元）');
+    expect(fieldArea.prompt).toContain('30,000平方米');
+    expect(mealBudget.prompt).toContain('米饭2元、青菜两份每份3元、豆腐4元');
+    expect(mealBudget.kind).toBe('choice');
+    if (mealBudget.kind === 'choice') expect(mealBudget.options.find(({ id }) => id === mealBudget.correctOptionId)?.label).toBe('4');
+    expect(artBudget.prompt).toContain('8盒彩纸（每盒7.5元）');
+    expect(artBudget.prompt).toContain('一把12元的剪刀');
+    expect(waterSaving.prompt).toContain('B家庭原用水300升，节约20%');
+    expect(waterTarget.prompt).toContain('目标周用水量最多560升');
+    expect(cylinderBase.prompt).toContain('底面半径2厘米');
+    expect(cylinderBase.kind).toBe('arithmetic');
+    if (cylinderBase.kind === 'arithmetic') expect(cylinderBase.correctAnswer).toBe(25.12);
+    expect(cylinderSurface.prompt).toContain('高5厘米');
+    expect(cylinderSurface.kind).toBe('arithmetic');
+    if (cylinderSurface.kind === 'arithmetic') expect(cylinderSurface.correctAnswer).toBe(87.92);
+    expect(bucketVolume.prompt).toContain('底面积为500平方厘米，水深20厘米');
+    expect(sportsVotes.prompt).toContain('跳绳8票、跑步6票、拍球5票');
+    expect(readingVotes.prompt).toContain('童话10票、科普8票、诗歌6票');
+    expect(seating.prompt).toContain('37名伙伴乘车，每辆车最多坐8人');
+    expect(seating.prompt).toContain('坐满4辆后还剩5人');
+    expect(shapeReason.prompt).toContain('甲拿圆形，乙不拿方形');
+  });
+
+  it('assigns differences and changes to the grade-four bar chart topic, not the mean', () => {
+    const sourceTopics = curriculum.units['grade-4/term-2/math/unit-08'].sourceTopics;
+
+    expect(sourceTopics[0]?.split('；')[0]).toBe('平均数表示一组数据的总体水平');
+    expect(sourceTopics[0]?.split('；')[1]).toContain('条形统计图比较数据之间的差异和变化');
+    expect(sourceTopics.some((topic) => topic.includes('条形统计图') && topic.includes('差异和变化'))).toBe(true);
+  });
+
   it('uses a distinct scene-reading target in the second grade-five Chinese task', () => {
     const activity = activityById('grade-5/term-1/chinese/unit-01/basic/task-02/session-01/question-01');
 
@@ -467,6 +708,19 @@ describe('course review regression cases', () => {
     expect(hundreds.kind).toBe('arithmetic');
     if (tens.kind === 'arithmetic') expect(tens.expression).toMatch(/(?:10|20|30|40|50|60|70|80|90) × [2-9]/);
     if (hundreds.kind === 'arithmetic') expect(hundreds.expression).toMatch(/(?:100|200|300|400|500|600|700|800) × [2-9]/);
+  });
+
+  it('rounds the grade-five decimal product to the requested place', () => {
+    const activity = activityById('grade-5/term-1/math/unit-01/advanced/task-01/session-01/question-05');
+
+    expect(activity.kind).toBe('arithmetic');
+    if (activity.kind === 'arithmetic') {
+      expect(activity.prompt).toContain('得数保留一位小数');
+      expect(activity.expression).toBe('0.076 × 28');
+      expect(activity.correctAnswer).toBe(2.1);
+      expect(activity.explanation).toContain('2.128');
+      expect(activity.explanation).toContain('得2.1');
+    }
   });
 
   it('labels the answer unit in a grade-three elapsed-time difference', () => {

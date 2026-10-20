@@ -80,9 +80,9 @@ const activityPlanner = lessonProfile(
 const activityInterview = lessonProfile(
   [
     { word: 'play football', meaning: '踢足球' },
+    { word: 'fly a kite', meaning: '放风筝' },
     { word: 'swim', meaning: '游泳' },
     { word: 'ride a bike', meaning: '骑自行车' },
-    { word: 'fly a kite', meaning: '放风筝' },
   ],
   [
     phraseQuestion('想问同伴会不会游泳，哪句正确？', ['Can you swim?', 'Do you swim a kite?', 'Can you football?'], 0, '用 Can you…? 询问对方会不会做某事。'),

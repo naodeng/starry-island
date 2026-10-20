@@ -6,6 +6,7 @@ import { getKnownCurriculumPositions } from '../achievements/position';
 import { TAPX_TEXTBOOK_COMMIT } from './textbooks';
 import { addedCourseCatalog } from './grade-1-and-3/catalog';
 import { grade4To6CourseCatalog } from './grade-4-to-6/catalog';
+import type { ActivityDefinition } from './types';
 
 const term1ChineseUnits = [
   ['grade-2/term-1/chinese/unit-01', '第一单元 · 大自然的秘密'],
@@ -90,17 +91,58 @@ function getOrderedLabelsForActivity(unitKey: string, difficulty: 'basic' | 'adv
   return activity.correctOrder.map((id) => activity.items.find(({ id: itemId }) => itemId === id)?.label ?? '');
 }
 
-function withoutGeneratedIds(value: unknown): unknown {
-  if (Array.isArray(value)) return value.map(withoutGeneratedIds);
-  if (value && typeof value === 'object') {
-    return Object.fromEntries(
-      Object.entries(value)
-        .filter(([key]) => key !== 'id')
-        .sort(([left], [right]) => left.localeCompare(right))
-        .map(([key, nestedValue]) => [key, withoutGeneratedIds(nestedValue)]),
-    );
+function questionFingerprint(activity: ActivityDefinition): string {
+  const shared = {
+    kind: activity.kind,
+    prompt: activity.prompt,
+    hint: activity.hint,
+    explanation: activity.explanation,
+  };
+
+  switch (activity.kind) {
+    case 'choice': {
+      const answer = activity.options.find(({ id }) => id === activity.correctOptionId)?.label;
+      return JSON.stringify({ ...shared, options: activity.options.map(({ label }) => label).sort(), answer });
+    }
+    case 'match':
+      return JSON.stringify({
+        ...shared,
+        pairs: activity.pairs.map(({ left, right }) => [left, right]).sort(([leftA, rightA], [leftB, rightB]) =>
+          `${leftA}\u0000${rightA}`.localeCompare(`${leftB}\u0000${rightB}`)),
+      });
+    case 'order': {
+      const labelsById = new Map(activity.items.map(({ id, label }) => [id, label]));
+      return JSON.stringify({
+        ...shared,
+        items: activity.items.map(({ label }) => label).sort(),
+        answer: activity.correctOrder.map((id) => labelsById.get(id) ?? ''),
+      });
+    }
+    case 'categorize': {
+      const categoriesById = new Map(activity.categories.map(({ id, label }) => [id, label]));
+      return JSON.stringify({
+        ...shared,
+        categories: activity.categories.map(({ label }) => label).sort(),
+        items: activity.items.map(({ label, categoryId }) => [label, categoriesById.get(categoryId) ?? ''])
+          .sort(([labelA], [labelB]) => labelA.localeCompare(labelB)),
+      });
+    }
+    case 'measurement':
+      return JSON.stringify({
+        ...shared,
+        objectLabel: activity.objectLabel,
+        targetLengthCm: activity.targetLengthCm,
+        minCm: activity.minCm,
+        maxCm: activity.maxCm,
+      });
+    case 'arithmetic':
+      return JSON.stringify({
+        ...shared,
+        expression: activity.expression,
+        correctAnswer: activity.correctAnswer,
+        carryBorrowSteps: activity.carryBorrowSteps,
+      });
   }
-  return value;
 }
 
 describe('curriculum registry', () => {
@@ -529,21 +571,34 @@ describe('curriculum registry', () => {
     expect(grade4To6CourseCatalog.find(({ id }) => id === 'grade-5/term-2/chinese/integrated-practice-01')?.type).toBe('integrated-practice');
   });
 
-  it.each(grade4To6CourseCatalog.map(({ id }) => id))('opens %s with six complete lessons and 48 questions', (unitKey) => {
+  it('places integrated practice beside its textbook unit in the catalog', () => {
+    const ids = grade4To6CourseCatalog.map(({ id }) => id);
+    const before = (first: string, second: string) => expect(ids.indexOf(first)).toBeLessThan(ids.indexOf(second));
+
+    before('grade-4/term-1/math/unit-01', 'grade-4/term-1/math/integrated-practice-01');
+    before('grade-4/term-1/math/integrated-practice-01', 'grade-4/term-1/math/unit-02');
+    before('grade-5/term-1/math/unit-04', 'grade-5/term-1/math/integrated-practice-01');
+    before('grade-5/term-1/math/integrated-practice-01', 'grade-5/term-1/math/unit-05');
+    before('grade-5/term-2/math/unit-06', 'grade-5/term-2/math/integrated-practice-02');
+    before('grade-5/term-2/math/integrated-practice-02', 'grade-5/term-2/math/unit-07');
+  });
+
+  it.each(grade4To6CourseCatalog.map(({ id }) => id))('opens %s with complete lessons for every authored task', (unitKey) => {
     const unit = curriculum.units[unitKey];
     expect(unit).toBeDefined();
     if (!unit) return;
 
     expect(unit.sourceTopics.length).toBeGreaterThan(0);
-    expect(unit.difficultyTracks.basic.tasks).toHaveLength(2);
+    expect(unit.difficultyTracks.basic.tasks.length).toBeGreaterThanOrEqual(2);
     expect(unit.difficultyTracks.advanced.tasks).toHaveLength(2);
     expect(new Set(unit.difficultyTracks.advanced.tasks.map(({ objective }) => objective)).size).toBe(2);
     expect(unit.difficultyTracks.high.tasks).toHaveLength(2);
     expect(new Set(unit.difficultyTracks.high.tasks.map(({ objective }) => objective)).size).toBe(2);
     const sessions = Object.values(unit.difficultyTracks).flatMap(({ tasks }) => tasks.flatMap(({ sessions: taskSessions }) => taskSessions));
-    expect(sessions).toHaveLength(6);
+    const taskCount = Object.values(unit.difficultyTracks).reduce((count, track) => count + track.tasks.length, 0);
+    expect(sessions).toHaveLength(taskCount);
     expect(sessions.every((session) => session.durationMinutes === 20 && session.activities.length === 8)).toBe(true);
-    expect(sessions.reduce((count, session) => count + session.activities.length, 0)).toBe(48);
+    expect(sessions.reduce((count, session) => count + session.activities.length, 0)).toBe(taskCount * 8);
   });
 
   it('opens the first grade-four Chinese unit only with a complete authored lesson', () => {
@@ -825,23 +880,35 @@ describe('curriculum registry', () => {
     expect(reviewActivities.map(({ prompt }) => prompt)).toContain('“他很高。”可以怎样说？');
   });
 
-  it('keeps the two advanced and high tasks from repeating an identical question', () => {
+  it('keeps tasks across every difficulty tier from repeating an identical question', () => {
     const duplicateQuestions: string[] = [];
 
     for (const unit of Object.values(curriculum.units)) {
-      for (const difficulty of ['advanced', 'high'] as const) {
-        const [firstTask, secondTask] = unit.difficultyTracks[difficulty].tasks;
-        if (!firstTask || !secondTask) continue;
+      for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+        const tasks = unit.difficultyTracks[difficulty].tasks;
 
-        const firstTaskQuestions = new Set(
-          firstTask.sessions.flatMap(({ activities }) => activities)
-            .map((activity) => JSON.stringify(withoutGeneratedIds(activity))),
-        );
+        for (const [taskIndex, task] of tasks.entries()) {
+          const seenQuestions = new Set<string>();
+          for (const activity of task.sessions.flatMap(({ activities }) => activities)) {
+            const fingerprint = questionFingerprint(activity);
+            if (seenQuestions.has(fingerprint)) {
+              duplicateQuestions.push(`${unit.id}/${difficulty}/task-${taskIndex + 1}/${activity.id}`);
+            }
+            seenQuestions.add(fingerprint);
+          }
+        }
 
-        for (const activity of secondTask.sessions.flatMap(({ activities }) => activities)) {
-          const fingerprint = JSON.stringify(withoutGeneratedIds(activity));
-          if (firstTaskQuestions.has(fingerprint)) {
-            duplicateQuestions.push(`${unit.id}/${difficulty}/${activity.id}`);
+        for (let firstIndex = 0; firstIndex < tasks.length; firstIndex += 1) {
+          const firstTaskQuestions = new Set(
+            tasks[firstIndex]!.sessions.flatMap(({ activities }) => activities)
+              .map(questionFingerprint),
+          );
+          for (let secondIndex = firstIndex + 1; secondIndex < tasks.length; secondIndex += 1) {
+            for (const activity of tasks[secondIndex]!.sessions.flatMap(({ activities }) => activities)) {
+              if (firstTaskQuestions.has(questionFingerprint(activity))) {
+                duplicateQuestions.push(`${unit.id}/${difficulty}/task-${firstIndex + 1}-to-${secondIndex + 1}/${activity.id}`);
+              }
+            }
           }
         }
       }

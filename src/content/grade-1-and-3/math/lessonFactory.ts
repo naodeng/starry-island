@@ -291,15 +291,25 @@ function makeArithmetic(entry: AddedCourseEntry, p: MathProfile, difficulty: 'ba
     const operation = (['+', '-', '×', '÷'] as const).find((symbol) => equation.expression.includes(` ${symbol} `)) ?? operator;
     const [left, right] = equation.expression.split(` ${operation} `).map(Number);
     const remainder = operation === '÷' ? left! % right! : 0;
+    const multiplicationCheck = operation === '×' && p.context.includes('多位数乘一位数');
+    const tens = Math.floor(left! / 10) * 10;
+    const ones = left! % 10;
     const inverseExpression = operation === '+'
       ? `${equation.answer} - ${right}`
       : operation === '-'
         ? `${equation.answer} + ${right}`
         : operation === '×'
-          ? `${equation.answer} ÷ ${right}`
+          ? multiplicationCheck ? `${tens} × ${right} + ${ones} × ${right}` : `${equation.answer} ÷ ${right}`
           : `${equation.answer} × ${right}${remainder === 0 ? '' : ` + ${remainder}`}`;
-    return chooseNumber(`用逆运算核对：${inverseExpression} = ?`, left!, [left! + 1, left! === 0 ? 2 : left! - 1],
-      '用相反的运算关系检查能否回到原来的数量。', `${inverseExpression} = ${left}，核对可以回到原来的数量。`);
+    const checkAnswer = multiplicationCheck ? equation.answer : left!;
+    const prompt = multiplicationCheck
+      ? `原算式 ${equation.expression} = ${equation.answer}。把 ${left} 拆成 ${tens} 和 ${ones}，分别乘 ${right} 后相加核对：${inverseExpression} = ?`
+      : `原算式 ${equation.expression} = ${equation.answer}。用逆运算核对：${inverseExpression} = ?`;
+    const explanation = multiplicationCheck
+      ? `${inverseExpression} = ${equation.answer}，与原算式 ${equation.expression} = ${equation.answer} 一致。`
+      : `${inverseExpression} = ${left}，回到了原算式中的 ${left}。`;
+    return chooseNumber(prompt, checkAnswer, [checkAnswer + 1, checkAnswer === 0 ? 2 : checkAnswer - 1],
+      multiplicationCheck ? `先把 ${left} 拆成整十和个位，分别乘 ${right}，再相加。` : '用相反的运算关系检查能否回到原来的数量。', explanation);
   };
   const diagnosisQuestion = (equation: { expression: string; answer: number }) => choose(
     `同伴把 ${equation.expression} 算成 ${equation.answer + 1}，怎样检查并改正？`,
@@ -1010,20 +1020,16 @@ function makeTable(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
           : `二班 ${reading.classTwo} 人，比一班 ${reading.classOne} 人多。`),
     calculate(`“${reading.activity}”两个班一共有多少人？`, `${reading.classOne} + ${reading.classTwo}`, readingTotal, '把同一活动行中的两个班人数相加。', `${reading.classOne} + ${reading.classTwo} = ${readingTotal} 人。`),
     pair('把活动和两个班对应的人数连起来。', rows.map(({ activity, classOne, classTwo }) => [activity, `一班 ${classOne} 人、二班 ${classTwo} 人`] as const), '按活动名称逐行核对两个班的人数。', '每项活动都要和同一行的两个班级数据对应。'),
-    sortInto('把活动按“ 一班更多”“二班更多”或“两班一样多”分类。', ['一班更多', '二班更多', '两班一样多'], rows.map((row) => ({ label: row.activity, categoryIndex: compareClassOne(row) })), '比较同一活动行的两个班级人数。', '逐行比较一班和二班的数据，再按人数关系分类。'),
+    sortInto('把活动按“一班更多”“二班更多”或“两班一样多”分类。', ['一班更多', '二班更多', '两班一样多'], rows.map((row) => ({ label: `${row.activity}（一班 ${row.classOne} 人、二班 ${row.classTwo} 人）`, categoryIndex: compareClassOne(row) })), '比较每张活动卡上的两个班级人数。', '逐项比较一班和二班的数据，再按人数关系分类。'),
     arrange(
       difficulty === 'basic' ? '按两个班参加人数的总和从少到多排列活动。'
         : difficulty === 'advanced' ? '先核对每项活动的合计人数，再从少到多排列。'
           : '检查每项活动的合计后，从少到多排出完整顺序。',
-      rows.map(({ activity, classOne, classTwo }) => difficulty === 'basic'
-        ? activity
-        : `${activity}（${classOne + classTwo} 人）`),
+      rows.map(({ activity, classOne, classTwo }) => `${activity}（${classOne + classTwo} 人）`),
       orderedRows.map(({ activity }) => rows.findIndex((row) => row.activity === activity)),
       difficulty === 'high' ? '逐项核对两个班的人数合计，再检查相邻活动的总人数次序。'
         : '先把每项活动的两个班人数相加，再比较总数。',
-      `总人数从少到多的活动是 ${orderedRows.map(({ activity, classOne, classTwo }) => difficulty === 'basic'
-        ? activity
-        : `${activity}（${classOne + classTwo} 人）`).join('、')}。`,
+      `总人数从少到多的活动是 ${orderedRows.map(({ activity, classOne, classTwo }) => `${activity}（${classOne + classTwo} 人）`).join('、')}。`,
     ),
     chooseNumber(`跳绳活动一班 ${jumping.classOne} 人、二班 ${jumping.classTwo} 人，二班比一班多几人？`, jumping.classTwo - jumping.classOne, [jumping.classTwo - jumping.classOne + 1, Math.max(0, jumping.classTwo - jumping.classOne - 1)], '用二班人数减去一班人数。', `${jumping.classTwo} - ${jumping.classOne} = ${jumping.classTwo - jumping.classOne} 人。`),
     taskIndex === 0

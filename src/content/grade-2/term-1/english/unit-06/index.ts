@@ -74,7 +74,7 @@ const holidayKindness = lessonProfile(
     { label: 'Thank you.', categoryIndex: 0 }, { label: 'You are welcome.', categoryIndex: 0 },
     { label: 'card', categoryIndex: 1 }, { label: 'present', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“欢迎你”。', items: ['welcome', 'You', 'are', '.'], correctOrderIndices: [1, 2, 0, 3] },
+  { prompt: '把词卡排成回应感谢的话。', items: ['welcome', 'You', 'are', '.'], correctOrderIndices: [1, 2, 0, 3] },
 );
 
 const holidayObjectClues = lessonProfile(

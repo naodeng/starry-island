@@ -167,7 +167,7 @@ function addHighTierEvidenceCheck(task: EnglishTaskSpec, taskIndex: number, sour
     ] as const;
     questions[4] = {
       kind: 'choice',
-      prompt: `两条记录分别对应：A：${firstPhrase.prompt} B：${secondPhrase.prompt}。哪组答案按顺序同时符合两题的要求？`,
+      prompt: `两条记录分别对应以下两题：（A题：${firstPhrase.prompt}；B题：${secondPhrase.prompt}）。哪组答案按顺序同时符合两题的要求？`,
       options: pairedOptions,
       correctOptionIndex: 0,
       hint: '分别核对两道题的对象和意思，再检查A、B的答案顺序。',
@@ -191,7 +191,7 @@ function addHighTierEvidenceCheck(task: EnglishTaskSpec, taskIndex: number, sour
       : `A改为“${otherWrong}”，B改为“${targetAnswer}”。`;
     questions[5] = {
       kind: 'choice',
-      prompt: `同伴的答题记录中有一处错误：A：${firstPhrase.prompt} B：${secondPhrase.prompt}。哪项反馈只改正错选的一项并保留正确的一项？`,
+      prompt: `同伴的答题记录中有一处错误：（A题：${firstPhrase.prompt}；B题：${secondPhrase.prompt}）。哪项反馈只改正错选的一项并保留正确的一项？`,
       options: [correctedRecord, unchangedRecord, wrongOtherRecord],
       correctOptionIndex: 0,
       hint: '先确认哪一项与题目要求不符，再保留已经核对正确的记录。',

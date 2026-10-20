@@ -98,10 +98,10 @@ const peopleCluePractice = lessonProfile(
 
 const friendRolePractice = lessonProfile(
   [
-    { word: 'friend', meaning: '朋友' },
-    { word: 'classmate', meaning: '同班同学' },
     { word: 'boy', meaning: '男孩' },
     { word: 'girl', meaning: '女孩' },
+    { word: 'friend', meaning: '朋友' },
+    { word: 'classmate', meaning: '同班同学' },
   ],
   [
     phraseQuestion('“他是我的朋友。”可以怎样说？', ['He is my friend.', 'She is my friend.', 'He is a girl.'], 0, 'friend 表示朋友，he 表示他。'),

@@ -3,6 +3,7 @@ import grade2LedgerText from '../../docs/curriculum/grade-2-question-review.tsv?
 import addedLedgerText from '../../docs/curriculum/grade-1-and-3-question-review.tsv?raw';
 import grade4To6LedgerText from '../../docs/curriculum/grade-4-to-6-question-review.tsv?raw';
 import { curriculum } from './curriculum';
+import { textbooks } from './textbooks';
 
 type ReviewRow = Record<string, string>;
 
@@ -31,6 +32,30 @@ function questionCount(unitKey: string): number {
 }
 
 describe('curriculum question review ledger', () => {
+  it('requires source, topic, and repair evidence in every consistent ledger row', () => {
+    const ledgers = [grade2LedgerText, addedLedgerText, grade4To6LedgerText];
+    for (const ledger of ledgers) {
+      const [headerLine, ...dataLines] = ledger.trim().split(/\r?\n/u);
+      const headers = headerLine?.replace(/^\uFEFF/u, '').split('\t') ?? [];
+      expect(headers).toContain('教材版本/来源');
+      expect(headers).toContain('单元或主题依据');
+
+      dataLines.forEach((line, index) => {
+        const values = line.split('\t');
+        expect(values, `ledger row ${index + 2}`).toHaveLength(headers.length);
+        const row = Object.fromEntries(headers.map((header, column) => [header, values[column]]));
+        const courseId = row['课程ID'] ?? '';
+        const textbook = textbooks[courseId.split('/').slice(0, 3).join('/')];
+        const unit = curriculum.units[courseId];
+        expect(row['教材版本/来源']?.trim(), `source for ${courseId}`).toBe(
+          `${textbook?.series}；${textbook?.sourceKind}；固定提交 ${textbook?.tapxCommit}；${textbook?.sourceUrl}`,
+        );
+        expect(row['单元或主题依据']?.trim(), `topic basis for ${courseId}`).toBe(unit?.sourceTopics.join('；'));
+        expect(row['修复记录']?.trim(), `repair record for ${courseId}`).toBeTruthy();
+      });
+    }
+  });
+
   it('listsEveryPlayableEntryExactlyOnce', () => {
     const rows = readRows();
     const ids = rows.map(({ '课程ID': id }) => id);

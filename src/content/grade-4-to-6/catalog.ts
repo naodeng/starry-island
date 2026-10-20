@@ -59,6 +59,7 @@ export const grade4To6CourseCatalog: PlannedCourseEntry[] = [
   ]),
   ...book(4, 1, 'math', [
     ['unit-01', '第一单元 · 大数的认识', 1],
+    ['integrated-practice-01', '综合实践 · 亿有多大', null, 'integrated-practice'],
     ['unit-02', '第二单元 · 公顷和平方千米', 2],
     ['unit-03', '第三单元 · 角的度量', 3],
     ['unit-04', '第四单元 · 三位数乘两位数', 4],
@@ -66,7 +67,6 @@ export const grade4To6CourseCatalog: PlannedCourseEntry[] = [
     ['unit-06', '第六单元 · 除数是两位数的除法', 6],
     ['unit-07', '第七单元 · 条形统计图', 7],
     ['unit-08', '第八单元 · 数学广角——优化', 8],
-    ['integrated-practice-01', '综合实践 · 亿有多大', null, 'integrated-practice'],
     ['unit-09', '第九单元 · 总复习', 9],
   ]),
   ...book(4, 2, 'math', [
@@ -127,11 +127,11 @@ export const grade4To6CourseCatalog: PlannedCourseEntry[] = [
     ['unit-02', '第二单元 · 位置', 2],
     ['unit-03', '第三单元 · 小数除法', 3],
     ['unit-04', '第四单元 · 可能性', 4],
+    ['integrated-practice-01', '综合实践 · 掷一掷', null, 'integrated-practice'],
     ['unit-05', '第五单元 · 简易方程', 5],
     ['unit-06', '第六单元 · 多边形的面积', 6],
     ['unit-07', '第七单元 · 数学广角——植树问题', 7],
     ['unit-08', '第八单元 · 总复习', 8],
-    ['integrated-practice-01', '综合实践 · 掷一掷', null, 'integrated-practice'],
   ]),
   ...book(5, 2, 'math', [
     ['unit-01', '第一单元 · 观察物体（三）', 1],
@@ -141,10 +141,10 @@ export const grade4To6CourseCatalog: PlannedCourseEntry[] = [
     ['unit-04', '第四单元 · 分数的意义和性质', 4],
     ['unit-05', '第五单元 · 图形的运动（三）', 5],
     ['unit-06', '第六单元 · 分数的加法和减法', 6],
+    ['integrated-practice-02', '综合实践 · 怎样通知最快', null, 'integrated-practice'],
     ['unit-07', '第七单元 · 折线统计图', 7],
     ['unit-08', '第八单元 · 数学广角——找次品', 8],
     ['unit-09', '第九单元 · 总复习', 9],
-    ['integrated-practice-02', '综合实践 · 怎样通知最快', null, 'integrated-practice'],
   ]),
   ...book(5, 1, 'english', [
     ['unit-01', 'Unit 1 · Classmates', 1],
