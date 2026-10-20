@@ -53,5 +53,5 @@
 
 ### Task 4：创建并核验 PR
 
-- [ ] 提交本任务范围的 Conventional Commit，推送 `codex/elementary-curriculum-review`。
-- [ ] 创建以 `main` 为目标分支的 PR，记录审校范围、修复、验证结果和证据边界。
+- [x] 提交本任务范围的 Conventional Commit，推送 `codex/elementary-curriculum-review`。
+- [x] 创建以 `main` 为目标分支的 PR，记录审校范围、修复、验证结果和证据边界；PR #5：https://github.com/naodeng/starry-island/pull/5。
