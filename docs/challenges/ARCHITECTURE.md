@@ -31,9 +31,9 @@ Each question carries only the knowledge points it exercises. A high task is req
 
 ## State and persistence
 
-An attempt moves from `available` to `in-progress`, then to `completed` or `discarded`. Each first answer is saved under an IndexedDB revision check before advancing. Completion validates the saved attempt and atomically updates best/latest/count/ever-passed progress, recent question IDs and removal of the active attempt. Incomplete or discarded work receives no credit.
+An attempt moves from `available` to `in-progress`, then to `completed` or `discarded`. Each first answer is saved under an IndexedDB revision check before advancing. If the write response is ambiguous, the runner treats it as its own commit only when the full persisted attempt matches the expected snapshot; matching revision numbers alone are insufficient. This keeps a competing same-revision answer from being silently accepted. Completion validates the saved attempt and atomically updates best/latest/count/ever-passed progress, recent question IDs and removal of the active attempt. Incomplete or discarded work receives no credit.
 
-The IndexedDB v1 database is `starry-island-challenges` with `attempts`, `taskProgress`, and `challengeMeta` object stores. A stale revision is rejected. The implementation does not claim a cross-tab writer lease or takeover UI. IndexedDB schema upgrades beyond initial version 1, backup/restore, corruption quarantine and browser storage eviction recovery remain future work.
+The IndexedDB v1 database is `starry-island-challenges` with `attempts`, `taskProgress`, and `challengeMeta` object stores. A stale revision is rejected, and tests verify that two repository connections sharing a database cannot commit from the same revision. When the browser supports Web Locks, the runner acquires an exclusive task-scoped writer lease before starting or resuming, re-reads IndexedDB after acquisition, and holds the lease through the attempt. Other pages wait and take over the latest saved state after the owner closes or completes. Browsers without Web Locks retain optimistic revision checks as the fallback. IndexedDB schema upgrades beyond initial version 1, backup/restore, corruption quarantine and browser storage eviction recovery remain future work.
 
 Detailed stored records and the no-full-history result behavior are documented in [DATA_MODEL.md](DATA_MODEL.md).
 
@@ -42,7 +42,7 @@ Detailed stored records and the no-full-history result behavior are documented i
 - Wrong-question notebook and learning-task recommendations.
 - Backup/export/import, deletion snapshots, migration and corruption recovery.
 - Standalone quality CLI, multi-seed diagnostics and manifest report artifact.
-- Cross-tab coordination UX, storage-quota recovery, update deferral and cold-start offline support.
+- Browser-process crash recovery, storage-quota recovery, update deferral and cold-start offline support.
 - Complete lifecycle governance, issue forms and release reporting.
 
 These items remain requirements for later pilot/v1.0 phases where listed in the PRD; they are not present merely because they appear in the proposed product model.

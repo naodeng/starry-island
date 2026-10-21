@@ -15,7 +15,7 @@
 - **REQ-074 compensation vs REQ-008 minimal history**: Accurate rescoring often impossible without saved answer evidence. Support only provable compensation, otherwise preserve achievement.
 - **REQ-068 atomic replacement vs browser storage**: `localStorage` cannot atomically update multiple keys; choose IndexedDB transaction or journaled generation commits and test crashes.
 - **Question bank scale**: 540 semester tasks plus unit tasks, with ≥2× effective pool and coverage constraints. Existing 14,944 questions are historical context, not proof that v1.0 is ready. Audit duplicates, format, difficulty, approval and reuse first.
-- **Local checkout drift**: At the Phase 0 audit, local `main` was at `fdb9887` while remote `main` was at `4e125db` (v0.3.0 release). The remote-only commit changed package version and release notes, not application source. Implementation proceeded in the current checkout after managed worktree writes were blocked; the result is local and uncommitted. Recheck branch/remote state before opening a PR.
+- **Local checkout drift**: At the Phase 0 audit, local `main` was at `fdb9887` while remote `main` was at `4e125db` (v0.3.0 release). The remote-only commit changed package version and release notes, not application source. The MVP was later committed locally on `codex/challenge-system-mvp` as `566b189`; it has not been pushed. A follow-up reliability patch remains uncommitted. Recheck branch/remote state before opening a PR.
 - **Chunk warning vs initial load**: A separate eager manifest chunk can clear the 500 kB per-chunk warning without reducing the total initial JavaScript payload. If initial load is the goal, agree on the broader asynchronous manifest redesign first.
 - **24h recovery**: A browser may evict local data; not a guaranteed backup.
 - **Automatic snapshot replacement**: New snapshot cannot be claimed safe if insufficient quota prevents retaining old until commit; deletion must fail safely.
@@ -25,7 +25,7 @@
 - The challenge data model is separate from `china-study-progress-v1`; content fingerprints use normalized JSON and SHA-256; REQ-080 approval retention is covered by manifest tests.
 - The user confirmed splitting Grade 2 Term 1 Math's nine formal units by chapter order: first-half 01–04 and second-half 05–09. This is a planning split, not verified school pacing; only first-half is implemented in the pilot.
 - The 607.74 kB per-chunk warning is resolved by emitting the curriculum manifest as a separate initial chunk. The largest emitted JS chunk is 316.56 kB (26.83 kB gzip); the 189.41 kB ChallengePage chunk (31.07 kB gzip) is lazy. The sum of the entry and manifest gzip sizes remains about 113.73 kB, so the change does not materially reduce initial transfer.
-- Local TypeScript/build, Vitest coverage, and Playwright results do not establish remote CI, deployment, or release evidence. Recheck the branch and remote state before opening a PR; the implementation remains uncommitted in the current checkout.
+- Local TypeScript/build, Vitest coverage, and Playwright results do not establish remote CI, deployment, or release evidence. The MVP commit and current follow-up have only local verification; neither has been pushed.
 
 ## Remaining checks before broader release
 

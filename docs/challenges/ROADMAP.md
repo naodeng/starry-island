@@ -1,6 +1,6 @@
 # Delivery Roadmap
 
-Status: the MVP vertical slice is implemented in the local working tree as of 2026-10-21. It has not been committed, merged, or deployed. Local validation results are recorded in [TEST_STRATEGY.md](TEST_STRATEGY.md).
+Status: the MVP vertical slice was committed locally on `codex/challenge-system-mvp` as `566b189`. It has not been pushed, merged, or deployed. A follow-up cross-tab conflict-safety change is currently uncommitted in the same worktree. Local validation results are recorded in [TEST_STRATEGY.md](TEST_STRATEGY.md).
 
 ## Phase 0 — Repository audit and baseline (complete)
 
@@ -8,7 +8,7 @@ The read-only audit is recorded in [REPOSITORY_BASELINE.md](REPOSITORY_BASELINE.
 
 The audit also found a 607.74 kB single-chunk warning. The current Vite configuration emits the curriculum manifest as its own initial chunk; this removes the per-chunk warning without materially reducing total initial JavaScript transfer. Final local output and gzip sizes are recorded in [REPOSITORY_BASELINE.md](REPOSITORY_BASELINE.md).
 
-## MVP — Engine and vertical slice (implemented locally)
+## MVP — Engine and vertical slice (implemented and committed locally)
 
 - A dedicated `/challenges` center and group/task routes, lazy-loaded outside the existing learning route flow.
 - A formal Grade 2 Term 1 Math Unit 2 group and a first-half semester group using units 01–04. The split follows the user's confirmed chapter-order equal split for the nine-unit term; it is not a school-calendar assertion.
@@ -23,6 +23,8 @@ Exit evidence required for this MVP slice: focused and full unit tests, type-che
 ## Pilot — Cross-grade and cross-subject evidence (not implemented)
 
 Select representative low (1–2), middle (3–4), and high (5–6) grades, all three subjects, unit and semester challenges, difficulty tiers, and interaction formats. Add the wrong-question notebook, richer growth view, learning links, age-tier accessibility review, failure/recovery, backup/migration, and authoring quality tooling.
+
+Reliability work can proceed independently of the paused curriculum expansion. The local conflict-safety slice now includes shared IndexedDB revision checks, full-snapshot verification for ambiguous writes, and a Web Locks writer lease with browser-tested wait/re-read takeover after a page closes. Browsers without Web Locks rely on revision checks. Backups, migrations, explicit crash recovery and storage-failure recovery remain open; this does not mark the broader Pilot complete.
 
 Exit: passing content audit, cross-tab failure tests, accessible interaction review, and successful release-gate dry run.
 

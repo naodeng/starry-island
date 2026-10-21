@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { getChallengeGroupPath } from '../../app/router';
 import type { ChallengeRepository } from '../storage/repository';
+import { acquireChallengeWriterLease, type ChallengeWriterLease } from '../storage/writerLock';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { ChallengeAnswer, ChallengeAttempt, ChallengeResult as ChallengeResultData, ChallengeTaskDefinition, TaskProgress } from '../domain/types';
 import { assemblePaper } from '../domain/assemble';
@@ -28,6 +29,19 @@ interface CompletedResult {
   progress: TaskProgress;
 }
 
+function stableSerialize(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(stableSerialize).join(',')}]`;
+  if (typeof value === 'object' && value !== null) {
+    const record = value as Record<string, unknown>;
+    return `{${Object.keys(record).sort().map((key) => `${JSON.stringify(key)}:${stableSerialize(record[key])}`).join(',')}}`;
+  }
+  return JSON.stringify(value) ?? 'undefined';
+}
+
+function isSameAttemptSnapshot(left: ChallengeAttempt, right: ChallengeAttempt): boolean {
+  return stableSerialize(left) === stableSerialize(right);
+}
+
 type LoadState = 'loading' | 'ready' | 'error';
 
 async function completeSavedAttempt(
@@ -50,22 +64,46 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
   const [completedResult, setCompletedResult] = useState<CompletedResult | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [waitingForWriter, setWaitingForWriter] = useState(false);
   const [reloadRevision, setReloadRevision] = useState(0);
+  const writerLeaseRef = useRef<ChallengeWriterLease | null>(null);
+  const lockControllerRef = useRef<AbortController | null>(null);
 
   const reload = useCallback(() => setReloadRevision((revision) => revision + 1), []);
 
+  function releaseWriterLease() {
+    writerLeaseRef.current?.release();
+    writerLeaseRef.current = null;
+  }
+
   useEffect(() => {
     let cancelled = false;
+    const lockController = new AbortController();
+    lockControllerRef.current = lockController;
     setLoadState('loading');
     setLoadError(null);
     setAttempt(null);
     setProgress(null);
+    setWaitingForWriter(false);
     setPendingAnswer(null);
     setCompletedResult(null);
     setSaveError(null);
-    repository.getActiveAttempt(task.id).then(async (active) => {
+    const load = async () => {
+      let active = await repository.getActiveAttempt(task.id);
+      if (active) {
+        setWaitingForWriter(true);
+        const lease = await acquireChallengeWriterLease(task.id, { signal: lockController.signal });
+        if (cancelled) {
+          lease?.release();
+          return;
+        }
+        writerLeaseRef.current = lease;
+        active = await repository.getActiveAttempt(task.id);
+        if (!active) releaseWriterLease();
+      }
       const savedProgress = await repository.getTaskProgress(task.id);
       if (cancelled) return;
+      setWaitingForWriter(false);
       setProgress(savedProgress);
       if (active) {
         if (active.currentIndex === active.questions.length) {
@@ -74,6 +112,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           setProgress(completed.progress);
           setCompletedResult(completed);
           setRestored(true);
+          releaseWriterLease();
           setLoadState('ready');
           return;
         }
@@ -81,19 +120,58 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         setRestored(true);
       }
       setLoadState('ready');
-    }).catch(() => {
+    };
+    void load().catch(() => {
       if (cancelled) return;
+      releaseWriterLease();
+      setWaitingForWriter(false);
       setLoadError('本机闯关记录暂时没有读出来。重新读取后可以继续，课程学习进度不会受影响。');
       setLoadState('error');
     });
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      lockControllerRef.current?.abort();
+      lockControllerRef.current = null;
+      lockController.abort();
+      releaseWriterLease();
+    };
   }, [repository, task.id, reloadRevision]);
 
   async function startAttempt() {
     if (busy) return;
     setBusy(true);
+    setWaitingForWriter(true);
     setSaveError(null);
+    let lockAcquired = false;
+    const lockController = new AbortController();
+    lockControllerRef.current = lockController;
     try {
+      const lease = await acquireChallengeWriterLease(task.id, { signal: lockController.signal });
+      if (lockController.signal.aborted) {
+        lease?.release();
+        return;
+      }
+      writerLeaseRef.current = lease;
+      lockAcquired = true;
+      setWaitingForWriter(false);
+
+      const existing = await repository.getActiveAttempt(task.id);
+      if (existing) {
+        const savedProgress = await repository.getTaskProgress(task.id);
+        setProgress(savedProgress);
+        if (existing.currentIndex === existing.questions.length) {
+          const completed = await completeSavedAttempt(repository, existing, savedProgress);
+          setProgress(completed.progress);
+          setCompletedResult(completed);
+          releaseWriterLease();
+        } else {
+          setAttempt(existing);
+          setRestored(true);
+        }
+        setLoadState('ready');
+        return;
+      }
+
       const recentIds = await repository.getRecentQuestionIds();
       const seed = crypto.randomUUID();
       const questions = assemblePaper(task, loadedGroup.candidates, seed, recentIds);
@@ -116,6 +194,11 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       setAttempt(nextAttempt);
       setRestored(false);
     } catch (error) {
+      if (lockController.signal.aborted) return;
+      if (!lockAcquired) {
+        setSaveError(error instanceof Error ? error.message : '暂时无法锁定本次挑战，请稍后重试。');
+        return;
+      }
       const existing = await repository.getActiveAttempt(task.id).catch(() => null);
       if (existing) {
         setAttempt(existing);
@@ -123,9 +206,12 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         setLoadState('ready');
         setSaveError('另一个页面已经开始了这个任务，已载入那里的作答进度。');
       } else {
+        releaseWriterLease();
         setSaveError(error instanceof Error ? error.message : '题目暂时无法准备好，请稍后重试。');
       }
     } finally {
+      if (lockControllerRef.current === lockController) lockControllerRef.current = null;
+      setWaitingForWriter(false);
       setBusy(false);
     }
   }
@@ -142,13 +228,16 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         const completed = await completeSavedAttempt(repository, saved, await repository.getTaskProgress(task.id));
         setProgress(completed.progress);
         setCompletedResult(completed);
+        releaseWriterLease();
       }
     } catch (error) {
       const current = await repository.getActiveAttempt(task.id).catch(() => null);
-      if (current?.revision === pending.nextAttempt.revision) {
+      if (current && isSameAttemptSnapshot(current, pending.nextAttempt)) {
         setAttempt(current);
         setPendingAnswer(null);
-        setSaveError('全部答案已保存，但成绩暂时没有完成记录。请重试保存成绩。');
+        setSaveError(current.currentIndex === current.questions.length
+          ? '全部答案已保存，但成绩暂时没有完成记录。请重试保存成绩。'
+          : null);
       } else {
         setPendingAnswer(pending);
         setSaveError(error instanceof Error && error.name === 'RevisionConflictError'
@@ -180,6 +269,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       const completed = await completeSavedAttempt(repository, attempt, savedProgress);
       setProgress(completed.progress);
       setCompletedResult(completed);
+      releaseWriterLease();
     } catch (error) {
       setSaveError(error instanceof Error && error.name === 'RevisionConflictError'
         ? '另一页面已更改这次挑战。重新读取本机进度后再继续。'
@@ -200,6 +290,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       setAttempt(null);
       setPendingAnswer(null);
       setRestored(false);
+      releaseWriterLease();
     } catch {
       setSaveError('这次挑战在另一个页面发生了变化。请重新读取本机进度。');
     } finally {
@@ -220,7 +311,9 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
   }
 
   if (loadState === 'loading') {
-    return <ChallengeLoading message="正在读取本机闯关记录…" />;
+    return <ChallengeLoading message={waitingForWriter
+      ? '这次挑战正在另一个页面进行，当前页面会在它结束或关闭后自动接管。'
+      : '正在读取本机闯关记录…'} />;
   }
   if (loadState === 'error') {
     return (
@@ -247,7 +340,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
               <li>完成全部题目后，可以查看成绩和解题讲解。</li>
               <li>离开或刷新后可以继续这次挑战。</li>
             </ul>
-            <Button type="primary" disabled={busy} onClick={() => void startAttempt()}>{busy ? '正在准备题目…' : progress ? '再次挑战' : '开始挑战'}</Button>
+            <Button type="primary" disabled={busy} onClick={() => void startAttempt()}>{busy ? (waitingForWriter ? '正在等待另一页面…' : '正在准备题目…') : progress ? '再次挑战' : '开始挑战'}</Button>
           </Card>
         </div>
       </main>

@@ -97,3 +97,19 @@ test('starts and restores a submitted answer in the chapter-ordered semester pil
   await expect(page.getByText('已完成 1/25 题')).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
+
+test('waits for the active challenge writer and takes over after that page closes', async ({ page, context }) => {
+  await page.goto(taskUrl);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  const firstPageQuestion = page.locator('.challenge-activity h2');
+  await expect(firstPageQuestion).toBeVisible();
+  const prompt = await firstPageQuestion.textContent();
+
+  const secondPage = await context.newPage();
+  await secondPage.goto(taskUrl);
+  await expect(secondPage.getByRole('heading', { name: '这次挑战正在另一个页面进行' })).toBeVisible();
+
+  await page.close();
+  await expect(secondPage.locator('.challenge-activity h2')).toHaveText(prompt ?? '');
+  await expect(secondPage.getByText('已恢复上次保存的进度')).toBeVisible();
+});

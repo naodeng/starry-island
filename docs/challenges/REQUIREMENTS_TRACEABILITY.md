@@ -26,7 +26,7 @@ These statuses apply only to the Unit 2 and first-half semester pilot groups. Th
 | REQ-029 | Partial: center and Unit 2 contextual entry exist; other groups are not covered | catalog and router tests |
 | REQ-037 / REQ-080 | Implemented fingerprint change reporting while retaining approved state as REQ-080 requires | `src/challenges/content/fingerprint.ts`; `validateManifest.test.ts` |
 | REQ-055 / REQ-056 | Implemented reduced-motion styling and silent challenge wrapper | `src/challenges/ui/challenge.css`; `src/App.test.tsx` |
-| REQ-058 / REQ-059 | Partial: IndexedDB revision conflicts and confirmed writes are implemented; no writer lease/takeover UI | `src/challenges/storage/indexedDbRepository.test.ts`; `ChallengeRunner.test.tsx` |
+| REQ-058 / REQ-059 | Partial: persisted revisions reject stale writes; Web Locks provides task-scoped single-writer coordination and wait/re-read takeover where supported; revision checks remain the fallback | `src/challenges/storage/writerLock.test.ts`; `src/challenges/storage/indexedDbRepository.test.ts`; `src/challenges/ui/ChallengeRunner.test.tsx`; `tests/e2e/challenge-flow.spec.ts` |
 | REQ-085 | Implemented as this frozen baseline and traceability package | `README.md`, this directory, and `docs/superpowers/plans/2026-10-21-challenge-system-mvp.md` |
 
 An REQ absent from this slice table is not thereby implemented. Reconcile all 85 decisions against release evidence before marking any later phase complete.

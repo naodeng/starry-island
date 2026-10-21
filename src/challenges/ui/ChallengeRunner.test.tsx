@@ -3,7 +3,10 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { IDBFactory } from 'fake-indexeddb';
 import type { ChoiceActivityDefinition } from '../../content/types';
 import type { ChallengeGroupManifest, ChallengeQuestionSnapshot, ChallengeTaskDefinition } from '../domain/types';
+import { assemblePaper } from '../domain/assemble';
+import { submitFirstAnswer } from '../domain/attempt';
 import { createChallengeRepository } from '../storage/indexedDbRepository';
+import { RevisionConflictError } from '../storage/repository';
 import type { ChallengeRepository } from '../storage/repository';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import ChallengeRunner from './ChallengeRunner';
@@ -79,6 +82,18 @@ function makeRepository() {
   return repository;
 }
 
+function stubHoldingBrowserLock() {
+  let requestFinished = false;
+  const request = vi.fn((_name: string, _options: LockOptions, callback: (lock: Lock | null) => Promise<void>) =>
+    callback({ name: 'starry-island:challenge:test' } as Lock).then(() => {
+      requestFinished = true;
+    }));
+  const browserNavigator = Object.create(globalThis.navigator) as Navigator;
+  Object.defineProperty(browserNavigator, 'locks', { configurable: true, value: { request } as unknown as LockManager });
+  vi.stubGlobal('navigator', browserNavigator);
+  return () => requestFinished;
+}
+
 afterEach(() => {
   for (const repository of repositories.splice(0)) repository.close();
   vi.unstubAllGlobals();
@@ -86,6 +101,7 @@ afterEach(() => {
 
 describe('ChallengeRunner', () => {
   it('persists the final answer before showing the result and keeps completed review ephemeral', async () => {
+    const lockRequestIsFinished = stubHoldingBrowserLock();
     const repository = makeRepository();
     const saveAnswer = vi.spyOn(repository, 'saveAnswer');
     const completeAttempt = vi.spyOn(repository, 'completeAttempt');
@@ -113,6 +129,7 @@ describe('ChallengeRunner', () => {
     expect(screen.getByText(`解题说明 ${currentQuestion.questionId}。`)).toBeInTheDocument();
     expect(await repository.getActiveAttempt(task.id)).toBeNull();
     expect(await repository.getTaskProgress(task.id)).toMatchObject({ completedCount: 1, everPassed: false });
+    await waitFor(() => expect(lockRequestIsFinished()).toBe(true));
 
     view.unmount();
     render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={onNavigate} />);
@@ -178,8 +195,115 @@ describe('ChallengeRunner', () => {
     expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, answers: { [firstQuestion.questionId]: 'wrong' } });
   });
 
-  it('discards only after confirmation and does not create task progress', async () => {
+  it('does not mistake another tab answer with the same revision for this page write', async () => {
+    const repository = makeRepository();
+    const saveAnswer = repository.saveAnswer.bind(repository);
+    vi.spyOn(repository, 'saveAnswer').mockImplementationOnce(async (taskId, expectedRevision) => {
+      const staleAttempt = await repository.getActiveAttempt(taskId);
+      if (!staleAttempt) throw new Error('Expected the other tab to have an active attempt.');
+      const competingAnswer = submitFirstAnswer(staleAttempt, staleAttempt.questions[0]!.questionId, 'correct').attempt;
+      await saveAnswer(taskId, expectedRevision, competingAnswer);
+      throw new RevisionConflictError();
+    });
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    const firstQuestion = active!.questions[0]!;
+
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('另一个页面发生了变化');
+    expect(screen.getByRole('heading', { name: firstQuestion.activity.prompt })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '重试保存答案' })).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({
+      currentIndex: 1,
+      answers: { [firstQuestion.questionId]: 'correct' },
+    });
+  });
+
+  it('recognizes an exact saved snapshot when the write confirmation is lost', async () => {
+    const repository = makeRepository();
+    const saveAnswer = repository.saveAnswer.bind(repository);
+    vi.spyOn(repository, 'saveAnswer').mockImplementationOnce(async (taskId, expectedRevision, nextAttempt) => {
+      await saveAnswer(taskId, expectedRevision, nextAttempt);
+      throw new Error('write committed but confirmation was lost');
+    });
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    const firstQuestion = active!.questions[0]!;
+    const nextQuestion = active!.questions[1]!;
+
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(await screen.findByRole('heading', { name: nextQuestion.activity.prompt })).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({
+      currentIndex: 1,
+      answers: { [firstQuestion.questionId]: 'wrong' },
+    });
+  });
+
+  it('releases the writer lease when starting fails before an attempt is saved', async () => {
+    const lockRequestIsFinished = stubHoldingBrowserLock();
+
+    const repository = makeRepository();
+    vi.spyOn(repository, 'beginAttempt').mockRejectedValue(new Error('challenge could not be saved'));
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('challenge could not be saved');
+    await waitFor(() => expect(lockRequestIsFinished()).toBe(true));
+  });
+
+  it('releases a waiting lease when the previous attempt disappears before takeover', async () => {
+    const repository = makeRepository();
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    const assemblySeed = 'active-attempt-seed';
+    const activeAttempt = {
+      attemptId: 'active-attempt',
+      taskId: task.id,
+      difficulty: task.difficulty,
+      status: 'in-progress' as const,
+      questions: assemblePaper(task, loadedGroup.candidates, assemblySeed, []),
+      assemblySeed,
+      contentManifestVersion: 'test-v1',
+      answers: {},
+      currentIndex: 0,
+      startedAt: new Date().toISOString(),
+      elapsedMs: 0,
+      revision: 0,
+    };
+    await repository.beginAttempt(activeAttempt);
+    vi.spyOn(repository, 'getActiveAttempt')
+      .mockResolvedValueOnce(activeAttempt)
+      .mockResolvedValueOnce(null);
+    const lockRequestIsFinished = stubHoldingBrowserLock();
+
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    expect(await screen.findByRole('button', { name: '开始挑战' })).toBeInTheDocument();
+    await waitFor(() => expect(lockRequestIsFinished()).toBe(true));
+  });
+
+  it('releases the writer lease after a confirmed discard without creating task progress', async () => {
     vi.stubGlobal('confirm', vi.fn(() => true));
+    const lockRequestIsFinished = stubHoldingBrowserLock();
     const repository = makeRepository();
     const { loadedGroup, task } = makeLoadedGroup(2);
     render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
@@ -191,6 +315,7 @@ describe('ChallengeRunner', () => {
     expect(await screen.findByRole('button', { name: '开始挑战' })).toBeInTheDocument();
     expect(await repository.getActiveAttempt(task.id)).toBeNull();
     expect(await repository.getTaskProgress(task.id)).toBeNull();
+    await waitFor(() => expect(lockRequestIsFinished()).toBe(true));
   });
 });
 

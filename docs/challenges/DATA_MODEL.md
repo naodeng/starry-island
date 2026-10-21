@@ -20,12 +20,13 @@ The corresponding typed records are `ChallengeAttempt`, `ChallengeQuestionSnapsh
 
 - A new attempt starts at revision 0 with no answers. Each confirmed first answer increments the revision exactly once and advances one question.
 - Writes use IndexedDB transactions. A stale revision is rejected; an answer cannot be changed or added for a different question.
+- If the write call fails after a possible commit, the runner compares the complete saved attempt with the expected snapshot. A same-revision snapshot with a different answer remains a conflict and requires a reload; a revision match alone is not proof that this page's answer was saved.
 - Completion recalculates the score using the production answer checker, validates the progress update, then atomically writes progress and recent IDs and removes the incomplete snapshot.
 - The UI advances only after the repository confirms the answer write. Failed writes pause the attempt and expose retry/exit actions.
 - No completed attempt or answer history is retained. Detailed wrong-answer explanations are available only on the immediate result page; after refresh/revisit, only the saved task progress summary remains.
 - Discard removes the active snapshot and does not update score, completion count or recent-question history.
 
-The repository tests use the development-only `fake-indexeddb` package. Browser-level save/reload behavior is covered separately; this does not substitute for cross-tab, quota, eviction or corruption testing.
+The repository tests use the development-only `fake-indexeddb` package, including two repository connections against the same database racing from one revision. Browser-level save/reload and Web Locks writer takeover after the owner page closes are covered separately. Explicit crash, quota, eviction and corruption testing remain open.
 
 ## Versioning and fingerprints
 

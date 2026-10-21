@@ -116,6 +116,35 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getActiveAttempt('task-1')).toEqual(first);
   });
 
+  it('allows only one competing tab to save an answer from the same revision', async () => {
+    const factory = new IDBFactory();
+    const databaseName = `challenge-shared-${crypto.randomUUID()}`;
+    const firstRepository = createChallengeRepository({ factory, databaseName });
+    const secondRepository = createChallengeRepository({ factory, databaseName });
+    repositories.push(firstRepository, secondRepository);
+    const initial = makeAttempt();
+    await firstRepository.beginAttempt(initial);
+    const [firstSnapshot, secondSnapshot] = await Promise.all([
+      firstRepository.getActiveAttempt('task-1'),
+      secondRepository.getActiveAttempt('task-1'),
+    ]);
+    expect(firstSnapshot).toEqual(initial);
+    expect(secondSnapshot).toEqual(initial);
+    const firstAnswer = submitFirstAnswer(firstSnapshot!, 'question-a', 1).attempt;
+    const secondAnswer = submitFirstAnswer(secondSnapshot!, 'question-a', 0).attempt;
+
+    const outcomes = await Promise.allSettled([
+      firstRepository.saveAnswer('task-1', 0, firstAnswer),
+      secondRepository.saveAnswer('task-1', 0, secondAnswer),
+    ]);
+
+    expect(outcomes.filter(({ status }) => status === 'fulfilled')).toHaveLength(1);
+    const rejected = outcomes.find(({ status }) => status === 'rejected');
+    expect(rejected).toMatchObject({ status: 'rejected', reason: expect.any(RevisionConflictError) });
+    const persisted = await firstRepository.getActiveAttempt('task-1');
+    expect([firstAnswer, secondAnswer]).toContainEqual(persisted);
+  });
+
   it('allows elapsed time to increase with a saved answer but never decrease', async () => {
     const repository = createRepository();
     const initial = makeAttempt();
