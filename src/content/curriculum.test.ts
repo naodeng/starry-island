@@ -569,6 +569,10 @@ describe('curriculum registry', () => {
     expect(grade4To6CourseCatalog.find(({ id }) => id === 'grade-5/term-2/chinese/unit-04')?.formalUnitNumber).toBe(4);
     expect(grade4To6CourseCatalog.some(({ id }) => id === 'grade-5/term-2/chinese/unit-03')).toBe(false);
     expect(grade4To6CourseCatalog.find(({ id }) => id === 'grade-5/term-2/chinese/integrated-practice-01')?.type).toBe('integrated-practice');
+    expect(grade4To6CourseCatalog.find(({ id }) => id === 'grade-6/term-2/chinese/unit-06'))
+      .toMatchObject({ formalUnitNumber: null, type: 'theme' });
+    expect(curriculum.units['grade-6/term-2/chinese/unit-06'])
+      .toMatchObject({ formalUnitNumber: null, type: 'theme', achievementEligible: false });
   });
 
   it('places integrated practice beside its textbook unit in the catalog', () => {
@@ -795,6 +799,17 @@ describe('curriculum registry', () => {
 
     expect(actualKeys).toHaveLength(expectedKeys.length);
     expect(new Set(actualKeys)).toEqual(new Set(expectedKeys));
+  });
+
+  it('types every unnumbered thematic group as a non-achievement theme', () => {
+    const entries = curriculum.grades.flatMap(({ terms }) => terms.flatMap(({ subjects }) =>
+      subjects.flatMap(({ units }) => units)));
+
+    expect(entries.filter(({ type, formalUnitNumber }) => type === 'unit' && formalUnitNumber === null)).toEqual([]);
+    for (const entry of entries.filter(({ type }) => type === 'theme')) {
+      expect(entry.formalUnitNumber).toBeNull();
+      expect(entry.achievementEligible).toBe(false);
+    }
   });
 
   it('keeps basic tasks under full canonical IDs for existing curriculum entries', () => {

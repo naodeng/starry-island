@@ -183,7 +183,7 @@ export const grade4To6CourseCatalog: PlannedCourseEntry[] = [
     ['unit-04', '第四单元 · 革命与理想', 4],
     ['unit-05', '第五单元 · 科学与思考', 5],
     ['integrated-practice-01', '综合实践 · 难忘小学生活', null, 'integrated-practice'],
-    ['unit-06', '主题组 · 古诗词诵读', null],
+    ['unit-06', '主题组 · 古诗词诵读', null, 'theme'],
   ]),
   ...book(6, 1, 'math', [
     ['unit-01', '第一单元 · 分数乘法', 1],

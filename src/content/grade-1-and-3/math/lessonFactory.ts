@@ -1047,6 +1047,8 @@ function makeTable(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
       { activity: '跳绳', classOne: 3, classTwo: 5 },
       { activity: '唱歌', classOne: 2, classTwo: 2 },
     ];
+  const tablePairs = rows.map(({ activity, classOne, classTwo }) => [activity, `一班 ${classOne} 人、二班 ${classTwo} 人`] as const);
+  const tableData = tablePairs.map(([activity, counts]) => `${activity}：${counts}`).join('；');
   const reading = rows[0]!;
   const jumping = rows[2]!;
   const readingTotal = reading.classOne + reading.classTwo;
@@ -1072,7 +1074,7 @@ function makeTable(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
           ? `一班 ${reading.classOne} 人，比二班 ${reading.classTwo} 人多。`
           : `二班 ${reading.classTwo} 人，比一班 ${reading.classOne} 人多。`),
     calculate(`“${reading.activity}”一班 ${reading.classOne} 人、二班 ${reading.classTwo} 人，两个班一共有多少人？`, `${reading.classOne} + ${reading.classTwo}`, readingTotal, '把同一活动行中的两个班人数相加。', `${reading.classOne} + ${reading.classTwo} = ${readingTotal} 人。`),
-    pair('把活动和两个班对应的人数连起来。', rows.map(({ activity, classOne, classTwo }) => [activity, `一班 ${classOne} 人、二班 ${classTwo} 人`] as const), '按活动名称逐行核对两个班的人数。', '每项活动都要和同一行的两个班级数据对应。'),
+    pair('把活动和两个班对应的人数连起来。', tablePairs, '按活动名称逐行核对两个班的人数。', '每项活动都要和同一行的两个班级数据对应。', `复式统计表数据：${tableData}`),
     sortInto('把活动按“一班更多”“二班更多”或“两班一样多”分类。', ['一班更多', '二班更多', '两班一样多'], rows.map((row) => ({ label: `${row.activity}（一班 ${row.classOne} 人、二班 ${row.classTwo} 人）`, categoryIndex: compareClassOne(row) })), '比较每张活动卡上的两个班级人数。', '逐项比较一班和二班的数据，再按人数关系分类。'),
     arrange(
       difficulty === 'basic' ? '按两个班参加人数的总和从少到多排列活动。'
@@ -1732,13 +1734,14 @@ function choiceFromQuestion(
   } else if (question.kind === 'match') {
     const pair = question.pairs[0];
     if (!pair) return question;
+    const sourceContext = question.sourceContext ? ` ${question.sourceContext}。` : '';
     const distinctRightLabels = [...new Set(question.pairs.map((candidate) => candidate[1]).filter((right) => right !== pair[1]))];
     const wrongRightLabels = distinctRightLabels.length >= 2
       ? distinctRightLabels.slice(0, 2)
       : [...distinctRightLabels, '没有对应项'].slice(0, 2);
     prompt = difficulty === 'advanced'
-      ? `词条“${pair[0]}”应该和哪项信息对应？`
-      : `同伴把“${pair[0]}”错连到“${wrongRightLabels[0]}”。应该改连到哪项？`;
+      ? `${question.prompt}${sourceContext} 词条“${pair[0]}”应该和哪项信息对应？`
+      : `原题要求：${question.prompt}${sourceContext} 同伴把“${pair[0]}”错连到“${wrongRightLabels[0]}”。应该改连到哪项？`;
     options = [`${pair[0]} — ${pair[1]}`, `${pair[0]} — ${wrongRightLabels[0]}`, `${pair[0]} — ${wrongRightLabels[1]}`];
     explanation = `“${pair[0]}”对应“${pair[1]}”。`;
     hint = question.hint;

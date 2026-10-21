@@ -3,7 +3,7 @@ import { arrange, choose, makeTask, pair, sortInto } from '../../../../grade-2/t
 
 // TapXWorld 固定快照《六年级下册语文》古诗词诵读：印刷页 111–120（PDF 页 116–125）。
 export const unit = buildChineseUnit({
-  grade: 6, term: 2, formalUnitNumber: null, entryId: 'unit-06', type: 'unit',
+  grade: 6, term: 2, formalUnitNumber: null, entryId: 'unit-06', type: 'theme',
   title: '古诗词诵读 · 离别、春景与生活',
   sourceTopics: ['古诗词诵读十首：采薇（节选）、送元二使安西、春夜喜雨、早春呈水部张十八员外、江上渔者', '泊船瓜洲、游园不值、卜算子·送鲍浩然之浙东、浣溪沙、清平乐', '借助注释、意象和朗读节奏理解诗词'],
   basicTasks: [

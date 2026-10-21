@@ -12,7 +12,7 @@ src/content/grade-{年级}/term-{1|2}/{chinese|math|english}/{条目 slug}/index
 
 条目 slug 仅使用下列形式，序号为两位数并按册次目录排列：
 
-- `unit-NN`：教材中的编号单元（包括有编号的总复习），或目录明确登记的未编号主题组；主题组的正式单元号留空，不能称为教材正式编号单元。
+- `unit-NN`：教材中的编号单元（包括有编号的总复习），或目录明确登记的未编号主题组；主题组正式单元号留空、类型登记为 `theme`，且不计入正式单元成就。
 - `review-NN`：未编号的复习条目。
 - `integrated-practice-NN`：未编号的综合实践条目。
 
@@ -70,7 +70,7 @@ src/content/grade-2/term-2/english/review-01/index.ts
 
 学科检查另包括：数学逐式复算、单位与情境条件核对；英语拼写、大小写、词义和语法核对；语文字词、题意和解释准确性核对。可执行的答案校验是辅助筛查，不能替代语义审校。
 
-在相应台账记录每个课程条目的教材版本/来源、单元或主题依据、题目总数、已审数量、各项审校状态、修复记录和独立的复核范围/证据：一年级、三年级使用 `docs/curriculum/grade-1-and-3-question-review.tsv`，二年级使用 `docs/curriculum/grade-2-question-review.tsv`，四至六年级使用 `docs/curriculum/grade-4-to-6-question-review.tsv`。发现问题时记录完整题目 ID、修改原因和状态；生成器覆盖整课时可按审核规则记录完整 48 题范围。没有修复时“修复记录”保留“无”，复核日期、范围和证据写入复核列；未审完时不得把该行标记为“完成”。
+在相应台账记录每个课程条目的教材版本/来源、单元或主题依据、题目总数、已审数量、各项审校状态、修复记录和独立的复核范围/证据：一年级、三年级使用 `docs/curriculum/grade-1-and-3-question-review.tsv`，二年级使用 `docs/curriculum/grade-2-question-review.tsv`，四至六年级使用 `docs/curriculum/grade-4-to-6-question-review.tsv`。发现问题时记录完整题目 ID、修改原因和状态；生成器修复可以按审核规则记录可无歧义展开的精确题目范围，并经台账校验确认每个展开 ID 存在，整课修复可记录完整 48 题范围。没有修复时“修复记录”保留“无”，复核日期、范围和证据写入复核列；未审完时不得把该行标记为“完成”。
 
 ## 新增课程检查清单
 

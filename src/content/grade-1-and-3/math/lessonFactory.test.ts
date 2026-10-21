@@ -407,6 +407,44 @@ describe('added math question quality', () => {
     }
   });
 
+  it('preserves the source table when converting matching questions to choices', () => {
+    const unit = curriculum.units['grade-3/term-2/math/unit-03'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const question = unit.difficultyTracks.advanced.tasks[0]?.sessions[0]?.activities[2];
+    expect(question?.kind).toBe('choice');
+    if (question?.kind !== 'choice') return;
+
+    expect(question.prompt).toContain('把活动和两个班对应的人数连起来');
+    expect(question.prompt).toContain('阅读：一班 4 人、二班 5 人');
+    expect(question.options.some(({ label }) => label === '阅读 — 一班 4 人、二班 5 人')).toBe(true);
+    expect(question.options.find(({ id }) => id === question.correctOptionId)?.label)
+      .toBe('阅读 — 一班 4 人、二班 5 人');
+  });
+
+  it('keeps matching instructions and keyed answers in all differentiated math choices', () => {
+    const convertedQuestions = Object.entries(curriculum.units)
+      .filter(([unitId]) => /^grade-[13]\/term-[12]\/math\//.test(unitId))
+      .flatMap(([, unit]) => (['advanced', 'high'] as const).flatMap((difficulty) =>
+        unit.difficultyTracks[difficulty].tasks.map((task) => task.sessions[0]?.activities[2])))
+      .filter((question): question is Extract<NonNullable<typeof question>, { kind: 'choice' }> => question?.kind === 'choice'
+        && (question.prompt.includes('应该和哪项信息对应') || question.prompt.includes('错连到')));
+
+    expect(convertedQuestions).toHaveLength(160);
+    for (const question of convertedQuestions) {
+      const target = question.prompt.match(/(?:词条|同伴把)“([^”]+)”/)?.[1];
+      expect(target).toBeTruthy();
+      expect(question.prompt.startsWith('原题要求：') || question.prompt.indexOf(' 词条“') > 0).toBe(true);
+
+      const correctOption = question.options.find(({ id }) => id === question.correctOptionId)?.label;
+      expect(correctOption?.startsWith(`${target} — `)).toBe(true);
+      const correctRightLabel = correctOption?.slice(`${target} — `.length);
+      expect(correctRightLabel).toBeTruthy();
+      expect(question.explanation).toContain(`“${target}”对应“${correctRightLabel}”`);
+    }
+  });
+
   it('uses the finite-counter enumeration described by 摆一摆，想一想', () => {
     const unit = curriculum.units['grade-1/term-2/math/integrated-practice-01'];
     expect(unit).toBeDefined();
