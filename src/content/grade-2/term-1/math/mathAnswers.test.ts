@@ -4,7 +4,7 @@ import type { CurriculumUnit } from '../../../types';
 
 function evaluateArithmeticExpression(expression: string): number {
   const normalized = expression.replace(/\s+/g, '');
-  const tokens = normalized.match(/\d+|[()+\-×÷]/g) ?? [];
+  const tokens = normalized.match(/\d+(?:\.\d+)?|[()+\-×÷]/g) ?? [];
   if (tokens.join('') !== normalized) throw new Error(`不支持的算式：${expression}`);
   let cursor = 0;
 
@@ -45,6 +45,18 @@ function evaluateArithmeticExpression(expression: string): number {
   return answer;
 }
 
+function expectedArithmeticAnswer(prompt: string, exactAnswer: number): number {
+  if (/保留整数/.test(prompt)) return Math.round(exactAnswer);
+
+  const precisionToken = prompt.match(/保留(一|二|两|三|四|五|六|七|八|九|\d+)位小数/)?.[1];
+  if (!precisionToken) return exactAnswer;
+
+  const precision = ({ 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 } as Record<string, number>)[precisionToken]
+    ?? Number(precisionToken);
+  const factor = 10 ** precision;
+  return Math.round((exactAnswer + Number.EPSILON) * factor) / factor;
+}
+
 function registeredMathUnits(): Array<[string, CurriculumUnit]> {
   return Object.entries(curriculum.units).filter(([, unit]) => unit.subject === 'math');
 }
@@ -67,7 +79,20 @@ describe('registered math answers', () => {
     expect(activities.length).toBeGreaterThan(0);
     for (const activity of activities) {
       if (activity.kind !== 'arithmetic') continue;
-      expect(activity.correctAnswer, activity.expression).toBe(evaluateArithmeticExpression(activity.expression));
+      const exactAnswer = evaluateArithmeticExpression(activity.expression);
+      expect(activity.correctAnswer, `${activity.prompt} (${activity.expression})`)
+        .toBeCloseTo(expectedArithmeticAnswer(activity.prompt, exactAnswer), 10);
+    }
+  });
+
+  it('links every math choice answer to an existing option', () => {
+    const choices = registeredMathUnits().flatMap(([, unit]) => activitiesForUnit(unit.id))
+      .filter((activity) => activity.kind === 'choice');
+
+    expect(choices.length).toBeGreaterThan(0);
+    for (const choice of choices) {
+      if (choice.kind !== 'choice') continue;
+      expect(choice.options.some(({ id }) => id === choice.correctOptionId), choice.prompt).toBe(true);
     }
   });
 

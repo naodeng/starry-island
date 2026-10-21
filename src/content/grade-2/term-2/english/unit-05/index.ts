@@ -9,8 +9,8 @@ const morningRoutine = lessonProfile(
     { word: 'go home', meaning: '回家' },
   ],
   [
-    phraseQuestion('想问朋友每天什么时候吃早餐，哪句合适？', ['When do you eat breakfast every day?', 'What day do you eat breakfast every day?', 'Where do you eat breakfast every day?'], 0, '用 When do you…every day? 询问每天做某件事的时间。'),
-    phraseQuestion('“我七点吃早餐。”可以怎样说？', ['I eat breakfast at seven.', 'I get up at seven breakfast.', 'I go to school at breakfast.'], 0, 'eat breakfast 表示吃早餐；at 后面接时间。'),
+    phraseQuestion('想问朋友每天什么时候吃早餐，哪句合适？', ['When do you eat breakfast every day?', 'What do you eat every day?', 'Where do you eat breakfast every day?'], 0, '用 When do you…every day? 询问每天做某件事的时间。'),
+    phraseQuestion('“我七点吃早餐。”可以怎样说？', ['I eat breakfast at seven.', 'I get up at seven.', 'I go to school at seven.'], 0, 'eat breakfast 表示吃早餐；at 后面接时间。'),
   ],
   ['早晨活动', '放学后的活动'],
   [
@@ -28,8 +28,8 @@ const daySchedule = lessonProfile(
     { word: 'eat breakfast', meaning: '吃早餐' },
   ],
   [
-    phraseQuestion('我每天七点半去上学，哪句表达清楚？', ['I go to school at 7:30.', 'I get up at 7:30 school.', 'I eat breakfast at school 7:30.'], 0, 'go to school 表示去上学，at 后面接时间。'),
-    phraseQuestion('“我放学后回家。”可以怎样说？', ['I go home after school.', 'I go school after home.', 'I have home after school.'], 0, 'go home 表示回家。'),
+    phraseQuestion('我每天七点半去上学，哪句表达清楚？', ['I go to school at 7:30.', 'I get up at 7:30.', 'I eat breakfast at 7:30.'], 0, 'go to school 表示去上学，at 后面接时间。'),
+    phraseQuestion('“我放学后回家。”可以怎样说？', ['I go home after school.', 'I go to school after breakfast.', 'I get up before school.'], 0, 'go home 表示回家。'),
   ],
   ['起床和早餐', '上学和回家'],
   [
@@ -47,8 +47,8 @@ const askAboutRoutines = lessonProfile(
     { word: 'go home', meaning: '回家' },
   ],
   [
-    phraseQuestion('想问朋友每天什么时候起床，哪句合适？', ['When do you get up every day?', 'When do you get up at every day?', 'What day do you get up every day?'], 0, '用 When do you…every day? 询问日常活动时间。'),
-    phraseQuestion('“我六点四十分起床。”哪句表达正确？', ['I get up at 6:40.', 'I get up 6:40 at.', 'I get at 6:40 up.'], 0, 'get up 表示起床；at 后接时间。'),
+    phraseQuestion('想问朋友每天什么时候起床，哪句合适？', ['When do you get up every day?', 'What day do you get up?', 'Where do you get up?'], 0, '用 When do you…every day? 询问日常活动时间。'),
+    phraseQuestion('“我六点四十分起床。”哪句表达正确？', ['I get up at 6:40.', 'I get up at 6:30.', 'I go to school at 6:40.'], 0, 'get up 表示起床；at 后接时间。'),
   ],
   ['日常活动问句', '日常安排回答'],
   [
@@ -66,8 +66,8 @@ const routinePlanner = lessonProfile(
     { word: 'go to school', meaning: '去上学' },
   ],
   [
-    phraseQuestion('小队要问每天什么时候回家，哪句最合适？', ['When do you go home every day?', 'What day do you go home every day?', 'Where do you go home every day?'], 0, '用 When do you…every day? 询问日常活动时间。'),
-    phraseQuestion('“我四点回家。”哪句正确？', ['I go home at four.', 'I go to school at four home.', 'I get up at four home.'], 0, 'go home 表示回家，at four 表示四点。'),
+    phraseQuestion('小队要问每天什么时候回家，哪句最合适？', ['When do you go home every day?', 'What do you do after school?', 'Where do you go after school?'], 0, '用 When do you…every day? 询问日常活动时间。'),
+    phraseQuestion('“我四点回家。”哪句正确？', ['I go home at four.', 'I go to school at four.', 'I get up at four.'], 0, 'go home 表示回家，at four 表示四点。'),
   ],
   ['询问日常时间', '报告日常时间'],
   [
@@ -85,8 +85,8 @@ const dailyRoutineInterview = lessonProfile(
     { word: 'at 8:00', meaning: '在八点' },
   ],
   [
-    phraseQuestion('想问朋友每天什么时候起床，哪句正确？', ['When do you get up every day?', 'What day do you get up every day?', 'Where do you get up every day?'], 0, '用 When do you…every day? 询问日常活动时间。'),
-    phraseQuestion('“我七点吃早餐。”哪句表达合适？', ['I eat breakfast at 7:00.', 'I get up at breakfast 7:00.', 'I go home at 7:00 breakfast.'], 0, 'at 后面接时间，eat breakfast 表示吃早餐。'),
+    phraseQuestion('想问朋友每天什么时候起床，哪句正确？', ['When do you get up every day?', 'What do you do every day?', 'Where do you get up?'], 0, '用 When do you…every day? 询问日常活动时间。'),
+    phraseQuestion('“我七点吃早餐。”哪句表达合适？', ['I eat breakfast at 7:00.', 'I get up at 7:00.', 'I go home at 7:00.'], 0, 'at 后面接时间，eat breakfast 表示吃早餐。'),
   ],
   ['日常活动问句', '介绍日常安排的句子'],
   [
@@ -104,8 +104,8 @@ const dayScheduleAudit = lessonProfile(
     { word: 'eat breakfast', meaning: '吃早餐' },
   ],
   [
-    phraseQuestion('想问“你每天几点回家？”，哪句正确？', ['When do you go home every day?', 'What day do you go home every day?', 'Where do you go home every day?'], 0, 'When 询问时间，What day 询问星期。'),
-    phraseQuestion('“我八点去上学。”可以怎样说？', ['I go to school at 8:00.', 'I go home at 8:00 school.', 'I eat breakfast at school 8:00.'], 0, 'go to school 表示去上学，at 后接时间。'),
+    phraseQuestion('想问“你每天几点回家？”，哪句正确？', ['When do you go home every day?', 'What do you do after school?', 'Where do you go after school?'], 0, 'When 询问时间，What day 询问星期。'),
+    phraseQuestion('“我八点去上学。”可以怎样说？', ['I go to school at 8:00.', 'I go home at 8:00.', 'I eat breakfast at 8:00.'], 0, 'go to school 表示去上学，at 后接时间。'),
   ],
   ['起床和早餐', '去上学或回家'],
   [

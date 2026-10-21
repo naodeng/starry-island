@@ -98,4 +98,16 @@ describe('CourseCatalog', () => {
     expect(screen.getAllByText('复习站')).toHaveLength(2);
     expect(screen.getByText('第一单元 · Classroom')).toBeInTheDocument();
   });
+
+  it('labels unnumbered textbook themes as theme groups', async () => {
+    const user = userEvent.setup();
+    renderCatalog();
+
+    await user.click(screen.getByRole('combobox', { name: '年级' }));
+    await user.click(await screen.findByRole('option', { name: '6年级' }));
+    await user.click(screen.getByRole('combobox', { name: '学期' }));
+    await user.click(await screen.findByRole('option', { name: '下学期' }));
+
+    expect(screen.getByText('主题组', { selector: '.unit-number' })).toBeInTheDocument();
+  });
 });

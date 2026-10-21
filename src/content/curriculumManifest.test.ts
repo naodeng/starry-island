@@ -3,6 +3,11 @@ import { curriculum } from './curriculum';
 import { curriculumManifest } from './curriculumManifest';
 
 describe('runtime curriculum manifest', () => {
+  it('keeps lightweight catalog metadata in sync with the runtime registry', () => {
+    expect(curriculumManifest.textbooks).toEqual(curriculum.textbooks);
+    expect(curriculumManifest.grades).toEqual(curriculum.grades);
+  });
+
   it('contains a lightweight progress index for every published unit', () => {
     expect(Object.keys(curriculumManifest.units).sort()).toEqual(Object.keys(curriculum.units).sort());
 

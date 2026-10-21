@@ -10,7 +10,7 @@ const weatherWords = lessonProfile(
   ],
   [
     phraseQuestion('天空布满云，哪句描述天气最合适？', ["It's cloudy.", "It's sunny.", "It's windy."], 0, 'cloudy 表示多云的。'),
-    phraseQuestion('想询问今天的天气，可以说哪句？', ["What's the weather like today?", 'What time is it today?', 'What day is it today?'], 0, 'weather 表示天气。'),
+    phraseQuestion('想询问今天的天气，可以说哪句？', ["What's the weather like today?", 'What day is it today?', 'What is your name?'], 0, 'weather 表示天气。'),
   ],
   ['有阳光或下雨', '有风或多云'],
   [
@@ -104,7 +104,7 @@ const forecastCheck = lessonProfile(
     { word: 'windy', meaning: '有风的' },
   ],
   [
-    phraseQuestion('想问“今天天气怎么样？”，哪句合适？', ["What's the weather like today?", 'What day is it today?', 'What time is it today?'], 0, '询问天气可以用 What’s the weather like…?'),
+    phraseQuestion('想问“今天天气怎么样？”，哪句合适？', ["What's the weather like today?", 'What day is it today?', 'What is your name?'], 0, '询问天气可以用 What’s the weather like…?'),
     phraseQuestion('天气预报写着“有雨”，哪句报告匹配？', ["It's rainy today.", "It's sunny today.", "It's windy today."], 0, 'rainy 表示下雨的。'),
   ],
   ['天气问题', '天气报告'],

@@ -327,7 +327,7 @@ describe('added English vocabulary and textbook alignment', () => {
     });
 
     const matchingActivities = activities.filter((activity) => activity.kind === 'match');
-    expect(matchingActivities).toHaveLength(2);
+    expect(matchingActivities).toHaveLength(1);
     matchingActivities.forEach((activity) => {
       if (activity.kind !== 'match') return;
       const matchedEnglishWords = new Set(activity.pairs.flatMap(({ left, right }) => [left, right])
@@ -407,6 +407,44 @@ describe('added English vocabulary and textbook alignment', () => {
     expect(failures).toEqual([]);
   });
 
+  it('keeps English punctuation attached and avoids nested quotation marks in explanations', () => {
+    const failures: string[] = [];
+
+    for (const entry of addedCourseCatalog.filter(({ subject }) => subject === 'english')) {
+      for (const activity of activitiesFor(entry.id)) {
+        if (activity.kind === 'order' && /\s[?.!,]/.test(activity.explanation)) {
+          failures.push(`${activity.id}: punctuation spacing`);
+        }
+        if (/[“”]{2}/.test(activity.explanation)) {
+          failures.push(`${activity.id}: nested quotation marks`);
+        }
+      }
+    }
+
+    expect(failures).toEqual([]);
+  });
+
+  it('keeps every grade-one and grade-three ordering card self-contained with clean punctuation', () => {
+    const entries = addedCourseCatalog.filter(({ subject, id }) => subject === 'english' && /^grade-[13]\//u.test(id));
+    expect(entries).toHaveLength(32);
+
+    for (const entry of entries) {
+      const orderingQuestions = activitiesFor(entry.id).filter((activity) => activity.id.endsWith('/question-06'));
+      expect(orderingQuestions).toHaveLength(6);
+      for (const activity of orderingQuestions) {
+        expect(activity.kind, activity.id).toBe('order');
+        expect(activity.prompt, activity.id).not.toMatch(/scene|matches the meaning/iu);
+        expect(activity.explanation, activity.id).not.toMatch(/[.!?][。！？]/u);
+        expect(activity.explanation, activity.id).toMatch(/正确表达是“.+[.!?]”/u);
+      }
+      for (const activity of activitiesFor(entry.id)) {
+        if (activity.prompt.includes('belongs to which group?')) {
+          expect(activity.prompt, activity.id).toContain('” belongs');
+        }
+      }
+    }
+  });
+
   it('checks three opening-unit English targets with textbook-fit expressions', () => {
     const school = curriculum.units['grade-1/term-1/english/unit-01'];
     const classroom = curriculum.units['grade-1/term-2/english/unit-01'];
@@ -478,6 +516,84 @@ describe('added English vocabulary and textbook alignment', () => {
       const counts = activity.categories.map(({ id }) => activity.items.filter(({ categoryId }) => categoryId === id).length);
       expect(counts.every((count) => count > 0)).toBe(true);
     }
+  });
+
+  it('uses review wording instead of referring to one unit in review word hints', () => {
+    const reviewEntries = addedCourseCatalog.filter(({ subject, type }) => subject === 'english' && type === 'review');
+    expect(reviewEntries.length).toBeGreaterThan(0);
+
+    for (const entry of reviewEntries) {
+      const firstWordHints = activitiesFor(entry.id)
+        .filter((activity) => /^Which (?:word|phrase) means /u.test(activity.prompt))
+        .map((activity) => activity.hint)
+        .filter((hint) => hint.startsWith('先想一想'));
+      expect(firstWordHints.length, entry.id).toBeGreaterThan(0);
+      expect(firstWordHints.every((hint) => hint === '先想一想复习词卡里的英文词语。'), entry.id).toBe(true);
+    }
+  });
+
+  it('uses natural Chinese distractors for the G3 Term 1 rabbit review sentence', () => {
+    const unitId = 'grade-3/term-1/english/review-02';
+    const questionIds = [
+      'basic/task-01/session-01/question-04',
+      'advanced/task-02/session-01/question-04',
+      'high/task-02/session-01/question-04',
+    ];
+    const activities = activitiesFor(unitId);
+
+    for (const questionId of questionIds) {
+      const activity = activities.find(({ id }) => id.endsWith(questionId));
+      expect(activity, `${unitId}/${questionId}`).toBeDefined();
+      expect(activity?.kind, `${unitId}/${questionId}`).toBe('choice');
+      if (activity?.kind !== 'choice') continue;
+      const labels = activity.options.map(({ label }) => label);
+      expect(labels.some((label) => label.includes('我的生日在六月。'))).toBe(true);
+      expect(labels.some((label) => label.includes('我有一个生日。'))).toBe(false);
+      expect(labels.some((label) => label.includes('我有一只兔子。')), `${unitId}/${questionId}`).toBe(true);
+    }
+  });
+
+  it('labels vocabulary meaning questions as words or phrases to match the target', () => {
+    const entries = addedCourseCatalog.filter(({ subject, id }) => subject === 'english' && /^grade-[13]\//u.test(id));
+
+    for (const entry of entries) {
+      for (const activity of activitiesFor(entry.id)) {
+        if (activity.kind !== 'choice' || !/^Which (?:word|phrase) means /u.test(activity.prompt)) continue;
+        const correct = activity.options.find(({ id }) => id === activity.correctOptionId)?.label;
+        expect(correct, `${entry.id} ${activity.id}`).toBeDefined();
+        if (!correct) continue;
+        const targetNoun = correct.includes(' ') ? 'phrase' : 'word';
+        expect(activity.prompt, `${entry.id} ${activity.id}`).toMatch(new RegExp(`^Which ${targetNoun} means `, 'u'));
+      }
+    }
+  });
+
+  it('labels matching cards with the vocabulary type they contain', () => {
+    const entries = addedCourseCatalog.filter(({ subject, id }) => subject === 'english' && /^grade-[13]\//u.test(id));
+
+    for (const entry of entries) {
+      for (const activity of activitiesFor(entry.id)) {
+        if (activity.kind !== 'match') continue;
+        const englishItems = activity.pairs.flatMap(({ left, right }) => [left, right]).filter((item) => /[A-Za-z]/u.test(item));
+        const hasPhrase = englishItems.some((item) => item.trim().split(/\s+/u).length > 1);
+        const hasWord = englishItems.some((item) => item.trim().split(/\s+/u).length === 1);
+        const englishNoun = hasWord && hasPhrase ? 'word or phrase' : hasPhrase ? 'phrase' : 'word';
+        const expectedPrompt = activity.prompt.startsWith('Match each English')
+          ? `Match each English ${englishNoun} with its Chinese meaning.`
+          : `Match each Chinese meaning with its English ${englishNoun}.`;
+        expect(activity.prompt, `${entry.id} ${activity.id}`).toBe(expectedPrompt);
+        expect(activity.explanation, `${entry.id} ${activity.id}`).toBe('每个英文词语都和对应的中文意思配成一组。');
+      }
+    }
+  });
+
+  it('uses Chinese nested quotation marks in embedded Chinese questions', () => {
+    const prompts = activitiesFor('grade-3/term-2/english/unit-01')
+      .map((activity) => activity.prompt)
+      .filter((prompt) => prompt.includes('题目要求') && prompt.includes('你喜欢哪门课'));
+    expect(prompts.length).toBeGreaterThan(0);
+    expect(prompts.every((prompt) => prompt.includes('‘你喜欢哪门课？’')), prompts.join('\n')).toBe(true);
+    expect(prompts.every((prompt) => !prompt.includes("'你喜欢哪门课")), prompts.join('\n')).toBe(true);
   });
 
   it('uses natural affirmative replies and classifies drinks by learning purpose', () => {

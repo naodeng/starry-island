@@ -10,7 +10,7 @@ export type MathQuestionSpec = QuestionBase & (
   | { kind: 'choice'; options: readonly [string, string, string]; correctOptionIndex: 0 | 1 | 2 }
   | { kind: 'arithmetic'; expression: string; correctAnswer: number; carryBorrowSteps?: readonly string[] }
   | { kind: 'measurement'; objectLabel: string; targetLengthCm: number; minCm: number; maxCm: number }
-  | { kind: 'match'; pairs: ReadonlyArray<readonly [string, string]> }
+  | { kind: 'match'; pairs: ReadonlyArray<readonly [string, string]>; sourceContext?: string }
   | { kind: 'order'; items: readonly string[]; correctOrderIndices: readonly number[] }
   | { kind: 'categorize'; categories: readonly string[]; items: ReadonlyArray<{ label: string; categoryIndex: number }> }
 );
@@ -44,7 +44,7 @@ export function chooseNumber(
   hint: string,
   explanation: string,
 ): MathQuestionSpec {
-  const correctOptionIndex = Math.abs(answer) % 3 as 0 | 1 | 2;
+  const correctOptionIndex = Math.round(Math.abs(answer) * 1_000) % 3 as 0 | 1 | 2;
   const options = [...distractors] as number[];
   options.splice(correctOptionIndex, 0, answer);
   return choose(prompt, options.map(String) as [string, string, string], correctOptionIndex, hint, explanation);
@@ -77,8 +77,9 @@ export function pair(
   pairs: ReadonlyArray<readonly [string, string]>,
   hint: string,
   explanation: string,
+  sourceContext?: string,
 ): MathQuestionSpec {
-  return { kind: 'match', prompt, pairs, hint, explanation };
+  return { kind: 'match', prompt, pairs, hint, explanation, sourceContext };
 }
 
 export function arrange(

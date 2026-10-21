@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Difficulty, LearningTask } from '../../../types';
+import { curriculum } from '../../../curriculum';
 import { buildEnglishUnit } from './buildEnglishUnit';
 import { choose, q8 } from './questionAuthoring';
 import type { EnglishTaskSpec } from './questionAuthoring';
@@ -35,6 +36,13 @@ function expectTwoTasks(tasks: LearningTask[], unitId: string, difficulty: Diffi
   expect(new Set(allIds).size).toBe(allIds.length);
 }
 
+function activitiesFor(unitId: string) {
+  const unit = curriculum.units[unitId];
+  if (!unit) throw new Error(`Missing curriculum unit: ${unitId}`);
+  return Object.values(unit.difficultyTracks).flatMap(({ tasks }) => tasks)
+    .flatMap(({ sessions }) => sessions).flatMap(({ activities }) => activities);
+}
+
 describe('buildEnglishUnit', () => {
   it('buildsTwoAdvancedAndHighTasksWithIndependentIds', () => {
     const unit = buildEnglishUnit({
@@ -66,6 +74,90 @@ describe('buildEnglishUnit', () => {
       });
       expect(unit.id).toBe(`grade-${grade}/term-2/english/unit-01`);
       expect(unit.textbookEditionId).toBe(`grade-${grade}/term-2/english`);
+    }
+  });
+
+  it('keeps grade-two English phrase distractors grammatical and the gratitude reply correct', () => {
+    const playtimeText = activitiesFor('grade-2/term-2/english/unit-01').flatMap((activity) => [
+      activity.prompt,
+      activity.hint,
+      activity.explanation,
+      ...(activity.kind === 'choice' ? activity.options.map(({ label }) => label) : []),
+    ]).join('\n');
+    expect(playtimeText).not.toMatch(/(?:ride|swim|play) a (?:football|kite)|Can you football\?|Do you swim a kite\?|We are a football\.|She is a football\./iu);
+
+    const thankYouReplies = activitiesFor('grade-2/term-1/english/unit-06')
+      .filter((activity) => activity.kind === 'choice' && activity.prompt.includes('Thank you.'));
+    expect(thankYouReplies.length).toBeGreaterThan(0);
+    for (const activity of thankYouReplies) {
+      if (activity.kind !== 'choice') continue;
+      expect(activity.options.find(({ id }) => id === activity.correctOptionId)?.label).toContain('You are welcome.');
+    }
+  });
+
+  it('uses vocabulary-card wording for daily-routine words mixed with clock times', () => {
+    const whenQuestion = activitiesFor('grade-2/term-2/english/unit-05').find((activity) =>
+      activity.prompt === '时刻卡片“When”表示几点？',
+    );
+
+    expect(whenQuestion).toBeUndefined();
+    const wordQuestion = activitiesFor('grade-2/term-2/english/unit-05').find((activity) =>
+      activity.prompt === '词卡“When”对应什么中文意思或信息？',
+    );
+    expect(wordQuestion).toBeDefined();
+    if (!wordQuestion) return;
+    expect(wordQuestion.kind).toBe('choice');
+    if (wordQuestion.kind === 'choice') {
+      expect(wordQuestion.options.find(({ id }) => id === wordQuestion.correctOptionId)?.label).toBe('什么时候');
+    }
+  });
+
+  it('keeps the seasonal weather card as a complete English sentence', () => {
+    const categoryQuestion = activitiesFor('grade-2/term-2/english/review-01').find((activity) =>
+      activity.id.endsWith('/high/task-02/session-01/question-07'),
+    );
+
+    expect(categoryQuestion).toBeDefined();
+    if (!categoryQuestion || categoryQuestion.kind !== 'categorize') return;
+    const labels = categoryQuestion.items.map(({ label }) => label);
+    expect(labels).toContain('It is windy in winter.');
+    expect(labels).not.toContain('windy in winter');
+  });
+
+  it('keeps grade-two high-tier composite questions free of doubled question stops', () => {
+    const gradeTwoEnglishUnits = Object.values(curriculum.units).filter((unit) => /^grade-2\/term-[12]\/english\//u.test(unit.id));
+    expect(gradeTwoEnglishUnits).toHaveLength(16);
+    for (const unit of gradeTwoEnglishUnits) {
+      for (const task of unit.difficultyTracks.high.tasks) {
+        for (const activity of task.sessions.flatMap(({ activities }) => activities).filter(({ id }) => /\/question-0[56]$/u.test(id))) {
+          expect(`${activity.prompt}\n${activity.explanation}`, activity.id).not.toMatch(/[?？][。.]|[。.]？/u);
+        }
+      }
+    }
+  });
+
+  it('states the selected answers before asking learners to repair a paired record', () => {
+    const firstTask = activitiesFor('grade-4/term-1/english/unit-03')
+      .find((activity) => activity.id.endsWith('/high/task-01/session-01/question-06'));
+    const secondTask = activitiesFor('grade-4/term-1/english/unit-03')
+      .find((activity) => activity.id.endsWith('/high/task-02/session-01/question-06'));
+
+    expect(firstTask?.kind).toBe('choice');
+    expect(firstTask?.prompt).toContain('选择“On foot.”；B题');
+    expect(firstTask?.prompt).toContain('选择“Mum.”');
+    expect(secondTask?.kind).toBe('choice');
+    expect(secondTask?.prompt).toContain('选择“Meeting Place: school gate. Transportation: by school bus.”；B题');
+    expect(secondTask?.prompt).toContain('选择“prka”');
+  });
+
+  it('renders evidence-repair prompts without redundant Chinese phrasing', () => {
+    const gradeTwoEnglishUnits = Object.values(curriculum.units).filter((unit) => /^grade-2\/term-[12]\/english\//u.test(unit.id));
+    for (const unit of gradeTwoEnglishUnits) {
+      for (const activity of Object.values(unit.difficultyTracks).flatMap(({ tasks }) => tasks)
+        .flatMap(({ sessions }) => sessions).flatMap(({ activities }) => activities)) {
+        if (!activity.id.endsWith('/question-03')) continue;
+        expect(`${activity.prompt}\n${activity.hint}\n${activity.explanation}`, activity.id).not.toMatch(/的对应的|这项对应的/u);
+      }
     }
   });
 });

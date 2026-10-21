@@ -22,19 +22,19 @@ const seasons = lessonProfile(
 
 const seasonWeather = lessonProfile(
   [
-    { word: 'summer', meaning: '夏天' },
-    { word: 'winter', meaning: '冬天' },
-    { word: 'spring', meaning: '春天' },
-    { word: 'autumn', meaning: '秋天' },
+    { word: 'warm', meaning: '暖和的' },
+    { word: 'hot', meaning: '炎热的' },
+    { word: 'cool', meaning: '凉爽的' },
+    { word: 'cold', meaning: '寒冷的' },
   ],
   [
     phraseQuestion('春天来了，天气暖和并且有风，哪句合适？', ['It is warm and windy in spring.', 'It is cold in summer.', 'It is rainy in winter.'], 0, 'warm 表示暖和，windy 表示有风。'),
     phraseQuestion('夏天到了，哪句话符合常见季节感受？', ['It is hot in summer.', 'It is cold in summer.', 'It is winter in summer.'], 0, '很多地方夏天比较热。'),
   ],
-  ['天气较暖的季节', '天气较凉的季节'],
+  ['温暖或炎热的天气', '凉爽或寒冷的天气'],
   [
-    { label: 'spring', categoryIndex: 0 }, { label: 'summer', categoryIndex: 0 },
-    { label: 'autumn', categoryIndex: 1 }, { label: 'winter', categoryIndex: 1 },
+    { label: 'warm', categoryIndex: 0 }, { label: 'hot', categoryIndex: 0 },
+    { label: 'cool', categoryIndex: 1 }, { label: 'cold', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“春天有风”。', items: ['windy', 'It', 'spring', '.', 'is', 'in'], correctOrderIndices: [1, 4, 0, 5, 2, 3] },
 );

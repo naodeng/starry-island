@@ -84,7 +84,7 @@ describe('SettingsDialog', () => {
     expect(document.documentElement.dataset.theme).toBe('light');
   });
 
-  it('doesNotApplyAnUnregisteredLearningStart', async () => {
+  it('appliesARegisteredTermTwoLearningStart', async () => {
     const onApplyLearningStart = vi.fn();
     const user = userEvent.setup();
     render(
@@ -100,9 +100,10 @@ describe('SettingsDialog', () => {
         </ThemeProvider>
       </SoundProvider>,
     );
-    expect(screen.getByRole('button', { name: '应用学习起点' })).toBeDisabled();
+    expect(screen.queryByText(/尚未登记到课程目录/)).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '应用学习起点' })).toBeEnabled();
     await user.click(screen.getByRole('button', { name: '应用学习起点' }));
-    expect(onApplyLearningStart).not.toHaveBeenCalled();
+    expect(onApplyLearningStart).toHaveBeenCalledWith({ grade: 4, term: 2, unit: 1 });
   });
 
   it('keepsAnUnregisteredSavedStartVisibleUntilItsCourseIsRegistered', () => {
@@ -111,7 +112,7 @@ describe('SettingsDialog', () => {
         <ThemeProvider>
           <SettingsDialog
             open
-            progress={{ schemaVersion: 3, completedSessionIds: [], learningStart: { grade: 4, term: 2, unit: 1 } }}
+            progress={{ schemaVersion: 3, completedSessionIds: [], learningStart: { grade: 6, term: 2, unit: 7 } }}
             onClose={vi.fn()}
             onApplyLearningStart={vi.fn()}
             onNavigate={vi.fn()}
@@ -120,9 +121,9 @@ describe('SettingsDialog', () => {
       </SoundProvider>,
     );
 
-    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('4 年级');
+    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('6 年级');
     expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('下学期');
-    expect(screen.getByRole('combobox', { name: '从第几单元开始' })).toHaveTextContent('第 1 单元');
+    expect(screen.getByRole('combobox', { name: '从第几单元开始' })).toHaveTextContent('第 7 单元');
     expect(screen.getByText(/尚未登记到课程目录/)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '应用学习起点' })).toBeDisabled();
   });

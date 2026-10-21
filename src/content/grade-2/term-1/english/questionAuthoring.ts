@@ -121,19 +121,30 @@ export function makeTask(
   profile: EnglishLessonProfile,
 ): EnglishTaskSpec {
   const [first, second, third, fourth] = profile.words;
+  const hasClockTimes = profile.words.every(({ word }) => /^\d{1,2}:\d{2}$/.test(word));
+  const cardName = hasClockTimes ? '时刻卡片' : '词卡';
+  const firstPrompt = hasClockTimes
+    ? `${cardName}“${first.word}”表示几点？`
+    : `${cardName}“${first.word}”对应什么中文意思或信息？`;
+  const secondPrompt = hasClockTimes
+    ? `哪张${cardName}表示“${second.meaning}”？`
+    : `哪张${cardName}对应“${second.meaning}”？`;
+  const fourthPrompt = hasClockTimes
+    ? `${cardName}“${fourth.word}”表示几点？`
+    : `词卡“${fourth.word}”对应什么中文意思或信息？`;
   return {
     title,
     objective,
     companionId,
     questions: q8([
-      choose(`单词或词组 “${first.word}” 的意思是什么？`, [first.meaning, second.meaning, third.meaning], 0, '先读一读英文词卡，再回想它的中文意思。', `“${first.word}”表示“${first.meaning}”。`),
-      choose(`哪个英文单词表示“${second.meaning}”？`, [first.word, second.word, third.word], 1, '在词卡中找到对应的中文意思。', `“${second.meaning}”对应单词 “${second.word}”。`),
-      pair('把英文词卡和中文意思连起来。', profile.words.map(({ word, meaning }) => [word, meaning] as const), '先认出熟悉的词，再逐个配对。', '对照词义检查每一组是否匹配。'),
-      choose(`“${fourth.word}”表示什么？`, [first.meaning, fourth.meaning, second.meaning], 1, '看看这个词是否出现在本次的目标词卡里。', `“${fourth.word}”表示“${fourth.meaning}”。`),
+      choose(firstPrompt, [first.meaning, second.meaning, third.meaning], 0, `先读一读${cardName}，再核对它对应的信息。`, `“${first.word}”对应“${first.meaning}”。`),
+      choose(secondPrompt, [first.word, second.word, third.word], 1, `在${cardName}中找到与这项信息相符的内容。`, `“${second.meaning}”对应${cardName}“${second.word}”。`),
+      pair(hasClockTimes ? '把时刻卡片和对应的时间读数连起来。' : '把词卡和对应的中文意思或信息连起来。', profile.words.map(({ word, meaning }) => [word, meaning] as const), `先认出${cardName}，再逐个核对对应关系。`, hasClockTimes ? '对照时刻和读数，检查每一组是否匹配。' : '对照词义或信息检查每一组是否匹配。'),
+      choose(fourthPrompt, [first.meaning, fourth.meaning, second.meaning], 1, `对照本次的${cardName}，检查对应的信息。`, `“${fourth.word}”对应“${fourth.meaning}”。`),
       choose(profile.phraseQuestions[0].prompt, profile.phraseQuestions[0].options, profile.phraseQuestions[0].correctOptionIndex, profile.phraseQuestions[0].hint, profile.phraseQuestions[0].explanation),
       choose(profile.phraseQuestions[1].prompt, profile.phraseQuestions[1].options, profile.phraseQuestions[1].correctOptionIndex, profile.phraseQuestions[1].hint, profile.phraseQuestions[1].explanation),
-      sortInto('把词卡放进合适的词语小队。', profile.categories, profile.categorizedWords, '先读懂每张词卡，再按小队名称分类。', '逐项对照词义完成分类，再检查一次。'),
-      arrange(profile.orderedSentence.prompt, profile.orderedSentence.items, profile.orderedSentence.correctOrderIndices, '先找句子的开头，再看结尾标点或末尾的词。', '把词卡排成自然、完整的英文表达。'),
+      sortInto(hasClockTimes ? '把时刻卡片按时间特点分类。' : '把词卡放进合适的词语小队。', profile.categories, profile.categorizedWords, `先读懂每张${cardName}，再按类别整理。`, hasClockTimes ? '逐项对照时间读数完成分类，再检查一次。' : '逐项对照词义完成分类，再检查一次。'),
+      arrange(profile.orderedSentence.prompt.replaceAll('词卡', cardName), profile.orderedSentence.items, profile.orderedSentence.correctOrderIndices, hasClockTimes ? '先检查英文表达的顺序，再核对时间读数和标点。' : '先找句子的开头，再看结尾标点或末尾的词。', hasClockTimes ? `把${cardName}排成完整、自然的英文表达。` : '把词卡排成自然、完整的英文表达。'),
     ]),
   };
 }

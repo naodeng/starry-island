@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { curriculum } from '../content/curriculum';
 import { getSessionsForDifficulty } from '../content/sessionUtils';
 import { getEffectiveCompletedSessionIds, getRegisteredCurriculumPositions, getRegisteredLearningPositions, isBeforeLearningPosition } from './position';
+import { grade4To6CourseCatalog } from '../content/grade-4-to-6/catalog';
 
 describe('curriculum positions', () => {
   it('registersFormalUnitPositionsWithoutInventingMissingGrades', () => {
@@ -12,6 +13,15 @@ describe('curriculum positions', () => {
       ...Array.from({ length: 10 }, (_, index) => ({ grade: 2, term: 2 as const, unit: index + 1 })),
       ...Array.from({ length: 10 }, (_, index) => ({ grade: 3, term: 1 as const, unit: index + 1 })),
       ...Array.from({ length: 9 }, (_, index) => ({ grade: 3, term: 2 as const, unit: index + 1 })),
+      ...[...new Map(grade4To6CourseCatalog
+        .filter((entry) => entry.type === 'unit' && entry.formalUnitNumber !== null)
+        .map(({ grade, term, formalUnitNumber }) => [`${grade}-${term}-${formalUnitNumber}`, {
+          grade,
+          term,
+          unit: formalUnitNumber!,
+        }] as const))
+        .values()]
+        .sort((left, right) => left.grade - right.grade || left.term - right.term || left.unit - right.unit),
     ]);
     expect(getRegisteredCurriculumPositions().filter((position) => position.subject === 'chinese').every((position) => position.status === 'active')).toBe(true);
     expect(getRegisteredCurriculumPositions().filter((position) => position.subject === 'math').every((position) => position.status === 'active')).toBe(true);

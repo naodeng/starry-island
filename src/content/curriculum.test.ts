@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { curriculum, getAddedCourseUnit } from './curriculum';
+import { buildPlannedGrade, curriculum, getAddedCourseUnit } from './curriculum';
 import { validateCurriculum } from './validateCurriculum';
 import { getSessionsForDifficulty } from './sessionUtils';
 import { getKnownCurriculumPositions } from '../achievements/position';
 import { TAPX_TEXTBOOK_COMMIT } from './textbooks';
 import { addedCourseCatalog } from './grade-1-and-3/catalog';
+import { grade4To6CourseCatalog } from './grade-4-to-6/catalog';
+import type { ActivityDefinition } from './types';
 
 const term1ChineseUnits = [
   ['grade-2/term-1/chinese/unit-01', '第一单元 · 大自然的秘密'],
@@ -89,20 +91,70 @@ function getOrderedLabelsForActivity(unitKey: string, difficulty: 'basic' | 'adv
   return activity.correctOrder.map((id) => activity.items.find(({ id: itemId }) => itemId === id)?.label ?? '');
 }
 
-function withoutGeneratedIds(value: unknown): unknown {
-  if (Array.isArray(value)) return value.map(withoutGeneratedIds);
-  if (value && typeof value === 'object') {
-    return Object.fromEntries(
-      Object.entries(value)
-        .filter(([key]) => key !== 'id')
-        .sort(([left], [right]) => left.localeCompare(right))
-        .map(([key, nestedValue]) => [key, withoutGeneratedIds(nestedValue)]),
-    );
+function questionFingerprint(activity: ActivityDefinition): string {
+  const shared = {
+    kind: activity.kind,
+    prompt: activity.prompt,
+    hint: activity.hint,
+    explanation: activity.explanation,
+  };
+
+  switch (activity.kind) {
+    case 'choice': {
+      const answer = activity.options.find(({ id }) => id === activity.correctOptionId)?.label;
+      return JSON.stringify({ ...shared, options: activity.options.map(({ label }) => label).sort(), answer });
+    }
+    case 'match':
+      return JSON.stringify({
+        ...shared,
+        pairs: activity.pairs.map(({ left, right }) => [left, right]).sort(([leftA, rightA], [leftB, rightB]) =>
+          `${leftA}\u0000${rightA}`.localeCompare(`${leftB}\u0000${rightB}`)),
+      });
+    case 'order': {
+      const labelsById = new Map(activity.items.map(({ id, label }) => [id, label]));
+      return JSON.stringify({
+        ...shared,
+        items: activity.items.map(({ label }) => label).sort(),
+        answer: activity.correctOrder.map((id) => labelsById.get(id) ?? ''),
+      });
+    }
+    case 'categorize': {
+      const categoriesById = new Map(activity.categories.map(({ id, label }) => [id, label]));
+      return JSON.stringify({
+        ...shared,
+        categories: activity.categories.map(({ label }) => label).sort(),
+        items: activity.items.map(({ label, categoryId }) => [label, categoriesById.get(categoryId) ?? ''])
+          .sort(([labelA], [labelB]) => labelA.localeCompare(labelB)),
+      });
+    }
+    case 'measurement':
+      return JSON.stringify({
+        ...shared,
+        objectLabel: activity.objectLabel,
+        targetLengthCm: activity.targetLengthCm,
+        minCm: activity.minCm,
+        maxCm: activity.maxCm,
+      });
+    case 'arithmetic':
+      return JSON.stringify({
+        ...shared,
+        expression: activity.expression,
+        correctAnswer: activity.correctAnswer,
+        carryBorrowSteps: activity.carryBorrowSteps,
+      });
   }
-  return value;
 }
 
 describe('curriculum registry', () => {
+  it('keeps catalog entries planned when their course modules are not registered yet', () => {
+    const grade = buildPlannedGrade(4, {});
+    const unit = grade.terms[0].subjects.find(({ id }) => id === 'math')?.units[0];
+
+    expect(unit?.status).toBe('comingSoon');
+    expect(unit?.title).toBeTruthy();
+    expect(unit?.curriculumUnitKey).toBeUndefined();
+  });
+
   it('reports a missing added-course module with its registered ID', () => {
     expect(() => getAddedCourseUnit('grade-1/term-1/math/missing-unit')).toThrow('课程目录已登记但缺少条目模块');
   });
@@ -445,7 +497,7 @@ describe('curriculum registry', () => {
   });
 
   it('marks only the fully checked fallback books as verified', () => {
-    expect(Object.keys(curriculum.textbooks)).toHaveLength(18);
+    expect(Object.keys(curriculum.textbooks)).toHaveLength(36);
     expect(curriculum.textbooks['grade-2/term-1/chinese']?.verificationStatus).toBe('verified');
     expect(curriculum.textbooks['grade-2/term-2/chinese']?.verificationStatus).toBe('verified');
     expect(curriculum.textbooks['grade-2/term-1/math']?.verificationStatus).toBe('verified');
@@ -466,6 +518,247 @@ describe('curriculum registry', () => {
     expect(Object.values(curriculum.textbooks).every((book) => book.verificationStatus === 'verified')).toBe(true);
   });
 
+  it('registers every grade 4 to 6 term and subject from the fixed textbook snapshot', () => {
+    expect(grade4To6CourseCatalog).toHaveLength(153);
+    expect(new Set(grade4To6CourseCatalog.map(({ id }) => id)).size).toBe(153);
+
+    for (const gradeNumber of [4, 5, 6] as const) {
+      const grade = curriculum.grades.find(({ id }) => id === `grade-${gradeNumber}`);
+      expect(grade?.terms).toHaveLength(2);
+
+      for (const termNumber of [1, 2] as const) {
+        const term = grade?.terms.find(({ id }) => id === `term-${termNumber}`);
+        expect(term?.subjects.map(({ id }) => id)).toEqual(['chinese', 'math', 'english']);
+
+        for (const subjectId of ['chinese', 'math', 'english'] as const) {
+          const expected = grade4To6CourseCatalog.filter((entry) => entry.grade === gradeNumber
+            && entry.term === termNumber
+            && entry.subject === subjectId);
+          const subject = term?.subjects.find(({ id }) => id === subjectId);
+          expect(subject?.units.map(({ id }) => id)).toEqual(expected.map(({ slug }) => slug));
+          const activeEntryIds = subject?.units.filter(({ status }) => status === 'active').map(({ id }) => id) ?? [];
+          const expectedActiveEntryIds = expected.map(({ slug }) => slug);
+          expect(activeEntryIds).toEqual(expectedActiveEntryIds);
+          expect(subject?.units.every(({ status }) => status === 'active')).toBe(true);
+          for (const entry of subject?.units ?? []) {
+            if (entry.status === 'active') {
+              expect(entry.curriculumUnitKey).toBe(`grade-${gradeNumber}/term-${termNumber}/${subjectId}/${entry.id}`);
+            } else {
+              expect(entry.curriculumUnitKey).toBeUndefined();
+            }
+          }
+
+          const textbook = curriculum.textbooks[`grade-${gradeNumber}/term-${termNumber}/${subjectId}`];
+          expect(textbook).toMatchObject({
+            grade: gradeNumber,
+            term: termNumber,
+            subject: subjectId,
+            sourceKind: 'tapx-fallback',
+            tapxCommit: TAPX_TEXTBOOK_COMMIT,
+            verificationStatus: 'verified',
+          });
+          expect(textbook?.sourceUrl).toContain(TAPX_TEXTBOOK_COMMIT);
+          expect(textbook?.fallbackReason).toBeTruthy();
+          if (subjectId === 'english') {
+            expect(textbook?.schoolOfferingStatus).toBe('unconfirmed');
+          }
+        }
+      }
+    }
+
+    expect(grade4To6CourseCatalog.find(({ id }) => id === 'grade-5/term-2/chinese/unit-04')?.formalUnitNumber).toBe(4);
+    expect(grade4To6CourseCatalog.some(({ id }) => id === 'grade-5/term-2/chinese/unit-03')).toBe(false);
+    expect(grade4To6CourseCatalog.find(({ id }) => id === 'grade-5/term-2/chinese/integrated-practice-01')?.type).toBe('integrated-practice');
+    expect(grade4To6CourseCatalog.find(({ id }) => id === 'grade-6/term-2/chinese/unit-06'))
+      .toMatchObject({ formalUnitNumber: null, type: 'theme' });
+    expect(curriculum.units['grade-6/term-2/chinese/unit-06'])
+      .toMatchObject({ formalUnitNumber: null, type: 'theme', achievementEligible: false });
+  });
+
+  it('places integrated practice beside its textbook unit in the catalog', () => {
+    const ids = grade4To6CourseCatalog.map(({ id }) => id);
+    const before = (first: string, second: string) => expect(ids.indexOf(first)).toBeLessThan(ids.indexOf(second));
+
+    before('grade-4/term-1/math/unit-01', 'grade-4/term-1/math/integrated-practice-01');
+    before('grade-4/term-1/math/integrated-practice-01', 'grade-4/term-1/math/unit-02');
+    before('grade-5/term-1/math/unit-04', 'grade-5/term-1/math/integrated-practice-01');
+    before('grade-5/term-1/math/integrated-practice-01', 'grade-5/term-1/math/unit-05');
+    before('grade-5/term-2/math/unit-06', 'grade-5/term-2/math/integrated-practice-02');
+    before('grade-5/term-2/math/integrated-practice-02', 'grade-5/term-2/math/unit-07');
+  });
+
+  it.each(grade4To6CourseCatalog.map(({ id }) => id))('opens %s with complete lessons for every authored task', (unitKey) => {
+    const unit = curriculum.units[unitKey];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    expect(unit.sourceTopics.length).toBeGreaterThan(0);
+    expect(unit.difficultyTracks.basic.tasks.length).toBeGreaterThanOrEqual(2);
+    expect(unit.difficultyTracks.advanced.tasks).toHaveLength(2);
+    expect(new Set(unit.difficultyTracks.advanced.tasks.map(({ objective }) => objective)).size).toBe(2);
+    expect(unit.difficultyTracks.high.tasks).toHaveLength(2);
+    expect(new Set(unit.difficultyTracks.high.tasks.map(({ objective }) => objective)).size).toBe(2);
+    const sessions = Object.values(unit.difficultyTracks).flatMap(({ tasks }) => tasks.flatMap(({ sessions: taskSessions }) => taskSessions));
+    const taskCount = Object.values(unit.difficultyTracks).reduce((count, track) => count + track.tasks.length, 0);
+    expect(sessions).toHaveLength(taskCount);
+    expect(sessions.every((session) => session.durationMinutes === 20 && session.activities.length === 8)).toBe(true);
+    expect(sessions.reduce((count, session) => count + session.activities.length, 0)).toBe(taskCount * 8);
+  });
+
+  it('opens the first grade-four Chinese unit only with a complete authored lesson', () => {
+    const id = 'grade-4/term-1/chinese/unit-01';
+    const unit = curriculum.units[id];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const questionCount = Object.values(unit.difficultyTracks)
+      .flatMap(({ tasks }) => tasks)
+      .flatMap(({ sessions }) => sessions)
+      .reduce((count, session) => count + session.activities.length, 0);
+    expect(questionCount).toBe(48);
+    expect(unit.sourceTopics).toEqual([
+      '《观潮》', '《走月亮》', '《现代诗二首》', '《繁星》',
+      '边读边想象画面，感受自然之美', '推荐一个好地方并说明理由',
+    ]);
+
+    const entry = curriculum.grades.find(({ id: gradeId }) => gradeId === 'grade-4')
+      ?.terms.find(({ id: termId }) => termId === 'term-1')
+      ?.subjects.find(({ id: subjectId }) => subjectId === 'chinese')
+      ?.units.find(({ id: unitId }) => unitId === 'unit-01');
+    expect(entry).toMatchObject({
+      status: 'active',
+      curriculumUnitKey: id,
+      achievementEligible: true,
+    });
+  });
+
+  it('opens the first grade-four math unit only with a complete authored lesson', () => {
+    const id = 'grade-4/term-1/math/unit-01';
+    const unit = curriculum.units[id];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+    expect(unit.sourceTopics).toEqual([
+      '亿以内数和亿以上数的数位、数级与十进制计数单位',
+      '多位数的读写、大小比较、改写和求近似数',
+      '计算器的认识、使用与结果估算',
+    ]);
+    const questionCount = Object.values(unit.difficultyTracks)
+      .flatMap(({ tasks }) => tasks)
+      .flatMap(({ sessions }) => sessions)
+      .reduce((count, session) => count + session.activities.length, 0);
+    expect(questionCount).toBe(48);
+    const entry = curriculum.grades.find(({ id: gradeId }) => gradeId === 'grade-4')
+      ?.terms.find(({ id: termId }) => termId === 'term-1')
+      ?.subjects.find(({ id: subjectId }) => subjectId === 'math')
+      ?.units.find(({ id: unitId }) => unitId === 'unit-01');
+    expect(entry).toMatchObject({ status: 'active', curriculumUnitKey: id, achievementEligible: true });
+  });
+
+  it('categorizes zero and nonzero place-value digits correctly in grade-four math', () => {
+    const unit = curriculum.units['grade-4/term-1/math/unit-01'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const activity = unit.difficultyTracks.basic.tasks[0]?.sessions[0]?.activities.find(
+      (candidate) => candidate.kind === 'categorize'
+        && candidate.prompt === '看每个数位上的数字，把记录分到“数字是0”或“数字不是0”。',
+    );
+    expect(activity?.kind).toBe('categorize');
+    if (!activity || activity.kind !== 'categorize') return;
+
+    const categoryLabelById = new Map(activity.categories.map(({ id, label }) => [id, label]));
+    const categoryByItem = Object.fromEntries(
+      activity.items.map(({ label, categoryId }) => [label, categoryLabelById.get(categoryId)]),
+    );
+    expect(categoryByItem).toEqual({
+      '420,005的万位数字': '数字不是0',
+      '420,005的个位数字': '数字不是0',
+      '7,031,060的百位数字': '数字是0',
+      '7,031,060的十位数字': '数字不是0',
+    });
+    expect(activity.explanation).toBe('420,005的万位是2、个位是5；7,031,060的百位是0、十位是6。');
+  });
+
+  it('opens the second and third grade-four Chinese units with complete authored lessons', () => {
+    const expectedUnits = [
+      {
+        id: 'grade-4/term-1/chinese/unit-02',
+        sourceTopics: [
+          '《一个豆荚里的五粒豆》', '《夜间飞行的秘密》', '《呼风唤雨的世纪》', '《蝴蝶的家》',
+          '阅读时尝试从不同角度思考，提出自己的问题',
+        ],
+      },
+      {
+        id: 'grade-4/term-1/chinese/unit-03',
+        sourceTopics: [
+          '《古诗三首》', '《爬山虎的脚》', '《蟋蟀的住宅》', '处处留心皆学问',
+          '体会文章准确生动的表达，感受作者连续细致的观察', '进行连续观察，学写观察日记',
+        ],
+      },
+    ];
+
+    for (const { id, sourceTopics } of expectedUnits) {
+      const unit = curriculum.units[id];
+      expect(unit, id).toBeDefined();
+      if (!unit) continue;
+      expect(unit.sourceTopics).toEqual(sourceTopics);
+      const questionCount = Object.values(unit.difficultyTracks)
+        .flatMap(({ tasks }) => tasks)
+        .flatMap(({ sessions }) => sessions)
+        .reduce((count, session) => count + session.activities.length, 0);
+      expect(questionCount, id).toBe(48);
+      expect(curriculum.grades.find(({ id: gradeId }) => gradeId === 'grade-4')
+        ?.terms.find(({ id: termId }) => termId === 'term-1')
+        ?.subjects.find(({ id: subjectId }) => subjectId === 'chinese')
+        ?.units.find(({ id: unitId }) => unitId === id.split('/').at(-1)))
+        .toMatchObject({ status: 'active', curriculumUnitKey: id, achievementEligible: true });
+    }
+  });
+
+  it('opens the fourth through eighth grade-four Chinese units and second through fifth grade-four math units with complete authored lessons', () => {
+    const expectedUnits = [
+      { id: 'grade-4/term-1/chinese/unit-04', sourceTopics: ['《盘古开天地》', '《精卫填海》', '《普罗米修斯》', '《女娲补天》'] },
+      { id: 'grade-4/term-1/chinese/unit-05', sourceTopics: ['《麻雀》', '《爬天都峰》'] },
+      { id: 'grade-4/term-1/chinese/unit-06', sourceTopics: ['《牛和鹅》', '《一只窝囊的大老虎》', '《陀螺》', '批注'] },
+      { id: 'grade-4/term-1/chinese/unit-07', sourceTopics: ['《出塞》', '《为中华之崛起而读书》', '学习写书信'] },
+      { id: 'grade-4/term-1/chinese/unit-08', sourceTopics: ['《王戎不取道旁李》', '《西门豹治邺》', '简要复述课文'] },
+      { id: 'grade-4/term-1/math/unit-02', sourceTopics: ['公顷', '平方千米'] },
+      { id: 'grade-4/term-1/math/unit-03', sourceTopics: ['角由有共同端点的两条射线组成', '量角器的半圆有180等份'] },
+      { id: 'grade-4/term-1/math/unit-04', sourceTopics: ['笔算方法', '单价×数量=总价'] },
+      { id: 'grade-4/term-1/math/unit-05', sourceTopics: ['平行', '梯形', '平行四边形'] },
+    ];
+
+    for (const { id, sourceTopics } of expectedUnits) {
+      const unit = curriculum.units[id];
+      expect(unit, id).toBeDefined();
+      if (!unit) continue;
+      expect(sourceTopics.every((topic) => unit.sourceTopics.some((sourceTopic) => sourceTopic.includes(topic))), `${id} source topics`).toBe(true);
+      expect(Object.values(unit.difficultyTracks)).toHaveLength(3);
+
+      const tracks = Object.values(unit.difficultyTracks);
+      for (const track of tracks) {
+        expect(track.tasks).toHaveLength(2);
+        for (const task of track.tasks) {
+          expect(task.sessions).toHaveLength(1);
+          expect(task.sessions[0].durationMinutes).toBe(20);
+          expect(task.sessions[0].activities).toHaveLength(8);
+        }
+      }
+
+      const ids = tracks.flatMap(({ tasks }) => tasks.flatMap(({ sessions }) => sessions.flatMap(({ activities }) => activities.map(({ id: questionId }) => questionId))));
+      expect(new Set(ids).size, `${id} question IDs`).toBe(48);
+      expect(ids.every((questionId) => questionId.startsWith(`${id}/`)), `${id} question ID prefixes`).toBe(true);
+
+      const subjectId = id.includes('/chinese/') ? 'chinese' : 'math';
+      const unitId = id.split('/').at(-1);
+      expect(curriculum.grades.find(({ id: gradeId }) => gradeId === 'grade-4')
+        ?.terms.find(({ id: termId }) => termId === 'term-1')
+        ?.subjects.find(({ id: candidateSubject }) => candidateSubject === subjectId)
+        ?.units.find(({ id: candidateUnit }) => candidateUnit === unitId))
+        .toMatchObject({ status: 'active', curriculumUnitKey: id, achievementEligible: true });
+    }
+  });
+
   it('opens only entries with verified selected content', () => {
     for (const grade of curriculum.grades) {
       for (const term of grade.terms) {
@@ -476,7 +769,8 @@ describe('curriculum registry', () => {
               expect(edition?.verificationStatus).toBe('verified');
               expect(entry.curriculumUnitKey).toBeTruthy();
             } else {
-              expect(edition?.verificationStatus).toBe('pending');
+              expect(entry.status).toBe('comingSoon');
+              expect(entry.curriculumUnitKey).toBeUndefined();
             }
           }
         }
@@ -498,8 +792,24 @@ describe('curriculum registry', () => {
       .map(({ id }) => id);
     const actualKeys = getKnownCurriculumPositions().map(({ key }) => key);
 
-    expect(actualKeys).toHaveLength(123);
-    expect(new Set(actualKeys)).toEqual(new Set([...existingGrade2Keys, ...addedFormalUnitKeys]));
+    const grade4To6FormalUnitKeys = grade4To6CourseCatalog
+      .filter((entry) => entry.type === 'unit' && entry.formalUnitNumber !== null)
+      .map(({ id }) => id);
+    const expectedKeys = [...new Set([...existingGrade2Keys, ...addedFormalUnitKeys, ...grade4To6FormalUnitKeys])];
+
+    expect(actualKeys).toHaveLength(expectedKeys.length);
+    expect(new Set(actualKeys)).toEqual(new Set(expectedKeys));
+  });
+
+  it('types every unnumbered thematic group as a non-achievement theme', () => {
+    const entries = curriculum.grades.flatMap(({ terms }) => terms.flatMap(({ subjects }) =>
+      subjects.flatMap(({ units }) => units)));
+
+    expect(entries.filter(({ type, formalUnitNumber }) => type === 'unit' && formalUnitNumber === null)).toEqual([]);
+    for (const entry of entries.filter(({ type }) => type === 'theme')) {
+      expect(entry.formalUnitNumber).toBeNull();
+      expect(entry.achievementEligible).toBe(false);
+    }
   });
 
   it('keeps basic tasks under full canonical IDs for existing curriculum entries', () => {
@@ -610,23 +920,35 @@ describe('curriculum registry', () => {
     expect(reviewActivities.map(({ prompt }) => prompt)).toContain('“他很高。”可以怎样说？');
   });
 
-  it('keeps the two advanced and high tasks from repeating an identical question', () => {
+  it('keeps tasks across every difficulty tier from repeating an identical question', () => {
     const duplicateQuestions: string[] = [];
 
     for (const unit of Object.values(curriculum.units)) {
-      for (const difficulty of ['advanced', 'high'] as const) {
-        const [firstTask, secondTask] = unit.difficultyTracks[difficulty].tasks;
-        if (!firstTask || !secondTask) continue;
+      for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+        const tasks = unit.difficultyTracks[difficulty].tasks;
 
-        const firstTaskQuestions = new Set(
-          firstTask.sessions.flatMap(({ activities }) => activities)
-            .map((activity) => JSON.stringify(withoutGeneratedIds(activity))),
-        );
+        for (const [taskIndex, task] of tasks.entries()) {
+          const seenQuestions = new Set<string>();
+          for (const activity of task.sessions.flatMap(({ activities }) => activities)) {
+            const fingerprint = questionFingerprint(activity);
+            if (seenQuestions.has(fingerprint)) {
+              duplicateQuestions.push(`${unit.id}/${difficulty}/task-${taskIndex + 1}/${activity.id}`);
+            }
+            seenQuestions.add(fingerprint);
+          }
+        }
 
-        for (const activity of secondTask.sessions.flatMap(({ activities }) => activities)) {
-          const fingerprint = JSON.stringify(withoutGeneratedIds(activity));
-          if (firstTaskQuestions.has(fingerprint)) {
-            duplicateQuestions.push(`${unit.id}/${difficulty}/${activity.id}`);
+        for (let firstIndex = 0; firstIndex < tasks.length; firstIndex += 1) {
+          const firstTaskQuestions = new Set(
+            tasks[firstIndex]!.sessions.flatMap(({ activities }) => activities)
+              .map(questionFingerprint),
+          );
+          for (let secondIndex = firstIndex + 1; secondIndex < tasks.length; secondIndex += 1) {
+            for (const activity of tasks[secondIndex]!.sessions.flatMap(({ activities }) => activities)) {
+              if (firstTaskQuestions.has(questionFingerprint(activity))) {
+                duplicateQuestions.push(`${unit.id}/${difficulty}/task-${firstIndex + 1}-to-${secondIndex + 1}/${activity.id}`);
+              }
+            }
           }
         }
       }

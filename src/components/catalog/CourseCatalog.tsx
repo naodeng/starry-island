@@ -218,7 +218,7 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
                     <span className="unit-number">
                       {unit.formalUnitNumber !== null
                         ? `UNIT ${String(unit.formalUnitNumber).padStart(2, '0')}`
-                        : unit.type === 'review' ? '复习站' : '实践站'}
+                        : unit.type === 'review' ? '复习站' : unit.type === 'theme' ? '主题组' : '实践站'}
                     </span>
                     <span className={`unit-status ${active ? 'is-active' : 'is-soon'}`}>{active ? '可以出发' : '筹备中'}</span>
                   </div>

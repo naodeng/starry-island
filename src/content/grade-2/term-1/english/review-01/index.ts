@@ -98,10 +98,10 @@ const peopleAndDescriptions = lessonProfile(
 
 const friendsAndKindWords = lessonProfile(
   [
-    { word: 'classmate', meaning: '同班同学' },
-    { word: 'friend', meaning: '朋友' },
     { word: 'pretty', meaning: '漂亮的' },
     { word: 'short', meaning: '矮的或短的' },
+    { word: 'classmate', meaning: '同班同学' },
+    { word: 'friend', meaning: '朋友' },
   ],
   [
     phraseQuestion('“她是我的朋友。”对应哪句？', ['She is my friend.', 'He is my friend.', 'She is short.'], 0, 'friend 表示朋友；she 指女性。'),

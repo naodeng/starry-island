@@ -29,7 +29,7 @@ const giveAndThank = lessonProfile(
   ],
   [
     phraseQuestion('收到礼物后，哪句可以表达感谢？', ['Thank you.', 'Happy New Year!', 'Where are you going?'], 0, 'Thank you. 表示“谢谢你”。'),
-    phraseQuestion('别人送来一张卡片，可以怎样说？', ['Thank you.', 'Good morning.', 'What is this?'], 0, '收到礼物或卡片时可以礼貌地说 Thank you.。'),
+    phraseQuestion('听到别人说“Thank you.”，可以怎样回应？', ['You are welcome.', 'Good morning.', 'What is this?'], 0, 'You are welcome. 可以礼貌地回应别人的感谢。'),
   ],
   ['礼物或装饰', '节日祝福或礼貌用语'],
   [
@@ -74,7 +74,7 @@ const holidayKindness = lessonProfile(
     { label: 'Thank you.', categoryIndex: 0 }, { label: 'You are welcome.', categoryIndex: 0 },
     { label: 'card', categoryIndex: 1 }, { label: 'present', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“欢迎你”。', items: ['welcome', 'You', 'are', '.'], correctOrderIndices: [1, 2, 0, 3] },
+  { prompt: '把词卡排成回应感谢的话。', items: ['welcome', 'You', 'are', '.'], correctOrderIndices: [1, 2, 0, 3] },
 );
 
 const holidayObjectClues = lessonProfile(

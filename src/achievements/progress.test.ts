@@ -100,7 +100,16 @@ describe('achievement progress', () => {
       ...Array.from({ length: 9 }, (_, index) => ({ grade: 2, term: 1 as const, unit: index + 1 })),
     ]);
     const verifiedKeys = getKnownCurriculumPositions().map((position) => position.curriculumUnitKey);
-    expect(verifiedKeys).toHaveLength(123);
+    const expectedVerifiedKeys = curriculum.grades.flatMap((grade) => grade.terms.flatMap((term) => term.subjects.flatMap((subject) => (
+      subject.units
+        .filter((entry) => entry.status === 'active'
+          && entry.type === 'unit'
+          && entry.formalUnitNumber !== null
+          && entry.curriculumUnitKey
+          && curriculum.textbooks[entry.textbookEditionId]?.verificationStatus === 'verified')
+        .map((entry) => entry.curriculumUnitKey!)
+    ))));
+    expect(verifiedKeys).toEqual(expectedVerifiedKeys);
     expect(verifiedKeys).toContain('grade-1/term-1/math/unit-01');
     expect(verifiedKeys).toContain('grade-3/term-2/math/unit-09');
   });

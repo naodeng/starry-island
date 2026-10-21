@@ -49,8 +49,8 @@ describe('buildMathUnit', () => {
     expectTwoTasks(unit.difficultyTracks.high.tasks, unit.id, 'high', ['规划分组方案', '检查方案是否合理']);
   });
 
-  it('buildsCanonicalIdsForGradeOneAndThree', () => {
-    for (const grade of [1, 3] as const) {
+  it('buildsCanonicalIdsForGradesOneThreeFourFiveAndSix', () => {
+    for (const grade of [1, 3, 4, 5, 6] as const) {
       const unit = buildMathUnit({
         grade,
         term: 2,

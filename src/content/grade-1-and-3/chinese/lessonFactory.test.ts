@@ -77,6 +77,118 @@ describe('grade 1 and 3 Chinese course review', () => {
     expect(failures).toEqual([]);
   });
 
+  it('keeps Grade 1 word-card review language concrete for beginning readers', () => {
+    const unitId = 'grade-1/term-1/chinese/unit-01';
+    const activities = activitiesFor(unitId);
+    const text = activities.flatMap((activity) => [
+      activity.prompt,
+      activity.hint,
+      activity.explanation,
+      ...(activity.kind === 'choice' ? activity.options.map(({ label }) => label) : []),
+      ...(activity.kind === 'order' ? activity.items.map(({ label }) => label) : []),
+    ]).join('\n');
+    const activityBySuffix = (suffix: string) => activities.find(({ id }) => id.endsWith(suffix));
+    const scenarioCheck = activityBySuffix('/basic/task-02/session-01/question-06');
+    const introductionOrder = activityBySuffix('/high/task-01/session-01/question-05');
+
+    expect(text).not.toMatch(/观点—线索—核对—表达|要核对“|要向伙伴证明|在新情境中判断|处理后的结果/);
+    expect(scenarioCheck?.prompt).toBe('想知道问题有没有解决，应该看什么？');
+    expect(introductionOrder?.kind).toBe('order');
+    if (introductionOrder?.kind === 'order') {
+      expect(introductionOrder.prompt).toBe('把介绍词卡的步骤排好。');
+      expect(introductionOrder.items.map(({ label }) => label)).toEqual([
+        '先读清两张词卡', '说出每张词卡的意思', '看看哪里相同或不同', '把发现说给伙伴听',
+      ]);
+    }
+  });
+
+  it('ties Grade 1 scenario answers to their actual questions in advanced and high tracks', () => {
+    const expected = [
+      ['grade-1/term-1/chinese/unit-04', '同一棵树在春天和秋天的变化', '在不同时间观察并记录叶子的变化', '观察并记录，才能比较变化'],
+      ['grade-1/term-1/chinese/unit-05', '在校园里看见一个不认识的字', '请教老师或查识字卡，再试着认读', '借助老师或识字卡核对'],
+      ['grade-1/term-2/chinese/unit-02', '想介绍家人', '这是我的妈妈。周末我们常一起散步。', '说出人物关系和一件具体事情'],
+      ['grade-1/term-2/chinese/unit-04', '要介绍一个节日习俗', '先问家人或看书，再说自己了解到的习俗', '问家人或看书核对过'],
+    ] as const;
+
+    for (const [unitId, promptFragment, answerFragment, explanationFragment] of expected) {
+      const unit = curriculum.units[unitId];
+      expect(unit).toBeDefined();
+      if (!unit) continue;
+
+      for (const difficulty of ['advanced', 'high'] as const) {
+        const question = unit.difficultyTracks[difficulty].tasks[0]!.sessions[0]!.activities[5]!;
+        expect(question.kind).toBe('choice');
+        if (question.kind !== 'choice') continue;
+
+        expect(question.prompt).toContain(promptFragment);
+        expect(question.explanation).toContain(explanationFragment);
+        expect(question.options.find(({ id }) => id === question.correctOptionId)?.label).toContain(answerFragment);
+      }
+    }
+  });
+
+  it('keeps the Grade 1 日月水火 category cards and explanation aligned', () => {
+    const unit = curriculum.units['grade-1/term-1/chinese/unit-05'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const basicSort = unit.difficultyTracks.basic.tasks[0]!.sessions[0]!.activities[3]!;
+    expect(basicSort.kind).toBe('categorize');
+    if (basicSort.kind === 'categorize') {
+      const fireCard = basicSort.items.find(({ label }) => label === '火');
+      expect(fireCard).toBeDefined();
+      expect(basicSort.categories.find(({ id }) => id === fireCard?.categoryId)?.label).toBe('自然事物');
+    }
+
+    const explanation = unit.difficultyTracks.high.tasks[0]!.sessions[0]!.activities[7]!;
+    expect(explanation.kind).toBe('choice');
+    if (explanation.kind === 'choice') {
+      expect(explanation.options.find(({ id }) => id === explanation.correctOptionId)?.label)
+        .toMatch(/“(水|火)”和“(水|火)”都符合“自然事物”/);
+      expect(explanation.explanation).toMatch(/都符合“自然事物”/);
+      expect(explanation.explanation).not.toContain('“生活用具”');
+    }
+  });
+
+  it('uses context-specific classification and sharing answers for Grade 1 friendship cards', () => {
+    const unit = curriculum.units['grade-1/term-2/chinese/unit-03'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const friendshipReason = unit.difficultyTracks.high.tasks[0]!.sessions[0]!.activities[7]!;
+    expect(friendshipReason.kind).toBe('choice');
+    if (friendshipReason.kind === 'choice') {
+      expect(friendshipReason.prompt).toContain('“同学”和“让一让”');
+      expect(friendshipReason.options.find(({ id }) => id === friendshipReason.correctOptionId)?.label)
+        .toContain('让一让是给别人留出机会');
+      expect(friendshipReason.explanation).toContain('都能帮助伙伴友好相处');
+    }
+
+    const sharing = unit.difficultyTracks.advanced.tasks[1]!.sessions[0]!.activities[7]!;
+    expect(sharing.kind).toBe('choice');
+    if (sharing.kind === 'choice') {
+      expect(sharing.prompt).toContain('同伴也想玩玩具');
+      expect(sharing.options.find(({ id }) => id === sharing.correctOptionId)?.label)
+        .toContain('商量轮流玩');
+      expect(sharing.explanation).toContain('给伙伴留出机会');
+    }
+  });
+
+  it('defines 分钟 as a unit for measuring duration in the Grade 1 habits unit', () => {
+    const unit = curriculum.units['grade-1/term-2/chinese/unit-07'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const question = unit.difficultyTracks.high.tasks[0]!.sessions[0]!.activities[0]!;
+    expect(question.kind).toBe('choice');
+    if (question.kind === 'choice') {
+      expect(question.prompt).toContain('“分钟”');
+      expect(question.explanation).toContain('计量时间长短的单位');
+      expect(question.options.find(({ id }) => id === question.correctOptionId)?.label)
+        .toBe('计量时间长短的单位');
+    }
+  });
+
   it('varies at least half of each task across every pair of difficulty levels', () => {
     const tierPairs = [['basic', 'advanced'], ['basic', 'high'], ['advanced', 'high']] as const;
     const failures: string[] = [];
@@ -122,6 +234,26 @@ describe('grade 1 and 3 Chinese course review', () => {
     expect(firstUnitText).not.toContain('整体认读音节');
   });
 
+  it('balances the final two textbook cards across categories and varies whole-syllable practice', () => {
+    const unit = curriculum.units['grade-1/term-1/chinese/unit-03'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+      const firstTask = unit.difficultyTracks[difficulty].tasks[0]!.sessions[0]!.activities;
+      const complement = firstTask[2]!;
+      const firstSyllableQuestion = firstTask[5]!;
+      const secondSyllableQuestion = unit.difficultyTracks[difficulty].tasks[1]!.sessions[0]!.activities[5]!;
+
+      expect(complement.kind).toBe('match');
+      if (complement.kind === 'match') {
+        expect(new Set(complement.pairs.map(({ right }) => right))).toEqual(new Set(['韵母', '整体认读音节']));
+      }
+      expect(firstSyllableQuestion.prompt).toContain('zhi');
+      expect(secondSyllableQuestion.prompt).toContain('ying');
+    }
+  });
+
   it('classifies “交流” as an expression and communication activity', () => {
     const questions = activitiesFor('grade-3/term-1/chinese/unit-01');
     const communication = questions.flatMap((question) => {
@@ -164,6 +296,29 @@ describe('grade 1 and 3 Chinese course review', () => {
         }
       }
     }
+  });
+
+  it('keeps Grade 1 pinyin scenario questions tied to the requested tone or syllable', () => {
+    const initials = curriculum.units['grade-1/term-1/chinese/unit-02'];
+    const finals = curriculum.units['grade-1/term-1/chinese/unit-03'];
+    expect(initials).toBeDefined();
+    expect(finals).toBeDefined();
+    if (!initials || !finals) return;
+
+    const questionAt = (unit: typeof initials, difficulty: 'basic' | 'advanced' | 'high', taskIndex: number) =>
+      unit.difficultyTracks[difficulty].tasks[taskIndex]!.sessions[0]!.activities[5]!;
+    const fourthTone = questionAt(initials, 'basic', 1);
+    const thirdTone = questionAt(initials, 'advanced', 0);
+    const splitSyllable = questionAt(finals, 'basic', 1);
+
+    expect(fourthTone.kind).toBe('choice');
+    expect(fourthTone.prompt).toContain('pa 的第四声');
+    expect(fourthTone.hint).toContain('第四声');
+    expect(thirdTone.kind).toBe('choice');
+    expect(thirdTone.prompt).toContain('第三声');
+    expect(splitSyllable.kind).toBe('choice');
+    expect(splitSyllable.prompt).toContain('ying');
+    expect(splitSyllable.prompt).not.toContain('处理后的结果');
   });
 
   it('keeps the grade-three imagination task about coherent creative ideas', () => {

@@ -1,4 +1,4 @@
-import type { ActivityDefinition, CompanionId, CurriculumUnit } from '../../../types';
+import type { ActivityDefinition, CatalogEntryType, CompanionId, CurriculumUnit } from '../../../types';
 import { buildDifficultyTracks, formatCurriculumSequence } from '../../../taskAssembly';
 
 type QuestionBase = {
@@ -22,11 +22,11 @@ export interface ChineseTaskSpec {
 }
 
 export interface ChineseUnitSpec {
-  grade?: 1 | 2 | 3;
+  grade?: 1 | 2 | 3 | 4 | 5 | 6;
   term?: 1 | 2;
   formalUnitNumber: number | null;
   entryId?: string;
-  type?: 'unit' | 'review' | 'integrated-practice';
+  type?: CatalogEntryType;
   title: string;
   sourceTopics: readonly string[];
   basicTasks: readonly [ChineseTaskSpec, ChineseTaskSpec, ...ChineseTaskSpec[]];
