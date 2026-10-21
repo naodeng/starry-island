@@ -15,7 +15,7 @@ const profile1 = lessonProfile(
     { label: 'yesterday', categoryIndex: 0 }, { label: 'weekend', categoryIndex: 0 },
     { label: 'before', categoryIndex: 1 }, { label: 'now', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学会这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [

@@ -48,7 +48,7 @@ export const unit = buildEnglishUnit({
       choose('Which question asks the price of a pair of pants?', ['How much are the pants?', 'How much is the pants?', 'How many are the pants?'], 0, 'pants 通常以复数形式出现。', 'pants 用复数形式，因此问价格时用 How much are the pants?'),
       choose('A box of crayons costs 16 yuan. Which answer is correct?', ['It is 16 yuan.', 'They are 16 yuan.', 'It has 16 yuan.'], 0, '这里询问的是一盒彩笔，回答时可用 it。', '一盒彩笔是一件商品，可以回答 It is 16 yuan.'),
       choose('A pair of pants costs 90 yuan. How can you answer?', ['They are 90 yuan.', 'It is 90 yuan.', 'They has 90 yuan.'], 0, 'pants 用复数，注意回答时的 be 动词。', '询问 pants 使用 are，回答可以用 They are 90 yuan.'),
-      pair('把商品和题目给出的标价连起来。', [
+      pair('Price tags: a pencil box—20 yuan, an eraser—2 yuan, and a model car—30 yuan. 把商品和标价连起来。', [
         ['a pencil box', '20 yuan'], ['an eraser', '2 yuan'], ['a model car', '30 yuan'],
       ], '逐项看商品名称，按题干提供的价签配对。', '题干中的三个标签分别是 pencil box 20 yuan、eraser 2 yuan、model car 30 yuan。'),
       choose('店员想问“毛衣多少钱？”，应说哪一句？', ['How much is the sweater?', 'How many is the sweater?', 'How much are the sweater?'], 0, 'sweater 是一件衣物，用 is 询问价格。', 'How much is the sweater? 是询问一件毛衣价格的自然表达。'),
@@ -61,15 +61,15 @@ export const unit = buildEnglishUnit({
   ],
   advancedTasks: [
     task('根据需要和预算选择书包', '读懂 Lucy 购物故事中的颜色偏好、商品价格与预算，说明选择依据。', 'companion-03', q8([
-      choose('Lucy wants a new schoolbag. Which colour does she like?', ['Blue.', 'Orange.', 'Green.'], 0, '回想 Lucy 对橙色书包和蓝色书包的反应。', 'Lucy 不喜欢橙色，故事中她寻找蓝色书包。'),
-      choose('The orange schoolbag costs 70 yuan. Why does Lucy not choose it?', ['She does not like its colour.', 'It costs 110 yuan.', 'It is a model car.'], 0, '她拒绝橙色书包时提到了什么？', 'Lucy 不喜欢橙色，所以即使价格在预算内也不选它。'),
+      choose('Lucy says she likes blue and does not like orange. Which colour does she like for her new schoolbag?', ['Blue.', 'Orange.', 'Green.'], 0, '根据题干给出的颜色偏好作答。', 'Lucy 喜欢蓝色，不喜欢橙色。'),
+      choose('Lucy does not like orange. The orange schoolbag costs 70 yuan. Why does she not choose it?', ['She does not like its colour.', 'It costs 110 yuan.', 'It is a model car.'], 0, '题干给出了价格和她拒绝的原因。', 'Lucy 不喜欢橙色，所以即使价格在预算内也不选它。'),
       choose('A blue schoolbag at Headstart costs 110 yuan. Lucy has 100 yuan. What is true?', ['It costs 10 yuan more than her money.', 'She has 10 yuan left after buying it.', 'It costs 60 yuan.'], 0, '把 110 yuan 和 100 yuan 比较。', '110 比 100 多 10，因此这只书包超出她的预算 10 元。'),
-      choose('Which schoolbag does Lucy choose at Kids Right?', ['A small blue one for 60 yuan.', 'An orange one for 70 yuan.', 'A blue one for 110 yuan.'], 0, '故事结尾她在另一家店找到什么样的书包？', '她选择 Kids Right 的小号蓝色书包，价格是 60 元。'),
-      pair('把故事中的信息和相应判断连起来。', [
+      choose('Lucy finds a small blue schoolbag for 60 yuan at Kids Right. Which schoolbag does she choose there?', ['A small blue one for 60 yuan.', 'An orange one for 70 yuan.', 'A blue one for 110 yuan.'], 0, '根据题干给出的商品信息作答。', '她选择 Kids Right 的小号蓝色书包，价格是 60 元。'),
+      pair('Story facts: Lucy has 100 yuan and likes blue, not orange. A blue schoolbag at Headstart costs 110 yuan; a small blue one at Kids Right costs 60 yuan. Match each fact with a judgment.', [
         ['Lucy 有 100 元', '110 元的书包超出预算'], ['她更喜欢蓝色', '颜色会影响她的选择'], ['小号蓝色书包 60 元', '她有足够的钱购买'],
       ], '把偏好、预算和商品价格分开核对。', '预算为 100 元，110 元超出预算；60 元不超过预算，且蓝色符合她的偏好。'),
-      choose('Lucy 选择 60 元的书包后还剩多少钱？', ['40 yuan.', '30 yuan.', '10 yuan.'], 0, '用她带的钱减去所选书包的价格。', '100−60=40，因此她还剩 40 元。'),
-      sortInto('把故事中的选择理由分到“符合 Lucy 的需要”或“不符合”。', ['符合需要', '不符合'], [
+      choose('Lucy has 100 yuan and chooses a schoolbag for 60 yuan. How much money is left?', ['40 yuan.', '30 yuan.', '10 yuan.'], 0, '用题干中的钱数减去书包价格。', '100−60=40，因此她还剩 40 元。'),
+      sortInto('Lucy has 100 yuan and likes blue, not orange. The orange schoolbag costs 70 yuan, the blue one at Headstart costs 110 yuan, and the small blue one at Kids Right costs 60 yuan. Sort the choices into “fits Lucy’s needs” or “does not fit”.', ['符合需要', '不符合'], [
         { label: '喜欢的蓝色', categoryIndex: 0 }, { label: '价格不超过 100 元', categoryIndex: 0 },
         { label: '不喜欢的橙色', categoryIndex: 1 }, { label: '价格为 110 元，超过预算', categoryIndex: 1 },
       ], '同时检查颜色偏好和预算限制。', '蓝色且不超过预算的选择符合故事中的需要；橙色和超预算的选择不符合。'),
@@ -110,10 +110,10 @@ export const unit = buildEnglishUnit({
       arrange('整理在商店完成一次购买的对话步骤。', ['顾客询问商品价格', '顾客说出想买的商品', '店员说明价格', '顾客确认购买并询问总价'], [1, 0, 2, 3], '从表达需求开始，再问价、听回答并确认购买。', '顾客先说需要，再询问价格；店员回答后，顾客确认购买并可询问总价。'),
     ])),
     task('读懂储蓄买小狗的故事', '根据 Peter 的目标价格、储蓄和劳动所得计算金额，并区分价格变化与最终购买结果。', 'companion-03', q8([
-      choose('Peter wants to buy a brown puppy. How much does it cost at first?', ['$35.', '$25.', '$32.'], 0, '先找故事开始时小狗的标价。', '故事开始时小狗的价格是 35 美元。'),
-      choose('How much money does Peter have at first?', ['$25.', '$35.', '$2.'], 0, '回想 Peter 开始存钱时已有多少钱。', 'Peter 一开始有 25 美元。'),
+      choose('The brown puppy costs $35 at first. Peter has $25 at first. How much does the puppy cost?', ['$35.', '$25.', '$32.'], 0, '从题干给出的故事资料中找出小狗的标价。', '题干说小狗起初的价格是 35 美元。'),
+      choose('The brown puppy costs $35 at first. Peter has $25 at first. How much money does Peter have?', ['$25.', '$35.', '$2.'], 0, '从题干给出的故事资料中找出 Peter 起初有多少钱。', '题干说 Peter 一开始有 25 美元。'),
       choose('Peter saves 2 dollars and earns 5 dollars by washing cars. How much does he have then?', ['$32.', '$30.', '$37.'], 0, '把 25、2 和 5 相加。', '25+2+5=32，因此他后来有 32 美元。'),
-      choose('The puppy’s price drops to 32 dollars. What happens when Peter returns?', ['The puppy is gone.', 'He buys two puppies.', 'The price goes back to 35 dollars.'], 0, '注意 Peter 第二天回到商店时看到的情形。', '虽然价格降到 32 美元，Peter 回去时小狗已经不在了。'),
+      choose('The puppy’s price drops to 32 dollars, but it is gone when Peter returns the next day. What happens when he returns?', ['The puppy is gone.', 'He buys two puppies.', 'The price goes back to 35 dollars.'], 0, '根据题干给出的故事结尾作答。', '虽然价格降到 32 美元，Peter 回去时小狗已经不在了。'),
       pair('把金额变化和故事信息连起来。', [
         ['$25', 'Peter 原来有的钱'], ['$2 + $5', '节省和洗车所得'], ['$32', '后来存到的钱，也是降价后的价格'],
       ], '把原有金额、增加的钱和新价格分清楚。', 'Peter 原有 25 美元，再增加 2 美元和 5 美元，合计 32 美元；降价后价格也为 32 美元。'),

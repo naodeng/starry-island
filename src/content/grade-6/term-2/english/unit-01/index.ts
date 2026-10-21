@@ -7,15 +7,15 @@ const profile1 = lessonProfile(
     { word: 'scarf', meaning: '围巾' }, { word: 'airport', meaning: '机场' },
   ],
   [
-    phraseQuestion('你不明白词语“live”的意思，哪句可以请同伴解释？', ['What does live mean?', 'Where is live?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does live mean? 是完整、语序正确的词义问句。'),
-    phraseQuestion('朋友问 “What does airport mean?” 哪句回答了词义？', ['它的意思是“相当；十分”。', '它的意思是“围巾”。', '它的意思是“机场”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。 “airport”表示“机场”；另两个选项把其他词语的意思错配过来。'),
+    phraseQuestion('你不明白单词 live（居住）的意思，哪句可以请同伴解释？', ['What does ‘live’ mean?', 'Where is live?', 'How are you?'], 0, '“What does ‘live’ mean?” 是完整、语序正确的词义问句。这里的 live 指“居住”，与表示“活着”的 live 区分开。与同伴交流时还可以在句末加 please。'),
+    phraseQuestion('朋友问 “What does ‘airport’ mean?” 哪句回答了词义？', ['它的意思是“相当；十分”。', '它的意思是“围巾”。', '它的意思是“机场”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。“airport”表示“机场”；另两个选项把其他词语的意思错配过来。'),
   ],
   ['动作表达', '人物、地点和物品'],
   [
     { label: 'live', categoryIndex: 0 }, { label: 'arrive', categoryIndex: 0 },
     { label: 'scarf', categoryIndex: 1 }, { label: 'airport', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学习这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
@@ -23,8 +23,8 @@ const profile2 = lessonProfile(
     { word: 'meet', meaning: '遇见；会面' }, { word: 'wardrobe', meaning: '衣柜' },
   ],
   [
-    phraseQuestion('想表达“我认识词语“pupil””，哪句语法正确？', ['I knows the word “pupil”.', 'I am know the word “pupil”.', 'I know the word “pupil”.'], 2, '先找主语 I，再检查动词是否使用原形。 I know the word “pupil”. 语序和动词形式正确。'),
-    phraseQuestion('哪句正确地表达“我也认识词语“meet””？', ['I also knows the word “meet”.', 'I also know the word “meet”.', 'I know also the word “meet”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。 I also know the word “meet”. 表达“我也认识这个词语”。'),
+    phraseQuestion('想表达“我认识词语‘pupil’”，哪句语法正确？', ['I knows the word “pupil”.', 'I am know the word “pupil”.', 'I know the word “pupil”.'], 2, '先找主语 I，再检查动词是否使用原形。“I know the word ‘pupil’.” 语序和动词形式正确。'),
+    phraseQuestion('哪句正确地表达“我也认识词语‘meet’”？', ['I also knows the word “meet”.', 'I also know the word “meet”.', 'I know also the word “meet”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。“I also know the word ‘meet’.” 表达“我也认识这个词语”。'),
   ],
   ['动作表达', '人物、地点和物品'],
   [
@@ -39,8 +39,8 @@ const profile3 = lessonProfile(
     { word: 'quite cold', meaning: '相当冷' }, { word: 'a warm scarf', meaning: '一条暖和的围巾' },
   ],
   [
-    phraseQuestion('A问：“Do you know the word “arrive at the airport”?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。 Do you ...? 的肯定简答是 Yes, I do.'),
-    phraseQuestion('朋友说 “I know the word “quite cold”.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “quite cold”, too.', 'I knows the word “quite cold”, too.', 'I am know the word “quite cold”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。 I know the word “quite cold”, too. 语法正确并表达“我也认识这个词语”。'),
+    phraseQuestion('A 问：“Do you know the expression ‘arrive at the airport’?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。“Do you know the expression ‘arrive at the airport’?” 的肯定简答是 “Yes, I do.”'),
+    phraseQuestion('朋友说 “I know the expression ‘quite cold’.” 你也想表达认识这个表达，哪句最合适？', ['I know the expression “quite cold”, too.', 'I knows the expression “quite cold”, too.', 'I am know the expression “quite cold”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。“I know the expression ‘quite cold’, too.” 语法正确并表达“我也认识这个表达”。'),
   ],
   ['动作表达', '人物、地点和物品'],
   [
@@ -55,7 +55,7 @@ const profile4 = lessonProfile(
     { word: 'arrive at the airport', meaning: '到达机场' }, { word: 'quite', meaning: '相当；十分' },
   ],
   [
-    phraseQuestion('原创便笺写着：“pupil — 小学生”。哪句话准确报告便笺内容？', ['The note is about the word “pupil”.', 'The note are about the word “pupil”.', 'The note about is the word “pupil”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。 The note is about the word “pupil”. 正确表达便笺主题。'),
+    phraseQuestion('原创便笺写着：“pupil — 小学生”。哪句话准确报告便笺内容？', ['The note is about the word “pupil”.', 'The note are about the word “pupil”.', 'The note about is the word “pupil”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。“The note is about the word ‘pupil’.” 正确表达便笺主题。'),
     phraseQuestion('小卡片把 “quite” 和 “相当；十分” 配在一起。判断卡片时应怎样做？', ['Change the word to a different topic.', 'Ignore the Chinese meaning.', 'Check that the English word and meaning match.'], 2, '核对词义对应关系，不能只看卡片上有英文。 “quite”和“相当；十分”相匹配，报告时应保留这组对应。'),
   ],
   ['动作表达', '人物、地点和物品'],

@@ -186,7 +186,7 @@ describe('course review regression cases', () => {
   it('separates the grade-five trial from the previous experiment record', () => {
     const activity = activityById('grade-5/term-1/math/unit-04/advanced/task-01/session-01/question-03');
 
-    expect(activity.prompt).toContain('另一次20次试验');
+    expect(activity.prompt).toContain('一个袋中有红球和黄球');
     expect(activity.prompt).not.toContain('刚才');
   });
 
@@ -509,8 +509,8 @@ describe('course review regression cases', () => {
     const secondTask = activityById('grade-1/term-2/chinese/unit-05/basic/task-02/session-01/question-06');
 
     expect(firstTask.prompt).not.toBe(secondTask.prompt);
-    expect(secondTask.prompt).toContain('哪条记录最有用');
-    expect(secondTask.explanation).toContain('记录具体线索和处理结果');
+    expect(secondTask.prompt).toContain('想知道问题有没有解决');
+    expect(secondTask.explanation).toContain('把题目和结果放在一起看');
   });
 
   it('uses one category name when both grade-three Chinese terms share a category', () => {
@@ -594,12 +594,12 @@ describe('course review regression cases', () => {
   });
 
   it('uses categorization instead of duplicate matching targets for the grade-one pinyin supplement', () => {
-    const activity = activityById('grade-1/term-1/chinese/unit-03/basic/task-01/session-01/question-03');
+    const activity = activityById('grade-1/term-1/chinese/unit-03/basic/task-01/session-01/question-04');
 
     expect(activity.kind).toBe('categorize');
     if (activity.kind === 'categorize') {
       expect(activity.categories.map(({ label }) => label)).toEqual(['韵母', '整体认读音节']);
-      expect(activity.items).toHaveLength(2);
+      expect(activity.items).toHaveLength(8);
       const categoryIds = new Set(activity.categories.map(({ id }) => id));
       expect(activity.items.every(({ categoryId }) => categoryIds.has(categoryId))).toBe(true);
     }
@@ -612,7 +612,7 @@ describe('course review regression cases', () => {
       .flatMap(({ sessions }) => sessions)
       .flatMap(({ activities }) => activities.map(({ explanation }) => explanation));
 
-    expect(explanations.some((explanation) => explanation.includes('分钟') && explanation.includes('表示时间的单位'))).toBe(true);
+    expect(explanations.some((explanation) => explanation.includes('分钟') && explanation.includes('计量时间长短的单位'))).toBe(true);
   });
 
   it('keeps the original grade-one English requirement in a repair prompt', () => {

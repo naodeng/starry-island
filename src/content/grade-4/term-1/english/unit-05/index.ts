@@ -49,7 +49,7 @@ const homeAndSchoolRules = lessonProfile(
   ],
   [
     phraseQuestion('地上有玩具，容易让人绊倒。哪句提醒和 Fun Time 的安全图相符？', ["Don't leave toys on the floor.", 'Throw toys out of the window.', 'Play with toys on the stairs.'], 0, 'Fun Time 提醒不要把玩具留在地板上，以免绊倒。'),
-    phraseQuestion('有人敲门，但家长不在身边。哪句安全规则适合提醒孩子？', ["Don't open the door for a stranger.", 'Open the door for every stranger.', 'Run down the stairs to answer the door.'], 0, '教材提醒不要给陌生人开门；有需要时先找可信任的大人。'),
+    phraseQuestion('有陌生人敲门，但家长不在身边。哪句安全规则适合提醒孩子？', ["Don't open the door for a stranger.", 'Open the door for every stranger.', 'Run down the stairs to answer the door.'], 0, '教材提醒不要给陌生人开门；有需要时先找可信任的大人。'),
   ],
   ['不安全的行为', '安全提醒'],
   [

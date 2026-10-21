@@ -7,15 +7,15 @@ const profile1 = lessonProfile(
     { word: 'angry', meaning: '生气的' }, { word: 'worried', meaning: '担心的' },
   ],
   [
-    phraseQuestion('你不明白词语“happy”的意思，哪句可以请同伴解释？', ['What does happy mean?', 'Where is happy?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does happy mean? 是完整、语序正确的词义问句。'),
-    phraseQuestion('朋友问 “What does worried mean?” 哪句回答了词义？', ['它的意思是“难过的”。', '它的意思是“生气的”。', '它的意思是“担心的”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。 “worried”表示“担心的”；另两个选项把其他词语的意思错配过来。'),
+    phraseQuestion('你不明白词语“happy”的意思，哪句可以请同伴解释？', ['What does “happy” mean?', 'Where is “happy”?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。“What does ‘happy’ mean?” 是完整、语序正确的词义问句。'),
+    phraseQuestion('朋友问：“What does ‘worried’ mean?” 哪句回答了词义？', ['它的意思是“难过的”。', '它的意思是“生气的”。', '它的意思是“担心的”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。“worried”表示“担心的”；另两个选项把其他词语的意思错配过来。'),
   ],
-  ['感受词', '比赛和行动'],
+  ['感受', '行动与活动'],
   [
     { label: 'happy', categoryIndex: 0 }, { label: 'sad', categoryIndex: 0 },
     { label: 'win', categoryIndex: 1 }, { label: 'race', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学会这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
@@ -23,10 +23,10 @@ const profile2 = lessonProfile(
     { word: 'proud', meaning: '自豪的；骄傲的' }, { word: 'ill', meaning: '有病；不舒服' },
   ],
   [
-    phraseQuestion('想表达“我认识词语“excited””，哪句语法正确？', ['I knows the word “excited”.', 'I am know the word “excited”.', 'I know the word “excited”.'], 2, '先找主语 I，再检查动词是否使用原形。 I know the word “excited”. 语序和动词形式正确。'),
-    phraseQuestion('哪句正确地表达“我也认识词语“proud””？', ['I also knows the word “proud”.', 'I also know the word “proud”.', 'I know also the word “proud”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。 I also know the word “proud”. 表达“我也认识这个词语”。'),
+    phraseQuestion('想表达“我认识 excited 这个词”，哪句语法正确？', ['I knows the word “excited”.', 'I am know the word “excited”.', 'I know the word “excited”.'], 2, '主语 I 后用动词原形 know。“I know the word ‘excited’.” 语序和动词形式正确。'),
+    phraseQuestion('哪句正确地表达“我也认识 proud 这个词”？', ['I also knows the word “proud”.', 'I also know the word “proud”.', 'I know also the word “proud”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。“I also know the word ‘proud’.” 表达“我也认识这个词”。'),
   ],
-  ['感受词', '比赛和行动'],
+  ['感受', '行动与活动'],
   [
     { label: 'happy', categoryIndex: 0 }, { label: 'angry', categoryIndex: 0 },
     { label: 'win', categoryIndex: 1 }, { label: 'cry', categoryIndex: 1 },
@@ -39,10 +39,10 @@ const profile3 = lessonProfile(
     { word: 'cry', meaning: '哭' }, { word: 'test', meaning: '测验' },
   ],
   [
-    phraseQuestion('A问：“Do you know the word “win”?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。 Do you ...? 的肯定简答是 Yes, I do.'),
-    phraseQuestion('朋友说 “I know the word “cry”.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “cry”, too.', 'I knows the word “cry”, too.', 'I am know the word “cry”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。 I know the word “cry”, too. 语法正确并表达“我也认识这个词语”。'),
+    phraseQuestion('A 问：“Do you know the word ‘win’?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。对 “Do you know the word ‘win’?”，可回答 “Yes, I do.”'),
+    phraseQuestion('朋友说：“I know the word ‘cry’.” 你也想表达认识这个词，哪句最合适？', ['I know the word “cry”, too.', 'I knows the word “cry”, too.', 'I am know the word “cry”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。“I know the word ‘cry’, too.” 语法正确并表达“我也认识这个词”。'),
   ],
-  ['感受词', '比赛和行动'],
+  ['感受', '行动与活动'],
   [
     { label: 'happy', categoryIndex: 0 }, { label: 'worried', categoryIndex: 0 },
     { label: 'win', categoryIndex: 1 }, { label: 'test', categoryIndex: 1 },
@@ -58,7 +58,7 @@ const profile4 = lessonProfile(
     phraseQuestion('原创便笺写着：“excited — 激动的”。哪句话准确报告便笺内容？', ['The note is about the word “excited”.', 'The note are about the word “excited”.', 'The note about is the word “excited”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。 The note is about the word “excited”. 正确表达便笺主题。'),
     phraseQuestion('小卡片把 “sad” 和 “难过的” 配在一起。判断卡片时应怎样做？', ['Change the word to a different topic.', 'Ignore the Chinese meaning.', 'Check that the English word and meaning match.'], 2, '核对词义对应关系，不能只看卡片上有英文。 “sad”和“难过的”相匹配，报告时应保留这组对应。'),
   ],
-  ['感受词', '比赛和行动'],
+  ['感受', '行动与活动'],
   [
     { label: 'sad', categoryIndex: 0 }, { label: 'angry', categoryIndex: 0 },
     { label: 'race', categoryIndex: 1 }, { label: 'cry', categoryIndex: 1 },
@@ -74,7 +74,7 @@ const profile5 = lessonProfile(
     phraseQuestion('小组要做一张介绍“生气的”的卡片，哪项同时符合主题目标和词义准确这两个要求？', ['Copy a word without checking what it means.', 'Leave the card blank.', 'Use the word “angry” with its correct meaning “生气的”.'], 2, '选择同时符合主题目标且词义核对过的选项。 目标是介绍“生气的”，应使用对应词语 “angry” 并附上正确词义。'),
     phraseQuestion('资料中有“cry”和“worried”两张词卡。要确保词形和词义都准确，哪种做法能同时做到？', ['Change the spelling to make them look alike.', 'Read each card, check its spelling and meaning, and then share.', 'Copy both cards without reading them.'], 1, '分享前逐张核对词形和词义。 逐张检查能发现拼写或词义不匹配，另外两种做法会增加错误。'),
   ],
-  ['感受词', '比赛和行动'],
+  ['感受', '行动与活动'],
   [
     { label: 'sad', categoryIndex: 0 }, { label: 'worried', categoryIndex: 0 },
     { label: 'race', categoryIndex: 1 }, { label: 'test', categoryIndex: 1 },
@@ -90,7 +90,7 @@ const profile6 = lessonProfile(
     phraseQuestion('你要向同伴介绍“害怕的”，哪句语法完整，并且准确对应词卡意思？', ['This card about the word “scared”.', 'This card is about the word “scared”.', 'This card are about the word “scared”.'], 1, 'This card 是单数主语，后面用 is。 This card is about the word “scared”. 句子完整并对应主题词。'),
     phraseQuestion('同伴听完你介绍“test”后想继续了解。哪句既礼貌地邀请对方继续交流，又让对方选择接下来想了解的内容？', ['What would you like to know?', 'The card is ready.', 'I know the word.'], 0, '选择能把对话交给同伴并邀请其提出问题的完整问句。 What would you like to know? 自然地邀请同伴继续提问；第二句只说明卡片已准备好，第三句只说明自己认识这个词，二者都没有回应同伴的疑问。'),
   ],
-  ['感受词', '比赛和行动'],
+  ['感受', '行动与活动'],
   [
     { label: 'angry', categoryIndex: 0 }, { label: 'worried', categoryIndex: 0 },
     { label: 'cry', categoryIndex: 1 }, { label: 'test', categoryIndex: 1 },

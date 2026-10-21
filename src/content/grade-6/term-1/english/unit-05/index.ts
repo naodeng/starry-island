@@ -7,15 +7,15 @@ const profile1 = lessonProfile(
     { word: 'scientist', meaning: '科学家' }, { word: 'poet', meaning: '诗人' },
   ],
   [
-    phraseQuestion('你不明白词语“inventor”的意思，哪句可以请同伴解释？', ['What does inventor mean?', 'Where is inventor?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does inventor mean? 是完整、语序正确的词义问句。'),
-    phraseQuestion('朋友问 “What does poet mean?” 哪句回答了词义？', ['它的意思是“画家；艺术家”。', '它的意思是“科学家”。', '它的意思是“诗人”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。 “poet”表示“诗人”；另两个选项把其他词语的意思错配过来。'),
+    phraseQuestion('你不明白词语“inventor”的意思，哪句可以请同伴解释？', ['What does ‘inventor’ mean?', 'Where is inventor?', 'How are you?'], 0, '“What does ‘inventor’ mean?” 是完整、语序正确的词义问句。与同伴交流时还可以在句末加 please。'),
+    phraseQuestion('朋友问 “What does ‘poet’ mean?” 哪句回答了词义？', ['它的意思是“画家；艺术家”。', '它的意思是“科学家”。', '它的意思是“诗人”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。“poet”表示“诗人”；另两个选项把其他词语的意思错配过来。'),
   ],
   ['人物职业', '作品和创作'],
   [
     { label: 'inventor', categoryIndex: 0 }, { label: 'artist', categoryIndex: 0 },
     { label: 'poem', categoryIndex: 1 }, { label: 'paint', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学习这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
@@ -23,8 +23,8 @@ const profile2 = lessonProfile(
     { word: 'French', meaning: '法国人；法国的' }, { word: 'poem', meaning: '诗；诗歌' },
   ],
   [
-    phraseQuestion('想表达“我认识词语“writer””，哪句语法正确？', ['I knows the word “writer”.', 'I am know the word “writer”.', 'I know the word “writer”.'], 2, '先找主语 I，再检查动词是否使用原形。 I know the word “writer”. 语序和动词形式正确。'),
-    phraseQuestion('哪句正确地表达“我也认识词语“French””？', ['I also knows the word “French”.', 'I also know the word “French”.', 'I know also the word “French”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。 I also know the word “French”. 表达“我也认识这个词语”。'),
+    phraseQuestion('想表达“我认识词语‘writer’”，哪句语法正确？', ['I knows the word “writer”.', 'I am know the word “writer”.', 'I know the word “writer”.'], 2, '先找主语 I，再检查动词是否使用原形。“I know the word ‘writer’.” 语序和动词形式正确。'),
+    phraseQuestion('哪句正确地表达“我也认识词语‘French’”？', ['I also knows the word “French”.', 'I also know the word “French”.', 'I know also the word “French”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。“I also know the word ‘French’.” 表达“我也认识这个词语”。'),
   ],
   ['人物职业', '作品和创作'],
   [
@@ -39,8 +39,8 @@ const profile3 = lessonProfile(
     { word: 'French', meaning: '法国人；法国的' }, { word: 'study', meaning: '学习；研究' },
   ],
   [
-    phraseQuestion('A问：“Do you know the word “paint”?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。 Do you ...? 的肯定简答是 Yes, I do.'),
-    phraseQuestion('朋友说 “I know the word “invent”.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “invent”, too.', 'I knows the word “invent”, too.', 'I am know the word “invent”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。 I know the word “invent”, too. 语法正确并表达“我也认识这个词语”。'),
+    phraseQuestion('A 问：“Do you know the word ‘paint’?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。“Do you ...?” 的肯定简答是 “Yes, I do.”'),
+    phraseQuestion('朋友说 “I know the word ‘invent’.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “invent”, too.', 'I knows the word “invent”, too.', 'I am know the word “invent”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。“I know the word ‘invent’, too.” 语法正确并表达“我也认识这个词语”。'),
   ],
   ['人物职业', '作品和创作'],
   [
@@ -55,7 +55,7 @@ const profile4 = lessonProfile(
     { word: 'paint', meaning: '用颜料画' }, { word: 'artist', meaning: '画家；艺术家' },
   ],
   [
-    phraseQuestion('原创便笺写着：“writer — 作家”。哪句话准确报告便笺内容？', ['The note is about the word “writer”.', 'The note are about the word “writer”.', 'The note about is the word “writer”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。 The note is about the word “writer”. 正确表达便笺主题。'),
+    phraseQuestion('原创便笺写着：“writer — 作家”。哪句话准确报告便笺内容？', ['The note is about the word “writer”.', 'The note are about the word “writer”.', 'The note about is the word “writer”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。“The note is about the word ‘writer’.” 正确表达便笺主题。'),
     phraseQuestion('小卡片把 “artist” 和 “画家；艺术家” 配在一起。判断卡片时应怎样做？', ['Change the word to a different topic.', 'Ignore the Chinese meaning.', 'Check that the English word and meaning match.'], 2, '核对词义对应关系，不能只看卡片上有英文。 “artist”和“画家；艺术家”相匹配，报告时应保留这组对应。'),
   ],
   ['人物职业', '作品和创作'],

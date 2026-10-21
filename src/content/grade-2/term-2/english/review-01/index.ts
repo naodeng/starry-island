@@ -9,8 +9,8 @@ const activitiesAndWeather = lessonProfile(
     { word: 'rainy', meaning: '下雨的' },
   ],
   [
-    phraseQuestion('天气晴朗，小队想去踢足球，哪句表达合适？', ["It's sunny. We can play football.", "It's rainy. We can play football.", "It's sunny. We can play a weather."], 0, 'sunny 表示晴朗的；can 表示会或能够。'),
-    phraseQuestion('想问朋友会不会游泳，哪句正确？', ['Can your friend swim?', 'What time is your friend?', 'Can your friend weather?'], 0, 'Can…? 可以询问会不会做某事。'),
+    phraseQuestion('天气晴朗，小队想去踢足球，哪句表达合适？', ["It's sunny. We can play football.", "It's rainy. We can play football.", "It's sunny. We can swim."], 0, 'sunny 表示晴朗的；can 表示会或能够。'),
+    phraseQuestion('想问朋友会不会游泳，哪句正确？', ['Can your friend swim?', 'What time is it?', 'Can your friend ride a bike?'], 0, 'Can…? 可以询问会不会做某事。'),
   ],
   ['天气词', '活动词组'],
   [
@@ -29,7 +29,7 @@ const seasonsAndPlay = lessonProfile(
   ],
   [
     phraseQuestion('“我最喜欢的季节是夏天。”可以怎样说？', ['My favourite season is summer.', 'My favourite season is winter.', 'My favourite season is autumn.'], 0, 'summer 表示夏天。'),
-    phraseQuestion('想说春天可以放风筝，哪句通顺？', ['I can fly a kite in spring.', 'I can spring a kite.', 'I can fly a season.'], 0, 'in spring 表示在春天。'),
+    phraseQuestion('想说春天可以放风筝，哪句通顺？', ['I can fly a kite in spring.', 'I can fly a kite in summer.', 'I can swim in summer.'], 0, 'in spring 表示在春天。'),
   ],
   ['季节名称', '四季中的活动表达'],
   [
@@ -47,7 +47,7 @@ const weatherSeasonClues = lessonProfile(
     { word: 'winter', meaning: '冬天' },
   ],
   [
-    phraseQuestion('“春天暖和又有风。”哪句表达完整？', ['It is warm and windy in spring.', 'It is autumn in windy.', 'It is winter and warm in a season.'], 0, 'warm 和 windy 描述天气，in spring 说明季节。'),
+    phraseQuestion('“春天暖和又有风。”哪句表达完整？', ['It is warm and windy in spring.', 'It is windy in autumn.', 'It is cold in winter.'], 0, 'warm 和 windy 描述天气，in spring 说明季节。'),
     phraseQuestion('天空有很多云，哪一个天气词更符合？', ['cloudy', 'sunny', 'spring'], 0, 'cloudy 表示多云。'),
   ],
   ['季节词', '天气词'],
@@ -66,8 +66,8 @@ const playtimeSeasons = lessonProfile(
     { word: 'summer', meaning: '夏天' },
   ],
   [
-    phraseQuestion('小队会踢足球，哪句话表达了这个能力？', ['We can play football.', 'We can play autumn.', 'We cannot a football.'], 0, 'can 后面接活动词组。'),
-    phraseQuestion('想问同伴最喜欢哪个季节，可以怎么问？', ['Which season do you like best?', 'Which football is the season?', 'What time do you like best?'], 0, '询问喜欢哪个季节，可以用 Which season…?'),
+    phraseQuestion('小队会踢足球，哪句话表达了这个能力？', ['We can play football.', 'We can fly a kite.', 'We cannot play football.'], 0, 'can 后面接活动词组。'),
+    phraseQuestion('想问同伴最喜欢哪个季节，可以怎么问？', ['Which season do you like best?', 'Which season is it?', 'What time is it?'], 0, '询问喜欢哪个季节，可以用 Which season…?'),
   ],
   ['活动词组', '季节名称'],
   [
@@ -85,8 +85,8 @@ const activityWeatherReview = lessonProfile(
     { word: 'windy', meaning: '有风的' },
   ],
   [
-    phraseQuestion('天气晴朗，想说“我们会踢足球”，哪句合适？', ["It's sunny. We can play football.", "It's windy. We cannot a football.", "It's sunny. We can play a weather."], 0, 'sunny 描述天气，can play football 表达会做的活动。'),
-    phraseQuestion('想问朋友会不会放风筝，哪句正确？', ['Can you fly a kite?', "What's the weather like today?", 'What time is it today?'], 0, '用 Can you…? 询问活动能力。'),
+    phraseQuestion('天气晴朗，想说“我们会踢足球”，哪句合适？', ["It's sunny. We can play football.", "It's windy. We cannot play football.", "It's cloudy. We can swim."], 0, 'sunny 描述天气，can play football 表达会做的活动。'),
+    phraseQuestion('想问朋友会不会放风筝，哪句正确？', ['Can you fly a kite?', "What's the weather like today?", 'Where is the kite?'], 0, '用 Can you…? 询问活动能力。'),
   ],
   ['天气词', '活动表达'],
   [
@@ -104,12 +104,12 @@ const seasonAbilityReview = lessonProfile(
     { word: 'fly a kite', meaning: '放风筝' },
   ],
   [
-    phraseQuestion('“春天有风。”哪句天气表达合适？', ['It is windy in spring.', 'It is spring in windy.', 'It is rainy in winter.'], 0, 'windy 描述天气，in spring 表示在春天。'),
-    phraseQuestion('小朋友会游泳，哪句正确？', ['I can swim.', 'I cannot swim.', 'I can swim a kite.'], 0, 'can 后面直接接活动词。'),
+    phraseQuestion('“春天有风。”哪句天气表达合适？', ['It is windy in spring.', 'It is windy in winter.', 'It is rainy in winter.'], 0, 'windy 描述天气，in spring 表示在春天。'),
+    phraseQuestion('小朋友会游泳，哪句正确？', ['I can swim.', 'I cannot swim.', 'I can fly a kite.'], 0, 'can 后面直接接活动词。'),
   ],
   ['季节或天气', '活动能力句子'],
   [
-    { label: 'spring', categoryIndex: 0 }, { label: 'windy in winter', categoryIndex: 0 },
+    { label: 'spring', categoryIndex: 0 }, { label: 'It is windy in winter.', categoryIndex: 0 },
     { label: 'She can swim.', categoryIndex: 1 }, { label: 'He cannot fly a kite.', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“我会在春天放风筝”。', items: ['in spring', 'a kite', '.', 'I', 'can', 'fly'], correctOrderIndices: [3, 4, 5, 1, 0, 2] },

@@ -28,7 +28,7 @@ const holidayActivities = lessonProfile(
     { word: 'eat seafood', meaning: '吃海鲜' },
   ],
   [
-    phraseQuestion('梦境记录：周明一家计划去哈尔滨。哪项活动符合他的旅行梦？', ['They can ski there.', 'They can row a boat there.', 'They can eat seafood there.'], 0, '课文梦境中，周明想去哈尔滨滑雪；划船和吃海鲜出现在其他旅行地点。'),
+    phraseQuestion('梦境记录：周明一家计划去哈尔滨滑雪。哪项活动符合他的旅行梦？', ['They can ski there.', 'They can row a boat there.', 'They can eat seafood there.'], 0, '梦境记录说明周明一家计划去哈尔滨滑雪。'),
     phraseQuestion('原创旅行便笺写着：“West Lake; a boat ride; photos.” 哪组活动符合便笺？', ['Row a boat and take photos.', 'Ski and eat seafood.', 'Visit the Great Wall and swim in the sea.'], 0, '便笺中的 boat ride 对应 row a boat，photos 对应 take photos。'),
   ],
   ['旅行活动', '旅行地点'],
@@ -68,8 +68,8 @@ const readingFamilyTravelDream = lessonProfile(
     { word: 'by plane', meaning: '乘飞机' },
   ],
   [
-    phraseQuestion('家庭旅行梦里，妈妈想带孩子去哈尔滨。哪项也符合她选择的交通方式？', ['They go to Harbin by train.', 'They go to Sanya by plane.', 'They go to Dunhuang by train.'], 0, '梦境写到妈妈想乘火车去哈尔滨；另外两项把目的地或计划人物混在了一起。'),
-    phraseQuestion('爸爸计划带孩子去三亚。到那里后，他们可以做什么？', ['They can swim in the sea.', 'They can ski in Harbin.', 'They can row a boat on West Lake.'], 0, '梦境中爸爸选择三亚，那里可以在海里游泳。'),
+    phraseQuestion('家庭旅行梦记录：妈妈想乘火车带孩子去哈尔滨。哪项符合她选择的目的地和交通方式？', ['They go to Harbin by train.', 'They go to Sanya by plane.', 'They go to Dunhuang by train.'], 0, '旅行梦记录说明妈妈想乘火车去哈尔滨。'),
+    phraseQuestion('家庭旅行梦记录：爸爸想乘飞机带孩子去三亚，并计划在海里游泳。到那里后，他们可以做什么？', ['They can swim in the sea.', 'They can ski in Harbin.', 'They can row a boat on West Lake.'], 0, '旅行梦记录说明爸爸带孩子去三亚游泳。'),
   ],
   ['旅行目的地', '出行方式'],
   [
@@ -87,8 +87,8 @@ const planningAMultiStopTrip = lessonProfile(
     { word: 'Australia', meaning: '澳大利亚' },
   ],
   [
-    phraseQuestion('行程卡记录四站：北京、昆明、泰国、澳大利亚。哪项按故事顺序排列？', ['Beijing → Kunming → Thailand → Australia.', 'Kunming → Beijing → Thailand → Australia.', 'Beijing → Thailand → Kunming → Australia.'], 0, '故事先到北京，接着乘火车去昆明，然后去泰国，最后去澳大利亚。'),
-    phraseQuestion('旅行计划写着“春天到 Thailand”。哪项是故事提到的当地活动？', ['Eat seafood.', 'See the flowers.', 'Row a boat.'], 0, '故事写到他们在泰国吃海鲜；看花是昆明一站的活动。'),
+    phraseQuestion('旅行故事信息：他们先去 Beijing，再到 Kunming，然后去 Thailand，最后到 Australia。行程卡记录四站：北京、昆明、泰国、澳大利亚。哪项按故事顺序排列？', ['Beijing → Kunming → Thailand → Australia.', 'Kunming → Beijing → Thailand → Australia.', 'Beijing → Thailand → Kunming → Australia.'], 0, '题面中的行程信息依次是北京、昆明、泰国、澳大利亚。'),
+    phraseQuestion('旅行故事信息：他们春天到 Thailand 吃海鲜。旅行计划写着“春天到 Thailand”。哪项是当地活动？', ['Eat seafood.', 'See the flowers.', 'Row a boat.'], 0, '题面说明他们在泰国吃海鲜；看花是昆明一站的活动。'),
   ],
   ['旅行地点', '旅行活动'],
   [
@@ -107,7 +107,7 @@ const choosingAFunTravelPlan = lessonProfile(
   ],
   [
     phraseQuestion('你想参加能帮助村庄和孩子们的旅行。哪种旅行介绍符合这个愿望？', ['Volunteer Travel.', 'Space Travel.', 'Round the World Travel.'], 0, '志愿旅行介绍了帮助他人、教孩子或清洁乡村等活动。'),
-    phraseQuestion('有人想环游许多国家。Fun Time 提到这类行程可能需要多久？', ['A year or maybe two.', 'A few minutes.', 'One train ride.'], 0, '环球旅行需要较长时间，介绍说可能需要一年，也可能两年。'),
+    phraseQuestion('Fun Time 信息：Round the World Travel 可能要花一年，也可能要花两年。有人想环游许多国家，这类行程可能需要多久？', ['A year or maybe two.', 'A few minutes.', 'One train ride.'], 0, 'Fun Time 信息说明环球旅行可能需要一年，也可能需要两年。'),
   ],
   ['旅行方式', '志愿活动'],
   [

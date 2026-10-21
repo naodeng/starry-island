@@ -64,13 +64,13 @@ const profiles: Record<string, ChineseProfile> = {
   ),
   'g1-seasons': profile(
     [['春风', '春天吹来的风'], ['夏雨', '夏天常见的雨'], ['秋叶', '秋天树上的叶子'], ['冬雪', '冬天可能出现的雪']],
-    ['天气现象', '植物或自然景物'], [['春风', 0], ['夏雨', 0], ['秋叶', 1], ['冬雪', 0]],
+    ['天气现象', '植物'], [['春风', 0], ['夏雨', 0], ['秋叶', 1], ['冬雪', 0]],
     ['看看当天的天气', '观察周围景物', '记下看到的变化', '用季节词说一说'],
     { prompt: '想比较同一棵树在春天和秋天的变化，怎样做？', options: ['在不同时间观察并记录叶子的变化', '只看一片叶子就判断全年', '把树叶的颜色猜出来'], correct: 0, explanation: '在不同时间观察并记录，才能比较变化。' },
   ),
   'g1-daily': profile(
     [['日', '太阳或白天'], ['月', '夜空中常见的月亮'], ['水', '可以流动的水'], ['火', '能发光发热的火']],
-    ['自然事物', '生活用具'], [['日', 0], ['月', 0], ['水', 0], ['水杯', 1]],
+    ['自然事物', '生活用具'], [['日', 0], ['月', 0], ['水', 0], ['火', 0], ['水杯', 1]],
     ['看一看字形', '想一想字义', '把字和事物连起来', '在生活中找一找'],
     { prompt: '在校园里看见一个不认识的字，怎么做更合适？', options: ['请教老师或查识字卡，再试着认读', '随便猜一个意思', '把它和相似的字当成同一个字'], correct: 0, explanation: '借助老师或识字卡核对，能减少认错字。' },
   ),
@@ -108,7 +108,7 @@ const profiles: Record<string, ChineseProfile> = {
     [['家', '家人一起生活的地方'], ['爸', '对父亲的亲切称呼'], ['妈', '对母亲的亲切称呼'], ['愿望', '希望实现的想法']],
     ['家庭成员称呼', '家庭生活或愿望'], [['爸', 0], ['妈', 0], ['家', 1], ['愿望', 1]],
     ['想一想要介绍谁或说什么愿望', '选一个合适的称呼或愿望词', '说出共同经历或自己的希望', '听听对方的回应'],
-    { prompt: '想介绍家人，哪句话更完整？', options: ['这是我的家人，我们常一起散步。', '这是一个，不知道是什么。', '我不说是谁，请你猜。'], correct: 0, explanation: '说出人物关系和一件具体事情，介绍更完整。' },
+    { prompt: '想介绍家人，哪句话更完整？', options: ['这是我的妈妈。周末我们常一起散步。', '这是一个，不知道是什么。', '我不说是谁，请你猜。'], correct: 0, explanation: '说出人物关系和一件具体事情，介绍更完整。' },
   ),
   'g1-friends': profile(
     [['同', '一起或相同'], ['学', '学习或学会'], ['玩', '进行有趣的活动'], ['让', '给别人留出机会']],
@@ -120,7 +120,7 @@ const profiles: Record<string, ChineseProfile> = {
     [['夜', '天黑以后的一段时间'], ['节', '有特别意义的日子'], ['粽子', '端午节常见的一种食物'], ['月', '夜空中常见的月亮']],
     ['时间或节日', '节日食物或景物'], [['夜', 0], ['节', 0], ['粽子', 1], ['月', 1]],
     ['了解节日名称', '观察节日里的事物', '听家人介绍习俗', '用自己的话分享'],
-    { prompt: '想介绍一个节日习俗，哪种做法更尊重事实？', options: ['先问家人或查可靠资料，再说明自己知道的内容', '把听来的所有说法都当成事实', '只凭想象说一定如此'], correct: 0, explanation: '向家人了解并核对资料，介绍会更准确。' },
+    { prompt: '要介绍一个节日习俗，怎样说更准确？', options: ['先问家人或看书，再说自己了解到的习俗', '把听来的每个说法都当成事实', '只凭想象说大家都这样过节'], correct: 0, explanation: '问家人或看书核对过，再介绍习俗更准确。' },
   ),
   'g1-pond': profile(
     [['池', '蓄水的地方'], ['荷', '常在池塘生长的植物'], ['雨', '从云中落下的水滴'], ['晴', '天空少云、阳光较多的天气']],
@@ -129,7 +129,7 @@ const profiles: Record<string, ChineseProfile> = {
     { prompt: '想知道雨后池塘边有什么变化，最合适的办法是什么？', options: ['雨前雨后各观察一次并记下变化', '只在晴天猜一猜', '把昨天的记录当作今天的观察'], correct: 0, explanation: '对照雨前雨后的观察记录，才能发现变化。' },
   ),
   'g1-habits': profile(
-    [['文具', '学习时会用到的用品'], ['整理', '把物品放回合适的位置'], ['分钟', '表示时间的单位'], ['先后', '事情发生的顺序']],
+    [['文具', '学习时会用到的用品'], ['整理', '把物品放回合适的位置'], ['分钟', '计量时间长短的单位'], ['先后', '事情发生的顺序']],
     ['物品管理', '时间信息'], [['文具', 0], ['整理', 0], ['分钟', 1], ['先后', 1]],
     ['看清今天要做的事', '按顺序完成一件小事', '把物品放回原处', '检查有没有遗漏'],
     { prompt: '要减少忘带文具的情况，哪种办法更有帮助？', options: ['放学前对照清单检查书包', '把文具随手放在不同地方', '第二天到了学校再想'], correct: 0, explanation: '对照清单检查，能帮助养成整理习惯。' },
@@ -286,6 +286,10 @@ function courseSeed(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 
   return idSeed + taskIndex * 13 + (difficulty === 'basic' ? 0 : difficulty === 'advanced' ? 19 : 37);
 }
 
+function chineseQuote(text: string): string {
+  return `“${text.replace(/“/g, '‘').replace(/”/g, '’')}”`;
+}
+
 function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 'high', taskIndex: number): ChineseQuestionSpec[] {
   const selected = profiles[entry.profileKey];
   if (!selected) throw new Error(`缺少语文题目配置：${entry.profileKey}`);
@@ -301,12 +305,21 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const scenarioWrongIndex = selected.scenario.options.findIndex((_, index) => index !== selected.scenario.correct);
   const scenarioOtherWrongIndex = selected.scenario.options.findIndex((_, index) => index !== selected.scenario.correct && index !== scenarioWrongIndex);
   const isPinyinProfile = entry.profileKey === 'pinyin-initials' || entry.profileKey === 'pinyin-finals';
+  const gradeOneProblemCheck = (prompt = '想知道问题有没有解决，应该看什么？') => choose(prompt, [
+    '对照题目和做完后的结果。',
+    '只记住自己选的答案。',
+    '不看题目，随便猜一个。',
+  ], 0, '先看题目，再看做完后的结果。', '把题目和结果放在一起看，才能知道问题有没有解决。');
   const pinyinChunks = isPinyinProfile ? splitClassifiedItems(selected.classified, 4) : [];
-  const pinyinRemainder = taskIndex === 0
-    ? [...(pinyinChunks[0] ?? []).slice(8), ...(pinyinChunks[1] ?? []).slice(8)]
+  const pinyinRemainder = entry.profileKey === 'pinyin-finals' && taskIndex === 0
+    ? [
+      pinyinChunks[0]!.find(([label, categoryIndex]) => categoryIndex === 0 && !cards.some(([word]) => word === label))!,
+      pinyinChunks[1]![8]!,
+    ]
     : [];
   const pinyinClassification = (chunkIndex: number): ChineseQuestionSpec => {
-    const items = (pinyinChunks[chunkIndex] ?? []).slice(0, 8);
+    const remainderLabels = new Set(pinyinRemainder.map(([label]) => label));
+    const items = (pinyinChunks[chunkIndex] ?? []).filter(([label]) => !remainderLabels.has(label)).slice(0, 8);
     return sortInto(
       `把第${chunkIndex + 1}组拼音卡按“${selected.categories[0]}”或“${selected.categories[1]}”分类。`,
       selected.categories,
@@ -325,14 +338,14 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
         : choose('同伴把音节 ba 的第一声写成 bǎ，哪项检查后能改正？', ['bā', 'bá', 'bǎ'], 0,
           '第一声标在韵母上方，调号平直。', 'ba 的第一声写作 bā；bǎ 是第三声。')
       : difficulty === 'advanced'
-        ? choose('zhi 属于哪一类拼音卡？', ['整体认读音节', '后鼻韵母', '前鼻韵母'], 0,
-          '先判断 zhi 是一个完整音节还是韵母。', 'zhi 是整体认读音节，应作为整体认读。')
-        : choose('同伴想把 zhi 拆开拼读，哪条建议正确？', [
-          'zhi 是整体认读音节，应该作为整体认读。',
-          'zhi 是后鼻韵母，去掉声母后再读。',
+        ? choose('ying 属于哪一类拼音卡？', ['整体认读音节', '后鼻韵母', '前鼻韵母'], 0,
+          '先判断 ying 是一个完整音节还是韵母。', 'ying 是整体认读音节，应作为整体认读。')
+        : choose('同伴想把 ying 拆开拼读，哪条建议正确？', [
+          'ying 是整体认读音节，应该作为整体认读。',
+          'ying 是后鼻韵母，去掉声母后再读。',
           '只读最后一个字母 i。',
-        ], 0, '核对它是否属于整体认读音节。', 'zhi 是整体认读音节，不拆开拼读。')
-    : entry.profileKey === 'g3-imagination'
+        ], 0, '核对它是否属于整体认读音节。', 'ying 是整体认读音节，不拆开拼读。')
+      : entry.profileKey === 'g3-imagination'
       ? difficulty === 'advanced'
         ? choose('想象一种新奇事物并介绍给伙伴，哪种记录能让伙伴听懂？', [
           '说清它是什么、有什么特点和用途。',
@@ -344,37 +357,79 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
           '增加互相矛盾的特点，越多越好。',
           '只写名字，不说明特点或用途。',
         ], 0, '把每个特点和设定的用途放在一起核对。', '特点彼此相容并服务于用途，介绍才容易听懂。')
+      : entry.grade === 1
+        ? gradeOneProblemCheck('同伴做完后，怎样知道问题有没有解决？')
       : difficulty === 'advanced'
-      ? choose(`解决“${selected.scenario.prompt}”后，哪种记录最便于伙伴核对你的判断？`, [
+      ? choose(`解决${chineseQuote(selected.scenario.prompt)}后，哪种记录最便于伙伴核对你的判断？`, [
         '写下观察到的具体线索，并说明它怎样支持结论。',
         '只记录最后的答案，不写观察到什么。',
         '改写问题，不核对结论和线索。',
       ], 0, '记录可观察到的线索，并把线索和结论连起来。', '写下具体线索及其与结论的关系，伙伴才能复核判断。')
-      : choose(`同伴按“${selected.scenario.options[selected.scenario.correct]}”处理了“${selected.scenario.prompt}”，怎样检查结果是否可靠？`, [
+      : choose(`同伴按${chineseQuote(selected.scenario.options[selected.scenario.correct])}处理了${chineseQuote(selected.scenario.prompt)}，怎样检查结果是否可靠？`, [
         '回看实际线索，并检查结果是否回应了问题。',
         '只凭第一印象判断，不再查看线索。',
         '不看结果是否符合问题要求。',
       ], 0, '将处理结果与观察到的线索、问题要求逐项核对。', '回看线索并对照问题要求，才能判断处理结果是否可靠。');
   const scenarioRepair = difficulty === 'basic'
     ? taskIndex === 0
-      ? choose(selected.scenario.prompt, selected.scenario.options, selected.scenario.correct, '回想本组主题和观察、表达的要求。', selected.scenario.explanation)
-      : choose(`要核对“${selected.scenario.options[selected.scenario.correct]}”是否解决了“${selected.scenario.prompt}”，哪条记录最有用？`, [
-        '记下观察到的具体线索和处理后的结果，再对照问题要求。',
-        '只记下自己的判断，不记录线索。',
-        '用猜测代替实际记录。',
-      ], 0, '把实际线索和处理结果记下来，再看它们是否回应了问题。', '记录具体线索和处理结果，才能检查做法是否解决了问题。')
+      ? choose(selected.scenario.prompt, selected.scenario.options, selected.scenario.correct,
+        isPinyinProfile
+          ? entry.profileKey === 'pinyin-initials'
+            ? '先看题目要求第几声，再核对调号。'
+            : '先看拼音卡的类别，再按相应方法认读。'
+          : '回想本组主题和观察、表达的要求。', selected.scenario.explanation)
+      : isPinyinProfile
+        ? entry.profileKey === 'pinyin-initials'
+          ? choose('同伴把 pa 的第四声写成 pǎ，应该改成哪一种？', ['pà', 'pǎ', 'pá'], 0,
+            '第四声的调号向下，检查韵母 a 上的调号。', 'pa 的第四声写作 pà；pǎ 是第三声。')
+          : choose('同伴想把 ying 拆开拼读，哪条建议正确？', [
+            'ying 是整体认读音节，应该作为整体认读。',
+            'ying 是后鼻韵母，去掉声母后再读。',
+            '只读最后一个字母 i。',
+          ], 0, '核对 ying 的类别，整体认读音节不拆开读。', 'ying 是整体认读音节，应整体认读。')
+      : entry.grade === 1 && !isPinyinProfile
+        ? gradeOneProblemCheck()
+      : entry.grade === 3
+        ? choose(`同学按${chineseQuote(selected.scenario.options[selected.scenario.correct])}处理${chineseQuote(selected.scenario.prompt)}，哪句话说明这样做的好处？`, [
+          selected.scenario.explanation,
+          '我觉得这样更好，但不说明它和问题有什么关系。',
+          '不看题目线索，直接说答案。',
+        ], 0, '把做法和要解决的问题联系起来说明。', `这样做的理由是：${selected.scenario.explanation}`)
+        : choose(`要核对${chineseQuote(selected.scenario.options[selected.scenario.correct])}是否解决了${chineseQuote(selected.scenario.prompt)}，哪条记录最有用？`, [
+          '记下观察到的具体线索和处理后的结果，再对照问题要求。',
+          '只记下自己的判断，不记录线索。',
+          '用猜测代替实际记录。',
+        ], 0, '把实际线索和处理结果记下来，再看它们是否回应了问题。', '记录具体线索和处理结果，才能检查做法是否解决了问题。')
     : taskIndex === 1
       ? taskTwoScenarioRepair
+      : isPinyinProfile
+        ? entry.profileKey === 'pinyin-initials'
+          ? difficulty === 'advanced'
+            ? choose('音节 ba 标为第三声，哪种写法正确？', ['bǎ', 'bá', 'bà'], 0,
+              '先看题目要求第几声，再核对调号。', '第三声写作 bǎ。')
+            : choose('同伴把 ba 的第二声写成 bǎ，应该改成哪一种？', ['bá', 'bǎ', 'bà'], 0,
+              '第二声调号向上，检查韵母 a 上的调号。', 'ba 的第二声写作 bá；bǎ 是第三声。')
+          : difficulty === 'advanced'
+            ? choose('zhi 属于哪一类拼音卡？', ['整体认读音节', '后鼻韵母', '前鼻韵母'], 0,
+              '先判断 zhi 是完整音节还是韵母。', 'zhi 是整体认读音节，应作为整体认读。')
+            : choose('同伴想把 zhi 拆开认读，哪种说法正确？', [
+              'zhi 是整体认读音节，应该作为整体认读。',
+              'zhi 是后鼻韵母，去掉声母后再读。',
+              '只读最后一个字母 i。',
+            ], 0, '核对 zhi 的类别，整体认读音节不拆开读。', 'zhi 是整体认读音节，应整体认读。')
+      : entry.grade === 1
+        ? choose(selected.scenario.prompt, selected.scenario.options, selected.scenario.correct,
+          '先读清题目，再选一个合适的做法。', selected.scenario.explanation)
       : difficulty === 'advanced'
-      ? choose(`为了解决“${selected.scenario.prompt}”中的问题，哪种做法能先提供需要的线索？`, [
+      ? choose(`为了解决${chineseQuote(selected.scenario.prompt)}中的问题，哪种做法能先提供需要的线索？`, [
         selected.scenario.options[selected.scenario.correct]!,
         selected.scenario.options[scenarioWrongIndex]!,
         '不看问题要求，直接猜一个结论。',
       ], 0, '先找出问题需要什么信息，再比较每种做法。', selected.scenario.explanation)
-      : choose(`同伴选了“${selected.scenario.options[scenarioWrongIndex]}”。要确认“${selected.scenario.prompt}”怎样处理才可靠，哪条依据最完整？`, [
+      : choose(`同伴选了${chineseQuote(selected.scenario.options[scenarioWrongIndex]!)}。要确认${chineseQuote(selected.scenario.prompt)}怎样处理才可靠，哪条依据最完整？`, [
         selected.scenario.options[selected.scenario.correct]!,
         selected.scenario.options[scenarioOtherWrongIndex]!,
-        '不核对观察、词义或题目条件。',
+        '不核对找到的线索，也不看题目条件。',
       ], 0, '检查做法是否回应问题，并核对需要的线索。', selected.scenario.explanation);
   const categoryGroups = [0, 1].map((categoryIndex) => ({
     categoryIndex,
@@ -471,6 +526,26 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     })()
     : taskIndex === 0 && difficulty === 'basic'
       ? arrange('把主题学习卡按合适的先后顺序排好。', sequence, correctOrder, '先找开始的一步，再逐步检查后面的顺序。', `本次主题卡的顺序是：${correctOrder.map((index) => sequence[index]).join('，')}。`)
+      : entry.grade === 1
+        ? taskIndex === 0
+          ? difficulty === 'advanced'
+            ? arrange('遇到不认识的词，按顺序想一想。', [
+              '先读一读这个词', '想想它表示什么', '看看题目里有没有提示', '选一个合适的意思',
+            ], [0, 1, 2, 3], '先读词，再想意思，最后看题目。', '读清词语、想想意思，再看题目里的提示。')
+            : arrange('把介绍词卡的步骤排好。', [
+              '先读清两张词卡', '说出每张词卡的意思', '看看哪里相同或不同', '把发现说给伙伴听',
+            ], [0, 1, 2, 3], '先读词卡，再说意思，最后把发现告诉伙伴。', '读清两张词卡、说出意思、比较后再告诉伙伴。')
+          : difficulty === 'high'
+            ? arrange('按顺序帮助同学认清词卡。', [
+              `先读“${first[0]}”`, `说一说“${first[0]}”的意思`, `和“${second[0]}”比一比`, '告诉伙伴你的发现',
+            ], [0, 1, 2, 3], '先读词卡，想一想意思，再和另一张卡比一比。', '读清词卡、说出意思、比较后告诉伙伴。')
+            : difficulty === 'advanced'
+              ? arrange(`比较“${first[0]}”和“${second[0]}”后告诉伙伴发现。`, [
+                `先读清“${first[0]}”和“${second[0]}”`, `说出“${first[0]}”的意思`, `说出“${second[0]}”的意思`, '把发现告诉伙伴',
+              ], [0, 1, 2, 3], '先读两张卡，再分别说出意思。', `读清两张卡、说出各自意思，最后告诉伙伴。`)
+              : arrange(`向同伴介绍“${first[0]}”和“${second[0]}”，按清楚的步骤排列。`, [
+                '先说清本组主题', `解释“${first[0]}”的意思`, `联系“${second[0]}”补充信息`, '把发现告诉伙伴',
+              ], [0, 1, 2, 3], '先说主题，再说词语意思，最后告诉伙伴。', `先介绍主题，再解释“${first[0]}”并联系“${second[0]}”，最后告诉伙伴。`)
       : taskIndex === 0
         ? difficulty === 'advanced'
           ? arrange('读到不熟悉的主题词时，按步骤理解并核对。', [
@@ -502,27 +577,45 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     ? pinyinClassification(taskIndex * 2 + 1)
     : difficulty === 'basic'
       ? taskIndex === 0
-        ? choose('读主题词卡时，遇到不熟悉的词义，哪种办法更有帮助？', [
-          '联系本单元主题和实际线索，再核对词义。',
-          '只看字形猜意思。',
-          '跳过不看，也不核对。',
-        ], 0, '把词语放回主题情境中理解，再检查是否合适。', '联系主题和实际线索，再核对词义，有助于理解词语。')
+        ? entry.grade === 1
+          ? choose('不认识一个字，怎样帮助自己弄懂它？', [
+            '读一读这个字，再想一个身边的例子。',
+            '只看字形猜意思。',
+            '跳过不看。',
+          ], 0, '先读这个字，再想想身边有没有例子。', '读清字，再联系身边的例子，能帮助理解。')
+          : choose('读主题词卡时，遇到不熟悉的词义，哪种办法更有帮助？', [
+            '联系本单元主题和实际线索，再核对词义。',
+            '只看字形猜意思。',
+            '跳过不看，也不核对。',
+          ], 0, '把词语放回主题情境中理解，再检查是否合适。', '联系主题和实际线索，再核对词义，有助于理解词语。')
         : choose('向伙伴介绍本组内容，怎样让意思更清楚？', [
           '先说主题，再用词卡或例子说明。',
           '只读词语，不说意思。',
           '随意替换词语的意思。',
         ], 0, '先让伙伴知道主题，再用词语或例子解释。', '先说主题并举例说明，伙伴更容易听懂本组内容。')
       : difficulty === 'advanced'
-        ? choose(`在新情境中判断“${first[0]}”的意思，哪条线索最有帮助？`, [
-          `先读懂“${first[0]}”的词义，再核对它与题目情境是否相符。`,
-          '只看字形，不读题目里的线索。',
-          '不看词义，直接猜一个意思。',
-        ], 0, '把词语意思和题目情境放在一起核对。', `“${first[0]}”表示“${first[1]}”；结合情境核对能减少误解。`)
-        : choose(`要向伙伴证明“${first[0]}”和“${second[0]}”的分类准确，哪条记录最完整？`, [
-          `写出两张卡的词义${classificationEvidence}`,
-          '只写两个词语，不说明意思或分类依据。',
-          '按自己喜欢的类别放置，不核对词义。',
-        ], 0, '说明词义，并用同一分类标准逐项核对。', `分别核对“${first[0]}”和“${second[0]}”的词义，再按相应类别标准判断。`);
+        ? entry.grade === 1
+          ? choose(`看到“${first[0]}”，怎样找到它的意思？`, [
+            `读一读“${first[0]}”，再看词卡上的意思。`,
+            '只看字形猜意思。',
+            '不看词卡，随便猜一个意思。',
+          ], 0, '先读词，再看词卡上的意思。', `词卡写着“${first[0]}”表示“${first[1]}”。`)
+          : choose(`在新情境中判断“${first[0]}”的意思，哪条线索最有帮助？`, [
+            `先读懂“${first[0]}”的词义，再核对它与题目情境是否相符。`,
+            '只看字形，不读题目里的线索。',
+            '不看词义，直接猜一个意思。',
+          ], 0, '把词语意思和题目情境放在一起核对。', `“${first[0]}”表示“${first[1]}”；结合情境核对能减少误解。`)
+        : entry.grade === 1
+          ? choose(`“${first[0]}”和“${second[0]}”怎么分？`, [
+            '先说出两个词的意思，再按类别放好。',
+            '只看字形，不说意思。',
+            '随便放进一类。',
+          ], 0, '读清意思，再按类别放好。', `先说出“${first[0]}”和“${second[0]}”的意思，再放进合适的类别。`)
+          : choose(`要向伙伴证明“${first[0]}”和“${second[0]}”的分类准确，哪条记录最完整？`, [
+            `写出两张卡的词义${classificationEvidence}`,
+            '只写两个词语，不说明意思或分类依据。',
+            '按自己喜欢的类别放置，不核对词义。',
+          ], 0, '说明词义，并用同一分类标准逐项核对。', `分别核对“${first[0]}”和“${second[0]}”的词义，再按相应类别标准判断。`);
   const nextStep = selected.sequence[Math.min(taskIndex + 1, selected.sequence.length - 1)];
   const previousStep = selected.sequence[taskIndex]!;
   const matchPairs = taskIndex === 0
@@ -532,9 +625,10 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const swappedPair = `“${first[0]}”表示“${second[1]}”；“${second[0]}”表示“${first[1]}”。`;
   const repeatedPair = `“${first[0]}”表示“${first[1]}”；“${second[0]}”也表示“${first[1]}”。`;
   const matchingQuestion = pinyinRemainder.length > 0
-    ? sortInto('把补充拼音卡按类别放好。', selected.categories,
-      pinyinRemainder.map(([label, categoryIndex]) => [label, categoryIndex + 1] as const),
-      '先读拼音卡，再按本单元的分类名称放置。', '每张补充卡都要按自己的拼音类别判断。')
+    ? pair('把补充拼音卡和类别连起来。',
+      pinyinRemainder.map(([label, categoryIndex]) => [label, selected.categories[categoryIndex]] as const),
+      '先读清拼音卡，再和类别名称对应。',
+      `${pinyinRemainder.map(([label, categoryIndex]) => `${label} 属于“${selected.categories[categoryIndex]}”`).join('；')}。`)
     : difficulty === 'basic'
     ? pair(taskIndex === 0 ? '把词语和意思连起来。' : '根据意思找出相应的词语。', matchPairs, '先读清词语或意思，再逐个核对对应关系。', '每个词语都要和它自己的意思配对。')
     : difficulty === 'advanced'
@@ -607,36 +701,145 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
         ? pinyinChallengeQuestion()
         : difficulty === 'advanced'
         ? taskIndex === 0
-          ? choose(`要核对“${selected.scenario.options[selected.scenario.correct]}”是否解决了“${selected.scenario.prompt}”，哪条记录最有用？`, [
-            '记录观察到的具体线索和处理后的结果，再对照问题要求。',
-            scenarioWrongB,
-            '只记结论，不记录线索或结果。',
-          ], 0, '把实际线索和处理结果记下来，再看它们是否回应了问题。', '记录具体线索和处理结果，才能检查做法是否解决了问题。')
-          : choose(`介绍“${first[0]}”和“${second[0]}”时，怎样比较两条信息是否准确？`, [
-            `分别核对词义，再按同一标准判断它们属于哪一类。`,
-            `只核对“${first[0]}”，不看“${second[0]}”。`,
-            '按自己喜欢哪个来决定意思。',
-          ], 0, '逐项核对词义，并使用同一个分类标准。', `先核对两个词的意思，再判断分类是否符合标准。${classificationConclusion}`)
+          ? entry.grade === 1
+            ? gradeOneProblemCheck('做完以后，怎样知道问题有没有解决？')
+          : entry.grade === 3
+            ? choose(`同学想知道为什么${chineseQuote(selected.scenario.options[selected.scenario.correct])}适合处理${chineseQuote(selected.scenario.prompt)}，哪条说明最贴切？`, [
+              selected.scenario.explanation,
+              '只说“我觉得这样好”，不说明它怎样回应问题。',
+              '照着别人的做法，不查看题目线索。',
+            ], 0, '把做法和问题需要的线索联系起来解释。', `这句话说明了这种做法怎样回应问题：${selected.scenario.explanation}`)
+            : choose(`要核对${chineseQuote(selected.scenario.options[selected.scenario.correct])}是否解决了${chineseQuote(selected.scenario.prompt)}，哪条记录最有用？`, [
+              '记录观察到的具体线索和处理后的结果，再对照问题要求。',
+              scenarioWrongB,
+              '只记结论，不记录线索或结果。',
+            ], 0, '把实际线索和处理结果记下来，再看它们是否回应了问题。', '记录具体线索和处理结果，才能检查做法是否解决了问题。')
+          : entry.grade === 1
+            ? entry.profileKey === 'g1-friends'
+              ? choose('同伴也想玩玩具时，怎样做能表示“让一让”？', [
+                '商量轮流玩，并约好顺序。',
+                '谁声音大就一直玩。',
+                '把玩具藏起来。',
+              ], 0, '想一想怎样给伙伴也留出玩的机会。', '商量轮流玩能给伙伴留出机会，体现了“让一让”。')
+              : choose(`“${first[0]}”和“${second[0]}”分别放在哪一类？`, [
+                classificationConclusion,
+                `只看“${first[0]}”，不看“${second[0]}”。`,
+                '按自己喜欢的类别放。',
+              ], 0, '读懂两张词卡的意思，再按类别放好。', `先看两张词卡的意思，再分别放到合适的类别。`)
+            : choose(`介绍“${first[0]}”和“${second[0]}”时，怎样比较两条信息是否准确？`, [
+              `分别核对词义，再按同一标准判断它们属于哪一类。`,
+              `只核对“${first[0]}”，不看“${second[0]}”。`,
+              '按自己喜欢哪个来决定意思。',
+            ], 0, '逐项核对词义，并使用同一个分类标准。', `先核对两个词的意思，再判断分类是否符合标准。${classificationConclusion}`)
         : taskIndex === 0
-        ? choose('想把本组内容介绍给同学，怎样说更准确也更有条理？', [
-          `按“${selected.sequence[0]}、${selected.sequence[1]}”的顺序介绍，再用词义或主题线索说明依据。`,
-          scenarioWrongB,
-          '只说结论，不提词语或主题线索。',
-        ], 0, '先安排表达顺序，再说清支持想法的线索。', '先按主题步骤组织内容，再用词义或主题线索说明依据。')
-        : choose(`同伴把“${first[0]}”理解成“${second[1]}”，怎样检查并改进他的介绍？`, [
-          `对照“${first[0]}”的词义“${first[1]}”，再回到主题线索核对。`,
-          scenarioWrongB,
-          '不检查词义，只把这句话说得更长。',
-        ], 0, '先核对词语本身的意思，再检查它和主题是否相符。', `“${first[0]}”表示“${first[1]}”；回到词义和主题线索核对，能改正误解。`)
+        ? entry.grade === 1
+          ? entry.profileKey === 'g1-friends'
+            ? choose('“同学”和“让一让”为什么都能放在“友好相处”一栏？', [
+              '同学是一起学习的伙伴，让一让是给别人留出机会。',
+              '同学和让一让都是游戏工具。',
+              '分类不需要看意思，喜欢就放。',
+            ], 0, '读懂两个词的意思，再看它们怎样帮助伙伴相处。', '同学是一起学习的伙伴，让一让是给别人留出机会，都能帮助伙伴友好相处。')
+            : choose(`想告诉伙伴“${first[0]}”和“${second[0]}”为什么这样分类，哪句话最清楚？`, [
+              classificationConclusion,
+              '只说“它们很像”。',
+              '我喜欢这样分。',
+            ], 0, '说出词卡的意思，再告诉伙伴它们属于哪一类。', classificationConclusion)
+          : choose('想把本组内容介绍给同学，怎样说更准确也更有条理？', [
+            `按“${selected.sequence[0]}、${selected.sequence[1]}”的顺序介绍，再用词义或主题线索说明依据。`,
+            scenarioWrongB,
+            '只说结论，不提词语或主题线索。',
+          ], 0, '先安排表达顺序，再说清支持想法的线索。', '先按主题步骤组织内容，再用词义或主题线索说明依据。')
+        : entry.grade === 1
+          ? choose(`同学把“${first[0]}”和“${second[0]}”的意思说反了，哪句话能帮他改正？`, [
+            correctPair,
+            swappedPair,
+            '不看词卡，随便说一个意思。',
+          ], 0, '读清两张卡的意思，再告诉同学。', correctPair)
+          : choose(`同伴把“${first[0]}”理解成“${second[1]}”，怎样检查并改进他的介绍？`, [
+            `对照“${first[0]}”的词义“${first[1]}”，再回到主题线索核对。`,
+            scenarioWrongB,
+            '不检查词义，只把这句话说得更长。',
+          ], 0, '先核对词语本身的意思，再检查它和主题是否相符。', `“${first[0]}”表示“${first[1]}”；回到词义和主题线索核对，能改正误解。`)
   ];
+
+  if (entry.profileKey === 'g3-school' && difficulty === 'basic' && taskIndex === 1) {
+    questions[5] = choose('小禾在校园文章中读到“课间，大家走进阅览室看书”，不认识“阅览室”。哪条记录最能说明她怎样推想并核对词义？', [
+      '她记下“看书”这个线索，猜“阅览室”是看书的地方，再查字典核对。',
+      '她只数了这个词有几个字，没有读句子。',
+      '她把猜想当成词典里的意思，没有再核对。',
+    ], 0, '找到前后句里的线索，先推想，再核对。', '“看书”提供了推想线索；查字典可以核对猜想。');
+  }
+
+  if (entry.profileKey === 'g3-school' && difficulty === 'advanced' && taskIndex === 0) {
+    questions[7] = choose('校园读书分享卡上有几句话，哪组最适合放在同一段？', [
+      '课间我在图书角读故事书。读完后，我把有趣的情节讲给同学听。',
+      '课间我读故事书。午餐有米饭。操场上有人跑步。',
+      '课间我借了一本书。天空很蓝。学校门口有一棵树。',
+    ], 0, '看几句话是否围绕同一件事。', '第一组都写课间读书和分享，内容连贯，适合放在同一段。');
+  }
+
+  if (entry.profileKey === 'g3-school' && difficulty === 'high' && taskIndex === 1) {
+    const notice = '校园图书角通知：周五午间，三年级同学可以到图书角参加故事分享。请带一本读过的书，活动结束后把书放回书架。';
+    return varyChoicePositions([
+      choose(`读通知：${notice} 哪项信息写在通知里？`, [
+        '故事分享安排在周五午间。',
+        '每人要带两本新书。',
+        '活动地点是操场。',
+      ], 0, '在通知中找直接写出的时间、地点或要求。', '通知明确写着故事分享安排在周五午间；带两本新书和在操场活动都没有写在通知里。'),
+      pair(`根据通知“${notice}”，把内容和信息类别连起来。`, [
+        ['周五午间', '活动时间'],
+        ['图书角', '活动地点'],
+        ['带一本读过的书', '准备物品'],
+      ], '逐条查看通知，分别找时间、地点和要准备的物品。', '“周五午间”说明时间，“图书角”说明地点，“带一本读过的书”说明准备物品。'),
+      arrange('你要把通知转述给没看过的同学。按“先说活动，再补充安排”的顺序排列。', [
+        '先说这是故事分享活动',
+        '再说活动时间和地点',
+        '补充要带一本读过的书',
+        '最后说活动结束后把书放回书架',
+      ], [0, 1, 2, 3], '从活动内容开始，再依次交代时间地点、准备物品和结束后的安排。', '先说明活动是什么，再交代时间地点、准备物品，最后补充活动后的安排，听者就能按顺序了解通知。'),
+      sortInto(`通知写着：“${notice}”把下面内容分成“通知明确写出的信息”和“个人想法”。`, [
+        '通知明确写出的信息', '个人想法',
+      ], [
+        ['活动安排在周五午间', 1],
+        ['活动地点是图书角', 1],
+        ['我觉得故事分享很有趣', 2],
+        ['我想下次分享动物故事', 2],
+      ], '先在通知中找原句，再判断哪些内容是自己的感受或打算。', '周五午间和图书角都能在通知中找到；觉得活动有趣、想分享动物故事是个人想法。'),
+      choose(`同学问：“参加故事分享要带什么？”通知写着：“${notice}”哪句话回答准确？`, [
+        '带一本自己读过的书。',
+        '带两本还没读过的书。',
+        '通知没有说要带什么。',
+      ], 0, '回到通知中找“请带……”后面的内容。', '通知要求带一本读过的书。'),
+      choose(`同学问：“故事分享要进行多长时间？”通知写着：“${notice}”怎样回答最有根据？`, [
+        '通知没有写活动时长，可以向老师询问。',
+        '活动一定进行一小时。',
+        '活动会一直进行到放学。',
+      ], 0, '检查通知有没有写活动时长；没有写明的内容不要猜。', '通知写了活动时间是周五午间，但没有说明持续多久；应继续询问，而不是自行补充时长。'),
+      choose(`同学要把通知转述给家长，哪段话既完整又没有增加通知里没有的信息？通知内容：${notice}`, [
+        '周五午间，三年级同学可以在图书角参加故事分享；要带一本读过的书，结束后把书放回书架。',
+        '周五午间，三年级同学要到操场比赛，带两本新书，获胜后可以领奖。',
+        '周五放学后，所有年级都要到图书角听故事，不用带书。',
+      ], 0, '逐项核对时间、参加对象、地点和活动安排。', '第一段保留了通知中的时间、对象、地点、准备物品和结束后的安排，没有增加未经说明的比赛或奖励。'),
+      choose('同学转述时说：“周五午间在图书角分享故事，带一本读过的书。”听者提醒：“你还没说活动结束后要做什么。”加上哪句话能补全通知？', [
+        '活动结束后把书放回书架。',
+        '活动结束后到操场集合。',
+        '活动结束后把书带回家。',
+      ], 0, '对照通知，找出刚才转述时漏掉的那项安排。', '通知写明活动结束后要把书放回书架；另外两项并未在通知中出现。'),
+    ], courseSeed(entry, difficulty, taskIndex));
+  }
+
   return varyChoicePositions(questions, courseSeed(entry, difficulty, taskIndex));
 }
 
 function makeTaskSpec(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 'high', index: number): ChineseTaskSpec {
   const sessionTitles = taskTitles[difficulty];
   const objective = objectives[difficulty];
-  const title = `${entry.title.replace(/^(第一|第二|第三|第四|第五|第六|第七|第八|第九|第十)单元 · /, '')} · ${sessionTitles[index]}`;
-  return makeTask(title, objective[index], `companion-0${(index % 4) + 1}` as ChineseTaskSpec['companionId'], createQuestions(entry, difficulty, index) as unknown as Parameters<typeof makeTask>[3]);
+  const gradeThreeNoticeTask = entry.profileKey === 'g3-school' && difficulty === 'high' && index === 1;
+  const title = `${entry.title.replace(/^(第一|第二|第三|第四|第五|第六|第七|第八|第九|第十)单元 · /, '')} · ${gradeThreeNoticeTask ? '校园通知信息核对员' : sessionTitles[index]}`;
+  const taskObjective = gradeThreeNoticeTask
+    ? '阅读校园通知，区分明确信息与个人想法，准确转述并核对未说明的信息。'
+    : objective[index];
+  return makeTask(title, taskObjective, `companion-0${(index % 4) + 1}` as ChineseTaskSpec['companionId'], createQuestions(entry, difficulty, index) as unknown as Parameters<typeof makeTask>[3]);
 }
 
 export function buildAddedChineseUnit(id: string) {

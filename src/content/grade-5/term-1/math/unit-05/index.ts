@@ -62,7 +62,7 @@ export const unit = buildMathUnit({
       ], '根据未知数当前受到的运算选择相反运算。', '加12用减12抵消，乘5用除5，除以4用乘4。'),
       sortInto('把解方程的步骤分到“求解过程”或“检验过程”。', ['求解过程', '检验过程'], [
         { label: '等式两边同时加上相同的数', categoryIndex: 0 },
-        { label: '将未知数除以它的系数', categoryIndex: 0 },
+        { label: '等式两边同时除以未知数的系数', categoryIndex: 0 },
         { label: '把求出的数代回原方程', categoryIndex: 1 },
         { label: '比较代入后等式左右两边', categoryIndex: 1 },
       ], '求解用于找到未知数，检验用于确认结果满足原方程。', '同时运算和逆运算用来求解；代入并比较左右两边用于检验。'),

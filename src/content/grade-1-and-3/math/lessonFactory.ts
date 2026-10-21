@@ -256,18 +256,30 @@ function makeArithmetic(entry: AddedCourseEntry, p: MathProfile, difficulty: 'ba
         : operation === '×'
           ? `每组有 ${firstValue} 个物品，一共有 ${secondValue} 组。`
           : `${firstValue} 个物品平均分成 ${secondValue} 份。`;
+    const additionSubtractionOnly = p.operator === '+' || p.operator === '-';
     const distractors: Record<Operator, [string, string]> = {
-      '+': [`${firstValue} - ${secondValue}`, `${firstValue} × ${secondValue}`],
-      '-': [`${firstValue} + ${secondValue}`, `${secondValue} - ${firstValue}`],
+      '+': additionSubtractionOnly
+        ? [`${firstValue} - ${secondValue}`, `${firstValue} + ${secondValue + 1}`]
+        : [`${firstValue} - ${secondValue}`, `${firstValue} × ${secondValue}`],
+      '-': additionSubtractionOnly
+        ? [`${firstValue} + ${secondValue}`, `${firstValue} - ${secondValue + 1}`]
+        : [`${firstValue} + ${secondValue}`, `${secondValue} - ${firstValue}`],
       '×': [`${firstValue} + ${secondValue}`, `${firstValue} - ${secondValue}`],
       '÷': [`${firstValue} + ${secondValue}`, `${firstValue} - ${secondValue}`],
     };
     const [wrongA, wrongB] = distractors[operation];
     return choose(`${context} 应列哪道算式？`, [equation.expression, wrongA, wrongB], 0,
-      '先判断数量是合并、取走、相同份数，还是平均分。', `${context} 对应 ${equation.expression}。`);
+      additionSubtractionOnly ? '先看数量是合在一起还是拿走，再选择加法或减法。' : '先判断数量是合并、取走、相同份数，还是平均分。',
+      `${context} 对应 ${equation.expression}。`);
   };
   const checkingQuestion = (equation: { expression: string; answer: number }) => {
     const operation = (['+', '-', '×', '÷'] as const).find((symbol) => equation.expression.includes(` ${symbol} `)) ?? operator;
+    const [multiplicand, multiplier] = operation === '×'
+      ? equation.expression.split(' × ').map(Number)
+      : [];
+    const multiplicationMethod = multiplicand !== undefined && multiplier !== undefined
+      ? `把 ${multiplicand} 拆成 ${Math.floor(multiplicand / 10) * 10} 和 ${multiplicand % 10}，分别乘 ${multiplier} 后相加`
+      : '把一个数拆成整十和个位，分别乘另一个数再相加';
     const checkMethod = operation === '+'
       ? taskIndex === 0
         ? '用和减去其中一个加数，检查是否得到另一个加数'
@@ -278,7 +290,7 @@ function makeArithmetic(entry: AddedCourseEntry, p: MathProfile, difficulty: 'ba
           : '先估计差的大致范围，再逐位计算并核对结果'
         : operation === '×'
           ? taskIndex === 0
-            ? (limit >= 90 ? '把一个因数拆成整十和个位，分别乘后再合并' : '按每组数量逐组相加，检查总数')
+            ? (limit >= 90 ? multiplicationMethod : '按每组数量逐组相加，检查总数')
             : '先估计积的大致范围，再计算并检查结果是否在范围内'
           : '用商乘除数，再加余数，检查是否回到被除数';
     return choose(`怎样检查 ${equation.expression} 的计算方法是否合理？`, [
@@ -615,11 +627,49 @@ function makeLocation(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' 
           : choose('同学要比较两条去操场的路线，先核对什么条件才公平？', ['两条路线使用同一张方向图和同一起点', '只比较路线卡的颜色', '一条从校门出发，另一条不写起点'], 0, '比较路线前要统一方向和起点。', '同一起点和方向约定一致，路线才可以比较。')
         : taskIndex === 0
           ? choose('小组要为新同学设计一张路线卡，怎样安排信息更可靠？', ['先标起点和地图方向，再按顺序写每段方向与步数', '只画终点，不标起点', '把方向和步数随意排列'], 0, '路线卡需要统一方向约定并按行走顺序记录。', '标明起点和方向，再依次写方向与步数，别人才能照着走。')
-          : choose('伙伴照路线卡走错了，发现卡片只写了“向北 2 格、向东 3 格”，漏了什么？', ['从哪里出发以及两步的先后顺序', '目的地的颜色', '路线卡的纸张大小'], 0, '路线要说明起点，也要按实际先后排列步骤。', '补上起点和步骤顺序，伙伴才能复现路线。'),
+      : choose('路线卡只列出两段路“向北 2 格”和“向东 3 格”，没有写明从哪里出发、先走哪一段。漏了什么？', ['从哪里出发以及两步的先后顺序', '目的地的颜色', '路线卡的纸张大小'], 0, '路线要说明起点，也要按实际先后排列步骤。', '补上起点和步骤顺序，伙伴才能复现路线。'),
   ];
 }
 
 function makeShapes(p: MathProfile, difficulty: 'basic' | 'advanced' | 'high', taskIndex: number): MathQuestionSpec[] {
+  if (p.mode === 'plane-shapes') {
+    const finalQuestion = difficulty === 'basic'
+      ? taskIndex === 0
+        ? choose('看到一张圆形图卡，哪件物品的外形和它最像？', ['圆盘', '书本', '纸盒'], 0, '把图卡和物品的整体轮廓放在一起比较。', '圆盘的整体轮廓和圆形图卡相似。')
+        : choose('桌上有三角形、长方形和圆形图卡，哪张图卡适合配一张圆形盘子的照片？', ['圆形图卡', '三角形图卡', '长方形图卡'], 0, '比较图卡和盘子的外轮廓。', '盘子的外轮廓接近圆形。')
+      : difficulty === 'advanced'
+        ? taskIndex === 0
+          ? choose('只看图卡转了方向，不能确定它是不是换成了另一种图形。还要怎样观察？', ['比较图卡的整体轮廓', '比较图卡的颜色', '比较图卡放得高不高'], 0, '方向改变后，先看整体轮廓有没有改变。', '转动图卡会改变摆放方向；比较整体轮廓能帮助判断图形是否相同。')
+          : choose('想把几张图形卡拼成一幅图，哪种做法能先看出可能的拼法？', ['把图卡摆在一起试一试，再观察拼出的轮廓', '只看图卡的颜色，不实际摆放', '把图卡收起来后直接猜'], 0, '动手摆放并观察组合后的轮廓。', '把图卡摆在一起，观察拼出的整体轮廓，才能核对拼组结果。')
+        : taskIndex === 0
+          ? choose('同伴说旋转后的图卡变成了另一种图形，怎样检查？', ['转回不同方向比较整体轮廓', '只比较图卡的颜色', '只比较图卡放在桌上的位置'], 0, '图卡摆放方向不同，整体轮廓可能仍然相同。', '把图卡转动后比较整体轮廓，可以判断是否还是同一种图形。')
+          : choose('小组想用几张图形卡拼出新图案，哪种记录最容易让别人看懂？', ['画出图卡的摆放位置和拼出的整体轮廓', '只写图卡的颜色', '只写“拼好了”'], 0, '记录图卡怎样摆放，以及组合后看起来是什么样。', '画出摆放位置和整体轮廓，别人就能照着检查拼组结果。');
+    return [
+      taskIndex === 0
+        ? choose('哪张图形卡的外轮廓像三角形？', ['△', '○', '▭'], 0, '比较每张图卡的整体轮廓。', '△图卡的整体轮廓是三角形。')
+        : choose('哪张图形卡的外轮廓像长方形？', ['▭', '○', '△'], 0, '把图卡的整体轮廓和长方形的样子比较。', '▭图卡的整体轮廓像长方形。'),
+      taskIndex === 0
+        ? choose('哪张图形卡的外轮廓像正方形？', ['□', '△', '○'], 0, '从图卡的整体样子辨认图形。', '□图卡的整体轮廓像正方形。')
+        : choose('哪张图形卡的外轮廓像圆形？', ['○', '▭', '□'], 0, '观察图卡的整体轮廓。', '○图卡的整体轮廓像圆形。'),
+      pair('把图形卡和外形相似的物品连起来。', taskIndex === 0
+        ? [['圆形图卡', '硬币的外轮廓'], ['三角形图卡', '三角形旗子'], ['长方形图卡', '长方形画框'], ['正方形图卡', '方形卡片']]
+        : [['圆形图卡', '圆形镜子'], ['三角形图卡', '三角形旗子'], ['长方形图卡', '长方形画框'], ['正方形图卡', '方形卡片']],
+      '比较图卡和物品的整体外轮廓。', '每张图卡都和整体轮廓相似的物品对应。'),
+      taskIndex === 0
+        ? sortInto('把图形卡按“整体轮廓是圆的”和“整体轮廓不是圆的”分类。', ['圆的', '不是圆的'], [{ label: '圆形图卡', categoryIndex: 0 }, { label: '三角形图卡', categoryIndex: 1 }, { label: '长方形图卡', categoryIndex: 1 }, { label: '正方形图卡', categoryIndex: 1 }], '观察每张图卡的整体轮廓。', '圆形图卡的整体轮廓是圆的，另外三张不是圆形。')
+        : sortInto('把物品按“外形像圆形图卡”和“外形不像圆形图卡”分类。', ['像圆形图卡', '不像圆形图卡'], [{ label: '圆盘', categoryIndex: 0 }, { label: '书本', categoryIndex: 1 }, { label: '三角形旗子', categoryIndex: 1 }, { label: '长方形画框', categoryIndex: 1 }], '比较物品和圆形图卡的整体轮廓。', '圆盘整体轮廓接近圆形；书本、三角形旗子和长方形画框的轮廓不同。'),
+      taskIndex === 0
+        ? choose('把长方形图卡转一个方向后，它还是哪种图形？', ['长方形', '圆形', '三角形'], 0, '转动只改变图卡的摆放方向。', '图卡的整体轮廓没有改变，所以仍是长方形。')
+        : choose('把正方形图卡转一个方向后，怎样判断图形有没有变化？', ['比较转动前后的整体轮廓', '比较它旁边物品的颜色', '比较它在桌上的位置'], 0, '重点观察图卡本身的轮廓。', '转动图卡后比较整体轮廓，可以发现图形没有因此改变。'),
+      taskIndex === 0
+        ? arrange('按“挑选图卡、摆在一起、观察拼出的图案、画下结果”的顺序整理拼组步骤。', ['观察拼出的图案', '挑选图卡', '画下结果', '把图卡摆在一起'], [1, 3, 0, 2], '先准备图卡，再摆放、观察并记录。', '先挑选图卡，摆在一起后观察组合图案，最后画下结果。')
+        : arrange('按“选几张图卡、试着拼摆、调整位置、说出新图案”的顺序整理操作。', ['说出新图案', '调整图卡位置', '选几张图卡', '试着拼摆'], [2, 3, 1, 0], '先选图卡，再尝试摆放和调整。', '选好图卡后试着拼摆，调整位置，再观察并说出新图案。'),
+      taskIndex === 0
+        ? choose('三角形图卡和圆形图卡摆在一起，哪种说法是在描述拼出的图案？', ['图案由三角形图卡和圆形图卡摆成', '两张图卡的颜色一定相同', '两张图卡一定变成同一种图形'], 0, '说清用了哪些图卡，不猜颜色或图形会不会改变。', '拼组后可以描述图案由哪些图卡组成；图卡本身并没有变成另一种图形。')
+        : choose('同伴把几张图形卡拼在一起，却没记录摆法。怎样补充记录最有用？', ['画出每张图卡的位置和拼成的整体图案', '只记下图卡的颜色', '只记下用了几张卡'], 0, '记录位置和整体图案，才能还原拼法。', '只记颜色或数量不能还原摆法；位置和整体图案能帮助别人复现。'),
+      finalQuestion,
+    ];
+  }
   if (p.mode === 'solid-shapes') {
     const finalQuestion = difficulty === 'basic'
       ? taskIndex === 0
@@ -749,7 +799,7 @@ function makeClock(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
     taskIndex === 0
       ? arrange('把“开始活动、经过一段时间、活动结束”的时间顺序排好。', ['活动结束', '开始活动', '经过一段时间'], [1, 2, 0], '先找开始，再找结束。', '先开始活动，经过一段时间后活动结束。')
       : arrange('计算活动经过时间，按“记下起点、记下终点、统一单位并相减、写出结果”的顺序排列。', ['写出经过的时间', '记录活动结束时刻', '用相同单位相减', '记录活动开始时刻'], [3, 1, 2, 0], '先记录两个时刻，再计算它们之间的时间。', '先记录开始和结束时刻，统一单位后相减，最后写出经过时间。'),
-    calculate(`一段活动用了 ${elapsed} 分钟，1 小时后还剩多少分钟才到 1 小时？`, `60 - ${elapsed}`, 60 - elapsed, '把 1 小时换成 60 分钟，再减去已经用的时间。', `60 - ${elapsed} = ${60 - elapsed} 分钟。`),
+    calculate(`一段活动已经用了 ${elapsed} 分钟，满 1 小时还差多少分钟？`, `60 - ${elapsed}`, 60 - elapsed, '把 1 小时换成 60 分钟，再减去已经用的时间。', `60 - ${elapsed} = ${60 - elapsed} 分钟。`),
     finalQuestion,
   ];
 }
@@ -765,10 +815,10 @@ function makeMoney(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
   return [
     taskIndex === 0
       ? chooseNumber('1 元等于多少角？', 10, [1, 100], '想想 1 元可以换成几个 1 角。', '1 元等于 10 角。')
-      : chooseNumber('5 元等于多少角？', 50, [5, 500], '1 元等于 10 角，5 元就是 5 个 10 角。', '5 元等于 5 × 10 = 50 角。'),
+      : chooseNumber('5 元等于多少角？', 50, [5, 500], '1 元等于 10 角，5 元就是 5 个 10 角。', '5 个 10 角合起来是 50 角。'),
     taskIndex === 0
       ? chooseNumber('1 元等于多少分？', 100, [10, 1], '1 元先换成 10 角，每角有 10 分。', '1 元等于 100 分。')
-      : chooseNumber('3 角等于多少分？', 30, [3, 300], '1 角等于 10 分，3 角就是 3 个 10 分。', '3 角等于 3 × 10 = 30 分。'),
+      : chooseNumber('3 角等于多少分？', 30, [3, 300], '1 角等于 10 分，3 角就是 3 个 10 分。', '3 个 10 分合起来是 30 分。'),
     pair('把人民币单位和换算关系连起来。', [['1 元换成角', '10 角'], ['1 元换成分', '100 分'], ['5 角换成分', '50 分'], ['2 元换成角', '20 角']], '记住 1 元等于 10 角，1 角等于 10 分。', '按元、角、分之间的十进关系换算。'),
     calculate(`${tens} 角 + ${ones} 角 = ? 角`, `${tens} + ${ones}`, tens + ones, '单位相同，可以直接把角数相加。', `${tens} 角 + ${ones} 角 = ${tens + ones} 角。`),
     choose(`有 ${total} 分，等于多少角和多少分？`, [`${tens} 角 ${ones} 分`, `${ones} 角 ${tens} 分`, `${total} 角`], 0, '每 10 分是 1 角。', `${total} 分可以写成 ${tens} 角 ${ones} 分。`),
@@ -859,11 +909,14 @@ function makePatterns(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' 
 
 function makeFractions(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 'high', taskIndex: number): MathQuestionSpec[] {
   const denominator = 2 + (seedFor(entry, difficulty, taskIndex) % 3);
+  const denominatorNames = ['', '', '二', '三', '四', '五'] as const;
+  const denominatorName = denominatorNames[denominator]!;
+  const nextDenominatorName = denominatorNames[denominator + 1]!;
   return [
     taskIndex === 0
       ? choose('把一个同样大小的蛋糕平均分成 2 份，每份是它的几分之一？', ['二分之一', '二分之二', '三分之一'], 0, '平均分成 2 份，其中 1 份就是二分之一。', '把整体平均分成 2 份，每份是整体的二分之一。')
       : choose('把同样大小的纸平均分成 3 份，取其中 1 份，是整体的几分之一？', ['三分之一', '三分之三', '二分之一'], 0, '分母表示平均分成的总份数，分子表示取出的份数。', '平均分成 3 份并取 1 份，是三分之一。'),
-    choose(`把同样大小的纸平均分成 ${denominator} 份，取其中 1 份，写作几分之一？`, [`${denominator} 分之一`, `1 分之 ${denominator}`, `${denominator + 1} 分之一`], 0, '分母表示平均分成的份数，分子表示取的份数。', `平均分成 ${denominator} 份并取 1 份，是 ${denominator} 分之一。`),
+    choose(`把同样大小的纸平均分成 ${denominator} 份，取其中 1 份，写作几分之一？`, [`${denominatorName}分之一`, `一分之${denominatorName}`, `${nextDenominatorName}分之一`], 0, '分母表示平均分成的份数，分子表示取的份数。', `平均分成 ${denominator} 份并取 1 份，是 ${denominatorName}分之一。`),
     pair('把分数和“平均分成几份并取几份”连起来。', [['二分之一', '平均分成 2 份，取 1 份'], ['三分之一', '平均分成 3 份，取 1 份'], ['三分之二', '平均分成 3 份，取 2 份'], ['四分之一', '平均分成 4 份，取 1 份']], '先读分母表示的总份数，再看分子表示取了几份。', '分母表示平均分的份数，分子表示其中取的份数。'),
     taskIndex === 0
       ? choose('同样大小的圆，一个平均分成 2 份取 1 份，另一个平均分成 4 份取 1 份。哪个更大？', ['二分之一更大', '四分之一更大', '一样大'], 0, '整体相同，分的份数越少，每一份越大。', '同一个整体平均分成 2 份，每份大于平均分成 4 份后的一份。')
@@ -1005,8 +1058,8 @@ function makeTable(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
       : choose('读复式统计表时，先看行标题和列标题有什么用？', ['确认每个数字对应的活动和班级', '只看表格颜色', '只看最大数字'], 0, '行和列标题能说明数字代表什么。', '看清行标题和列标题，才能知道数字对应哪项活动和哪个班。')
     : difficulty === 'advanced'
       ? taskIndex === 0
-        ? choose(`“${reading.activity}”共有 ${readingTotal} 人参加，怎样从表中得到这个数？`, [`把一班和二班的 ${reading.classOne} 人、${reading.classTwo} 人相加`, '只看一班人数', '把两个班的人数相减'], 0, '按同一活动找到两个班的人数，再合并。', `${reading.classOne} + ${reading.classTwo} = ${readingTotal} 人。`)
-        : choose('要找参加人数最多的活动，应怎样利用表格？', ['先把每项活动的两个班人数相加，再比较总数', '只比较第一行的一个班', '按活动名称的长短排序'], 0, '比较活动总人数时，要对每项活动使用相同的方法。', `分别相加后再比较，才能找出总人数最多的活动：${orderedRows.at(-1)!.activity}。`)
+        ? choose(`“${reading.activity}”这一行有一班 ${reading.classOne} 人、二班 ${reading.classTwo} 人，共 ${readingTotal} 人，怎样从表中得到这个总数？`, [`把一班和二班的 ${reading.classOne} 人、${reading.classTwo} 人相加`, '只看一班人数', '把两个班的人数相减'], 0, '按同一活动找到两个班的人数，再合并。', `${reading.classOne} + ${reading.classTwo} = ${readingTotal} 人。`)
+        : choose('要找参加人数最多的活动，应怎样利用表格？', ['先把每项活动的两个班人数相加，再比较总数', '只比较第一行的一个班', '按活动名称的长短排序'], 0, '比较活动总人数时，要对每项活动使用相同的方法。', '分别把各项活动两个班的人数相加，再比较总数，才能找出人数最多的活动。')
       : taskIndex === 0
         ? choose('准备向同学介绍这张复式统计表，怎样安排说明更清楚？', ['先说调查的活动和班级，再按活动逐行比较数据', '只报最大的一个数字', '不说明数字对应哪个班'], 0, '先交代表格记录什么，再按行说明发现。', '说明调查内容和行列信息后，听者能跟着表格核对。')
         : choose(`绘画这一行记录一班 ${rows[1]!.classOne} 人、二班 ${rows[1]!.classTwo} 人，合计却写成 ${rows[1]!.classOne + rows[1]!.classTwo + 1} 人。怎样修正？`, [`合计应为 ${rows[1]!.classOne + rows[1]!.classTwo} 人，并回看记录核实`, '把二班人数也改成合计数', '不检查，保留原合计'], 0, '把两个班的人数相加，再回到记录核实。', `${rows[1]!.classOne} + ${rows[1]!.classTwo} = ${rows[1]!.classOne + rows[1]!.classTwo} 人。`);
@@ -1018,7 +1071,7 @@ function makeTable(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | '
         : reading.classOne > reading.classTwo
           ? `一班 ${reading.classOne} 人，比二班 ${reading.classTwo} 人多。`
           : `二班 ${reading.classTwo} 人，比一班 ${reading.classOne} 人多。`),
-    calculate(`“${reading.activity}”两个班一共有多少人？`, `${reading.classOne} + ${reading.classTwo}`, readingTotal, '把同一活动行中的两个班人数相加。', `${reading.classOne} + ${reading.classTwo} = ${readingTotal} 人。`),
+    calculate(`“${reading.activity}”一班 ${reading.classOne} 人、二班 ${reading.classTwo} 人，两个班一共有多少人？`, `${reading.classOne} + ${reading.classTwo}`, readingTotal, '把同一活动行中的两个班人数相加。', `${reading.classOne} + ${reading.classTwo} = ${readingTotal} 人。`),
     pair('把活动和两个班对应的人数连起来。', rows.map(({ activity, classOne, classTwo }) => [activity, `一班 ${classOne} 人、二班 ${classTwo} 人`] as const), '按活动名称逐行核对两个班的人数。', '每项活动都要和同一行的两个班级数据对应。'),
     sortInto('把活动按“一班更多”“二班更多”或“两班一样多”分类。', ['一班更多', '二班更多', '两班一样多'], rows.map((row) => ({ label: `${row.activity}（一班 ${row.classOne} 人、二班 ${row.classTwo} 人）`, categoryIndex: compareClassOne(row) })), '比较每张活动卡上的两个班级人数。', '逐项比较一班和二班的数据，再按人数关系分类。'),
     arrange(
@@ -1062,7 +1115,7 @@ function makeCalendar(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' 
     difficulty === 'basic'
       ? taskIndex === 0
         ? choose('安排活动日期时，哪种记录最不容易混淆？', ['写清年月日和开始时间', '只写“下周”', '只写星期几，不写日期'], 0, '年月日和时间能准确定位活动。', '写清年月日和开始时间，方便核对具体安排。')
-        : choose('查看月份日历时，想知道这个月有多少天，先看哪里？', ['看这个月最后一天的日期', '看第一周有几天', '只看星期标题'], 0, '月份天数由这个月的最后一个日期确定。', `${month} 月的最后一天是 ${days} 日，所以这个月有 ${days} 天。`)
+        : choose(`查看 ${month} 月的日历时，想知道这个月有多少天，先看哪里？`, ['看这个月最后一天的日期', '看第一周有几天', '只看星期标题'], 0, '月份天数由这个月的最后一个日期确定。', `${month} 月的最后一天是 ${days} 日，所以这个月有 ${days} 天。`)
       : difficulty === 'advanced'
         ? taskIndex === 0
           ? choose('下午 5 时用 24 时计时法怎样表示？', ['17:00', '5:00', '15:00'], 0, '下午时刻换成 24 时计时法时，在小时上加 12。', '17:00 表示下午 5 时。')
@@ -1115,7 +1168,7 @@ function makeCombinations(_entry: AddedCourseEntry, difficulty: 'basic' | 'advan
   const missingCombination = combinations[combinations.length - 1]!;
   const focusedItems = [`${firstChoices[0]} + ${secondChoices[0]}`, `${firstChoices[0]} + ${secondChoices[1]}`, `${firstChoices[1]} + ${secondChoices[0]}`, `${firstChoices[1]} + ${secondChoices[1]}`];
   const q8 = difficulty === 'basic'
-    ? choose(`已经列完“${firstChoices[0]}”的搭配后，下一步怎么做？`, [`换下一种${taskIndex === 0 ? '上衣' : '饮料'}，再分别搭配每一种${taskIndex === 0 ? '裤子' : '点心'}`, '重复写第一种搭配', '停止，不用看其他选择'], 0, '固定第一类中的一种选择，再依次搭配第二类。', '换下一种选择并逐一配对，才能列全。')
+    ? choose(`有${firstChoices.join('、')}和${secondChoices.join('、')}可选。已经列完“${firstChoices[0]}”的搭配后，下一步怎么做？`, [`换下一种${taskIndex === 0 ? '上衣' : '饮料'}，再分别搭配每一种${taskIndex === 0 ? '裤子' : '点心'}`, '重复写第一种搭配', '停止，不用看其他选择'], 0, '固定第一类中的一种选择，再依次搭配第二类。', '换下一种选择并逐一配对，才能列全。')
     : difficulty === 'advanced'
       ? choose(`有 ${firstChoices.length} 种${taskIndex === 0 ? '上衣' : '饮料'}和 ${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}，怎样检查搭配数？`, ['把每一种第一类选择分别和所有第二类选择配对', '只数第一类选择', '只写自己最喜欢的一种'], 0, '每一种第一类选择都要逐一搭配第二类的每一种。', `按这个方法列出 ${firstChoices.length} × ${secondChoices.length} 种搭配。`)
       : taskIndex === 0
@@ -1126,18 +1179,18 @@ function makeCombinations(_entry: AddedCourseEntry, difficulty: 'basic' | 'advan
     difficulty === 'basic'
       ? calculate(`${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}分别和 ${firstChoices.length} 种${taskIndex === 0 ? '上衣' : '饮料'}配对，一共多少种？`, `${firstChoices.length} × ${secondChoices.length}`, total, '交换列出顺序，检查每一种组合是否都出现。', `一共是 ${firstChoices.length} × ${secondChoices.length} = ${total} 种。`)
       : difficulty === 'advanced'
-        ? calculate(`再增加 1 种${taskIndex === 0 ? '裤子' : '点心'}后，全部${taskIndex === 0 ? '上衣' : '饮料'}搭配一共有多少种？`, `${firstChoices.length} × ${secondChoices.length + 1}`, firstChoices.length * (secondChoices.length + 1), '新增一种第二类选择后，它要和第一类的每一种选择分别搭配。', `${firstChoices.length} × ${secondChoices.length + 1} = ${firstChoices.length * (secondChoices.length + 1)} 种。`)
-        : calculate(`原有 ${total} 种搭配；新增 1 种${taskIndex === 0 ? '裤子' : '点心'}后，会多出多少种搭配并得到新总数？`, `${total} + ${firstChoices.length}`, total + firstChoices.length, '新增的第二类选择要和第一类中的每一种选择各搭配一次。', `新增 ${firstChoices.length} 种搭配：${total} + ${firstChoices.length} = ${total + firstChoices.length} 种。`),
+        ? calculate(`有 ${firstChoices.length} 种${taskIndex === 0 ? '上衣' : '饮料'}和 ${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}；再增加 1 种${taskIndex === 0 ? '裤子' : '点心'}后，一共有多少种搭配？`, `${firstChoices.length} × ${secondChoices.length + 1}`, firstChoices.length * (secondChoices.length + 1), '新增一种第二类选择后，它要和第一类的每一种选择分别搭配。', `${firstChoices.length} × ${secondChoices.length + 1} = ${firstChoices.length * (secondChoices.length + 1)} 种。`)
+        : calculate(`有 ${firstChoices.length} 种${taskIndex === 0 ? '上衣' : '饮料'}和 ${secondChoices.length} 种${taskIndex === 0 ? '裤子' : '点心'}，原有 ${total} 种搭配；再增加 1 种${taskIndex === 0 ? '裤子' : '点心'}后，一共有多少种搭配？`, `${total} + ${firstChoices.length}`, total + firstChoices.length, '新增一种第二类选择后，它要和第一类的每一种选择各搭配一次。', `新增 ${firstChoices.length} 种搭配：${total} + ${firstChoices.length} = ${total + firstChoices.length} 种。`),
     pair('把每种搭配和它的文字记录连起来。', combinations, '固定一种第一类选择，再逐个核对第二类。', '每一种组合都只出现一次。'),
     difficulty === 'basic'
-      ? arrange(`按顺序列出“${firstChoices[0]}”的前两种搭配。`, [`${firstChoices[0]} + ${secondChoices[1]}`, `${firstChoices[0]} + ${secondChoices[0]}`], [1, 0], '先固定第一类选择，再按题目给出的第二类顺序排列。', `先配 ${secondChoices[0]}，再配 ${secondChoices[1]}。`)
+      ? arrange(`第二类选择顺序为：${secondChoices.join('、')}。按这个顺序列出“${firstChoices[0]}”的前两种搭配。`, [`${firstChoices[0]} + ${secondChoices[1]}`, `${firstChoices[0]} + ${secondChoices[0]}`], [1, 0], '先固定第一类选择，再按题目给出的第二类顺序排列。', `先配 ${secondChoices[0]}，再配 ${secondChoices[1]}。`)
       : difficulty === 'advanced'
-        ? arrange(`固定“${firstChoices[0]}”，按顺序列出与每一种${taskIndex === 0 ? '裤子' : '点心'}的完整搭配。`,
+        ? arrange(`第二类选择顺序为：${secondChoices.join('、')}。固定“${firstChoices[0]}”，按这个顺序列出与每一种${taskIndex === 0 ? '裤子' : '点心'}的完整搭配。`,
           [...secondChoices].reverse().map((second) => `${firstChoices[0]} + ${second}`),
           secondChoices.map((_, index) => secondChoices.length - index - 1),
           '固定第一类选择，再逐项核对第二类的每一种选择。',
           `“${firstChoices[0]}”依次与${secondChoices.join('、')}搭配，共 ${secondChoices.length} 种。`)
-        : arrange(`把全部 ${total} 种搭配卡按第一类、第二类选择的顺序排好。`,
+        : arrange(`第一类选择顺序为：${firstChoices.join('、')}；第二类选择顺序为：${secondChoices.join('、')}。把全部 ${total} 种搭配卡按这个顺序排好。`,
           combinations.map(([label]) => label).reverse(),
           combinations.map((_, index) => combinations.length - index - 1),
           '先固定一种第一类选择，列完第二类后再换下一种，并检查不重不漏。',
@@ -1251,7 +1304,7 @@ function makePerimeter(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced'
     taskIndex === 0
       ? choose('长方形的周长应该怎样计算？', ['（长 + 宽）× 2', '长 + 宽 + 宽', '长 + 宽'], 0, '周长是围成图形一周的长度。', '长方形有两条长边和两条宽边，所以是（长 + 宽）× 2。')
       : choose('边长 3 厘米的正方形周长用哪道算式计算？', ['3 × 4', '3 × 3', '3 + 4'], 0, '正方形有 4 条一样长的边。', '正方形周长是边长乘 4，所以是 3 × 4 = 12 厘米。'),
-    pair('把长方形边长和周长连起来。', facts.map(([l, w]) => [`长 ${l} 厘米、宽 ${w} 厘米`, String(2 * (l + w))] as const), '周长等于两条长边和两条宽边的总和。', '每个长方形的周长都是 2 ×（长 + 宽）。'),
+    pair('把长方形边长和周长连起来。', facts.map(([l, w]) => [`长 ${l} 厘米、宽 ${w} 厘米`, `${2 * (l + w)} 厘米`] as const), '周长等于两条长边和两条宽边的总和。', '每个长方形的周长都是 2 ×（长 + 宽），单位为厘米。'),
     calculate(`正方形边长是 ${side} 厘米，周长是多少？`, `${side} × 4`, side * 4, '正方形四条边一样长。', `${side} × 4 = ${side * 4} 厘米。`),
     taskIndex === 0
       ? sortInto('把“求一周的长度”或“测量一条边的长度”分类。', ['求周长', '测一条边'], [{ label: '围着花坛边缘装一圈栏杆', categoryIndex: 0 }, { label: '测量课桌一条长边', categoryIndex: 1 }, { label: '沿操场边缘跑一圈', categoryIndex: 0 }, { label: '量正方形的一条边', categoryIndex: 1 }], '周长沿图形一周；单条边只量边界中的一段。', '围一圈或跑一圈求周长；测量课桌或正方形的一条边只得到单条边长。')
@@ -1295,7 +1348,7 @@ function makeArea(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 'h
     chooseNumber(`边长为 ${side} 厘米的正方形面积是多少平方厘米？`, side * side, [side * side + 1, side * side - 1], '正方形面积等于边长乘边长。', `${side} × ${side} = ${side * side} 平方厘米。`),
     taskIndex === 0
       ? sortInto('把测量单位分到“长度单位”和“面积单位”。', ['长度单位', '面积单位'], [{ label: '厘米', categoryIndex: 0 }, { label: '米', categoryIndex: 0 }, { label: '平方厘米', categoryIndex: 1 }, { label: '平方米', categoryIndex: 1 }], '看单位名称中有没有“平方”。', '厘米和米是长度单位；平方厘米和平方米是面积单位。')
-      : sortInto('把这些单位按“量长度”或“量面积”分类。', ['量长度', '量面积'], [{ label: '毫米', categoryIndex: 0 }, { label: '分米', categoryIndex: 0 }, { label: '平方分米', categoryIndex: 1 }, { label: '平方千米', categoryIndex: 1 }], '长度单位表示线段的长短，面积单位表示平面的大小。', '毫米和分米量长度；平方分米和平方千米量面积。'),
+      : sortInto('把这些单位按“量长度”或“量面积”分类。', ['量长度', '量面积'], [{ label: '毫米', categoryIndex: 0 }, { label: '分米', categoryIndex: 0 }, { label: '平方分米', categoryIndex: 1 }, { label: '平方米', categoryIndex: 1 }], '长度单位表示线段的长短，面积单位表示平面的大小。', '毫米和分米量长度；平方分米和平方米量面积。'),
     taskIndex === 0
       ? arrange('用面积公式解决问题，按步骤排列。', ['把长和宽相乘', '确定图形的长和宽', '写上平方单位', '说清要求平面的大小'], [3, 1, 0, 2], '先确认问题问平面大小，再找边长。', '确定问题和长宽后计算乘积，并使用平方单位。')
       : arrange('求长 6 厘米、宽 4 厘米的长方形面积，按步骤排列。', ['写出 24 平方厘米', '找出长 6 厘米和宽 4 厘米', '确认要求的是平面大小', '计算 6 × 4'], [2, 1, 3, 0], '先确认问题问面积，再找边长并计算。', '先确认求面积，找出长和宽，计算 6 × 4，最后写平方厘米。'),
@@ -1510,12 +1563,12 @@ function createSecondTaskMatchVariant(question: MathQuestionSpec, entry: AddedCo
     '先判断复习内容属于哪个知识主题，再选择合适的方法。', '把每个问题和本册学过的数学方法或概念对应起来。'),
     'math-park': pair('把算式和得数连起来。', [['2 + 3', '5'], ['4 + 5', '9'], ['10 - 3', '7'], ['9 - 5', '4']],
       '先算出每道题的得数，再连线。', '每道算式都与它计算得到的得数对应，结果都在 10 以内。'),
-    'plane-shapes': pair('把平面图形和顶点特点连起来。', [
-      ['三角形', '有 3 个顶点'],
-      ['长方形', '有 4 个顶点'],
-      ['正方形', '有 4 个顶点'],
-      ['圆', '没有顶点'],
-    ], '顶点是图形边相交的地方。', '三角形有 3 个顶点；长方形和正方形有 4 个顶点；圆没有顶点。'),
+    'plane-shapes': pair('把图形卡和外形相似的物品连起来。', [
+      ['圆形图卡', '圆盘'],
+      ['三角形图卡', '三角形路牌'],
+      ['长方形图卡', '书本封面'],
+      ['正方形图卡', '方形窗格'],
+    ], '比较图卡和物品的整体外轮廓。', '每张图卡都和整体轮廓相似的物品对应。'),
     classification: pair('把整理记录的方法和作用连起来。', [
       ['红色积木', '放进红色组'],
       ['蓝色积木', '放进蓝色组'],
@@ -1632,9 +1685,10 @@ function choiceFromQuestion(
   if (question.kind === 'choice') {
     const correct = question.options[question.correctOptionIndex]!;
     const wrong = question.options.filter((_, index) => index !== question.correctOptionIndex);
+    const quotedQuestionPrompt = question.prompt.replaceAll('“', '‘').replaceAll('”', '’');
     prompt = difficulty === 'advanced'
       ? question.prompt
-      : `同伴回答${question.prompt}时选了“${wrong[0]}”，应该改成哪一项？`;
+      : `同伴选了“${wrong[0]}”来回答“${quotedQuestionPrompt}”，应该改选哪一项？`;
     options = [correct, wrong[0]!, wrong[1]!];
     explanation = question.explanation;
     hint = question.hint;
@@ -1668,7 +1722,9 @@ function choiceFromQuestion(
       }
     }
     prompt = difficulty === 'advanced'
-      ? `${question.prompt} 列式计算并核对，得数是多少？`
+      ? question.prompt.includes('列式计算并核对')
+        ? question.prompt
+        : `${question.prompt} 列式计算并核对，得数是多少？`
       : `同伴解答“${question.prompt}”时把 ${question.expression} 算成 ${distractors[0]}。正确得数是多少？`;
     explanation = question.explanation;
     hint = question.hint;
@@ -1694,9 +1750,12 @@ function choiceFromQuestion(
     const swappedOrder = [...ordered];
     [swappedOrder[0], swappedOrder[1]] = [swappedOrder[1]!, swappedOrder[0]!];
     const otherWrongOrder = swappedOrder.join(' → ');
+    const quotedCriterion = question.prompt.match(/^按“(.+)”的(?:顺序整理步骤|步骤排列)。?$/)?.[1];
     prompt = difficulty === 'advanced'
       ? question.prompt
-      : `同伴的排列顺序是“${reversedOrder}”。按“${question.prompt}”的要求，哪项排列正确？`;
+      : `同伴的排列顺序是“${reversedOrder}”。${quotedCriterion
+        ? `请按“${quotedCriterion}”的要求，选择正确排列。`
+        : `请根据原题要求（${question.prompt}），选择正确排列。`}`;
     options = [expectedOrder, reversedOrder, otherWrongOrder === reversedOrder ? '不符合题目要求的排列' : otherWrongOrder];
     explanation = question.explanation;
     hint = question.hint;

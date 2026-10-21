@@ -48,7 +48,7 @@ const weekendStorySequence = lessonProfile(
   ],
   [
     phraseQuestion('读一读安排：On Saturday morning, I go fishing. In the afternoon, I pick fruit. In the evening, I visit my grandparents. What do I do first?', ['Go fishing.', 'Pick fruit.', 'Visit my grandparents.'], 0, 'morning 在 afternoon 和 evening 之前，所以最先去钓鱼。'),
-    phraseQuestion('根据这份安排，去钓鱼之后接着做什么？', ['Pick fruit.', 'Visit my grandparents.', 'Go to the cinema.'], 0, '安排中上午去钓鱼，下午采摘水果，晚上看望祖父母。'),
+    phraseQuestion('安排是：星期六上午去钓鱼，下午采摘水果，晚上看望祖父母。去钓鱼之后接着做什么？', ['Pick fruit.', 'Visit my grandparents.', 'Go to the cinema.'], 0, '安排中上午去钓鱼，下午采摘水果，晚上看望祖父母。'),
   ],
   ['时间表达', '周末活动'],
   [

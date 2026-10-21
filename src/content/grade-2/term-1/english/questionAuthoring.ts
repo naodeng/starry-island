@@ -121,7 +121,7 @@ export function makeTask(
   profile: EnglishLessonProfile,
 ): EnglishTaskSpec {
   const [first, second, third, fourth] = profile.words;
-  const hasClockTimes = profile.words.some(({ word }) => /\d{1,2}:\d{2}/.test(word));
+  const hasClockTimes = profile.words.every(({ word }) => /^\d{1,2}:\d{2}$/.test(word));
   const cardName = hasClockTimes ? '时刻卡片' : '词卡';
   const firstPrompt = hasClockTimes
     ? `${cardName}“${first.word}”表示几点？`

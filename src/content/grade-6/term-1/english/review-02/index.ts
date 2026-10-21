@@ -7,61 +7,61 @@ const profile1 = lessonProfile(
     { word: 'win', meaning: '获胜' }, { word: 'race', meaning: '赛跑' },
   ],
   [
-    phraseQuestion('你不明白词语“scared”的意思，哪句可以请同伴解释？', ['What does scared mean?', 'Where is scared?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does scared mean? 是完整、语序正确的词义问句。'),
-    phraseQuestion('朋友问 “What does race mean?” 哪句回答了词义？', ['它的意思是“有病；不舒服”。', '它的意思是“获胜”。', '它的意思是“赛跑”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。 “race”表示“赛跑”；另两个选项把其他词语的意思错配过来。'),
+    phraseQuestion('你不明白词语“scared”的意思，哪句可以请同伴解释？', ['What does “scared” mean?', 'Where is “scared”?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does “scared” mean? 是完整、语序正确的词义问句。'),
+    phraseQuestion('朋友问：“What does ‘race’ mean?” 哪句回答了词义？', ['它的意思是“有病；不舒服”。', '它的意思是“获胜”。', '它的意思是“赛跑”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。“race”表示“赛跑”；另两个选项把其他词语的意思错配过来。'),
   ],
-  ['健康、情绪和比赛', '人物、作品和冬季表达'],
+  ['感受与健康', '比赛'],
   [
     { label: 'scared', categoryIndex: 0 }, { label: 'ill', categoryIndex: 0 },
-    { label: 'inventor', categoryIndex: 1 }, { label: 'poet', categoryIndex: 1 },
+    { label: 'win', categoryIndex: 1 }, { label: 'race', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学会这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
     { word: 'inventor', meaning: '发明家' }, { word: 'poet', meaning: '诗人' },
-    { word: 'poem', meaning: '诗；诗歌' }, { word: 'dumpling', meaning: '饺子；汤团' },
+    { word: 'poem', meaning: '诗；诗歌' }, { word: 'dumpling', meaning: '饺子' },
   ],
   [
-    phraseQuestion('想表达“我认识词语“inventor””，哪句语法正确？', ['I knows the word “inventor”.', 'I am know the word “inventor”.', 'I know the word “inventor”.'], 2, '先找主语 I，再检查动词是否使用原形。 I know the word “inventor”. 语序和动词形式正确。'),
-    phraseQuestion('哪句正确地表达“我也认识词语“poem””？', ['I also knows the word “poem”.', 'I also know the word “poem”.', 'I know also the word “poem”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。 I also know the word “poem”. 表达“我也认识这个词语”。'),
+    phraseQuestion('想表达“我认识 inventor 这个词”，哪句语法正确？', ['I knows the word “inventor”.', 'I am know the word “inventor”.', 'I know the word “inventor”.'], 2, '主语 I 后用动词原形 know。“I know the word ‘inventor’.” 语序和动词形式正确。'),
+    phraseQuestion('哪句正确地表达“我也认识 poem 这个词”？', ['I also knows the word “poem”.', 'I also know the word “poem”.', 'I know also the word “poem”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。“I also know the word ‘poem’.” 表达“我也认识这个词”。'),
   ],
-  ['健康、情绪和比赛', '人物、作品和冬季表达'],
+  ['人物称呼', '事物名称'],
   [
-    { label: 'scared', categoryIndex: 0 }, { label: 'win', categoryIndex: 0 },
-    { label: 'inventor', categoryIndex: 1 }, { label: 'dumpling', categoryIndex: 1 },
+    { label: 'inventor', categoryIndex: 0 }, { label: 'poet', categoryIndex: 0 },
+    { label: 'poem', categoryIndex: 1 }, { label: 'dumpling', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“这个词语对我来说是新的”。', items: ['to', 'new', 'word', 'is', 'This', 'me', '.'], correctOrderIndices: [4, 2, 3, 1, 0, 5, 6] },
 );
 const profile3 = lessonProfile(
   [
     { word: 'ice lantern', meaning: '冰灯' }, { word: 'pen pal', meaning: '笔友' },
-    { word: 'prize', meaning: '奖品' }, { word: 'look forward to', meaning: '盼望' },
+    { word: 'look forward to', meaning: '盼望' }, { word: 'be afraid of', meaning: '害怕' },
   ],
   [
-    phraseQuestion('A问：“Do you know the word “ice lantern”?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。 Do you ...? 的肯定简答是 Yes, I do.'),
-    phraseQuestion('朋友说 “I know the word “prize”.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “prize”, too.', 'I knows the word “prize”, too.', 'I am know the word “prize”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。 I know the word “prize”, too. 语法正确并表达“我也认识这个词语”。'),
+    phraseQuestion('A 问：“Do you know the expression ‘ice lantern’?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。对 “Do you know the expression ‘ice lantern’?”，可回答 “Yes, I do.”'),
+    phraseQuestion('朋友说：“I know the word ‘prize’.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “prize”, too.', 'I knows the word “prize”, too.', 'I am know the word “prize”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。“I know the word ‘prize’, too.” 语法正确并表达“我也认识这个词语”。'),
   ],
-  ['健康、情绪和比赛', '人物、作品和冬季表达'],
+  ['人或物的名称', '表达愿望或感受的短语'],
   [
-    { label: 'scared', categoryIndex: 0 }, { label: 'race', categoryIndex: 0 },
-    { label: 'inventor', categoryIndex: 1 }, { label: 'ice lantern', categoryIndex: 1 },
+    { label: 'ice lantern', categoryIndex: 0 }, { label: 'pen pal', categoryIndex: 0 },
+    { label: 'look forward to', categoryIndex: 1 }, { label: 'be afraid of', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成表达“我不认识这个词语”的句子。', items: ['word', 'the', 'not', 'I', 'know', 'do', '.'], correctOrderIndices: [3, 5, 2, 4, 1, 0, 6] },
 );
 const profile4 = lessonProfile(
   [
     { word: 'scared', meaning: '害怕的' }, { word: 'inventor', meaning: '发明家' },
-    { word: 'ice lantern', meaning: '冰灯' }, { word: 'ill', meaning: '有病；不舒服' },
+    { word: 'poet', meaning: '诗人' }, { word: 'ill', meaning: '有病；不舒服' },
   ],
   [
     phraseQuestion('原创便笺写着：“inventor — 发明家”。哪句话准确报告便笺内容？', ['The note is about the word “inventor”.', 'The note are about the word “inventor”.', 'The note about is the word “inventor”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。 The note is about the word “inventor”. 正确表达便笺主题。'),
     phraseQuestion('小卡片把 “ill” 和 “有病；不舒服” 配在一起。判断卡片时应怎样做？', ['Change the word to a different topic.', 'Ignore the Chinese meaning.', 'Check that the English word and meaning match.'], 2, '核对词义对应关系，不能只看卡片上有英文。 “ill”和“有病；不舒服”相匹配，报告时应保留这组对应。'),
   ],
-  ['健康、情绪和比赛', '人物、作品和冬季表达'],
+  ['感受与健康', '人物称呼'],
   [
-    { label: 'ill', categoryIndex: 0 }, { label: 'win', categoryIndex: 0 },
-    { label: 'poet', categoryIndex: 1 }, { label: 'dumpling', categoryIndex: 1 },
+    { label: 'ill', categoryIndex: 0 }, { label: 'scared', categoryIndex: 0 },
+    { label: 'poet', categoryIndex: 1 }, { label: 'inventor', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成提醒同伴先读便笺再核对词义的句子。', items: ['the', 'Read', 'note', 'first', '.'], correctOrderIndices: [1, 0, 2, 3, 4] },
 );
@@ -74,10 +74,10 @@ const profile5 = lessonProfile(
     phraseQuestion('小组要做一张介绍“获胜”的卡片，哪项同时符合主题目标和词义准确这两个要求？', ['Copy a word without checking what it means.', 'Leave the card blank.', 'Use the word “win” with its correct meaning “获胜”.'], 2, '选择同时符合主题目标且词义核对过的选项。 目标是介绍“获胜”，应使用对应词语 “win” 并附上正确词义。'),
     phraseQuestion('资料中有“prize”和“race”两张词卡。要确保词形和词义都准确，哪种做法能同时做到？', ['Change the spelling to make them look alike.', 'Read each card, check its spelling and meaning, and then share.', 'Copy both cards without reading them.'], 1, '分享前逐张核对词形和词义。 逐张检查能发现拼写或词义不匹配，另外两种做法会增加错误。'),
   ],
-  ['健康、情绪和比赛', '人物、作品和冬季表达'],
+  ['比赛与结果', '作品与奖励'],
   [
-    { label: 'ill', categoryIndex: 0 }, { label: 'race', categoryIndex: 0 },
-    { label: 'poet', categoryIndex: 1 }, { label: 'ice lantern', categoryIndex: 1 },
+    { label: 'win', categoryIndex: 0 }, { label: 'race', categoryIndex: 0 },
+    { label: 'poem', categoryIndex: 1 }, { label: 'prize', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成询问同伴能否一起核对卡片的问句。', items: ['check', 'Can', 'cards', 'the', 'we', 'together', '?'], correctOrderIndices: [1, 4, 0, 3, 2, 5, 6] },
 );
@@ -90,10 +90,10 @@ const profile6 = lessonProfile(
     phraseQuestion('你要向同伴介绍“诗人”，哪句语法完整，并且准确对应词卡意思？', ['This card about the word “poet”.', 'This card is about the word “poet”.', 'This card are about the word “poet”.'], 1, 'This card 是单数主语，后面用 is。 This card is about the word “poet”. 句子完整并对应主题词。'),
     phraseQuestion('同伴听完你介绍“look forward to”后想继续了解。哪句既礼貌地邀请对方继续交流，又让对方选择接下来想了解的内容？', ['What would you like to know?', 'The card is ready.', 'I know the word.'], 0, '选择能把对话交给同伴并邀请其提出问题的完整问句。 What would you like to know? 自然地邀请同伴继续提问；第二句只说明卡片已准备好，第三句只说明自己认识这个词，二者都没有回应同伴的疑问。'),
   ],
-  ['健康、情绪和比赛', '人物、作品和冬季表达'],
+  ['状态与感受', '人物称呼'],
   [
-    { label: 'win', categoryIndex: 0 }, { label: 'race', categoryIndex: 0 },
-    { label: 'dumpling', categoryIndex: 1 }, { label: 'ice lantern', categoryIndex: 1 },
+    { label: 'ill', categoryIndex: 0 }, { label: 'scared', categoryIndex: 0 },
+    { label: 'poet', categoryIndex: 1 }, { label: 'inventor', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“这张卡片已经准备好了”。', items: ['ready', 'card', 'The', 'is', '.'], correctOrderIndices: [2, 1, 3, 0, 4] },
 );

@@ -28,8 +28,8 @@ const canAndCannot = lessonProfile(
     { word: 'ride a bike', meaning: '骑自行车' },
   ],
   [
-    phraseQuestion('想表达“她不会踢足球”，哪句正确？', ['She cannot play football.', 'She can play football.', 'She is a football.'], 0, 'cannot 或 can’t 表示不会或不能。'),
-    phraseQuestion('朋友会放风筝，应该选哪句？', ['He can fly a kite.', 'He cannot fly a kite.', 'He can swim a kite.'], 0, 'fly a kite 表示放风筝。'),
+    phraseQuestion('想表达“她不会踢足球”，哪句正确？', ['She cannot play football.', 'She can play football.', 'She can swim.'], 0, 'cannot 或 can’t 表示不会或不能。'),
+    phraseQuestion('朋友会放风筝，应该选哪句？', ['He can fly a kite.', 'He cannot fly a kite.', 'He can ride a bike.'], 0, 'fly a kite 表示放风筝。'),
   ],
   ['会做的活动', '还不会的活动'],
   [
@@ -48,7 +48,7 @@ const playtimeQuestions = lessonProfile(
   ],
   [
     phraseQuestion('小队要问“你会游泳吗？”，哪句合适？', ['Can you swim?', 'Can you ride a bike?', 'Can you fly a kite?'], 0, '用 Can you…? 询问对方会不会做某事。'),
-    phraseQuestion('小队要回答“我们会踢足球。”，哪句正确？', ['We can play football.', 'We cannot play football.', 'We are a football.'], 0, 'can 后面接活动的动词或词组。'),
+    phraseQuestion('小队要回答“我们会踢足球。”，哪句正确？', ['We can play football.', 'We cannot play football.', 'We can swim.'], 0, 'can 后面接活动的动词或词组。'),
   ],
   ['Can 开头的问句', 'can 或 cannot 开头的表达'],
   [
@@ -66,8 +66,8 @@ const activityPlanner = lessonProfile(
     { word: 'play football', meaning: '踢足球' },
   ],
   [
-    phraseQuestion('问队友“你会放风筝吗？”，应该选哪句？', ['Can you fly a kite?', 'Can you ride a football?', 'Where is your kite?'], 0, 'fly a kite 表示放风筝。'),
-    phraseQuestion('想说“我不会骑自行车”，哪句表达清楚？', ['I cannot ride a bike.', 'I can ride a bike.', 'I cannot swim a bike.'], 0, 'cannot 表示不会或不能。'),
+    phraseQuestion('问队友“你会放风筝吗？”，应该选哪句？', ['Can you fly a kite?', 'Can you play football?', 'Where is your kite?'], 0, 'fly a kite 表示放风筝。'),
+    phraseQuestion('想说“我不会骑自行车”，哪句表达清楚？', ['I cannot ride a bike.', 'I can ride a bike.', 'I cannot play football.'], 0, 'cannot 表示不会或不能。'),
   ],
   ['会做某项活动', '目前还不会某项活动'],
   [
@@ -85,8 +85,8 @@ const activityInterview = lessonProfile(
     { word: 'ride a bike', meaning: '骑自行车' },
   ],
   [
-    phraseQuestion('想问同伴会不会游泳，哪句正确？', ['Can you swim?', 'Do you swim a kite?', 'Can you football?'], 0, '用 Can you…? 询问对方会不会做某事。'),
-    phraseQuestion('“他不会骑自行车。”可以怎样说？', ['He cannot ride a bike.', 'He can ride a bike.', 'He cannot swim a bike.'], 0, 'cannot 后面接活动词组。'),
+    phraseQuestion('想问同伴会不会游泳，哪句正确？', ['Can you swim?', 'Do you like swimming?', 'Can you play football?'], 0, '用 Can you…? 询问对方会不会做某事。'),
+    phraseQuestion('“他不会骑自行车。”可以怎样说？', ['He cannot ride a bike.', 'He can ride a bike.', 'He cannot swim.'], 0, 'cannot 后面接活动词组。'),
   ],
   ['Can 开头的问题', '表达能力的句子'],
   [
@@ -104,8 +104,8 @@ const abilityMission = lessonProfile(
     { word: 'swim', meaning: '游泳' },
   ],
   [
-    phraseQuestion('伙伴会踢足球，哪句表达了他的能力？', ['He can play football.', 'He cannot play football.', 'He can play a kite.'], 0, 'can 表示会或能够，后面接活动词组。'),
-    phraseQuestion('想问朋友会不会放风筝，哪句最合适？', ['Can your friend fly a kite?', 'Can your friend ride a bike?', 'Can your friend ride a kite?'], 0, 'fly a kite 表示放风筝。'),
+    phraseQuestion('伙伴会踢足球，哪句表达了他的能力？', ['He can play football.', 'He cannot play football.', 'He can ride a bike.'], 0, 'can 表示会或能够，后面接活动词组。'),
+    phraseQuestion('想问朋友会不会放风筝，哪句最合适？', ['Can your friend fly a kite?', 'Can your friend ride a bike?', 'Can your friend play football?'], 0, 'fly a kite 表示放风筝。'),
   ],
   ['会做的活动', '不会做的活动'],
   [

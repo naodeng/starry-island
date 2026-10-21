@@ -7,15 +7,15 @@ const profile1 = lessonProfile(
     { word: 'shopping mall', meaning: '大型购物中心' }, { word: 'amazing', meaning: '令人惊叹的' },
   ],
   [
-    phraseQuestion('你不明白词语“English-Chinese dictionary”的意思，哪句可以请同伴解释？', ['What does English-Chinese dictionary mean?', 'Where is English-Chinese dictionary?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does English-Chinese dictionary mean? 是完整、语序正确的词义问句。'),
-    phraseQuestion('朋友问 “What does amazing mean?” 哪句回答了词义？', ['它的意思是“购物中心”。', '它的意思是“大型购物中心”。', '它的意思是“令人惊叹的”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。 “amazing”表示“令人惊叹的”；另两个选项把其他词语的意思错配过来。'),
+    phraseQuestion('你不明白表达 English-Chinese dictionary 的意思，哪句可以请同伴解释？', ['What does the expression ‘English-Chinese dictionary’ mean?', 'Where can I find an English-Chinese dictionary?', 'How are you?'], 0, '“English-Chinese dictionary”表示“英汉词典”。“What does the expression ‘English-Chinese dictionary’ mean?” 是完整、语序正确的词义问句；与同伴交流时还可以在句末加 please。'),
+    phraseQuestion('朋友问：“What does ‘amazing’ mean?” 哪句回答了词义？', ['它的意思是“购物中心”。', '它的意思是“大型购物中心”。', '它的意思是“令人惊叹的”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。“amazing”表示“令人惊叹的”；另两个选项把其他词语的意思错配过来。'),
   ],
   ['购物场所', '词典、评价和美食'],
   [
     { label: 'shopping centre', categoryIndex: 0 }, { label: 'shopping mall', categoryIndex: 0 },
     { label: 'English-Chinese dictionary', categoryIndex: 1 }, { label: 'amazing', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学习这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
@@ -23,8 +23,8 @@ const profile2 = lessonProfile(
     { word: 'a shopping centre', meaning: '一个购物中心' }, { word: 'a shopping mall', meaning: '一个大型购物中心' },
   ],
   [
-    phraseQuestion('想表达“我认识词语“hot pot””，哪句语法正确？', ['I knows the word “hot pot”.', 'I am know the word “hot pot”.', 'I know the word “hot pot”.'], 2, '先找主语 I，再检查动词是否使用原形。 I know the word “hot pot”. 语序和动词形式正确。'),
-    phraseQuestion('哪句正确地表达“我也认识词语“a shopping centre””？', ['I also knows the word “a shopping centre”.', 'I also know the word “a shopping centre”.', 'I know also the word “a shopping centre”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。 I also know the word “a shopping centre”. 表达“我也认识这个词语”。'),
+    phraseQuestion('想表达“我认识短语‘hot pot’”，哪句语法正确？', ['I knows the phrase “hot pot”.', 'I am know the phrase “hot pot”.', 'I know the phrase “hot pot”.'], 2, '先找主语 I，再检查动词是否使用原形。“I know the phrase ‘hot pot’.” 语序和动词形式正确。'),
+    phraseQuestion('哪句正确地表达“我也认识表达‘a shopping centre’”？', ['I also knows the expression “a shopping centre”.', 'I also know the expression “a shopping centre”.', 'I know also the expression “a shopping centre”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。“I also know the expression ‘a shopping centre’.” 表达“我也认识这个表达”。'),
   ],
   ['购物场所', '词典、评价和美食'],
   [
@@ -39,8 +39,8 @@ const profile3 = lessonProfile(
     { word: 'the shopping centre', meaning: '这家购物中心' }, { word: 'the hot pot', meaning: '这锅火锅' },
   ],
   [
-    phraseQuestion('A问：“Do you know the word “an amazing place”?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。 Do you ...? 的肯定简答是 Yes, I do.'),
-    phraseQuestion('朋友说 “I know the word “the shopping centre”.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “the shopping centre”, too.', 'I knows the word “the shopping centre”, too.', 'I am know the word “the shopping centre”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。 I know the word “the shopping centre”, too. 语法正确并表达“我也认识这个词语”。'),
+    phraseQuestion('A 问：“Do you know the expression ‘an amazing place’?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。“Do you know the expression ‘an amazing place’?” 的肯定简答是 “Yes, I do.”'),
+    phraseQuestion('朋友说 “I know the phrase ‘the shopping centre’.” 你也想表达认识这个短语，哪句最合适？', ['I know the phrase “the shopping centre”, too.', 'I knows the phrase “the shopping centre”, too.', 'I am know the phrase “the shopping centre”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。“I know the phrase ‘the shopping centre’, too.” 语法正确并表达“我也认识这个短语”。'),
   ],
   ['购物场所', '词典、评价和美食'],
   [
@@ -55,7 +55,7 @@ const profile4 = lessonProfile(
     { word: 'an amazing place', meaning: '一个令人惊叹的地方' }, { word: 'shopping centre', meaning: '购物中心' },
   ],
   [
-    phraseQuestion('原创便笺写着：“hot pot — 火锅”。哪句话准确报告便笺内容？', ['The note is about the word “hot pot”.', 'The note are about the word “hot pot”.', 'The note about is the word “hot pot”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。 The note is about the word “hot pot”. 正确表达便笺主题。'),
+    phraseQuestion('原创便笺写着：“hot pot — 火锅”。哪句话准确报告便笺内容？', ['The note is about the phrase “hot pot”.', 'The note are about the phrase “hot pot”.', 'The note about is the phrase “hot pot”.'], 0, 'note 是单数，be 动词用 is；按便笺的词条报告主题。“The note is about the phrase ‘hot pot’.” 正确表达便笺主题。'),
     phraseQuestion('小卡片把 “shopping centre” 和 “购物中心” 配在一起。判断卡片时应怎样做？', ['Change the word to a different topic.', 'Ignore the Chinese meaning.', 'Check that the English word and meaning match.'], 2, '核对词义对应关系，不能只看卡片上有英文。 “shopping centre”和“购物中心”相匹配，报告时应保留这组对应。'),
   ],
   ['购物场所', '词典、评价和美食'],
@@ -71,7 +71,7 @@ const profile5 = lessonProfile(
     { word: 'the shopping centre', meaning: '这家购物中心' }, { word: 'amazing', meaning: '令人惊叹的' },
   ],
   [
-    phraseQuestion('小组要做一张介绍“大型购物中心”的卡片，哪项同时符合主题目标和词义准确这两个要求？', ['Copy a word without checking what it means.', 'Leave the card blank.', 'Use the word “shopping mall” with its correct meaning “大型购物中心”.'], 2, '选择同时符合主题目标且词义核对过的选项。 目标是介绍“大型购物中心”，应使用对应词语 “shopping mall” 并附上正确词义。'),
+    phraseQuestion('小组要做一张介绍“大型购物中心”的卡片，哪项同时符合主题目标和词义准确这两个要求？', ['Copy a word without checking what it means.', 'Leave the card blank.', 'Use the expression “shopping mall” with its correct meaning “大型购物中心”.'], 2, '选择同时符合主题目标且词义核对过的选项。目标是介绍“大型购物中心”，应使用对应表达“shopping mall”并附上正确词义。'),
     phraseQuestion('资料中有“the shopping centre”和“amazing”两张词卡。要确保词形和词义都准确，哪种做法能同时做到？', ['Change the spelling to make them look alike.', 'Read each card, check its spelling and meaning, and then share.', 'Copy both cards without reading them.'], 1, '分享前逐张核对词形和词义。 逐张检查能发现拼写或词义不匹配，另外两种做法会增加错误。'),
   ],
   ['购物场所', '词典、评价和美食'],
@@ -87,8 +87,8 @@ const profile6 = lessonProfile(
     { word: 'eat hot pot', meaning: '吃火锅' }, { word: 'the hot pot', meaning: '这锅火锅' },
   ],
   [
-    phraseQuestion('你要向同伴介绍“一本英汉词典”，哪句语法完整，并且准确对应词卡意思？', ['This card about the word “an English-Chinese dictionary”.', 'This card is about the word “an English-Chinese dictionary”.', 'This card are about the word “an English-Chinese dictionary”.'], 1, 'This card 是单数主语，后面用 is。 This card is about the word “an English-Chinese dictionary”. 句子完整并对应主题词。'),
-    phraseQuestion('同伴听完你介绍“the hot pot”后想继续了解。哪句既礼貌地邀请对方继续交流，又让对方选择接下来想了解的内容？', ['What would you like to know?', 'The card is ready.', 'I know the word.'], 0, '选择能把对话交给同伴并邀请其提出问题的完整问句。 What would you like to know? 自然地邀请同伴继续提问；第二句只说明卡片已准备好，第三句只说明自己认识这个词，二者都没有回应同伴的疑问。'),
+    phraseQuestion('你要向同伴介绍“一本英汉词典”，哪句语法完整，并且准确对应词卡短语？', ['This card about the expression “an English-Chinese dictionary”.', 'This card is about the expression “an English-Chinese dictionary”.', 'This card are about the expression “an English-Chinese dictionary”.'], 1, 'This card 是单数主语，后面用 is。正确句子是 “This card is about the expression ‘an English-Chinese dictionary’.”'),
+    phraseQuestion('同伴听完你介绍“the hot pot”后想继续了解。哪句既礼貌地邀请对方继续交流，又让对方选择接下来想了解的内容？', ['What would you like to know?', 'The card is ready.', 'I know that phrase.'], 0, '选择能把对话交给同伴并邀请其提出问题的完整问句。“What would you like to know?” 自然地邀请同伴继续提问；第二句只说明卡片已准备好，第三句只说明自己认识这个短语，二者都没有回应同伴的疑问。'),
   ],
   ['购物场所', '词典、评价和美食'],
   [

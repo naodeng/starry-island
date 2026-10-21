@@ -65,7 +65,7 @@ export const unit = buildEnglishUnit({
       choose('Jane usually watches her favourite shows on Tuesday. What can we say?', ['Tuesday is her usual viewing day.', 'She watches them every morning.', 'She never watches TV.'], 0, '把人物资料中的星期和 usual 联系起来。', '资料说明 Jane 通常星期二看她喜欢的节目。'),
       choose('Mack watches a programme with football, basketball and table tennis. What does he like?', ['Sports shows.', 'Cartoons.', 'Music shows.'], 0, '这些活动都属于哪一类？', '足球、篮球和乒乓球都是体育项目，因此 Mack 喜欢 sports shows。'),
       choose('Coco watches music shows on Friday at 7:30 pm. What might she enjoy there?', ['Songs and singers.', 'Weather reports only.', 'A school maths lesson.'], 0, '根据 music show 的节目类型判断可能出现的内容。', '音乐节目中可能听到歌曲并看到歌手。'),
-      pair('把人物和阅读资料中的线索连起来。', [
+      pair('资料：Jane 看介绍不同国家动物的节目；Mack 喜欢有足球、篮球等项目的节目；Coco 星期五晚上看音乐节目。把人物和资料中的线索连起来。', [
         ['Jane', '学习不同国家的动物'], ['Mack', '喜欢包含多种体育项目的节目'], ['Coco', '星期五晚上看音乐节目'],
       ], '分别抓住人物名字旁边的内容和时间线索。', 'Jane 的节目介绍动物，Mack 看体育节目，Coco 的音乐节目在星期五晚上。'),
       sortInto('把人物资料分到“节目内容”或“收看时间”。', ['节目内容', '收看时间'], [
@@ -109,8 +109,8 @@ export const unit = buildEnglishUnit({
     ])),
     task('分析家庭收看故事并协商安排', '根据不同家庭成员的节目偏好和播放时间理解故事冲突，提出尊重彼此的替代活动。', 'companion-03', q8([
       choose('In the story, two family members want to watch different shows at the same time. What is the problem?', ['They cannot both use the TV for different shows at once.', 'They have no favourite shows.', 'They are shopping for clothes.'], 0, '留意几个人都想在同一时刻使用电视的情节。', '他们想同时看不同节目，电视播放安排发生了冲突。'),
-      choose('What changes when the power goes off?', ['The family cannot watch TV.', 'All the shows become sports shows.', 'The television gets a new price.'], 0, '关注停电后电视还能不能播放。', '停电后无法继续看电视。'),
-      choose('What do the family members do after they stop watching TV?', ['They play a game together.', 'They buy a new schoolbag.', 'They go to a shop to buy a puppy.'], 0, '回忆故事结尾的共同活动。', '停电后，家人改为一起玩游戏。'),
+      choose('In the story, the power goes off and the family cannot watch TV. What changes?', ['The family cannot watch TV.', 'All the shows become sports shows.', 'The television gets a new price.'], 0, '关注题干所述停电后电视能否播放。', '停电后无法继续看电视。'),
+      choose('In the story, after the power goes off, the family plays a game together. What do they do after they stop watching TV?', ['They play a game together.', 'They buy a new schoolbag.', 'They go to a shop to buy a puppy.'], 0, '根据题干给出的故事结尾作答。', '停电后，家人改为一起玩游戏。'),
       pair('把故事事件和它带来的变化连起来。', [
         ['成员想看不同的节目', '需要协商播放安排'], ['电源中断', '不能继续看电视'], ['大家一起玩游戏', '共同参与另一种活动'],
       ], '按故事中的原因和结果配对。', '不同偏好带来安排问题，停电使电视无法播放，一起游戏成为新的共同活动。'),
@@ -119,7 +119,7 @@ export const unit = buildEnglishUnit({
         { label: '玩一个桌面游戏', categoryIndex: 1 }, { label: '轮流介绍喜欢的节目', categoryIndex: 1 },
       ], '想一想活动是否必须使用电视。', '看节目需要电视；桌面游戏和交流喜好不依赖电视。'),
       choose('Which plan is fair when family members prefer different shows?', ['Take turns choosing at agreed times.', 'Let one person choose every day without asking.', 'Turn off the TV whenever someone disagrees.'], 0, '寻找能轮流表达喜好的安排。', '商量轮流选择的时间，能让不同家庭成员都有机会。'),
-      choose('Why is playing a game together a good ending to the story?', ['It gives the family a shared activity when TV is unavailable.', 'It proves that nobody likes TV.', 'It makes every TV show start at the same time.'], 0, '把结尾活动和停电后的处境联系起来。', '电视不能使用时，一起玩游戏让家人仍能共同活动。'),
+      choose('When the power goes off in the story, the family cannot watch TV. Why is playing a game together a good ending?', ['It gives the family a shared activity when TV is unavailable.', 'It proves that nobody likes TV.', 'It makes every TV show start at the same time.'], 0, '把结尾活动和题干给出的处境联系起来。', '电视不能使用时，一起玩游戏让家人仍能共同活动。'),
       arrange('整理一次尊重彼此的家庭节目安排。', ['每个人说出喜欢的节目和通常时间', '找出时间冲突的部分', '商量轮流收看或选择共同活动', '确认大家理解并接受安排'], [0, 1, 2, 3], '先听取偏好，再识别冲突并讨论双方都能接受的安排。', '听取每个人的喜好和时间，找出冲突，再商量轮流或共同活动并确认。'),
     ])),
   ],

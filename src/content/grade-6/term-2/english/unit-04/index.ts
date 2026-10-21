@@ -3,19 +3,19 @@ import { lessonProfile, makeTask, phraseQuestion } from '../../../../grade-2/ter
 // 主题边界依据固定册次目录；练习词为原创主题词，不声称逐词核验了教材页词表。
 const profile1 = lessonProfile(
   [
-    { word: 'talk about', meaning: '谈论' }, { word: 'hockey', meaning: '冰球' },
+    { word: 'talk about', meaning: '谈论某事' }, { word: 'hockey', meaning: '冰球' },
     { word: 'together', meaning: '一起' }, { word: 'special', meaning: '特别的' },
   ],
   [
-    phraseQuestion('你不明白词语“talk about”的意思，哪句可以请同伴解释？', ['What does talk about mean?', 'Where is talk about?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does talk about mean? 是完整、语序正确的词义问句。'),
-    phraseQuestion('朋友问 “What does special mean?” 哪句回答了词义？', ['它的意思是“冰球”。', '它的意思是“一起”。', '它的意思是“特别的”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。 “special”表示“特别的”；另两个选项把其他词语的意思错配过来。'),
+    phraseQuestion('你不明白表达 talk about 的意思，哪句可以请同伴解释？', ['What does the expression ‘talk about’ mean?', 'Where is talk about?', 'How are you?'], 0, '“Talk about”表示“谈论某事”。“What does the expression ‘talk about’ mean?” 是完整、语序正确的词义问句；与同伴交流时还可以在句末加 please。'),
+    phraseQuestion('朋友问：“What does ‘special’ mean?” 哪句回答了词义？', ['它的意思是“冰球”。', '它的意思是“一起”。', '它的意思是“特别的”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。“special”表示“特别的”；另两个选项把其他词语的意思错配过来。'),
   ],
   ['冰球和比赛表达', '野生动物'],
   [
     { label: 'hockey', categoryIndex: 0 }, { label: 'talk about hockey', categoryIndex: 0 },
     { label: 'beaver', categoryIndex: 1 }, { label: 'raccoon', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学习这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
@@ -23,8 +23,8 @@ const profile2 = lessonProfile(
     { word: 'moose', meaning: '驼鹿' }, { word: 'talk about hockey', meaning: '谈论冰球' },
   ],
   [
-    phraseQuestion('想表达“我认识词语“beaver””，哪句语法正确？', ['I knows the word “beaver”.', 'I am know the word “beaver”.', 'I know the word “beaver”.'], 2, '先找主语 I，再检查动词是否使用原形。 I know the word “beaver”. 语序和动词形式正确。'),
-    phraseQuestion('哪句正确地表达“我也认识词语“moose””？', ['I also knows the word “moose”.', 'I also know the word “moose”.', 'I know also the word “moose”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。 I also know the word “moose”. 表达“我也认识这个词语”。'),
+    phraseQuestion('想表达“我认识词语‘beaver’”，哪句语法正确？', ['I knows the word “beaver”.', 'I am know the word “beaver”.', 'I know the word “beaver”.'], 2, '先找主语 I，再检查动词是否使用原形。“I know the word ‘beaver’.” 语序和动词形式正确。'),
+    phraseQuestion('哪句正确地表达“我也认识词语‘moose’”？', ['I also knows the word “moose”.', 'I also know the word “moose”.', 'I know also the word “moose”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。“I also know the word ‘moose’.” 表达“我也认识这个词语”。'),
   ],
   ['冰球和比赛表达', '野生动物'],
   [
@@ -39,8 +39,8 @@ const profile3 = lessonProfile(
     { word: 'a beaver', meaning: '一只海狸' }, { word: 'a raccoon', meaning: '一只浣熊' },
   ],
   [
-    phraseQuestion('A问：“Do you know the word “play hockey”?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。 Do you ...? 的肯定简答是 Yes, I do.'),
-    phraseQuestion('朋友说 “I know the word “a beaver”.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “a beaver”, too.', 'I knows the word “a beaver”, too.', 'I am know the word “a beaver”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。 I know the word “a beaver”, too. 语法正确并表达“我也认识这个词语”。'),
+    phraseQuestion('A 问：“Do you know the expression ‘play hockey’?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。“Do you know the expression ‘play hockey’?” 的肯定简答是 “Yes, I do.”'),
+    phraseQuestion('朋友说 “I know the phrase ‘a beaver’.” 你也想表达认识这个短语，哪句最合适？', ['I know the phrase “a beaver”, too.', 'I knows the phrase “a beaver”, too.', 'I am know the phrase “a beaver”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。“I know the phrase ‘a beaver’, too.” 语法正确并表达“我也认识这个短语”。'),
   ],
   ['冰球和比赛表达', '野生动物'],
   [
@@ -51,7 +51,7 @@ const profile3 = lessonProfile(
 );
 const profile4 = lessonProfile(
   [
-    { word: 'talk about', meaning: '谈论' }, { word: 'beaver', meaning: '海狸' },
+    { word: 'talk about', meaning: '谈论某事' }, { word: 'beaver', meaning: '海狸' },
     { word: 'play hockey', meaning: '打冰球' }, { word: 'hockey', meaning: '冰球' },
   ],
   [
@@ -88,7 +88,7 @@ const profile6 = lessonProfile(
   ],
   [
     phraseQuestion('你要向同伴介绍“浣熊”，哪句语法完整，并且准确对应词卡意思？', ['This card about the word “raccoon”.', 'This card is about the word “raccoon”.', 'This card are about the word “raccoon”.'], 1, 'This card 是单数主语，后面用 is。 This card is about the word “raccoon”. 句子完整并对应主题词。'),
-    phraseQuestion('同伴听完你介绍“a raccoon”后想继续了解。哪句既礼貌地邀请对方继续交流，又让对方选择接下来想了解的内容？', ['What would you like to know?', 'The card is ready.', 'I know the word.'], 0, '选择能把对话交给同伴并邀请其提出问题的完整问句。 What would you like to know? 自然地邀请同伴继续提问；第二句只说明卡片已准备好，第三句只说明自己认识这个词，二者都没有回应同伴的疑问。'),
+    phraseQuestion('同伴听完你介绍“a raccoon”后想继续了解。哪句既礼貌地邀请对方继续交流，又让对方选择接下来想了解的内容？', ['What would you like to know?', 'The card is ready.', 'I know that phrase.'], 0, '选择能把对话交给同伴并邀请其提出问题的完整问句。“What would you like to know?” 自然地邀请同伴继续提问；第二句只说明卡片已准备好，第三句只说明自己认识这个短语，二者都没有回应同伴的疑问。'),
   ],
   ['冰球和比赛表达', '野生动物'],
   [

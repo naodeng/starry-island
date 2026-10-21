@@ -374,7 +374,7 @@ const profiles: Record<string, EnglishProfile> = {
       { label: 'December', categoryIndex: 1 },
     ],
     [
-      phrase('“I have a rabbit.” 表示什么？', ['我有一只兔子。', '我有一件夹克。', '我有一个生日。'], 0, 'rabbit 表示“兔子”。', 'I have a rabbit. 的意思是“我有一只兔子”。', ['rabbit', 'I', 'a', '.', 'have'], [1, 4, 2, 0, 3]),
+      phrase('“I have a rabbit.” 表示什么？', ['我有一只兔子。', '我有一件夹克。', '我的生日在六月。'], 0, 'rabbit 表示“兔子”。', 'I have a rabbit. 的意思是“我有一只兔子”。', ['rabbit', 'I', 'a', '.', 'have'], [1, 4, 2, 0, 3]),
       phrase('想说“我的生日在六月”，应该选哪句话？', ['My birthday is in June.', 'My birthday is in January.', 'My birthday is in July.'], 0, 'June 表示“六月”。', 'My birthday is in June. 的意思是“我的生日在六月”。', ['June', 'My', 'is', 'birthday', 'in', '.'], [1, 3, 2, 4, 0, 5]),
     ],
   ),
@@ -557,12 +557,15 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
   const matchPairs = taskIndex === 0
     ? words.map(([word, meaning]) => [word, meaning] as const)
     : words.map(([word, meaning]) => [meaning, word] as const);
+  const hasEnglishWords = words.some(([word]) => !word.includes(' '));
+  const hasEnglishPhrases = words.some(([word]) => word.includes(' '));
+  const englishNoun = hasEnglishWords && hasEnglishPhrases ? 'word or phrase' : hasEnglishPhrases ? 'phrase' : 'word';
   const orderedWords = (items: readonly string[], order: readonly number[]): string => order
     .map((index) => items[index])
     .join(' ')
     .replace(/ ([?.!,])/g, '$1');
   const withoutChineseQuotes = (text: string): string => text
-    .replace(/“([^”]*[?？])”([，。])/gu, "'$1'$2")
+    .replace(/“([^”]*[?？])”([，。])/gu, '‘$1’$2')
     .replace(/[“”]/g, '');
   const withoutTerminalPunctuation = (text: string): string => text.replace(/[？?。.!！]+$/u, '');
   const phraseRepair = (target: Phrase): EnglishQuestionSpec => {
@@ -579,13 +582,13 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     ? classifyChunk(primaryClassificationChunk, taskClassificationChunkIndex)
     : (() => {
       const { label, categoryIndex } = selected.classified[selected.classified.length - 1]!;
-      return choose(`“${label}”belongs to which group?`, [selected.categories[categoryIndex]!, selected.categories[1 - categoryIndex]!, '两组都不符合'], 0, '读懂这个英文词，再对照两个小组的名称。', `“${label}”属于“${selected.categories[categoryIndex]}”这一组。`);
+      return choose(`“${label}” belongs to which group?`, [selected.categories[categoryIndex]!, selected.categories[1 - categoryIndex]!, '两组都不符合'], 0, '读懂这个英文词，再对照两个小组的名称。', `“${label}”属于“${selected.categories[categoryIndex]}”这一组。`);
     })();
   const wordStudyOrder: EnglishQuestionSpec = difficulty === 'basic'
-    ? arrange('Put the word cards in the correct order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先找句子的开头，再检查词序和句末标点。', `正确表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}。`)
+    ? arrange('Put the word cards in the correct order.', firstPhrase.orderItems, firstPhrase.correctOrder, '先找句子的开头，再检查词序和句末标点。', `正确表达是“${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}”。`)
     : difficulty === 'advanced'
-      ? arrange('Arrange the word cards to make a sentence that fits the scene.', firstPhrase.orderItems, firstPhrase.correctOrder, '先联系题目情境，再检查词序和句末标点。', `符合情境的表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}。`)
-      : arrange('Put the word cards in order and check that the sentence matches the meaning.', firstPhrase.orderItems, firstPhrase.correctOrder, '排列后读一遍，再对照词义和标点检查。', `正确表达是：${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}；词义和标点都符合。`);
+      ? arrange('Arrange the word cards to make a complete English sentence.', firstPhrase.orderItems, firstPhrase.correctOrder, '先读清每张词卡，再检查词序和句末标点。', `正确表达是“${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}”。`)
+      : arrange('Put the word cards in order, then check the sentence.', firstPhrase.orderItems, firstPhrase.correctOrder, '排列后读一遍，检查词序、句意和句末标点。', `正确表达是“${orderedWords(firstPhrase.orderItems, firstPhrase.correctOrder)}”，词序和标点都正确。`);
   const phraseStrategy: EnglishQuestionSpec = taskIndex === 0
     ? choose(`要判断词句“${secondPhrase.options[secondPhrase.correct]}”是否符合题目要求（${withoutChineseQuotes(secondPhrase.prompt)}），哪条线索最有帮助？`, [
       secondPhrase.hint,
@@ -704,7 +707,7 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
     ], 0, '先排除已经用过的两个意思，再核对目标词卡。', `“${anchorA[0]}”和“${anchorB[0]}”已各有对应意思；“${target[0]}”表示“${target[1]}”。`);
   })();
   const pairReasoningQuestion: EnglishQuestionSpec = difficulty === 'basic'
-    ? pair(taskIndex === 0 ? 'Match each English word with its Chinese meaning.' : 'Match each Chinese meaning with its English word.', matchPairs, '先读清词语或意思，再逐个核对对应关系。', '每个英文单词都和对应的中文意思配成一组。')
+    ? pair(taskIndex === 0 ? `Match each English ${englishNoun} with its Chinese meaning.` : `Match each Chinese meaning with its English ${englishNoun}.`, matchPairs, '先读清词语或意思，再逐个核对对应关系。', '每个英文词语都和对应的中文意思配成一组。')
     : difficulty === 'advanced'
       ? choose('核对两张词卡的记录，哪一项把英文和中文意思都配对正确？', [wordMeaningCheck, swappedMeanings, repeatedMeaning], 0,
         '逐张读出英文和中文意思，再检查两张卡。', wordMeaningCheck)
@@ -738,9 +741,13 @@ function createQuestions(entry: AddedCourseEntry, difficulty: 'basic' | 'advance
         `“${firstPhrase.options[(firstPhrase.correct + 2) % firstPhrase.options.length]}”符合题意。`,
         '不检查题目意思，保留原来的选项。',
       ], 0, '回到题目中的交际情境，核对回答是否表达了需要的意思。', `“${firstPhrase.options[firstPhrase.correct]}”符合题意。`);
+  const meaningPrompt = (term: string, meaning: string): string =>
+    `Which ${term.includes(' ') ? 'phrase' : 'word'} means “${meaning}”?`;
   const questions: EnglishQuestionSpec[] = [
-    choose(`Which word means “${first[1]}”?`, [first[0], second[0], third[0]], 0, '先想一想本单元词卡里的英文单词。', `${first[0]} means “${first[1]}”.`),
-    choose(`Which word means “${second[1]}”?`, [third[0], second[0], fourth[0]], 1, '把中文意思和你学过的词卡逐个核对。', `${second[0]} means “${second[1]}”.`),
+    choose(meaningPrompt(first[0], first[1]), [first[0], second[0], third[0]], 0,
+      entry.type === 'review' ? '先想一想复习词卡里的英文词语。' : '先想一想本单元词卡里的英文词语。',
+      `${first[0]} means “${first[1]}”.`),
+    choose(meaningPrompt(second[0], second[1]), [third[0], second[0], fourth[0]], 1, '把中文意思和你学过的词卡逐个核对。', `${second[0]} means “${second[1]}”.`),
     pairReasoningQuestion,
     phraseQuestion,
     classificationQuestion,

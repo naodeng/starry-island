@@ -7,15 +7,15 @@ const profile1 = lessonProfile(
     { word: 'fish', meaning: '鱼' }, { word: 'mammal', meaning: '哺乳动物' },
   ],
   [
-    phraseQuestion('你不明白词语“reptile”的意思，哪句可以请同伴解释？', ['What does reptile mean?', 'Where is reptile?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。 What does reptile mean? 是完整、语序正确的词义问句。'),
-    phraseQuestion('朋友问 “What does mammal mean?” 哪句回答了词义？', ['它的意思是“鸟”。', '它的意思是“鱼”。', '它的意思是“哺乳动物”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。 “mammal”表示“哺乳动物”；另两个选项把其他词语的意思错配过来。'),
+    phraseQuestion('你不明白词语“reptile”的意思，哪句可以请同伴解释？', ['What does “reptile” mean?', 'Where is “reptile”?', 'How are you?'], 0, '先说清你想询问词义；与同伴交流时还可以在句末加 please。“What does ‘reptile’ mean?” 是完整、语序正确的词义问句。'),
+    phraseQuestion('朋友问：“What does ‘mammal’ mean?” 哪句回答了词义？', ['它的意思是“鸟”。', '它的意思是“鱼”。', '它的意思是“哺乳动物”。'], 2, '回答词义时要核对英文词语和中文意思是否匹配。“mammal”表示“哺乳动物”；另两个选项把其他词语的意思错配过来。'),
   ],
   ['动物类别', '动物名称'],
   [
     { label: 'reptile', categoryIndex: 0 }, { label: 'bird', categoryIndex: 0 },
     { label: 'penguin', categoryIndex: 1 }, { label: 'shark', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学会这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
@@ -23,8 +23,8 @@ const profile2 = lessonProfile(
     { word: 'shark', meaning: '鲨鱼' }, { word: 'whale', meaning: '鲸' },
   ],
   [
-    phraseQuestion('想表达“我认识词语“insect””，哪句语法正确？', ['I knows the word “insect”.', 'I am know the word “insect”.', 'I know the word “insect”.'], 2, '先找主语 I，再检查动词是否使用原形。 I know the word “insect”. 语序和动词形式正确。'),
-    phraseQuestion('哪句正确地表达“我也认识词语“shark””？', ['I also knows the word “shark”.', 'I also know the word “shark”.', 'I know also the word “shark”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。 I also know the word “shark”. 表达“我也认识这个词语”。'),
+    phraseQuestion('想表达“我认识 insect 这个词”，哪句语法正确？', ['I knows the word “insect”.', 'I am know the word “insect”.', 'I know the word “insect”.'], 2, '主语 I 后用动词原形 know。“I know the word ‘insect’.” 语序和动词形式正确。'),
+    phraseQuestion('哪句正确地表达“我也认识 shark 这个词”？', ['I also knows the word “shark”.', 'I also know the word “shark”.', 'I know also the word “shark”.'], 1, 'also 放在主语后、主要动词前；I 后面用 know。“I also know the word ‘shark’.” 表达“我也认识这个词”。'),
   ],
   ['动物类别', '动物名称'],
   [
@@ -39,8 +39,8 @@ const profile3 = lessonProfile(
     { word: 'trunk', meaning: '象鼻' }, { word: 'tusk', meaning: '长牙' },
   ],
   [
-    phraseQuestion('A问：“Do you know the word “elephant”?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。 Do you ...? 的肯定简答是 Yes, I do.'),
-    phraseQuestion('朋友说 “I know the word “trunk”.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “trunk”, too.', 'I knows the word “trunk”, too.', 'I am know the word “trunk”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。 I know the word “trunk”, too. 语法正确并表达“我也认识这个词语”。'),
+    phraseQuestion('A 问：“Do you know the word ‘elephant’?” 哪句是合适的肯定简答？', ['Yes, it is.', 'Yes, I do.', 'Yes, I am.'], 1, 'Do you ...? 的肯定简答使用 do。对 “Do you know the word ‘elephant’?”，可回答 “Yes, I do.”'),
+    phraseQuestion('朋友说：“I know the word ‘trunk’.” 你也想表达认识这个词语，哪句最合适？', ['I know the word “trunk”, too.', 'I knows the word “trunk”, too.', 'I am know the word “trunk”, too.'], 0, 'I 后用 know；too 放在句末表示“也”。“I know the word ‘trunk’, too.” 语法正确并表达“我也认识这个词”。'),
   ],
   ['动物类别', '动物名称'],
   [

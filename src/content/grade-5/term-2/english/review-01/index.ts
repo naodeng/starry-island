@@ -13,9 +13,9 @@ const profile1 = lessonProfile(
   ['健康和日子', '联系方法'],
   [
     { label: 'vegetables', categoryIndex: 0 }, { label: 'exercise', categoryIndex: 0 },
-    { label: 'calendar', categoryIndex: 1 }, { label: 'phone', categoryIndex: 1 },
+    { label: 'calendar', categoryIndex: 0 }, { label: 'phone', categoryIndex: 1 },
   ],
-  { prompt: '把词卡排成“我想了解这个词语”。', items: ['word', 'this', 'know', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
+  { prompt: '把词卡排成“我想学会这个词语”。', items: ['word', 'this', 'learn', 'I', 'would', 'like', 'to', '.'], correctOrderIndices: [3, 4, 5, 6, 2, 1, 0, 7] },
 );
 const profile2 = lessonProfile(
   [
@@ -29,7 +29,7 @@ const profile2 = lessonProfile(
   ['健康和日子', '联系方法'],
   [
     { label: 'vegetables', categoryIndex: 0 }, { label: 'healthy', categoryIndex: 0 },
-    { label: 'calendar', categoryIndex: 1 }, { label: 'message', categoryIndex: 1 },
+    { label: 'calendar', categoryIndex: 0 }, { label: 'message', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“这个词语对我来说是新的”。', items: ['to', 'new', 'word', 'is', 'This', 'me', '.'], correctOrderIndices: [4, 2, 3, 1, 0, 5, 6] },
 );
@@ -45,7 +45,7 @@ const profile3 = lessonProfile(
   ['健康和日子', '联系方法'],
   [
     { label: 'vegetables', categoryIndex: 0 }, { label: 'habit', categoryIndex: 0 },
-    { label: 'calendar', categoryIndex: 1 }, { label: 'email', categoryIndex: 1 },
+    { label: 'calendar', categoryIndex: 0 }, { label: 'email', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成表达“我不认识这个词语”的句子。', items: ['word', 'the', 'not', 'I', 'know', 'do', '.'], correctOrderIndices: [3, 5, 2, 4, 1, 0, 6] },
 );

@@ -48,7 +48,7 @@ const askingForHelpAtTheCentre = lessonProfile(
   ],
   [
     phraseQuestion('一个孩子在公园里找不到爸爸，于是去 Information Centre 求助。他最需要借用什么？', ['A phone.', 'A crayon.', 'A glue stick.'], 0, '孩子想联系爸爸，所以需要借电话；蜡笔和胶棒不能帮助他打电话。'),
-    phraseQuestion('工作人员打电话联系后，孩子得知爸爸在哪里？', ['At the hamburger shop.', 'At the Information Centre.', 'At the school gate.'], 0, '故事里的电话联系告诉 Steven，爸爸正在汉堡包店。'),
+    phraseQuestion('故事信息：Steven 在公园里找不到爸爸，于是到 Information Centre 借电话联系爸爸。爸爸接通后告诉 Steven，他正在 hamburger shop。Steven 的爸爸在哪里？', ['At the hamburger shop.', 'At the Information Centre.', 'At the school gate.'], 0, '故事信息说明 Steven 的爸爸正在 hamburger shop。'),
   ],
   ['求助资源或地点', '求助动作'],
   [
@@ -85,8 +85,8 @@ const readingARescueStory = lessonProfile(
     { word: 'SOS', meaning: '求救信号' },
   ],
   [
-    phraseQuestion('根据 Story Time，哪组事件顺序符合 Mary 和妈妈的故事？', ['乘小飞机出行 → 飞机出故障 → 妈妈受伤 → Mary 在雪地写 SOS → 飞行员求助 → 直升机救援。', '在雪地写 SOS → 乘小飞机出行 → 直升机救援 → 飞机出故障。', '飞机出故障 → 直升机救援 → Mary 和妈妈乘飞机离开。'], 0, '故事先讲乘机和飞机出故障，再讲妈妈受伤、Mary 写 SOS、飞行员求助，最后直升机救援。'),
-    phraseQuestion('飞行员看见雪地里的 SOS 后，故事中接下来发生了什么？', ['The pilot calls for help.', 'Mary and her mother fly home.', 'They find the Information Centre.'], 0, '飞行员看到求救信号后打电话求助，之后直升机赶来救援。'),
+    phraseQuestion('故事信息：Mary 和妈妈乘小飞机出行，飞机出了故障，妈妈受伤；Mary 在雪地写 SOS；飞行员看到后打电话求助，最后直升机救援。根据这些信息，哪组事件顺序正确？', ['乘小飞机出行 → 飞机出故障 → 妈妈受伤 → Mary 在雪地写 SOS → 飞行员求助 → 直升机救援。', '在雪地写 SOS → 乘小飞机出行 → 直升机救援 → 飞机出故障。', '飞机出故障 → 直升机救援 → Mary 和妈妈乘飞机离开。'], 0, '题面给出的故事顺序是乘机、飞机出故障、妈妈受伤、Mary 写 SOS、飞行员求助，最后直升机救援。'),
+    phraseQuestion('故事信息：Mary 和妈妈乘小飞机出行，途中飞机出了故障，妈妈受伤，Mary 在雪地写下 SOS。飞行员看到 SOS 后，接下来发生了什么？', ['The pilot calls for help.', 'Mary and her mother fly home.', 'They find the Information Centre.'], 0, '飞行员看到求救信号后打电话求助，之后直升机赶来救援。'),
   ],
   ['遇到的困难', '求助行动'],
   [

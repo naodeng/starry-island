@@ -2477,6 +2477,16 @@
                   "curriculumUnitKey": "grade-4/term-1/math/unit-01"
                 },
                 {
+                  "id": "integrated-practice-01",
+                  "title": "综合实践 · 亿有多大",
+                  "status": "active",
+                  "type": "integrated-practice",
+                  "formalUnitNumber": null,
+                  "achievementEligible": false,
+                  "textbookEditionId": "grade-4/term-1/math",
+                  "curriculumUnitKey": "grade-4/term-1/math/integrated-practice-01"
+                },
+                {
                   "id": "unit-02",
                   "title": "第二单元 · 公顷和平方千米",
                   "status": "active",
@@ -2545,16 +2555,6 @@
                   "achievementEligible": true,
                   "textbookEditionId": "grade-4/term-1/math",
                   "curriculumUnitKey": "grade-4/term-1/math/unit-08"
-                },
-                {
-                  "id": "integrated-practice-01",
-                  "title": "综合实践 · 亿有多大",
-                  "status": "active",
-                  "type": "integrated-practice",
-                  "formalUnitNumber": null,
-                  "achievementEligible": false,
-                  "textbookEditionId": "grade-4/term-1/math",
-                  "curriculumUnitKey": "grade-4/term-1/math/integrated-practice-01"
                 },
                 {
                   "id": "unit-09",
@@ -3091,6 +3091,16 @@
                   "curriculumUnitKey": "grade-5/term-1/math/unit-04"
                 },
                 {
+                  "id": "integrated-practice-01",
+                  "title": "综合实践 · 掷一掷",
+                  "status": "active",
+                  "type": "integrated-practice",
+                  "formalUnitNumber": null,
+                  "achievementEligible": false,
+                  "textbookEditionId": "grade-5/term-1/math",
+                  "curriculumUnitKey": "grade-5/term-1/math/integrated-practice-01"
+                },
+                {
                   "id": "unit-05",
                   "title": "第五单元 · 简易方程",
                   "status": "active",
@@ -3129,16 +3139,6 @@
                   "achievementEligible": true,
                   "textbookEditionId": "grade-5/term-1/math",
                   "curriculumUnitKey": "grade-5/term-1/math/unit-08"
-                },
-                {
-                  "id": "integrated-practice-01",
-                  "title": "综合实践 · 掷一掷",
-                  "status": "active",
-                  "type": "integrated-practice",
-                  "formalUnitNumber": null,
-                  "achievementEligible": false,
-                  "textbookEditionId": "grade-5/term-1/math",
-                  "curriculumUnitKey": "grade-5/term-1/math/integrated-practice-01"
                 }
               ]
             },
@@ -3395,6 +3395,16 @@
                   "curriculumUnitKey": "grade-5/term-2/math/unit-06"
                 },
                 {
+                  "id": "integrated-practice-02",
+                  "title": "综合实践 · 怎样通知最快",
+                  "status": "active",
+                  "type": "integrated-practice",
+                  "formalUnitNumber": null,
+                  "achievementEligible": false,
+                  "textbookEditionId": "grade-5/term-2/math",
+                  "curriculumUnitKey": "grade-5/term-2/math/integrated-practice-02"
+                },
+                {
                   "id": "unit-07",
                   "title": "第七单元 · 折线统计图",
                   "status": "active",
@@ -3423,16 +3433,6 @@
                   "achievementEligible": true,
                   "textbookEditionId": "grade-5/term-2/math",
                   "curriculumUnitKey": "grade-5/term-2/math/unit-09"
-                },
-                {
-                  "id": "integrated-practice-02",
-                  "title": "综合实践 · 怎样通知最快",
-                  "status": "active",
-                  "type": "integrated-practice",
-                  "formalUnitNumber": null,
-                  "achievementEligible": false,
-                  "textbookEditionId": "grade-5/term-2/math",
-                  "curriculumUnitKey": "grade-5/term-2/math/integrated-practice-02"
                 }
               ]
             },
@@ -9154,7 +9154,7 @@
         },
         {
           "id": "grade-5/term-2/english/unit-03/basic/task-02/session-01",
-          "title": "在短句中使用主题词"
+          "title": "根据情境选择联系方法"
         }
       ]
     },
@@ -9176,11 +9176,11 @@
       "basicSessions": [
         {
           "id": "grade-5/term-2/english/unit-04/basic/task-01/session-01",
-          "title": "认读与辨析主题词"
+          "title": "认读与辨析周末活动表达"
         },
         {
           "id": "grade-5/term-2/english/unit-04/basic/task-02/session-01",
-          "title": "在短句中使用主题词"
+          "title": "用过去时说周末活动"
         }
       ]
     },
@@ -9202,11 +9202,11 @@
       "basicSessions": [
         {
           "id": "grade-5/term-2/english/unit-05/basic/task-01/session-01",
-          "title": "认读与辨析主题词"
+          "title": "认读与辨析旅行表达"
         },
         {
           "id": "grade-5/term-2/english/unit-05/basic/task-02/session-01",
-          "title": "在短句中使用主题词"
+          "title": "读懂旅行活动并认出过去式"
         }
       ]
     },
@@ -9228,11 +9228,11 @@
       "basicSessions": [
         {
           "id": "grade-5/term-2/english/unit-06/basic/task-01/session-01",
-          "title": "认读与辨析主题词"
+          "title": "认读与辨析成长经历表达"
         },
         {
           "id": "grade-5/term-2/english/unit-06/basic/task-02/session-01",
-          "title": "在短句中使用主题词"
+          "title": "读成长时间线并使用过去式"
         }
       ]
     },
@@ -9748,11 +9748,11 @@
       "basicSessions": [
         {
           "id": "grade-6/term-1/english/review-01/basic/task-01/session-01",
-          "title": "认读与辨析主题词"
+          "title": "认读中国地点和文化词语"
         },
         {
           "id": "grade-6/term-1/english/review-01/basic/task-02/session-01",
-          "title": "在短句中使用主题词"
+          "title": "读懂动物类别和简单描述"
         }
       ]
     },

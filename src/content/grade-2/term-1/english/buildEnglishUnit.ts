@@ -96,14 +96,16 @@ function reviewSecondTaskMatch(task: EnglishTaskSpec, taskIndex: number): Englis
 
   const questions = [...task.questions] as EnglishQuestionSpec[];
   const cardName = matchQuestion.prompt.includes('时刻卡片') ? '时刻卡片' : '词卡';
-  const matchEvidence = cardName === '时刻卡片' ? '对应的时间读数' : '对应的中文意思';
+  const matchEvidence = cardName === '时刻卡片'
+    ? `时刻卡片“${target[0]}”和对应时间“${target[1]}”`
+    : `词卡“${target[0]}”和对应中文意思“${target[1]}”`;
   questions[2] = {
     kind: 'choice',
-    prompt: `同伴把${cardName}“${target[0]}”连到了“${distractors[0]}”。哪一项能改正并核对这组配对？`,
+    prompt: `同伴把${cardName}“${target[0]}”连到了“${distractors[0]}”。哪一项能改正这组配对？`,
     options: [`${target[0]} — ${target[1]}`, `${target[0]} — ${distractors[1]}`, `${target[0]} — ${distractors[0]}`],
     correctOptionIndex: 0,
-    hint: `先核对这张${cardName}的${matchEvidence}，再检查连线。`,
-    explanation: `“${target[0]}”对应“${target[1]}”，应与这项${matchEvidence}相符。`,
+    hint: `先读清${matchEvidence}，再确认它们是否对应。`,
+    explanation: `“${target[0]}”的对应项是“${target[1]}”。`,
   };
   return { ...task, questions: q8(questions) };
 }
@@ -168,7 +170,7 @@ function addHighTierEvidenceCheck(task: EnglishTaskSpec, taskIndex: number, sour
     questions[4] = {
       kind: 'choice',
       prompt: `两条记录分别对应以下两题：（A题：${firstPhrase.prompt}；B题：${secondPhrase.prompt}）。哪组答案按顺序同时符合两题的要求？`,
-      options: pairedOptions,
+      options: pairedOptions.map((option) => option.replace(/^A：(.+?)；B：(.+)$/u, 'A：“$1”；B：“$2”')) as unknown as typeof pairedOptions,
       correctOptionIndex: 0,
       hint: '分别核对两道题的对象和意思，再检查A、B的答案顺序。',
       explanation: `A应为“${answerA}”，B应为“${answerB}”；两条记录都要符合各自题意。`,
@@ -189,9 +191,11 @@ function addHighTierEvidenceCheck(task: EnglishTaskSpec, taskIndex: number, sour
     const wrongOtherRecord = taskIndex === 0
       ? `A改为“${targetAnswer}”，B改为“${otherWrong}”。`
       : `A改为“${otherWrong}”，B改为“${targetAnswer}”。`;
+    const selectedA = taskIndex === 0 ? targetWrong : otherAnswer;
+    const selectedB = taskIndex === 0 ? otherAnswer : targetWrong;
     questions[5] = {
       kind: 'choice',
-      prompt: `同伴的答题记录中有一处错误：（A题：${firstPhrase.prompt}；B题：${secondPhrase.prompt}）。哪项反馈只改正错选的一项并保留正确的一项？`,
+      prompt: `同伴答题记录：A题（${firstPhrase.prompt}），选择“${selectedA}”；B题（${secondPhrase.prompt}），选择“${selectedB}”。哪项反馈只改正错选的一项并保留正确的一项？`,
       options: [correctedRecord, unchangedRecord, wrongOtherRecord],
       correctOptionIndex: 0,
       hint: '先确认哪一项与题目要求不符，再保留已经核对正确的记录。',

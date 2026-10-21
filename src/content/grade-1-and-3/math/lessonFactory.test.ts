@@ -83,6 +83,147 @@ function choiceAnswerSignature(unitId: string, difficulty: 'basic' | 'advanced' 
 }
 
 describe('added math question quality', () => {
+  it('keeps Grade 1 Term 2 Unit 1 generated questions within visual recognition and simple composing', () => {
+    const unitId = 'grade-1/term-2/math/unit-01';
+    const unit = curriculum.units[unitId];
+    expect(unit, `Missing generated math unit ${unitId}`).toBeDefined();
+    if (!unit) return;
+
+    const activities = Object.values(unit.difficultyTracks)
+      .flatMap((track) => track.tasks)
+      .flatMap((task) => task.sessions)
+      .flatMap((session) => session.activities);
+    expect(activities).toHaveLength(48);
+
+    for (const activity of activities) {
+      const content = [activity.prompt, activity.hint, activity.explanation,
+        ...(activity.kind === 'choice' ? activity.options.map(({ label }) => label) : []),
+        ...(activity.kind === 'match' ? activity.pairs.flatMap(({ left, right }) => [left, right]) : []),
+        ...(activity.kind === 'categorize' ? [
+          ...activity.categories,
+          ...activity.items.map(({ label }) => label),
+        ] : []),
+        ...(activity.kind === 'order' ? activity.items.map(({ label }) => label) : []),
+      ].join(' ');
+      expect(content, activity.id).not.toMatch(/顶点|直角|对边|边长|边相交|边的长度|相等/);
+    }
+
+    for (const track of Object.values(unit.difficultyTracks)) {
+      for (const task of track.tasks) {
+        for (const activity of task.sessions.flatMap(({ activities: sessionActivities }) => sessionActivities)) {
+          if (activity.kind === 'match') {
+            const leftLabels = activity.pairs.map(({ left }) => left);
+            const rightLabels = activity.pairs.map(({ right }) => right);
+            expect(new Set(leftLabels).size, activity.id).toBe(leftLabels.length);
+            expect(new Set(rightLabels).size, activity.id).toBe(rightLabels.length);
+          }
+        }
+      }
+    }
+  });
+
+  it('quotes source questions naturally in high-tier peer-correction prompts', () => {
+    const affectedQuestionIds = [
+      'grade-1/term-1/math/unit-09/high/task-02/session-01/question-06',
+      'grade-1/term-1/math/integrated-practice-01/high/task-02/session-01/question-06',
+      'grade-1/term-2/math/unit-08/high/task-02/session-01/question-06',
+    ];
+
+    for (const questionId of affectedQuestionIds) {
+      const question = Object.values(curriculum.units)
+        .flatMap((unit) => Object.values(unit.difficultyTracks))
+        .flatMap((track) => track.tasks)
+        .flatMap((task) => task.sessions)
+        .flatMap((session) => session.activities)
+        .find((activity) => activity.id === questionId);
+
+      expect(question, `Missing generated math question ${questionId}`).toBeDefined();
+      expect(question?.prompt).not.toContain('？时选了');
+      expect(question?.prompt).toMatch(/^同伴选了“.+”来回答“.+”，应该改选哪一项？$/);
+    }
+  });
+
+  it('keeps five-within addition/subtraction questions inside the taught operation range', () => {
+    const affectedQuestionIds = [
+      'grade-1/term-1/math/unit-03/advanced/task-01/session-01/question-08',
+      'grade-1/term-1/math/unit-03/advanced/task-02/session-01/question-01',
+      'grade-1/term-1/math/unit-03/advanced/task-02/session-01/question-08',
+    ];
+
+    for (const questionId of affectedQuestionIds) {
+      const question = Object.values(curriculum.units)
+        .flatMap((unit) => Object.values(unit.difficultyTracks))
+        .flatMap((track) => track.tasks)
+        .flatMap((task) => task.sessions)
+        .flatMap((session) => session.activities)
+        .find((activity) => activity.id === questionId);
+
+      expect(question, `Missing generated math question ${questionId}`).toBeDefined();
+      expect(question?.kind).toBe('choice');
+      if (question?.kind !== 'choice') continue;
+      expect(question.hint).toContain('加法或减法');
+      expect(question.hint).not.toMatch(/相同份数|平均分/);
+      expect(question.options.every(({ label }) => !/[×÷]/.test(label))).toBe(true);
+      expect(question.options.filter(({ id }) => id === question.correctOptionId)).toHaveLength(1);
+    }
+  });
+
+  it('keeps peer-correction order prompts readable when the source instruction is quoted', () => {
+    const affectedQuestionIds = [
+      'grade-1/term-1/math/unit-04/high/task-01/session-01/question-06',
+      'grade-1/term-1/math/unit-04/high/task-02/session-01/question-06',
+    ];
+
+    for (const questionId of affectedQuestionIds) {
+      const question = Object.values(curriculum.units)
+        .flatMap((unit) => Object.values(unit.difficultyTracks))
+        .flatMap((track) => track.tasks)
+        .flatMap((task) => task.sessions)
+        .flatMap((session) => session.activities)
+        .find((activity) => activity.id === questionId);
+
+      expect(question, `Missing generated math question ${questionId}`).toBeDefined();
+      expect(question?.kind).toBe('choice');
+      expect(question?.prompt).not.toContain('按“按“');
+      expect(question?.prompt).toContain('请按“');
+    }
+  });
+
+  it('nests quotation marks in peer-correction prompts without duplicating Chinese double quotes', () => {
+    const questionId = 'grade-1/term-1/math/unit-07/high/task-01/session-01/question-04';
+    const question = Object.values(curriculum.units)
+      .flatMap((unit) => Object.values(unit.difficultyTracks))
+      .flatMap((track) => track.tasks)
+      .flatMap((task) => task.sessions)
+      .flatMap((session) => session.activities)
+      .find((activity) => activity.id === questionId);
+
+    expect(question, `Missing generated math question ${questionId}`).toBeDefined();
+    expect(question?.prompt).toContain('回答“读出钟面上的‘几时’，主要看哪根指针？”');
+    expect(question?.prompt).not.toContain('“几时”');
+  });
+
+  it('explains first-grade money conversions without the multiplication symbol', () => {
+    const affectedQuestionIds = ['basic', 'advanced', 'high'].flatMap((difficulty) => [
+      `grade-1/term-2/math/unit-05/${difficulty}/task-02/session-01/question-01`,
+      `grade-1/term-2/math/unit-05/${difficulty}/task-02/session-01/question-02`,
+    ]);
+
+    for (const questionId of affectedQuestionIds) {
+      const question = Object.values(curriculum.units)
+        .flatMap((unit) => Object.values(unit.difficultyTracks))
+        .flatMap((track) => track.tasks)
+        .flatMap((task) => task.sessions)
+        .flatMap((session) => session.activities)
+        .find((activity) => activity.id === questionId);
+
+      expect(question, `Missing generated math question ${questionId}`).toBeDefined();
+      expect(question?.kind).toBe('choice');
+      expect(question?.explanation).not.toContain('×');
+      expect(question?.explanation).toMatch(/合起来是 (50 角|30 分)。$/);
+    }
+  });
+
   it('does not repeat a complete question within a task', () => {
     for (const entry of addedCourseCatalog.filter(({ subject }) => subject === 'math')) {
       const unit = curriculum.units[entry.id];
@@ -217,6 +358,55 @@ describe('added math question quality', () => {
     }
   });
 
+  it('states both choice orders in combination-ordering questions', () => {
+    const unit = curriculum.units['grade-3/term-2/math/unit-08'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+      for (const [taskIndex, task] of unit.difficultyTracks[difficulty].tasks.entries()) {
+        const question = task.sessions[0]?.activities[3];
+        expect(question, `${difficulty} task ${taskIndex + 1}`).toBeDefined();
+        expect(question?.prompt).toContain(taskIndex === 0 ? '黑裤子、白裤子、灰裤子' : '面包、饼干');
+        if (difficulty === 'high') {
+          expect(question?.prompt).toContain(taskIndex === 0 ? '红上衣、蓝上衣' : '牛奶、果汁、豆浆');
+        }
+      }
+    }
+  });
+
+  it('keeps Grade 3 review cards self-contained and uses student-friendly multiplication wording', () => {
+    const review = curriculum.units['grade-3/term-2/math/unit-09'];
+    const combinations = curriculum.units['grade-3/term-2/math/unit-08'];
+    expect(review).toBeDefined();
+    expect(combinations).toBeDefined();
+    if (!review || !combinations) return;
+
+    const tableQuestion = review.difficultyTracks.advanced.tasks[0]?.sessions[0]?.activities[5];
+    expect(tableQuestion?.kind).toBe('choice');
+    expect(tableQuestion?.prompt).toContain('一班 4 人、二班 5 人');
+
+    const methodQuestion = review.difficultyTracks.advanced.tasks[1]?.sessions[0]?.activities[5];
+    expect(methodQuestion?.kind).toBe('choice');
+    expect(methodQuestion?.explanation).not.toContain('阅读');
+
+    const routeQuestion = review.difficultyTracks.high.tasks[1]?.sessions[0]?.activities[0];
+    expect(routeQuestion?.kind).toBe('choice');
+    expect(routeQuestion?.prompt).toContain('没有写明从哪里出发、先走哪一段');
+
+    for (const task of combinations.difficultyTracks.basic.tasks) {
+      const question = task.sessions[0]?.activities[7];
+      expect(question?.prompt).toContain(task === combinations.difficultyTracks.basic.tasks[0] ? '红上衣、蓝上衣' : '牛奶、果汁、豆浆');
+    }
+
+    const multiplicationQuestion = review.difficultyTracks.high.tasks[0]?.sessions[0]?.activities[2];
+    expect(multiplicationQuestion?.kind).toBe('choice');
+    if (multiplicationQuestion?.kind === 'choice') {
+      expect(multiplicationQuestion.options.some(({ label }) => label.includes('因数'))).toBe(false);
+      expect(multiplicationQuestion.explanation).toContain('拆成 10 和 6');
+    }
+  });
+
   it('uses the finite-counter enumeration described by 摆一摆，想一想', () => {
     const unit = curriculum.units['grade-1/term-2/math/integrated-practice-01'];
     expect(unit).toBeDefined();
@@ -295,6 +485,99 @@ describe('added math question quality', () => {
           expect(distinctSlots, `${entry.id} task ${taskIndex + 1} ${leftName}/${rightName} only differs in ${distinctSlots}/8 question prompts`)
             .toBeGreaterThanOrEqual(4);
         }
+      }
+    }
+  });
+
+  it('keeps Grade 3 area-unit classification within the unit topics', () => {
+    const unit = curriculum.units['grade-3/term-2/math/unit-05'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+      for (const [taskIndex, task] of unit.difficultyTracks[difficulty].tasks.entries()) {
+        const question = task.sessions[0]?.activities[4];
+        expect(question?.kind).toBe('categorize');
+        if (question?.kind !== 'categorize') continue;
+        const labels = question.items.map(({ label }) => label);
+        expect(labels).toEqual(taskIndex === 0
+          ? ['厘米', '米', '平方厘米', '平方米']
+          : ['毫米', '分米', '平方分米', '平方米']);
+      }
+    }
+  });
+
+  it('states the month inside Grade 3 calendar questions that use a month-specific explanation', () => {
+    const unit = curriculum.units['grade-3/term-2/math/unit-06'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const question = unit.difficultyTracks.basic.tasks[1]?.sessions[0]?.activities[7];
+    expect(question?.kind).toBe('choice');
+    if (question?.kind !== 'choice') return;
+    expect(question.prompt).toContain('9 月');
+    expect(question.explanation).toContain('9 月');
+  });
+
+  it('asks for the remaining time to one hour without implying the hour has already passed', () => {
+    const unit = curriculum.units['grade-3/term-1/math/unit-01'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    const question = unit.difficultyTracks.basic.tasks[0]?.sessions[0]?.activities[6];
+    expect(question?.kind).toBe('arithmetic');
+    if (question?.kind !== 'arithmetic') return;
+    expect(question.prompt).toBe('一段活动已经用了 15 分钟，满 1 小时还差多少分钟？');
+    expect(question.expression).toBe('60 - 15');
+    expect(question.correctAnswer).toBe(45);
+  });
+
+  it('does not repeat calculation instructions already present in a review prompt', () => {
+    const unit = curriculum.units['grade-3/term-1/math/unit-10'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    for (const question of [
+      unit.difficultyTracks.advanced.tasks[0]?.sessions[0]?.activities[3],
+      unit.difficultyTracks.advanced.tasks[1]?.sessions[0]?.activities[3],
+    ]) {
+      expect(question?.kind).toBe('arithmetic');
+      expect(question?.prompt.match(/列式计算并核对/g)).toHaveLength(1);
+      expect(question?.prompt).toContain('一共有多少个？');
+    }
+  });
+
+  it('includes the two class counts in every generated double-entry table sum question', () => {
+    const unit = curriculum.units['grade-3/term-2/math/unit-03'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+      for (const task of unit.difficultyTracks[difficulty].tasks) {
+        const question = task.sessions[0]?.activities[1];
+        expect(question?.kind).toBe('arithmetic');
+        if (question?.kind !== 'arithmetic') continue;
+        const operands = question.expression.match(/\d+/g)?.map(Number) ?? [];
+        expect(operands).toHaveLength(2);
+        expect(question.prompt).toContain(`一班 ${operands[0]} 人、二班 ${operands[1]} 人`);
+        expect(question.correctAnswer).toBe(operands[0]! + operands[1]!);
+      }
+    }
+  });
+
+  it('states both choice counts in combination arithmetic prompts', () => {
+    const unit = curriculum.units['grade-3/term-2/math/unit-08'];
+    expect(unit).toBeDefined();
+    if (!unit) return;
+
+    for (const difficulty of ['advanced', 'high'] as const) {
+      for (const [taskIndex, task] of unit.difficultyTracks[difficulty].tasks.entries()) {
+        const question = task.sessions[0]?.activities[1];
+        expect(question?.kind).toBe('arithmetic');
+        if (question?.kind !== 'arithmetic') continue;
+        const first = taskIndex === 0 ? '2 种上衣和 3 种裤子' : '3 种饮料和 2 种点心';
+        expect(question.prompt).toContain(first);
+        if (difficulty === 'high') expect(question.prompt).toContain('原有 6 种搭配');
       }
     }
   });

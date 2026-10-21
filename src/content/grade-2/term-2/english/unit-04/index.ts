@@ -120,7 +120,7 @@ const clockReadingChallenge = lessonProfile(
   ],
   ['时间问句', '时间回答'],
   [
-    { label: 'What time is it?', categoryIndex: 0 }, { label: 'What time is it today?', categoryIndex: 0 },
+    { label: 'What time is it?', categoryIndex: 0 }, { label: 'What time is it now?', categoryIndex: 0 },
     { label: "It's 7:40.", categoryIndex: 1 }, { label: "It's 5:00.", categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“现在是两点五十分”。', items: ['2:50', "It's", '.'], correctOrderIndices: [1, 0, 2] },

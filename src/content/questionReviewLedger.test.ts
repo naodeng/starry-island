@@ -76,6 +76,31 @@ describe('curriculum question review ledger', () => {
     });
   });
 
+  it('records the current full question review and fix recheck for every course', () => {
+    readRows().forEach((row) => {
+      const unitId = row['课程ID'];
+      const questionTotal = row['题目总数'];
+      const evidence = row['复核证据']?.trim();
+      expect(evidence, `${unitId} current full review`).toContain('本轮全量复核：2026-10-20至2026-10-21');
+      expect(evidence, `${unitId} current question count`).toContain(`逐题复核：${questionTotal}/${questionTotal}`);
+      expect(evidence, `${unitId} current answer and prompt recheck`).toContain('并复核本轮修复后的所有受影响题目');
+      expect(evidence, `${unitId} current review rules`).toContain('course-content-review-rules.md');
+
+      if (questionTotal === '56') {
+        expect(evidence, `${unitId} current basic task range`).toContain(
+          `${unitId}/basic/task-{01..03}/session-01/question-{01..08}`,
+        );
+        expect(evidence, `${unitId} current advanced/high task ranges`).toContain(
+          `${unitId}/{advanced|high}/task-{01|02}/session-01/question-{01..08}`,
+        );
+      } else {
+        expect(evidence, `${unitId} current exact ID range`).toContain(
+          `${unitId}/{basic|advanced|high}/task-{01|02}/session-01/question-{01..08}`,
+        );
+      }
+    });
+  });
+
   it('records a dated question ID range for each grade 1 and grade 3 audit', () => {
     readRows().filter(({ '课程ID': id }) => id.startsWith('grade-1/') || id.startsWith('grade-3/')).forEach((row) => {
       const unitId = row['课程ID'];

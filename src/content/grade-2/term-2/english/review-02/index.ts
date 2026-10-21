@@ -10,7 +10,7 @@ const timeAndWeek = lessonProfile(
   ],
   [
     phraseQuestion('日历上标着星期一，钟面显示 7:40，哪组信息匹配？', ['Monday and 7:40', 'Sunday and 11:30', 'Monday and 11:30'], 0, '先分别核对星期和时间。'),
-    phraseQuestion('想询问今天是星期几，应该选哪句？', ['What day is it today?', 'What time is it today?', 'What is the season today?'], 0, '询问星期名称用 What day…?'),
+    phraseQuestion('想询问今天是星期几，应该选哪句？', ['What day is it today?', 'What time is it?', 'What is the weather like today?'], 0, '询问星期名称用 What day…?'),
   ],
   ['星期名称', '数字时间'],
   [
@@ -28,8 +28,8 @@ const routinesAndTimes = lessonProfile(
     { word: 'go home', meaning: '回家' },
   ],
   [
-    phraseQuestion('想问朋友每天什么时候吃早餐，哪句合适？', ['When do you eat breakfast every day?', 'What day do you eat breakfast every day?', 'Where do you eat breakfast every day?'], 0, '用 When do you…every day? 询问日常活动时间。'),
-    phraseQuestion('“我八点去上学。”可以怎样说？', ['I go to school at eight.', 'I go school on eight.', 'I go home at school.'], 0, 'go to school 表示去上学。'),
+    phraseQuestion('想问朋友每天什么时候吃早餐，哪句合适？', ['When do you eat breakfast every day?', 'What do you eat every day?', 'Where do you eat breakfast every day?'], 0, '用 When do you…every day? 询问日常活动时间。'),
+    phraseQuestion('“我八点去上学。”可以怎样说？', ['I go to school at eight.', 'I go home at eight.', 'I get up at eight.'], 0, 'go to school 表示去上学。'),
   ],
   ['早晨活动', '放学后的活动'],
   [
@@ -47,8 +47,8 @@ const planTheDay = lessonProfile(
     { word: 'go home', meaning: '回家' },
   ],
   [
-    phraseQuestion('星期日的早晨，哪句可以介绍起床时间？', ['I get up at 8:00 on Sunday.', 'I get up Monday at Sunday.', 'I Sunday get 8:00 up.'], 0, 'on Sunday 表示在星期日，at 8:00 表示八点。'),
-    phraseQuestion('放学以后要回家，哪句合适？', ['I go home after school.', 'I go school after home.', 'I get up after school home.'], 0, 'after school 表示放学后。'),
+    phraseQuestion('星期日的早晨，哪句可以介绍起床时间？', ['I get up at 8:00 on Sunday.', 'I get up at 8:00 on Monday.', 'I go to school at 8:00 on Sunday.'], 0, 'on Sunday 表示在星期日，at 8:00 表示八点。'),
+    phraseQuestion('放学以后要回家，哪句合适？', ['I go home after school.', 'I go to school after breakfast.', 'I get up before school.'], 0, 'after school 表示放学后。'),
   ],
   ['星期安排', '日常活动'],
   [
@@ -67,7 +67,7 @@ const weekPlanner = lessonProfile(
   ],
   [
     phraseQuestion('星期六下午活动卡写着 2:50，哪句信息完全匹配？', ['Saturday at 2:50', 'Tuesday at 7:40', 'Saturday at 7:40'], 0, '同时核对星期名称和时间数字。'),
-    phraseQuestion('想约星期二一起活动，哪句包含正确的星期名称？', ["Let's play on Tuesday.", "Let's Tuesday on play.", "Let's play at Tuesday."], 0, '星期名称前用 on 表示在星期几。'),
+    phraseQuestion('想约星期二一起活动，哪句包含正确的星期名称？', ["Let's play on Tuesday.", "Let's play on Monday.", "Let's play on Saturday."], 0, '星期名称前用 on 表示在星期几。'),
   ],
   ['星期名称', '活动时间'],
   [
@@ -104,8 +104,8 @@ const weeklyRoutineReview = lessonProfile(
     { word: 'eat breakfast', meaning: '吃早餐' },
   ],
   [
-    phraseQuestion('“我星期六七点四十起床。”哪句正确？', ['I get up at 7:40 on Saturday.', 'I get up Saturday at 7:40?', 'I Saturday get 7:40 up.'], 0, 'at 放在时间前，on 放在星期名称前。'),
-    phraseQuestion('想问朋友每天什么时候吃早餐，哪句合适？', ['When do you eat breakfast every day?', 'What day do you eat breakfast every day?', 'Where do you eat breakfast every day?'], 0, 'When 用来询问日常活动时间。'),
+    phraseQuestion('“我星期六七点四十起床。”哪句正确？', ['I get up at 7:40 on Saturday.', 'I get up at 7:30 on Saturday.', 'I go to school at 7:40 on Saturday.'], 0, 'at 放在时间前，on 放在星期名称前。'),
+    phraseQuestion('想问朋友每天什么时候吃早餐，哪句合适？', ['When do you eat breakfast every day?', 'What do you do every day?', 'Where do you eat breakfast every day?'], 0, 'When 用来询问日常活动时间。'),
   ],
   ['星期活动表达', '日常时间表达'],
   [

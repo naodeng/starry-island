@@ -47,7 +47,7 @@ const dayQuestions = lessonProfile(
     { word: 'Sunday', meaning: '星期日' },
   ],
   [
-    phraseQuestion('想问今天是星期几，哪句合适？', ['What day is it today?', 'What time is it today?', 'What is the weather today?'], 0, 'day 在这里表示星期几。'),
+    phraseQuestion('想问今天是星期几，哪句合适？', ['What day is it today?', 'What time is it?', 'What is the weather like today?'], 0, 'day 在这里表示星期几。'),
     phraseQuestion('“今天是星期六。”可以怎样说？', ["It's Saturday today.", "It's Sunday today.", "It's Monday today."], 0, 'Saturday 表示星期六。'),
   ],
   ['星期几问句', '星期几回答'],
@@ -66,7 +66,7 @@ const weeklyPlanner = lessonProfile(
     { word: 'Sunday', meaning: '星期日' },
   ],
   [
-    phraseQuestion('小朋友想在星期日和伙伴踢球，哪句安排合适？', ["Let's play football on Sunday.", "Let's play football at Sunday.", "Let's Sunday football play."], 0, 'on 可以放在星期名称前，表示在星期几。'),
+    phraseQuestion('小朋友想在星期日和伙伴踢球，哪句安排合适？', ["Let's play football on Sunday.", "Let's play football on Monday.", "Let's play football on Saturday."], 0, 'on 可以放在星期名称前，表示在星期几。'),
     phraseQuestion('上学日里，哪一天排在星期二之后？', ['Wednesday', 'Monday', 'Saturday'], 0, 'Tuesday 的下一天是 Wednesday。'),
   ],
   ['上学日', '周末日'],
@@ -104,7 +104,7 @@ const weekendPlanCheck = lessonProfile(
     { word: 'Wednesday', meaning: '星期三' },
   ],
   [
-    phraseQuestion('小队计划星期日踢足球，哪句正确？', ["Let's play football on Sunday.", "Let's play football at Sunday.", "Let's Sunday play a football."], 0, '星期名称前用 on 表示在星期几。'),
+    phraseQuestion('小队计划星期日踢足球，哪句正确？', ["Let's play football on Sunday.", "Let's play football on Monday.", "Let's play football on Saturday."], 0, '星期名称前用 on 表示在星期几。'),
     phraseQuestion('星期一的下一天是星期几？', ['Tuesday', 'Thursday', 'Sunday'], 0, 'Tuesday 接在 Monday 后面。'),
   ],
   ['工作日', '周末'],

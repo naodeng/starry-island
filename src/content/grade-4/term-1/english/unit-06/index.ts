@@ -86,8 +86,8 @@ const followingTheMonkeyJobStory = lessonProfile(
     { word: 'football player', meaning: '足球运动员' },
   ],
   [
-    phraseQuestion('Story Time 开始时，小猴子告诉鹦鹉自己想要什么？', ['A job.', 'A toy car.', 'A new schoolbag.'], 0, '故事开头，小猴子说自己想要一份工作。'),
-    phraseQuestion('小猴子觉得自己个子太矮，不适合开出租车后，朋友建议他试试什么？', ['Being a singer.', 'Being a farmer.', 'Being a nurse.'], 0, '故事里鹦鹉先建议消防员、出租车司机和歌手，后来又建议足球运动员。'),
+    phraseQuestion('故事信息：Story Time 开始时，小猴子对鹦鹉说 “I want a job.” 这句话表达他想要什么？', ['A job.', 'A toy car.', 'A new schoolbag.'], 0, '小猴子说 “I want a job.”，表示他想找一份工作。'),
+    phraseQuestion('故事信息：小猴子觉得自己个子太矮，不能开出租车。鹦鹉接着建议：“You can be a singer.” 鹦鹉建议他试试什么？', ['Being a singer.', 'Being a farmer.', 'Being a nurse.'], 0, '鹦鹉说 “You can be a singer.”，建议小猴子当歌手。'),
   ],
   ['小猴子的想法或困难', '鹦鹉给出的建议'],
   [
