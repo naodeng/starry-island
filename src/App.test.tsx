@@ -47,6 +47,24 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: '显示主题' })).toBeInTheDocument();
   });
 
+  it('opensTheLazyChallengeCenterAndPilotGroupFromTheCatalog', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(await screen.findByRole('button', { name: '进入闯关中心' }));
+    expect(await screen.findByRole('heading', { name: '闯关中心' }, { timeout: 5000 })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '选择一条挑战航线' })).toBeInTheDocument();
+    const soundsBeforeChallengeNavigation = playedSources.length;
+
+    const unitChallengeCard = screen.getByRole('heading', { name: '二年级上册数学 · 第二单元' }).closest('.challenge-group-card');
+    expect(unitChallengeCard).not.toBeNull();
+    await user.click(within(unitChallengeCard as HTMLElement).getByRole('button', { name: '查看挑战任务' }));
+    expect(await screen.findByRole('heading', { name: '选择一个任务开始' }, { timeout: 5000 })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /开始挑战/ })).toHaveLength(5);
+    expect(window.location.pathname).toBe('/challenges/group/grade-2-term-1-math-unit-02');
+    expect(playedSources).toHaveLength(soundsBeforeChallengeNavigation);
+  });
+
   it('appliesTheChosenLearningStartToTheVisibleCourseCatalog', async () => {
     const user = userEvent.setup();
     render(<App />);

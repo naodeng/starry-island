@@ -141,6 +141,19 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
           </aside>
         </header>
 
+        <section className="catalog-challenge-entry" aria-labelledby="challenge-entry-heading">
+          <Card className="catalog-challenge-entry-card" color="default">
+            <div>
+              <p className="eyebrow">独立闯关 · 记录保存在本机</p>
+              <h2 id="challenge-entry-heading">准备好检验自己的学习成果了吗？</h2>
+              <p>每道题只提交一次答案，完成后可以查看得分和讲解。</p>
+            </div>
+            <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/challenges')}>
+              进入闯关中心
+            </Button>
+          </Card>
+        </section>
+
         <section className="catalog-section" aria-labelledby="subject-heading">
           <div className="catalog-section-heading">
             <div>

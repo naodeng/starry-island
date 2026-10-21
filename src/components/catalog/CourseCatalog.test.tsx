@@ -46,6 +46,16 @@ describe('CourseCatalog', () => {
     expect(screen.getByRole('button', { name: '英语' })).toBeInTheDocument();
   });
 
+  it('offersAnIndependentChallengeCenterEntry', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+    renderCatalog(onNavigate);
+
+    await user.click(screen.getByRole('button', { name: '进入闯关中心' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/challenges');
+  });
+
   it('opensVerifiedChineseAndMathUnits', async () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();

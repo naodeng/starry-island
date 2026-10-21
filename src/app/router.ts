@@ -6,6 +6,9 @@ import type { Curriculum, CurriculumUnit, Difficulty, LearningSession, LearningT
 export type AppRoute =
   | { kind: 'catalog' }
   | { kind: 'achievements' }
+  | { kind: 'challengeCenter' }
+  | { kind: 'challengeGroup'; groupId: string }
+  | { kind: 'challengeTask'; taskId: string }
   | { kind: 'loading'; path: string; unitKey: string; curriculumUnitKey: string }
   | { kind: 'loadError'; path: string }
   | { kind: 'unit'; unitKey: string; unit: CurriculumUnit }
@@ -31,6 +34,18 @@ export function getTaskPath(unitKey: string, difficulty: Difficulty, taskId: str
 
 export function getSessionPath(unitKey: string, difficulty: Difficulty, taskId: string, sessionId: string): string {
   return `${getTaskPath(unitKey, difficulty, taskId)}/${lastPathSegment(sessionId)}`;
+}
+
+export function getChallengeGroupPath(groupId: string): string {
+  return `/challenges/group/${encodeURIComponent(groupId)}`;
+}
+
+export function getChallengeCenterPath(): string {
+  return '/challenges';
+}
+
+export function getChallengeTaskPath(taskId: string): string {
+  return `/challenges/task/${encodeURIComponent(taskId)}`;
 }
 
 function findCatalogUnit(instance: CurriculumCatalog, key: string) {
@@ -71,6 +86,24 @@ export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit
   const normalized = pathname.replace(/\/+$/, '') || '/';
   if (normalized === '/') return { kind: 'catalog' };
   if (normalized === '/achievements') return { kind: 'achievements' };
+
+  if (normalized === '/challenges') return { kind: 'challengeCenter' };
+  if (normalized.startsWith('/challenges/')) {
+    const match = /^\/challenges\/(group|task)\/([^/]+)$/.exec(normalized);
+    if (!match) return { kind: 'notFound', path: normalized };
+    let id: string;
+    try {
+      id = decodeURIComponent(match[2]!);
+    } catch {
+      return { kind: 'notFound', path: normalized };
+    }
+    if (!id || /[\u0000-\u001f]/.test(id)) return { kind: 'notFound', path: normalized };
+    if (match[1] === 'group' && !/^[a-z0-9-]+$/.test(id)) return { kind: 'notFound', path: normalized };
+    if (match[1] === 'task' && !/^[a-z0-9-]+\/[a-z0-9-]+$/.test(id)) return { kind: 'notFound', path: normalized };
+    return match[1] === 'group'
+      ? { kind: 'challengeGroup', groupId: id }
+      : { kind: 'challengeTask', taskId: id };
+  }
 
   const segments = normalized.split('/').filter(Boolean);
   if (segments.length !== 4 && segments.length !== 5 && segments.length !== 6 && segments.length !== 7) {

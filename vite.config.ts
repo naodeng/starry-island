@@ -7,5 +7,17 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            {
+              name: 'curriculum-manifest',
+              test: /[\\/]src[\\/]content[\\/]curriculum-manifest\.json$/,
+            },
+          ],
+        },
+      },
+    },
   },
 });
