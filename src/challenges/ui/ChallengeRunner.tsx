@@ -5,6 +5,7 @@ import type { ChallengeRepository } from '../storage/repository';
 import { acquireChallengeWriterLease, type ChallengeWriterLease } from '../storage/writerLock';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { ChallengeAnswer, ChallengeAttempt, ChallengeResult as ChallengeResultData, ChallengeTaskDefinition, TaskProgress } from '../domain/types';
+import { CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } from '../domain/snapshotSchema';
 import { assemblePaper } from '../domain/assemble';
 import { finalizeAttempt, submitFirstAnswer } from '../domain/attempt';
 import { getChallengeErrorMessage } from '../domain/errors';
@@ -183,6 +184,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         taskId: task.id,
         difficulty: task.difficulty,
         status: 'in-progress',
+        snapshotSchemaVersion: CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION,
         questions,
         assemblySeed: seed,
         contentManifestVersion: manifestVersion,

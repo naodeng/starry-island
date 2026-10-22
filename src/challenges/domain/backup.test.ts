@@ -91,7 +91,7 @@ describe('challenge backup checksum', () => {
     };
     const attempt = {
       attemptId: 'attempt-1', taskId: 'task-1', difficulty: 'basic', status: 'in-progress',
-      questions: [question], assemblySeed: 'seed', contentManifestVersion: 'v1', answers: {},
+      questions: [question], assemblySeed: 'seed', contentManifestVersion: 'v1', snapshotSchemaVersion: 1, answers: {},
       currentIndex: 0, startedAt: '2026-01-01T00:00:00.000Z', elapsedMs: 0, revision: 0,
     };
 

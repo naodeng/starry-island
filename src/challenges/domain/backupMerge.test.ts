@@ -37,6 +37,7 @@ function attempt(taskId: string, attemptId: string): ChallengeAttempt {
     questions: [question(`question-${attemptId}`)],
     assemblySeed: 'seed',
     contentManifestVersion: 'v1',
+    snapshotSchemaVersion: 1,
     answers: {},
     currentIndex: 0,
     startedAt: '2026-01-01T00:00:00.000Z',

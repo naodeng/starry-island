@@ -85,6 +85,7 @@ export interface ChallengeAttempt {
   taskId: string;
   difficulty: Difficulty;
   status: 'in-progress' | 'completed';
+  snapshotSchemaVersion: number;
   questions: ChallengeQuestionSnapshot[];
   assemblySeed: string;
   contentManifestVersion: string;

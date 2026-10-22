@@ -106,6 +106,21 @@ afterEach(() => {
 });
 
 describe('ChallengeRunner', () => {
+  it('writes snapshot schema version 1 when starting a challenge', async () => {
+    const repository = makeRepository();
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+
+    await waitFor(async () => {
+      expect(await repository.getActiveAttempt(task.id)).toMatchObject({
+        snapshotSchemaVersion: 1,
+        contentManifestVersion: 'test-v1',
+      });
+    });
+  });
+
   it('applies the challenge group grade tier to the question card', async () => {
     const { loadedGroup, task } = makeLoadedGroup(1, 4);
     render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={makeRepository()} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
@@ -299,6 +314,7 @@ describe('ChallengeRunner', () => {
       questions: assemblePaper(task, loadedGroup.candidates, assemblySeed, []),
       assemblySeed,
       contentManifestVersion: 'test-v1',
+      snapshotSchemaVersion: 1,
       answers: {},
       currentIndex: 0,
       startedAt: new Date().toISOString(),

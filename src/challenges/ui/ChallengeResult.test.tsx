@@ -39,6 +39,7 @@ function attempt(): ChallengeAttempt {
     questions: [question],
     assemblySeed: 'seed',
     contentManifestVersion: 'v1',
+    snapshotSchemaVersion: 1,
     answers: { [question.questionId]: 37 },
     currentIndex: 1,
     startedAt: '2026-10-21T00:00:00.000Z',
