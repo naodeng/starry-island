@@ -57,7 +57,7 @@ describe('ChallengeActivityRenderer', () => {
 
   it('does not render hints or explanations and locks after one submitted answer', () => {
     const onAnswer = vi.fn();
-    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={onAnswer} disabled={false} /></SoundProvider>);
+    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={onAnswer} disabled={false} densityTier="low" /></SoundProvider>);
     const question = screen.getByRole('region', { name: activity.prompt });
     const controls = within(question);
 
@@ -74,7 +74,7 @@ describe('ChallengeActivityRenderer', () => {
   it('reads only the visible prompt with a local Chinese voice', () => {
     const localVoice = makeVoice('zh-CN', true);
     const speech = setupSpeech([makeVoice('en-US', true), makeVoice('zh-CN', false), localVoice]);
-    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} /></SoundProvider>);
+    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} densityTier="low" /></SoundProvider>);
 
     fireEvent.click(screen.getByRole('button', { name: '朗读题目' }));
 
@@ -85,11 +85,12 @@ describe('ChallengeActivityRenderer', () => {
     expect(utterance.text).not.toContain(activity.options[0]!.label);
     expect(utterance.text).not.toContain(activity.hint);
     expect(utterance.text).not.toContain(activity.explanation);
+    expect(screen.getByRole('region', { name: activity.prompt })).toHaveAttribute('data-grade-tier', 'low');
   });
 
   it('explains when no local Chinese voice is available without using a remote voice', () => {
     const speech = setupSpeech([makeVoice('zh-CN', false), makeVoice('en-US', true)]);
-    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} /></SoundProvider>);
+    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} densityTier="low" /></SoundProvider>);
 
     fireEvent.click(screen.getByRole('button', { name: '朗读题目' }));
 
@@ -101,7 +102,7 @@ describe('ChallengeActivityRenderer', () => {
   it('does not offer prompt speech when the existing voice preference is disabled', () => {
     localStorage.setItem(SOUND_PREFERENCE_KEY, 'false');
     const speech = setupSpeech([makeVoice('zh-CN', true)]);
-    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} /></SoundProvider>);
+    render(<SoundProvider><ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} densityTier="low" /></SoundProvider>);
 
     expect(screen.getByRole('button', { name: '朗读题目' })).toBeDisabled();
     expect(speech.speak).not.toHaveBeenCalled();
@@ -111,7 +112,7 @@ describe('ChallengeActivityRenderer', () => {
     const speech = setupSpeech([makeVoice('zh-CN', true)]);
     render(
       <SoundProvider>
-        <ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} />
+        <ChallengeActivityRenderer activity={activity} onAnswer={vi.fn()} disabled={false} densityTier="low" />
         <DisableSoundButton />
       </SoundProvider>,
     );

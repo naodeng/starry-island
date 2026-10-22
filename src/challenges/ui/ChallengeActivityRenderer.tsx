@@ -5,6 +5,7 @@ import type { ActivityDefinition } from '../../content/types';
 import type { ChallengeAnswer } from '../domain/types';
 import { useSound } from '../../sound/SoundProvider';
 import { speakWithLocalChineseVoice, stopLocalSpeech } from '../../sound/localChineseSpeech';
+import type { ChallengeDensityTier } from './densityTier';
 import ArithmeticActivity from '../../components/game/ArithmeticActivity';
 import CategorizeActivity from '../../components/game/CategorizeActivity';
 import ChoiceActivity from '../../components/game/ChoiceActivity';
@@ -14,10 +15,11 @@ import OrderActivity from '../../components/game/OrderActivity';
 interface ChallengeActivityRendererProps {
   activity: ActivityDefinition;
   disabled: boolean;
+  densityTier: ChallengeDensityTier;
   onAnswer: (answer: ChallengeAnswer) => void;
 }
 
-export default function ChallengeActivityRenderer({ activity, disabled, onAnswer }: ChallengeActivityRendererProps) {
+export default function ChallengeActivityRenderer({ activity, disabled, densityTier, onAnswer }: ChallengeActivityRendererProps) {
   const [submitted, setSubmitted] = useState(false);
   const [speechStatus, setSpeechStatus] = useState<string | null>(null);
   const { enabled: soundEnabled } = useSound();
@@ -66,7 +68,7 @@ export default function ChallengeActivityRenderer({ activity, disabled, onAnswer
   }
 
   return (
-    <section className="activity-renderer challenge-activity" aria-labelledby={`challenge-activity-${activity.id}`}>
+    <section className="activity-renderer challenge-activity" data-grade-tier={densityTier} aria-labelledby={`challenge-activity-${activity.id}`}>
       <div className="activity-prompt-row">
         <span className="activity-symbol" aria-hidden="true"><StarIcon size={18} /></span>
         <h2 id={`challenge-activity-${activity.id}`}>{activity.prompt}</h2>

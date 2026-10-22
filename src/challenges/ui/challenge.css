@@ -22,7 +22,11 @@
 .challenge-runner-heading { display: grid; justify-items: start; gap: 12px; margin-bottom: 22px; }
 .challenge-runner-progress { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 12px 16px; border: 1px solid var(--island-border); border-radius: 16px; color: var(--animal-text-color-secondary); background: var(--island-surface); font-weight: 700; }
 .challenge-runner-progress strong { color: var(--animal-primary-color); }
-.challenge-activity { display: grid; gap: 22px; padding: clamp(20px, 4vw, 36px); border: 1px solid var(--island-border); border-radius: var(--island-radius-card, 26px); background: var(--island-surface); }
+.challenge-activity { --challenge-activity-gap: 22px; --challenge-activity-padding: clamp(20px, 4vw, 36px); --challenge-prompt-gap: 13px; --challenge-prompt-margin: 22px; --challenge-prompt-padding: 20px; --challenge-prompt-font-size: clamp(20px, 3.5vw, 27px); display: grid; gap: var(--challenge-activity-gap); padding: var(--challenge-activity-padding); border: 1px solid var(--island-border); border-radius: var(--island-radius-card, 26px); background: var(--island-surface); }
+.challenge-activity[data-grade-tier='low'] { --challenge-activity-gap: 26px; --challenge-activity-padding: clamp(24px, 4.5vw, 40px); --challenge-prompt-gap: 16px; --challenge-prompt-margin: 26px; --challenge-prompt-padding: 24px; --challenge-prompt-font-size: clamp(22px, 4vw, 30px); }
+.challenge-activity[data-grade-tier='high'] { --challenge-activity-gap: 18px; --challenge-activity-padding: clamp(18px, 3vw, 28px); --challenge-prompt-gap: 10px; --challenge-prompt-margin: 18px; --challenge-prompt-padding: 16px; --challenge-prompt-font-size: clamp(20px, 3vw, 24px); }
+.challenge-activity .activity-prompt-row { gap: var(--challenge-prompt-gap); margin-bottom: var(--challenge-prompt-margin); padding-bottom: var(--challenge-prompt-padding); }
+.challenge-activity .activity-prompt-row h2 { font-size: var(--challenge-prompt-font-size); }
 .challenge-prompt-speech { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
 .challenge-speech-status { margin: 0; color: var(--animal-text-color-secondary); font-size: 14px; line-height: 1.6; }
 .challenge-runner-footer, .challenge-save-actions, .challenge-result-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; color: var(--animal-text-color-secondary); }

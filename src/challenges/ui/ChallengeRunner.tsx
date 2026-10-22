@@ -8,6 +8,7 @@ import type { ChallengeAnswer, ChallengeAttempt, ChallengeResult as ChallengeRes
 import { assemblePaper } from '../domain/assemble';
 import { finalizeAttempt, submitFirstAnswer } from '../domain/attempt';
 import { getChallengeErrorMessage } from '../domain/errors';
+import { getChallengeDensityTier } from './densityTier';
 import ChallengeActivityRenderer from './ChallengeActivityRenderer';
 import ChallengeResult from './ChallengeResult';
 
@@ -370,7 +371,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           <ChallengeMessage title="答案已保存，正在完成本次挑战" message="本次成绩还没有写入成功。可以重试保存，不会重复提交题目。" onAction={() => void retryComplete()} actionLabel={busy ? '正在保存成绩…' : '重试保存成绩'} />
         ) : question ? (
           <>
-            <ChallengeActivityRenderer key={question.questionId} activity={question.activity} disabled={busy || Boolean(pendingAnswer)} onAnswer={submitAnswer} />
+            <ChallengeActivityRenderer key={question.questionId} activity={question.activity} disabled={busy || Boolean(pendingAnswer)} densityTier={getChallengeDensityTier(loadedGroup.group.definition.grade)} onAnswer={submitAnswer} />
             <div className="challenge-runner-footer">
               <Button type="default" disabled={busy} onClick={() => void discardAttempt()}>放弃本次闯关</Button>
               <span>答案确认保存后会进入下一题，完成后再显示结果。</span>

@@ -46,7 +46,7 @@ function makeQuestion(questionId: string): ChallengeQuestionSnapshot {
   };
 }
 
-function makeLoadedGroup(targetCount: number): { loadedGroup: LoadedPilotGroup; task: ChallengeTaskDefinition } {
+function makeLoadedGroup(targetCount: number, grade = 2): { loadedGroup: LoadedPilotGroup; task: ChallengeTaskDefinition } {
   const groupId = 'test-unit-group';
   const task: ChallengeTaskDefinition = {
     id: `${groupId}/basic-01`,
@@ -65,7 +65,7 @@ function makeLoadedGroup(targetCount: number): { loadedGroup: LoadedPilotGroup; 
     definition: {
       id: groupId,
       kind: 'unit',
-      grade: 2,
+      grade,
       semester: 1,
       subject: 'math',
       sourceUnitIds: ['grade-2/term-1/math/unit-02'],
@@ -106,6 +106,15 @@ afterEach(() => {
 });
 
 describe('ChallengeRunner', () => {
+  it('applies the challenge group grade tier to the question card', async () => {
+    const { loadedGroup, task } = makeLoadedGroup(1, 4);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={makeRepository()} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+
+    expect(await screen.findByRole('region', { name: /哪一个答案对应/ })).toHaveAttribute('data-grade-tier', 'middle');
+  });
+
   it('persists the final answer before showing the result and keeps completed review ephemeral', async () => {
     const lockRequestIsFinished = stubHoldingBrowserLock();
     const repository = makeRepository();

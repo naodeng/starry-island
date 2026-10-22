@@ -587,6 +587,55 @@ test('reads only the visible prompt with a local Chinese voice when requested', 
   });
 });
 
+test('adapts prompt density to grade tiers while preserving theme and narrow-screen layout', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto(taskUrl);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+
+  const activity = page.locator('.challenge-activity');
+  await expect(activity).toHaveAttribute('data-grade-tier', 'low');
+  const tierMetrics = await activity.evaluate(async (element) => {
+    const prompt = element.querySelector('h2');
+    if (!(prompt instanceof HTMLElement)) return null;
+    const metrics: Record<string, { fontSize: number; gap: number; padding: number; color: string; background: string }> = {};
+    for (const tier of ['low', 'middle', 'high']) {
+      element.dataset.gradeTier = tier;
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+      const panelStyle = getComputedStyle(element);
+      const promptStyle = getComputedStyle(prompt);
+      metrics[tier] = {
+        fontSize: Number.parseFloat(promptStyle.fontSize),
+        gap: Number.parseFloat(panelStyle.rowGap),
+        padding: Number.parseFloat(panelStyle.paddingTop),
+        color: promptStyle.color,
+        background: panelStyle.backgroundColor,
+      };
+    }
+    element.dataset.gradeTier = 'low';
+    await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+    return metrics;
+  });
+
+  expect(tierMetrics).not.toBeNull();
+  expect(tierMetrics!.low!.fontSize).toBeGreaterThan(tierMetrics!.middle!.fontSize);
+  expect(tierMetrics!.middle!.fontSize).toBeGreaterThan(tierMetrics!.high!.fontSize);
+  expect(tierMetrics!.low!.gap).toBeGreaterThan(tierMetrics!.middle!.gap);
+  expect(tierMetrics!.middle!.gap).toBeGreaterThan(tierMetrics!.high!.gap);
+  expect(tierMetrics!.low!.padding).toBeGreaterThan(tierMetrics!.middle!.padding);
+  expect(tierMetrics!.middle!.padding).toBeGreaterThan(tierMetrics!.high!.padding);
+  expect(new Set(Object.values(tierMetrics!).map(({ color }) => color)).size).toBe(1);
+  expect(new Set(Object.values(tierMetrics!).map(({ background }) => background)).size).toBe(1);
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  expect(await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  expect(await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
+});
+
 test('starts and restores a submitted answer in the chapter-ordered semester pilot', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(semesterTaskUrl);
