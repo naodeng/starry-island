@@ -32,8 +32,9 @@
 | REQ-052 | 闯关界面通过窄屏、深色、键盘焦点和减少动态效果检查；隔离数据提示文字在深色模式下达到 4.5:1 对比度。屏幕阅读器和独立无障碍审查仍未完成 | `tests/e2e/challenge-flow.spec.ts`；`src/challenges/ui/challenge.css` |
 | REQ-053 | 已实现按需朗读当前题干；只使用设备本地中文语音并受现有语音开关控制，不读取选项/答案/讲解。语音流畅度未作为本次验收项 | `src/sound/localChineseSpeech.ts`；`ChallengeActivityRenderer.tsx` 及测试；闯关浏览器测试 |
 | REQ-054 | 已按挑战组年级映射低（1～2）、中（3～4）、高（5～6）三档，只调整题干字号和留白；年级映射覆盖 1～6 年级。浏览器检查通过中、高档样式切换，当前真实内容组仅有二年级试点 | `densityTier.ts` 及测试；`ChallengeRunner.test.tsx`；闯关浏览器测试 |
+| REQ-060 | 清除闯关数据前持续提醒先导出长期备份，并说明 24 小时恢复点不能替代长期备份或防止浏览器清理、设备损坏；文案有组件测试，清除与恢复流程有浏览器测试 | `src/challenges/ui/ChallengeDataManagement.tsx`；`ChallengeDataManagement.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-065～069 | 分级清除、强确认、单一 24 小时恢复点、自动替换及成功后消费已在当前工作区实现并通过全量本地验证；尚未推送 | `src/challenges/domain/recovery.ts`；`indexedDbRepository.ts`；`ChallengeDataManagement.tsx`；存储与浏览器流程测试 |
-| REQ-070 | 当前闯关答题写入和数据管理操作使用统一错误分类与中文恢复提示；最新全量本地验证为 947 项单测和 32 项端到端回归通过；全课程及正式发布门禁仍未完成 | `src/challenges/domain/errors.ts`、`errors.test.ts`；`ChallengeRunner.tsx`；`ChallengeDataManagement.tsx`；[测试记录](TEST_STRATEGY.md) |
+| REQ-070 | 当前闯关答题写入和数据管理操作使用统一错误分类与中文恢复提示；最新全量本地验证为 948 项单测和 32 项端到端回归通过；全课程及正式发布门禁仍未完成 | `src/challenges/domain/errors.ts`、`errors.test.ts`；`ChallengeRunner.tsx`；`ChallengeDataManagement.tsx`；[测试记录](TEST_STRATEGY.md) |
 | REQ-071 | 用户点击后下载白名单诊断 JSON；单测及端到端校验确认没有题目、答案、任务 ID、网址或课程进度字段，也不自动上传 | `src/challenges/domain/diagnostics.ts`、`diagnostics.test.ts`；`ChallengePage.tsx`；`ChallengeCenter.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-072 | 本地新增 GitHub 问题反馈表单，收集复现步骤与环境并提示公开可见和隐私边界；尚未进入远端默认分支 | `.github/ISSUE_TEMPLATE/bug-report.yml`；`config.yml`；[表单说明](ISSUE_FORMS.md) |
 | REQ-073 | 本地新增题目修正表单，要求问题描述、修正理由和可核对依据；明确由维护者人工审核且不会自动发布 | `.github/ISSUE_TEMPLATE/question-correction.yml`；[表单说明](ISSUE_FORMS.md) |

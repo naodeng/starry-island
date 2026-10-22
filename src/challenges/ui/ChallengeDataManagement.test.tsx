@@ -26,6 +26,13 @@ const restoreSummary: ChallengeBackupMergeSummary = {
 };
 
 describe('ChallengeDataManagement', () => {
+  it('reminds users to create a long-term backup before clearing challenge data', () => {
+    render(<ChallengeDataManagement initialRecoveryPoint={null} quarantinedRecordCount={0} onClear={vi.fn()} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} />);
+
+    expect(screen.getByText(/清除前请先导出本机备份/)).toBeInTheDocument();
+    expect(screen.getByText(/24 小时恢复点不能替代长期备份/)).toBeInTheDocument();
+  });
+
   it('requires an explicit phrase before clearing all challenge data', async () => {
     const onClear = vi.fn().mockResolvedValue(clearResult);
     render(<ChallengeDataManagement initialRecoveryPoint={null} quarantinedRecordCount={0} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} />);
