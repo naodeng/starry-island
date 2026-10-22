@@ -6,8 +6,9 @@ import type { ChallengeBackup, ChallengeBackupData } from '../domain/backup';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
+import type { ChallengeClearScope, ChallengeRecoveryPointSummary } from '../domain/recovery';
 import { deriveChallengeGrowth } from '../domain/growth';
-import type { ChallengeRepository } from '../storage/repository';
+import type { ChallengeRecoveryRestoreResult, ChallengeRepository } from '../storage/repository';
 import { RevisionConflictError } from '../storage/repository';
 import { createChallengeRepository } from '../storage/indexedDbRepository';
 import { loadPilotChallengeContent } from '../content/pilotContent';
@@ -66,6 +67,30 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const [progressLoading, setProgressLoading] = useState(true);
   const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
   const [pendingBackupImport, setPendingBackupImport] = useState<PendingBackupImport | null>(null);
+  const [recoveryPoint, setRecoveryPoint] = useState<ChallengeRecoveryPointSummary | null>(null);
+
+  async function refreshTaskProgress() {
+    const progress = await repository.getAllTaskProgress().catch(() => null);
+    if (!progress) return;
+    const progressById: Record<string, TaskProgress> = {};
+    for (const item of progress) progressById[item.taskId] = item;
+    setProgressByTaskId(progressById);
+    setProgressAvailable(true);
+  }
+
+  async function clearChallengeData(scope: ChallengeClearScope) {
+    const result = await repository.clearChallengeData(scope);
+    if (result.recoveryPoint) setRecoveryPoint(result.recoveryPoint);
+    await refreshTaskProgress();
+    return result;
+  }
+
+  async function restoreChallengeData(): Promise<ChallengeRecoveryRestoreResult | null> {
+    const result = await repository.restoreRecoveryPoint();
+    await refreshTaskProgress();
+    if (!result || !result.recoveryPointRetained) setRecoveryPoint(null);
+    return result;
+  }
 
   async function exportBackup() {
     const snapshot = await repository.getBackupSnapshot();
@@ -160,6 +185,17 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   }, [repository, route.kind]);
 
   useEffect(() => {
+    if (route.kind !== 'challengeCenter') return;
+    let cancelled = false;
+    repository.getRecoveryPoint().then((point) => {
+      if (!cancelled) setRecoveryPoint(point ? { createdAt: point.createdAt, expiresAt: point.expiresAt } : null);
+    }).catch(() => {
+      if (!cancelled) setRecoveryPoint(null);
+    });
+    return () => { cancelled = true; };
+  }, [repository, route.kind]);
+
+  useEffect(() => {
     if (!content) return;
     let cancelled = false;
     setProgressLoading(true);
@@ -232,6 +268,9 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
         onPrepareImportBackup={prepareBackupImport}
         onConfirmImportBackup={confirmBackupImport}
         onCancelImportBackup={() => setPendingBackupImport(null)}
+        initialRecoveryPoint={recoveryPoint}
+        onClearChallengeData={clearChallengeData}
+        onRestoreRecoveryPoint={restoreChallengeData}
       />
     );
   }

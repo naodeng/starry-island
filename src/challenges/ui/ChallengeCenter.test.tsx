@@ -13,10 +13,23 @@ const emptySummary: ChallengeBackupMergeSummary = {
   mergedWrongQuestions: 0,
 };
 
+const emptyClearResult = {
+  counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0 },
+  recoveryPoint: null,
+};
+
+function dataManagementProps() {
+  return {
+    initialRecoveryPoint: null,
+    onClearChallengeData: vi.fn().mockResolvedValue(emptyClearResult),
+    onRestoreRecoveryPoint: vi.fn().mockResolvedValue(null),
+  };
+}
+
 describe('ChallengeCenter', () => {
   it('links to the local challenge growth record', () => {
     const onNavigate = vi.fn();
-    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={onNavigate} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} />);
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={onNavigate} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '查看成长记录' }));
     expect(onNavigate).toHaveBeenCalledWith('/challenges/growth');
@@ -24,7 +37,7 @@ describe('ChallengeCenter', () => {
 
   it('exports a local JSON backup and confirms success without changing learning data', async () => {
     const onExportBackup = vi.fn().mockResolvedValue(undefined);
-    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={onExportBackup} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} />);
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={onExportBackup} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '导出闯关备份' }));
 
@@ -34,7 +47,7 @@ describe('ChallengeCenter', () => {
 
   it('reports a recoverable backup export error', async () => {
     const onExportBackup = vi.fn().mockRejectedValue(new Error('IndexedDB is unavailable'));
-    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={onExportBackup} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} />);
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={onExportBackup} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '导出闯关备份' }));
 
@@ -53,6 +66,7 @@ describe('ChallengeCenter', () => {
       onPrepareImportBackup={onPrepareImportBackup}
       onConfirmImportBackup={onConfirmImportBackup}
       onCancelImportBackup={vi.fn()}
+      {...dataManagementProps()}
     />);
     const file = new File(['{}'], 'challenge-backup.json', { type: 'application/json' });
 
@@ -80,6 +94,7 @@ describe('ChallengeCenter', () => {
       onPrepareImportBackup={onPrepareImportBackup}
       onConfirmImportBackup={vi.fn()}
       onCancelImportBackup={vi.fn()}
+      {...dataManagementProps()}
     />);
 
     const fileInput = container.querySelector<HTMLInputElement>('input[type="file"]');

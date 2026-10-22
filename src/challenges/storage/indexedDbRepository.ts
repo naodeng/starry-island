@@ -1,8 +1,22 @@
 import { submitAnswer } from '../../learning/answers';
+import { isChallengeBackupData } from '../domain/backup';
 import type { ChallengeBackupData } from '../domain/backup';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import { gradeAttempt } from '../domain/grading';
 import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
+import {
+  createChallengeRecoveryPoint,
+  getChallengeDataClearCounts,
+  hasChallengeDataToClear,
+  isChallengeRecoveryPoint,
+  isChallengeRecoveryPointActive,
+} from '../domain/recovery';
+import type {
+  ChallengeClearScope,
+  ChallengeDataClearResult,
+  ChallengeRecoveryPoint,
+  ChallengeRecoveryPointSummary,
+} from '../domain/recovery';
 import {
   ActiveAttemptExistsError,
   ChallengeRepositoryError,
@@ -19,6 +33,7 @@ const PROGRESS_STORE = 'taskProgress';
 const META_STORE = 'challengeMeta';
 const WRONG_QUESTIONS_STORE = 'wrongQuestions';
 const RECENT_QUESTION_IDS_KEY = 'recent-question-ids';
+const RECOVERY_POINT_KEY = 'recovery-point';
 const MAX_RECENT_ATTEMPTS = 3;
 
 interface RecentQuestionIdsRecord {
@@ -322,6 +337,120 @@ function readBackupSnapshot(
             } catch (error) {
               fail(error instanceof Error ? error : new ChallengeRepositoryError('Could not merge the challenge backup.', { cause: error }));
             }
+          });
+        },
+      );
+    },
+
+    getRecoveryPoint(now = new Date().toISOString()) {
+      return transaction<ChallengeRecoveryPoint | null>(META_STORE, 'readonly', (tx, setResult, fail) => {
+        onRequest(tx.objectStore(META_STORE).get(RECOVERY_POINT_KEY), fail, (record) => {
+          setResult(isChallengeRecoveryPointActive(record, now) ? record : null);
+        });
+      });
+    },
+
+    clearChallengeData(scope: ChallengeClearScope, createdAt = new Date().toISOString()) {
+      let normalizedCreatedAt: string;
+      try {
+        normalizedCreatedAt = createChallengeRecoveryPoint({
+          attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
+        }, createdAt).createdAt;
+      } catch (error) {
+        return Promise.reject(error);
+      }
+
+      return transaction<ChallengeDataClearResult>(
+        [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE],
+        'readwrite',
+        (tx, setResult, fail) => {
+          readBackupSnapshot(tx, fail, (data) => {
+            if (!isChallengeBackupData(data)) {
+              fail(new ChallengeRepositoryError('本机闯关记录结构异常，不能安全创建恢复点；数据没有更改。'));
+              return;
+            }
+            const counts = getChallengeDataClearCounts(data, scope);
+            if (!hasChallengeDataToClear(counts)) {
+              setResult({ counts, recoveryPoint: null });
+              return;
+            }
+
+            let recoveryPoint;
+            try {
+              recoveryPoint = createChallengeRecoveryPoint(data, normalizedCreatedAt);
+            } catch (error) {
+              fail(error instanceof Error ? error : new ChallengeRepositoryError('不能创建闯关恢复点；数据没有更改。', { cause: error }));
+              return;
+            }
+
+            const meta = tx.objectStore(META_STORE);
+            meta.put(recoveryPoint);
+            if (scope === 'in-progress' || scope === 'all') tx.objectStore(ATTEMPTS_STORE).clear();
+            if (scope === 'wrong-questions' || scope === 'all') tx.objectStore(WRONG_QUESTIONS_STORE).clear();
+            if (scope === 'all') {
+              tx.objectStore(PROGRESS_STORE).clear();
+              meta.delete(RECENT_QUESTION_IDS_KEY);
+            }
+            const summary: ChallengeRecoveryPointSummary = {
+              createdAt: recoveryPoint.createdAt,
+              expiresAt: recoveryPoint.expiresAt,
+            };
+            setResult({ counts, recoveryPoint: summary });
+          });
+        },
+      );
+    },
+
+    restoreRecoveryPoint(now = new Date().toISOString()) {
+      return transaction(
+        [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE],
+        'readwrite',
+        (tx, setResult, fail) => {
+          let local: ChallengeBackupData | undefined;
+          let point: unknown;
+          let localReady = false;
+          let pointReady = false;
+          let scheduled = false;
+          const meta = tx.objectStore(META_STORE);
+
+          const restoreWhenRead = () => {
+            if (!localReady || !pointReady || scheduled) return;
+            scheduled = true;
+            if (!isChallengeRecoveryPoint(point) || !isChallengeRecoveryPointActive(point, now)) {
+              setResult(null);
+              return;
+            }
+            if (!isChallengeBackupData(local)) {
+              fail(new ChallengeRepositoryError('本机闯关记录结构异常，恢复已停止；数据没有更改。'));
+              return;
+            }
+
+            try {
+              const plan = mergeChallengeBackupData(local, point.data);
+              const attempts = tx.objectStore(ATTEMPTS_STORE);
+              const progresses = tx.objectStore(PROGRESS_STORE);
+              const wrongQuestions = tx.objectStore(WRONG_QUESTIONS_STORE);
+              plan.data.attempts.forEach((attempt) => attempts.put(attempt));
+              plan.data.taskProgress.forEach((progress) => progresses.put(progress));
+              plan.data.wrongQuestions.forEach((record) => wrongQuestions.put(record));
+              meta.put({ key: RECENT_QUESTION_IDS_KEY, attemptQuestionIds: plan.data.recentQuestionAttempts } satisfies RecentQuestionIdsRecord);
+              const recoveryPointRetained = plan.summary.preservedProgressForActiveTasks > 0;
+              if (!recoveryPointRetained) meta.delete(RECOVERY_POINT_KEY);
+              setResult({ summary: plan.summary, recoveryPointRetained });
+            } catch (error) {
+              fail(error instanceof Error ? error : new ChallengeRepositoryError('闯关恢复失败；恢复点仍保留。', { cause: error }));
+            }
+          };
+
+          onRequest(meta.get(RECOVERY_POINT_KEY), fail, (record) => {
+            point = record;
+            pointReady = true;
+            restoreWhenRead();
+          });
+          readBackupSnapshot(tx, fail, (data) => {
+            local = data;
+            localReady = true;
+            restoreWhenRead();
           });
         },
       );

@@ -84,6 +84,21 @@ async function complete(repository: ReturnType<typeof createChallengeRepository>
   return update.progress;
 }
 
+async function completeWithWrongAnswer(repository: ReturnType<typeof createChallengeRepository>, current: ChallengeAttempt) {
+  let completed = current;
+  const wrongQuestionId = current.questions[0].questionId;
+  for (const item of current.questions) {
+    const correctAnswer = (item.activity as Extract<ActivityDefinition, { kind: 'arithmetic' }>).correctAnswer;
+    const answer = item.questionId === wrongQuestionId ? 0 : correctAnswer;
+    const next = submitFirstAnswer(completed, item.questionId, answer).attempt;
+    completed = await repository.saveAnswer(current.taskId, completed.revision, next);
+  }
+  const progress = await repository.getTaskProgress(current.taskId);
+  const update = finalizeAttempt(completed, progress, '2026-01-01T00:02:00.000Z');
+  await repository.completeAttempt(current.taskId, completed.revision, update.completedAttempt, update.progress);
+  return update.progress;
+}
+
 afterEach(() => {
   for (const repository of repositories.splice(0)) repository.close();
 });
@@ -139,6 +154,152 @@ describe('IndexedDB challenge repository', () => {
     expect(snapshot.taskProgress).toHaveLength(1);
     expect(snapshot.wrongQuestions).toMatchObject([{ questionId: 'question-wrong', wrongCount: 1 }]);
     expect(await repository.getActiveAttempt('task-active')).toEqual(active);
+  });
+
+  it('clears all challenge records behind a 24-hour recovery point and consumes it after one successful restore', async () => {
+    const repository = createRepository();
+    const active = makeAttempt('task-active', 'attempt-active', ['question-active']);
+    const completed = makeAttempt('task-completed', 'attempt-completed', ['question-wrong', 'question-right']);
+    await repository.beginAttempt(active);
+    await repository.beginAttempt(completed);
+    await completeWithWrongAnswer(repository, completed);
+    const before = await repository.getBackupSnapshot();
+
+    const clearResult = await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    expect(clearResult).toMatchObject({
+      counts: { attempts: 1, taskProgress: 1, recentQuestionAttempts: 1, wrongQuestions: 1 },
+      recoveryPoint: { createdAt: '2026-10-22T00:00:00.000Z', expiresAt: '2026-10-23T00:00:00.000Z' },
+    });
+    expect(await repository.getBackupSnapshot()).toEqual({
+      attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
+    });
+    expect(await repository.getRecoveryPoint('2026-10-22T23:59:59.999Z')).toMatchObject({ data: before });
+
+    const restored = await repository.restoreRecoveryPoint('2026-10-22T12:00:00.000Z');
+
+    expect(restored?.summary).toMatchObject({ addedActiveAttempts: 1, addedProgressRecords: 1, addedWrongQuestions: 1 });
+    expect(restored?.recoveryPointRetained).toBe(false);
+    expect(await repository.getBackupSnapshot()).toEqual(before);
+    expect(await repository.getRecoveryPoint('2026-10-22T12:00:00.000Z')).toBeNull();
+    expect(await repository.restoreRecoveryPoint('2026-10-22T12:00:00.000Z')).toBeNull();
+  });
+
+  it('keeps unselected records when clearing only unfinished attempts', async () => {
+    const repository = createRepository();
+    const active = makeAttempt('task-active', 'attempt-active', ['question-active']);
+    const completed = makeAttempt('task-completed', 'attempt-completed', ['question-wrong', 'question-right']);
+    await repository.beginAttempt(active);
+    await repository.beginAttempt(completed);
+    await completeWithWrongAnswer(repository, completed);
+
+    const result = await repository.clearChallengeData('in-progress', '2026-10-22T00:00:00.000Z');
+
+    expect(result.counts).toEqual({ attempts: 1, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0 });
+    expect(await repository.getActiveAttempt('task-active')).toBeNull();
+    expect(await repository.getTaskProgress('task-completed')).not.toBeNull();
+    expect(await repository.getWrongQuestions()).toHaveLength(1);
+    expect(await repository.getRecentQuestionIds()).toEqual(['question-wrong', 'question-right']);
+  });
+
+  it('keeps unfinished answers and scores when clearing only the wrong-question notebook', async () => {
+    const repository = createRepository();
+    const active = makeAttempt('task-active', 'attempt-active', ['question-active']);
+    const completed = makeAttempt('task-completed', 'attempt-completed', ['question-wrong', 'question-right']);
+    await repository.beginAttempt(active);
+    await repository.beginAttempt(completed);
+    await completeWithWrongAnswer(repository, completed);
+
+    const result = await repository.clearChallengeData('wrong-questions', '2026-10-22T00:00:00.000Z');
+
+    expect(result.counts).toEqual({ attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 1 });
+    expect(await repository.getActiveAttempt('task-active')).toEqual(active);
+    expect(await repository.getTaskProgress('task-completed')).not.toBeNull();
+    expect(await repository.getWrongQuestions()).toEqual([]);
+    expect(await repository.getRecentQuestionIds()).toEqual(['question-wrong', 'question-right']);
+  });
+
+  it('atomically replaces the previous recovery point with the state before the latest deletion', async () => {
+    const repository = createRepository();
+    const first = makeAttempt('task-first', 'attempt-first', ['question-first']);
+    await repository.beginAttempt(first);
+    await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    const second = makeAttempt('task-second', 'attempt-second', ['question-second']);
+    await repository.beginAttempt(second);
+    await repository.clearChallengeData('all', '2026-10-22T12:00:00.000Z');
+
+    const point = await repository.getRecoveryPoint('2026-10-22T12:01:00.000Z');
+    expect(point).toMatchObject({
+      createdAt: '2026-10-22T12:00:00.000Z',
+      data: { attempts: [second] },
+    });
+    expect(point?.data.attempts).not.toContainEqual(first);
+  });
+
+  it('does not replace the previous recovery point when the selected tier has no data', async () => {
+    const repository = createRepository();
+    await repository.beginAttempt(makeAttempt('task-noop', 'attempt-noop', ['question-noop']));
+    await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    const noOp = await repository.clearChallengeData('all', '2026-10-22T12:00:00.000Z');
+
+    expect(noOp).toEqual({
+      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0 },
+      recoveryPoint: null,
+    });
+    expect(await repository.getRecoveryPoint('2026-10-22T12:01:00.000Z')).toMatchObject({
+      createdAt: '2026-10-22T00:00:00.000Z',
+      data: { attempts: [{ taskId: 'task-noop' }] },
+    });
+  });
+
+  it('retains the recovery point until scores deferred by a local active task can be restored', async () => {
+    const repository = createRepository();
+    const first = makeAttempt('task-shared', 'attempt-before-clear', ['question-before-clear']);
+    await repository.beginAttempt(first);
+    await complete(repository, first);
+    await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    const current = makeAttempt('task-shared', 'attempt-after-clear', ['question-after-clear']);
+    await repository.beginAttempt(current);
+    const partialRestore = await repository.restoreRecoveryPoint('2026-10-22T12:00:00.000Z');
+
+    expect(partialRestore?.summary.preservedProgressForActiveTasks).toBe(1);
+    expect(partialRestore?.recoveryPointRetained).toBe(true);
+    expect(await repository.getTaskProgress('task-shared')).toBeNull();
+    expect(await repository.getActiveAttempt('task-shared')).toEqual(current);
+    expect(await repository.getRecoveryPoint('2026-10-22T12:00:00.000Z')).not.toBeNull();
+
+    await complete(repository, current);
+    const completedRestore = await repository.restoreRecoveryPoint('2026-10-22T13:00:00.000Z');
+
+    expect(completedRestore?.recoveryPointRetained).toBe(false);
+    expect(await repository.getTaskProgress('task-shared')).toMatchObject({ completedCount: 1, everPassed: true });
+    expect(await repository.getRecoveryPoint('2026-10-22T13:00:00.000Z')).toBeNull();
+  });
+
+  it('does not restore an expired recovery point or clear the current local state', async () => {
+    const repository = createRepository();
+    const attempt = makeAttempt('task-expired', 'attempt-expired', ['question-expired']);
+    await repository.beginAttempt(attempt);
+    await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    expect(await repository.restoreRecoveryPoint('2026-10-23T00:00:00.000Z')).toBeNull();
+    expect(await repository.getBackupSnapshot()).toEqual({
+      attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
+    });
+    expect(await repository.getRecoveryPoint('2026-10-23T00:00:00.000Z')).toBeNull();
+  });
+
+  it('leaves all challenge data unchanged when recovery-point creation cannot be validated', async () => {
+    const repository = createRepository();
+    const attempt = makeAttempt('task-invalid-time', 'attempt-invalid-time', ['question-invalid-time']);
+    await repository.beginAttempt(attempt);
+
+    await expect(repository.clearChallengeData('all', 'not-a-date')).rejects.toThrow('恢复时间无效');
+    expect(await repository.getBackupSnapshot()).toMatchObject({ attempts: [attempt] });
+    expect(await repository.getRecoveryPoint()).toBeNull();
   });
 
   it('merges imported data in one transaction and preserves the local active attempt', async () => {

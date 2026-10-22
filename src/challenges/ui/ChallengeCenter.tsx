@@ -5,7 +5,10 @@ import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath } from '../../app/router';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
+import type { ChallengeClearScope, ChallengeDataClearResult, ChallengeRecoveryPointSummary } from '../domain/recovery';
 import type { TaskProgress } from '../domain/types';
+import type { ChallengeRecoveryRestoreResult } from '../storage/repository';
+import ChallengeDataManagement from './ChallengeDataManagement';
 
 type BackupImportState =
   | { status: 'idle' }
@@ -30,6 +33,9 @@ interface ChallengeCenterProps {
   onPrepareImportBackup: (file: File) => Promise<ChallengeBackupMergeSummary>;
   onConfirmImportBackup: () => Promise<void>;
   onCancelImportBackup: () => void;
+  initialRecoveryPoint: ChallengeRecoveryPointSummary | null;
+  onClearChallengeData: (scope: ChallengeClearScope) => Promise<ChallengeDataClearResult>;
+  onRestoreRecoveryPoint: () => Promise<ChallengeRecoveryRestoreResult | null>;
 }
 
 export default function ChallengeCenter({
@@ -41,6 +47,9 @@ export default function ChallengeCenter({
   onPrepareImportBackup,
   onConfirmImportBackup,
   onCancelImportBackup,
+  initialRecoveryPoint,
+  onClearChallengeData,
+  onRestoreRecoveryPoint,
 }: ChallengeCenterProps) {
   const [backupExportState, setBackupExportState] = useState<'idle' | 'exporting' | 'success' | 'error'>('idle');
   const [backupImportState, setBackupImportState] = useState<BackupImportState>({ status: 'idle' });
@@ -144,6 +153,11 @@ export default function ChallengeCenter({
           {backupImportState.status === 'success' && <p className="challenge-backup-status" role="status">闯关备份已安全合并到此设备；课程进度没有改变。</p>}
           {backupImportState.status === 'error' && <p className="challenge-backup-status" role="alert">{backupImportState.message}</p>}
         </section>
+        <ChallengeDataManagement
+          initialRecoveryPoint={initialRecoveryPoint}
+          onClear={onClearChallengeData}
+          onRestore={onRestoreRecoveryPoint}
+        />
         {!progressAvailable && <p className="challenge-inline-note" role="status">本机进度暂时没有读出；可以继续挑战，稍后再查看进度。</p>}
         <section className="challenge-section" aria-labelledby="challenge-groups-heading">
           <div className="challenge-section-heading">

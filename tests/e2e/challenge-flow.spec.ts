@@ -220,6 +220,72 @@ test('opens the local wrong-question notebook from the challenge center', async 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('clears and restores an in-progress challenge through the 24-hour recovery point', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto(taskUrl);
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.getByText('已完成 0/15 题')).toBeVisible();
+
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '数据管理与恢复' })).toBeVisible();
+  await page.getByRole('button', { name: '清除全部闯关数据' }).click();
+  const confirmation = page.getByRole('group', { name: '清除确认' });
+  await expect(confirmation).toBeVisible();
+  const phrase = confirmation.getByRole('textbox', { name: '输入“清空闯关数据”以确认' });
+  await phrase.fill('清空闯关数据');
+  await confirmation.getByRole('button', { name: '确认清除全部闯关数据' }).click();
+  await expect(page.getByRole('status').filter({ hasText: '已创建 24 小时恢复点' })).toBeVisible();
+
+  const afterClear = await page.evaluate(async (taskIdToRead) => new Promise<{ attempt: unknown; recoveryPoint: unknown }>((resolve, reject) => {
+    const open = indexedDB.open('starry-island-challenges', 2);
+    open.onerror = () => reject(open.error);
+    open.onsuccess = () => {
+      const database = open.result;
+      const transaction = database.transaction(['attempts', 'challengeMeta'], 'readonly');
+      const attempt = transaction.objectStore('attempts').get(taskIdToRead);
+      const recoveryPoint = transaction.objectStore('challengeMeta').get('recovery-point');
+      transaction.oncomplete = () => {
+        resolve({ attempt: attempt.result, recoveryPoint: recoveryPoint.result });
+        database.close();
+      };
+      transaction.onerror = () => reject(transaction.error);
+    };
+  }), taskId);
+  expect(afterClear.attempt).toBeUndefined();
+  expect(afterClear.recoveryPoint).toMatchObject({
+    format: 'starry-island-challenge-recovery',
+    data: { attempts: [{ taskId }] },
+  });
+
+  await page.getByRole('button', { name: '恢复已清除的闯关记录' }).click();
+  await page.getByRole('group', { name: '恢复确认' }).getByRole('button', { name: '确认恢复闯关记录' }).click();
+  await expect(page.getByRole('status').filter({ hasText: '已恢复闯关记录' })).toBeVisible();
+
+  const restoredAttempt = await page.evaluate(async (taskIdToRead) => new Promise<unknown>((resolve, reject) => {
+    const open = indexedDB.open('starry-island-challenges', 2);
+    open.onerror = () => reject(open.error);
+    open.onsuccess = () => {
+      const database = open.result;
+      const transaction = database.transaction(['attempts', 'challengeMeta'], 'readonly');
+      const attempt = transaction.objectStore('attempts').get(taskIdToRead);
+      const recoveryPoint = transaction.objectStore('challengeMeta').get('recovery-point');
+      transaction.oncomplete = () => {
+        resolve({ attempt: attempt.result, recoveryPoint: recoveryPoint.result });
+        database.close();
+      };
+      transaction.onerror = () => reject(transaction.error);
+    };
+  }), taskId);
+  expect(restoredAttempt).toMatchObject({
+    attempt: { taskId, currentIndex: 0, revision: 0, answers: {} },
+    recoveryPoint: undefined,
+  });
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 async function submitCurrentAnswer(page: import('@playwright/test').Page) {
   const activity = page.locator('.challenge-activity');
   if (await activity.locator('.choice-activity').count()) {
