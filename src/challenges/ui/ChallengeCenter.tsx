@@ -8,7 +8,12 @@ import type { ChallengeBackupPreferences } from '../domain/backup';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { ChallengeClearScope, ChallengeDataClearResult, ChallengeRecoveryPointSummary } from '../domain/recovery';
 import type { TaskProgress } from '../domain/types';
-import type { ChallengeRecoveryRestoreResult } from '../storage/repository';
+import type {
+  ChallengeRecoveryRestoreResult,
+  QuarantineRecoveryPreview,
+  QuarantinedRecordPage,
+  QuarantineRestoreResult,
+} from '../storage/repository';
 import ChallengeDataManagement from './ChallengeDataManagement';
 
 type BackupImportState =
@@ -77,6 +82,10 @@ interface ChallengeCenterProps {
   onClearChallengeData: (scope: ChallengeClearScope) => Promise<ChallengeDataClearResult>;
   onRestoreRecoveryPoint: () => Promise<ChallengeRecoveryRestoreResult | null>;
   onExportQuarantinedRecords: () => Promise<void>;
+  onLoadQuarantinedRecordPage: (afterKey?: IDBValidKey) => Promise<QuarantinedRecordPage>;
+  onPreviewQuarantinedRecord: (quarantineId: IDBValidKey) => Promise<QuarantineRecoveryPreview>;
+  onCancelQuarantinedRecordPreview: (token: string) => void;
+  onConfirmQuarantinedRecordRestore: (token: string) => Promise<QuarantineRestoreResult>;
 }
 
 export default function ChallengeCenter({
@@ -94,6 +103,10 @@ export default function ChallengeCenter({
   onClearChallengeData,
   onRestoreRecoveryPoint,
   onExportQuarantinedRecords,
+  onLoadQuarantinedRecordPage,
+  onPreviewQuarantinedRecord,
+  onCancelQuarantinedRecordPreview,
+  onConfirmQuarantinedRecordRestore,
 }: ChallengeCenterProps) {
   const [backupExportState, setBackupExportState] = useState<'idle' | 'exporting' | 'success' | 'error'>('idle');
   const [includePreferencesInBackup, setIncludePreferencesInBackup] = useState(false);
@@ -249,6 +262,10 @@ export default function ChallengeCenter({
           onClear={onClearChallengeData}
           onRestore={onRestoreRecoveryPoint}
           onExportQuarantinedRecords={onExportQuarantinedRecords}
+          onLoadQuarantinedRecordPage={onLoadQuarantinedRecordPage}
+          onPreviewQuarantinedRecord={onPreviewQuarantinedRecord}
+          onCancelQuarantinedRecordPreview={onCancelQuarantinedRecordPreview}
+          onConfirmQuarantinedRecordRestore={onConfirmQuarantinedRecordRestore}
         />
         {!progressAvailable && <p className="challenge-inline-note" role="status">本机进度暂时没有读出；可以继续挑战，稍后再查看进度。</p>}
         <section className="challenge-section" aria-labelledby="challenge-groups-heading">

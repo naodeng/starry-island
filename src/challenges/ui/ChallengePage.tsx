@@ -104,6 +104,16 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     return result;
   }
 
+  async function restoreQuarantinedRecord(token: string) {
+    const result = await repository.confirmQuarantinedRecordRestore(token);
+    if (result.status === 'restored') {
+      await refreshTaskProgress();
+      const count = await repository.getQuarantinedRecordCount().catch(() => null);
+      if (count !== null) setQuarantinedRecordCount(count);
+    }
+    return result;
+  }
+
   async function exportBackup(includePreferences: boolean) {
     const snapshot = await repository.getBackupSnapshot();
     const backup = await createChallengeBackup(snapshot, includePreferences ? {
@@ -335,6 +345,10 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
         onClearChallengeData={clearChallengeData}
         onRestoreRecoveryPoint={restoreChallengeData}
         onExportQuarantinedRecords={exportQuarantinedRecords}
+        onLoadQuarantinedRecordPage={(afterKey) => repository.getQuarantinedRecordPage(afterKey)}
+        onPreviewQuarantinedRecord={(quarantineId) => repository.previewQuarantinedRecord(quarantineId)}
+        onCancelQuarantinedRecordPreview={(token) => repository.cancelQuarantinedRecordPreview(token)}
+        onConfirmQuarantinedRecordRestore={restoreQuarantinedRecord}
       />
     );
   }

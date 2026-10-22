@@ -29,6 +29,10 @@ function dataManagementProps() {
     onClearChallengeData: vi.fn().mockResolvedValue(emptyClearResult),
     onRestoreRecoveryPoint: vi.fn().mockResolvedValue(null),
     onExportQuarantinedRecords: vi.fn().mockResolvedValue(undefined),
+    onLoadQuarantinedRecordPage: vi.fn().mockResolvedValue({ items: [], nextCursor: null }),
+    onPreviewQuarantinedRecord: vi.fn().mockResolvedValue({ status: 'blocked', quarantineId: 1, sourceStore: 'attempts', reason: 'invalid-record' }),
+    onCancelQuarantinedRecordPreview: vi.fn(),
+    onConfirmQuarantinedRecordRestore: vi.fn().mockResolvedValue({ status: 'restored' }),
     onExportDiagnostics: vi.fn().mockResolvedValue(undefined),
   };
 }

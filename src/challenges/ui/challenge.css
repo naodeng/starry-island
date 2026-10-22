@@ -85,6 +85,12 @@
 .challenge-data-confirmation-phrase input { min-height: 44px; padding: 8px 12px; border: 1px solid var(--island-border); border-radius: 12px; color: var(--animal-text-color); background: var(--island-surface); font: inherit; }
 .challenge-data-confirmation-phrase input:focus-visible { outline: 3px solid var(--animal-primary-color); outline-offset: 2px; }
 .challenge-data-management-status { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; overflow-wrap: anywhere; }
+.challenge-quarantine-browser { display: grid; gap: 14px; min-width: 0; }
+.challenge-quarantine-list { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.challenge-quarantine-item, .challenge-quarantine-preview { display: grid; gap: 12px; min-width: 0; padding: 16px; border: 1px solid var(--island-border); border-radius: 16px; background: var(--animal-bg-color); }
+.challenge-quarantine-item h4, .challenge-quarantine-preview h4 { margin: 0 0 8px; color: var(--animal-text-color); font-size: 17px; }
+.challenge-quarantine-item p, .challenge-quarantine-preview p, .challenge-quarantine-status { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; overflow-wrap: anywhere; }
+.challenge-quarantine-page-number { align-self: center; color: var(--animal-text-color-secondary); font-weight: 700; }
 @media (max-width: 700px) {
   .challenge-page { padding: 18px 14px 42px; }
   .challenge-card-grid, .challenge-task-grid { grid-template-columns: 1fr; }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from 'animal-island-ui';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
+import type { QuarantineNormalization } from '../domain/quarantineRecovery';
 import { hasChallengeDataToClear } from '../domain/recovery';
 import { getChallengeErrorMessage } from '../domain/errors';
 import type {
@@ -8,7 +9,14 @@ import type {
   ChallengeDataClearResult,
   ChallengeRecoveryPointSummary,
 } from '../domain/recovery';
-import type { ChallengeRecoveryRestoreResult } from '../storage/repository';
+import type {
+  ChallengeRecoveryRestoreResult,
+  QuarantineRecoveryBlockReason,
+  QuarantineRecoveryPreview,
+  QuarantinedRecordPage,
+  QuarantinedRecordSummary,
+  QuarantineRestoreResult,
+} from '../storage/repository';
 
 interface ChallengeDataManagementProps {
   initialRecoveryPoint: ChallengeRecoveryPointSummary | null;
@@ -16,9 +24,63 @@ interface ChallengeDataManagementProps {
   onClear: (scope: ChallengeClearScope) => Promise<ChallengeDataClearResult>;
   onRestore: () => Promise<ChallengeRecoveryRestoreResult | null>;
   onExportQuarantinedRecords: () => Promise<void>;
+  onLoadQuarantinedRecordPage: (afterKey?: IDBValidKey) => Promise<QuarantinedRecordPage>;
+  onPreviewQuarantinedRecord: (quarantineId: IDBValidKey) => Promise<QuarantineRecoveryPreview>;
+  onCancelQuarantinedRecordPreview: (token: string) => void;
+  onConfirmQuarantinedRecordRestore: (token: string) => Promise<QuarantineRestoreResult>;
 }
 
 type PendingAction = { kind: 'clear'; scope: ChallengeClearScope } | { kind: 'restore' } | null;
+type QuarantineListState =
+  | { status: 'closed' }
+  | { status: 'loading' }
+  | { status: 'error' }
+  | { status: 'ready'; page: QuarantinedRecordPage; cursors: Array<IDBValidKey | undefined> };
+
+const SOURCE_STORE_LABELS: Readonly<Record<string, string>> = {
+  attempts: '闯关答题',
+  taskProgress: '闯关成绩',
+  wrongQuestions: '错题记录',
+  challengeMeta: '闯关元数据',
+};
+
+const BLOCK_REASON_LABELS: Readonly<Record<QuarantineRecoveryBlockReason, string>> = {
+  'unsupported-source': '数据来源不支持安全恢复，原记录仍保存在隔离区。',
+  'unknown-reason': '隔离原因无法确认，原记录仍保存在隔离区。',
+  'invalid-record': '记录未通过完整性校验，暂时不能恢复。',
+  'unsupported-snapshot-version': '快照版本不受支持，原记录仍保存在隔离区。',
+  'source-key-mismatch': '记录与原存储键不一致，暂时不能恢复。',
+  'inactive-recovery-point': '恢复点已过期或尚未生效，原记录仍保存在隔离区。',
+  'uncomparable-value': '记录结构无法安全比较，原记录仍保存在隔离区。',
+  'target-conflict': '目标位置已有记录，原隔离记录仍保留；不会覆盖或合并。',
+};
+
+function sourceStoreLabel(sourceStore: string): string {
+  return SOURCE_STORE_LABELS[sourceStore] ?? '其他闯关数据';
+}
+
+function safeKeyLabel(key: IDBValidKey): string {
+  if (typeof key === 'string') return key;
+  if (typeof key === 'number' && Number.isFinite(key)) return String(key);
+  return '复合键';
+}
+
+function formatQuarantineTime(value: string): string {
+  const date = new Date(value);
+  return Number.isFinite(date.getTime())
+    ? date.toLocaleString('zh-CN', { dateStyle: 'medium', timeStyle: 'short' })
+    : '时间无法读取';
+}
+
+function describeNormalization(normalization: QuarantineNormalization): string {
+  if (normalization === 'attempt-snapshot-v1') return '只补入已知结构版本 1';
+  if (normalization === 'recovery-point-snapshot-v1') return '按现有规则整理恢复点中的旧版答题快照';
+  return '不修改记录内容';
+}
+
+function describeBlockedRecord(item: QuarantinedRecordSummary): string {
+  return BLOCK_REASON_LABELS[item.blockReason ?? 'invalid-record'];
+}
 
 function formatLocalTime(value: string): string {
   return new Date(value).toLocaleString('zh-CN', { dateStyle: 'medium', timeStyle: 'short' });
@@ -46,6 +108,10 @@ export default function ChallengeDataManagement({
   onClear,
   onRestore,
   onExportQuarantinedRecords,
+  onLoadQuarantinedRecordPage,
+  onPreviewQuarantinedRecord,
+  onCancelQuarantinedRecordPreview,
+  onConfirmQuarantinedRecordRestore,
 }: ChallengeDataManagementProps) {
   const [recoveryPoint, setRecoveryPoint] = useState(initialRecoveryPoint);
   const [pendingAction, setPendingAction] = useState<PendingAction>(null);
@@ -53,6 +119,11 @@ export default function ChallengeDataManagement({
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [quarantineList, setQuarantineList] = useState<QuarantineListState>({ status: 'closed' });
+  const [quarantinePreview, setQuarantinePreview] = useState<QuarantineRecoveryPreview | null>(null);
+  const [quarantineBusy, setQuarantineBusy] = useState(false);
+  const [quarantineStatus, setQuarantineStatus] = useState<string | null>(null);
+  const [quarantineError, setQuarantineError] = useState<string | null>(null);
 
   useEffect(() => {
     setRecoveryPoint(initialRecoveryPoint);
@@ -119,6 +190,95 @@ export default function ChallengeDataManagement({
     }
   }
 
+  async function loadQuarantinedPage(afterKey: IDBValidKey | undefined, cursors: Array<IDBValidKey | undefined>) {
+    setQuarantineBusy(true);
+    setQuarantineError(null);
+    setQuarantineStatus(null);
+    setQuarantinePreview(null);
+    try {
+      const page = await onLoadQuarantinedRecordPage(afterKey);
+      setQuarantineList({ status: 'ready', page, cursors });
+    } catch {
+      setQuarantineList({ status: 'error' });
+      setQuarantineError('隔离记录暂时无法读取；本机数据没有更改，可以稍后重试。');
+    } finally {
+      setQuarantineBusy(false);
+    }
+  }
+
+  function cancelQuarantinePreview() {
+    if (quarantinePreview?.status === 'eligible') {
+      onCancelQuarantinedRecordPreview(quarantinePreview.token);
+    }
+    setQuarantinePreview(null);
+    setQuarantineError(null);
+    setQuarantineStatus(null);
+  }
+
+  async function toggleQuarantineList() {
+    if (quarantineList.status !== 'closed') {
+      cancelQuarantinePreview();
+      setQuarantineList({ status: 'closed' });
+      return;
+    }
+    await loadQuarantinedPage(undefined, [undefined]);
+  }
+
+  async function previewQuarantinedRecord(item: QuarantinedRecordSummary) {
+    if (item.status !== 'eligible' || quarantineBusy) return;
+    cancelQuarantinePreview();
+    setQuarantineBusy(true);
+    setQuarantineError(null);
+    setQuarantineStatus(null);
+    try {
+      setQuarantinePreview(await onPreviewQuarantinedRecord(item.quarantineId));
+    } catch {
+      setQuarantineError('记录暂时无法检查；原隔离记录仍保留，可以稍后重试。');
+    } finally {
+      setQuarantineBusy(false);
+    }
+  }
+
+  async function confirmQuarantineRestore() {
+    if (quarantinePreview?.status !== 'eligible' || quarantineBusy) return;
+    setQuarantineBusy(true);
+    setQuarantineError(null);
+    setQuarantineStatus(null);
+    try {
+      const result = await onConfirmQuarantinedRecordRestore(quarantinePreview.token);
+      if (result.status === 'restored') {
+        setQuarantinePreview(null);
+        const cursors = quarantineList.status === 'ready' ? quarantineList.cursors : [undefined];
+        const afterKey = cursors[cursors.length - 1];
+        await loadQuarantinedPage(afterKey, cursors);
+        setQuarantineStatus(`已恢复一条${sourceStoreLabel(quarantinePreview.sourceStore)}记录；其余隔离记录没有改变。`);
+      } else if (result.status === 'stale-preview') {
+        setQuarantinePreview(null);
+        setQuarantineError('预览已失效；隔离记录仍保留，请重新检查后再试。');
+      } else {
+        setQuarantinePreview(null);
+        setQuarantineError(BLOCK_REASON_LABELS['target-conflict']);
+      }
+    } catch {
+      setQuarantinePreview(null);
+      setQuarantineError('恢复没有完成；原隔离记录仍保留，可以重新检查后再试。');
+    } finally {
+      setQuarantineBusy(false);
+    }
+  }
+
+  async function loadAdjacentQuarantinePage(direction: 'previous' | 'next') {
+    if (quarantineList.status !== 'ready' || quarantineBusy) return;
+    cancelQuarantinePreview();
+    if (direction === 'next' && quarantineList.page.nextCursor !== null) {
+      const cursors = [...quarantineList.cursors, quarantineList.page.nextCursor];
+      await loadQuarantinedPage(quarantineList.page.nextCursor, cursors);
+    } else if (direction === 'previous' && quarantineList.cursors.length > 1) {
+      const cursors = quarantineList.cursors.slice(0, -1);
+      await loadQuarantinedPage(cursors[cursors.length - 1], cursors);
+    }
+  }
+
   function cancelAction() {
     setPendingAction(null);
     setConfirmationPhrase('');
@@ -143,8 +303,76 @@ export default function ChallengeDataManagement({
           <h3 id="challenge-quarantine-heading">已隔离的异常记录</h3>
           <p>发现 {quarantinedRecordCount} 条结构异常的闯关记录。它们已从答题、成绩和普通备份中隔离，原始内容仍保存在本机。选择导出时，文件可能包含题目和作答内容；文件只下载到此设备，不会自动上传。</p>
           <Button type="default" disabled={busy} onClick={() => void exportQuarantinedRecords()}>导出隔离记录</Button>
+          <Button type="default" disabled={quarantineBusy} onClick={() => void toggleQuarantineList()}>
+            {quarantineList.status === 'closed' ? '检查可恢复记录' : '收起隔离记录'}
+          </Button>
+          {quarantineList.status === 'loading' && <p className="challenge-quarantine-status" role="status">正在读取安全摘要…</p>}
+          {quarantineList.status === 'error' && (
+            <div className="challenge-quarantine-status">
+              <Button type="default" disabled={quarantineBusy} onClick={() => void loadQuarantinedPage(undefined, [undefined])}>重新读取隔离记录</Button>
+            </div>
+          )}
+          {quarantineList.status === 'ready' && (
+            <div className="challenge-quarantine-browser" aria-label="隔离记录检查">
+              {quarantineList.page.items.length > 0 ? (
+                <ul className="challenge-quarantine-list" aria-label="隔离记录列表">
+                  {quarantineList.page.items.map((item) => (
+                    <li className="challenge-quarantine-item" key={safeKeyLabel(item.quarantineId)}>
+                      <div>
+                        <h4>隔离记录 {safeKeyLabel(item.quarantineId)}</h4>
+                        <p>类别：{sourceStoreLabel(item.sourceStore)} · 记录键：{safeKeyLabel(item.sourceKey)}</p>
+                        <p>隔离时间：{formatQuarantineTime(item.quarantinedAt)}</p>
+                        {item.status === 'eligible' ? (
+                          <p>记录可安全预览；确认前会再次检查。</p>
+                        ) : (
+                          <p>{describeBlockedRecord(item)}</p>
+                        )}
+                      </div>
+                      {item.status === 'eligible' && (
+                        <Button type="default" disabled={quarantineBusy} onClick={() => void previewQuarantinedRecord(item)}>
+                          预览隔离记录 {safeKeyLabel(item.quarantineId)}
+                        </Button>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="challenge-quarantine-status" role="status">当前没有隔离记录。</p>
+              )}
+              <div className="challenge-data-management-actions" aria-label="隔离记录分页">
+                <Button type="default" disabled={quarantineBusy || quarantineList.cursors.length <= 1} onClick={() => void loadAdjacentQuarantinePage('previous')}>上一页</Button>
+                <span className="challenge-quarantine-page-number">第 {quarantineList.cursors.length} 页</span>
+                <Button type="default" disabled={quarantineBusy || quarantineList.page.nextCursor === null} onClick={() => void loadAdjacentQuarantinePage('next')}>下一页</Button>
+              </div>
+            </div>
+          )}
+          {quarantinePreview && (
+            <div className="challenge-quarantine-preview" role="group" aria-label="恢复预览">
+              {quarantinePreview.status === 'eligible' ? (
+                <>
+                  <h4>恢复预览：{sourceStoreLabel(quarantinePreview.sourceStore)}</h4>
+                  <p>目标记录类别：{sourceStoreLabel(quarantinePreview.targetStore)}</p>
+                  <p>目标记录键：{safeKeyLabel(quarantinePreview.targetKey)}</p>
+                  <p>记录转换：{describeNormalization(quarantinePreview.normalization)}</p>
+                  <p>预览有效至 {formatQuarantineTime(quarantinePreview.expiresAt)}。确认后会写回指定闯关数据，并仅在事务成功后删除对应隔离副本。</p>
+                  <div className="challenge-data-management-actions">
+                    <Button type="primary" disabled={quarantineBusy} onClick={() => void confirmQuarantineRestore()}>确认恢复这条记录</Button>
+                    <Button type="default" disabled={quarantineBusy} onClick={cancelQuarantinePreview}>取消恢复预览</Button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h4>这条记录暂时不能恢复</h4>
+                  <p role="alert">{BLOCK_REASON_LABELS[quarantinePreview.reason]}</p>
+                  <Button type="default" disabled={quarantineBusy} onClick={cancelQuarantinePreview}>关闭预览</Button>
+                </>
+              )}
+            </div>
+          )}
         </div>
       )}
+      {quarantineStatus && <p className="challenge-quarantine-status" role="status">{quarantineStatus}</p>}
+      {quarantineError && <p className="challenge-quarantine-status" role="alert">{quarantineError}</p>}
 
       {recoveryPoint && (
         <div className="challenge-recovery-point">
