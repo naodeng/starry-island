@@ -12,8 +12,10 @@ import type { ChallengeRecoveryRestoreResult } from '../storage/repository';
 
 interface ChallengeDataManagementProps {
   initialRecoveryPoint: ChallengeRecoveryPointSummary | null;
+  quarantinedRecordCount: number | null;
   onClear: (scope: ChallengeClearScope) => Promise<ChallengeDataClearResult>;
   onRestore: () => Promise<ChallengeRecoveryRestoreResult | null>;
+  onExportQuarantinedRecords: () => Promise<void>;
 }
 
 type PendingAction = { kind: 'clear'; scope: ChallengeClearScope } | { kind: 'restore' } | null;
@@ -38,7 +40,13 @@ function describeRestore(summary: ChallengeBackupMergeSummary): string {
   return '已恢复闯关记录；本机进行中的答题已安全保留，恢复点已消费。';
 }
 
-export default function ChallengeDataManagement({ initialRecoveryPoint, onClear, onRestore }: ChallengeDataManagementProps) {
+export default function ChallengeDataManagement({
+  initialRecoveryPoint,
+  quarantinedRecordCount,
+  onClear,
+  onRestore,
+  onExportQuarantinedRecords,
+}: ChallengeDataManagementProps) {
   const [recoveryPoint, setRecoveryPoint] = useState(initialRecoveryPoint);
   const [pendingAction, setPendingAction] = useState<PendingAction>(null);
   const [confirmationPhrase, setConfirmationPhrase] = useState('');
@@ -98,6 +106,19 @@ export default function ChallengeDataManagement({ initialRecoveryPoint, onClear,
     }
   }
 
+  async function exportQuarantinedRecords() {
+    setBusy(true);
+    setError(null);
+    try {
+      await onExportQuarantinedRecords();
+      setStatus('隔离记录已下载到此设备；文件可能包含题目和作答内容，没有上传任何数据。');
+    } catch {
+      setError('隔离记录没有导出；本机数据没有更改，可以稍后重试。');
+    } finally {
+      setBusy(false);
+    }
+  }
+
   function cancelAction() {
     setPendingAction(null);
     setConfirmationPhrase('');
@@ -116,6 +137,14 @@ export default function ChallengeDataManagement({ initialRecoveryPoint, onClear,
         <Button type="default" disabled={busy} onClick={() => requestClear('wrong-questions')}>清除错题本</Button>
         <Button type="default" disabled={busy} onClick={() => requestClear('all')}>清除全部闯关数据</Button>
       </div>
+
+      {quarantinedRecordCount !== null && quarantinedRecordCount > 0 && (
+        <div className="challenge-recovery-point" aria-labelledby="challenge-quarantine-heading">
+          <h3 id="challenge-quarantine-heading">已隔离的异常记录</h3>
+          <p>发现 {quarantinedRecordCount} 条结构异常的闯关记录。它们已从答题、成绩和普通备份中隔离，原始内容仍保存在本机。选择导出时，文件可能包含题目和作答内容；文件只下载到此设备，不会自动上传。</p>
+          <Button type="default" disabled={busy} onClick={() => void exportQuarantinedRecords()}>导出隔离记录</Button>
+        </div>
+      )}
 
       {recoveryPoint && (
         <div className="challenge-recovery-point">

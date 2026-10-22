@@ -106,7 +106,7 @@ test('downloads a user-requested diagnostics report containing only allowlisted 
     format: 'starry-island-challenge-diagnostics',
     version: 1,
     storage: {
-      schemaVersion: 2,
+      schemaVersion: 3,
       recordCounts: { activeAttempts: 0, taskProgress: 0, recentCompletionGroups: 0, wrongQuestions: 0 },
     },
   });
@@ -116,6 +116,55 @@ test('downloads a user-requested diagnostics report containing only allowlisted 
   expect(JSON.stringify(report)).not.toMatch(/student|questionId|prompt|answer|userAgent|china-study-progress-v1/i);
   await expect(page.getByRole('status')).toHaveText('诊断信息已生成并下载到此设备；没有上传任何数据。');
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+});
+
+test('isolates malformed local records and exports them only after an explicit action', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/');
+  await page.evaluate(() => new Promise<void>((resolve, reject) => {
+    const open = indexedDB.open('starry-island-challenges', 2);
+    open.onerror = () => reject(open.error);
+    open.onupgradeneeded = () => {
+      open.result.createObjectStore('attempts', { keyPath: 'taskId' });
+      open.result.createObjectStore('taskProgress', { keyPath: 'taskId' });
+      open.result.createObjectStore('challengeMeta', { keyPath: 'key' });
+      open.result.createObjectStore('wrongQuestions', { keyPath: 'questionId' });
+    };
+    open.onsuccess = () => {
+      const database = open.result;
+      const transaction = database.transaction('taskProgress', 'readwrite');
+      transaction.objectStore('taskProgress').put({ taskId: 'damaged-progress', bestCorrect: 'invalid' });
+      transaction.oncomplete = () => {
+        database.close();
+        resolve();
+      };
+      transaction.onerror = () => reject(transaction.error);
+    };
+  }));
+
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await expect(page.getByText(/发现 1 条结构异常的闯关记录/)).toBeVisible();
+  await expect(page.getByText(/文件可能包含题目和作答内容/)).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
+
+  const exportButton = page.getByRole('button', { name: '导出隔离记录' });
+  await exportButton.focus();
+  expect(await exportButton.evaluate((button) => document.activeElement === button)).toBe(true);
+  const downloadPromise = page.waitForEvent('download');
+  await page.keyboard.press('Enter');
+  const download = await downloadPromise;
+  const downloadedPath = await download.path();
+  expect(download.suggestedFilename()).toMatch(/^starry-island-quarantined-data-.+\.json$/);
+  expect(downloadedPath).toBeTruthy();
+  expect(JSON.parse(readFileSync(downloadedPath!, 'utf8'))).toMatchObject({
+    format: 'starry-island-challenge-quarantine',
+    version: 1,
+    records: [{ sourceStore: 'taskProgress', record: { taskId: 'damaged-progress', bestCorrect: 'invalid' } }],
+  });
+  await expect(page.getByRole('status')).toContainText('没有上传任何数据');
 });
 
 test('previews and safely merges an active attempt without duplicating data', async ({ page }, testInfo) => {
@@ -191,7 +240,7 @@ test('previews and safely merges an active attempt without duplicating data', as
     .toHaveText('闯关备份已安全合并到此设备；课程进度没有改变。');
 
   const stored = await page.evaluate(async (taskIdToRead) => new Promise((resolve, reject) => {
-    const open = indexedDB.open('starry-island-challenges', 2);
+    const open = indexedDB.open('starry-island-challenges', 3);
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
       const database = open.result;
@@ -291,7 +340,7 @@ test('clears and restores an in-progress challenge through the 24-hour recovery 
   await expect(page.getByRole('status').filter({ hasText: '已创建 24 小时恢复点' })).toBeVisible();
 
   const afterClear = await page.evaluate(async (taskIdToRead) => new Promise<{ attempt: unknown; recoveryPoint: unknown }>((resolve, reject) => {
-    const open = indexedDB.open('starry-island-challenges', 2);
+    const open = indexedDB.open('starry-island-challenges', 3);
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
       const database = open.result;
@@ -316,7 +365,7 @@ test('clears and restores an in-progress challenge through the 24-hour recovery 
   await expect(page.getByRole('status').filter({ hasText: '已恢复闯关记录' })).toBeVisible();
 
   const restoredAttempt = await page.evaluate(async (taskIdToRead) => new Promise<unknown>((resolve, reject) => {
-    const open = indexedDB.open('starry-island-challenges', 2);
+    const open = indexedDB.open('starry-island-challenges', 3);
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
       const database = open.result;

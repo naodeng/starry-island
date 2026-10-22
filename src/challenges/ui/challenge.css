@@ -73,6 +73,7 @@
 .challenge-data-management > p { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; overflow-wrap: anywhere; }
 .challenge-data-management-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .challenge-recovery-point, .challenge-data-confirmation { display: grid; gap: 12px; padding: 16px; border: 1px solid var(--island-border); border-radius: 16px; background: var(--animal-bg-color); }
+.challenge-recovery-point h3 { margin: 0; color: var(--animal-text-color); font-size: 18px; }
 .challenge-recovery-point p, .challenge-data-confirmation p { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; overflow-wrap: anywhere; }
 .challenge-data-confirmation-phrase { display: grid; gap: 7px; color: var(--animal-text-color); font-weight: 700; }
 .challenge-data-confirmation-phrase input { min-height: 44px; padding: 8px 12px; border: 1px solid var(--island-border); border-radius: 12px; color: var(--animal-text-color); background: var(--island-surface); font: inherit; }

@@ -47,11 +47,21 @@ export interface ChallengeRepository {
   restoreRecoveryPoint(now?: string): Promise<ChallengeRecoveryRestoreResult | null>;
   getGroupProgress(taskIds: readonly string[]): Promise<TaskProgress[]>;
   getWrongQuestions(): Promise<WrongQuestionRecord[]>;
+  getQuarantinedRecordCount(): Promise<number>;
+  getQuarantinedRecords(): Promise<QuarantinedChallengeRecord[]>;
   beginAttempt(attempt: ChallengeAttempt): Promise<void>;
   saveAnswer(taskId: string, expectedRevision: number, nextAttempt: ChallengeAttempt): Promise<ChallengeAttempt>;
   completeAttempt(taskId: string, expectedRevision: number, completedAttempt: ChallengeAttempt, progress: TaskProgress): Promise<void>;
   discardAttempt(taskId: string, expectedRevision: number): Promise<void>;
   close(): void;
+}
+
+export interface QuarantinedChallengeRecord {
+  sourceStore: string;
+  sourceKey: IDBValidKey;
+  quarantinedAt: string;
+  reasonCode: string;
+  record: unknown;
 }
 
 export interface ChallengeRecoveryRestoreResult {

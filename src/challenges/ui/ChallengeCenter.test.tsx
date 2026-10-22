@@ -21,8 +21,10 @@ const emptyClearResult = {
 function dataManagementProps() {
   return {
     initialRecoveryPoint: null,
+    quarantinedRecordCount: 0,
     onClearChallengeData: vi.fn().mockResolvedValue(emptyClearResult),
     onRestoreRecoveryPoint: vi.fn().mockResolvedValue(null),
+    onExportQuarantinedRecords: vi.fn().mockResolvedValue(undefined),
     onExportDiagnostics: vi.fn().mockResolvedValue(undefined),
   };
 }

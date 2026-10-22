@@ -28,7 +28,7 @@ const restoreSummary: ChallengeBackupMergeSummary = {
 describe('ChallengeDataManagement', () => {
   it('requires an explicit phrase before clearing all challenge data', async () => {
     const onClear = vi.fn().mockResolvedValue(clearResult);
-    render(<ChallengeDataManagement initialRecoveryPoint={null} onClear={onClear} onRestore={vi.fn()} />);
+    render(<ChallengeDataManagement initialRecoveryPoint={null} quarantinedRecordCount={0} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '清除全部闯关数据' }));
     expect(screen.getByRole('group', { name: '清除确认' })).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe('ChallengeDataManagement', () => {
       ...clearResult,
       counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 4 },
     });
-    render(<ChallengeDataManagement initialRecoveryPoint={null} onClear={onClear} onRestore={vi.fn()} />);
+    render(<ChallengeDataManagement initialRecoveryPoint={null} quarantinedRecordCount={0} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '清除错题本' }));
     fireEvent.click(screen.getByRole('button', { name: '确认清除错题本' }));
@@ -65,7 +65,7 @@ describe('ChallengeDataManagement', () => {
       counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0 },
       recoveryPoint: null,
     });
-    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} onClear={onClear} onRestore={vi.fn()} />);
+    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} quarantinedRecordCount={0} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '清除错题本' }));
     fireEvent.click(screen.getByRole('button', { name: '确认清除错题本' }));
@@ -76,7 +76,7 @@ describe('ChallengeDataManagement', () => {
 
   it('asks before restoring and hides the recovery point only after a complete restore', async () => {
     const onRestore = vi.fn().mockResolvedValue({ summary: restoreSummary, recoveryPointRetained: false } satisfies ChallengeRecoveryRestoreResult);
-    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} onClear={vi.fn()} onRestore={onRestore} />);
+    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} quarantinedRecordCount={0} onClear={vi.fn()} onRestore={onRestore} onExportQuarantinedRecords={vi.fn()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '恢复已清除的闯关记录' }));
     expect(screen.getByRole('group', { name: '恢复确认' })).toBeInTheDocument();
@@ -92,7 +92,7 @@ describe('ChallengeDataManagement', () => {
       summary: { ...restoreSummary, preservedProgressForActiveTasks: 1 },
       recoveryPointRetained: true,
     } satisfies ChallengeRecoveryRestoreResult);
-    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} onClear={vi.fn()} onRestore={onRestore} />);
+    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} quarantinedRecordCount={0} onClear={vi.fn()} onRestore={onRestore} onExportQuarantinedRecords={vi.fn()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '恢复已清除的闯关记录' }));
     fireEvent.click(screen.getByRole('button', { name: '确认恢复闯关记录' }));
@@ -103,12 +103,30 @@ describe('ChallengeDataManagement', () => {
 
   it('uses the shared recovery guidance for a cross-tab conflict', async () => {
     const conflict = Object.assign(new Error('stale revision'), { name: 'RevisionConflictError' });
-    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} onClear={vi.fn()} onRestore={vi.fn().mockRejectedValue(conflict)} />);
+    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} quarantinedRecordCount={0} onClear={vi.fn()} onRestore={vi.fn().mockRejectedValue(conflict)} onExportQuarantinedRecords={vi.fn()} />);
 
     fireEvent.click(screen.getByRole('button', { name: '恢复已清除的闯关记录' }));
     fireEvent.click(screen.getByRole('button', { name: '确认恢复闯关记录' }));
 
     expect(await screen.findByRole('alert')).toHaveTextContent('本机记录在另一个页面发生了变化。请重新读取后继续');
     expect(screen.getByRole('button', { name: '恢复已清除的闯关记录' })).toBeInTheDocument();
+  });
+
+  it('offers an explicit local export for quarantined records and explains its contents', async () => {
+    const onExportQuarantinedRecords = vi.fn().mockResolvedValue(undefined);
+    render(<ChallengeDataManagement
+      initialRecoveryPoint={null}
+      quarantinedRecordCount={2}
+      onClear={vi.fn()}
+      onRestore={vi.fn()}
+      onExportQuarantinedRecords={onExportQuarantinedRecords}
+    />);
+
+    expect(screen.getByText(/发现 2 条结构异常的闯关记录/)).toBeInTheDocument();
+    expect(screen.getByText(/可能包含题目和作答内容；文件只下载到此设备/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '导出隔离记录' }));
+
+    await waitFor(() => expect(onExportQuarantinedRecords).toHaveBeenCalledOnce());
+    expect(await screen.findByRole('status')).toHaveTextContent('没有上传任何数据');
   });
 });

@@ -23,15 +23,16 @@ import {
   InvalidAttemptTransitionError,
   RevisionConflictError,
 } from './repository';
-import type { ChallengeRepository, ChallengeRepositoryOptions } from './repository';
+import type { ChallengeRepository, ChallengeRepositoryOptions, QuarantinedChallengeRecord } from './repository';
 import { transitionWrongQuestion } from '../domain/wrongQuestions';
 
-export const CHALLENGE_DATABASE_VERSION = 2;
+export const CHALLENGE_DATABASE_VERSION = 3;
 const DEFAULT_DATABASE_NAME = 'starry-island-challenges';
 const ATTEMPTS_STORE = 'attempts';
 const PROGRESS_STORE = 'taskProgress';
 const META_STORE = 'challengeMeta';
 const WRONG_QUESTIONS_STORE = 'wrongQuestions';
+const QUARANTINED_RECORDS_STORE = 'quarantinedRecords';
 const RECENT_QUESTION_IDS_KEY = 'recent-question-ids';
 const RECOVERY_POINT_KEY = 'recovery-point';
 const MAX_RECENT_ATTEMPTS = 3;
@@ -39,6 +40,141 @@ const MAX_RECENT_ATTEMPTS = 3;
 interface RecentQuestionIdsRecord {
   key: typeof RECENT_QUESTION_IDS_KEY;
   attemptQuestionIds: string[][];
+}
+
+function isValidAttemptRecord(value: unknown): value is ChallengeAttempt {
+  return isChallengeBackupData({
+    attempts: [value as ChallengeAttempt], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
+  });
+}
+
+function isValidProgressRecord(value: unknown): value is TaskProgress {
+  return isChallengeBackupData({
+    attempts: [], taskProgress: [value as TaskProgress], recentQuestionAttempts: [], wrongQuestions: [],
+  });
+}
+
+function isValidWrongQuestionRecord(value: unknown): value is WrongQuestionRecord {
+  return isChallengeBackupData({
+    attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [value as WrongQuestionRecord],
+  });
+}
+
+function isValidRecentQuestionRecord(value: unknown): value is RecentQuestionIdsRecord {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return false;
+  const record = value as Record<string, unknown>;
+  return record.key === RECENT_QUESTION_IDS_KEY
+    && Array.isArray(record.attemptQuestionIds)
+    && record.attemptQuestionIds.length <= MAX_RECENT_ATTEMPTS
+    && record.attemptQuestionIds.every((ids) => Array.isArray(ids)
+      && ids.every((id) => typeof id === 'string' && id.trim().length > 0)
+      && new Set(ids).size === ids.length);
+}
+
+function ensureObjectStore(database: IDBDatabase, name: string, options: IDBObjectStoreParameters): void {
+  if (!database.objectStoreNames.contains(name)) database.createObjectStore(name, options);
+}
+
+const DATABASE_MIGRATIONS: Array<(database: IDBDatabase) => void> = [
+  (database) => {
+    ensureObjectStore(database, ATTEMPTS_STORE, { keyPath: 'taskId' });
+    ensureObjectStore(database, PROGRESS_STORE, { keyPath: 'taskId' });
+    ensureObjectStore(database, META_STORE, { keyPath: 'key' });
+  },
+  (database) => ensureObjectStore(database, WRONG_QUESTIONS_STORE, { keyPath: 'questionId' }),
+  (database) => ensureObjectStore(database, QUARANTINED_RECORDS_STORE, { autoIncrement: true }),
+];
+
+function applyDatabaseMigrations(database: IDBDatabase, oldVersion: number): void {
+  for (let version = oldVersion; version < CHALLENGE_DATABASE_VERSION; version += 1) {
+    DATABASE_MIGRATIONS[version]?.(database);
+  }
+}
+
+function isValidRecordForStore(storeName: string, record: unknown, key: IDBValidKey): boolean {
+  if (storeName === ATTEMPTS_STORE) {
+    return isValidAttemptRecord(record) && typeof key === 'string' && record.taskId === key;
+  }
+  if (storeName === PROGRESS_STORE) {
+    return isValidProgressRecord(record) && typeof key === 'string' && record.taskId === key;
+  }
+  if (storeName === WRONG_QUESTIONS_STORE) {
+    return isValidWrongQuestionRecord(record) && typeof key === 'string' && record.questionId === key;
+  }
+  return false;
+}
+
+function quarantineInvalidRecords(database: IDBDatabase): Promise<void> {
+  return new Promise((resolve, reject) => {
+    let transaction: IDBTransaction;
+    try {
+      transaction = database.transaction(
+        [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE, QUARANTINED_RECORDS_STORE],
+        'readwrite',
+      );
+    } catch (error) {
+      reject(new ChallengeRepositoryError('Could not validate local challenge data.', { cause: error }));
+      return;
+    }
+
+    const quarantined = transaction.objectStore(QUARANTINED_RECORDS_STORE);
+    const quarantine = (store: IDBObjectStore, key: IDBValidKey, record: unknown, reasonCode: string) => {
+      store.delete(key);
+      quarantined.add({
+        sourceStore: store.name,
+        sourceKey: key,
+        quarantinedAt: new Date().toISOString(),
+        reasonCode,
+        record,
+      } satisfies QuarantinedChallengeRecord);
+    };
+
+    for (const storeName of [ATTEMPTS_STORE, PROGRESS_STORE, WRONG_QUESTIONS_STORE]) {
+      const store = transaction.objectStore(storeName);
+      let records: unknown[] | undefined;
+      let keys: IDBValidKey[] | undefined;
+      const inspectWhenReady = () => {
+        if (!records || !keys) return;
+        records.forEach((record, index) => {
+          const key = keys?.[index];
+          if (key === undefined || !isValidRecordForStore(storeName, record, key)) {
+            if (key !== undefined) quarantine(store, key, record, `invalid-${storeName}`);
+          }
+        });
+      };
+      const recordsRequest = store.getAll();
+      recordsRequest.onsuccess = () => {
+        records = recordsRequest.result;
+        inspectWhenReady();
+      };
+      recordsRequest.onerror = () => transaction.abort();
+      const keysRequest = store.getAllKeys();
+      keysRequest.onsuccess = () => {
+        keys = keysRequest.result;
+        inspectWhenReady();
+      };
+      keysRequest.onerror = () => transaction.abort();
+    }
+
+    const metaStore = transaction.objectStore(META_STORE);
+    const metaRequest = metaStore.getAll();
+    metaRequest.onsuccess = () => {
+      for (const record of metaRequest.result as unknown[]) {
+        if (typeof record !== 'object' || record === null || Array.isArray(record)) continue;
+        const candidate = record as Record<string, unknown>;
+        if (candidate.key === RECENT_QUESTION_IDS_KEY && !isValidRecentQuestionRecord(record)) {
+          quarantine(metaStore, RECENT_QUESTION_IDS_KEY, record, 'invalid-recent-question-ids');
+        } else if (candidate.key === RECOVERY_POINT_KEY && !isChallengeRecoveryPoint(record)) {
+          quarantine(metaStore, RECOVERY_POINT_KEY, record, 'invalid-recovery-point');
+        }
+      }
+    };
+    metaRequest.onerror = () => transaction.abort();
+
+    transaction.oncomplete = () => resolve();
+    transaction.onerror = () => reject(new ChallengeRepositoryError('Could not validate local challenge data.', { cause: transaction.error }));
+    transaction.onabort = () => reject(new ChallengeRepositoryError('Could not validate local challenge data; original records were retained.', { cause: transaction.error }));
+  });
 }
 
 function stableSerialize(value: unknown): string {
@@ -156,6 +292,7 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
   const factory = options.factory ?? globalThis.indexedDB;
   const databaseName = options.databaseName ?? DEFAULT_DATABASE_NAME;
   let databasePromise: Promise<IDBDatabase> | undefined;
+  let sanitationPromise: Promise<void> | undefined;
   let database: IDBDatabase | undefined;
 
   function openDatabase(): Promise<IDBDatabase> {
@@ -170,12 +307,8 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
         reject(new ChallengeRepositoryError('Could not open the challenge database.', { cause: error }));
         return;
       }
-      request.onupgradeneeded = () => {
-        const db = request.result;
-        if (!db.objectStoreNames.contains(ATTEMPTS_STORE)) db.createObjectStore(ATTEMPTS_STORE, { keyPath: 'taskId' });
-        if (!db.objectStoreNames.contains(PROGRESS_STORE)) db.createObjectStore(PROGRESS_STORE, { keyPath: 'taskId' });
-        if (!db.objectStoreNames.contains(META_STORE)) db.createObjectStore(META_STORE, { keyPath: 'key' });
-        if (!db.objectStoreNames.contains(WRONG_QUESTIONS_STORE)) db.createObjectStore(WRONG_QUESTIONS_STORE, { keyPath: 'questionId' });
+      request.onupgradeneeded = (event) => {
+        applyDatabaseMigrations(request.result, event.oldVersion);
       };
       request.onsuccess = () => {
         database = request.result;
@@ -183,6 +316,7 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
           database?.close();
           database = undefined;
           databasePromise = undefined;
+          sanitationPromise = undefined;
         };
         resolve(request.result);
       };
@@ -204,6 +338,13 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
     work: (tx: IDBTransaction, setResult: (value: T) => void, fail: (error: Error) => void) => void,
   ): Promise<T> {
     const db = await openDatabase();
+    if (!sanitationPromise) {
+      sanitationPromise = quarantineInvalidRecords(db).catch((error: unknown) => {
+        sanitationPromise = undefined;
+        throw error;
+      });
+    }
+    await sanitationPromise;
     return new Promise<T>((resolve, reject) => {
       let tx: IDBTransaction;
       let result: T;
@@ -475,6 +616,20 @@ function readBackupSnapshot(
       });
     },
 
+    getQuarantinedRecordCount() {
+      return transaction<number>(QUARANTINED_RECORDS_STORE, 'readonly', (tx, setResult, fail) => {
+        onRequest(tx.objectStore(QUARANTINED_RECORDS_STORE).count(), fail, setResult);
+      });
+    },
+
+    getQuarantinedRecords() {
+      return transaction<QuarantinedChallengeRecord[]>(QUARANTINED_RECORDS_STORE, 'readonly', (tx, setResult, fail) => {
+        onRequest(tx.objectStore(QUARANTINED_RECORDS_STORE).getAll(), fail, (records) => {
+          setResult(records as QuarantinedChallengeRecord[]);
+        });
+      });
+    },
+
     beginAttempt(attempt) {
       if (!isValidInitialAttempt(attempt)) {
         return Promise.reject(new InvalidAttemptTransitionError('A new attempt must start at revision zero with no saved answers.'));
@@ -615,6 +770,7 @@ function readBackupSnapshot(
       database?.close();
       database = undefined;
       databasePromise = undefined;
+      sanitationPromise = undefined;
     },
   };
 }

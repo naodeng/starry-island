@@ -74,6 +74,7 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
   const [pendingBackupImport, setPendingBackupImport] = useState<PendingBackupImport | null>(null);
   const [recoveryPoint, setRecoveryPoint] = useState<ChallengeRecoveryPointSummary | null>(null);
+  const [quarantinedRecordCount, setQuarantinedRecordCount] = useState<number | null>(null);
 
   async function refreshTaskProgress() {
     const progress = await repository.getAllTaskProgress().catch(() => null);
@@ -123,6 +124,17 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
       },
     });
     downloadJsonFile(`starry-island-diagnostics-${generatedAt.replace(/[:.]/g, '-')}.json`, report);
+  }
+
+  async function exportQuarantinedRecords() {
+    const records = await repository.getQuarantinedRecords();
+    const exportedAt = new Date().toISOString();
+    downloadJsonFile(`starry-island-quarantined-data-${exportedAt.replace(/[:.]/g, '-')}.json`, {
+      format: 'starry-island-challenge-quarantine',
+      version: 1,
+      exportedAt,
+      records,
+    });
   }
 
   async function prepareBackupImport(file: File): Promise<ChallengeBackupMergeSummary> {
@@ -219,6 +231,11 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     }).catch(() => {
       if (!cancelled) setRecoveryPoint(null);
     });
+    repository.getQuarantinedRecordCount().then((count) => {
+      if (!cancelled) setQuarantinedRecordCount(count);
+    }).catch(() => {
+      if (!cancelled) setQuarantinedRecordCount(null);
+    });
     return () => { cancelled = true; };
   }, [repository, route.kind]);
 
@@ -297,8 +314,10 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
         onConfirmImportBackup={confirmBackupImport}
         onCancelImportBackup={() => setPendingBackupImport(null)}
         initialRecoveryPoint={recoveryPoint}
+        quarantinedRecordCount={quarantinedRecordCount}
         onClearChallengeData={clearChallengeData}
         onRestoreRecoveryPoint={restoreChallengeData}
+        onExportQuarantinedRecords={exportQuarantinedRecords}
       />
     );
   }

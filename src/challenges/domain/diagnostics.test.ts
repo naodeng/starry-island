@@ -4,7 +4,7 @@ import { createChallengeDiagnosticReport } from './diagnostics';
 const input = {
   generatedAt: '2026-10-22T00:00:00.000Z',
   appVersion: '0.2.0',
-  storageSchemaVersion: 2,
+  storageSchemaVersion: 3,
   capabilities: { indexedDB: true, webLocks: false },
   recordCounts: { activeAttempts: 2, taskProgress: 3, recentCompletionGroups: 1, wrongQuestions: 4 },
 };
@@ -24,7 +24,7 @@ describe('manual challenge diagnostics', () => {
       generatedAt: input.generatedAt,
       appVersion: input.appVersion,
       storage: {
-        schemaVersion: 2,
+        schemaVersion: 3,
         recordCounts: input.recordCounts,
       },
       capabilities: input.capabilities,

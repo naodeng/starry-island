@@ -412,10 +412,21 @@ describe('IndexedDB challenge repository', () => {
       request.onerror = () => reject(request.error);
     });
     const legacyAttempt = makeAttempt();
+    const legacyProgress: TaskProgress = {
+      taskId: 'task-old',
+      bestCorrect: 2,
+      bestTotal: 2,
+      latestCorrect: 2,
+      latestTotal: 2,
+      completedCount: 2,
+      everPassed: true,
+      updatedAt: '2026-01-01T00:00:00.000Z',
+      revision: 2,
+    };
     await new Promise<void>((resolve, reject) => {
       const tx = legacy.transaction(['attempts', 'taskProgress', 'challengeMeta'], 'readwrite');
       tx.objectStore('attempts').put(legacyAttempt);
-      tx.objectStore('taskProgress').put({ taskId: 'task-old', completedCount: 2 });
+      tx.objectStore('taskProgress').put(legacyProgress);
       tx.objectStore('challengeMeta').put({ key: 'recent-question-ids', attemptQuestionIds: [['question-old']] });
       tx.oncomplete = () => resolve();
       tx.onerror = () => reject(tx.error);
@@ -425,9 +436,135 @@ describe('IndexedDB challenge repository', () => {
     const repository = createChallengeRepository({ factory, databaseName });
     repositories.push(repository);
     expect(await repository.getActiveAttempt('task-1')).toEqual(legacyAttempt);
-    expect(await repository.getTaskProgress('task-old')).toEqual({ taskId: 'task-old', completedCount: 2 });
+    expect(await repository.getTaskProgress('task-old')).toEqual(legacyProgress);
     expect(await repository.getRecentQuestionIds()).toEqual(['question-old']);
     expect(await repository.getWrongQuestions()).toEqual([]);
+    expect(await repository.getQuarantinedRecordCount()).toBe(0);
+  });
+
+  it('upgrades a version 2 challenge database while preserving its records', async () => {
+    const factory = new IDBFactory();
+    const databaseName = `challenge-upgrade-v2-${crypto.randomUUID()}`;
+    const legacy = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = factory.open(databaseName, 2);
+      request.onupgradeneeded = () => {
+        request.result.createObjectStore('attempts', { keyPath: 'taskId' });
+        request.result.createObjectStore('taskProgress', { keyPath: 'taskId' });
+        request.result.createObjectStore('challengeMeta', { keyPath: 'key' });
+        request.result.createObjectStore('wrongQuestions', { keyPath: 'questionId' });
+      };
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    const attempt = makeAttempt('task-v2', 'attempt-v2', ['question-v2']);
+    const progress: TaskProgress = {
+      taskId: 'task-v2',
+      bestCorrect: 1,
+      bestTotal: 1,
+      latestCorrect: 1,
+      latestTotal: 1,
+      completedCount: 1,
+      everPassed: true,
+      updatedAt: '2026-01-01T00:00:00.000Z',
+      revision: 1,
+    };
+    await new Promise<void>((resolve, reject) => {
+      const tx = legacy.transaction(['attempts', 'taskProgress', 'challengeMeta'], 'readwrite');
+      tx.objectStore('attempts').put(attempt);
+      tx.objectStore('taskProgress').put(progress);
+      tx.objectStore('challengeMeta').put({ key: 'recent-question-ids', attemptQuestionIds: [['question-v2']] });
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+    legacy.close();
+
+    const repository = createChallengeRepository({ factory, databaseName });
+    repositories.push(repository);
+    expect(await repository.getActiveAttempt('task-v2')).toEqual(attempt);
+    expect(await repository.getTaskProgress('task-v2')).toEqual(progress);
+    expect(await repository.getRecentQuestionIds()).toEqual(['question-v2']);
+    expect(await repository.getQuarantinedRecordCount()).toBe(0);
+  });
+
+  it('isolates malformed records and keeps valid challenge records readable', async () => {
+    const factory = new IDBFactory();
+    const databaseName = `challenge-quarantine-${crypto.randomUUID()}`;
+    const legacy = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = factory.open(databaseName, 2);
+      request.onupgradeneeded = () => {
+        request.result.createObjectStore('attempts', { keyPath: 'taskId' });
+        request.result.createObjectStore('taskProgress', { keyPath: 'taskId' });
+        request.result.createObjectStore('challengeMeta', { keyPath: 'key' });
+        request.result.createObjectStore('wrongQuestions', { keyPath: 'questionId' });
+      };
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    const validAttempt = makeAttempt('task-valid', 'attempt-valid', ['question-valid']);
+    const validProgress: TaskProgress = {
+      taskId: 'task-valid',
+      bestCorrect: 1,
+      bestTotal: 1,
+      latestCorrect: 1,
+      latestTotal: 1,
+      completedCount: 1,
+      everPassed: true,
+      updatedAt: '2026-01-01T00:00:00.000Z',
+      revision: 1,
+    };
+    await new Promise<void>((resolve, reject) => {
+      const tx = legacy.transaction(['attempts', 'taskProgress', 'challengeMeta', 'wrongQuestions'], 'readwrite');
+      tx.objectStore('attempts').put(validAttempt);
+      tx.objectStore('attempts').put({ taskId: 'task-broken', status: 'corrupt' });
+      tx.objectStore('taskProgress').put(validProgress);
+      tx.objectStore('taskProgress').put({ taskId: 'task-broken', bestCorrect: 'not-a-number' });
+      tx.objectStore('wrongQuestions').put({ questionId: 'question-broken', wrongCount: -1 });
+      tx.objectStore('challengeMeta').put({ key: 'recent-question-ids', attemptQuestionIds: 'corrupt' });
+      tx.objectStore('challengeMeta').put({ key: 'recovery-point', version: 99, data: null });
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+    legacy.close();
+
+    const repository = createChallengeRepository({ factory, databaseName });
+    repositories.push(repository);
+    expect(await repository.getActiveAttempt('task-valid')).toEqual(validAttempt);
+    expect(await repository.getActiveAttempt('task-broken')).toBeNull();
+    expect(await repository.getAllTaskProgress()).toEqual([validProgress]);
+    expect(await repository.getWrongQuestions()).toEqual([]);
+    expect(await repository.getRecentQuestionIds()).toEqual([]);
+    expect(await repository.getQuarantinedRecordCount()).toBe(5);
+    expect(await repository.getBackupSnapshot()).toEqual({
+      attempts: [validAttempt],
+      taskProgress: [validProgress],
+      recentQuestionAttempts: [],
+      wrongQuestions: [],
+    });
+    expect((await repository.getQuarantinedRecords()).map((record) => record.record)).toEqual(expect.arrayContaining([
+      { taskId: 'task-broken', status: 'corrupt' },
+      { taskId: 'task-broken', bestCorrect: 'not-a-number' },
+      { questionId: 'question-broken', wrongCount: -1 },
+      { key: 'recent-question-ids', attemptQuestionIds: 'corrupt' },
+      { key: 'recovery-point', version: 99, data: null },
+    ]));
+
+    const database = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = factory.open(databaseName);
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    expect(Array.from(database.objectStoreNames)).toContain('quarantinedRecords');
+    const quarantined = await new Promise<unknown[]>((resolve, reject) => {
+      const tx = database.transaction('quarantinedRecords', 'readonly');
+      const request = tx.objectStore('quarantinedRecords').getAll();
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    expect(quarantined).toHaveLength(5);
+    expect(quarantined.map((record) => (record as { sourceStore: string }).sourceStore).sort()).toEqual([
+      'attempts', 'challengeMeta', 'challengeMeta', 'taskProgress', 'wrongQuestions',
+    ]);
+    database.close();
   });
 
   it('allows one active snapshot per task and rejects a second begin', async () => {

@@ -35,8 +35,10 @@ interface ChallengeCenterProps {
   onConfirmImportBackup: () => Promise<void>;
   onCancelImportBackup: () => void;
   initialRecoveryPoint: ChallengeRecoveryPointSummary | null;
+  quarantinedRecordCount: number | null;
   onClearChallengeData: (scope: ChallengeClearScope) => Promise<ChallengeDataClearResult>;
   onRestoreRecoveryPoint: () => Promise<ChallengeRecoveryRestoreResult | null>;
+  onExportQuarantinedRecords: () => Promise<void>;
 }
 
 export default function ChallengeCenter({
@@ -50,8 +52,10 @@ export default function ChallengeCenter({
   onConfirmImportBackup,
   onCancelImportBackup,
   initialRecoveryPoint,
+  quarantinedRecordCount,
   onClearChallengeData,
   onRestoreRecoveryPoint,
+  onExportQuarantinedRecords,
 }: ChallengeCenterProps) {
   const [backupExportState, setBackupExportState] = useState<'idle' | 'exporting' | 'success' | 'error'>('idle');
   const [diagnosticsExportState, setDiagnosticsExportState] = useState<'idle' | 'exporting' | 'success' | 'error'>('idle');
@@ -177,8 +181,10 @@ export default function ChallengeCenter({
         </section>
         <ChallengeDataManagement
           initialRecoveryPoint={initialRecoveryPoint}
+          quarantinedRecordCount={quarantinedRecordCount}
           onClear={onClearChallengeData}
           onRestore={onRestoreRecoveryPoint}
+          onExportQuarantinedRecords={onExportQuarantinedRecords}
         />
         {!progressAvailable && <p className="challenge-inline-note" role="status">本机进度暂时没有读出；可以继续挑战，稍后再查看进度。</p>}
         <section className="challenge-section" aria-labelledby="challenge-groups-heading">
