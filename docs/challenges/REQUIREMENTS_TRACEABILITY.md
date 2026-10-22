@@ -30,6 +30,13 @@
 | REQ-071 | 用户点击后下载白名单诊断 JSON；单测及端到端校验确认没有题目、答案、任务 ID、网址或课程进度字段，也不自动上传 | `src/challenges/domain/diagnostics.ts`、`diagnostics.test.ts`；`ChallengePage.tsx`；`ChallengeCenter.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-072 | 本地新增 GitHub 问题反馈表单，收集复现步骤与环境并提示公开可见和隐私边界；尚未进入远端默认分支 | `.github/ISSUE_TEMPLATE/bug-report.yml`；`config.yml`；[表单说明](ISSUE_FORMS.md) |
 | REQ-073 | 本地新增题目修正表单，要求问题描述、修正理由和可核对依据；明确由维护者人工审核且不会自动发布 | `.github/ISSUE_TEMPLATE/question-correction.yml`；[表单说明](ISSUE_FORMS.md) |
+| REQ-074 | 最佳成绩和曾通过状态保持单调；没有完整作答历史时不自动重评分或撤销奖励。可靠证据下的补偿仍是人工处理，当前没有自动补偿工具 | `attempt.ts`、`attempt.test.ts`；`progress.test.ts`；[数据模型](DATA_MODEL.md) |
+| REQ-075 | 已有根更新日志作为 GitHub 发布摘要，并新增结构化题库变更记录格式；本地记录不代表内容变更审批证明 | `CHANGELOG.zh-CN.md`；[内容变更记录](CONTENT_CHANGELOG.md) |
+| REQ-076 | 现有 CI 对 PR 执行全量单测、覆盖率、构建和浏览器测试；影响任务清单与人工教学检查由作者在 PR 中记录，暂无自动题目到任务映射工具 | `.github/workflows/quality.yml`；`DEVELOPMENT_GUIDE.md`；`TEST_STRATEGY.md` |
+| REQ-077 | 低、中、高三级风险与对应检查范围已写入协作指南；人工检查不能由当前 CI 自动证明 | `DEVELOPMENT_GUIDE.md`；[决策冲突与限制](DECISION_CONFLICTS.md) |
+| REQ-078 / 079 | 当前试点允许作者自审；审核记录保留状态、审核人和时间，内容指纹单独用于变更追踪 | `src/challenges/content/pilot-manifest.json`；`validateManifest.ts` 相关测试 |
+| REQ-081 | 指纹变化提示不自动撤销审核或暂停关联挑战；严重确认问题仍按静态发布流程处理 | `fingerprint.ts`；题库清单校验测试；[产品需求文档](PRD.md) |
+| REQ-082～084 | 采用静态发布修复；发布摘要维护于 GitHub 更新日志；客户端没有个性化题目修订通知 | `CHANGELOG.zh-CN.md`；静态 Vite/Pages 架构；[产品需求文档](PRD.md) |
 | REQ-027 | 根据用户确认的章节顺序划分前半学期；不是学校日历 | 试点题库清单；清单测试 |
 | REQ-028 | 部分实现：运行时有题库清单门禁；尚无专用持续集成报告命令 | `validateManifest.ts`；[测试方案](TEST_STRATEGY.md) |
 | REQ-029 | 部分实现：有闯关中心和单元 2 上下文入口；未覆盖其他组 | 课程目录和路由测试 |
