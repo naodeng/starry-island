@@ -1,53 +1,53 @@
-# Product Requirements Document (PRD)
+# 产品需求文档（PRD）
 
-Status: **confirmed product baseline**, based on REQ-001–REQ-085. This PRD describes the planned product scope, not the current implementation boundary. The local MVP slice and its unimplemented areas are recorded in [ROADMAP.md](ROADMAP.md), [REQUIREMENTS_TRACEABILITY.md](REQUIREMENTS_TRACEABILITY.md), and [pilot-content-audit.md](pilot-content-audit.md).
+状态：基于 REQ-001～REQ-085 的**已确认产品基线**。本文描述计划中的产品范围，不表示所有功能已经实现。当前本地最小可用功能切片及未实现范围见[迭代计划](ROADMAP.md)、[需求追踪矩阵](REQUIREMENTS_TRACEABILITY.md)和[试点内容审计](pilot-content-audit.md)。
 
-## Goal and non-goals
+## 产品目标与非目标
 
-Deliver a separate, reliable challenge mode for Chinese elementary grades 1–6, semesters 1–2, Chinese, mathematics and English. Preserve existing learning Tasks and progress. Do not introduce cloud accounts, a backend, live AI-generated questions, full attempt history, or a content administration console in v1.0.
+为小学一至六年级、上下学期的语文、数学和英语提供独立可靠的闯关模式，并保留现有学习任务和进度。V1.0 不引入云端账号、后端服务、实时 AI 出题、完整挑战作答历史或内容管理后台。
 
-## Curriculum and scope
+## 课程和范围
 
-- Unit challenges apply to formal numbered textbook units. Review/integrated-practice material contributes to semester challenges.
-- Each grade × semester × subject has three fixed semester stages: first half, second half, cumulative end-term. Across 6×2×3 combinations: **108 stage groups and 540 semester challenge tasks** (5 per group). Unit task counts depend on audited numbered-unit inventory and must not be invented.
-- Each challenge group: 2 basic, 2 advanced, 1 high-difficulty task. Each basic pair and advanced pair jointly cover all required core knowledge points; high difficulty emphasizes integration.
-- Unit tasks target ~15 questions; semester tasks default 25, maximum 30. Candidate pools require at least 2× effective approved unique compatible questions (15→30, 25→50, 30→60).
-- Released tasks are freely accessible, with no prerequisite locks. Planned tasks show 即将开放; suspended tasks show 暂不可用.
+- 单元闯关对应教材中的正式编号单元；复习和综合实践内容可纳入学期闯关。
+- 每个年级 × 学期 × 学科固定划分三个学期阶段：前半学期、后半学期、期末综合。按 6 个年级 × 2 个学期 × 3 个学科计算，共 **108 个阶段组和 540 个学期挑战任务**（每组 5 个任务）。单元任务数量取决于经过审核的正式编号单元清单，不得臆造。
+- 每组包含 2 个基础、2 个进阶和 1 个高阶任务。基础任务对、进阶任务对分别共同覆盖核心知识点；高阶任务强调综合运用。
+- 单元任务目标约 15 题；学期任务默认 25 题、最多 30 题。候选池必须至少包含 2 倍数量的有效、已审核、互不重复且兼容的题目（15→30、25→50、30→60）。
+- 已发布任务无需前置解锁。计划中任务显示“即将开放”，暂停任务显示“暂不可用”。
 
-## Grading and rewards
+## 评分与奖励
 
-- Basic passing ≥70%; advanced ≥80%; high ≥85%; compare correct count to `ceil(total * threshold)`.
-- First submitted answer per question is final; no retry or hint during challenge; answer/explanation review follows completion. Untimed; record elapsed time only.
-- Stars based on best score: basic 70/85/95%, advanced 80/90/100%, high 85/95/100% for 1/2/3 stars respectively. Badges granted after all five tasks in a group have ever passed; no revocation on weaker subsequent attempts.
-- Persist best/latest scores, completed attempt count, ever-passed; **not** full attempt histories.
-- Wrong-question notebook tracks stable question ID, wrong count, last wrong date, and mastery state. Two correct answers in separate later challenge attempts consecutively mark mastered; wrong resets the streak.
+- 基础通过线不低于 70%，进阶不低于 80%，高阶不低于 85%；所需正确题数按总题数乘以通过比例后向上取整。
+- 每题首次提交后锁定答案；挑战过程中不提供重试或提示，完成后可查看答案和讲解。不限时，只记录用时。
+- 星级按任务最佳分数计算：基础 70/85/95%，进阶 80/90/100%，高阶 85/95/100% 分别对应 1/2/3 星。组内五个任务都曾通过后点亮徽章，之后成绩降低不撤销徽章。
+- 保存最佳和最近成绩、完成次数及是否曾通过；**不保存完整作答历史**。
+- 错题本按稳定题目 ID 记录题目快照、答错次数、最近答错时间和掌握状态。同一道题在后续两次不同的完成挑战中连续答对后标记为已掌握；之后答错会重置连续答对次数和掌握状态。
 
-## Experience
+## 使用体验
 
-- Dedicated 闯关中心 with contextual entry points; grade/semester/subject/difficulty filtering, challenge cards, progress and badges.
-- Autosave after every answer, resume identical ordered paper and locked responses; only one unfinished attempt per task. Discard with confirmation does not count as completed.
-- Results show score, correct count, stars, elapsed, best, wrong review, weak knowledge and local rule-based suggestions linking existing learning Tasks.
-- Child-friendly accessible interface with grade-tier density (1–2, 3–4, 5–6), keyboard/focus/touch/contrast checks, reduced motion, optional on-demand speech with anti-answer-leak rules, default-muted optional short sounds.
-- Unified error taxonomy with child-friendly messages, genuine recovery actions, and optional manually exported whitelisted diagnostics.
+- 提供独立的闯关中心和课程上下文入口；支持按年级、学期、学科与难度筛选，并展示任务卡、进度和徽章。
+- 每次提交答案后自动保存；刷新后恢复同一份题目快照、顺序和已锁定答案；每个任务最多保留一份未完成挑战。丢弃前需确认，丢弃不计入完成。
+- 结果展示分数、答对题数、星级、用时、最佳成绩、错题回顾、薄弱知识点及本地规则建议，并可关联现有学习任务。薄弱点按本次答错题的知识点汇总；命中已有课程题目时关联其所属学习任务，闯关专用补充题按知识点关联最聚焦的现有任务。入口只导航至课程任务，不改写课程进度。
+- 面向儿童设计无障碍界面；按低、中、高年级控制信息密度，检查键盘、焦点、触屏、对比度和减少动态效果；按需语音不得泄露答案；可选短音效默认关闭。
+- 统一错误分类与儿童友好的恢复操作；可选地由用户手动导出字段白名单内的诊断信息。
 
-## Local data and safety
+## 本地数据与安全
 
-- Local-first persistence; robust migrations, snapshots, conflict detection across tabs, confirmed writes, export/import, backup reminders, and corruption isolation.
-- High-risk deletion: graded confirmation and backup reminder. Before deletion create a recoverable snapshot valid for 24 hours, at most one; subsequent deletion **automatically replaces** the older snapshot, safely after successful new snapshot creation. Successful restore consumes the snapshot exactly once.
-- No dedicated child privacy compliance/consent framework in v1.0 (REQ-064); this is **not** a claim of legal compliance. Avoid unnecessary transmission or personal data collection.
+- 采用本地优先方式保存数据；计划提供可靠迁移、快照、跨标签页冲突检测、写入确认、导入/导出、备份提醒和损坏隔离。
+- 高风险清除需分级确认并提醒备份。清除前创建有效期 24 小时、最多一个的可恢复快照；再次清除时，在新快照成功创建后自动替换旧快照。每份快照仅在恢复成功后消费一次。
+- V1.0 不建设专门的儿童隐私合规/监护人同意系统（REQ-064），这不表示已经满足法律要求。避免不必要的数据传输与个人信息收集。
 
-## Content governance and releases
+## 内容治理与发布
 
-- Stable question IDs, declarative review manifests, content fingerprints, lifecycle Active/Disabled/Deprecated, change logs and CI readiness reports.
-- **Final user choices**: authors may self-approve (REQ-078), approval record can be minimal (REQ-079), edits retain existing approved state (REQ-080), and do not automatically suspend associated challenges (REQ-081). Existing mandatory content validation and release gates still apply. Severe confirmed defects must be disabled and repaired via normal static release (REQ-082).
-- GitHub Issue Forms for bugs and question corrections; manual review for reported question defects; release notes on GitHub only, no in-app update announcements or personalized revision notifications.
+- 使用稳定题目 ID、声明式审核清单、内容指纹、启用（`active`）/停用（`disabled`）/弃用（`deprecated`）生命周期、变更日志及持续集成就绪度报告。
+- **最终用户决定**：作者可自审（REQ-078），审核记录可保持最小字段（REQ-079），编辑后保留原 `approved` 状态（REQ-080），也不因编辑自动暂停关联挑战（REQ-081）。既有强制内容校验和发布门禁仍有效；已确认的严重缺陷须禁用并经常规静态发布修复（REQ-082）。
+- 使用 GitHub 缺陷反馈表单收集缺陷和题目修正，由人工审核报告的问题。发布说明只在 GitHub 提供；不发送应用内更新通知或个性化修订通知。
 
-## Acceptance conditions
+## 验收条件
 
-The following conditions define complete pilot/v1.0 acceptance, not the current MVP exit criteria.
+以下是完整试点和 V1.0 的验收条件，不是当前最小可用功能切片的退出条件：
 
-1. All published task types meet pool, coverage, assembly, scoring and lifecycle checks.
-2. No existing learning Task regression or local progress loss.
-3. Resume, storage failures, cross-tab conflicts, migration, backup and deletion/recovery have automated tests.
-4. Pilot represents low/middle/high grades, all three subjects, unit/semester, and interaction types.
-5. Release quality report identifies exactly which challenges are ready, planned or unavailable and why.
+1. 所有已发布任务均通过题池、知识覆盖、组卷、评分和生命周期校验。
+2. 现有学习任务不回归，学习进度不丢失。
+3. 恢复、存储故障、跨标签页冲突、迁移、备份和删除/恢复均有自动化测试。
+4. 试点覆盖低、中、高年级、三门学科、单元/学期任务及不同交互题型。
+5. 发布质量报告准确列出可用、计划中、不可用的挑战及原因。

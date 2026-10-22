@@ -5,6 +5,40 @@ const taskUrl = `/challenges/task/${encodeURIComponent(taskId)}`;
 const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01';
 const semesterTaskUrl = `/challenges/task/${encodeURIComponent(semesterTaskId)}`;
 
+test('opens the local wrong-question notebook from the challenge center', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });
+  await page.goto('/challenges');
+  await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('light');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.getByRole('button', { name: '打开错题本' }).click();
+
+  await expect(page.getByRole('heading', { name: '错题本' })).toBeVisible();
+  await expect(page.getByRole('status')).toHaveText('完成挑战后，答错的题会出现在这里。');
+  await expect(page.getByRole('button', { name: '返回闯关中心' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
+  await page.reload();
+  await expect(page.getByRole('heading', { name: '错题本' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  const backButton = page.getByRole('button', { name: '返回闯关中心' });
+  await backButton.focus();
+  await page.keyboard.press('Tab');
+  const allFilter = page.getByRole('button', { name: '全部' });
+  expect(await allFilter.evaluate((element) => document.activeElement === element && element.matches(':focus-visible'))).toBe(true);
+  expect(await allFilter.evaluate((element) => Number.parseFloat(getComputedStyle(element).transitionDuration))).toBeLessThan(0.001);
+
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });
+  await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('light');
+  await page.reload();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 async function submitCurrentAnswer(page: import('@playwright/test').Page) {
   const activity = page.locator('.challenge-activity');
   if (await activity.locator('.choice-activity').count()) {
@@ -39,6 +73,7 @@ test('saves, restores and completes a challenge without changing learning progre
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
   await page.goto(taskUrl);
+  await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
 
   await expect(page.getByRole('heading', { name: '基础闯关 1' })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
@@ -67,9 +102,31 @@ test('saves, restores and completes a challenge without changing learning progre
   }
 
   await expect(page.getByText('本次答案回顾')).toBeVisible();
+  await expect(page.getByRole('heading', { name: '可以再练一练' })).toBeVisible();
   await expect(page.locator('.challenge-result-score')).toHaveText(/\d+ 分/);
   await expect(page.getByLabel('本次闯关结果')).toContainText(/\d+\/15 题答对/);
   await expect(page.getByLabel('本次闯关结果')).toContainText(/\d+ 颗星/);
+
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });
+  await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('light');
+  const taskRecordCard = page.locator('.challenge-result-summary > *');
+  await expect.poll(() => taskRecordCard.evaluate((element) => getComputedStyle(element).color)).toBe('rgb(39, 51, 74)');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
+  await expect.poll(() => taskRecordCard.evaluate((element) => getComputedStyle(element).color)).toBe('rgb(237, 243, 233)');
+
+  const reviewTaskButton = page.getByRole('button', { name: /^复习：/ }).first();
+  await expect(reviewTaskButton).toBeVisible();
+  await page.keyboard.press('Tab');
+  expect(await reviewTaskButton.evaluate((element) => document.activeElement === element && element.matches(':focus-visible'))).toBe(true);
+  await reviewTaskButton.click();
+  await expect(page).toHaveURL(/\/grade-2\/term-1\/math\/unit-02\/(basic|advanced|high)\/task-0[12]$/);
+  await expect(page.locator('.unit-hero h1')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  await page.goBack();
+  await expect(page.getByText(/最好成绩 \d+\/15 · 已完成 1 次/)).toBeVisible();
 
   await page.reload();
   await expect(page.getByText(/最好成绩 \d+\/15 · 已完成 1 次/)).toBeVisible();

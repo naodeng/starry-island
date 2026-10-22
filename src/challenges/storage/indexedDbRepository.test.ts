@@ -95,6 +95,78 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getTaskProgress('task-1')).toBeNull();
     expect(await repository.getGroupProgress(['task-1', 'task-2'])).toEqual([]);
     expect(await repository.getRecentQuestionIds()).toEqual([]);
+    expect(await repository.getWrongQuestions()).toEqual([]);
+  });
+
+  it('records wrong questions and requires two correct completed attempts to master them', async () => {
+    const repository = createRepository();
+    const questionIds = ['question-a'];
+    const finishWith = async (answer: number, completedAt: string) => {
+      const initial = makeAttempt('task-1', `attempt-${completedAt}`, questionIds);
+      await repository.beginAttempt(initial);
+      const submitted = submitFirstAnswer(initial, 'question-a', answer).attempt;
+      const saved = await repository.saveAnswer(initial.taskId, initial.revision, submitted);
+      const progress = await repository.getTaskProgress(initial.taskId);
+      const update = finalizeAttempt(saved, progress, completedAt);
+      await repository.completeAttempt(initial.taskId, saved.revision, update.completedAttempt, update.progress);
+    };
+
+    await finishWith(0, '2026-01-01T00:00:00.000Z');
+    expect(await repository.getWrongQuestions()).toMatchObject([{
+      questionId: 'question-a',
+      wrongCount: 1,
+      lastWrongAt: '2026-01-01T00:00:00.000Z',
+      correctAttemptStreak: 0,
+    }]);
+
+    await finishWith(1, '2026-01-02T00:00:00.000Z');
+    const afterFirstCorrect = await repository.getWrongQuestions();
+    expect(afterFirstCorrect[0]?.correctAttemptStreak).toBe(1);
+    expect(afterFirstCorrect[0]).not.toHaveProperty('masteredAt');
+
+    await finishWith(1, '2026-01-03T00:00:00.000Z');
+    expect(await repository.getWrongQuestions()).toMatchObject([{ correctAttemptStreak: 2, masteredAt: '2026-01-03T00:00:00.000Z' }]);
+
+    await finishWith(0, '2026-01-04T00:00:00.000Z');
+    expect(await repository.getWrongQuestions()).toMatchObject([{
+      questionId: 'question-a',
+      wrongCount: 2,
+      lastWrongAt: '2026-01-04T00:00:00.000Z',
+      correctAttemptStreak: 0,
+    }]);
+    expect(await repository.getWrongQuestions()).not.toHaveProperty('0.masteredAt');
+  });
+
+  it('upgrades a version 1 challenge database without losing its existing records', async () => {
+    const factory = new IDBFactory();
+    const databaseName = `challenge-upgrade-${crypto.randomUUID()}`;
+    const legacy = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = factory.open(databaseName, 1);
+      request.onupgradeneeded = () => {
+        request.result.createObjectStore('attempts', { keyPath: 'taskId' });
+        request.result.createObjectStore('taskProgress', { keyPath: 'taskId' });
+        request.result.createObjectStore('challengeMeta', { keyPath: 'key' });
+      };
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+    const legacyAttempt = makeAttempt();
+    await new Promise<void>((resolve, reject) => {
+      const tx = legacy.transaction(['attempts', 'taskProgress', 'challengeMeta'], 'readwrite');
+      tx.objectStore('attempts').put(legacyAttempt);
+      tx.objectStore('taskProgress').put({ taskId: 'task-old', completedCount: 2 });
+      tx.objectStore('challengeMeta').put({ key: 'recent-question-ids', attemptQuestionIds: [['question-old']] });
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+    legacy.close();
+
+    const repository = createChallengeRepository({ factory, databaseName });
+    repositories.push(repository);
+    expect(await repository.getActiveAttempt('task-1')).toEqual(legacyAttempt);
+    expect(await repository.getTaskProgress('task-old')).toEqual({ taskId: 'task-old', completedCount: 2 });
+    expect(await repository.getRecentQuestionIds()).toEqual(['question-old']);
+    expect(await repository.getWrongQuestions()).toEqual([]);
   });
 
   it('allows one active snapshot per task and rejects a second begin', async () => {
@@ -212,14 +284,10 @@ describe('IndexedDB challenge repository', () => {
     const repository = createRepository();
     const initial = makeAttempt();
     await repository.beginAttempt(initial);
-    const finished = await (async () => {
-      let current = initial;
-      for (const item of initial.questions) {
-        const answer = (item.activity as Extract<ActivityDefinition, { kind: 'arithmetic' }>).correctAnswer;
-        current = await repository.saveAnswer(current.taskId, current.revision, submitFirstAnswer(current, item.questionId, answer).attempt);
-      }
-      return current;
-    })();
+    const firstAnswer = submitFirstAnswer(initial, 'question-a', 0).attempt;
+    const savedFirst = await repository.saveAnswer(initial.taskId, initial.revision, firstAnswer);
+    const secondAnswer = submitFirstAnswer(savedFirst, 'question-b', 1).attempt;
+    const finished = await repository.saveAnswer(initial.taskId, savedFirst.revision, secondAnswer);
     const update = finalizeAttempt(finished, null, '2026-01-01T00:02:00.000Z');
     const invalidProgress = Object.assign({}, update.progress, { invalid: Symbol('not-cloneable') }) as TaskProgress;
 
@@ -228,15 +296,19 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getActiveAttempt('task-1')).toEqual(finished);
     expect(await repository.getTaskProgress('task-1')).toBeNull();
     expect(await repository.getRecentQuestionIds()).toEqual([]);
+    expect(await repository.getWrongQuestions()).toEqual([]);
   });
 
   it('discards without changing completion progress', async () => {
     const repository = createRepository();
-    const attempt = makeAttempt();
-    await repository.beginAttempt(attempt);
-    await repository.discardAttempt('task-1', 0);
+    const initial = makeAttempt();
+    await repository.beginAttempt(initial);
+    const wrongAnswer = submitFirstAnswer(initial, 'question-a', 0).attempt;
+    await repository.saveAnswer(initial.taskId, initial.revision, wrongAnswer);
+    await repository.discardAttempt('task-1', wrongAnswer.revision);
     expect(await repository.getActiveAttempt('task-1')).toBeNull();
     expect(await repository.getTaskProgress('task-1')).toBeNull();
     expect(await repository.getRecentQuestionIds()).toEqual([]);
+    expect(await repository.getWrongQuestions()).toEqual([]);
   });
 });

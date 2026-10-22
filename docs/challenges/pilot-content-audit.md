@@ -1,57 +1,57 @@
-# Pilot Content Audit
+# 试点内容审计
 
-Audit date: 2026-10-21. This report describes the local MVP manifest, not a complete course audit or remote release approval.
+审计日期：2026-10-21。本文描述本地最小可用功能切片的清单，不代表已完成全课程审计或远端发布批准。
 
-## Scope and chapter mapping
+## 范围与章节划分
 
-- Unit pilot: Grade 2, Term 1, Math, Unit 2 — `100以内的加法和减法（二）`.
-- Semester pilot: the first half of Grade 2, Term 1 Math, using formal units 01–04.
-- The user confirmed dividing the nine formal units as evenly as possible by textbook chapter order: first half 01–04, second half 05–09. This is a planning boundary and is not a claim about any school's actual teaching calendar.
-- Unit 2 sources only its own unit questions plus the 42 challenge-only supplemental items. The semester group draws from units 01–04 and the same 42 supplements.
-- The existing learning Task content was not changed to expand either pool.
+- 单元试点：二年级上册数学第二单元——“100 以内的加法和减法（二）”。
+- 学期试点：二年级上册数学前半学期，使用正式编号单元 01～04。
+- 用户确认按教材章节顺序将九个正式单元尽可能等分：前半学期 01～04，后半学期 05～09。这只是项目计划边界，不表示任何学校的实际授课日历。
+- 单元 2 题池仅取自本单元题目及 42 道闯关专用补充题；学期组取自单元 01～04 及同一批 42 道补充题。
+- 没有修改现有学习任务 的题目来扩充闯关题池。
 
-## Candidate inventory
+## 候选题盘点
 
-| Group | Basic | Advanced | High | Total | Minimum per tier |
+| 组别 | 基础 | 进阶 | 高阶 | 合计 | 每难度最低题量 |
 |---|---:|---:|---:|---:|---:|
-| Unit 2 | 30 | 30 | 30 | 90 | 30 (15-question target × 2) |
-| First-half semester | 75 | 75 | 76 | 226 | 50 (25-question target × 2) |
+| 单元 2 | 30 | 30 | 30 | 90 | 30（目标 15 题 × 2）|
+| 前半学期 | 75 | 75 | 76 | 226 | 50（目标 25 题 × 2）|
 
-Each group has two tasks per basic and advanced difficulty and one high task. The unit group targets 15 questions per task; the semester group targets 25. All candidate question IDs and activity IDs resolve uniquely, and content fingerprint validation finds no duplicate candidate content in the effective manifest.
+每组含两个基础任务、两个进阶任务和一个高阶任务。单元组每个任务目标 15 题；学期组目标 25 题。所有候选题 ID 和活动 ID 均唯一且可解析；有效题库清单的内容指纹检查未发现重复候选内容。
 
-The semester candidate distribution by source and difficulty is:
+学期候选题按来源和难度分布如下：
 
-| Source | Basic | Advanced | High |
+| 来源 | 基础 | 进阶 | 高阶 |
 |---|---:|---:|---:|
-| Unit 1 | 13 | 15 | 14 |
-| Unit 2 | 16 | 16 | 16 |
-| Unit 3 | 16 | 16 | 16 |
-| Unit 4 | 16 | 14 | 16 |
-| Challenge-only supplements | 14 | 14 | 14 |
-| **Total** | **75** | **75** | **76** |
+| 单元 1 | 13 | 15 | 14 |
+| 单元 2 | 16 | 16 | 16 |
+| 单元 3 | 16 | 16 | 16 |
+| 单元 4 | 16 | 14 | 16 |
+| 闯关专用补充题 | 14 | 14 | 14 |
+| **合计** | **75** | **75** | **76** |
 
-Existing measurement activities are excluded because the current drawing UI reveals the target length. The content validator permits only challenge renderer formats that are currently safe to present.
+现有测量题会通过绘图界面泄露目标长度，因此不纳入。内容校验器只允许使用当前闯关渲染器安全支持的题型。
 
-## Knowledge-point mapping and coverage
+## 知识点映射与覆盖
 
-The manifest stores per-question knowledge-point IDs. The pilot mapping derives them from the source unit and the question prompt, expression and interaction content. Tests compare all 226 records against the mapping function, then use the production assembler with a fixed seed to build every declared task from the real candidate pools and verify each task's required points are covered.
+清单按题目保存知识点 ID。试点映射函数根据来源单元、题目提示、算式和交互内容推导知识点。测试会把全部 226 条记录与映射函数比对，再使用生产组卷器及固定种子为每个已登记任务组卷，并检查所需知识点是否覆盖。
 
-An initial mapping assigned every unit-level point to every question in that unit. That could produce false coverage, so it was replaced by the per-question mapping before this audit. Two Grade 2 Math Unit 1 high-task questions about safe measurement-activity planning receive an auxiliary `measurement-activity-planning` tag; they do not count toward the unit's core knowledge-point coverage.
+最初的映射曾把单元级全部知识点赋给该单元的每道题，这可能造成虚假覆盖；审计前已改为逐题映射。二年级上册数学单元 1 的两道高阶题涉及安全规划测量活动，额外标记为 `measurement-activity-planning`；该标签不计入单元核心知识点覆盖。
 
-High integration is a property of the assembled high task, not an assertion that every individual question integrates two concepts. Each high task requires at least two core knowledge points, and assembly tests verify the completed paper covers them.
+高阶综合要求针对整份组装后的试卷，而不是声称每道题都同时考查两个概念。每份高阶任务至少覆盖两个核心知识点，组卷测试会核实这一点。
 
-The mapping function is a deterministic content-based classifier and test oracle. It is a structural safeguard, not independent proof that every tag is pedagogically perfect; future subject review may refine the manifest.
+映射函数是确定性的内容分类器和测试判据，只能提供结构性保障，不能独立证明所有标签在教学上均准确；后续学科审查可能调整题库清单。
 
-## Answer and content checks
+## 答案与内容检查
 
-- The existing question-review ledger marks the 48 questions in each of Grade 2 Term 1 Math Units 1–4 as reviewed for answer correctness, clarity, age fit, textbook topic and difficulty: [grade-2-question-review.tsv](../curriculum/grade-2-question-review.tsv).
-- The 42 new Unit 2 supplemental questions are authored only for the challenge system. Tests evaluate each `+`/`-` expression against its declared answer and check that the numeric result is not exposed in the prompt or hint.
-- All 226 candidates are also passed through the production answer checker using their declared correct response. This verifies compatibility between the manifest key and runtime scorer; for reused questions it does not independently prove the answer is semantically correct.
-- The runner withholds hints and explanations and locks each first answer. Wrong-answer explanation review appears after the entire challenge is complete.
-- Content approval is recorded as `Codex content-author self-review`, permitted by REQ-078. No independent educator review was performed for the 42 supplemental items or this challenge mapping.
+- 现有题目审校台账已把二年级上册数学单元 1～4 的 48 道题分别标记为已检查答案正确性、表达清晰度、年龄适配、教材主题和难度：[二年级题目审校台账](../curriculum/grade-2-question-review.tsv)。
+- 新增的 42 道单元 2 补充题仅用于闯关系统。测试会计算每道 `+`/`-` 算式的答案，并检查题目与提示中没有直接暴露结果。
+- 全部 226 道候选题都使用生产答案检查器与清单中声明的正确答案运行校验。这能验证清单答案与运行时评分器兼容；对于复用题目，不代表独立证明其答案在语义上正确。
+- 闯关过程隐藏提示和讲解并锁定首答；完成整场挑战后才展示错题讲解。
+- 根据 REQ-078，内容审核记录为“Codex 内容作者自审”。42 道补充题及映射均未经过独立教育工作者审查。
 
-## Readiness and limits
+## 就绪状态与审计限制
 
-Both pilot groups pass the current manifest and assembly gates in local tests. This means the pools meet the implemented structural, compatibility, fingerprint, candidate-count and tagged-coverage checks. It is not a release sign-off for all content quality, a substitute for any necessary teaching review, or evidence that the whole Starry Island challenge system is ready.
+本地测试中的两个试点组均通过当前题库清单和组卷门禁。这表示题池通过已实现的结构、兼容性、指纹、候选数量和标签覆盖检查；这不是对全部内容质量的发布签字，不替代必要的教学审核，也不证明整个闯关系统已就绪。
 
-The following remain outside this audit: second-half and end-term tasks, other grades or subjects, full-course coverage, cross-browser and cross-tab failure review, storage quota/eviction behavior, migrations, backup/restore, and GitHub CI/deployment evidence.
+本次审计未覆盖：后半学期和期末综合任务、其他年级或学科、全课程覆盖、跨浏览器及跨标签页故障审查、存储配额/驱逐、通用数据迁移、备份/恢复及 GitHub 持续集成/部署证据。

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import type { AppRoute } from '../../app/router';
-import type { TaskProgress } from '../domain/types';
+import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import type { ChallengeRepository } from '../storage/repository';
 import { createChallengeRepository } from '../storage/indexedDbRepository';
 import { loadPilotChallengeContent } from '../content/pilotContent';
@@ -9,10 +9,16 @@ import type { LoadedPilotContent } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
 import ChallengeGroup from './ChallengeGroup';
 import ChallengeRunner from './ChallengeRunner';
+import ChallengeWrongQuestions from './ChallengeWrongQuestions';
 import { getChallengeTaskTitle } from './challengeLabels';
 import './challenge.css';
 
-type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeGroup' | 'challengeTask' }>;
+type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
+
+type WrongQuestionState =
+  | { status: 'loading' }
+  | { status: 'ready'; records: WrongQuestionRecord[] }
+  | { status: 'error' };
 
 interface ChallengePageProps {
   route: ChallengeRoute;
@@ -27,9 +33,16 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const [contentError, setContentError] = useState<string | null>(null);
   const [progressByTaskId, setProgressByTaskId] = useState<Record<string, TaskProgress>>({});
   const [progressAvailable, setProgressAvailable] = useState(true);
+  const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
 
   useEffect(() => {
     let cancelled = false;
+    if (route.kind === 'challengeWrongQuestions') {
+      setContent(null);
+      setContentError(null);
+      setLoading(false);
+      return () => { cancelled = true; };
+    }
     setLoading(true);
     setContentError(null);
     loadPilotChallengeContent().then(async (loadedContent) => {
@@ -42,7 +55,19 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
       setLoading(false);
     });
     return () => { cancelled = true; };
-  }, [repository]);
+  }, [repository, route.kind]);
+
+  useEffect(() => {
+    if (route.kind !== 'challengeWrongQuestions') return;
+    let cancelled = false;
+    setWrongQuestionState({ status: 'loading' });
+    repository.getWrongQuestions().then((records) => {
+      if (!cancelled) setWrongQuestionState({ status: 'ready', records });
+    }).catch(() => {
+      if (!cancelled) setWrongQuestionState({ status: 'error' });
+    });
+    return () => { cancelled = true; };
+  }, [repository, route.kind]);
 
   useEffect(() => {
     if (!content) return;
@@ -70,6 +95,27 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   useEffect(() => () => {
     if (!providedRepository) repository.close();
   }, [providedRepository, repository]);
+
+  if (route.kind === 'challengeWrongQuestions') {
+    if (wrongQuestionState.status === 'loading') {
+      return <main className="challenge-page" aria-live="polite" aria-busy="true"><div className="challenge-shell"><h1>正在打开错题本…</h1></div></main>;
+    }
+    if (wrongQuestionState.status === 'error') {
+      return (
+        <main className="challenge-page">
+          <div className="challenge-shell">
+            <Card className="challenge-message-card" color="default">
+              <p className="eyebrow">本机数据暂时没有读出</p>
+              <h1>错题本暂时无法打开</h1>
+              <p>现有闯关记录没有被更改。可以返回闯关中心后再试一次。</p>
+              <Button type="primary" onClick={() => onNavigate('/challenges')}>返回闯关中心</Button>
+            </Card>
+          </div>
+        </main>
+      );
+    }
+    return <ChallengeWrongQuestions records={wrongQuestionState.records} onNavigate={onNavigate} />;
+  }
 
   if (loading) {
     return <main className="challenge-page" aria-live="polite" aria-busy="true"><div className="challenge-shell"><h1>正在准备闯关航线…</h1></div></main>;

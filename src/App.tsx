@@ -150,7 +150,7 @@ export default function App() {
     page = <CourseCatalog progress={progress} onNavigate={navigate} onApplyLearningStart={handleLearningStart} />;
   } else if (route.kind === 'achievements') {
     page = <AchievementPage progress={progress} onNavigate={navigate} />;
-  } else if (route.kind === 'challengeCenter' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
+  } else if (route.kind === 'challengeCenter' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
     page = <div data-sound-silent="true"><ChallengePage route={route} onNavigate={navigate} /></div>;
   } else if (route.kind === 'unit') {
     page = <UnitOverview unitKey={route.unitKey} unit={route.unit} completedSessionIds={effectiveCompletedSessionIds} onNavigate={navigate} />;

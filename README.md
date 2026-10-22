@@ -81,7 +81,7 @@ npm run build
 git diff --check
 ```
 
-Vitest 覆盖率门槛为 statements、branches、functions 和 lines 各不低于 60%；核心路由、课程校验、判题、学习进度、成就、主题和声音状态模块分别要求四项 100%。Playwright 使用专用端口 `127.0.0.1:4174`。GitHub Actions 会在提交和 PR 中运行构建、单元测试、覆盖率与 E2E。
+Vitest 的语句、分支、函数和行覆盖率均须达到 60%；核心路由、课程校验、判题、学习进度、成就、主题和声音状态模块分别要求四项达到 100%。Playwright 使用专用端口 `127.0.0.1:4174`。GitHub Actions 会在提交和拉取请求（PR）中运行构建、单元测试、覆盖率与端到端（E2E）测试。
 
 ## 部署到 Cloudflare Pages
 
@@ -99,9 +99,9 @@ Vitest 覆盖率门槛为 statements、branches、functions 和 lines 各不低�
 
 当前仓库交付只验证本地构建和本地预览；这不代表已连接 Cloudflare 项目或完成线上部署。
 
-## 闯关系统方案与本地 MVP
+## 闯关系统方案与本地最小可用版本
 
-闯关系统需求已冻结至 REQ-001～REQ-085；一个数学单元组与按教材章节顺序等分得到的前半学期组已在本地分支 `codex/challenge-system-mvp` 提交（`566b189`），尚未推送或发布。当前未提交跟进还包括跨标签页修订冲突保护和 Web Locks 接管。该试点不代表完整课程或 540 个学期任务已交付；详见[闯关系统文档](docs/challenges/README.md)。所有后续开发仍须保持现有学习 Task、进度与交互兼容。
+闯关系统需求已冻结至 REQ-001～REQ-085；一个数学单元组与按教材章节顺序等分得到的前半学期组已在本地分支 `codex/challenge-system-mvp` 提交（`566b189`），尚未推送或发布。跨标签页修订冲突保护和 Web Locks 接管已提交为 `b68c582`；错题本（REQ-024/025）与结果页的薄弱知识点及学习任务关联（REQ-022/023）已在当前工作区实现，尚未提交。该试点不代表完整课程或 540 个学期任务已交付；详见[闯关系统文档](docs/challenges/README.md)。所有后续开发仍须保持现有学习任务、进度与交互兼容。
 
 ## 品牌素材、隐私与许可
 

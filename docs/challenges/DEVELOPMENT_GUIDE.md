@@ -1,30 +1,30 @@
 # 闯关系统开发协作指南
 
-本文是闯关系统的协作指南，不是仓库根目录的 `AGENTS.md`，也不会覆盖根目录规则。仓库规范优先；本文只补充闯关功能的约束。
+本文是闯关子系统的协作指南，不会覆盖仓库根目录 `AGENTS.md`。仓库规则和用户当前明确要求优先；本文只补充闯关功能的约束。
 
-## Mission
+## 目标
 
-Implement the challenge subsystem without altering existing learning Task semantics or deleting learner progress.
+在不改变现有学习任务语义、不删除学习进度的前提下，实现独立的闯关子系统。
 
-## Working rules
+## 开发规则
 
-1. Read the repository [`README.md`](../../README.md), this directory's [方案入口](README.md), [PRD](PRD.md), [决策冲突](DECISION_CONFLICTS.md), [仓库基线](REPOSITORY_BASELINE.md), and [需求追踪矩阵](REQUIREMENTS_TRACEABILITY.md) before challenge changes.
-2. Inspect current repository before assuming paths, data shapes, PR merge state or dependencies.
-3. Follow TDD: red → green → refactor; tests accompany every behavior change.
-4. Preserve local-first and static deployment; do not add backend services without explicit approval.
-5. Use deterministic seeds for paper generation and tests. Never bypass knowledge coverage or release gates.
-6. Keep incomplete attempt snapshots consistent across upgrades; never overwrite progress on migration failure.
-7. Do not weaken Q78–Q84 user decisions by reintroducing rejected independent approval, automatic approval invalidation, emergency control services or in-app notifications.
-8. Avoid collecting sensitive student information. Diagnostic exports use allowlists.
-9. Update requirements matrix and release notes for any behavior-affecting change.
-10. No claim of feature completion without passing tests and a checked acceptance criterion. The planning documents themselves do not mean a feature is implemented.
+1. 修改闯关功能前，阅读仓库 [`README.md`](../../README.md)、本文档、[方案入口](README.md)、[产品需求文档](PRD.md)、[决策冲突与待验证事项](DECISION_CONFLICTS.md)、[仓库基线](REPOSITORY_BASELINE.md)及[需求追踪矩阵](REQUIREMENTS_TRACEABILITY.md)。
+2. 先检查当前仓库，不要臆测路径、数据形状、拉取请求合并状态或依赖情况。
+3. 遵循 TDD：先写失败测试，再实现最小行为，最后整理代码；每项行为变更都要有适当的测试。
+4. 保持本地优先和静态部署；未经明确批准，不添加后端服务。
+5. 组卷和测试使用确定性种子。不得绕过知识覆盖检查或发布质量门禁。
+6. 数据库升级时保留未完成的闯关快照与已有数据；迁移失败不得覆盖原数据或学习进度。
+7. 不得弱化 Q78～Q84 已确认决定：不得重新要求独立审核、因内容编辑自动撤销审核、增加紧急远程控制服务或应用内通知。
+8. 避免收集学生敏感信息。诊断导出必须遵循字段白名单。
+9. 任何影响行为的修改都要更新需求追踪矩阵和发布记录。
+10. 不得只凭方案文档声称功能完成；必须通过测试并核对验收条件。
 
-## Pull request checklist
+## 拉取请求检查清单
 
-- [ ] Linked REQ IDs and acceptance conditions
-- [ ] Failing test observed before implementation
-- [ ] Unit/integration/E2E coverage appropriate to change
-- [ ] Existing learning regression checked
-- [ ] Content/coverage/readiness reports checked
-- [ ] Schema migration and rollback risks documented
-- [ ] No unapproved server dependencies or personal-data collection
+- [ ] 标注关联的 REQ 和验收条件
+- [ ] 先观察到新增测试按预期失败，再实现功能
+- [ ] 单元、集成和端到端测试覆盖与改动相称
+- [ ] 检查现有学习功能回归
+- [ ] 核对题目内容、覆盖率和可发布状态报告
+- [ ] 说明数据库迁移及回滚风险
+- [ ] 未引入未经批准的服务端依赖或个人信息收集

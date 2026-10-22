@@ -1,38 +1,38 @@
-# Decision Overrides, Open Risks and Review Findings
+# 决策覆盖、开放风险与审查发现
 
-## Explicit supersessions
+## 已明确的决策覆盖
 
-1. **REQ-037 vs REQ-080**: Earlier rule invalidated approval whenever normalized content fingerprint changed. Latest choice **REQ-080 A** retains approval. Implement latest choice; retain fingerprints and changed-content audit trails. Do not label an old approval as a fresh review.
-2. **REQ-078/079 vs stronger review recommendations**: Authors may self-approve and record only reviewer, time, approved; do not impose independent reviewers or structured human evidence as hidden requirements. REQ-077 still requires risk classification and necessary human checks, without proof artifacts mandated by REQ-079.
-3. **REQ-081**: No automatic publication suspension merely due to content changes. Existing hard quality gates and explicit serious-defect disablement remain.
-4. **REQ-082–084**: Normal static repair/release; GitHub-only notes; no personalized or generic in-app content update notification.
-5. **REQ-068 A**: Automatic replacement of prior recovery point, not conflict-choice UX. Safeguard replacement transaction and deletion confirmation.
-6. **REQ-064 A**: No new dedicated child privacy compliance system; avoid asserting that local-first alone ensures regulatory compliance.
+1. **REQ-037 与 REQ-080**：早期规则要求规范化内容指纹变化时撤销审核。最新决策 **REQ-080 A** 保留审核状态。实现须保留指纹和变更审计信息，但不得把旧审核标记成针对新内容的审核。
+2. **REQ-078/079 与更严格的审核建议**：作者可以自审，审核记录只保留审核人、时间和通过状态；不得暗中强制独立审核者或新增结构化人工证据。REQ-077 仍要求按风险等级执行必要人工检查，但 REQ-079 未要求留存证明材料。
+3. **REQ-081**：内容变化本身不会自动暂停发布。现有强制质量门禁和对明确严重缺陷的手动禁用规则仍然适用。
+4. **REQ-082～084**：通过常规静态发布修复严重问题；发布说明只在 GitHub 公布；不增加个性化或应用内内容更新通知。
+5. **REQ-068 A**：新恢复点成功创建后自动替换旧恢复点，不增加让用户选择冲突版本的交互；替换和删除需受事务保护并经确认。
+6. **REQ-064 A**：不新建专门的儿童隐私合规系统；避免据此声称本地优先已经保证合规。
 
-## Design ambiguities to validate, not quietly decide
+## 需要验证的设计歧义
 
-- **Content review vs approval retention**: If a high-risk edit retains `approved`, REQ-077 still calls for manual checks. Decide whether existing CI can verify the check without structured evidence; if not, mark this as a governance limitation rather than claiming enforcement.
-- **REQ-074 compensation vs REQ-008 minimal history**: Accurate rescoring often impossible without saved answer evidence. Support only provable compensation, otherwise preserve achievement.
-- **REQ-068 atomic replacement vs browser storage**: `localStorage` cannot atomically update multiple keys; choose IndexedDB transaction or journaled generation commits and test crashes.
-- **Question bank scale**: 540 semester tasks plus unit tasks, with ≥2× effective pool and coverage constraints. Existing 14,944 questions are historical context, not proof that v1.0 is ready. Audit duplicates, format, difficulty, approval and reuse first.
-- **Local checkout drift**: At the Phase 0 audit, local `main` was at `fdb9887` while remote `main` was at `4e125db` (v0.3.0 release). The remote-only commit changed package version and release notes, not application source. The MVP was later committed locally on `codex/challenge-system-mvp` as `566b189`; it has not been pushed. A follow-up reliability patch remains uncommitted. Recheck branch/remote state before opening a PR.
-- **Chunk warning vs initial load**: A separate eager manifest chunk can clear the 500 kB per-chunk warning without reducing the total initial JavaScript payload. If initial load is the goal, agree on the broader asynchronous manifest redesign first.
-- **24h recovery**: A browser may evict local data; not a guaranteed backup.
-- **Automatic snapshot replacement**: New snapshot cannot be claimed safe if insufficient quota prevents retaining old until commit; deletion must fail safely.
+- **内容审核与保留原审核状态**：高风险编辑保留 `approved` 时，REQ-077 仍要求人工检查。需要确认现有持续集成能否验证必要检查；若不能，应记录为治理限制，不得声称已自动执行。
+- **REQ-074 补偿与 REQ-008 最小历史**：没有保存作答证据时通常无法准确重评分。只在证据可靠时补偿，否则保留原成就。
+- **REQ-068 原子替换与浏览器存储**：`localStorage` 不能原子更新多个键；应考虑 IndexedDB 事务或带日志的版本提交，并测试崩溃情况。
+- **题库规模**：540 个学期任务及全部单元任务都需要至少两倍的有效题池和覆盖约束。现有 14,944 道题只是历史总量，不能证明 V1.0 已就绪；需先审计重复、题型、难度、审核和复用情况。
+- **本地分支与远端状态**：阶段 0 审计时，本地 `main` 为 `fdb9887`，远端 `main` 为 `4e125db`（v0.3.0）；远端多一个只修改包版本和发布说明的提交。此后最小可用版本已提交在 `codex/challenge-system-mvp` 的 `566b189`，并有可靠性提交 `b68c582`，均尚未推送。创建拉取请求前重新核对分支与远端。
+- **分块提示与首屏加载**：将课程清单拆成独立 JavaScript 分块可以消除单块超过 500 kB 的提示，却不一定减少首屏 JavaScript。若目标是降低首屏传输量，应先评审更广泛的异步清单改造。
+- **24 小时恢复点**：浏览器可能驱逐本地数据；快照不是永久备份保证。
+- **自动替换快照**：若存储配额不足以在提交新快照前保留旧快照，就不能宣称替换安全；删除必须安全失败。
 
-## Confirmed during Phase 0 and MVP
+## 阶段 0 与最小可用版本核实结论
 
-- The challenge data model is separate from `china-study-progress-v1`; content fingerprints use normalized JSON and SHA-256; REQ-080 approval retention is covered by manifest tests.
-- The user confirmed splitting Grade 2 Term 1 Math's nine formal units by chapter order: first-half 01–04 and second-half 05–09. This is a planning split, not verified school pacing; only first-half is implemented in the pilot.
-- The 607.74 kB per-chunk warning is resolved by emitting the curriculum manifest as a separate initial chunk. The largest emitted JS chunk is 316.56 kB (26.83 kB gzip); the 189.41 kB ChallengePage chunk (31.07 kB gzip) is lazy. The sum of the entry and manifest gzip sizes remains about 113.73 kB, so the change does not materially reduce initial transfer.
-- Local TypeScript/build, Vitest coverage, and Playwright results do not establish remote CI, deployment, or release evidence. The MVP commit and current follow-up have only local verification; neither has been pushed.
+- 闯关数据模型与 `china-study-progress-v1` 分离；内容指纹使用规范化 JSON 和 SHA-256；题库清单测试覆盖 REQ-080 的审核状态保留规则。
+- 用户确认二年级上册数学九个正式单元按章节顺序尽可能等分：前半学期为 01～04，后半学期为 05～09。这是项目规划划分，不是经核实的学校授课日历；当前试点只实现前半学期。
+- 607.74 kB 单块提示通过将课程清单拆成独立初始 JavaScript 分块解决。最大 JavaScript 分块为 316.56 kB（gzip 压缩后 26.83 kB）；按需加载的闯关页面（`ChallengePage`）为 189.41 kB（gzip 压缩后 31.07 kB）。入口与课程清单经 gzip 压缩后合计约 113.73 kB，初始传输量没有实质下降。
+- 本地 TypeScript、构建、Vitest 与 Playwright 检查结果不代表远端持续集成、部署或正式发布证据。最小可用功能切片与可靠性提交都只在本地分支，尚未推送。
 
-## Remaining checks before broader release
+## 扩大发布前仍需检查
 
-- **Content review and approval retention**: if a high-risk edit retains `approved`, REQ-077 still calls for manual checks. Determine whether existing CI can verify required checks without structured evidence; otherwise document the governance limitation.
-- **REQ-074 compensation vs REQ-008 minimal history**: accurate rescoring is often impossible without saved answer evidence. Support only provable compensation, otherwise preserve achievement.
-- **REQ-068 atomic replacement vs browser storage**: `localStorage` cannot atomically update multiple keys; use IndexedDB transactions or journaled generation commits and test crashes.
-- **Question bank scale**: 540 semester tasks plus unit tasks, with ≥2× effective pool and coverage constraints. Existing 14,944 questions are historical context, not proof that v1.0 is ready. Audit duplicates, format, difficulty, approval and reuse first.
-- **24h recovery**: a browser may evict local data; it is not a guaranteed backup.
-- **Automatic snapshot replacement**: a new snapshot cannot be claimed safe if insufficient quota prevents retaining the old one until commit; deletion must fail safely.
-- **Initial-load performance**: the chunk-warning fix did not materially reduce initial JS transfer. If that is the goal, agree on a broader asynchronous manifest redesign and set a total-transfer budget from measured browser data.
+- **内容审核与审核状态保留**：高风险编辑后仍保留 `approved` 时，REQ-077 要求的人工检查如何执行；若持续集成无法验证，应记录限制。
+- **REQ-074 补偿与 REQ-008 最小历史**：缺少作答证据时无法可靠重评分；只对有证据的情况补偿，否则保留成就。
+- **REQ-068 原子替换与浏览器存储**：应使用 IndexedDB 事务或带日志的版本提交并测试崩溃情况。
+- **题库规模**：先审计所有年级的有效候选题量、覆盖、重复、题型和审核证据，再估算补题。
+- **恢复快照**：浏览器可能驱逐本地数据，不应把 24 小时快照描述成永久备份。
+- **快照替换**：新快照未成功创建前，不能删除旧快照；存储失败时安全终止删除。
+- **首屏性能**：已修复单块告警，但没有明显降低首屏 JavaScript 传输。如果要继续优化，需要单独设计课程索引/进度元数据异步加载方案，并先测量基线。

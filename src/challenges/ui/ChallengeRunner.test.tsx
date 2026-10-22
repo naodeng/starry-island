@@ -71,7 +71,7 @@ function makeLoadedGroup(targetCount: number): { loadedGroup: LoadedPilotGroup; 
     releaseIntent: 'released',
   };
   return {
-    loadedGroup: { group, status: 'ready', issues: [], candidates: Array.from({ length: Math.max(2, targetCount * 2) }, (_, index) => makeQuestion(`question-${index + 1}`)) },
+    loadedGroup: { group, status: 'ready', issues: [], learningTasks: [], candidates: Array.from({ length: Math.max(2, targetCount * 2) }, (_, index) => makeQuestion(`question-${index + 1}`)) },
     task,
   };
 }

@@ -1,88 +1,110 @@
-# TDD and Quality Gates
+# 测试驱动开发（TDD）与质量门禁
 
-Status: this document contains both verified local MVP evidence and future release gates. No statement here implies GitHub Actions or deployment has run for this working tree.
+状态：本文同时记录本地已核实的最小可用版本证据与未来发布门禁。这里的本地检查结果不代表 GitHub Actions 或部署已经运行。
 
-## Local MVP verification — 2026-10-21
+## 基础引擎本地验证记录（2026-10-21）
 
-- `npm run test:unit`: 124 test files, 856 tests passed for the committed MVP baseline. After the cross-tab reliability follow-up, `npm run test:coverage` ran 124 files and 859 tests passed.
-- Post-follow-up coverage: 92.54% statements, 86.93% branches, 92.51% functions and 94.23% lines. The existing `src/app/router.ts` 100% statement/line gate passed.
-- `npm run test:e2e`: 21 Chromium tests passed with two workers, including both pilot groups, first-answer recovery, unit-task completion/review, summary-only refresh, keyboard focus, reduced motion, narrow-screen behavior, and the existing course/learning/settings regression suite. A five-worker run previously had one course reload exceed its 5-second locator wait; that scenario passed in isolation and in the two-worker full suite, so the default Playwright worker count is now capped at two to reduce browser contention.
-- `npm run build`: TypeScript and Vite production build passed without the 500 kB chunk warning. Largest JavaScript chunk: `curriculum-manifest` 316.56 kB (26.83 kB gzip); app entry: 292.36 kB (86.90 kB gzip); lazy `ChallengePage`: 189.41 kB (31.07 kB gzip). Entry plus the initial manifest chunk total about 113.73 kB gzip, essentially unchanged from the audited baseline; the fix addresses the warning and keeps challenge UI lazy, not total initial transfer size.
-- Chromium screenshot review covered desktop light/dark, mobile light/dark, the chapter-ordered semester group, and a mobile challenge question. Browser assertions covered keyboard focus and reduced motion. Screenshots and test results are local evidence only.
-- `git diff --check` is run at final review. None of these local checks imply remote CI, deployment or release approval.
+- `npm run test:unit`：已提交的基础功能基线为 124 个测试文件、856 项通过。跨标签页可靠性跟进后，`npm run test:coverage` 为 124 个文件、859 项通过。
+- 跟进后的覆盖率：语句 92.54%、分支 86.93%、函数 92.51%、行 94.23%；现有 `src/app/router.ts` 语句和行覆盖率门槛为 100%，当时通过。
+- `npm run test:e2e`：21 项 Chromium 测试在两个并行工作进程下通过，覆盖两个试点组、首答恢复、单元任务完成/回顾、刷新后仅保留摘要、键盘焦点、减少动态效果、窄屏，以及现有课程/学习/设置回归。此前使用五个并行工作进程执行时有一条课程刷新超过 5 秒定位等待；该用例单独运行和两个并行工作进程全量运行均通过，因此 Playwright 默认并行工作进程数限制为 2，以降低浏览器争用。
+- `npm run build`：TypeScript 和 Vite 生产构建通过，没有 500 kB 单块提示。最大 JavaScript 分块 `curriculum-manifest` 为 316.56 kB（gzip 压缩后 26.83 kB）；应用入口为 292.36 kB（gzip 压缩后 86.90 kB）；按需加载的页面 `ChallengePage` 为 189.41 kB（gzip 压缩后 31.07 kB）。入口与初始课程清单经 gzip 压缩后合计约 113.73 kB，与审计基线相近；该修复解决单块提示并保持闯关界面按需加载，不代表初始传输量已经降低。
+- Chromium 截图检查覆盖桌面/窄屏、浅色/深色、按章节划分的学期组和移动端挑战题。浏览器断言覆盖键盘焦点与减少动态效果。截图和测试结果均是本地证据。
+- 最终检查会运行 `git diff --check`。以上任何本地检查均不代表远端持续集成、部署或发布批准。
 
-## Cross-tab conflict safety follow-up — 2026-10-21
+## 跨标签页冲突保护跟进（2026-10-21）
 
-- A regression test first reproduced a stale page accepting another tab's answer when both snapshots had the same revision. The runner now compares the entire persisted attempt before treating an uncertain write as committed.
-- `npm run test:coverage`: 124 files, 859 tests passed; 92.54% statements, 86.93% branches, 92.51% functions and 94.23% lines.
-- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`: 2 browser tests passed after the snapshot change. The full 21-test browser suite passed on the committed MVP immediately before this follow-up.
-- `npm run build`: passed without a 500 kB JavaScript chunk warning; the largest JS chunk remains 316.56 kB. Chromium requires local execution with macOS Mach bootstrap access; its first sandboxed launch was denied before tests started.
+- 回归测试先复现了旧页面在两个标签页具有相同修订号时接受另一页答案的问题。闯关页现会比较完整的已保存快照，之后才判断不确定写入是否属于本页提交。
+- `npm run test:coverage`：124 个文件、859 项通过；语句 92.54%、分支 86.93%、函数 92.51%、行 94.23%。
+- 快照修复后，定向 `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1` 有 2 项浏览器测试通过。此前刚提交的基础引擎完整 21 项浏览器测试通过。
+- `npm run build`：通过，无 500 kB JavaScript 单块提示；当时最大 JavaScript 分块为 316.56 kB。Chromium 首次启动需要 macOS Mach 引导权限；首次沙箱启动在测试开始前被拒绝。
 
-## Web Locks writer lease follow-up — 2026-10-21
+## Web Locks 写入租约跟进（2026-10-21）
 
-- The runner now queues start/resume behind an exclusive task-scoped Web Lock, re-reads IndexedDB after acquisition, and releases the lease after completion, discard or page teardown. Unsupported browsers use the existing revision checks.
-- `src/challenges/storage/writerLock.test.ts` covers unsupported browsers, queued acquisition/release and aborting a queued request.
-- `npm run test:coverage`: 125 files and 864 tests passed; 92.19% statements, 86.79% branches, 92.58% functions and 93.85% lines. The final run includes explicit lease-release assertions for completion and confirmed discard.
-- `npm run test:unit -- src/challenges/ui/ChallengeRunner.test.tsx src/challenges/storage/writerLock.test.ts`: 11/11 passed.
-- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`: 3/3 passed on the final code, including waiting behind an active page and resuming the same question after that page closes.
-- `npm run test:e2e -- --workers=1`: 22/22 passed after the Web Locks integration and before the final two lease-cleanup edge-case fixes; the focused challenge browser suite and all unit tests were rerun after those fixes.
-- `npm run build`: passed after the final source changes without a 500 kB JavaScript chunk warning; the largest JavaScript chunk remains 316.56 kB.
-- This is local evidence only. Explicit browser-process crash recovery, backup, migration, quota and storage corruption behavior remain unimplemented.
+- 闯关页现会在任务级独占 Web Lock 后开始或恢复挑战，获取锁后重新读取 IndexedDB；挑战完成、确认丢弃或页面关闭后释放租约。不支持 Web Locks 的浏览器继续使用修订号校验。
+- `src/challenges/storage/writerLock.test.ts` 覆盖不支持 Web Locks、排队获取/释放和取消排队请求。
+- `npm run test:coverage`：125 个文件、864 项通过；语句 92.19%、分支 86.79%、函数 92.58%、行 93.85%。最终运行还覆盖完成和确认丢弃时明确释放租约。
+- `npm run test:unit -- src/challenges/ui/ChallengeRunner.test.tsx src/challenges/storage/writerLock.test.ts`：11/11 通过。
+- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`：最终代码上 3/3 通过，覆盖页面等待当前租约并在原页面关闭后恢复同一道题。
+- `npm run test:e2e -- --workers=1`：Web Locks 集成后、最后两项租约清理边界修复前，22/22 通过。最后两项修复后重新运行了定向浏览器套件和所有单元测试。
+- `npm run build`：最终源代码变更后构建通过，无 500 kB JavaScript 单块提示；最大 JavaScript 分块为 316.56 kB。
+- 以上为本地证据。浏览器进程崩溃、备份、通用迁移、存储配额及损坏数据仍未实现或专项验证。
 
-## Implemented MVP verification coverage
+## 错题本工作区验证（2026-10-21）
 
-- Pure unit tests cover score/pass/star boundaries, first-answer locking, seeded assembly, group progress, manifest readiness, fingerprints, answer-key compatibility, and storage revision transitions.
-- Manifest integration tests load the real source units, compare each registered question's tags with its content-derived mapping, validate the 2× pools, and assemble every pilot task against the actual candidates.
-- Repository tests use `fake-indexeddb` to check persistence, revision conflicts across two connections to the same database, and atomic completion updates. Runner tests cover the same-revision/different-answer conflict and an ambiguous response after an exact successful write.
-- The challenge browser test checks a narrow viewport, dark theme, reduced motion, reload recovery and unchanged learning-progress storage.
-- Existing application and learning tests remain part of the same repository gates.
+- 领域测试覆盖首次答错建档、两次不同完成挑战连续答对后掌握、再答错清零、从未答错的题不建档，以及掌握后重复答对不增加计数。
+- IndexedDB 测试覆盖错题记录与完成事务原子提交、失败时回滚、丢弃挑战不写错题、数据库结构从版本 1 升级到版本 2 后保留现有记录。
+- `npm run test:unit`：127 个测试文件、872 项通过。
+- `npm run test:coverage`：127 个测试文件、872 项通过；语句 91.78%、分支 86.59%、函数 91.91%、行 93.44%。
+- `npm run test:e2e -- --workers=1`：23/23 通过，包含新增错题本入口，以及课程目录全量打开、既有学习流程、闯关保存恢复和 Web Locks 接管回归。
+- `npm run build`：通过；最大 JavaScript 分块为 316.56 kB，新增后的按需加载页面 `ChallengePage` 为 195.82 kB。构建没有 500 kB 单块提示。
+- `git diff --check`：通过。以上都是本地证据，不代表已提交、推送、运行远端持续集成或部署。
 
-## Known test gaps
+## 错题本与学习建议跟进（2026-10-22，本地工作区）
 
-- No explicit browser-process crash recovery, storage quota/eviction/corruption test, backup/import/migration test, or offline/update test exists for the challenge system.
-- No standalone manifest quality report or multi-seed statistical simulation is wired into CI.
-- Browser tests exercise focus navigation and reduced motion, but no independent accessibility audit or assistive-technology review has been performed.
-- Save-retry and confirmed discard are covered at component level; browser E2E does not inject IndexedDB write failures or exercise the browser confirmation dialog.
-- Automated scoring and structure checks do not replace semantic curriculum review. See [pilot-content-audit.md](pilot-content-audit.md).
+- 领域测试覆盖错题知识点统计、排序、原课程活动精确关联，以及闯关补充题到最聚焦学习任务的关联。
+- 结果页仅按本次错题快照计算学习建议；按钮打开现有学习任务，不改写课程进度。浏览器回归核对了课程进度存储前后相同。
+- 深色结果页原先使用的组件库卡片继承文字色不会跟随主题。浏览器用例先复现卡片文字色与主题不一致，再改用项目主题色卡片，并核对浅色、深色模式的实际文字色。
+- `npm run test:unit`：129 个测试文件、878 项通过。
+- `npm run test:coverage`：129 个测试文件、878 项通过；语句 91.84%、分支 86.53%、函数 92.05%、行 93.50%。
+- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`：4/4 通过，覆盖错题本入口、结果页学习任务入口、学习进度不变、浅色/深色主题、键盘焦点、减少动态效果及 Web Locks 接管。
+- `npm run test:e2e -- --workers=1`：23/23 通过；覆盖完整课程目录打开、现有学习流程、闯关中心与错题本、答题保存/恢复、跨标签页接管、主题设置和窄屏适配。
+- `npm run build`：通过；最大 JavaScript 分块为 316.56 kB，按需加载的页面 `ChallengePage` 为 198.55 kB；没有超过 500 kB 的单块提示。
+- `git diff --check`：通过。本节记录的是本地工作区检查，不代表已提交、推送、远端持续集成或部署通过。
 
-## TDD loop
+## 当前测试覆盖
 
-For each capability: write failing domain tests → implement minimum behavior → refactor → add integration/browser failure cases → update requirements matrix and documentation.
+- 纯函数测试覆盖分数/通过线/星级边界、首答锁定、确定性组卷、组进度、题库清单就绪度、内容指纹、答案键兼容性和存储修订状态。
+- 清单集成测试载入真实课程来源单元，对照逐题映射，校验两倍题池，并使用真实候选题为所有试点任务组卷。
+- 数据仓库测试使用 `fake-indexeddb` 验证数据持久化、两个数据库连接的修订冲突、完成事务原子性和版本升级。闯关流程测试覆盖相同修订号但答案不同的冲突，以及准确提交后的不确定响应。
+- 闯关浏览器流程覆盖窄屏、深色主题、减少动态效果、刷新恢复和学习进度存储未变化。
+- 现有应用与学习测试仍是同一仓库质量门禁的一部分。
 
-## Unit and property tests (Vitest)
+## 已知测试缺口
 
-- Passing thresholds use integer `ceil`; 1st answer only; star thresholds and badge monotonicity.
-- Seeded assembly determinism; pool effective count; dedup; hard coverage; format constraints; last-three-attempt preference not overriding coverage.
-- Wrong-book transitions across **separate completed attempts**, reset on wrong.
-- Release status from manifest and readiness gates; content lifecycle and reviewed-status rules.
-- Schema migrations, invalid data isolation, checksum validation, import conflict handling.
-- Deletion scope, 24h expiry, replacement of prior recovery point, single-use restore, crash-recovery protocol.
+- 闯关系统尚无浏览器进程崩溃恢复、存储配额/驱逐/损坏、备份/导入或离线/更新测试。
+- 持续集成（CI）尚未接入独立题库清单质量报告或多种子统计模拟。
+- 浏览器测试覆盖焦点操作和减少动态效果；尚未做独立无障碍审查或辅助技术实测。
+- 组件测试覆盖保存重试和确认丢弃；浏览器端到端测试尚未注入 IndexedDB 写入故障或操作浏览器确认对话框。
+- 自动评分和结构检查不能替代课程语义审校，详见[试点内容审计](pilot-content-audit.md)。
 
-## Integration and browser tests (Playwright)
+## 测试驱动开发（TDD）流程
 
-- Existing learning Task regressions across all supported question widgets.
-- Begin, autosave, refresh, resume same order and locked answers; discard and reroll; complete and rewards.
-- Storage quota/write failure, unsupported-Web-Locks stale-write conflicts, browser-process crash recovery, and browser reload.
-- Offline continuation of loaded paper; safe update handling.
-- Accessible focus order, keyboard/touch, reduced motion, speech restriction and sound defaults.
-- Child-friendly error recovery and diagnostic export allowlist.
+每项能力按“领域失败测试 → 最小实现 → 代码整理 → 集成/浏览器故障用例 → 更新需求矩阵和文档”推进。
 
-## Curriculum/content validation
+## 单元与属性测试（Vitest）
 
-- Unique IDs, referential integrity, normalized content fingerprints, approval manifest and lifecycle.
-- Effective eligible pool ≥2× count; required basic/advanced joint coverage; high integration; stage knowledge coverage.
-- Multi-seed assembly simulations with utilization, selection frequency, adjacent repeat, distribution and failure rate.
-- Hard constraints block releases; diversity metrics initially informational.
-- Content change impact analysis tests every referencing task; if unknown, broaden to full validation.
+- 通过线用整数向上取整；每题只接受首答；星级边界和徽章单调性。
+- 确定性组卷、有效题池数量、去重、强制覆盖、题型限制，以及最近三次偏好不得破坏覆盖。
+- 错题本跨**不同的已完成挑战**累计连续答对；答错后重置。
+- 题库清单的发布状态和就绪门禁、题目生命周期与审核规则。
+- 数据库结构迁移、无效数据隔离、校验和验证和导入冲突处理。
+- 删除范围、24 小时到期、替换旧恢复点、单次恢复和崩溃恢复协议。
 
-## CI tiers
+## 集成与浏览器测试（Playwright）
 
-The repository currently has one `Quality` GitHub Actions job: `npm ci`, `npm run test:unit`, `npm run test:coverage`, `npm run build` (including `tsc -b`), and `npm run test:e2e`. There is no standalone lint script at the audited commit. The tiers below are a proposed future split, not a description of current CI:
+- 所有受支持题型的现有学习任务回归。
+- 开始、自动保存、刷新恢复相同顺序与锁定答案；丢弃、重新组卷、完成和奖励。
+- 存储配额/写入失败、不支持 Web Locks 时的旧修订冲突、浏览器进程崩溃恢复和页面刷新。
+- 已载入试卷离线继续、安全处理更新。
+- 无障碍焦点顺序、键盘/触屏、减少动态效果、语音约束和声音默认值。
+- 儿童友好的错误恢复与诊断导出白名单。
 
-1. PR fast checks: types/build, unit tests, manifest schema, and impacted-task checks.
-2. PR expanded checks when impact cannot be resolved, plus critical browser regressions.
-3. Release gate: full curriculum validation, required simulation suites, Vitest/Playwright, learning regressions, human pedagogical checks, and readiness report.
+## 课程与内容校验
 
-For the existing chunk warning, record both the largest emitted JS chunk and total initial compressed JS before and after any change. A per-chunk result below 500 kB does not prove that initial transfer size decreased. Do not set a new total-size budget until the baseline and browser loading behavior have been measured.
+- 唯一 ID、引用完整性、规范化内容指纹、审核清单和生命周期。
+- 有效候选题池至少为目标数量两倍；基础/进阶联合覆盖、高阶综合和阶段知识覆盖。
+- 多种子组卷模拟，检查利用率、选中频次、相邻重复、分布及失败率。
+- 硬性约束失败时阻止发布；初期多样性指标只作提示。
+- 内容变更影响分析覆盖所有引用任务；影响范围不明确时扩大为全量校验。
 
-Never turn a hard failure into a warning to ship. Approval retention (REQ-080) does not exempt a changed question from mandatory structural/scoring/coverage checks.
+## 持续集成（CI）分层建议
+
+审计时仓库的 GitHub Actions 仅有一项名为 `Quality` 的工作流任务：`npm ci`、`npm run test:unit`、`npm run test:coverage`、包含 `tsc -b` 的 `npm run build`，以及 `npm run test:e2e`。当时没有单独的代码检查脚本。以下是未来分层建议，不代表当前持续集成（CI）的实际设置：
+
+1. 拉取请求（PR）快速检查：类型/构建、单元测试、题库清单结构和受影响任务检查。
+2. 无法确定影响范围时，拉取请求执行扩展校验和关键浏览器回归。
+3. 发布门禁：全课程校验、必需模拟套件、Vitest/Playwright、学习回归、人工教学审查和就绪度报告。
+
+处理已有分块提示时，同时记录最大 JavaScript 分块与首屏压缩后 JavaScript 总量的前后变化。单块低于 500 kB 不代表首屏传输量减少。测量基线和浏览器加载行为之前，不设置新的首屏总量预算。
+
+不得把硬性失败降级为警告来发布。根据 REQ-080 保留审核状态，不免除内容变化后的结构、评分和覆盖检查。

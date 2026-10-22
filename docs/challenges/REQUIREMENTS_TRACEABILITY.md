@@ -1,132 +1,136 @@
-# Requirements Traceability Matrix
+# 需求追踪矩阵
 
-Status: all entries record **confirmed product decisions**. REQ-085 freezes the baseline. The matrix below remains the decision index; implementation progress is tracked separately and only for the local MVP slice. See [REPOSITORY_BASELINE.md](REPOSITORY_BASELINE.md) for the checkout and [ROADMAP.md](ROADMAP.md) for the delivered boundary.
+状态：表内所有 REQ 均为**已确认的产品决定**。REQ-085 冻结该基线。下表首先作为产品决策索引；实现状态和证据只针对当前本地功能切片单独记录。仓库分支信息见[仓库现状基线](REPOSITORY_BASELINE.md)，交付范围见[迭代计划](ROADMAP.md)。
 
-## MVP slice evidence (local working tree, 2026-10-21)
+## 当前本地功能切片证据（本地工作区，2026-10-22）
 
-These statuses apply only to the Unit 2 and first-half semester pilot groups. They do not certify full-course coverage, remote CI, deployment or v1.0 readiness.
+下列状态只适用于单元 2 和前半学期两个试点组，不表示全课程覆盖、远端持续集成、部署或 V1.0 已就绪。
 
-| REQ | Status in this slice | Evidence |
+| REQ | 当前切片状态 | 证据 |
 |---|---|---|
-| REQ-001 | Implemented for route and progress isolation | `src/App.tsx`; `src/App.test.tsx`; `tests/e2e/challenge-flow.spec.ts` |
-| REQ-004 | Implemented at group/task level; a high paper covers multiple required points | `src/challenges/content/pilot-manifest.json`; `src/challenges/domain/assemble.test.ts`; `src/challenges/content/pilotContent.test.ts` |
-| REQ-005 | Implemented scoring thresholds and integer comparison | `src/challenges/domain/grading.ts`, `grading.test.ts` |
-| REQ-006 | Implemented first-answer lock; challenge runner does not expose hints/retry | `src/challenges/domain/attempt.test.ts`; `src/challenges/ui/ChallengeRunner.test.tsx` |
-| REQ-008 | Implemented best/latest/count/ever-passed summary; no full attempt history | `src/challenges/storage/indexedDbRepository.test.ts`; `docs/challenges/DATA_MODEL.md` |
-| REQ-009 | Partial: seeded assembly is implemented for the two pilot groups only | `src/challenges/domain/assemble.ts`; `src/challenges/content/pilotContent.test.ts` |
-| REQ-011 | Implemented for the declared pilot candidate pools | `src/challenges/content/pilot-manifest.json`; `src/challenges/content/pilotManifest.test.ts` |
-| REQ-012 | Implemented recent-three preference from completed pilot attempts | `src/challenges/storage/indexedDbRepository.test.ts`; `src/challenges/domain/assemble.test.ts` |
-| REQ-013 / 014 | Partial: supported existing widgets are reused; measurement is excluded from the pilot | `src/challenges/ui/ChallengeActivityRenderer.tsx`; manifest validation tests |
-| REQ-015 | Partial: candidate and assembled-paper coverage is checked for pilot knowledge points | `src/challenges/content/pilotManifest.test.ts`; `src/challenges/content/pilotContent.test.ts` |
-| REQ-016 / 017 | Partial: elapsed time, confirmed answer persistence and refresh recovery are implemented; wider offline/quota recovery remains open | `src/challenges/storage/`; `tests/e2e/challenge-flow.spec.ts` |
-| REQ-018 | Implemented discard confirmation without completion credit | `src/challenges/ui/ChallengeRunner.tsx`; repository tests |
-| REQ-019 / 020 / 021 | Implemented pilot stars and five-task badge derivation | `src/challenges/domain/progress.ts`, `progress.test.ts`; challenge UI tests |
-| REQ-027 | Implemented first-half mapping using the user-confirmed chapter-order split; not a school calendar | `src/challenges/content/pilot-manifest.json`; `pilotManifest.test.ts` |
-| REQ-028 | Partial: runtime manifest gate exists; no dedicated CI report command was added | `src/challenges/content/validateManifest.ts`; `TEST_STRATEGY.md` |
-| REQ-029 | Partial: center and Unit 2 contextual entry exist; other groups are not covered | catalog and router tests |
-| REQ-037 / REQ-080 | Implemented fingerprint change reporting while retaining approved state as REQ-080 requires | `src/challenges/content/fingerprint.ts`; `validateManifest.test.ts` |
-| REQ-055 / REQ-056 | Implemented reduced-motion styling and silent challenge wrapper | `src/challenges/ui/challenge.css`; `src/App.test.tsx` |
-| REQ-058 / REQ-059 | Partial: persisted revisions reject stale writes; Web Locks provides task-scoped single-writer coordination and wait/re-read takeover where supported; revision checks remain the fallback | `src/challenges/storage/writerLock.test.ts`; `src/challenges/storage/indexedDbRepository.test.ts`; `src/challenges/ui/ChallengeRunner.test.tsx`; `tests/e2e/challenge-flow.spec.ts` |
-| REQ-085 | Implemented as this frozen baseline and traceability package | `README.md`, this directory, and `docs/superpowers/plans/2026-10-21-challenge-system-mvp.md` |
+| REQ-001 | 路由和进度隔离已实现 | `src/App.tsx`；`src/App.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
+| REQ-004 | 任务组与任务层级已实现；高阶整份试卷覆盖多个必需知识点 | `src/challenges/content/pilot-manifest.json`；组卷测试 |
+| REQ-005 | 通过线和整数比较已实现 | `src/challenges/domain/grading.ts`、`grading.test.ts` |
+| REQ-006 | 首答锁定已实现；闯关页不显示提示或重试 | `src/challenges/domain/attempt.test.ts`；`ChallengeRunner.test.tsx` |
+| REQ-008 | 最佳/最近/次数/曾通过摘要已实现；不保留完整作答历史 | `src/challenges/storage/indexedDbRepository.test.ts`；[数据模型](DATA_MODEL.md) |
+| REQ-009 | 部分实现：确定性组卷仅覆盖两个试点组 | `src/challenges/domain/assemble.ts`；试点内容测试 |
+| REQ-011 | 已登记试点候选池满足题量要求 | 题库清单；试点清单测试 |
+| REQ-012 | 最近三次已完成试点挑战的题目优先避让已实现 | 数据仓库与组卷测试 |
+| REQ-013 / 014 | 部分实现：复用已支持控件；测量题不纳入试点 | `ChallengeActivityRenderer.tsx`；清单校验测试 |
+| REQ-015 | 部分实现：检查试点候选池和组装后试卷的知识点覆盖 | 题库清单与试点内容测试 |
+| REQ-016 / 017 | 部分实现：记录用时、确认后保存答案、刷新后恢复；更广泛离线与配额恢复待做 | `src/challenges/storage/`；浏览器流程测试 |
+| REQ-018 | 丢弃确认已实现，丢弃不增加完成进度 | `ChallengeRunner.tsx`；数据仓库测试 |
+| REQ-019 / 020 / 021 | 试点星级和五任务徽章推导已实现 | `progress.ts`、`progress.test.ts`；闯关界面测试 |
+| REQ-022 / 023 | 结果页按知识点汇总答错题，并提供到现有学习任务 的复习入口；导航不改动课程进度 | `studyRecommendations.ts`、`studyRecommendations.test.ts`；`pilotContent.test.ts`；`ChallengeResult.test.tsx` |
+| REQ-024 / 025 | 当前试点的错题本和跨完成挑战掌握规则已在工作区实现；全量单测、覆盖率、端到端测试和构建通过；尚未提交或推送 | `wrongQuestions.ts`、`wrongQuestions.test.ts`；`indexedDbRepository.test.ts`；`ChallengeWrongQuestions.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
+| REQ-027 | 根据用户确认的章节顺序划分前半学期；不是学校日历 | 试点题库清单；清单测试 |
+| REQ-028 | 部分实现：运行时有题库清单门禁；尚无专用持续集成报告命令 | `validateManifest.ts`；[测试方案](TEST_STRATEGY.md) |
+| REQ-029 | 部分实现：有闯关中心和单元 2 上下文入口；未覆盖其他组 | 课程目录和路由测试 |
+| REQ-037 / REQ-080 | 指纹变化会生成提示，同时按 REQ-080 保留审核状态 | `fingerprint.ts`；题库清单校验测试 |
+| REQ-055 / 056 | 减少动态效果样式和闯关静音容器已实现 | `challenge.css`；`App.test.tsx` |
+| REQ-058 / 059 | 部分实现：修订号拒绝过期写入；支持时 Web Locks 提供任务级单写者和等待后重新读取/接管，否则以修订号校验兜底 | 写入锁、数据仓库、答题页和浏览器测试 |
+| REQ-085 | 决策基线和工程文档已建立 | 根 README、本目录及基础引擎实施计划 |
 
-An REQ absent from this slice table is not thereby implemented. Reconcile all 85 decisions against release evidence before marking any later phase complete.
+未出现在本切片状态表中的 REQ 不代表已经实现。标记后续阶段完成前，必须依据发布证据逐一核对全部 85 项决定。
 
-| ID | Confirmed decision | Primary artifact / verification |
+## 85 项已确认决定索引
+
+| ID | 已确认决定 | 主要文档或验证 |
 |---|---|---|
-| REQ-001 | Preserve learning Tasks; separate challenge mode | PRD / acceptance tests |
-| REQ-002 | Numbered unit challenges; review content in semester | PRD / acceptance tests |
-| REQ-003 | Three semester stages × five tasks | PRD / acceptance tests |
-| REQ-004 | Two basic/two advanced cover core; high integrates | PRD / acceptance tests |
-| REQ-005 | Pass thresholds 70/80/85 | PRD / acceptance tests |
-| REQ-006 | First answer final; no hints/retry | PRD / acceptance tests |
-| REQ-007 | All released challenges unlocked | PRD / acceptance tests |
-| REQ-008 | Best/latest/count/ever passed; no full history | PRD / acceptance tests |
-| REQ-009 | Audited pools and randomized assembly | PRD / acceptance tests |
-| REQ-010 | Reuse audited questions, fill gaps | PRD / acceptance tests |
-| REQ-011 | Candidate pool ≥2× target | PRD / acceptance tests |
-| REQ-012 | Reuse across tasks; avoid recent | PRD / acceptance tests |
-| REQ-013 | Flexible formats per context | PRD / acceptance tests |
-| REQ-014 | Reuse widgets, generic new only if needed | PRD / acceptance tests |
-| REQ-015 | Unit group joint coverage | PRD / acceptance tests |
-| REQ-016 | Untimed, elapsed recorded | PRD / acceptance tests |
-| REQ-017 | Autosave and resume fixed snapshot | PRD / acceptance tests |
-| REQ-018 | Discard/reroll with confirmation | PRD / acceptance tests |
-| REQ-019 | Separate challenge rewards | PRD / acceptance tests |
-| REQ-020 | Star thresholds by tier | PRD / acceptance tests |
-| REQ-021 | Group badges when five pass | PRD / acceptance tests |
-| REQ-022 | Results and weak-point suggestions | PRD / acceptance tests |
-| REQ-023 | Link learning Tasks | PRD / acceptance tests |
-| REQ-024 | Lightweight wrong notebook | PRD / acceptance tests |
-| REQ-025 | Two later correct attempts for mastery | PRD / acceptance tests |
-| REQ-026 | Avoid last 3 completed attempts globally | PRD / acceptance tests |
-| REQ-027 | Teaching-phase semester scopes | PRD / acceptance tests |
-| REQ-028 | Declarative coverage and CI | PRD / acceptance tests |
-| REQ-029 | Challenge center and contextual links | PRD / acceptance tests |
-| REQ-030 | Cards with progress/awards | PRD / acceptance tests |
-| REQ-031 | Local challenge growth stats | PRD / acceptance tests |
-| REQ-032 | Reuse existing identity model | PRD / acceptance tests |
-| REQ-033 | Local JSON backup/import | PRD / acceptance tests |
-| REQ-034 | Engine→pilot→full phased delivery | PRD / acceptance tests |
-| REQ-035 | Cross-grade/cross-subject pilot | PRD / acceptance tests |
-| REQ-036 | Hard release quality gates | Quality CLI / CI tests |
-| REQ-037 | Git review manifest and fingerprints | Quality CLI / CI tests |
-| REQ-038 | Stable global question IDs | Quality CLI / CI tests |
-| REQ-039 | Versioned incomplete snapshots | Quality CLI / CI tests |
-| REQ-040 | Active/Disabled/Deprecated lifecycle | Quality CLI / CI tests |
-| REQ-041 | Severe defects block incomplete attempt | Quality CLI / CI tests |
-| REQ-042 | Static readiness quality reports | Quality CLI / CI tests |
-| REQ-043 | Multi-seed assembly simulation | Quality CLI / CI tests |
-| REQ-044 | Deterministic dedup and similarity flags | Quality CLI / CI tests |
-| REQ-045 | 2× effective approved unique pool | Quality CLI / CI tests |
-| REQ-046 | Ready/planned/unavailable display | Quality CLI / CI tests |
-| REQ-047 | Declarative release manifest | Quality CLI / CI tests |
-| REQ-048 | Versioned migrations | Data model / integration tests |
-| REQ-049 | Quarantine corrupt data | Data model / integration tests |
-| REQ-050 | Loaded challenge works offline | Data model / integration tests |
-| REQ-051 | Safe update deferral | Data model / integration tests |
-| REQ-052 | Accessibility baseline | Data model / integration tests |
-| REQ-053 | On-demand conditional speech | Data model / integration tests |
-| REQ-054 | Grade-tier UI density | Data model / integration tests |
-| REQ-055 | Neutral progress and reduced motion | Data model / integration tests |
-| REQ-056 | Muted optional sound | Data model / integration tests |
-| REQ-057 | Safe exit and discard confirmation | Data model / integration tests |
-| REQ-058 | Cross-tab single-writer | Data model / integration tests |
-| REQ-059 | Confirmed writes and failure pause | Data model / integration tests |
-| REQ-060 | Contextual backup reminders | Data model / integration tests |
-| REQ-061 | Import preview and safe merge | Data model / integration tests |
-| REQ-062 | Backup SHA-256 integrity | Data model / integration tests |
-| REQ-063 | Optional portable preferences | Data model / integration tests |
-| REQ-064 | No dedicated child privacy compliance system | Data model / integration tests |
-| REQ-065 | Tiered clearing and strong confirmation | Data model / integration tests |
-| REQ-066 | Pre-delete snapshot and limited undo | Data model / integration tests |
-| REQ-067 | 24h single recovery point | Data model / integration tests |
-| REQ-068 | Auto-replace old snapshot on new deletion | Data model / integration tests |
-| REQ-069 | Consume snapshot after successful restore | Data model / integration tests |
-| REQ-070 | Unified errors and recovery | Governance / release tests |
-| REQ-071 | Manual redacted diagnostics | Governance / release tests |
-| REQ-072 | Standard GitHub Bug Issue Form | Governance / release tests |
-| REQ-073 | Question correction form and human review | Governance / release tests |
-| REQ-074 | Preserve historic rewards; evidence-based compensation | Governance / release tests |
-| REQ-075 | Structured content change log/release summary | Governance / release tests |
-| REQ-076 | Impact-directed regression + full release | Governance / release tests |
-| REQ-077 | Three-tier change risk | Governance / release tests |
-| REQ-078 | Author self-approval permitted | Governance / release tests |
-| REQ-079 | Minimal approval record | Governance / release tests |
-| REQ-080 | Approval retained after edits (overrides 037) | Governance / release tests |
-| REQ-081 | No extra release suspension on edits | Governance / release tests |
-| REQ-082 | Normal static release for severe fixes | Governance / release tests |
-| REQ-083 | GitHub-only release notes | Governance / release tests |
-| REQ-084 | No personalized revision notifications | Governance / release tests |
-| REQ-085 | Freeze baseline and author engineering documents | Planning package / review |
+| REQ-001 | 保留学习任务；闯关模式独立 | 产品需求文档 / 验收测试 |
+| REQ-002 | 单元闯关对应编号单元；复习内容放入学期挑战 | 产品需求文档 / 验收测试 |
+| REQ-003 | 学期划分三个阶段，每阶段五个任务 | 产品需求文档 / 验收测试 |
+| REQ-004 | 基础和进阶各两任务共同覆盖核心知识；高阶整合 | 产品需求文档 / 验收测试 |
+| REQ-005 | 通过线为 70% / 80% / 85% | 产品需求文档 / 验收测试 |
+| REQ-006 | 首答即最终答案；不提示、不重试 | 产品需求文档 / 验收测试 |
+| REQ-007 | 所有已发布挑战直接开放 | 产品需求文档 / 验收测试 |
+| REQ-008 | 保存最好/最近成绩、次数和曾通过状态；不保留完整历史 | 产品需求文档 / 验收测试 |
+| REQ-009 | 审核题池并随机组卷 | 产品需求文档 / 验收测试 |
+| REQ-010 | 复用已审题目，缺口通过补题填补 | 产品需求文档 / 验收测试 |
+| REQ-011 | 候选题池至少为目标题量的两倍 | 产品需求文档 / 验收测试 |
+| REQ-012 | 跨任务复用题目；避开近期重复 | 产品需求文档 / 验收测试 |
+| REQ-013 | 根据教学场景支持合适题型 | 产品需求文档 / 验收测试 |
+| REQ-014 | 优先复用现有控件，必要时增加通用题型 | 产品需求文档 / 验收测试 |
+| REQ-015 | 单元组共同覆盖知识点 | 产品需求文档 / 验收测试 |
+| REQ-016 | 不限时，只记录经过时间 | 产品需求文档 / 验收测试 |
+| REQ-017 | 自动保存并恢复固定试卷快照 | 产品需求文档 / 验收测试 |
+| REQ-018 | 支持确认后丢弃并重新组卷 | 产品需求文档 / 验收测试 |
+| REQ-019 | 闯关奖励与学习奖励分离 | 产品需求文档 / 验收测试 |
+| REQ-020 | 按难度设定星级门槛 | 产品需求文档 / 验收测试 |
+| REQ-021 | 五个任务都通过后点亮组徽章 | 产品需求文档 / 验收测试 |
+| REQ-022 | 展示结果和薄弱点建议 | 产品需求文档 / 验收测试 |
+| REQ-023 | 关联现有学习任务 | 产品需求文档 / 验收测试 |
+| REQ-024 | 提供轻量错题本 | 产品需求文档 / 验收测试 |
+| REQ-025 | 后续两次挑战连续答对后标记掌握 | 产品需求文档 / 验收测试 |
+| REQ-026 | 全局避开最近三次已完成挑战的题目 | 产品需求文档 / 验收测试 |
+| REQ-027 | 学期范围按教学阶段划分 | 产品需求文档 / 验收测试 |
+| REQ-028 | 声明式覆盖校验和持续集成 | 产品需求文档 / 验收测试 |
+| REQ-029 | 闯关中心与课程上下文入口 | 产品需求文档 / 验收测试 |
+| REQ-030 | 任务卡展示进度和奖励 | 产品需求文档 / 验收测试 |
+| REQ-031 | 本地闯关成长统计 | 产品需求文档 / 验收测试 |
+| REQ-032 | 复用现有身份模型 | 产品需求文档 / 验收测试 |
+| REQ-033 | 本地 JSON 备份/导入 | 产品需求文档 / 验收测试 |
+| REQ-034 | 按引擎→试点→完整覆盖分阶段交付 | 产品需求文档 / 验收测试 |
+| REQ-035 | 试点覆盖不同年级和学科 | 产品需求文档 / 验收测试 |
+| REQ-036 | 设置严格发布质量门禁 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-037 | Git 审核清单和内容指纹 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-038 | 使用全局稳定题目 ID | 质量检查命令行工具 / 持续集成测试 |
+| REQ-039 | 未完成快照支持版本化 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-040 | 题目生命周期含启用/停用/弃用三种状态 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-041 | 严重缺陷阻止未完成挑战继续 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-042 | 输出静态就绪度质量报告 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-043 | 进行多种子组卷模拟 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-044 | 确定性去重并标记相似题 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-045 | 有效且已审核题池至少为目标数量两倍 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-046 | 展示可用/计划中/不可用状态 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-047 | 使用声明式发布清单 | 质量检查命令行工具 / 持续集成测试 |
+| REQ-048 | 支持版本化数据迁移 | 数据模型 / 集成测试 |
+| REQ-049 | 隔离损坏数据 | 数据模型 / 集成测试 |
+| REQ-050 | 已载入挑战支持离线完成 | 数据模型 / 集成测试 |
+| REQ-051 | 安全延迟更新 | 数据模型 / 集成测试 |
+| REQ-052 | 满足无障碍基线 | 数据模型 / 集成测试 |
+| REQ-053 | 按需语音且避免泄露答案 | 数据模型 / 集成测试 |
+| REQ-054 | 根据年级层级控制界面密度 | 数据模型 / 集成测试 |
+| REQ-055 | 中性进度反馈并减少动态效果 | 数据模型 / 集成测试 |
+| REQ-056 | 可选音效默认静音 | 数据模型 / 集成测试 |
+| REQ-057 | 安全离开并确认丢弃 | 数据模型 / 集成测试 |
+| REQ-058 | 跨标签页单写者控制 | 数据模型 / 集成测试 |
+| REQ-059 | 确认写入并在失败时暂停 | 数据模型 / 集成测试 |
+| REQ-060 | 在合适时机提醒备份 | 数据模型 / 集成测试 |
+| REQ-061 | 导入前预览并安全合并 | 数据模型 / 集成测试 |
+| REQ-062 | 使用 SHA-256 检查备份完整性 | 数据模型 / 集成测试 |
+| REQ-063 | 偏好设置可选地随备份携带 | 数据模型 / 集成测试 |
+| REQ-064 | 不新建专门的儿童隐私合规系统 | 数据模型 / 集成测试 |
+| REQ-065 | 分级清除并进行强确认 | 数据模型 / 集成测试 |
+| REQ-066 | 删除前创建快照并有限度撤销 | 数据模型 / 集成测试 |
+| REQ-067 | 仅保留一个 24 小时恢复点 | 数据模型 / 集成测试 |
+| REQ-068 | 新删除操作自动替换旧恢复点 | 数据模型 / 集成测试 |
+| REQ-069 | 成功恢复后消费恢复点 | 数据模型 / 集成测试 |
+| REQ-070 | 统一错误分类和恢复流程 | 治理 / 发布测试 |
+| REQ-071 | 手动导出脱敏诊断信息 | 治理 / 发布测试 |
+| REQ-072 | 使用标准 GitHub 缺陷反馈表单 | 治理 / 发布测试 |
+| REQ-073 | 题目修正表单及人工审核 | 治理 / 发布测试 |
+| REQ-074 | 保留历史奖励；只根据证据补偿 | 治理 / 发布测试 |
+| REQ-075 | 结构化记录内容变更与发布摘要 | 治理 / 发布测试 |
+| REQ-076 | 按影响范围回归，并进行完整发布验证 | 治理 / 发布测试 |
+| REQ-077 | 设置三级变更风险 | 治理 / 发布测试 |
+| REQ-078 | 允许作者自审 | 治理 / 发布测试 |
+| REQ-079 | 审核记录保持最小字段 | 治理 / 发布测试 |
+| REQ-080 | 编辑后保留审核状态，覆盖 REQ-037 自动撤销规则 | 治理 / 发布测试 |
+| REQ-081 | 编辑本身不额外触发发布暂停 | 治理 / 发布测试 |
+| REQ-082 | 严重问题通过常规静态发布修复 | 治理 / 发布测试 |
+| REQ-083 | 发布说明仅发布在 GitHub | 治理 / 发布测试 |
+| REQ-084 | 不发送个性化修订通知 | 治理 / 发布测试 |
+| REQ-085 | 冻结基线并建立工程文档 | 方案包 / 审查 |
 
-## Tracking workflow
+## 追踪流程
 
-Do not mark any requirement Done based solely on this decision index. Add owner and remote/release evidence when a reviewed implementation PR exists.
+不能仅凭决策索引就把需求标记为完成。经审查的实现拉取请求建立后，补充负责人和远端/发布证据。
 
-## Critical override notes
+## 关键决策覆盖说明
 
-- REQ-080 supersedes REQ-037 **only** for automatic invalidation of approval on fingerprint change.
-- REQ-078/079 allow author self-review and minimal approval metadata.
-- REQ-081 does not permit bypassing existing hard quality gates.
-- REQ-068 chooses automatic recovery-point replacement.
-- REQ-082/083/084 exclude emergency remote disable and in-app content update notifications.
+- REQ-080 只在“指纹变化是否自动撤销审核”这一点上覆盖 REQ-037。
+- REQ-078/079 允许作者自审，并将审核记录限制为最小字段。
+- REQ-081 不允许绕过现有强制质量门禁。
+- REQ-068 选择自动替换恢复点。
+- REQ-082/083/084 排除紧急远程禁用以及应用内内容更新通知。

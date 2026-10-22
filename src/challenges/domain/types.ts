@@ -116,6 +116,15 @@ export interface TaskProgress {
   revision: number;
 }
 
+export interface WrongQuestionRecord {
+  questionId: string;
+  question: ChallengeQuestionSnapshot;
+  wrongCount: number;
+  lastWrongAt: string;
+  correctAttemptStreak: 0 | 1 | 2;
+  masteredAt?: string;
+}
+
 export interface CompletionUpdate {
   completedAttempt: ChallengeAttempt;
   result: ChallengeResult;

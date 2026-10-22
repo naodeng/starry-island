@@ -1,4 +1,4 @@
-import type { ChallengeAttempt, TaskProgress } from '../domain/types';
+import type { ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
 
 export class ChallengeRepositoryError extends Error {
   constructor(message: string, options?: ErrorOptions) {
@@ -33,6 +33,7 @@ export interface ChallengeRepository {
   getRecentQuestionIds(): Promise<string[]>;
   getTaskProgress(taskId: string): Promise<TaskProgress | null>;
   getGroupProgress(taskIds: readonly string[]): Promise<TaskProgress[]>;
+  getWrongQuestions(): Promise<WrongQuestionRecord[]>;
   beginAttempt(attempt: ChallengeAttempt): Promise<void>;
   saveAnswer(taskId: string, expectedRevision: number, nextAttempt: ChallengeAttempt): Promise<ChallengeAttempt>;
   completeAttempt(taskId: string, expectedRevision: number, completedAttempt: ChallengeAttempt, progress: TaskProgress): Promise<void>;

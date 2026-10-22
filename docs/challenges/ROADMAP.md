@@ -1,45 +1,46 @@
-# Delivery Roadmap
+# 迭代路线图
 
-Status: the MVP vertical slice was committed locally on `codex/challenge-system-mvp` as `566b189`. It has not been pushed, merged, or deployed. A follow-up cross-tab conflict-safety change is currently uncommitted in the same worktree. Local validation results are recorded in [TEST_STRATEGY.md](TEST_STRATEGY.md).
+状态：基础引擎的最小可用功能切片已在本地分支 `codex/challenge-system-mvp` 提交，包含基线提交 `566b189` 和跨标签页可靠性提交 `b68c582`。尚未推送、合并或部署。错题本（REQ-024/025）和结果页学习建议（REQ-022/023）已在当前工作区完成实现，尚未提交。历史及本次验证记录见[测试方案](TEST_STRATEGY.md)。
 
-## Phase 0 — Repository audit and baseline (complete)
+## 阶段 0：仓库审计与基线（已完成）
 
-The read-only audit is recorded in [REPOSITORY_BASELINE.md](REPOSITORY_BASELINE.md). It counted 311 catalog entries, 254 formal numbered achievement-eligible units, 57 other entries, and 1,868 learning session IDs. It confirmed the existing learning progress key and CI commands, and found that question-level challenge eligibility and knowledge-point coverage were not represented.
+只读审计记录见[仓库现状基线](REPOSITORY_BASELINE.md)。当时确认课程目录有 311 个条目、254 个正式编号且可计成就的单元、57 个主题/复习/综合实践条目和 1,868 个学习场次 ID。现有学习进度键和持续集成命令已核实；当时还没有题目级闯关资格或知识点覆盖映射。
 
-The audit also found a 607.74 kB single-chunk warning. The current Vite configuration emits the curriculum manifest as its own initial chunk; this removes the per-chunk warning without materially reducing total initial JavaScript transfer. Final local output and gzip sizes are recorded in [REPOSITORY_BASELINE.md](REPOSITORY_BASELINE.md).
+审计还发现一个 607.74 kB JavaScript 单块提示。当前 Vite 构建把课程清单输出成单独的初始分块，消除了单块体积提示，但没有实质减少初始 JavaScript 总传输量。最终本地体积记录见[仓库现状基线](REPOSITORY_BASELINE.md)。
 
-## MVP — Engine and vertical slice (implemented and committed locally)
+## 基础引擎：可运行的最小功能切片（已在本地提交）
 
-- A dedicated `/challenges` center and group/task routes, lazy-loaded outside the existing learning route flow.
-- A formal Grade 2 Term 1 Math Unit 2 group and a first-half semester group using units 01–04. The split follows the user's confirmed chapter-order equal split for the nine-unit term; it is not a school-calendar assertion.
-- Declarative candidate manifest, per-question knowledge-point tags, release validation, stable content fingerprints, duplicate detection, and seeded assembly that fails closed when question count or coverage cannot be met.
-- First-answer scoring, no hints or retry, post-completion explanation review, IndexedDB save/resume, discard, atomic progress completion, recent-three question tracking, stars and task progress.
-- Existing learning storage and interactions remain separate; the browser flow checks that learning progress is unchanged.
+- 新增独立的 `/challenges` 中心、组和任务路由，并与现有学习流程分离、按需加载。
+- 登记二年级上册数学第二单元组，以及使用第 01～04 单元的前半学期组。根据用户确认，九个正式单元按教材章节顺序尽可能等分；这不代表学校实际授课日历。
+- 提供声明式题库清单、逐题知识点标签、发布校验、稳定内容指纹、重复检查和确定性组卷；题量或覆盖不够时拒绝组卷。
+- 支持首答计分、挑战中不显示提示/重试、完成后查看讲解、IndexedDB 保存/恢复、丢弃、原子更新进度、最近三次题目跟踪、星级和任务进度。
+- 现有学习存储和交互保持独立；浏览器流程检查学习进度未改变。
+- 跨标签页冲突保护与 Web Locks 接管已提交至 `b68c582`。
 
-Current sample size: 90 candidates for the unit group (30 per difficulty) and 226 candidates for the semester group (75 basic, 75 advanced, 76 high). The full content review boundary and remaining gaps are in [pilot-content-audit.md](pilot-content-audit.md).
+题量：单元组 90 道候选题（每个难度 30 道）；前半学期组 226 道候选题（基础 75、进阶 75、高阶 76）。完整内容审校范围和缺口见[试点内容审计](pilot-content-audit.md)。
 
-Exit evidence required for this MVP slice: focused and full unit tests, type-check/build, browser recovery flow, `git diff --check`, and a clear record of content-review limits. This evidence is local only and does not imply remote CI or release approval.
+## 试点阶段：跨年级与跨学科验证（进行中）
 
-## Pilot — Cross-grade and cross-subject evidence (not implemented)
+先选择低（1～2）、中（3～4）、高（5～6）年级代表，覆盖三门学科、单元/学期挑战、难度层级和交互题型。当前本地试点已包含结果页薄弱知识点汇总和到现有学习任务的复习入口；后续还需完善成长视图、分龄无障碍审查、失败恢复、备份/迁移和题目编写工具。
 
-Select representative low (1–2), middle (3–4), and high (5–6) grades, all three subjects, unit and semester challenges, difficulty tiers, and interaction formats. Add the wrong-question notebook, richer growth view, learning links, age-tier accessibility review, failure/recovery, backup/migration, and authoring quality tooling.
+错题本首版已加入当前试点：保存错题快照、答错次数与最近答错时间；同一道题在两次不同的后续完成挑战中连续答对后标记为已掌握，再答错会重置。全量单测、覆盖率、23 项端到端回归和构建均在本地通过。它尚未接入其他年级或学科，也不代表跨年级试点完成。
 
-Reliability work can proceed independently of the paused curriculum expansion. The local conflict-safety slice now includes shared IndexedDB revision checks, full-snapshot verification for ambiguous writes, and a Web Locks writer lease with browser-tested wait/re-read takeover after a page closes. Browsers without Web Locks rely on revision checks. Backups, migrations, explicit crash recovery and storage-failure recovery remain open; this does not mark the broader Pilot complete.
+课程扩展与闯关可靠性可以分别推进。现有本地可靠性改动包含共享 IndexedDB 修订号校验、模糊写入时比对完整快照，以及 Web Locks 等待/重新读取/接管；不支持 Web Locks 的浏览器依赖修订号校验。通用备份、显式崩溃恢复和存储故障恢复仍未完成。
 
-Exit: passing content audit, cross-tab failure tests, accessible interaction review, and successful release-gate dry run.
+试点阶段退出条件：通过内容审核、跨标签页故障测试、无障碍交互审查及发布门禁演练。
 
-## v1.0 — Complete curriculum coverage (not implemented)
+## V1.0：完整课程覆盖（尚未实现）
 
-- All audited formal numbered unit challenges.
-- Three semester stages × five tasks × 36 grade/semester/subject combinations = **540 semester tasks**.
-- Release reporting, full question lifecycle and review workflow, change logs, Issue Forms, release notes, diagnostics, safe clear/recovery, and complete automated plus human content gates.
+- 覆盖所有审核过的正式编号单元挑战。
+- 3 个学期阶段 × 每组 5 个任务 × 36 个年级/学期/学科组合，共 **540 个学期任务**。
+- 发布报告、完整题目生命周期和审核流程、变更日志、GitHub 缺陷反馈表单、发布说明、诊断、安全清除/恢复，以及完整自动化和人工内容门禁。
 
-Exit: no released challenge violates hard gates; end-to-end data safety tests pass; quality report and release notes are ready.
+退出条件：没有已发布挑战违反强制质量门禁；端到端数据安全测试通过；质量报告和发布说明已准备好。
 
-## Later (not v1.0 commitments)
+## 后续方向（不属于 V1.0 承诺）
 
-Optional backend sync, multi-student accounts, richer analytics, multi-version recycle bin, advanced governance, AI-assisted authoring/review, and an in-app update center. Revisit only with usage evidence.
+可选后端同步、多学生账号、更多分析、多版本回收站、复杂治理、AI 辅助编写/审核和应用内更新中心。只有出现使用证据后再评估。
 
-## Estimation guidance
+## 估算原则
 
-Do not provide calendar commitments before the curriculum inventory and question-pool shortfall audit are complete. The largest variable remains writing and pedagogically reviewing enough effective questions for every task.
+题目库存与题池缺口审计完成前，不给出日历工期承诺。最大的不确定项仍是为全部任务编写足量有效题目并完成教学审校。

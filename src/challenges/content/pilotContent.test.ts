@@ -54,4 +54,26 @@ describe('loadPilotChallengeContent', () => {
       }
     }
   });
+
+  it('connects pilot knowledge points to existing learning tasks without changing their content', async () => {
+    const content = await loadPilotChallengeContent();
+    const unitGroup = content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-02');
+    const additionTask = unitGroup?.learningTasks.find(({ taskId }) => taskId === 'grade-2/term-1/math/unit-02/basic/task-01');
+    const subtractionTask = unitGroup?.learningTasks.find(({ taskId }) => taskId === 'grade-2/term-1/math/unit-02/basic/task-02');
+
+    expect(additionTask).toMatchObject({ title: '进位加法能量站', knowledgePointIds: ['two-digit-addition'] });
+    expect(subtractionTask).toMatchObject({ title: '退位减法与生活题', knowledgePointIds: ['two-digit-subtraction'] });
+    expect(additionTask?.activityIds).toContain('grade-2/term-1/math/unit-02/basic/task-01/session-01/question-01');
+  });
+
+  it('provides an existing learning task for every tagged knowledge point in each pilot group', async () => {
+    const content = await loadPilotChallengeContent();
+
+    for (const { candidates, learningTasks } of content.groups) {
+      const knowledgePointIds = new Set(candidates.flatMap(({ knowledgePointIds: ids }) => ids));
+      for (const knowledgePointId of knowledgePointIds) {
+        expect(learningTasks.some(({ knowledgePointIds: taskIds }) => taskIds.includes(knowledgePointId))).toBe(true);
+      }
+    }
+  });
 });

@@ -7,6 +7,7 @@ export type AppRoute =
   | { kind: 'catalog' }
   | { kind: 'achievements' }
   | { kind: 'challengeCenter' }
+  | { kind: 'challengeWrongQuestions' }
   | { kind: 'challengeGroup'; groupId: string }
   | { kind: 'challengeTask'; taskId: string }
   | { kind: 'loading'; path: string; unitKey: string; curriculumUnitKey: string }
@@ -42,6 +43,10 @@ export function getChallengeGroupPath(groupId: string): string {
 
 export function getChallengeCenterPath(): string {
   return '/challenges';
+}
+
+export function getChallengeWrongQuestionsPath(): string {
+  return '/challenges/wrong-questions';
 }
 
 export function getChallengeTaskPath(taskId: string): string {
@@ -88,6 +93,7 @@ export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit
   if (normalized === '/achievements') return { kind: 'achievements' };
 
   if (normalized === '/challenges') return { kind: 'challengeCenter' };
+  if (normalized === '/challenges/wrong-questions') return { kind: 'challengeWrongQuestions' };
   if (normalized.startsWith('/challenges/')) {
     const match = /^\/challenges\/(group|task)\/([^/]+)$/.exec(normalized);
     if (!match) return { kind: 'notFound', path: normalized };

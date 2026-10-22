@@ -305,6 +305,8 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         result={completedResult.result}
         progress={completedResult.progress}
         taskTitle={taskTitle}
+        learningTasks={loadedGroup.learningTasks}
+        onNavigate={onNavigate}
         onBack={() => onNavigate(getChallengeGroupPath(loadedGroup.group.definition.id))}
       />
     );

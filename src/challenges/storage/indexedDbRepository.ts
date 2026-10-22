@@ -1,6 +1,6 @@
 import { submitAnswer } from '../../learning/answers';
 import { gradeAttempt } from '../domain/grading';
-import type { ChallengeAnswer, ChallengeAttempt, TaskProgress } from '../domain/types';
+import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
 import {
   ActiveAttemptExistsError,
   ChallengeRepositoryError,
@@ -8,12 +8,14 @@ import {
   RevisionConflictError,
 } from './repository';
 import type { ChallengeRepository, ChallengeRepositoryOptions } from './repository';
+import { transitionWrongQuestion } from '../domain/wrongQuestions';
 
-const DATABASE_VERSION = 1;
+const DATABASE_VERSION = 2;
 const DEFAULT_DATABASE_NAME = 'starry-island-challenges';
 const ATTEMPTS_STORE = 'attempts';
 const PROGRESS_STORE = 'taskProgress';
 const META_STORE = 'challengeMeta';
+const WRONG_QUESTIONS_STORE = 'wrongQuestions';
 const RECENT_QUESTION_IDS_KEY = 'recent-question-ids';
 const MAX_RECENT_ATTEMPTS = 3;
 
@@ -156,6 +158,7 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
         if (!db.objectStoreNames.contains(ATTEMPTS_STORE)) db.createObjectStore(ATTEMPTS_STORE, { keyPath: 'taskId' });
         if (!db.objectStoreNames.contains(PROGRESS_STORE)) db.createObjectStore(PROGRESS_STORE, { keyPath: 'taskId' });
         if (!db.objectStoreNames.contains(META_STORE)) db.createObjectStore(META_STORE, { keyPath: 'key' });
+        if (!db.objectStoreNames.contains(WRONG_QUESTIONS_STORE)) db.createObjectStore(WRONG_QUESTIONS_STORE, { keyPath: 'questionId' });
       };
       request.onsuccess = () => {
         database = request.result;
@@ -254,6 +257,16 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
       });
     },
 
+    getWrongQuestions() {
+      return transaction<WrongQuestionRecord[]>(WRONG_QUESTIONS_STORE, 'readonly', (tx, setResult, fail) => {
+        onRequest(tx.objectStore(WRONG_QUESTIONS_STORE).getAll(), fail, (records) => {
+          setResult((records as WrongQuestionRecord[]).sort((left, right) => (
+            right.lastWrongAt.localeCompare(left.lastWrongAt) || left.questionId.localeCompare(right.questionId)
+          )));
+        });
+      });
+    },
+
     beginAttempt(attempt) {
       if (!isValidInitialAttempt(attempt)) {
         return Promise.reject(new InvalidAttemptTransitionError('A new attempt must start at revision zero with no saved answers.'));
@@ -305,19 +318,22 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
       } catch (error) {
         return Promise.reject(error);
       }
-      return transaction<void>([ATTEMPTS_STORE, PROGRESS_STORE, META_STORE], 'readwrite', (tx, _setResult, fail) => {
+      return transaction<void>([ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE], 'readwrite', (tx, _setResult, fail) => {
         const attempts = tx.objectStore(ATTEMPTS_STORE);
         const progresses = tx.objectStore(PROGRESS_STORE);
         const meta = tx.objectStore(META_STORE);
+        const wrongQuestions = tx.objectStore(WRONG_QUESTIONS_STORE);
         let activeReady = false;
         let progressReady = false;
         let recentReady = false;
+        let commitScheduled = false;
         let active: ChallengeAttempt | undefined;
         let previousProgress: TaskProgress | undefined;
         let recent: RecentQuestionIdsRecord | undefined;
 
         const commitWhenRead = () => {
-          if (!activeReady || !progressReady || !recentReady) return;
+          if (!activeReady || !progressReady || !recentReady || commitScheduled) return;
+          commitScheduled = true;
           if (!active || active.status !== 'in-progress' || active.revision !== expectedRevision) {
             fail(new RevisionConflictError());
             return;
@@ -334,9 +350,22 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
           }
           const attemptQuestionIds = active.questions.map(({ questionId }) => questionId);
           const attemptQuestionIdsByCompletion = [...(recent?.attemptQuestionIds ?? []), attemptQuestionIds].slice(-MAX_RECENT_ATTEMPTS);
-          progresses.put(progress);
-          meta.put({ key: RECENT_QUESTION_IDS_KEY, attemptQuestionIds: attemptQuestionIdsByCompletion } satisfies RecentQuestionIdsRecord);
-          attempts.delete(taskId);
+          onRequest(wrongQuestions.getAll(), fail, (records) => {
+            const previousById = new Map((records as WrongQuestionRecord[]).map((record) => [record.questionId, record]));
+            for (const question of active!.questions) {
+              const previous = previousById.get(question.questionId);
+              const updated = transitionWrongQuestion(
+                previous,
+                question,
+                active!.answers[question.questionId] as ChallengeAnswer,
+                progress.updatedAt,
+              );
+              if (updated && updated !== previous) wrongQuestions.put(updated);
+            }
+            progresses.put(progress);
+            meta.put({ key: RECENT_QUESTION_IDS_KEY, attemptQuestionIds: attemptQuestionIdsByCompletion } satisfies RecentQuestionIdsRecord);
+            attempts.delete(taskId);
+          });
         };
 
         onRequest(attempts.get(taskId), fail, (value) => {

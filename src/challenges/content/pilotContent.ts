@@ -1,6 +1,7 @@
 import type { ActivityDefinition, CurriculumUnit } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
 import type { ChallengeGroupManifest, ChallengeManifest, ChallengeQuestionSnapshot, PilotManifestValidationReport } from '../domain/types';
+import type { LearningTaskReference } from '../domain/studyRecommendations';
 import rawManifest from './pilot-manifest.json';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { validatePilotManifest } from './validateManifest';
@@ -11,6 +12,7 @@ export interface LoadedPilotGroup {
   group: ChallengeGroupManifest;
   status: 'ready' | 'planned' | 'unavailable';
   candidates: ChallengeQuestionSnapshot[];
+  learningTasks: LearningTaskReference[];
   issues: PilotManifestValidationReport['errors'];
 }
 
@@ -26,12 +28,29 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
   const activitiesById = new Map<string, ActivityDefinition>();
   const sourceUnitByActivityId = new Map<string, string>();
   const unitsById = new Map<string, CurriculumUnit>();
+  const learningTasksByUnitId = new Map<string, LearningTaskReference[]>();
+  const knowledgePointIdsByActivityId = new Map<string, string[]>();
+  for (const question of manifest.questions) {
+    knowledgePointIdsByActivityId.set(question.activityId, question.knowledgePointIds);
+  }
   const sourceUnitIds = [...new Set(manifest.groups.flatMap(({ definition }) => definition.sourceUnitIds))];
 
   await Promise.all(sourceUnitIds.map(async (sourceUnitId) => {
     const unit = await loadUnit(sourceUnitId);
     if (!unit) throw new Error(`Could not load challenge source unit ${sourceUnitId}.`);
     unitsById.set(sourceUnitId, unit);
+    const learningTasks = Object.values(unit.difficultyTracks).flatMap((track) => track.tasks.map((task): LearningTaskReference => {
+      const activities = task.sessions.flatMap(({ activities: sessionActivities }) => sessionActivities);
+      return {
+        unitKey: sourceUnitId,
+        difficulty: track.difficulty,
+        taskId: task.id,
+        title: task.title,
+        activityIds: activities.map(({ id }) => id),
+        knowledgePointIds: [...new Set(activities.flatMap(({ id }) => knowledgePointIdsByActivityId.get(id) ?? []))],
+      };
+    }));
+    learningTasksByUnitId.set(sourceUnitId, learningTasks);
     for (const track of Object.values(unit.difficultyTracks)) {
       for (const task of track.tasks) {
         for (const session of task.sessions) {
@@ -75,6 +94,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
       group,
       status,
       candidates: status === 'ready' ? candidates : [],
+      learningTasks: group.definition.sourceUnitIds.flatMap((sourceUnitId) => learningTasksByUnitId.get(sourceUnitId) ?? []),
       issues,
     };
   });

@@ -1,50 +1,57 @@
-# Local Data Model
+# 本地数据模型
 
-Status: the first challenge persistence schema is implemented locally. Product-wide migration, export/import, backups and recovery snapshots remain proposed work; sections marked deferred are not current behavior.
+状态：闯关数据使用独立 IndexedDB 保存。当前数据库结构版本 2 已加入错题记录；产品范围内的备份、导入/导出和恢复快照仍未实现。
 
-## Existing learning data boundary
+## 与现有学习数据的边界
 
-The existing learning progress remains in `china-study-progress-v1` and is not read or written by the challenge repository. Challenge data uses the separate IndexedDB database `starry-island-challenges`, schema version 1.
+现有学习进度保存在 `china-study-progress-v1`，闯关仓库不会读取或写入该存储。闯关数据保存在独立的 IndexedDB 数据库 `starry-island-challenges`。
 
-## Implemented IndexedDB records
+## 已实现的 IndexedDB 记录
 
-| Object store | Key | Stored value |
+| 对象仓库 | 主键 | 保存内容 |
 |---|---|---|
-| `attempts` | `taskId` | One incomplete attempt per task, including frozen question snapshots, seed, cursor, first answers, elapsed time and monotonic revision |
-| `taskProgress` | `taskId` | Best and latest correct/total, completion count, ever-passed flag, update time and revision |
-| `challengeMeta` | `key` | The question IDs from the last three completed attempts, under `recent-question-ids` |
+| `attempts` | `taskId` | 每个任务一条未完成挑战，含冻结题目快照、种子、当前题序号、首答、用时和单调递增的修订号 |
+| `taskProgress` | `taskId` | 最佳和最近答对/总题数、完成次数、是否曾通过、更新时间和修订号 |
+| `challengeMeta` | `key` | 最近三次已完成挑战的题目 ID，键为 `recent-question-ids` |
+| `wrongQuestions` | `questionId` | 首次答错时的题目快照、累计答错次数、最近答错时间、连续答对的已完成挑战次数及可选掌握时间 |
 
-The corresponding typed records are `ChallengeAttempt`, `ChallengeQuestionSnapshot`, `ChallengeResult`, and `TaskProgress` in `src/challenges/domain/types.ts`. Repository operations are declared in `src/challenges/storage/repository.ts` and implemented in `indexedDbRepository.ts`.
+对应类型 `ChallengeAttempt`、`ChallengeQuestionSnapshot`、`ChallengeResult`、`TaskProgress` 和 `WrongQuestionRecord` 定义在 `src/challenges/domain/types.ts`。仓库接口位于 `src/challenges/storage/repository.ts`，IndexedDB 实现在 `indexedDbRepository.ts`。
 
-### Write and completion rules
+### 写入与完成规则
 
-- A new attempt starts at revision 0 with no answers. Each confirmed first answer increments the revision exactly once and advances one question.
-- Writes use IndexedDB transactions. A stale revision is rejected; an answer cannot be changed or added for a different question.
-- If the write call fails after a possible commit, the runner compares the complete saved attempt with the expected snapshot. A same-revision snapshot with a different answer remains a conflict and requires a reload; a revision match alone is not proof that this page's answer was saved.
-- Completion recalculates the score using the production answer checker, validates the progress update, then atomically writes progress and recent IDs and removes the incomplete snapshot.
-- The UI advances only after the repository confirms the answer write. Failed writes pause the attempt and expose retry/exit actions.
-- No completed attempt or answer history is retained. Detailed wrong-answer explanations are available only on the immediate result page; after refresh/revisit, only the saved task progress summary remains.
-- Discard removes the active snapshot and does not update score, completion count or recent-question history.
+- 新挑战从修订号 0 且无答案开始。每次确认首答只增加一个修订号，并前进一道题。
+- 写入使用 IndexedDB 事务。旧修订号会被拒绝；答案不能修改，也不能为非当前题目新增。
+- 如果写入调用可能已提交但没有收到确认，闯关页会比较数据库中的完整快照与预期快照。修订号相同但答案不同仍视为冲突；只有修订号相同并不足以证明本页答案已经保存。
+- 完成时使用正式答案检查器重新计算分数并验证进度更新；然后在同一事务中更新错题记录、任务进度和最近题目 ID，并删除未完成快照。事务失败时这些变更一起回滚。
+- 只有完成的挑战才会更新错题本。丢弃、未完成或仅提交部分答案的挑战不计入错题次数或掌握进度。
+- 第一次答错会保存该次挑战使用的题目快照。之后再答错会增加次数、更新最近答错时间与题目快照，并清除掌握状态。题目在之后的某次已完成挑战中答对，会增加连续答对次数；两次不同的已完成挑战连续答对后标记为已掌握。已掌握后继续答对不会增加计数；再次答错会重置连续答对次数和掌握状态。
+- 错题记录只保存逐题练习所需的信息，不保留完整的挑战提交历史。答题过程中的错题讲解仍在本次完成结果页显示；刷新或离开结果页后，错题本使用此前保存的题目快照与讲解。
+- 界面只在 IndexedDB 确认答案写入后前进。写入失败会暂停挑战，并提供重试或退出操作。
+- 丢弃会删除未完成快照，不更新成绩、完成次数、最近题目记录或错题本。
 
-The repository tests use the development-only `fake-indexeddb` package, including two repository connections against the same database racing from one revision. Browser-level save/reload and Web Locks writer takeover after the owner page closes are covered separately. Explicit crash, quota, eviction and corruption testing remain open.
+仓库测试使用仅开发依赖 `fake-indexeddb`，覆盖两个共享数据库连接争抢同一修订号、完成事务原子性和数据库结构升级。浏览器端保存/刷新恢复与页面关闭后的 Web Locks 接管另有测试。浏览器崩溃、配额耗尽、数据驱逐和损坏隔离仍未专项验证。
 
-## Versioning and fingerprints
+### 结果页学习建议
 
-Challenge database version 1 creates the three stores above. No prior challenge schema exists to migrate. Future schema upgrades must preserve learning progress and keep the original challenge data until the validated new generation commits.
+薄弱知识点和现有学习任务的关联在结果页从本次完成挑战快照、试点知识点标签和课程数据即时计算，不另存推荐历史或课程进度。错题命中现有课程活动时沿用该活动的任务归属；闯关补充题按相同知识点关联最聚焦的现有学习任务。点击复习入口只改变当前路由，不会自动开始课程或标记任何学习场次完成。
 
-Question content uses a canonical SHA-256 fingerprint. The manifest stores the approved fingerprint and validation reports current changes. Per REQ-080, a changed fingerprint does not automatically clear `approved`; it is a change signal, not proof that the current wording received a new review.
+## 版本与内容指纹
 
-## Deferred: backup, restore and recovery
+数据库结构版本 1 创建 `attempts`、`taskProgress`、`challengeMeta` 三个对象仓库。版本 2 新增 `wrongQuestions`，升级不会删除或重写版本 1 中已有的挑战快照、进度和最近题目记录。
 
-The following are product requirements or design proposals, not implemented in this MVP:
+题目使用规范化 JSON 与 SHA-256 指纹。题库清单保留审核时指纹，验证器报告当前内容变化。根据 REQ-080，指纹变化不会自动清除 `approved`；指纹用于变更追踪，并不表示新文本已经重新审核。
 
-- Versioned JSON export/import with checksum, preview, conflict handling and explicit user action.
-- One 24-hour local recovery snapshot, verified before deletion or replacement and consumed only after successful restore.
-- Safe clearing, invalid-record quarantine, raw export on request and corruption isolation.
-- Legacy migrations, import merge rules, storage quota recovery and browser-eviction handling.
+## 尚未实现：备份、恢复与数据修复
 
-Browser storage may be evicted; a future 24-hour snapshot would not guarantee retention. See [PRD.md](PRD.md) for the full confirmed product requirements.
+以下为产品要求或后续设计，不是当前行为：
 
-## Privacy boundary
+- 带校验和、预览、冲突处理及明确确认的版本化 JSON 导入/导出。
+- 一个有效期 24 小时的本地恢复快照；替换或删除前验证快照，且只在恢复成功后消费快照。
+- 分层清除、损坏记录隔离、按需原始数据导出及损坏恢复。
+- 旧数据迁移、导入合并规则、存储配额恢复和浏览器驱逐处理。
 
-All MVP challenge data is stored in the current browser. No account, server, tracker or challenge diagnostic upload was added. This local-first implementation is not a claim of legal compliance.
+浏览器可能驱逐本地数据，因此未来的 24 小时快照也不能保证数据永远保留。产品完整决策见[产品需求文档](PRD.md)。
+
+## 隐私边界
+
+当前闯关数据保存在用户当前浏览器中；没有新增账号、服务器、追踪器或闯关诊断上传。本地优先实现不等于已经满足任何法律合规要求。

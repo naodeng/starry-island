@@ -1,52 +1,59 @@
-# Technical Architecture
+# 闯关系统架构设计
 
-Status: the sections below distinguish the implemented local MVP from deferred product architecture. The application remains a static React/Vite SPA; no backend, database server, or online AI service was added.
+状态：本文区分当前本地实现与尚未交付的产品架构。应用仍是静态 React/Vite SPA；没有增加后端、数据库服务器或在线 AI 服务。
 
-## Boundaries
+## 系统边界
 
-Existing learning routes, answer checking, progress, achievements, hints, retry feedback, and sound are coupled to the learning flow. Challenge mode uses separate routes, UI orchestration, and IndexedDB persistence. It reuses supported answer widgets and the pure production answer checker, without changing the existing learning interaction flow.
+现有课程路由、答题校验、进度、成就、提示、重试反馈和声音属于学习流程。闯关模式使用独立路由、页面编排及 IndexedDB 持久化，复用兼容的答题控件和正式答案检查器，但不改变现有学习交互。
 
-## Implemented MVP modules
+## 已实现模块
 
-| Concern | Path |
+| 职责 | 路径 |
 |---|---|
-| Challenge records, scoring, progress, assembly, attempt state | `src/challenges/domain/` |
-| Pilot manifest, fingerprints, question registry, readiness validation | `src/challenges/content/` |
-| Unit lookup and contextual links | `src/challenges/content/lookup.ts`, `unitLinks.ts` |
-| Repository interface and IndexedDB schema v1 | `src/challenges/storage/` |
-| Lazy routes and challenge screens | `src/app/router.ts`, `src/App.tsx`, `src/challenges/ui/` |
-| Test coverage | `src/challenges/**/*.test.*`, app/catalog tests, `tests/e2e/challenge-flow.spec.ts` |
+| 闯关记录、评分、进度、组卷和答题状态 | `src/challenges/domain/` |
+| 试点清单、指纹、题目注册和就绪度校验 | `src/challenges/content/` |
+| 单元查找和课程上下文入口 | `src/challenges/content/lookup.ts`、`unitLinks.ts` |
+| 仓库接口和 IndexedDB 数据库结构 v2 | `src/challenges/storage/` |
+| 懒加载路由和闯关页面 | `src/app/router.ts`、`src/App.tsx`、`src/challenges/ui/` |
+| 测试 | `src/challenges/**/*.test.*`、应用/课程测试、`tests/e2e/challenge-flow.spec.ts` |
 
-The current pilot contains one formal unit group and one first-half semester group. Their exact scope, source mapping, content evidence and limits are in [pilot-content-audit.md](pilot-content-audit.md).
+当前试点包括一个正式单元组和一个前半学期组。范围、来源映射、内容证据和限制见[试点内容审计](pilot-content-audit.md)。错题本首先覆盖当前两个试点题池，不代表其他年级和学科已接入。
 
-## Paper assembly
+## 组卷流程
 
-1. Resolve a task definition, source scope, difficulty, required knowledge points and target count.
-2. Filter to active, approved, answer-leakage-reviewed, supported and unique candidates.
-3. Require at least twice the task target count for each difficulty pool, with coverage for every required point. Fail closed when the set cannot satisfy these constraints.
-4. Use a seed for reproducible candidate order; prefer avoiding question IDs from the last three completed attempts globally without weakening coverage.
-5. Persist a snapshot of selected activity content, answer/scoring source, order, manifest version and assembly seed.
+1. 读取任务定义、来源范围、难度、必需知识点和目标题量。
+2. 仅保留生命周期为 `active`、已登记审核、已通过答案泄露检查、类型兼容且唯一的候选题。
+3. 每个难度题池至少达到目标题量的两倍，并覆盖每个必需知识点；条件不满足时明确失败。
+4. 使用确定性种子生成可复现的候选顺序；尽量避开最近三次完成挑战中的题目，但不得因此破坏知识点覆盖。
+5. 保存选中题目的内容快照、答案评分来源、顺序、清单版本和组卷种子。
 
-Each question carries only the knowledge points it exercises. A high task is required to cover at least two points across the assembled paper; individual questions may exercise one point. The assembly tests run against the actual pilot pools and every declared task.
+每道题只登记实际考查的知识点。高阶任务要求整份试卷至少覆盖两个核心知识点，不要求每道题都同时考查多个知识点。组卷测试会使用真实试点题池检查所有已登记任务。
 
-## State and persistence
+## 薄弱知识点与学习任务关联
 
-An attempt moves from `available` to `in-progress`, then to `completed` or `discarded`. Each first answer is saved under an IndexedDB revision check before advancing. If the write response is ambiguous, the runner treats it as its own commit only when the full persisted attempt matches the expected snapshot; matching revision numbers alone are insufficient. This keeps a competing same-revision answer from being silently accepted. Completion validates the saved attempt and atomically updates best/latest/count/ever-passed progress, recent question IDs and removal of the active attempt. Incomplete or discarded work receives no credit.
+结果页只统计本次答错题快照上的知识点标签，按答错题数从多到少展示，并给出对应复习入口。若错题来自现有课程活动，优先关联该活动所在的学习任务；若错题来自闯关专用补充题，则从同一来源单元中选择知识点标签匹配且覆盖范围最集中的现有学习任务。题目标签由试点清单提供，页面显示使用中文名称。
 
-The IndexedDB v1 database is `starry-island-challenges` with `attempts`, `taskProgress`, and `challengeMeta` object stores. A stale revision is rejected, and tests verify that two repository connections sharing a database cannot commit from the same revision. When the browser supports Web Locks, the runner acquires an exclusive task-scoped writer lease before starting or resuming, re-reads IndexedDB after acquisition, and holds the lease through the attempt. Other pages wait and take over the latest saved state after the owner closes or completes. Browsers without Web Locks retain optimistic revision checks as the fallback. IndexedDB schema upgrades beyond initial version 1, backup/restore, corruption quarantine and browser storage eviction recovery remain future work.
+学习任务引用在加载课程和试点清单时从现有课程数据生成，仅保存在当前页面内存，不写入 IndexedDB 或课程进度。点击入口只打开已有任务页；闯关结果、星级和错题记录仍使用独立的闯关存储。
 
-Detailed stored records and the no-full-history result behavior are documented in [DATA_MODEL.md](DATA_MODEL.md).
+## 状态与持久化
 
-## Deferred architecture
+一次挑战从可开始状态进入 `in-progress`，之后完成或丢弃。每道题的首答先通过 IndexedDB 修订号校验保存，再推进到下一题。若写入响应不明确，只有数据库中完整快照与预期快照完全相同时，闯关页才将其视作自身提交；仅匹配修订号不够。完成时验证已保存快照，并在一个事务内更新最佳/最近/次数/是否通过的进度、最近题目 ID、错题本，然后删除活动快照。未完成和已丢弃挑战均不计入成绩或错题掌握状态。
 
-- Wrong-question notebook and learning-task recommendations.
-- Backup/export/import, deletion snapshots, migration and corruption recovery.
-- Standalone quality CLI, multi-seed diagnostics and manifest report artifact.
-- Browser-process crash recovery, storage-quota recovery, update deferral and cold-start offline support.
-- Complete lifecycle governance, issue forms and release reporting.
+数据库 `starry-island-challenges` 的结构版本 2 包含 `attempts`、`taskProgress`、`challengeMeta` 和 `wrongQuestions` 四个对象仓库。升级到版本 2 时只新增错题仓库，保留版本 1 中的原有数据。错题以稳定 `questionId` 为键；答错时保存题目快照和累计次数，只有完成挑战才更新。之后在两次不同的完成挑战中连续答对，即标记为已掌握；再次答错会重置掌握状态。
 
-These items remain requirements for later pilot/v1.0 phases where listed in the PRD; they are not present merely because they appear in the proposed product model.
+修订号冲突会拒绝过期写入。浏览器支持 Web Locks 时，闯关页会先获取任务级独占锁、重新读取 IndexedDB，并在挑战期间持有该锁；其他页面等待当前页面关闭或完成后再读取最新状态。没有 Web Locks 的浏览器继续使用修订号检查。通用备份/恢复、损坏隔离、存储驱逐恢复仍未实现。
 
-## Static build and chunk warning
+记录字段和未保留完整答题历史的规则见[本地数据模型](DATA_MODEL.md)。
 
-The route module does not statically import challenge UI or the pilot question manifest. Challenge pages and source units are lazy-loaded. The existing synchronous curriculum manifest remains a separate initial JavaScript chunk via `vite.config.ts`; this removes the 500 kB per-chunk warning but does not materially reduce initial JS transfer. See [REPOSITORY_BASELINE.md](REPOSITORY_BASELINE.md) for the measured build output and the distinction between chunk size and total initial transfer.
+## 尚未实现的后续架构
+
+- 备份/导入/导出、删除快照、通用数据迁移和损坏恢复。
+- 独立质量检查命令行工具（CLI）、多种子统计诊断和清单报告产物。
+- 浏览器进程崩溃恢复、存储配额恢复、安全更新延迟和冷启动离线能力。
+- 完整题目生命周期治理、GitHub 缺陷反馈表单和发布报告。
+
+以上仍是产品需求文档或后续阶段的要求；写入方案文档不代表功能已经交付。
+
+## 静态构建与分块提示
+
+路由模块不静态导入闯关界面或试点题库清单。挑战页面与课程单元按需加载。完整课程清单仍会作为单独的初始 JavaScript 分块加载，相关 Vite 配置已消除超过 500 kB 的单块构建提示，但没有实质降低初始 JavaScript 总传输量。构建实测及两者区别见[仓库现状基线](REPOSITORY_BASELINE.md)。
