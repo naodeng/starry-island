@@ -50,7 +50,7 @@
 
 - [ ] **步骤 1：写资格规则失败测试**
 
-  新增 `accepts-current-records-without-normalization`、`normalizes-known-legacy-attempt-by-adding-only-version`、`normalizes-known-legacy-attempts-in-recovery-point` 和 `rejects-records-missing-required-fields`。逐项比较候选与原记录，断言唯一允许的新字段是 `snapshotSchemaVersion: 1`。
+  新增 `accepts-current-attempt-without-normalization`、`accepts-current-task-progress-without-normalization`、`accepts-current-wrong-question-without-normalization`、`accepts-current-recent-question-meta-without-normalization`、`accepts-active-current-recovery-point-without-normalization`、`normalizes-known-legacy-attempt-by-adding-only-version`、`normalizes-known-legacy-attempts-in-recovery-point` 和 `rejects-records-missing-required-fields`。逐项比较候选与原记录，断言唯一允许的新字段是 `snapshotSchemaVersion: 1`。
 
 - [ ] **步骤 2：运行测试确认失败**
 
