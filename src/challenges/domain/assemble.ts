@@ -51,6 +51,17 @@ function shuffle<T>(items: readonly T[], random: () => number): T[] {
   return result;
 }
 
+function shuffleChoiceOptions(question: ChallengeQuestionSnapshot, seed: string): ChallengeQuestionSnapshot {
+  if (question.activity.kind !== 'choice') return question;
+  return {
+    ...question,
+    activity: {
+      ...question.activity,
+      options: shuffle(question.activity.options, seededRandom(`${seed}:${question.questionId}:options`)),
+    },
+  };
+}
+
 function uniqueEligibleCandidates(
   candidates: readonly ChallengeQuestionSnapshot[],
   difficulty: Difficulty,
@@ -157,5 +168,5 @@ export function assemblePaper(
       paper.push(candidate);
     }
   }
-  return paper;
+  return paper.map((question) => shuffleChoiceOptions(question, seed));
 }

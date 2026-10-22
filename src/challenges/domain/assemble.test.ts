@@ -40,6 +40,23 @@ function candidate(
   };
 }
 
+function choiceCandidate(index: number): ChallengeQuestionSnapshot {
+  const activity: ActivityDefinition = {
+    id: `choice-activity-${index}`,
+    kind: 'choice',
+    prompt: `Choice question ${index}`,
+    hint: 'hint',
+    explanation: 'explanation',
+    options: [
+      { id: 'option-1', label: 'Correct answer' },
+      { id: 'option-2', label: 'Distractor one' },
+      { id: 'option-3', label: 'Distractor two' },
+    ],
+    correctOptionId: 'option-1',
+  };
+  return candidate(index, { activityId: activity.id, activity });
+}
+
 const candidates = Array.from({ length: 8 }, (_, index) => candidate(index));
 
 describe('assemblePaper', () => {
@@ -55,6 +72,41 @@ describe('assemblePaper', () => {
     expect(second.map(({ questionId }) => questionId)).not.toEqual(first.map(({ questionId }) => questionId));
     expect(first).toHaveLength(task.targetCount);
     expect(first.every(({ difficulty }) => difficulty === task.difficulty)).toBe(true);
+  });
+
+  it('uses the paper seed to distribute choice answers across option positions', () => {
+    const choiceCandidates = Array.from({ length: 8 }, (_, index) => choiceCandidate(index));
+    const correctPositions = new Set<number>();
+
+    for (let seedIndex = 0; seedIndex < 40; seedIndex += 1) {
+      const paper = assemblePaper(task, choiceCandidates, `choice-seed-${seedIndex}`);
+      for (const question of paper) {
+        if (question.activity.kind !== 'choice') throw new Error('Expected a choice question.');
+        const activity = question.activity;
+        const correctIndex = activity.options.findIndex(({ id }) => id === activity.correctOptionId);
+        expect(correctIndex).toBeGreaterThanOrEqual(0);
+        correctPositions.add(correctIndex);
+      }
+    }
+
+    expect(correctPositions).toEqual(new Set([0, 1, 2]));
+    expect(choiceCandidates.every((question) => (
+      question.activity.kind === 'choice' && question.activity.options[0]?.id === 'option-1'
+    ))).toBe(true);
+  });
+
+  it('keeps shuffled choice options stable when rebuilding a paper with the same seed', () => {
+    const choiceCandidates = Array.from({ length: 8 }, (_, index) => choiceCandidate(index));
+    const first = assemblePaper(task, choiceCandidates, 'stable-choice-seed');
+    const second = assemblePaper(task, [...choiceCandidates].reverse(), 'stable-choice-seed');
+
+    expect(second.map(({ questionId, activity }) => [
+      questionId,
+      activity.kind === 'choice' ? activity.options.map(({ id }) => id) : [],
+    ])).toEqual(first.map(({ questionId, activity }) => [
+      questionId,
+      activity.kind === 'choice' ? activity.options.map(({ id }) => id) : [],
+    ]));
   });
 
   it('filters inactive, unapproved, unreviewed, unsafe, wrong-difficulty, and duplicate candidates', () => {
