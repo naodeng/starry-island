@@ -1,6 +1,7 @@
 import type { ActivityDefinition, CurriculumUnit, Difficulty } from '../../content/types';
 import { fingerprintActivity } from './fingerprint';
 import { analyzeQuestionUniqueness } from './questionUniqueness';
+import { isValidChallengeGroupId, isValidChallengeTaskId } from '../domain/ids';
 import type {
   ChallengeGroupManifest,
   ChallengeManifest,
@@ -158,8 +159,13 @@ export async function validateChallengeManifest(
   for (const group of manifest.groups) {
     if (!group.definition.id.trim()) {
       globalIssue('invalid-group-id', 'groups', 'Group IDs must be non-empty and stable.');
-    } else if (groupIds.has(group.definition.id)) {
-      globalIssue('duplicate-group-id', `groups.${group.definition.id}`, 'Group IDs must be unique.', group.definition.id);
+    } else {
+      if (!isValidChallengeGroupId(group.definition.id)) {
+        groupIssue(group, 'invalid-group-id-format', `groups.${group.definition.id}.id`, 'Group IDs must use lowercase letters, numbers, and hyphens so the challenge route can resolve them.');
+      }
+      if (groupIds.has(group.definition.id)) {
+        globalIssue('duplicate-group-id', `groups.${group.definition.id}`, 'Group IDs must be unique.', group.definition.id);
+      }
     }
     groupIds.add(group.definition.id);
   }
@@ -220,6 +226,9 @@ export async function validateChallengeManifest(
     }
     const taskIds = new Set<string>();
     for (const task of tasks) {
+      if (!isValidChallengeTaskId(task.id)) {
+        groupIssue(group, 'invalid-task-id-format', `groups.${group.definition.id}.tasks.${task.id}`, 'Task IDs must contain two lowercase alphanumeric or hyphen-separated segments so the challenge route can resolve them.');
+      }
       if (taskIds.has(task.id)) groupIssue(group, 'duplicate-task-id', `groups.${groupId}.tasks`, `Duplicate task ID ${task.id}.`);
       taskIds.add(task.id);
       const expectedTargetCount = definition.kind === 'unit' ? 15 : 25;

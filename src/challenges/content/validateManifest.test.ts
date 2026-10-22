@@ -204,6 +204,30 @@ describe('validatePilotManifest', () => {
     ]));
   });
 
+  it('blocks IDs that the challenge routes cannot resolve', async () => {
+    const invalid = cloneFixture(fixture);
+    invalid.manifest.groups[0].definition.id = 'grade-2/unit-01';
+    invalid.manifest.groups[0].definition.tasks[0].id = 'grade-2/unit-01/basic 01';
+
+    const report = await validateChallengeManifest(invalid.manifest, invalid.activitiesById, invalid.sourceUnitByActivityId, invalid.unitsById);
+
+    expect(report.errors).toEqual(expect.arrayContaining([
+      expect.objectContaining({ code: 'invalid-group-id-format', groupId: 'grade-2/unit-01' }),
+      expect.objectContaining({ code: 'invalid-task-id-format', groupId: 'grade-2/unit-01' }),
+    ]));
+    expect(report.groupStatusById['grade-2/unit-01']).toBe('unavailable');
+  });
+
+  it('still reports duplicate group IDs when their format is invalid', async () => {
+    const duplicated = cloneFixture(fixture);
+    duplicated.manifest.groups[0].definition.id = 'grade-2/unit-01';
+    duplicated.manifest.groups[1].definition.id = 'grade-2/unit-01';
+
+    const report = await validateChallengeManifest(duplicated.manifest, duplicated.activitiesById, duplicated.sourceUnitByActivityId, duplicated.unitsById);
+
+    expect(report.globalIssues.map(({ code }) => code)).toContain('duplicate-group-id');
+  });
+
   it('keeps a group ready when only its approved content fingerprint changed', async () => {
     const changed = cloneFixture(fixture);
     const record = changed.manifest.questions[0];

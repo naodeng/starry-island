@@ -2,6 +2,7 @@ import { curriculumManifest } from '../content/curriculumManifest';
 import { loadUnit } from '../content/unitLoader';
 import { getSessionsForDifficulty } from '../content/sessionUtils';
 import type { Curriculum, CurriculumUnit, Difficulty, LearningSession, LearningTask, SubjectId } from '../content/types';
+import { isValidChallengeGroupId, isValidChallengeTaskId } from '../challenges/domain/ids';
 
 export type AppRoute =
   | { kind: 'catalog' }
@@ -110,8 +111,8 @@ export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit
       return { kind: 'notFound', path: normalized };
     }
     if (!id || /[\u0000-\u001f]/.test(id)) return { kind: 'notFound', path: normalized };
-    if (match[1] === 'group' && !/^[a-z0-9-]+$/.test(id)) return { kind: 'notFound', path: normalized };
-    if (match[1] === 'task' && !/^[a-z0-9-]+\/[a-z0-9-]+$/.test(id)) return { kind: 'notFound', path: normalized };
+    if (match[1] === 'group' && !isValidChallengeGroupId(id)) return { kind: 'notFound', path: normalized };
+    if (match[1] === 'task' && !isValidChallengeTaskId(id)) return { kind: 'notFound', path: normalized };
     return match[1] === 'group'
       ? { kind: 'challengeGroup', groupId: id }
       : { kind: 'challengeTask', taskId: id };
