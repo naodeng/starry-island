@@ -7,6 +7,113 @@ const taskUrl = `/challenges/task/${encodeURIComponent(taskId)}`;
 const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01';
 const semesterTaskUrl = `/challenges/task/${encodeURIComponent(semesterTaskId)}`;
 
+interface E2EAttemptSnapshot {
+  taskId: string;
+  [key: string]: unknown;
+}
+
+function makeQuarantineAttempt(taskId: string, includeSnapshotVersion: boolean): E2EAttemptSnapshot {
+  const question = (suffix: string) => {
+    const questionId = `${taskId}-question-${suffix}`;
+    const activityId = `${taskId}-activity-${suffix}`;
+    return {
+      questionId,
+      activityId,
+      difficulty: 'basic',
+      knowledgePointIds: ['addition'],
+      lifecycle: 'active',
+      approved: true,
+      answerLeakageReviewed: true,
+      approvedContentFingerprint: 'approved-fingerprint',
+      contentFingerprint: 'current-fingerprint',
+      activity: {
+        id: activityId,
+        kind: 'arithmetic',
+        prompt: `隔离原文题干-${suffix}`,
+        hint: '隔离原文提示',
+        explanation: '隔离原文讲解',
+        expression: '2 + 2',
+        correctAnswer: 4,
+      },
+    };
+  };
+  const firstQuestion = question('first');
+  const secondQuestion = question('second');
+  return {
+    attemptId: `quarantined-${taskId}`,
+    taskId,
+    difficulty: 'basic',
+    status: 'in-progress',
+    ...(includeSnapshotVersion ? { snapshotSchemaVersion: 1 } : {}),
+    questions: [firstQuestion, secondQuestion],
+    assemblySeed: 'quarantine-recovery-test-seed',
+    contentManifestVersion: 'quarantine-recovery-test-manifest',
+    answers: { [firstQuestion.questionId]: 4 },
+    currentIndex: 1,
+    startedAt: '2026-10-20T00:00:00.000Z',
+    elapsedMs: 1500,
+    revision: 1,
+  };
+}
+
+async function seedQuarantinedAttempt(
+  page: import('@playwright/test').Page,
+  attempt: E2EAttemptSnapshot,
+  activeAttempt?: E2EAttemptSnapshot,
+) {
+  await page.goto('/');
+  await page.evaluate(({ row, active }) => new Promise<number>((resolve, reject) => {
+    const request = indexedDB.open('starry-island-challenges', 4);
+    request.onerror = () => reject(request.error);
+    request.onupgradeneeded = () => {
+      const database = request.result;
+      if (!database.objectStoreNames.contains('attempts')) database.createObjectStore('attempts', { keyPath: 'taskId' });
+      if (!database.objectStoreNames.contains('taskProgress')) database.createObjectStore('taskProgress', { keyPath: 'taskId' });
+      if (!database.objectStoreNames.contains('challengeMeta')) database.createObjectStore('challengeMeta', { keyPath: 'key' });
+      if (!database.objectStoreNames.contains('wrongQuestions')) database.createObjectStore('wrongQuestions', { keyPath: 'questionId' });
+      if (!database.objectStoreNames.contains('quarantinedRecords')) database.createObjectStore('quarantinedRecords', { autoIncrement: true });
+    };
+    request.onsuccess = () => {
+      const database = request.result;
+      const transaction = database.transaction(['attempts', 'quarantinedRecords'], 'readwrite');
+      if (active) transaction.objectStore('attempts').put(active);
+      const addRequest = transaction.objectStore('quarantinedRecords').add({
+        sourceStore: 'attempts',
+        sourceKey: row.taskId,
+        quarantinedAt: '2026-10-21T10:00:00.000Z',
+        reasonCode: 'invalid-attempts',
+        record: row,
+      });
+      let quarantineId: number;
+      addRequest.onsuccess = () => { quarantineId = Number(addRequest.result); };
+      transaction.oncomplete = () => {
+        database.close();
+        resolve(quarantineId);
+      };
+      transaction.onerror = () => reject(transaction.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error('无法写入隔离记录测试样例。'));
+    };
+  }), { row: attempt, active: activeAttempt });
+}
+
+async function readQuarantinedAttemptState(page: import('@playwright/test').Page, taskId: string) {
+  return page.evaluate((attemptId) => new Promise<{ activeAttempt: unknown; quarantined: unknown[] }>((resolve, reject) => {
+    const request = indexedDB.open('starry-island-challenges');
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => {
+      const database = request.result;
+      const transaction = database.transaction(['attempts', 'quarantinedRecords'], 'readonly');
+      const active = transaction.objectStore('attempts').get(attemptId);
+      const quarantined = transaction.objectStore('quarantinedRecords').getAll();
+      transaction.oncomplete = () => {
+        database.close();
+        resolve({ activeAttempt: active.result, quarantined: quarantined.result });
+      };
+      transaction.onerror = () => reject(transaction.error);
+    };
+  }), taskId);
+}
+
 test('opens the Grade 5 Chinese pilot with matching subject routes and preserves learning progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
@@ -335,6 +442,90 @@ test('isolates malformed local records and exports them only after an explicit a
     records: [{ sourceStore: 'taskProgress', record: { taskId: 'damaged-progress', bestCorrect: 'invalid' } }],
   });
   await expect(page.getByRole('status')).toContainText('没有上传任何数据');
+});
+
+test('restores-known-legacy-attempt-after-preview-and-confirmation', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  const taskIdToRestore = 'e2e-quarantine-legacy-task';
+  const originalAttempt = makeQuarantineAttempt(taskIdToRestore, false);
+  await seedQuarantinedAttempt(page, originalAttempt);
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await expect(page.getByText(/发现 1 条结构异常的闯关记录/)).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  const beforeRestore = await readQuarantinedAttemptState(page, taskIdToRestore);
+  expect(beforeRestore.activeAttempt).toBeUndefined();
+  expect(beforeRestore.quarantined).toHaveLength(1);
+  expect(await page.getByRole('list', { name: '隔离记录列表' }).count()).toBe(0);
+
+  const checkButton = page.getByRole('button', { name: '检查可恢复记录' });
+  await checkButton.focus();
+  expect(await checkButton.evaluate((button) => document.activeElement === button)).toBe(true);
+  await page.keyboard.press('Enter');
+  const recordButton = page.getByRole('button', { name: /^预览隔离记录/ });
+  await expect(recordButton).toBeVisible();
+  await recordButton.focus();
+  expect(await recordButton.evaluate((button) => document.activeElement === button)).toBe(true);
+  await page.keyboard.press('Enter');
+  const preview = page.getByRole('group', { name: '恢复预览' });
+  await expect(preview).toContainText('只补入已知结构版本 1');
+  await expect(preview).toContainText(taskIdToRestore);
+  await expect(page.locator('body')).not.toContainText(/隔离原文题干|隔离原文提示|隔离原文讲解/);
+  const confirmButton = page.getByRole('button', { name: '确认恢复这条记录' });
+  await confirmButton.focus();
+  expect(await confirmButton.evaluate((button) => document.activeElement === button)).toBe(true);
+  await page.keyboard.press('Enter');
+  await expect(page.getByRole('status').filter({ hasText: '已恢复一条闯关答题记录' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '已隔离的异常记录' })).not.toBeVisible();
+
+  const afterRestore = await readQuarantinedAttemptState(page, taskIdToRestore);
+  const restoredAttempt = afterRestore.activeAttempt as Record<string, unknown>;
+  const { snapshotSchemaVersion, ...restoredFields } = restoredAttempt;
+  expect(snapshotSchemaVersion).toBe(1);
+  expect(restoredFields).toEqual(originalAttempt);
+  expect(afterRestore.quarantined).toEqual([]);
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('keeps-conflicting-quarantined-record-and-export-available', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  const taskIdWithConflict = 'e2e-quarantine-conflicting-task';
+  const activeAttempt = makeQuarantineAttempt(taskIdWithConflict, true);
+  await seedQuarantinedAttempt(page, activeAttempt, activeAttempt);
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await page.getByRole('button', { name: '检查可恢复记录' }).click();
+  await expect(page.getByRole('list', { name: '隔离记录列表' })).toContainText('目标位置已有记录，原隔离记录仍保留；不会覆盖或合并。');
+  await expect(page.getByRole('button', { name: '确认恢复这条记录' })).not.toBeVisible();
+  const exportButton = page.getByRole('button', { name: '导出隔离记录' });
+  await expect(exportButton).toBeEnabled();
+  const downloadPromise = page.waitForEvent('download');
+  await exportButton.focus();
+  expect(await exportButton.evaluate((button) => document.activeElement === button)).toBe(true);
+  await page.keyboard.press('Enter');
+  const download = await downloadPromise;
+  const downloadedPath = await download.path();
+  expect(downloadedPath).toBeTruthy();
+  const exported = JSON.parse(readFileSync(downloadedPath!, 'utf8')) as Record<string, unknown>;
+  expect(Object.keys(exported)).toEqual(['format', 'version', 'exportedAt', 'records']);
+  expect(exported).toMatchObject({
+    format: 'starry-island-challenge-quarantine',
+    version: 1,
+    records: [{ sourceStore: 'attempts', sourceKey: taskIdWithConflict, reasonCode: 'invalid-attempts', record: activeAttempt }],
+  });
+  const exportedRecord = (exported.records as Array<Record<string, unknown>>)[0]!;
+  expect(Object.keys(exportedRecord)).toEqual(['sourceStore', 'sourceKey', 'quarantinedAt', 'reasonCode', 'record']);
+
+  const state = await readQuarantinedAttemptState(page, taskIdWithConflict);
+  expect(state.activeAttempt).toEqual(activeAttempt);
+  expect(state.quarantined).toHaveLength(1);
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
 
 test('previews and safely merges an active attempt without duplicating data', async ({ page }, testInfo) => {

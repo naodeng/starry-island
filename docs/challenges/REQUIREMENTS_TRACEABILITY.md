@@ -31,7 +31,7 @@
 | REQ-040 | 当前清单加载器会提供显式 `disabled` 题目 ID；`active`、`disabled`、`deprecated` 生命周期记录仍由清单验证器分别处理 | `pilotContent.ts`；`validateManifest.ts` 及测试 |
 | REQ-041 | 当前本地切片在写入租约内重新读取快照后、恢复或自动补记成绩前检查停用题；命中时保留快照、不计成绩并释放租约。未命中时即使组不可用仍可恢复；无快照时不可新开。旧静态页面无法收到后续发布的停用状态 | `ChallengePage.test.tsx`；`ChallengeRunner.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-048 | 已实现数据库结构版本 1→2→3→4 的顺序迁移；v4 在 IndexedDB 升级事务内迁移有效旧活动快照及恢复点数据，未知或异常内容保留给隔离流程 | `src/challenges/storage/indexedDbRepository.ts`；`indexedDbRepository.test.ts` |
-| REQ-049 | 已实现记录读取前的结构校验；活动答题难度必须合法且与题目快照一致。异常答题、进度、错题、最近题目和恢复点会在一个事务内移入隔离仓库，正常读取和备份只返回有效数据。闯关中心展示隔离数量，并仅在用户点击后导出原始记录；事务失败时保留原记录 | `src/challenges/domain/backup.ts`；`src/challenges/storage/indexedDbRepository.ts`；`repository.ts`；`ChallengeDataManagement.tsx` 及测试 |
+| REQ-049 | 已实现记录读取前的结构校验和异常记录原子隔离。用户可主动打开每页最多 50 条的安全摘要；仅已知来源/原因、完整有效或可按既有规则迁移、原键一致且目标空闲的记录可只读预览并逐条确认。五分钟内存令牌绑定原隔离行；确认时同一 IndexedDB 读写事务重验、写入目标并删除隔离副本。未知格式、目标冲突和存储失败保留原文，仍可按原版本 1 格式导出；不推测成绩或改动课程进度。仓库合成样例通过浏览器回归；这不表示用户设备上存在可恢复数据 | `src/challenges/domain/quarantineRecovery.ts`；`src/challenges/storage/indexedDbRepository.ts`；`repository.ts`；`ChallengeDataManagement.tsx`；`ChallengePage.tsx`；`tests/e2e/challenge-flow.spec.ts`；[数据模型](DATA_MODEL.md)；[测试记录](TEST_STRATEGY.md) |
 | REQ-050 | 页面与试点题库载入后，断开浏览器网络仍可开始并完成完整挑战；不涵盖冷启动离线或离线刷新 | `tests/e2e/challenge-flow.spec.ts`；本机 IndexedDB 持久化 |
 | REQ-051 | 静态应用没有 Service Worker 或自动重载；新版本只在用户自行打开/刷新后生效，已确认保存的答题会从原冻结快照恢复；当前没有单独的更新等待界面 | `src/challenges/ui/ChallengeRunner.tsx`；`tests/e2e/challenge-flow.spec.ts` 刷新恢复流程；静态 Vite/Pages 部署 |
 | REQ-052 | 闯关界面通过窄屏、深色、键盘焦点和减少动态效果检查；隔离数据提示文字在深色模式下达到 4.5:1 对比度。屏幕阅读器和独立无障碍审查仍未完成 | `tests/e2e/challenge-flow.spec.ts`；`src/challenges/ui/challenge.css` |
