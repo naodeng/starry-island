@@ -43,7 +43,7 @@
 
 ---
 
-### 任务 1：泛化清单解析、校验与状态推导
+### Task 1: 泛化清单解析、校验与状态推导
 
 **文件：**
 
@@ -85,7 +85,7 @@
 
   提交信息：`refactor(challenges): generalize manifest validation`
 
-### 任务 2：实现精确去重与相似题提示
+### Task 2: 实现精确去重与相似题提示
 
 **文件：**
 
@@ -125,7 +125,7 @@
 
   提交信息：`feat(challenges): report deterministic question duplicates`
 
-### 任务 3：构建质量报告与多种子模拟
+### Task 3: 构建质量报告与多种子模拟
 
 **文件：**
 
@@ -166,7 +166,7 @@
 
   提交信息：`feat(challenges): simulate challenge release readiness`
 
-### 任务 4：加载真实课程并增加本地质量命令
+### Task 4: 加载真实课程并增加本地质量命令
 
 **文件：**
 
@@ -208,7 +208,7 @@
 
   提交信息：`feat(challenges): add local question bank quality CLI`
 
-### 任务 5：接入持续集成并记录发布证据
+### Task 5: 接入持续集成并记录发布证据
 
 **文件：**
 

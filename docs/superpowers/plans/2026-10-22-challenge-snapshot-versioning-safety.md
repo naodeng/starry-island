@@ -41,7 +41,7 @@
 
 ---
 
-### 任务 1：新增进行中快照结构版本
+### Task 1: 新增进行中快照结构版本
 
 **文件：**
 
@@ -80,7 +80,7 @@
 
   提交信息：`feat(challenges): version active attempt snapshots`
 
-### 任务 2：将 IndexedDB v3 快照迁移到 v4
+### Task 2: 将 IndexedDB v3 快照迁移到 v4
 
 **文件：**
 
@@ -118,7 +118,7 @@
 
   提交信息：`fix(challenges): migrate active snapshot schema`
 
-### 任务 3：兼容旧 v1 JSON 备份中的快照
+### Task 3: 兼容旧 v1 JSON 备份中的快照
 
 **文件：**
 
@@ -157,7 +157,7 @@
 
   提交信息：`fix(challenges): preserve legacy snapshot backups`
 
-### 任务 4：按当前清单安全暂停严重缺陷快照
+### Task 4: 按当前清单安全暂停严重缺陷快照
 
 **文件：**
 
@@ -199,7 +199,7 @@
 
   提交信息：`fix(challenges): pause disabled active attempts safely`
 
-### 任务 5：同步需求与验证证据
+### Task 5: 同步需求与验证证据
 
 **文件：**
 
