@@ -208,21 +208,21 @@
 - 修改：`docs/challenges/REQUIREMENTS_TRACEABILITY.md`
 - 修改：`docs/challenges/TEST_STRATEGY.md`
 
-- [ ] **步骤 1：先写文档断言或清单检查**
+- [x] **步骤 1：先写文档断言或清单检查**
 
-  使用 `rg` 确认文档分别记录 `snapshotSchemaVersion`、数据库 v4、旧 v1 备份先验摘要再归一化、disabled 暂停时机与静态旧页面限制；不得把本地证据描述成远端 CI 或即时远程禁用。
+  已用 `rg` 核对 `snapshotSchemaVersion`、数据库 v4、旧 v1 备份先校验摘要再归一化、disabled 暂停时机及静态旧页面限制；文档没有把本地证据写成远端 CI 或即时远程禁用。
 
-- [ ] **步骤 2：更新中文文档**
+- [x] **步骤 2：更新中文文档**
 
-  只记录实现和验证后可证明的内容；需求矩阵将 REQ-039、REQ-041 标为当前本地切片证据，不声称全课程或远端发布完成。
+  已更新数据模型、架构设计、需求追踪矩阵和测试方案。REQ-039、REQ-040、REQ-041 标为当前本地功能切片证据；题库质量 CLI、全课程闯关覆盖和远端发布仍未完成。
 
-- [ ] **步骤 3：运行全量质量验证**
+- [x] **步骤 3：运行全量质量验证**
 
   运行：`npm run test:coverage`、`npm run test:e2e -- --workers=1`、`npm run build`、`git diff --check`。
 
-  预期：所有命令通过；现有学习进度、已载入离线挑战和旧备份流程保持原行为。
+  结果：覆盖率测试 141 个文件、961 项通过（语句 89.72%、分支 84.54%、函数 90.22%、行 91.28%）；完整 Chromium 回归 33/33 通过；构建通过，最大 JavaScript 分块 316.56 kB，无超过 500 kB 提示；`git diff --check` 通过。验证仅为本地证据。
 
-- [ ] **步骤 4：提交文档与最终证据**
+- [x] **步骤 4：提交文档与最终证据**
 
   提交信息：`docs(challenges): document snapshot safety migration`
 
