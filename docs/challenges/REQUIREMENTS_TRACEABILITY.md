@@ -28,6 +28,8 @@
 | REQ-065～069 | 分级清除、强确认、单一 24 小时恢复点、自动替换及成功后消费已在当前工作区实现并通过全量本地验证；尚未推送 | `src/challenges/domain/recovery.ts`；`indexedDbRepository.ts`；`ChallengeDataManagement.tsx`；存储与浏览器流程测试 |
 | REQ-070 | 当前闯关答题写入和数据管理操作使用统一错误分类与中文恢复提示；本地 929 项单测和 28 项端到端回归通过；全课程及正式发布门禁仍未完成 | `src/challenges/domain/errors.ts`、`errors.test.ts`；`ChallengeRunner.tsx`；`ChallengeDataManagement.tsx`；[测试记录](TEST_STRATEGY.md) |
 | REQ-071 | 用户点击后下载白名单诊断 JSON；单测及端到端校验确认没有题目、答案、任务 ID、网址或课程进度字段，也不自动上传 | `src/challenges/domain/diagnostics.ts`、`diagnostics.test.ts`；`ChallengePage.tsx`；`ChallengeCenter.tsx`；`tests/e2e/challenge-flow.spec.ts` |
+| REQ-072 | 本地新增 GitHub 问题反馈表单，收集复现步骤与环境并提示公开可见和隐私边界；尚未进入远端默认分支 | `.github/ISSUE_TEMPLATE/bug-report.yml`；`config.yml`；[表单说明](ISSUE_FORMS.md) |
+| REQ-073 | 本地新增题目修正表单，要求问题描述、修正理由和可核对依据；明确由维护者人工审核且不会自动发布 | `.github/ISSUE_TEMPLATE/question-correction.yml`；[表单说明](ISSUE_FORMS.md) |
 | REQ-027 | 根据用户确认的章节顺序划分前半学期；不是学校日历 | 试点题库清单；清单测试 |
 | REQ-028 | 部分实现：运行时有题库清单门禁；尚无专用持续集成报告命令 | `validateManifest.ts`；[测试方案](TEST_STRATEGY.md) |
 | REQ-029 | 部分实现：有闯关中心和单元 2 上下文入口；未覆盖其他组 | 课程目录和路由测试 |
