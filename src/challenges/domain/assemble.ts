@@ -125,10 +125,6 @@ export function assemblePaper(
   if (task.requiredKnowledgePointIds.length === 0 || new Set(task.requiredKnowledgePointIds).size !== task.requiredKnowledgePointIds.length) {
     throw new RangeError('requiredKnowledgePointIds must be non-empty and unique.');
   }
-  if (task.requiredKnowledgePointIds.length > task.targetCount) {
-    throw new AssemblyError('The task has more required knowledge points than available question slots.', 'uncoverable-task');
-  }
-
   const eligible = uniqueEligibleCandidates(candidates, task.difficulty);
   if (eligible.length < task.targetCount * 2) {
     throw new AssemblyError(

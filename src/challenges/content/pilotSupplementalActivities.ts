@@ -2,8 +2,11 @@ import type { ArithmeticActivityDefinition, Difficulty } from '../../content/typ
 
 export interface SupplementalChallengeActivity {
   difficulty: Difficulty;
+  sourceUnitId: string;
   activity: ArithmeticActivityDefinition;
 }
+
+const sourceUnitId = 'grade-2/term-1/math/unit-02';
 
 type ActivityDraft = [prompt: string, expression: string, answer: number, hint: string, explanation: string];
 
@@ -71,6 +74,7 @@ export const pilotSupplementalActivities: SupplementalChallengeActivity[] = Obje
     };
     return {
       difficulty: difficulty as Difficulty,
+      sourceUnitId,
       activity,
     };
   })

@@ -580,6 +580,8 @@ describe('IndexedDB challenge repository', () => {
       tx.objectStore('attempts').put(validAttempt);
       tx.objectStore('attempts').put({ taskId: 'task-broken', status: 'corrupt' });
       tx.objectStore('attempts').put({ ...validAttempt, taskId: 'task-future-schema', attemptId: 'attempt-future-schema', snapshotSchemaVersion: 99 });
+      const { difficulty: _missingDifficulty, ...attemptWithoutDifficulty } = validAttempt;
+      tx.objectStore('attempts').put({ ...attemptWithoutDifficulty, taskId: 'task-missing-difficulty', attemptId: 'attempt-missing-difficulty' });
       tx.objectStore('taskProgress').put(validProgress);
       tx.objectStore('taskProgress').put({ taskId: 'task-broken', bestCorrect: 'not-a-number' });
       tx.objectStore('wrongQuestions').put({ questionId: 'question-broken', wrongCount: -1 });
@@ -595,10 +597,11 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getActiveAttempt('task-valid')).toEqual(validAttempt);
     expect(await repository.getActiveAttempt('task-broken')).toBeNull();
     expect(await repository.getActiveAttempt('task-future-schema')).toBeNull();
+    expect(await repository.getActiveAttempt('task-missing-difficulty')).toBeNull();
     expect(await repository.getAllTaskProgress()).toEqual([validProgress]);
     expect(await repository.getWrongQuestions()).toEqual([]);
     expect(await repository.getRecentQuestionIds()).toEqual([]);
-    expect(await repository.getQuarantinedRecordCount()).toBe(6);
+    expect(await repository.getQuarantinedRecordCount()).toBe(7);
     expect(await repository.getBackupSnapshot()).toEqual({
       attempts: [validAttempt],
       taskProgress: [validProgress],
@@ -608,6 +611,7 @@ describe('IndexedDB challenge repository', () => {
     expect((await repository.getQuarantinedRecords()).map((record) => record.record)).toEqual(expect.arrayContaining([
       { taskId: 'task-broken', status: 'corrupt' },
       expect.objectContaining({ taskId: 'task-future-schema', snapshotSchemaVersion: 99 }),
+      expect.objectContaining({ taskId: 'task-missing-difficulty', attemptId: 'attempt-missing-difficulty' }),
       { taskId: 'task-broken', bestCorrect: 'not-a-number' },
       { questionId: 'question-broken', wrongCount: -1 },
       { key: 'recent-question-ids', attemptQuestionIds: 'corrupt' },
@@ -626,9 +630,9 @@ describe('IndexedDB challenge repository', () => {
       request.onsuccess = () => resolve(request.result);
       request.onerror = () => reject(request.error);
     });
-    expect(quarantined).toHaveLength(6);
+    expect(quarantined).toHaveLength(7);
     expect(quarantined.map((record) => (record as { sourceStore: string }).sourceStore).sort()).toEqual([
-      'attempts', 'attempts', 'challengeMeta', 'challengeMeta', 'taskProgress', 'wrongQuestions',
+      'attempts', 'attempts', 'attempts', 'challengeMeta', 'challengeMeta', 'taskProgress', 'wrongQuestions',
     ]);
     database.close();
   });

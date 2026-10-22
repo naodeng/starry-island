@@ -95,6 +95,18 @@ describe('buildChallengeQualityReport', () => {
     expect(report.overall.passed).toBe(true);
   });
 
+  it('fails release readiness when task IDs collide across released groups', async () => {
+    const duplicated = cloneInputs(inputs);
+    const [unitGroup, semesterGroup] = duplicated.manifest.groups;
+    semesterGroup.definition.tasks[0].id = unitGroup.definition.tasks[0].id;
+
+    const report = await buildChallengeQualityReport(duplicated, { seedCount: 1 });
+
+    expect(report.overall.passed).toBe(false);
+    expect(report.groups.map(({ status }) => status)).toEqual(['unavailable', 'unavailable']);
+    expect(report.errors).toContainEqual(expect.objectContaining({ code: 'duplicate-task-id' }));
+  });
+
   it.each(['planned', 'suspended'] as const)('does not let a %s pool shortage block another released ready group', async (releaseIntent) => {
     const deferred = cloneInputs(inputs);
     const unitGroup = deferred.manifest.groups.find(({ definition }) => definition.kind === 'unit')!;
@@ -123,9 +135,14 @@ describe('buildChallengeQualityReport', () => {
     group.definition.tasks[3].requiredKnowledgePointIds = [newCoreIds[0]];
     group.definition.tasks[4].requiredKnowledgePointIds = [newCoreIds[0], newCoreIds[1]];
     const questionsById = new Map(invalid.manifest.questions.map((question) => [question.questionId, question]));
-    for (const questionId of group.questionIds) {
+    const basicQuestionIds = group.questionIds.filter((questionId) => questionsById.get(questionId)?.difficulty === 'basic');
+    for (const [index, questionId] of basicQuestionIds.entries()) {
       const question = questionsById.get(questionId)!;
-      question.knowledgePointIds = [...new Set([...question.knowledgePointIds, ...newCoreIds])];
+      question.knowledgePointIds = [newCoreIds[index % newCoreIds.length]];
+    }
+    for (const questionId of group.questionIds.filter((id) => questionsById.get(id)?.difficulty !== 'basic')) {
+      const question = questionsById.get(questionId)!;
+      question.knowledgePointIds = [newCoreIds[0], newCoreIds[1]];
     }
 
     const report = await buildChallengeQualityReport(invalid, { seedCount: 2 });

@@ -173,6 +173,37 @@ describe('validatePilotManifest', () => {
     expect(report.groupStatusById).toEqual({ 'grade-2-term-1-math-unit-01': 'ready' });
   });
 
+  it.each(['released', 'planned'] as const)('blocks a released group when a task ID is also used by a %s group', async (otherIntent) => {
+    const duplicated = cloneFixture(fixture);
+    const [releasedGroup, otherGroup] = duplicated.manifest.groups;
+    otherGroup.definition.tasks[0].id = releasedGroup.definition.tasks[0].id;
+    otherGroup.releaseIntent = otherIntent;
+
+    const report = await validateChallengeManifest(duplicated.manifest, duplicated.activitiesById, duplicated.sourceUnitByActivityId, duplicated.unitsById);
+
+    expect(report.errors).toContainEqual(expect.objectContaining({
+      code: 'duplicate-task-id',
+      groupId: releasedGroup.definition.id,
+      classification: 'released-group-blocking',
+    }));
+    expect(report.groupStatusById[releasedGroup.definition.id]).toBe('unavailable');
+    expect(report.groupStatusById[otherGroup.definition.id]).toBe(otherIntent === 'planned' ? 'planned' : 'unavailable');
+  });
+
+  it.each(['constructor', '__proto__'])('handles the reserved object key group ID %s without throwing', async (groupId) => {
+    const reservedId = cloneFixture(fixture);
+    const group = reservedId.manifest.groups[0];
+    group.definition.id = groupId;
+    group.questionIds = [];
+
+    const report = await validateChallengeManifest(reservedId.manifest, reservedId.activitiesById, reservedId.sourceUnitByActivityId, reservedId.unitsById);
+
+    expect(report.groupStatusById[groupId]).toBe('unavailable');
+    expect(report.groupIssuesById[groupId]).toEqual(expect.arrayContaining([
+      expect.objectContaining({ classification: 'released-group-blocking' }),
+    ]));
+  });
+
   it('keeps a group ready when only its approved content fingerprint changed', async () => {
     const changed = cloneFixture(fixture);
     const record = changed.manifest.questions[0];

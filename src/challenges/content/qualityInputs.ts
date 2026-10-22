@@ -19,8 +19,8 @@ function registerActivity(
   sourceUnitByActivityId.set(activity.id, sourceUnitId);
 }
 
-export async function loadChallengeQualityInputs(): Promise<ChallengeQualityInputs> {
-  const manifest: ChallengeManifest = parseChallengeManifest(rawManifest);
+export async function loadChallengeQualityInputs(manifestValue: unknown = rawManifest): Promise<ChallengeQualityInputs> {
+  const manifest: ChallengeManifest = parseChallengeManifest(manifestValue);
   const activitiesById = new Map<string, ActivityDefinition>();
   const sourceUnitByActivityId = new Map<string, string>();
   const unitsById = new Map<string, CurriculumUnit>();
@@ -41,19 +41,15 @@ export async function loadChallengeQualityInputs(): Promise<ChallengeQualityInpu
     }
   }));
 
-  const unitChallengeGroup = manifest.groups.find(({ definition }) => definition.kind === 'unit');
-  const supplementalUnitId = unitChallengeGroup?.definition.sourceUnitIds[0];
   const referencedSupplementalIds = new Set(pilotSupplementalActivities
     .filter(({ activity }) => manifest.questions.some((question) => question.activityId === activity.id))
     .map(({ activity }) => activity.id));
-  if (referencedSupplementalIds.size > 0 && !supplementalUnitId) {
-    throw new Error('Supplemental challenge activities need a declared unit group to establish their curriculum source.');
-  }
-  if (supplementalUnitId) {
-    for (const supplemental of pilotSupplementalActivities) {
-      if (!referencedSupplementalIds.has(supplemental.activity.id)) continue;
-      registerActivity(supplemental.activity, supplementalUnitId, activitiesById, sourceUnitByActivityId);
+  for (const supplemental of pilotSupplementalActivities) {
+    if (!referencedSupplementalIds.has(supplemental.activity.id)) continue;
+    if (!sourceUnitIds.includes(supplemental.sourceUnitId)) {
+      throw new Error(`Supplemental challenge activity ${supplemental.activity.id} references undeclared source unit ${supplemental.sourceUnitId}.`);
     }
+    registerActivity(supplemental.activity, supplemental.sourceUnitId, activitiesById, sourceUnitByActivityId);
   }
 
   return { manifest, activitiesById, sourceUnitByActivityId, unitsById };

@@ -153,10 +153,12 @@ function hasValidAttemptFields(value: unknown): boolean {
   if (!isRecord(value)
     || !isNonEmptyString(value.attemptId)
     || !isNonEmptyString(value.taskId)
+    || !(value.difficulty === 'basic' || value.difficulty === 'advanced' || value.difficulty === 'high')
     || value.status !== 'in-progress'
     || !Array.isArray(value.questions)
     || value.questions.length === 0
     || !value.questions.every(isQuestionSnapshot)
+    || value.questions.some((question) => isQuestionSnapshot(question) && question.difficulty !== value.difficulty)
     || new Set(value.questions.map((question) => (question as { questionId: string }).questionId)).size !== value.questions.length
     || !isRecord(value.answers)
     || !isNonEmptyString(value.assemblySeed)

@@ -77,7 +77,7 @@ export async function validateChallengeManifest(
   const errors: ValidationIssue[] = [];
   const globalIssues: ValidationIssue[] = [];
   const informationalIssues: ValidationIssue[] = [];
-  const groupIssuesById: Record<string, ValidationIssue[]> = {};
+  const groupIssuesById = new Map<string, ValidationIssue[]>();
   const contentChanges: ChallengeManifestValidationReport['contentChanges'] = [];
   const questionById = new Map<string, ChallengeQuestionRecord>();
   const questionCounts = new Map<string, number>();
@@ -102,7 +102,9 @@ export async function validateChallengeManifest(
   function groupIssue(group: ChallengeGroupManifest, code: string, path: string, message: string) {
     const classification = group.releaseIntent === 'released' ? 'released-group-blocking' : 'informational';
     const issue = makeIssue(classification, code, path, message, group.definition.id);
-    (groupIssuesById[group.definition.id] ??= []).push(issue);
+    const groupIssues = groupIssuesById.get(group.definition.id) ?? [];
+    groupIssues.push(issue);
+    groupIssuesById.set(group.definition.id, groupIssues);
     if (classification === 'released-group-blocking') errors.push(issue);
     else informationalIssues.push(issue);
   }
@@ -160,6 +162,25 @@ export async function validateChallengeManifest(
       globalIssue('duplicate-group-id', `groups.${group.definition.id}`, 'Group IDs must be unique.', group.definition.id);
     }
     groupIds.add(group.definition.id);
+  }
+
+  const taskGroupsById = new Map<string, Map<string, ChallengeGroupManifest>>();
+  for (const group of manifest.groups) {
+    const taskIds = new Set<string>();
+    const tasks = Array.isArray(group.definition.tasks) ? group.definition.tasks : [];
+    for (const task of tasks) {
+      if (taskIds.has(task.id)) continue;
+      taskIds.add(task.id);
+      const groups = taskGroupsById.get(task.id) ?? new Map<string, ChallengeGroupManifest>();
+      groups.set(group.definition.id, group);
+      taskGroupsById.set(task.id, groups);
+    }
+  }
+  for (const [taskId, groups] of taskGroupsById) {
+    if (groups.size < 2) continue;
+    for (const group of groups.values()) {
+      groupIssue(group, 'duplicate-task-id', `groups.${group.definition.id}.tasks`, `Task ID ${taskId} is used by multiple groups.`);
+    }
   }
 
   for (const group of manifest.groups) {
@@ -288,18 +309,26 @@ export async function validateChallengeManifest(
     }
   }
 
-  const groupStatusById: Record<string, ChallengeReleaseStatus> = {};
+  const groupStatusById = new Map<string, ChallengeReleaseStatus>();
   for (const group of manifest.groups) {
-    const groupIssues = groupIssuesById[group.definition.id] ?? [];
+    const groupIssues = groupIssuesById.get(group.definition.id) ?? [];
     const hasReleasedGroupBlockingIssues = groupIssues.some(({ classification }) => classification === 'released-group-blocking');
-    groupStatusById[group.definition.id] = resolveChallengeReleaseStatus(
+    groupStatusById.set(group.definition.id, resolveChallengeReleaseStatus(
       group.releaseIntent,
       hasReleasedGroupBlockingIssues,
       globalIssues.length > 0,
-    );
+    ));
   }
 
-  return { errors, globalIssues, groupIssuesById, informationalIssues, contentChanges, groupStatusById, questionUniqueness: uniqueness };
+  return {
+    errors,
+    globalIssues,
+    groupIssuesById: Object.fromEntries(groupIssuesById),
+    informationalIssues,
+    contentChanges,
+    groupStatusById: Object.fromEntries(groupStatusById),
+    questionUniqueness: uniqueness,
+  };
 }
 
 export const validatePilotManifest = validateChallengeManifest;

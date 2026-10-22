@@ -65,13 +65,9 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
     }
   }));
 
-  const unitChallengeGroup = manifest.groups.find(({ definition }) => definition.kind === 'unit');
-  const supplementalUnitId = unitChallengeGroup?.definition.sourceUnitIds[0];
-  if (supplementalUnitId) {
-    for (const supplemental of pilotSupplementalActivities) {
-      activitiesById.set(supplemental.activity.id, supplemental.activity);
-      sourceUnitByActivityId.set(supplemental.activity.id, supplementalUnitId);
-    }
+  for (const supplemental of pilotSupplementalActivities) {
+    activitiesById.set(supplemental.activity.id, supplemental.activity);
+    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }
 
   const validation = await validateChallengeManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);

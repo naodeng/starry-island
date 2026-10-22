@@ -93,6 +93,16 @@ describe('assemblePaper', () => {
     expect(paper.every(({ questionId }) => !['question-00', 'question-01'].includes(questionId))).toBe(true);
   });
 
+  it('allows fewer questions than knowledge points when each question covers several points', () => {
+    const knowledgePointIds = ['length', 'units', 'estimation'];
+    const multiTagPool = Array.from({ length: 4 }, (_, index) => candidate(index, { knowledgePointIds }));
+
+    const paper = assemblePaper({ ...task, targetCount: 2, requiredKnowledgePointIds: knowledgePointIds }, multiTagPool, 'multi-tag');
+
+    expect(paper).toHaveLength(2);
+    expect(new Set(paper.flatMap(({ knowledgePointIds: ids }) => ids))).toEqual(new Set(knowledgePointIds));
+  });
+
   it('keeps approved candidates eligible when their content fingerprint changes', () => {
     const changed = candidate(0, { approvedContentFingerprint: 'before-edit', contentFingerprint: 'after-edit' });
     const paper = assemblePaper(task, [changed, ...candidates.slice(1)], 'fingerprint');

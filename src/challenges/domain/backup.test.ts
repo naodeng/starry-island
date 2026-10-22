@@ -186,6 +186,9 @@ describe('challenge backup checksum', () => {
     };
 
     expect(isChallengeBackupData({ ...emptyData, attempts: [attempt] })).toBe(true);
+    expect(isChallengeBackupData({ ...emptyData, attempts: [{ ...attempt, difficulty: undefined }] })).toBe(false);
+    expect(isChallengeBackupData({ ...emptyData, attempts: [{ ...attempt, difficulty: 'expert' }] })).toBe(false);
+    expect(isChallengeBackupData({ ...emptyData, attempts: [{ ...attempt, questions: [{ ...question, difficulty: 'advanced' }] }] })).toBe(false);
     expect(isChallengeBackupData({ ...emptyData, attempts: [attempt, attempt] })).toBe(false);
     expect(isChallengeBackupData({ ...emptyData, attempts: [{ ...attempt, currentIndex: 1 }] })).toBe(false);
     expect(isChallengeBackupData({ ...emptyData, recentQuestionAttempts: [['same', 'same']] })).toBe(false);
