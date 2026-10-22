@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChallengeBackupData } from './backup';
-import { createChallengeBackup, verifyChallengeBackup } from './backup';
+import { createChallengeBackup, isChallengeBackupData, verifyChallengeBackup } from './backup';
 import type { TaskProgress } from './types';
 
 const emptyData: ChallengeBackupData = {
@@ -23,6 +23,7 @@ describe('challenge backup checksum', () => {
     });
     expect(backup.integrity.digest).toMatch(/^[a-f0-9]{64}$/);
     await expect(verifyChallengeBackup(backup)).resolves.toBe(true);
+    await expect(verifyChallengeBackup(backup, {} as Crypto)).resolves.toBe(false);
   });
 
   it('uses stable object-key ordering and detects changed backup data', async () => {
@@ -51,5 +52,27 @@ describe('challenge backup checksum', () => {
 
     await expect(verifyChallengeBackup({ ...backup, version: 2 })).resolves.toBe(false);
     await expect(verifyChallengeBackup({ ...backup, data: { ...emptyData, attempts: null } })).resolves.toBe(false);
+  });
+
+  it('rejects duplicate record keys and malformed answer snapshots before import', () => {
+    const activity = {
+      id: 'activity-1', kind: 'arithmetic', prompt: '1 + 1', hint: '数一数', explanation: '等于 2。',
+      expression: '1 + 1', correctAnswer: 2,
+    };
+    const question = {
+      questionId: 'question-1', activityId: 'activity-1', difficulty: 'basic', knowledgePointIds: ['addition'],
+      lifecycle: 'active', approved: true, answerLeakageReviewed: true,
+      approvedContentFingerprint: 'fingerprint', contentFingerprint: 'fingerprint', activity,
+    };
+    const attempt = {
+      attemptId: 'attempt-1', taskId: 'task-1', difficulty: 'basic', status: 'in-progress',
+      questions: [question], assemblySeed: 'seed', contentManifestVersion: 'v1', answers: {},
+      currentIndex: 0, startedAt: '2026-01-01T00:00:00.000Z', elapsedMs: 0, revision: 0,
+    };
+
+    expect(isChallengeBackupData({ ...emptyData, attempts: [attempt] })).toBe(true);
+    expect(isChallengeBackupData({ ...emptyData, attempts: [attempt, attempt] })).toBe(false);
+    expect(isChallengeBackupData({ ...emptyData, attempts: [{ ...attempt, currentIndex: 1 }] })).toBe(false);
+    expect(isChallengeBackupData({ ...emptyData, recentQuestionAttempts: [['same', 'same']] })).toBe(false);
   });
 });

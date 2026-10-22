@@ -1,10 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import type { AppRoute } from '../../app/router';
-import { createChallengeBackup } from '../domain/backup';
+import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup } from '../domain/backup';
+import type { ChallengeBackup, ChallengeBackupData } from '../domain/backup';
+import { mergeChallengeBackupData } from '../domain/backupMerge';
+import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import { deriveChallengeGrowth } from '../domain/growth';
 import type { ChallengeRepository } from '../storage/repository';
+import { RevisionConflictError } from '../storage/repository';
 import { createChallengeRepository } from '../storage/indexedDbRepository';
 import { loadPilotChallengeContent } from '../content/pilotContent';
 import type { LoadedPilotContent } from '../content/pilotContent';
@@ -39,6 +43,13 @@ type WrongQuestionState =
   | { status: 'ready'; records: WrongQuestionRecord[] }
   | { status: 'error' };
 
+interface PendingBackupImport {
+  imported: ChallengeBackupData;
+  expectedLocal: ChallengeBackupData;
+}
+
+const MAX_BACKUP_FILE_BYTES = 10 * 1024 * 1024;
+
 interface ChallengePageProps {
   route: ChallengeRoute;
   onNavigate: (path: string) => void;
@@ -54,11 +65,64 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const [progressAvailable, setProgressAvailable] = useState(true);
   const [progressLoading, setProgressLoading] = useState(true);
   const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
+  const [pendingBackupImport, setPendingBackupImport] = useState<PendingBackupImport | null>(null);
 
   async function exportBackup() {
     const snapshot = await repository.getBackupSnapshot();
     const backup = await createChallengeBackup(snapshot);
     downloadChallengeBackup(backup);
+  }
+
+  async function prepareBackupImport(file: File): Promise<ChallengeBackupMergeSummary> {
+    setPendingBackupImport(null);
+    if (file.size > MAX_BACKUP_FILE_BYTES) {
+      throw new Error('备份文件超过 10 MB，无法安全读取；本机记录没有更改。');
+    }
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(await file.text());
+    } catch {
+      throw new Error('备份文件不是有效的 JSON；本机记录没有更改。');
+    }
+    let backup: ChallengeBackup;
+    try {
+      backup = await parseChallengeBackup(parsed);
+    } catch {
+      throw new Error('备份格式或完整性校验无效；本机记录没有更改。');
+    }
+    let expectedLocal: ChallengeBackupData;
+    try {
+      expectedLocal = await repository.getBackupSnapshot();
+    } catch {
+      throw new Error('本机闯关记录暂时无法读取，不能生成安全预览；现有记录没有更改。');
+    }
+    if (!isChallengeBackupData(expectedLocal)) {
+      throw new Error('本机闯关记录结构异常，暂时不能安全合并；现有记录没有更改。');
+    }
+    const plan = mergeChallengeBackupData(expectedLocal, backup.data);
+    setPendingBackupImport({ imported: backup.data, expectedLocal });
+    return plan.summary;
+  }
+
+  async function confirmBackupImport() {
+    if (!pendingBackupImport) throw new Error('请重新选择备份文件并预览合并内容。');
+    try {
+      await repository.mergeBackupData(pendingBackupImport.imported, pendingBackupImport.expectedLocal);
+    } catch (error) {
+      setPendingBackupImport(null);
+      if (error instanceof RevisionConflictError) {
+        throw new Error('预览后本机记录发生变化，请重新选择文件并查看最新预览。');
+      }
+      throw new Error('备份没有导入；本机记录没有更改，可以重新预览后再试。');
+    }
+    setPendingBackupImport(null);
+    const progress = await repository.getAllTaskProgress().catch(() => null);
+    if (progress) {
+      const progressById: Record<string, TaskProgress> = {};
+      for (const item of progress) progressById[item.taskId] = item;
+      setProgressByTaskId(progressById);
+      setProgressAvailable(true);
+    }
   }
 
   useEffect(() => {
@@ -158,7 +222,18 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   }
 
   if (route.kind === 'challengeCenter') {
-    return <ChallengeCenter groups={content.groups} progressByTaskId={progressByTaskId} progressAvailable={progressAvailable} onNavigate={onNavigate} onExportBackup={exportBackup} />;
+    return (
+      <ChallengeCenter
+        groups={content.groups}
+        progressByTaskId={progressByTaskId}
+        progressAvailable={progressAvailable}
+        onNavigate={onNavigate}
+        onExportBackup={exportBackup}
+        onPrepareImportBackup={prepareBackupImport}
+        onConfirmImportBackup={confirmBackupImport}
+        onCancelImportBackup={() => setPendingBackupImport(null)}
+      />
+    );
   }
 
   if (route.kind === 'challengeGrowth') {

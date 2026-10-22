@@ -60,6 +60,11 @@
 .challenge-growth-progress-label, .challenge-growth-badge { margin: 0; color: var(--challenge-card-text); font-weight: 700; }
 .challenge-growth-note { margin: 18px 0 0; color: var(--animal-text-color-secondary); font-size: 14px; line-height: 1.6; }
 .challenge-backup-note, .challenge-backup-status { margin: 0; color: var(--animal-text-color-secondary); font-size: 14px; line-height: 1.6; }
+.challenge-backup-panel { display: grid; gap: 14px; margin-top: 22px; padding: 22px clamp(18px, 4vw, 32px); border: 1px solid var(--island-border); border-radius: var(--island-radius-card, 24px); background: var(--island-surface); }
+.challenge-backup-panel h2 { margin: 0; color: var(--animal-text-color); font-size: 22px; }
+.challenge-backup-panel > p { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; }
+.challenge-backup-preview { display: grid; gap: 14px; padding: 16px; border: 1px solid var(--island-border); border-radius: 16px; background: var(--animal-bg-color); }
+.challenge-backup-preview p { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; overflow-wrap: anywhere; }
 @media (max-width: 700px) {
   .challenge-page { padding: 18px 14px 42px; }
   .challenge-card-grid, .challenge-task-grid { grid-template-columns: 1fr; }
@@ -71,6 +76,7 @@
   .challenge-runner-footer span { text-align: center; }
   .challenge-growth-metrics { grid-template-columns: 1fr; }
   .challenge-growth-metric { min-height: 0; }
+  .challenge-backup-panel { margin-top: 16px; padding: 18px; }
 }
 :root[data-theme='dark'] .challenge-growth-route .eyebrow { color: var(--challenge-card-text); }
 @media (max-width: 420px) {

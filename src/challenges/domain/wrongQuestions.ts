@@ -22,6 +22,7 @@ export function transitionWrongQuestion(
   return {
     ...previous,
     correctAttemptStreak,
+    lastCorrectAt: completedAt,
     ...(correctAttemptStreak === 2 ? { masteredAt: completedAt } : {}),
   };
 }

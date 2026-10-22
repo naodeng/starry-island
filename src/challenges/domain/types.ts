@@ -122,6 +122,7 @@ export interface WrongQuestionRecord {
   wrongCount: number;
   lastWrongAt: string;
   correctAttemptStreak: 0 | 1 | 2;
+  lastCorrectAt?: string;
   masteredAt?: string;
 }
 

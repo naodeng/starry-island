@@ -141,6 +141,63 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getActiveAttempt('task-active')).toEqual(active);
   });
 
+  it('merges imported data in one transaction and preserves the local active attempt', async () => {
+    const repository = createRepository();
+    const completed = makeAttempt('task-finished', 'attempt-finished', ['question-finished']);
+    await repository.beginAttempt(completed);
+    await complete(repository, completed);
+    const localActive = makeAttempt('task-active', 'attempt-local', ['question-local']);
+    await repository.beginAttempt(localActive);
+    const expectedLocal = await repository.getBackupSnapshot();
+    const importedActive = makeAttempt('task-active', 'attempt-imported', ['question-imported']);
+    const incomingProgress = {
+      ...expectedLocal.taskProgress[0]!,
+      bestCorrect: 1,
+      bestTotal: 1,
+      latestCorrect: 0,
+      completedCount: 1,
+      updatedAt: '2026-01-02T00:00:00.000Z',
+    };
+
+    const summary = await repository.mergeBackupData({
+      attempts: [importedActive, makeAttempt('task-new', 'attempt-new', ['question-new'])],
+      taskProgress: [incomingProgress],
+      recentQuestionAttempts: [['question-imported']],
+      wrongQuestions: [],
+    }, expectedLocal);
+
+    expect(summary).toEqual({
+      addedActiveAttempts: 1,
+      preservedLocalActiveAttempts: 1,
+      preservedProgressForActiveTasks: 0,
+      addedProgressRecords: 0,
+      mergedProgressRecords: 1,
+      addedWrongQuestions: 0,
+      mergedWrongQuestions: 0,
+    });
+    const merged = await repository.getBackupSnapshot();
+    expect(merged.attempts).toEqual(expect.arrayContaining([localActive, expect.objectContaining({ taskId: 'task-new' })]));
+    expect(merged.attempts).not.toContainEqual(importedActive);
+    expect(merged.taskProgress[0]).toMatchObject({ completedCount: 1, everPassed: true, bestCorrect: 1, latestCorrect: 0 });
+  });
+
+  it('rejects an import if local data changed after preview and leaves it untouched', async () => {
+    const repository = createRepository();
+    const expectedLocal = await repository.getBackupSnapshot();
+    const localActive = makeAttempt('task-local', 'attempt-local', ['question-local']);
+    await repository.beginAttempt(localActive);
+
+    await expect(repository.mergeBackupData({
+      attempts: [makeAttempt('task-imported', 'attempt-imported', ['question-imported'])],
+      taskProgress: [],
+      recentQuestionAttempts: [],
+      wrongQuestions: [],
+    }, expectedLocal)).rejects.toThrow(RevisionConflictError);
+
+    const actual = await repository.getBackupSnapshot();
+    expect(actual.attempts).toEqual([localActive]);
+  });
+
   it('records wrong questions and requires two correct completed attempts to master them', async () => {
     const repository = createRepository();
     const questionIds = ['question-a'];

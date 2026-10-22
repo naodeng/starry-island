@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
 
 const taskId = 'grade-2-term-1-math-unit-02/basic-01';
@@ -80,6 +80,110 @@ test('downloads a versioned local backup with a valid checksum', async ({ page }
   expect(integrity.digest).toBe(createHash('sha256').update(stableSerialize(payload)).digest('hex'));
   await expect(page.getByRole('status')).toHaveText('闯关备份已生成并下载到此设备。');
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+});
+
+test('previews and safely merges an active attempt without duplicating data', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const question = {
+    questionId: 'backup-question',
+    activityId: 'backup-activity',
+    difficulty: 'basic',
+    knowledgePointIds: ['addition'],
+    lifecycle: 'active',
+    approved: true,
+    answerLeakageReviewed: true,
+    approvedContentFingerprint: 'approved',
+    contentFingerprint: 'current',
+    activity: {
+      id: 'backup-activity', kind: 'arithmetic', prompt: '1 + 1', hint: '数一数',
+      explanation: '1 加 1 等于 2。', expression: '1 + 1', correctAnswer: 2,
+    },
+  };
+  const data = {
+    attempts: [{
+      attemptId: 'backup-attempt', taskId, difficulty: 'basic', status: 'in-progress', questions: [question],
+      assemblySeed: 'seed', contentManifestVersion: 'v1', answers: {}, currentIndex: 0,
+      startedAt: '2026-10-22T00:00:00.000Z', elapsedMs: 1000, revision: 0,
+    }],
+    taskProgress: [{
+      taskId, bestCorrect: 1, bestTotal: 1, latestCorrect: 0, latestTotal: 1,
+      completedCount: 1, everPassed: true, updatedAt: '2026-10-22T00:00:00.000Z', revision: 1,
+    }],
+    recentQuestionAttempts: [['backup-question']],
+    wrongQuestions: [{
+      questionId: 'backup-question', question, wrongCount: 2,
+      lastWrongAt: '2026-10-21T00:00:00.000Z', correctAttemptStreak: 0,
+    }],
+  };
+  const payload = {
+    format: 'starry-island-challenge-backup',
+    version: 1,
+    createdAt: '2026-10-22T00:00:00.000Z',
+    data,
+  };
+  const backup = {
+    ...payload,
+    integrity: { algorithm: 'SHA-256', digest: createHash('sha256').update(stableSerialize(payload)).digest('hex') },
+  };
+  const backupPath = testInfo.outputPath('challenge-import.json');
+  writeFileSync(backupPath, JSON.stringify(backup));
+
+  const backupTrigger = page.getByRole('button', { name: '选择闯关备份文件' });
+  const backupInput = page.locator('input[type="file"]');
+  await backupTrigger.focus();
+  expect(await backupTrigger.evaluate((button) => document.activeElement === button)).toBe(true);
+  expect(await backupTrigger.evaluate((button) => getComputedStyle(button).outlineStyle)).not.toBe('none');
+  await backupInput.setInputFiles(backupPath);
+  const preview = page.getByRole('group', { name: '导入预览' });
+  await expect(preview).toContainText('新增进行中答题 1 项，保留本机冲突答题 0 项');
+  await expect(preview).toContainText('新增成绩 1 项，合并成绩 0 项');
+  await expect(preview).toContainText('重复成绩与错题次数不会相加。');
+  await page.getByRole('button', { name: '确认安全合并' }).click();
+
+  await expect(page.getByRole('status').filter({ hasText: '闯关备份已安全合并到此设备' }))
+    .toHaveText('闯关备份已安全合并到此设备；课程进度没有改变。');
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+
+  await backupInput.setInputFiles(backupPath);
+  await expect(page.getByRole('group', { name: '导入预览' })).toContainText('保留本机冲突答题 1 项，进行中任务成绩暂缓合并 1 项');
+  await page.getByRole('button', { name: '确认安全合并' }).click();
+  await expect(page.getByRole('status').filter({ hasText: '闯关备份已安全合并到此设备' }))
+    .toHaveText('闯关备份已安全合并到此设备；课程进度没有改变。');
+
+  const stored = await page.evaluate(async (taskIdToRead) => new Promise((resolve, reject) => {
+    const open = indexedDB.open('starry-island-challenges', 2);
+    open.onerror = () => reject(open.error);
+    open.onsuccess = () => {
+      const database = open.result;
+      const transaction = database.transaction(['attempts', 'taskProgress', 'challengeMeta', 'wrongQuestions'], 'readonly');
+      const attemptRequest = transaction.objectStore('attempts').get(taskIdToRead);
+      const progressRequest = transaction.objectStore('taskProgress').get(taskIdToRead);
+      const recentRequest = transaction.objectStore('challengeMeta').get('recent-question-ids');
+      const wrongRequest = transaction.objectStore('wrongQuestions').get('backup-question');
+      transaction.oncomplete = () => {
+        resolve({
+          attempt: attemptRequest.result,
+          progress: progressRequest.result,
+          recent: recentRequest.result,
+          wrongQuestion: wrongRequest.result,
+        });
+        database.close();
+      };
+      transaction.onerror = () => reject(transaction.error);
+    };
+  }), taskId);
+  expect(stored).toMatchObject({
+    attempt: { attemptId: 'backup-attempt', currentIndex: 0 },
+    progress: { completedCount: 1, bestCorrect: 1 },
+    recent: { attemptQuestionIds: [['backup-question']] },
+    wrongQuestion: { wrongCount: 2 },
+  });
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
 test('opens the local wrong-question notebook from the challenge center', async ({ page }) => {

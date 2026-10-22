@@ -24,54 +24,193 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
+function isNonEmptyString(value: unknown): value is string {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function isTimestamp(value: unknown): value is string {
+  return typeof value === 'string' && Number.isFinite(Date.parse(value));
+}
+
+function isActivity(value: unknown): boolean {
+  if (!isRecord(value)
+    || !isNonEmptyString(value.id)
+    || typeof value.prompt !== 'string'
+    || typeof value.hint !== 'string'
+    || typeof value.explanation !== 'string') return false;
+
+  switch (value.kind) {
+    case 'choice':
+      return Array.isArray(value.options)
+        && value.options.length > 0
+        && value.options.every((option) => isRecord(option) && isNonEmptyString(option.id) && typeof option.label === 'string')
+        && isNonEmptyString(value.correctOptionId)
+        && value.options.some((option) => isRecord(option) && option.id === value.correctOptionId);
+    case 'match':
+      return Array.isArray(value.pairs)
+        && value.pairs.length > 0
+        && value.pairs.every((pair) => isRecord(pair)
+          && isNonEmptyString(pair.id)
+          && typeof pair.left === 'string'
+          && typeof pair.right === 'string');
+    case 'order':
+      {
+        const items = value.items;
+        const correctOrder = value.correctOrder;
+        return Array.isArray(items)
+          && items.length > 0
+          && items.every((item) => isRecord(item) && isNonEmptyString(item.id) && typeof item.label === 'string')
+          && Array.isArray(correctOrder)
+          && correctOrder.length === items.length
+          && correctOrder.every((id) => typeof id === 'string')
+          && new Set(correctOrder).size === correctOrder.length
+          && items.every((item) => {
+            if (!isRecord(item) || typeof item.id !== 'string') return false;
+            return correctOrder.includes(item.id);
+          });
+      }
+    case 'categorize': {
+      const categories = value.categories;
+      const items = value.items;
+      return Array.isArray(categories)
+        && categories.length > 0
+        && categories.every((category) => isRecord(category) && isNonEmptyString(category.id) && typeof category.label === 'string')
+        && Array.isArray(items)
+        && items.length > 0
+        && items.every((item) => isRecord(item)
+          && isNonEmptyString(item.id)
+          && typeof item.label === 'string'
+          && categories.some((category) => isRecord(category) && category.id === item.categoryId));
+    }
+    case 'measurement':
+      return typeof value.objectLabel === 'string'
+        && Number.isFinite(value.targetLengthCm)
+        && Number.isFinite(value.minCm)
+        && Number.isFinite(value.maxCm);
+    case 'arithmetic':
+      return typeof value.expression === 'string'
+        && Number.isFinite(value.correctAnswer)
+        && (value.carryBorrowSteps === undefined
+          || (Array.isArray(value.carryBorrowSteps) && value.carryBorrowSteps.every((step) => typeof step === 'string')));
+    default:
+      return false;
+  }
+}
+
+function isQuestionSnapshot(value: unknown): boolean {
+  return isRecord(value)
+    && isNonEmptyString(value.questionId)
+    && isNonEmptyString(value.activityId)
+    && (value.difficulty === 'basic' || value.difficulty === 'advanced' || value.difficulty === 'high')
+    && Array.isArray(value.knowledgePointIds)
+    && value.knowledgePointIds.every((id) => isNonEmptyString(id))
+    && (value.lifecycle === 'active' || value.lifecycle === 'disabled' || value.lifecycle === 'deprecated')
+    && typeof value.approved === 'boolean'
+    && typeof value.answerLeakageReviewed === 'boolean'
+    && typeof value.approvedContentFingerprint === 'string'
+    && typeof value.contentFingerprint === 'string'
+    && (value.approvedBy === undefined || typeof value.approvedBy === 'string')
+    && (value.approvedAt === undefined || isTimestamp(value.approvedAt))
+    && isActivity(value.activity)
+    && isRecord(value.activity)
+    && value.activity.id === value.activityId;
+}
+
 function isAttempt(value: unknown): value is ChallengeAttempt {
-  if (!isRecord(value)) return false;
-  return typeof value.attemptId === 'string'
-    && typeof value.taskId === 'string'
-    && (value.status === 'in-progress' || value.status === 'completed')
-    && Array.isArray(value.questions)
-    && isRecord(value.answers)
-    && Number.isSafeInteger(value.currentIndex)
-    && Number.isSafeInteger(value.revision);
+  if (!isRecord(value)
+    || !isNonEmptyString(value.attemptId)
+    || !isNonEmptyString(value.taskId)
+    || value.status !== 'in-progress'
+    || !Array.isArray(value.questions)
+    || value.questions.length === 0
+    || !value.questions.every(isQuestionSnapshot)
+    || new Set(value.questions.map((question) => (question as { questionId: string }).questionId)).size !== value.questions.length
+    || !isRecord(value.answers)
+    || !isNonEmptyString(value.assemblySeed)
+    || !isNonEmptyString(value.contentManifestVersion)
+    || !isTimestamp(value.startedAt)
+    || !Number.isSafeInteger(value.elapsedMs)
+    || (value.elapsedMs as number) < 0
+    || !Number.isSafeInteger(value.currentIndex)
+    || !Number.isSafeInteger(value.revision)
+    || (value.currentIndex as number) < 0
+    || (value.currentIndex as number) > value.questions.length
+    || value.revision !== value.currentIndex
+    || (value.revision as number) < 0) return false;
+
+  const questionIds = value.questions.map((question) => (question as { questionId: string }).questionId);
+  const answerIds = Object.keys(value.answers);
+  return answerIds.length === value.currentIndex
+    && answerIds.every((id) => questionIds.slice(0, value.currentIndex as number).includes(id))
+    && Object.values(value.answers).every((answer) => typeof answer === 'string'
+      || (typeof answer === 'number' && Number.isFinite(answer))
+      || (Array.isArray(answer) && answer.every((item) => typeof item === 'string'))
+      || (isRecord(answer) && Object.values(answer).every((item) => typeof item === 'string')));
 }
 
 function isTaskProgress(value: unknown): value is TaskProgress {
-  if (!isRecord(value)) return false;
-  return typeof value.taskId === 'string'
+  return isRecord(value)
+    && isNonEmptyString(value.taskId)
     && Number.isSafeInteger(value.bestCorrect)
+    && (value.bestCorrect as number) >= 0
     && Number.isSafeInteger(value.bestTotal)
+    && (value.bestTotal as number) > 0
+    && (value.bestCorrect as number) <= (value.bestTotal as number)
     && Number.isSafeInteger(value.latestCorrect)
+    && (value.latestCorrect as number) >= 0
     && Number.isSafeInteger(value.latestTotal)
+    && (value.latestTotal as number) > 0
+    && (value.latestCorrect as number) <= (value.latestTotal as number)
     && Number.isSafeInteger(value.completedCount)
+    && (value.completedCount as number) > 0
     && typeof value.everPassed === 'boolean'
-    && typeof value.updatedAt === 'string'
-    && Number.isSafeInteger(value.revision);
+    && isTimestamp(value.updatedAt)
+    && Number.isSafeInteger(value.revision)
+    && (value.revision as number) > 0;
 }
 
 function isWrongQuestion(value: unknown): value is WrongQuestionRecord {
-  if (!isRecord(value)) return false;
-  return typeof value.questionId === 'string'
-    && isAttemptQuestionSnapshot(value.question)
+  return isRecord(value)
+    && isNonEmptyString(value.questionId)
+    && isQuestionSnapshot(value.question)
+    && isRecord(value.question)
+    && value.question.questionId === value.questionId
     && Number.isSafeInteger(value.wrongCount)
-    && typeof value.lastWrongAt === 'string'
+    && (value.wrongCount as number) > 0
+    && isTimestamp(value.lastWrongAt)
     && (value.correctAttemptStreak === 0 || value.correctAttemptStreak === 1 || value.correctAttemptStreak === 2)
-    && (value.masteredAt === undefined || typeof value.masteredAt === 'string');
-}
-
-function isAttemptQuestionSnapshot(value: unknown): boolean {
-  return isRecord(value) && typeof value.questionId === 'string' && isRecord(value.activity);
+    && (value.lastCorrectAt === undefined || isTimestamp(value.lastCorrectAt))
+    && (value.masteredAt === undefined || isTimestamp(value.masteredAt))
+    && (value.correctAttemptStreak !== 2 || isTimestamp(value.masteredAt))
+    && (value.correctAttemptStreak === 2 || value.masteredAt === undefined);
 }
 
 function isBackupData(value: unknown): value is ChallengeBackupData {
-  return isRecord(value)
-    && Array.isArray(value.attempts)
-    && value.attempts.every(isAttempt)
-    && Array.isArray(value.taskProgress)
-    && value.taskProgress.every(isTaskProgress)
-    && Array.isArray(value.recentQuestionAttempts)
-    && value.recentQuestionAttempts.every((ids) => Array.isArray(ids) && ids.every((id) => typeof id === 'string'))
-    && Array.isArray(value.wrongQuestions)
-    && value.wrongQuestions.every(isWrongQuestion);
+  if (!isRecord(value)
+    || !Array.isArray(value.attempts)
+    || !value.attempts.every(isAttempt)
+    || !Array.isArray(value.taskProgress)
+    || !value.taskProgress.every(isTaskProgress)
+    || !Array.isArray(value.recentQuestionAttempts)
+    || value.recentQuestionAttempts.length > 3
+    || !value.recentQuestionAttempts.every((ids) => Array.isArray(ids)
+      && ids.every((id) => isNonEmptyString(id))
+      && new Set(ids).size === ids.length)
+    || !Array.isArray(value.wrongQuestions)
+    || !value.wrongQuestions.every(isWrongQuestion)) return false;
+
+  const attemptTasks = value.attempts.map((attempt) => (attempt as ChallengeAttempt).taskId);
+  const attemptIds = value.attempts.map((attempt) => (attempt as ChallengeAttempt).attemptId);
+  const progressIds = value.taskProgress.map((progress) => (progress as TaskProgress).taskId);
+  const wrongIds = value.wrongQuestions.map((record) => (record as WrongQuestionRecord).questionId);
+  return new Set(attemptTasks).size === attemptTasks.length
+    && new Set(attemptIds).size === attemptIds.length
+    && new Set(progressIds).size === progressIds.length
+    && new Set(wrongIds).size === wrongIds.length;
+}
+
+export function isChallengeBackupData(value: unknown): value is ChallengeBackupData {
+  return isBackupData(value);
 }
 
 function stableSerialize(value: unknown): string {
@@ -98,8 +237,7 @@ function isChallengeBackup(value: unknown): value is ChallengeBackup {
   return isRecord(value)
     && value.format === 'starry-island-challenge-backup'
     && value.version === 1
-    && typeof value.createdAt === 'string'
-    && Number.isFinite(Date.parse(value.createdAt))
+    && isTimestamp(value.createdAt)
     && isBackupData(value.data)
     && isRecord(value.integrity)
     && value.integrity.algorithm === 'SHA-256'
@@ -134,5 +272,21 @@ export async function verifyChallengeBackup(
 ): Promise<boolean> {
   if (!isChallengeBackup(value)) return false;
   const { integrity: _integrity, ...payload } = value;
-  return await sha256(payload, cryptoProvider) === value.integrity.digest;
+  try {
+    return await sha256(payload, cryptoProvider) === value.integrity.digest;
+  } catch {
+    return false;
+  }
+}
+
+export async function parseChallengeBackup(
+  value: unknown,
+  cryptoProvider: CryptoProvider = globalThis.crypto,
+): Promise<ChallengeBackup> {
+  if (!isChallengeBackup(value)) throw new Error('备份文件格式或数据结构无效。');
+  const { integrity: _integrity, ...payload } = value;
+  if (await sha256(payload, cryptoProvider) !== value.integrity.digest) {
+    throw new Error('备份文件完整性校验失败，文件内容可能已损坏。');
+  }
+  return value;
 }

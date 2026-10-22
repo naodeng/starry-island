@@ -1,5 +1,6 @@
 import { submitAnswer } from '../../learning/answers';
 import type { ChallengeBackupData } from '../domain/backup';
+import { mergeChallengeBackupData } from '../domain/backupMerge';
 import { gradeAttempt } from '../domain/grading';
 import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
 import {
@@ -228,6 +229,40 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
     request.onerror = () => fail(new ChallengeRepositoryError('A challenge database request failed.', { cause: request.error }));
   }
 
+function readBackupSnapshot(
+  tx: IDBTransaction,
+  fail: (error: Error) => void,
+  setResult: (value: ChallengeBackupData) => void,
+): void {
+  let attempts: ChallengeAttempt[] | undefined;
+  let taskProgress: TaskProgress[] | undefined;
+  let recentQuestionAttempts: string[][] | undefined;
+  let wrongQuestions: WrongQuestionRecord[] | undefined;
+
+  const setWhenReady = () => {
+    if (attempts && taskProgress && recentQuestionAttempts && wrongQuestions) {
+      setResult({ attempts, taskProgress, recentQuestionAttempts, wrongQuestions });
+    }
+  };
+
+  onRequest(tx.objectStore(ATTEMPTS_STORE).getAll(), fail, (records) => {
+    attempts = records as ChallengeAttempt[];
+    setWhenReady();
+  });
+  onRequest(tx.objectStore(PROGRESS_STORE).getAll(), fail, (records) => {
+    taskProgress = records as TaskProgress[];
+    setWhenReady();
+  });
+  onRequest(tx.objectStore(META_STORE).get(RECENT_QUESTION_IDS_KEY), fail, (record) => {
+    recentQuestionAttempts = (record as RecentQuestionIdsRecord | undefined)?.attemptQuestionIds ?? [];
+    setWhenReady();
+  });
+  onRequest(tx.objectStore(WRONG_QUESTIONS_STORE).getAll(), fail, (records) => {
+    wrongQuestions = records as WrongQuestionRecord[];
+    setWhenReady();
+  });
+}
+
   return {
     getActiveAttempt(taskId) {
       return transaction<ChallengeAttempt | null>(ATTEMPTS_STORE, 'readonly', (tx, setResult, fail) => {
@@ -259,33 +294,34 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
       return transaction<ChallengeBackupData>(
         [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE],
         'readonly',
+        (tx, setResult, fail) => readBackupSnapshot(tx, fail, setResult),
+      );
+    },
+
+    mergeBackupData(imported, expectedLocal) {
+      return transaction(
+        [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE],
+        'readwrite',
         (tx, setResult, fail) => {
-          let attempts: ChallengeAttempt[] | undefined;
-          let taskProgress: TaskProgress[] | undefined;
-          let recentQuestionAttempts: string[][] | undefined;
-          let wrongQuestions: WrongQuestionRecord[] | undefined;
-
-          const setWhenReady = () => {
-            if (attempts && taskProgress && recentQuestionAttempts && wrongQuestions) {
-              setResult({ attempts, taskProgress, recentQuestionAttempts, wrongQuestions });
+          readBackupSnapshot(tx, fail, (local) => {
+            if (!sameValue(local, expectedLocal)) {
+              fail(new RevisionConflictError('本机闯关记录在预览后发生变化，请重新选择文件并查看最新预览。'));
+              return;
             }
-          };
-
-          onRequest(tx.objectStore(ATTEMPTS_STORE).getAll(), fail, (records) => {
-            attempts = records as ChallengeAttempt[];
-            setWhenReady();
-          });
-          onRequest(tx.objectStore(PROGRESS_STORE).getAll(), fail, (records) => {
-            taskProgress = records as TaskProgress[];
-            setWhenReady();
-          });
-          onRequest(tx.objectStore(META_STORE).get(RECENT_QUESTION_IDS_KEY), fail, (record) => {
-            recentQuestionAttempts = (record as RecentQuestionIdsRecord | undefined)?.attemptQuestionIds ?? [];
-            setWhenReady();
-          });
-          onRequest(tx.objectStore(WRONG_QUESTIONS_STORE).getAll(), fail, (records) => {
-            wrongQuestions = records as WrongQuestionRecord[];
-            setWhenReady();
+            try {
+              const plan = mergeChallengeBackupData(local, imported);
+              const attempts = tx.objectStore(ATTEMPTS_STORE);
+              const progresses = tx.objectStore(PROGRESS_STORE);
+              const meta = tx.objectStore(META_STORE);
+              const wrongQuestions = tx.objectStore(WRONG_QUESTIONS_STORE);
+              plan.data.attempts.forEach((attempt) => attempts.put(attempt));
+              plan.data.taskProgress.forEach((progress) => progresses.put(progress));
+              plan.data.wrongQuestions.forEach((record) => wrongQuestions.put(record));
+              meta.put({ key: RECENT_QUESTION_IDS_KEY, attemptQuestionIds: plan.data.recentQuestionAttempts } satisfies RecentQuestionIdsRecord);
+              setResult(plan.summary);
+            } catch (error) {
+              fail(error instanceof Error ? error : new ChallengeRepositoryError('Could not merge the challenge backup.', { cause: error }));
+            }
           });
         },
       );
