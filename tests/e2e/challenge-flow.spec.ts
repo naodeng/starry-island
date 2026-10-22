@@ -149,6 +149,25 @@ test('isolates malformed local records and exports them only after an explicit a
   await expect(page.getByText(/文件可能包含题目和作答内容/)).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
+  const contrastRatios = await page.locator('#challenge-quarantine-heading').evaluate((heading) => {
+    const card = heading.closest<HTMLElement>('.challenge-recovery-point');
+    const detail = card?.querySelector('p');
+    if (!card || !detail) return [];
+    const luminance = (color: string) => {
+      const [red, green, blue] = (color.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number).map((channel) => {
+        const normalized = channel / 255;
+        return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+      });
+      return red! * 0.2126 + green! * 0.7152 + blue! * 0.0722;
+    };
+    const background = luminance(getComputedStyle(card).backgroundColor);
+    return [heading, detail].map((element) => {
+      const foreground = luminance(getComputedStyle(element).color);
+      return (Math.max(background, foreground) + 0.05) / (Math.min(background, foreground) + 0.05);
+    });
+  });
+  expect(contrastRatios).toHaveLength(2);
+  expect(contrastRatios.every((contrast) => contrast >= 4.5)).toBe(true);
 
   const exportButton = page.getByRole('button', { name: '导出隔离记录' });
   await exportButton.focus();
@@ -422,6 +441,9 @@ test('saves, restores and completes a challenge without changing learning progre
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
   await page.goto(taskUrl);
   await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
+  expect(await page.evaluate(async () => ('serviceWorker' in navigator
+    ? (await navigator.serviceWorker.getRegistrations()).length
+    : 0))).toBe(0);
 
   await expect(page.getByRole('heading', { name: '基础闯关 1' })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
@@ -480,6 +502,89 @@ test('saves, restores and completes a challenge without changing learning progre
   await expect(page.getByText(/最好成绩 \d+\/15 · 已完成 1 次/)).toBeVisible();
   await expect(page.getByText('本次答案回顾')).toHaveCount(0);
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+});
+
+test('completes a loaded challenge after the browser goes offline', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(taskUrl);
+  await expect(page.getByRole('heading', { name: '基础闯关 1' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await page.context().setOffline(true);
+  expect(await page.evaluate(() => navigator.onLine)).toBe(false);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+
+  for (let completed = 0; completed < 15; completed += 1) {
+    await submitCurrentAnswer(page);
+    if (completed < 14) await expect(page.getByText(`已完成 ${completed + 1}/15 题`)).toBeVisible();
+  }
+
+  await expect(page.getByText('本次答案回顾')).toBeVisible();
+  await expect(page.getByLabel('本次闯关结果')).toContainText(/\d+\/15 题答对/);
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+});
+
+test('reads only the visible prompt with a local Chinese voice when requested', async ({ page }) => {
+  await page.addInitScript(() => {
+    const localVoice = { default: false, lang: 'zh-CN', localService: true, name: '本地中文语音', voiceURI: 'local-zh' };
+    const audioPlays: string[] = [];
+    class TestAudio {
+      currentTime = 0;
+      paused = true;
+      volume = 1;
+      preload = 'auto';
+      constructor(public src: string) {}
+      play() {
+        this.paused = false;
+        audioPlays.push(this.src);
+        return Promise.resolve();
+      }
+      pause() { this.paused = true; }
+    }
+    class TestUtterance {
+      lang = '';
+      voice: typeof localVoice | null = null;
+      constructor(public text: string) {}
+    }
+    Object.defineProperty(window, 'Audio', { configurable: true, value: TestAudio });
+    Object.defineProperty(window, 'challengeAudioPlays', { configurable: true, value: audioPlays });
+    Object.defineProperty(window, 'SpeechSynthesisUtterance', { configurable: true, value: TestUtterance });
+    Object.defineProperty(window, 'speechSynthesis', {
+      configurable: true,
+      value: {
+        getVoices: () => [
+          { default: false, lang: 'zh-CN', localService: false, name: '远程中文语音', voiceURI: 'remote-zh' },
+          { default: false, lang: 'en-US', localService: true, name: '本地英语语音', voiceURI: 'local-en' },
+          localVoice,
+        ],
+        speak: (utterance: TestUtterance) => {
+          (window as Window & { challengeSpeechCapture?: unknown }).challengeSpeechCapture = {
+            text: utterance.text,
+            lang: utterance.voice?.lang,
+            localService: utterance.voice?.localService,
+          };
+        },
+        cancel: () => undefined,
+      },
+    });
+  });
+  await page.goto(taskUrl);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+
+  const prompt = page.locator('.challenge-activity h2');
+  await expect(prompt).toBeVisible();
+  const visiblePrompt = (await prompt.textContent())?.trim() ?? '';
+  const audioPlaysBeforeRead = await page.evaluate(() => (window as Window & { challengeAudioPlays: string[] }).challengeAudioPlays.length);
+  await page.getByRole('button', { name: '朗读题目' }).click();
+
+  await expect(page.getByRole('status')).toHaveText('正在朗读题目。');
+  expect(await page.evaluate(() => (window as Window & { challengeAudioPlays: string[] }).challengeAudioPlays.length)).toBe(audioPlaysBeforeRead);
+  expect(await page.evaluate(() => (window as Window & { challengeSpeechCapture?: { text: string; lang: string; localService: boolean } }).challengeSpeechCapture)).toEqual({
+    text: visiblePrompt,
+    lang: 'zh-CN',
+    localService: true,
+  });
 });
 
 test('starts and restores a submitted answer in the chapter-ordered semester pilot', async ({ page }) => {

@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { SOUND_CUE_ASSETS } from './soundCues';
 import type { SoundCue } from './soundCues';
 import { readSoundPreference, writeSoundPreference } from './soundPreferences';
+import { stopLocalSpeech } from './localChineseSpeech';
 
 interface SoundContextValue {
   enabled: boolean;
@@ -38,6 +39,7 @@ export function SoundProvider({ children }: SoundProviderProps) {
   const stopAll = useCallback(() => {
     stopAudio(channels.current.voice);
     stopAudio(channels.current.interaction);
+    stopLocalSpeech();
   }, []);
 
   const setEnabled = useCallback((nextEnabled: boolean) => {

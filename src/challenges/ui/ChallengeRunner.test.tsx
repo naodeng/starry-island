@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render as renderBase, screen, waitFor } from '@testing-library/react';
+import type { ReactNode } from 'react';
 import { IDBFactory } from 'fake-indexeddb';
 import type { ChoiceActivityDefinition } from '../../content/types';
 import type { ChallengeGroupManifest, ChallengeQuestionSnapshot, ChallengeTaskDefinition } from '../domain/types';
@@ -9,9 +10,14 @@ import { createChallengeRepository } from '../storage/indexedDbRepository';
 import { RevisionConflictError } from '../storage/repository';
 import type { ChallengeRepository } from '../storage/repository';
 import type { LoadedPilotGroup } from '../content/pilotContent';
+import { SoundProvider } from '../../sound/SoundProvider';
 import ChallengeRunner from './ChallengeRunner';
 
 const repositories: ChallengeRepository[] = [];
+
+function render(ui: ReactNode) {
+  return renderBase(<SoundProvider>{ui}</SoundProvider>);
+}
 
 function makeQuestion(questionId: string): ChallengeQuestionSnapshot {
   const activity: ChoiceActivityDefinition = {
