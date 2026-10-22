@@ -1,5 +1,6 @@
 import type { ActivityDefinition, CurriculumUnit, Difficulty } from '../../content/types';
 import { fingerprintActivity } from './fingerprint';
+import { analyzeQuestionUniqueness } from './questionUniqueness';
 import type {
   ChallengeGroupManifest,
   ChallengeManifest,
@@ -81,8 +82,12 @@ export async function validateChallengeManifest(
   const questionById = new Map<string, ChallengeQuestionRecord>();
   const questionCounts = new Map<string, number>();
   const activityCounts = new Map<string, number>();
-  const fingerprintQuestions = new Map<string, string[]>();
-  const currentFingerprints = new Map<string, string>();
+  const uniqueness = await analyzeQuestionUniqueness(manifest.questions, activitiesById, sourceUnitByActivityId, subtleCrypto);
+  const duplicateGroupByQuestionId = new Map<string, (typeof uniqueness.exactDuplicateGroups)[number]>();
+  for (const duplicateGroup of uniqueness.exactDuplicateGroups) {
+    for (const questionId of duplicateGroup.questionIds) duplicateGroupByQuestionId.set(questionId, duplicateGroup);
+    informationIssue('duplicate-content-fingerprint', 'questions', `Identical content is registered under ${duplicateGroup.questionIds.join(', ')}.`);
+  }
 
   function globalIssue(code: string, path: string, message: string, groupId?: string) {
     const issue = makeIssue('global-blocking', code, path, message, groupId);
@@ -129,11 +134,8 @@ export async function validateChallengeManifest(
       globalIssue('missing-approval-record', `${path}.approvedAt`, 'Approved questions need an author and valid approval date.');
     }
 
-    const currentFingerprint = await fingerprintActivity(activity, subtleCrypto);
-    currentFingerprints.set(question.questionId, currentFingerprint);
-    const matchingQuestionIds = fingerprintQuestions.get(currentFingerprint) ?? [];
-    matchingQuestionIds.push(question.questionId);
-    fingerprintQuestions.set(currentFingerprint, matchingQuestionIds);
+    const currentFingerprint = uniqueness.currentFingerprintByQuestionId[question.questionId]
+      ?? await fingerprintActivity(activity, subtleCrypto);
     if (currentFingerprint !== question.approvedContentFingerprint) {
       contentChanges.push({
         questionId: question.questionId,
@@ -150,12 +152,6 @@ export async function validateChallengeManifest(
   for (const [activityId, count] of activityCounts) {
     if (count > 1) globalIssue('duplicate-activity-id', 'questions', `Activity ID ${activityId} is registered ${count} times.`);
   }
-  for (const questionIds of fingerprintQuestions.values()) {
-    if (questionIds.length > 1) {
-      informationIssue('duplicate-content-fingerprint', 'questions', `Identical content is registered under ${questionIds.join(', ')}.`);
-    }
-  }
-
   const groupIds = new Set<string>();
   for (const group of manifest.groups) {
     if (!group.definition.id.trim()) {
@@ -226,6 +222,7 @@ export async function validateChallengeManifest(
 
     const groupQuestionIdSet = new Set<string>();
     const groupQuestions: ChallengeQuestionRecord[] = [];
+    const reportedDuplicateFingerprints = new Set<string>();
     for (const questionId of group.questionIds) {
       if (groupQuestionIdSet.has(questionId)) {
         groupIssue(group, 'duplicate-group-question', `groups.${groupId}.questionIds`, `Question ${questionId} occurs more than once in this group.`);
@@ -256,17 +253,30 @@ export async function validateChallengeManifest(
       if (!sourceUnitId || !definition.sourceUnitIds.includes(sourceUnitId)) {
         groupIssue(group, 'question-outside-group-scope', `groups.${groupId}.questionIds`, `Question ${questionId} does not belong to this group’s source units.`);
       }
-      const currentFingerprint = currentFingerprints.get(questionId);
-      if (currentFingerprint && (fingerprintQuestions.get(currentFingerprint)?.length ?? 0) > 1) {
-        groupIssue(group, 'duplicate-content-fingerprint', `groups.${groupId}.questionIds`, `Question ${questionId} duplicates registered challenge content.`);
+      const duplicateGroup = duplicateGroupByQuestionId.get(questionId);
+      if (duplicateGroup && !reportedDuplicateFingerprints.has(duplicateGroup.fingerprint)) {
+        groupIssue(group, 'duplicate-content-fingerprint', `groups.${groupId}.questionIds`, `Exact duplicate group ${duplicateGroup.questionIds.join(', ')} is referenced.`);
+        reportedDuplicateFingerprints.add(duplicateGroup.fingerprint);
       }
       if (question.knowledgePointIds.length === 0 || new Set(question.knowledgePointIds).size !== question.knowledgePointIds.length) {
         groupIssue(group, 'invalid-question-knowledge-points', `groups.${groupId}.questionIds`, `Question ${questionId} needs non-empty, unique knowledge point tags.`);
       }
     }
 
+    const seenCandidateQuestionIds = new Set<string>();
+    const seenCandidateActivityIds = new Set<string>();
+    const uniqueEligibleGroupQuestions = groupQuestions.filter((question) => {
+      if (!questionIsEligible(question, activitiesById.get(question.activityId))) return false;
+      const representativeQuestionId = duplicateGroupByQuestionId.get(question.questionId)?.representativeQuestionId ?? question.questionId;
+      if (representativeQuestionId !== question.questionId
+        || seenCandidateQuestionIds.has(question.questionId)
+        || seenCandidateActivityIds.has(question.activityId)) return false;
+      seenCandidateQuestionIds.add(question.questionId);
+      seenCandidateActivityIds.add(question.activityId);
+      return true;
+    });
     for (const difficulty of DIFFICULTIES) {
-      const pool = groupQuestions.filter((question) => question.difficulty === difficulty && questionIsEligible(question, activitiesById.get(question.activityId)));
+      const pool = uniqueEligibleGroupQuestions.filter((question) => question.difficulty === difficulty);
       const targetCount = Math.max(0, ...tasks.filter((task) => task.difficulty === difficulty).map((task) => task.targetCount));
       if (pool.length < targetCount * 2) {
         groupIssue(group, 'insufficient-candidate-pool', `groups.${groupId}.questionIds`, `${difficulty} has ${pool.length} eligible candidates; requires at least ${targetCount * 2}.`);

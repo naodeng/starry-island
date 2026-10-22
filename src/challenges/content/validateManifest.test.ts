@@ -1,6 +1,7 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import type { ActivityDefinition, CurriculumUnit, Difficulty } from '../../content/types';
 import { fingerprintActivity } from './fingerprint';
+import { analyzeQuestionUniqueness } from './questionUniqueness';
 import { validateChallengeManifest, validatePilotManifest } from './validateManifest';
 import type { ChallengeGroupManifest, ChallengeManifest, ChallengeQuestionRecord } from '../domain/types';
 
@@ -251,14 +252,61 @@ describe('validatePilotManifest', () => {
 
   it('rejects exact duplicate question content from an effective candidate pool', async () => {
     const duplicate = cloneFixture(fixture);
-    const copy = { ...duplicate.manifest.questions[0], questionId: 'duplicate-content-id' };
+    const sourceQuestion = duplicate.manifest.questions[0];
+    const sourceActivity = duplicate.activitiesById.get(sourceQuestion.activityId)!;
+    const copyActivityId = 'zz-duplicate-content-activity';
+    const copy = { ...sourceQuestion, questionId: 'zz-duplicate-content-id', activityId: copyActivityId };
+    duplicate.activitiesById.set(copyActivityId, { ...sourceActivity, id: copyActivityId });
+    duplicate.sourceUnitByActivityId.set(copyActivityId, duplicate.sourceUnitByActivityId.get(sourceQuestion.activityId)!);
     duplicate.manifest.questions.push(copy);
+    duplicate.manifest.groups[0].questionIds = duplicate.manifest.groups[0].questionIds.filter((id) => id !== sourceQuestion.questionId);
     duplicate.manifest.groups[0].questionIds.push(copy.questionId);
 
     const report = await validatePilotManifest(duplicate.manifest, duplicate.activitiesById, duplicate.sourceUnitByActivityId, duplicate.unitsById);
 
     expect(report.errors.map(({ code }) => code)).toContain('duplicate-content-fingerprint');
+    expect(report.errors.map(({ code }) => code)).toContain('insufficient-candidate-pool');
     expect(report.groupStatusById[duplicate.manifest.groups[0].definition.id]).toBe('unavailable');
+  });
+
+  it('does not let exact duplicates referenced only by a planned group block another ready group', async () => {
+    const duplicate = cloneFixture(fixture);
+    const activityAId = 'planned-duplicate-activity-a';
+    const activityBId = 'planned-duplicate-activity-b';
+    const activity = makeActivity('template', '计划组内的独立重复题');
+    duplicate.activitiesById.set(activityAId, { ...activity, id: activityAId });
+    duplicate.activitiesById.set(activityBId, { ...activity, id: activityBId });
+    duplicate.sourceUnitByActivityId.set(activityAId, UNIT_1);
+    duplicate.sourceUnitByActivityId.set(activityBId, UNIT_1);
+    const questionA = { ...duplicate.manifest.questions[0], questionId: 'planned-duplicate-a', activityId: activityAId };
+    const questionB = { ...duplicate.manifest.questions[0], questionId: 'planned-duplicate-b', activityId: activityBId };
+    duplicate.manifest.questions.push(questionA, questionB);
+    duplicate.manifest.groups[0].releaseIntent = 'planned';
+    duplicate.manifest.groups[0].questionIds.push(questionA.questionId, questionB.questionId);
+
+    const report = await validateChallengeManifest(duplicate.manifest, duplicate.activitiesById, duplicate.sourceUnitByActivityId, duplicate.unitsById);
+
+    expect(report.groupStatusById['grade-2-term-1-math-unit-01']).toBe('planned');
+    expect(report.groupStatusById['grade-2-term-1-math-first-half']).toBe('ready');
+    expect(report.errors.map(({ code }) => code)).not.toContain('duplicate-content-fingerprint');
+  });
+
+  it('keeps a released group ready when only similar-question hints are present', async () => {
+    const similar = cloneFixture(fixture);
+    const firstQuestion = similar.manifest.questions[0];
+    const secondQuestion = similar.manifest.questions[1];
+    const firstActivity = similar.activitiesById.get(firstQuestion.activityId)!;
+    const secondActivity = similar.activitiesById.get(secondQuestion.activityId)!;
+    similar.activitiesById.set(firstQuestion.activityId, { ...firstActivity, prompt: '小明有12支铅笔，送给同学3支。' });
+    similar.activitiesById.set(secondQuestion.activityId, { ...secondActivity, prompt: '小明有30支铅笔，送给同学5支。' });
+
+    const uniqueness = await analyzeQuestionUniqueness(similar.manifest.questions, similar.activitiesById, similar.sourceUnitByActivityId);
+    const validation = await validateChallengeManifest(similar.manifest, similar.activitiesById, similar.sourceUnitByActivityId, similar.unitsById);
+
+    expect(uniqueness.similarQuestionPairs).toContainEqual(expect.objectContaining({
+      questionIds: [firstQuestion.questionId, secondQuestion.questionId],
+    }));
+    expect(validation.groupStatusById['grade-2-term-1-math-unit-01']).toBe('ready');
   });
 
   it('rejects inactive, unapproved, unsafe and unsupported-measurement candidates', async () => {
