@@ -118,6 +118,7 @@ describe('ChallengePage', () => {
         informationalIssues: [],
         contentChanges: [],
         groupStatusById: { [loadedGroup.group.definition.id]: 'unavailable' },
+        questionUniqueness: { exactDuplicateGroups: [], similarQuestionPairs: [], currentFingerprintByQuestionId: {} },
       },
     });
 

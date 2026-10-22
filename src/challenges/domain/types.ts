@@ -1,4 +1,4 @@
-import type { ActivityDefinition, Difficulty, SubjectId } from '../../content/types';
+import type { ActivityDefinition, CurriculumUnit, Difficulty, SubjectId } from '../../content/types';
 
 export type ChallengeAnswer = string | number | string[] | Record<string, string>;
 
@@ -84,9 +84,100 @@ export interface ChallengeManifestValidationReport {
   informationalIssues: ValidationIssue[];
   contentChanges: ContentFingerprintChange[];
   groupStatusById: Record<string, ChallengeReleaseStatus>;
+  questionUniqueness: QuestionUniquenessReport;
 }
 
 export type PilotManifestValidationReport = ChallengeManifestValidationReport;
+
+export interface ExactDuplicateQuestionGroup {
+  fingerprint: string;
+  representativeQuestionId: string;
+  questionIds: string[];
+}
+
+export interface SimilarQuestionPair {
+  questionIds: [string, string];
+  sourceUnitId: string;
+  activityKind: ActivityDefinition['kind'];
+  reason: string;
+}
+
+export interface QuestionUniquenessReport {
+  exactDuplicateGroups: ExactDuplicateQuestionGroup[];
+  similarQuestionPairs: SimilarQuestionPair[];
+  currentFingerprintByQuestionId: Record<string, string>;
+}
+
+export interface ChallengeQualityInputs {
+  manifest: ChallengeManifest;
+  activitiesById: ReadonlyMap<string, ActivityDefinition>;
+  sourceUnitByActivityId: ReadonlyMap<string, string>;
+  unitsById: ReadonlyMap<string, CurriculumUnit>;
+}
+
+export interface ChallengeDifficultyQualityStats {
+  targetCount: number;
+  minimumRequiredCount: number;
+  effectiveUniqueCount: number;
+  coveredKnowledgePointIds: string[];
+  missingKnowledgePointIds: string[];
+}
+
+export interface ChallengeSimulationFailure {
+  seed: string;
+  code: string;
+  message: string;
+}
+
+export interface ChallengeSimulationSummary {
+  sampleCount: number;
+  successCount: number;
+  failureCount: number;
+  failures: ChallengeSimulationFailure[];
+}
+
+export interface ChallengeQualityTaskReport {
+  taskId: string;
+  difficulty: Difficulty;
+  targetCount: number;
+  requiredKnowledgePointIds: string[];
+  simulation: ChallengeSimulationSummary;
+}
+
+export interface ChallengeQualityFingerprintChange extends ContentFingerprintChange {
+  groupIds: string[];
+  taskIds: string[];
+}
+
+export interface ChallengeQualityGroupReport {
+  groupId: string;
+  kind: ChallengeGroupDefinition['kind'];
+  releaseIntent: ChallengeGroupManifest['releaseIntent'];
+  status: ChallengeReleaseStatus;
+  blockingIssues: ValidationIssue[];
+  warnings: ValidationIssue[];
+  difficultyStats: Record<Difficulty, ChallengeDifficultyQualityStats>;
+  tasks: ChallengeQualityTaskReport[];
+  simulation: ChallengeSimulationSummary;
+}
+
+export interface ChallengeQualityReport {
+  reportSchemaVersion: 1;
+  manifestVersion: string;
+  overall: {
+    passed: boolean;
+    blockingIssueCount: number;
+    warningCount: number;
+    releasedGroupCount: number;
+    readyReleasedGroupCount: number;
+  };
+  errors: ValidationIssue[];
+  warnings: ValidationIssue[];
+  groups: ChallengeQualityGroupReport[];
+  contentChanges: ChallengeQualityFingerprintChange[];
+  exactDuplicateGroups: ExactDuplicateQuestionGroup[];
+  similarQuestionPairs: SimilarQuestionPair[];
+}
 
 export interface ChallengeAttempt {
   attemptId: string;

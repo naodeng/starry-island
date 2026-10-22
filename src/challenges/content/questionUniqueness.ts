@@ -1,25 +1,6 @@
 import type { ActivityDefinition } from '../../content/types';
-import type { ChallengeQuestionRecord } from '../domain/types';
+import type { ChallengeQuestionRecord, ExactDuplicateQuestionGroup, QuestionUniquenessReport, SimilarQuestionPair } from '../domain/types';
 import { fingerprintActivity } from './fingerprint';
-
-export interface ExactDuplicateQuestionGroup {
-  fingerprint: string;
-  representativeQuestionId: string;
-  questionIds: string[];
-}
-
-export interface SimilarQuestionPair {
-  questionIds: [string, string];
-  sourceUnitId: string;
-  activityKind: ActivityDefinition['kind'];
-  reason: string;
-}
-
-export interface QuestionUniquenessReport {
-  exactDuplicateGroups: ExactDuplicateQuestionGroup[];
-  similarQuestionPairs: SimilarQuestionPair[];
-  currentFingerprintByQuestionId: Record<string, string>;
-}
 
 function compareText(left: string, right: string): number {
   return left < right ? -1 : left > right ? 1 : 0;
@@ -61,7 +42,7 @@ export async function analyzeQuestionUniqueness(
     exactGroupsByFingerprint.set(result.fingerprint, questionIds);
   }
 
-  const exactDuplicateGroups = [...exactGroupsByFingerprint.entries()]
+  const exactDuplicateGroups: ExactDuplicateQuestionGroup[] = [...exactGroupsByFingerprint.entries()]
     .map(([fingerprint, questionIds]) => {
       const sortedQuestionIds = [...new Set(questionIds)].sort(compareText);
       return {

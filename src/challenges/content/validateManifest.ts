@@ -34,7 +34,7 @@ function makeIssue(
   return { classification, code, path, message, ...(groupId ? { groupId } : {}) };
 }
 
-function compatibleGroupSource(
+export function isCompatibleChallengeGroupSource(
   group: ChallengeGroupManifest,
   unitId: string,
   unitsById: ReadonlyMap<string, CurriculumUnit>,
@@ -185,7 +185,7 @@ export async function validateChallengeManifest(
       const unit = unitsById.get(unitId);
       if (!unit) {
         globalIssue('unknown-unit-source', `groups.${groupId}.sourceUnitIds`, `Unknown source unit ${unitId}.`, groupId);
-      } else if (!compatibleGroupSource(group, unitId, unitsById)) {
+      } else if (!isCompatibleChallengeGroupSource(group, unitId, unitsById)) {
         groupIssue(group, 'mismatched-unit-source', `groups.${groupId}.sourceUnitIds`, `Source unit ${unitId} does not match this group’s grade, term, and subject.`);
       } else if (definition.kind === 'unit' && (unit?.type !== 'unit' || unit.formalUnitNumber === null || !unit.achievementEligible)) {
         groupIssue(group, 'invalid-unit-source', `groups.${groupId}.sourceUnitIds`, `Source ${unitId} is not a formal numbered unit.`);
@@ -299,7 +299,7 @@ export async function validateChallengeManifest(
     );
   }
 
-  return { errors, globalIssues, groupIssuesById, informationalIssues, contentChanges, groupStatusById };
+  return { errors, globalIssues, groupIssuesById, informationalIssues, contentChanges, groupStatusById, questionUniqueness: uniqueness };
 }
 
 export const validatePilotManifest = validateChallengeManifest;
