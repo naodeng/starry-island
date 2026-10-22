@@ -63,6 +63,9 @@
 .challenge-backup-panel { display: grid; gap: 14px; margin-top: 22px; padding: 22px clamp(18px, 4vw, 32px); border: 1px solid var(--island-border); border-radius: var(--island-radius-card, 24px); background: var(--island-surface); }
 .challenge-backup-panel h2 { margin: 0; color: var(--animal-text-color); font-size: 22px; }
 .challenge-backup-panel > p { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; }
+.challenge-diagnostics-panel { display: grid; gap: 10px; padding-top: 14px; border-top: 1px solid var(--island-border); }
+.challenge-diagnostics-panel h3 { margin: 0; color: var(--animal-text-color); font-size: 17px; }
+.challenge-diagnostics-panel > p { max-width: 76ch; margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; }
 .challenge-backup-preview { display: grid; gap: 14px; padding: 16px; border: 1px solid var(--island-border); border-radius: 16px; background: var(--animal-bg-color); }
 .challenge-backup-preview p { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; overflow-wrap: anywhere; }
 .challenge-data-management { display: grid; gap: 14px; margin-top: 22px; padding: 22px clamp(18px, 4vw, 32px); border: 1px solid var(--island-border); border-radius: var(--island-radius-card, 24px); background: var(--island-surface); }

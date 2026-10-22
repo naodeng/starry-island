@@ -26,7 +26,7 @@ import {
 import type { ChallengeRepository, ChallengeRepositoryOptions } from './repository';
 import { transitionWrongQuestion } from '../domain/wrongQuestions';
 
-const DATABASE_VERSION = 2;
+export const CHALLENGE_DATABASE_VERSION = 2;
 const DEFAULT_DATABASE_NAME = 'starry-island-challenges';
 const ATTEMPTS_STORE = 'attempts';
 const PROGRESS_STORE = 'taskProgress';
@@ -165,7 +165,7 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
     databasePromise = new Promise((resolve, reject) => {
       let request: IDBOpenDBRequest;
       try {
-        request = factory.open(databaseName, DATABASE_VERSION);
+        request = factory.open(databaseName, CHALLENGE_DATABASE_VERSION);
       } catch (error) {
         reject(new ChallengeRepositoryError('Could not open the challenge database.', { cause: error }));
         return;

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button } from 'animal-island-ui';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import { hasChallengeDataToClear } from '../domain/recovery';
+import { getChallengeErrorMessage } from '../domain/errors';
 import type {
   ChallengeClearScope,
   ChallengeDataClearResult,
@@ -70,8 +71,8 @@ export default function ChallengeDataManagement({ initialRecoveryPoint, onClear,
         const removed = describeClearedData(result);
         setStatus(`已清除${removed ? ` ${removed}` : ''}；${result.recoveryPoint ? `已创建 24 小时恢复点，恢复点有效至 ${formatLocalTime(result.recoveryPoint.expiresAt)}。` : '未创建恢复点，请检查本机存储状态。'}`);
       }
-    } catch {
-      setError('清除没有完成；本机记录和原恢复点都保持不变，可以稍后重试。');
+    } catch (caughtError) {
+      setError(getChallengeErrorMessage(caughtError, '清除没有完成；本机记录和原恢复点都保持不变，可以稍后重试。'));
     } finally {
       setBusy(false);
     }
@@ -90,8 +91,8 @@ export default function ChallengeDataManagement({ initialRecoveryPoint, onClear,
       }
       setRecoveryPoint(result.recoveryPointRetained ? recoveryPoint : null);
       setStatus(describeRestore(result.summary));
-    } catch {
-      setError('恢复没有完成；恢复点仍保留，本机记录没有更改，可以稍后重试。');
+    } catch (caughtError) {
+      setError(getChallengeErrorMessage(caughtError, '恢复没有完成；恢复点仍保留，本机记录没有更改，可以稍后重试。'));
     } finally {
       setBusy(false);
     }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
+import packageJson from '../../../package.json';
 import type { AppRoute } from '../../app/router';
 import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup } from '../domain/backup';
 import type { ChallengeBackup, ChallengeBackupData } from '../domain/backup';
@@ -8,9 +9,10 @@ import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import type { ChallengeClearScope, ChallengeRecoveryPointSummary } from '../domain/recovery';
 import { deriveChallengeGrowth } from '../domain/growth';
+import { createChallengeDiagnosticReport } from '../domain/diagnostics';
 import type { ChallengeRecoveryRestoreResult, ChallengeRepository } from '../storage/repository';
 import { RevisionConflictError } from '../storage/repository';
-import { createChallengeRepository } from '../storage/indexedDbRepository';
+import { CHALLENGE_DATABASE_VERSION, createChallengeRepository } from '../storage/indexedDbRepository';
 import { loadPilotChallengeContent } from '../content/pilotContent';
 import type { LoadedPilotContent } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
@@ -21,12 +23,12 @@ import ChallengeWrongQuestions from './ChallengeWrongQuestions';
 import { getChallengeTaskTitle } from './challengeLabels';
 import './challenge.css';
 
-function downloadChallengeBackup(backup: Awaited<ReturnType<typeof createChallengeBackup>>) {
-  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json;charset=utf-8' });
+function downloadJsonFile(filename: string, value: unknown) {
+  const blob = new Blob([JSON.stringify(value, null, 2)], { type: 'application/json;charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
   anchor.href = url;
-  anchor.download = `starry-island-challenges-${backup.createdAt.replace(/[:.]/g, '-')}.json`;
+  anchor.download = filename;
   anchor.hidden = true;
   document.body.append(anchor);
   try {
@@ -35,6 +37,10 @@ function downloadChallengeBackup(backup: Awaited<ReturnType<typeof createChallen
     anchor.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 0);
   }
+}
+
+function downloadChallengeBackup(backup: Awaited<ReturnType<typeof createChallengeBackup>>) {
+  downloadJsonFile(`starry-island-challenges-${backup.createdAt.replace(/[:.]/g, '-')}.json`, backup);
 }
 
 type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeGrowth' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
@@ -96,6 +102,27 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     const snapshot = await repository.getBackupSnapshot();
     const backup = await createChallengeBackup(snapshot);
     downloadChallengeBackup(backup);
+  }
+
+  async function exportDiagnostics() {
+    const snapshot = await repository.getBackupSnapshot();
+    const generatedAt = new Date().toISOString();
+    const report = createChallengeDiagnosticReport({
+      generatedAt,
+      appVersion: packageJson.version,
+      storageSchemaVersion: CHALLENGE_DATABASE_VERSION,
+      capabilities: {
+        indexedDB: typeof globalThis.indexedDB !== 'undefined',
+        webLocks: typeof navigator !== 'undefined' && 'locks' in navigator,
+      },
+      recordCounts: {
+        activeAttempts: snapshot.attempts.length,
+        taskProgress: snapshot.taskProgress.length,
+        recentCompletionGroups: snapshot.recentQuestionAttempts.length,
+        wrongQuestions: snapshot.wrongQuestions.length,
+      },
+    });
+    downloadJsonFile(`starry-island-diagnostics-${generatedAt.replace(/[:.]/g, '-')}.json`, report);
   }
 
   async function prepareBackupImport(file: File): Promise<ChallengeBackupMergeSummary> {
@@ -265,6 +292,7 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
         progressAvailable={progressAvailable}
         onNavigate={onNavigate}
         onExportBackup={exportBackup}
+        onExportDiagnostics={exportDiagnostics}
         onPrepareImportBackup={prepareBackupImport}
         onConfirmImportBackup={confirmBackupImport}
         onCancelImportBackup={() => setPendingBackupImport(null)}

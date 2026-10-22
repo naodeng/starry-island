@@ -7,6 +7,7 @@ import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { ChallengeAnswer, ChallengeAttempt, ChallengeResult as ChallengeResultData, ChallengeTaskDefinition, TaskProgress } from '../domain/types';
 import { assemblePaper } from '../domain/assemble';
 import { finalizeAttempt, submitFirstAnswer } from '../domain/attempt';
+import { getChallengeErrorMessage } from '../domain/errors';
 import ChallengeActivityRenderer from './ChallengeActivityRenderer';
 import ChallengeResult from './ChallengeResult';
 
@@ -121,11 +122,11 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       }
       setLoadState('ready');
     };
-    void load().catch(() => {
+    void load().catch((error: unknown) => {
       if (cancelled) return;
       releaseWriterLease();
       setWaitingForWriter(false);
-      setLoadError('本机闯关记录暂时没有读出来。重新读取后可以继续，课程学习进度不会受影响。');
+      setLoadError(getChallengeErrorMessage(error, '本机闯关记录暂时没有读出来。重新读取后可以继续，课程学习进度不会受影响。'));
       setLoadState('error');
     });
     return () => {
@@ -196,7 +197,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     } catch (error) {
       if (lockController.signal.aborted) return;
       if (!lockAcquired) {
-        setSaveError(error instanceof Error ? error.message : '暂时无法锁定本次挑战，请稍后重试。');
+        setSaveError(getChallengeErrorMessage(error, '暂时无法锁定本次挑战，请稍后重试。'));
         return;
       }
       const existing = await repository.getActiveAttempt(task.id).catch(() => null);
@@ -207,7 +208,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         setSaveError('另一个页面已经开始了这个任务，已载入那里的作答进度。');
       } else {
         releaseWriterLease();
-        setSaveError(error instanceof Error ? error.message : '题目暂时无法准备好，请稍后重试。');
+        setSaveError(getChallengeErrorMessage(error, '题目暂时无法准备好，请稍后重试。'));
       }
     } finally {
       if (lockControllerRef.current === lockController) lockControllerRef.current = null;
@@ -240,9 +241,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           : null);
       } else {
         setPendingAnswer(pending);
-        setSaveError(error instanceof Error && error.name === 'RevisionConflictError'
-          ? '这个任务在另一个页面发生了变化。请重新读取已保存进度后继续。'
-          : '答案还没有保存成功。请重试保存，或退出后再恢复这次挑战。');
+        setSaveError(getChallengeErrorMessage(error, '答案还没有保存成功。请重试保存，或退出后再恢复这次挑战。'));
       }
     } finally {
       setBusy(false);
@@ -271,9 +270,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       setCompletedResult(completed);
       releaseWriterLease();
     } catch (error) {
-      setSaveError(error instanceof Error && error.name === 'RevisionConflictError'
-        ? '另一页面已更改这次挑战。重新读取本机进度后再继续。'
-        : '挑战结果还没有保存成功。请重试完成保存。');
+      setSaveError(getChallengeErrorMessage(error, '挑战结果还没有保存成功。请重试完成保存。'));
     } finally {
       setBusy(false);
     }
@@ -291,8 +288,8 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       setPendingAnswer(null);
       setRestored(false);
       releaseWriterLease();
-    } catch {
-      setSaveError('这次挑战在另一个页面发生了变化。请重新读取本机进度。');
+    } catch (error) {
+      setSaveError(getChallengeErrorMessage(error, '这次挑战没有放弃成功。请重新读取本机进度后再试。'));
     } finally {
       setBusy(false);
     }

@@ -100,4 +100,15 @@ describe('ChallengeDataManagement', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('1 个任务仍在进行，恢复点会保留');
     expect(screen.getByRole('button', { name: '恢复已清除的闯关记录' })).toBeInTheDocument();
   });
+
+  it('uses the shared recovery guidance for a cross-tab conflict', async () => {
+    const conflict = Object.assign(new Error('stale revision'), { name: 'RevisionConflictError' });
+    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} onClear={vi.fn()} onRestore={vi.fn().mockRejectedValue(conflict)} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '恢复已清除的闯关记录' }));
+    fireEvent.click(screen.getByRole('button', { name: '确认恢复闯关记录' }));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('本机记录在另一个页面发生了变化。请重新读取后继续');
+    expect(screen.getByRole('button', { name: '恢复已清除的闯关记录' })).toBeInTheDocument();
+  });
 });

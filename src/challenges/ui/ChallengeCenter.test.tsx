@@ -23,6 +23,7 @@ function dataManagementProps() {
     initialRecoveryPoint: null,
     onClearChallengeData: vi.fn().mockResolvedValue(emptyClearResult),
     onRestoreRecoveryPoint: vi.fn().mockResolvedValue(null),
+    onExportDiagnostics: vi.fn().mockResolvedValue(undefined),
   };
 }
 
@@ -52,6 +53,27 @@ describe('ChallengeCenter', () => {
     fireEvent.click(screen.getByRole('button', { name: '导出闯关备份' }));
 
     await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('闯关备份没有生成；本机记录没有更改，可以稍后重试。'));
+  });
+
+  it('only exports the explicitly requested local diagnostics and explains the data scope', async () => {
+    const onExportDiagnostics = vi.fn().mockResolvedValue(undefined);
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} onExportDiagnostics={onExportDiagnostics} />);
+
+    expect(onExportDiagnostics).not.toHaveBeenCalled();
+    expect(screen.getByText(/只有点击后才会生成并下载；不会自动上传。/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '手动导出脱敏诊断信息' }));
+
+    await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('诊断信息已生成并下载到此设备；没有上传任何数据。'));
+    expect(onExportDiagnostics).toHaveBeenCalledOnce();
+  });
+
+  it('shows a recoverable message when diagnostic export fails', async () => {
+    const onExportDiagnostics = vi.fn().mockRejectedValue(new Error('storage unavailable'));
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} onExportDiagnostics={onExportDiagnostics} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '手动导出脱敏诊断信息' }));
+
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('诊断信息没有生成；本机记录没有更改，可以稍后重试。'));
   });
 
   it('previews a backup merge and imports only after explicit confirmation', async () => {

@@ -267,7 +267,8 @@ describe('ChallengeRunner', () => {
 
     await userClick(await screen.findByRole('button', { name: '开始挑战' }));
 
-    expect(await screen.findByRole('alert')).toHaveTextContent('challenge could not be saved');
+    expect(await screen.findByRole('alert')).toHaveTextContent('题目暂时无法准备好，请稍后重试。');
+    expect(screen.getByRole('alert')).not.toHaveTextContent('challenge could not be saved');
     await waitFor(() => expect(lockRequestIsFinished()).toBe(true));
   });
 

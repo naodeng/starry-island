@@ -82,6 +82,42 @@ test('downloads a versioned local backup with a valid checksum', async ({ page }
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
 
+test('downloads a user-requested diagnostics report containing only allowlisted fields', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  await expect(page.getByText(/只有点击后才会生成并下载；不会自动上传。/)).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  const downloadPromise = page.waitForEvent('download');
+  const diagnosticsButton = page.getByRole('button', { name: '手动导出脱敏诊断信息' });
+  await diagnosticsButton.focus();
+  expect(await diagnosticsButton.evaluate((button) => document.activeElement === button)).toBe(true);
+  await page.keyboard.press('Enter');
+  const download = await downloadPromise;
+  const downloadedPath = await download.path();
+  expect(download.suggestedFilename()).toMatch(/^starry-island-diagnostics-.+\.json$/);
+  expect(downloadedPath).toBeTruthy();
+  const report = JSON.parse(readFileSync(downloadedPath!, 'utf8')) as Record<string, unknown>;
+  expect(Object.keys(report)).toEqual(['format', 'version', 'generatedAt', 'appVersion', 'storage', 'capabilities']);
+  expect(report).toMatchObject({
+    format: 'starry-island-challenge-diagnostics',
+    version: 1,
+    storage: {
+      schemaVersion: 2,
+      recordCounts: { activeAttempts: 0, taskProgress: 0, recentCompletionGroups: 0, wrongQuestions: 0 },
+    },
+  });
+  expect(String(report.appVersion)).toMatch(/^[\da-z.+_-]{1,40}$/i);
+  expect(Number.isFinite(Date.parse(String(report.generatedAt)))).toBe(true);
+  expect(Object.keys(report.capabilities as object)).toEqual(['indexedDB', 'webLocks']);
+  expect(JSON.stringify(report)).not.toMatch(/student|questionId|prompt|answer|userAgent|china-study-progress-v1/i);
+  await expect(page.getByRole('status')).toHaveText('诊断信息已生成并下载到此设备；没有上传任何数据。');
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+});
+
 test('previews and safely merges an active attempt without duplicating data', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
@@ -184,6 +220,22 @@ test('previews and safely merges an active attempt without duplicating data', as
   });
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  const diagnosticsDownloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: '手动导出脱敏诊断信息' }).click();
+  const diagnosticsDownload = await diagnosticsDownloadPromise;
+  const diagnosticsPath = await diagnosticsDownload.path();
+  expect(diagnosticsPath).toBeTruthy();
+  const report = JSON.parse(readFileSync(diagnosticsPath!, 'utf8')) as Record<string, unknown>;
+  const storage = report.storage as { recordCounts: Record<string, number> };
+  expect(storage.recordCounts).toEqual({
+    activeAttempts: 1,
+    taskProgress: 1,
+    recentCompletionGroups: 1,
+    wrongQuestions: 1,
+  });
+  expect(JSON.stringify(report)).not.toContain('backup-question');
+  expect(JSON.stringify(report)).not.toContain('1 + 1');
 });
 
 test('opens the local wrong-question notebook from the challenge center', async ({ page }) => {
