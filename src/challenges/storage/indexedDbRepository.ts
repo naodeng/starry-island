@@ -248,6 +248,12 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
       });
     },
 
+    getAllTaskProgress() {
+      return transaction<TaskProgress[]>(PROGRESS_STORE, 'readonly', (tx, setResult, fail) => {
+        onRequest(tx.objectStore(PROGRESS_STORE).getAll(), fail, (progress) => setResult(progress as TaskProgress[]));
+      });
+    },
+
     getGroupProgress(taskIds) {
       const ids = new Set(taskIds);
       return transaction<TaskProgress[]>(PROGRESS_STORE, 'readonly', (tx, setResult, fail) => {

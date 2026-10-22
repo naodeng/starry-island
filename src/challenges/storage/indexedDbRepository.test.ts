@@ -98,6 +98,21 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getWrongQuestions()).toEqual([]);
   });
 
+  it('lists all persisted task progress for a local growth summary', async () => {
+    const repository = createRepository();
+    const first = makeAttempt('task-a', 'attempt-a', ['question-a']);
+    const second = makeAttempt('task-b', 'attempt-b', ['question-b']);
+    await repository.beginAttempt(first);
+    await complete(repository, first);
+    await repository.beginAttempt(second);
+    await complete(repository, second);
+
+    expect(await repository.getAllTaskProgress()).toEqual([
+      expect.objectContaining({ taskId: 'task-a', completedCount: 1, everPassed: true }),
+      expect.objectContaining({ taskId: 'task-b', completedCount: 1, everPassed: true }),
+    ]);
+  });
+
   it('records wrong questions and requires two correct completed attempts to master them', async () => {
     const repository = createRepository();
     const questionIds = ['question-a'];

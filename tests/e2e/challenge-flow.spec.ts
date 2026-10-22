@@ -5,6 +5,47 @@ const taskUrl = `/challenges/task/${encodeURIComponent(taskId)}`;
 const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01';
 const semesterTaskUrl = `/challenges/task/${encodeURIComponent(semesterTaskId)}`;
 
+test('keeps growth statistics readable in both themes', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+
+  for (const theme of ['light', 'dark'] as const) {
+    await page.emulateMedia({ colorScheme: theme, reducedMotion: theme === 'dark' ? 'reduce' : 'no-preference' });
+    await page.goto('/challenges/growth');
+    await expect(page.getByRole('heading', { name: '闯关成长记录' })).toBeVisible();
+    await expect(page).toHaveTitle('闯关成长记录 | 星岛学园');
+    await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe(theme);
+
+    const textContrasts = await page.locator('.challenge-growth-metric, .challenge-growth-route').evaluateAll((cards) => {
+      const luminance = (color: string) => {
+        const channels = (color.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number).map((channel) => {
+          const normalized = channel / 255;
+          return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+        });
+        return channels[0]! * 0.2126 + channels[1]! * 0.7152 + channels[2]! * 0.0722;
+      };
+      return cards.flatMap((card) => {
+        const background = luminance(getComputedStyle(card).backgroundColor);
+        return Array.from(card.querySelectorAll('p, strong, h3')).map((text) => {
+          const foreground = luminance(getComputedStyle(text).color);
+          return (Math.max(background, foreground) + 0.05) / (Math.min(background, foreground) + 0.05);
+        });
+      });
+    });
+
+    expect(textContrasts.every((contrast) => contrast >= 4.5), `${theme} card contrast ratios: ${textContrasts.join(', ')}`).toBe(true);
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    await page.keyboard.press('Tab');
+    const backButton = page.getByRole('button', { name: '返回闯关中心' });
+    expect(await backButton.evaluate((element) => document.activeElement === element && element.matches(':focus-visible'))).toBe(true);
+    if (theme === 'dark') {
+      expect(await backButton.evaluate((element) => Number.parseFloat(getComputedStyle(element).transitionDuration))).toBeLessThan(0.001);
+    }
+    await page.setViewportSize({ width: 1280, height: 900 });
+  }
+});
+
 test('opens the local wrong-question notebook from the challenge center', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });

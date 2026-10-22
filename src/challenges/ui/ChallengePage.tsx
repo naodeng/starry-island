@@ -2,18 +2,20 @@ import { useEffect, useMemo, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import type { AppRoute } from '../../app/router';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
+import { deriveChallengeGrowth } from '../domain/growth';
 import type { ChallengeRepository } from '../storage/repository';
 import { createChallengeRepository } from '../storage/indexedDbRepository';
 import { loadPilotChallengeContent } from '../content/pilotContent';
 import type { LoadedPilotContent } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
 import ChallengeGroup from './ChallengeGroup';
+import ChallengeGrowth from './ChallengeGrowth';
 import ChallengeRunner from './ChallengeRunner';
 import ChallengeWrongQuestions from './ChallengeWrongQuestions';
 import { getChallengeTaskTitle } from './challengeLabels';
 import './challenge.css';
 
-type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
+type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeGrowth' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
 
 type WrongQuestionState =
   | { status: 'loading' }
@@ -33,6 +35,7 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const [contentError, setContentError] = useState<string | null>(null);
   const [progressByTaskId, setProgressByTaskId] = useState<Record<string, TaskProgress>>({});
   const [progressAvailable, setProgressAvailable] = useState(true);
+  const [progressLoading, setProgressLoading] = useState(true);
   const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
 
   useEffect(() => {
@@ -72,22 +75,18 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   useEffect(() => {
     if (!content) return;
     let cancelled = false;
-    Promise.all(content.groups.map(async ({ group }) => {
-      try {
-        return await repository.getGroupProgress(group.definition.tasks.map(({ id }) => id));
-      } catch {
-        return null;
-      }
-    })).then((entries) => {
+    setProgressLoading(true);
+    repository.getAllTaskProgress().then((entries) => {
       if (cancelled) return;
       const progress: Record<string, TaskProgress> = {};
-      let available = true;
-      for (const entry of entries) {
-        if (entry === null) available = false;
-        else for (const item of entry) progress[item.taskId] = item;
-      }
+      for (const item of entries) progress[item.taskId] = item;
       setProgressByTaskId(progress);
-      setProgressAvailable(available);
+      setProgressAvailable(true);
+      setProgressLoading(false);
+    }).catch(() => {
+      if (cancelled) return;
+      setProgressAvailable(false);
+      setProgressLoading(false);
     });
     return () => { cancelled = true; };
   }, [content, repository, route]);
@@ -137,6 +136,11 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
 
   if (route.kind === 'challengeCenter') {
     return <ChallengeCenter groups={content.groups} progressByTaskId={progressByTaskId} progressAvailable={progressAvailable} onNavigate={onNavigate} />;
+  }
+
+  if (route.kind === 'challengeGrowth') {
+    const summary = deriveChallengeGrowth(content.groups.map(({ group }) => group.definition), Object.values(progressByTaskId));
+    return <ChallengeGrowth summary={summary} status={progressLoading ? 'loading' : progressAvailable ? 'ready' : 'error'} onNavigate={onNavigate} />;
   }
 
   if (route.kind === 'challengeGroup') {

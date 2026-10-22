@@ -22,16 +22,24 @@ import { getEffectiveCompletedSessionIds } from './achievements/position';
 
 function PageRouteEffects({ navigationRevision }: { navigationRevision: number }) {
   useLayoutEffect(() => {
-    const main = document.querySelector<HTMLElement>('.app-frame main');
-    const heading = main?.querySelector<HTMLElement>('h1');
-    const pageTitle = heading?.textContent?.trim() || heading?.querySelector('img')?.alt || '课程目录';
-    document.title = pageTitle === '星岛学园 · Starry Island'
-      ? '星岛学园 | Starry Island'
-      : `${pageTitle} | 星岛学园`;
-    if (navigationRevision === 0 || !heading) return;
-    if (!heading.hasAttribute('tabindex')) heading.tabIndex = -1;
-    heading.dataset.routeFocus = 'true';
-    heading.focus({ preventScroll: true });
+    const appFrame = document.querySelector<HTMLElement>('.app-frame');
+    const updateTitle = () => {
+      const heading = appFrame?.querySelector<HTMLElement>('main h1');
+      const pageTitle = heading?.textContent?.trim() || heading?.querySelector('img')?.alt || '课程目录';
+      document.title = pageTitle === '星岛学园 · Starry Island'
+        ? '星岛学园 | Starry Island'
+        : `${pageTitle} | 星岛学园`;
+    };
+    updateTitle();
+    const observer = appFrame ? new MutationObserver(updateTitle) : null;
+    if (appFrame && observer) observer.observe(appFrame, { childList: true, characterData: true, subtree: true });
+    const heading = appFrame?.querySelector<HTMLElement>('main h1');
+    if (navigationRevision !== 0 && heading) {
+      if (!heading.hasAttribute('tabindex')) heading.tabIndex = -1;
+      heading.dataset.routeFocus = 'true';
+      heading.focus({ preventScroll: true });
+    }
+    return () => observer?.disconnect();
   }, [navigationRevision]);
 
   return null;
@@ -150,7 +158,7 @@ export default function App() {
     page = <CourseCatalog progress={progress} onNavigate={navigate} onApplyLearningStart={handleLearningStart} />;
   } else if (route.kind === 'achievements') {
     page = <AchievementPage progress={progress} onNavigate={navigate} />;
-  } else if (route.kind === 'challengeCenter' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
+  } else if (route.kind === 'challengeCenter' || route.kind === 'challengeGrowth' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
     page = <div data-sound-silent="true"><ChallengePage route={route} onNavigate={navigate} /></div>;
   } else if (route.kind === 'unit') {
     page = <UnitOverview unitKey={route.unitKey} unit={route.unit} completedSessionIds={effectiveCompletedSessionIds} onNavigate={navigate} />;

@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { curriculum } from '../content/curriculum';
 import * as unitLoader from '../content/unitLoader';
 import type { Curriculum } from '../content/types';
-import { getChallengeCenterPath, getChallengeGroupPath, getChallengeTaskPath, getChallengeWrongQuestionsPath, getSessionPath, getSubjectTitle, getTaskPath, resolveAppRoute, resolveRoute } from './router';
+import { getChallengeCenterPath, getChallengeGroupPath, getChallengeGrowthPath, getChallengeTaskPath, getChallengeWrongQuestionsPath, getSessionPath, getSubjectTitle, getTaskPath, resolveAppRoute, resolveRoute } from './router';
 
 const unitKey = 'grade-2/term-1/chinese/unit-01';
 
@@ -23,8 +23,10 @@ describe('router', () => {
     expect(getChallengeCenterPath()).toBe('/challenges');
     expect(getChallengeTaskPath(taskId)).toBe(`/challenges/task/${encodeURIComponent(taskId)}`);
     expect(getChallengeWrongQuestionsPath()).toBe('/challenges/wrong-questions');
+    expect(getChallengeGrowthPath()).toBe('/challenges/growth');
     expect(resolveRoute('/challenges')).toEqual({ kind: 'challengeCenter' });
     expect(resolveRoute('/challenges/wrong-questions')).toEqual({ kind: 'challengeWrongQuestions' });
+    expect(resolveRoute('/challenges/growth')).toEqual({ kind: 'challengeGrowth' });
     expect(resolveRoute(getChallengeGroupPath(groupId))).toEqual({ kind: 'challengeGroup', groupId });
     expect(resolveRoute(getChallengeTaskPath(taskId))).toEqual({ kind: 'challengeTask', taskId });
   });

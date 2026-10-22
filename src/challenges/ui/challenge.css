@@ -48,6 +48,17 @@
 .challenge-wrong-question-list p { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.7; overflow-wrap: anywhere; }
 .challenge-wrong-question-status { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; color: var(--animal-text-color-secondary); font-size: 14px; }
 .challenge-wrong-question-status strong { color: var(--animal-primary-color); }
+.challenge-growth-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.challenge-growth-metric { display: grid; align-content: start; gap: 8px; min-height: 132px; padding: 22px; }
+.challenge-growth-metric p, .challenge-growth-metric strong { margin: 0; }
+.challenge-growth-metric p { color: var(--challenge-card-text); font-weight: 700; }
+.challenge-growth-metric strong { color: var(--challenge-card-text); font-size: clamp(24px, 4vw, 32px); line-height: 1.25; }
+.challenge-growth-list { display: grid; gap: 14px; padding: 0; margin: 0; list-style: none; }
+.challenge-growth-route { display: grid; gap: 12px; padding: 20px; }
+.challenge-growth-route h3 { margin: 0; color: var(--challenge-card-text); font-size: 19px; }
+.challenge-growth-route .eyebrow { color: var(--challenge-card-text); }
+.challenge-growth-progress-label, .challenge-growth-badge { margin: 0; color: var(--challenge-card-text); font-weight: 700; }
+.challenge-growth-note { margin: 18px 0 0; color: var(--animal-text-color-secondary); font-size: 14px; line-height: 1.6; }
 @media (max-width: 700px) {
   .challenge-page { padding: 18px 14px 42px; }
   .challenge-card-grid, .challenge-task-grid { grid-template-columns: 1fr; }
@@ -57,7 +68,10 @@
   .challenge-recommendation-list li { align-items: flex-start; flex-direction: column; }
   .challenge-runner-footer, .challenge-save-actions { align-items: stretch; flex-direction: column; }
   .challenge-runner-footer span { text-align: center; }
+  .challenge-growth-metrics { grid-template-columns: 1fr; }
+  .challenge-growth-metric { min-height: 0; }
 }
+:root[data-theme='dark'] .challenge-growth-route .eyebrow { color: var(--challenge-card-text); }
 @media (max-width: 420px) {
   .challenge-group-card, .challenge-task-card { min-height: 0; padding: 19px; }
   .challenge-runner-progress { align-items: flex-start; flex-direction: column; }

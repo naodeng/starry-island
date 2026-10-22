@@ -32,6 +32,7 @@ export interface ChallengeRepository {
   getActiveAttempt(taskId: string): Promise<ChallengeAttempt | null>;
   getRecentQuestionIds(): Promise<string[]>;
   getTaskProgress(taskId: string): Promise<TaskProgress | null>;
+  getAllTaskProgress(): Promise<TaskProgress[]>;
   getGroupProgress(taskIds: readonly string[]): Promise<TaskProgress[]>;
   getWrongQuestions(): Promise<WrongQuestionRecord[]>;
   beginAttempt(attempt: ChallengeAttempt): Promise<void>;

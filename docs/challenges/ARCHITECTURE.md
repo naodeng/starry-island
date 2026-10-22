@@ -10,14 +10,14 @@
 
 | 职责 | 路径 |
 |---|---|
-| 闯关记录、评分、进度、组卷和答题状态 | `src/challenges/domain/` |
+| 闯关记录、评分、进度、成长统计、组卷和答题状态 | `src/challenges/domain/` |
 | 试点清单、指纹、题目注册和就绪度校验 | `src/challenges/content/` |
 | 单元查找和课程上下文入口 | `src/challenges/content/lookup.ts`、`unitLinks.ts` |
 | 仓库接口和 IndexedDB 数据库结构 v2 | `src/challenges/storage/` |
 | 懒加载路由和闯关页面 | `src/app/router.ts`、`src/App.tsx`、`src/challenges/ui/` |
 | 测试 | `src/challenges/**/*.test.*`、应用/课程测试、`tests/e2e/challenge-flow.spec.ts` |
 
-当前试点包括一个正式单元组和一个前半学期组。范围、来源映射、内容证据和限制见[试点内容审计](pilot-content-audit.md)。错题本首先覆盖当前两个试点题池，不代表其他年级和学科已接入。
+当前试点包括一个正式单元组和一个前半学期组。范围、来源映射、内容证据和限制见[试点内容审计](pilot-content-audit.md)。错题本和成长统计首先覆盖当前两个试点题池，不代表其他年级和学科已接入。成长统计读取 `taskProgress`，在内存中推导累计完成、曾通过任务、当前登记组徽章和组内进度，不增加持久化数据。
 
 ## 组卷流程
 
