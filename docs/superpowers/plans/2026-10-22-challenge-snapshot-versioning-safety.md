@@ -41,7 +41,7 @@
 
 ---
 
-### Task 1: 新增进行中快照结构版本
+### 任务 1：新增进行中快照结构版本
 
 **文件：**
 
@@ -80,7 +80,7 @@
 
   提交信息：`feat(challenges): version active attempt snapshots`
 
-### Task 2: 将 IndexedDB v3 快照迁移到 v4
+### 任务 2：将 IndexedDB v3 快照迁移到 v4
 
 **文件：**
 
@@ -118,7 +118,7 @@
 
   提交信息：`fix(challenges): migrate active snapshot schema`
 
-### Task 3: 兼容旧 v1 JSON 备份中的快照
+### 任务 3：兼容旧 v1 JSON 备份中的快照
 
 **文件：**
 
@@ -157,7 +157,7 @@
 
   提交信息：`fix(challenges): preserve legacy snapshot backups`
 
-### Task 4: 按当前清单安全暂停严重缺陷快照
+### 任务 4：按当前清单安全暂停严重缺陷快照
 
 **文件：**
 
@@ -193,13 +193,13 @@
 
   若新增/修改任务页或恢复 UI，再运行：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`
 
-  结果：上述定向单测 20 项通过；`tests/e2e/challenge-flow.spec.ts` 14 项通过；全量单测 141 个文件、961 项通过；`npm run build` 和 `git diff --check` 通过。旧页面限制在 Task 5 文档中说明，不新增自动重载。
+  结果：上述定向单测 20 项通过；`tests/e2e/challenge-flow.spec.ts` 14 项通过；全量单测 141 个文件、961 项通过；`npm run build` 和 `git diff --check` 通过。旧页面限制在任务 5 文档中说明，不新增自动重载。
 
 - [x] **步骤 5：提交本任务**
 
   提交信息：`fix(challenges): pause disabled active attempts safely`
 
-### Task 5: 同步需求与验证证据
+### 任务 5：同步需求与验证证据
 
 **文件：**
 
