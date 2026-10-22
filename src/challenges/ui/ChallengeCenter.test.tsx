@@ -1,7 +1,10 @@
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
+import type { ChallengeGroupManifest } from '../domain/types';
 import ChallengeCenter from './ChallengeCenter';
+import { getChallengeGroupTitle } from './ChallengeCenter';
+import pilotManifest from '../content/pilot-manifest.json';
 
 const emptySummary: ChallengeBackupMergeSummary = {
   addedActiveAttempts: 0,
@@ -30,6 +33,12 @@ function dataManagementProps() {
 }
 
 describe('ChallengeCenter', () => {
+  it('uses the registered unit grade, term, subject, and chapter in its title', () => {
+    const englishGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-3-term-1-english-unit-01') as unknown as ChallengeGroupManifest;
+
+    expect(getChallengeGroupTitle(englishGroup)).toBe('三年级上册英语 · 第一单元');
+  });
+
   it('links to the local challenge growth record', () => {
     const onNavigate = vi.fn();
     render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={onNavigate} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);

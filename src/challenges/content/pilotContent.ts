@@ -4,6 +4,7 @@ import type { ChallengeGroupManifest, ChallengeManifest, ChallengeManifestValida
 import type { LearningTaskReference } from '../domain/studyRecommendations';
 import rawManifest from './pilot-manifest.json';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
+import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 import { validateChallengeManifest } from './validateManifest';
 
@@ -65,7 +66,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
     }
   }));
 
-  for (const supplemental of pilotSupplementalActivities) {
+  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities]) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }

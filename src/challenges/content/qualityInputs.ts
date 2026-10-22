@@ -4,6 +4,7 @@ import type { ChallengeManifest, ChallengeQualityInputs } from '../domain/types'
 import { parseChallengeManifest } from './manifestSchema';
 import rawManifest from './pilot-manifest.json';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
+import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
 
 function registerActivity(
   activity: ActivityDefinition,
@@ -41,10 +42,11 @@ export async function loadChallengeQualityInputs(manifestValue: unknown = rawMan
     }
   }));
 
-  const referencedSupplementalIds = new Set(pilotSupplementalActivities
+  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities];
+  const referencedSupplementalIds = new Set(supplementalActivities
     .filter(({ activity }) => manifest.questions.some((question) => question.activityId === activity.id))
     .map(({ activity }) => activity.id));
-  for (const supplemental of pilotSupplementalActivities) {
+  for (const supplemental of supplementalActivities) {
     if (!referencedSupplementalIds.has(supplemental.activity.id)) continue;
     if (!sourceUnitIds.includes(supplemental.sourceUnitId)) {
       throw new Error(`Supplemental challenge activity ${supplemental.activity.id} references undeclared source unit ${supplemental.sourceUnitId}.`);

@@ -62,8 +62,8 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(2);
-    expect(report.groups.map(({ status }) => status)).toEqual(['ready', 'ready']);
+    expect(report.groups).toHaveLength(3);
+    expect(report.groups.map(({ status }) => status)).toEqual(['ready', 'ready', 'ready']);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
 

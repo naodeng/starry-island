@@ -5,12 +5,28 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
   'grade-2/term-1/math/unit-04',
+  'grade-3/term-1/english/unit-01',
 ]);
 
 function activityText(activity: ActivityDefinition): string {
   const fields: string[] = [activity.prompt];
   if (activity.kind === 'arithmetic') fields.push(activity.expression);
   if (activity.kind === 'choice') fields.push(...activity.options.map(({ label }) => label));
+  if (activity.kind === 'match') fields.push(...activity.pairs.flatMap(({ left, right }) => [left, right]));
+  if (activity.kind === 'order') fields.push(...activity.items.map(({ label }) => label));
+  if (activity.kind === 'categorize') {
+    fields.push(...activity.categories.map(({ label }) => label));
+    fields.push(...activity.items.map(({ label }) => label));
+  }
+  return fields.join(' ');
+}
+
+function englishActivityText(activity: ActivityDefinition): string {
+  const fields = [activity.prompt, activity.hint, activity.explanation];
+  if (activity.kind === 'choice') {
+    const correctOption = activity.options.find(({ id }) => id === activity.correctOptionId);
+    if (correctOption) fields.push(correctOption.label);
+  }
   if (activity.kind === 'match') fields.push(...activity.pairs.flatMap(({ left, right }) => [left, right]));
   if (activity.kind === 'order') fields.push(...activity.items.map(({ label }) => label));
   if (activity.kind === 'categorize') {
@@ -28,6 +44,18 @@ export function derivePilotQuestionKnowledgePointIds(
 
   const text = activityText(activity);
   switch (sourceUnitId) {
+    case 'grade-3/term-1/english/unit-01': {
+      const englishText = englishActivityText(activity);
+      const ids: string[] = [];
+      if (/\b(?:name|my|your|dear)\b|姓名|名字|称呼|自我介绍|介绍句子|介绍自己/i.test(englishText)) {
+        ids.push('name-and-self-introduction');
+      }
+      if (/\b(?:age|old|year|class|grade)\b|年龄|几岁|岁数|班级|年级/i.test(englishText)) {
+        ids.push('age-and-class');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify English question ${activity.id}.`);
+      return ids;
+    }
     case 'grade-2/term-1/math/unit-01': {
       const ids: string[] = [];
       if (/(厘米|米|单位|换算|更适合|单位选择)/.test(text)) ids.push('length-units');

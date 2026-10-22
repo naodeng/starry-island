@@ -5,20 +5,22 @@ import type { ChallengeManifest } from '../domain/types';
 import { derivePilotQuestionKnowledgePointIds } from './pilotQuestionKnowledgePoints';
 import { parseChallengeManifest } from './manifestSchema';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
+import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
 import { validateChallengeManifest } from './validateManifest';
 import rawManifest from './pilot-manifest.json';
 
 const manifest: ChallengeManifest = parseChallengeManifest(rawManifest);
 const sourceUnitIds = [1, 2, 3, 4].map((number) => `grade-2/term-1/math/unit-${String(number).padStart(2, '0')}`);
+const englishSourceUnitId = 'grade-3/term-1/english/unit-01';
 const safeKinds = new Set(['choice', 'match', 'order', 'categorize', 'arithmetic']);
 
 describe('pilot manifest against the real curriculum', () => {
-  it('resolves all 226 unique candidates and passes both release gates', async () => {
+  it('resolves all candidates and passes every released group gate', async () => {
     const activitiesById = new Map<string, ActivityDefinition>();
     const sourceUnitByActivityId = new Map<string, string>();
     const unitsById = new Map<string, CurriculumUnit>();
 
-    for (const sourceUnitId of sourceUnitIds) {
+    for (const sourceUnitId of [...sourceUnitIds, englishSourceUnitId]) {
       const unit = await loadUnit(sourceUnitId);
       expect(unit).toBeDefined();
       unitsById.set(sourceUnitId, unit!);
@@ -39,6 +41,10 @@ describe('pilot manifest against the real curriculum', () => {
       activitiesById.set(supplemental.activity.id, supplemental.activity);
       sourceUnitByActivityId.set(supplemental.activity.id, sourceUnitIds[1]);
     }
+    for (const supplemental of pilotEnglishSupplementalActivities) {
+      activitiesById.set(supplemental.activity.id, supplemental.activity);
+      sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
+    }
 
     const report = await validateChallengeManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
     expect(report.errors).toEqual([]);
@@ -51,10 +57,41 @@ describe('pilot manifest against the real curriculum', () => {
     expect(report.groupStatusById).toEqual({
       'grade-2-term-1-math-unit-02': 'ready',
       'grade-2-term-1-math-first-half': 'ready',
+      'grade-3-term-1-english-unit-01': 'ready',
     });
     expect(manifest.groups[0].questionIds).toHaveLength(90);
     expect(manifest.groups[1].questionIds).toHaveLength(226);
-    expect(manifest.groups).toHaveLength(2);
+    expect(manifest.groups[2]?.questionIds).toHaveLength(90);
+    expect(manifest.questions).toHaveLength(316);
+    expect(manifest.groups).toHaveLength(3);
+  });
+
+  it('keeps the Grade 3 English group scoped to its one confirmed textbook unit', () => {
+    const englishGroup = manifest.groups.find(({ definition }) => definition.id === 'grade-3-term-1-english-unit-01');
+
+    expect(englishGroup?.definition).toMatchObject({
+      kind: 'unit',
+      grade: 3,
+      semester: 1,
+      subject: 'english',
+      sourceUnitIds: [englishSourceUnitId],
+      coreKnowledgePointIds: ['name-and-self-introduction', 'age-and-class'],
+    });
+    expect(englishGroup?.questionIds).toHaveLength(90);
+  });
+
+  it('registers fourteen original English challenge candidates per difficulty', () => {
+    const supplemental = manifest.questions.filter(({ activityId }) => activityId.startsWith(
+      'challenge-supplement-grade-3-term-1-english-unit-01-',
+    ));
+
+    expect(supplemental).toHaveLength(42);
+    expect(new Set(supplemental.map(({ activityId }) => activityId)).size).toBe(42);
+    expect(Object.fromEntries(['basic', 'advanced', 'high'].map((difficulty) => [
+      difficulty,
+      supplemental.filter((question) => question.difficulty === difficulty).length,
+    ]))).toEqual({ basic: 14, advanced: 14, high: 14 });
+    expect(supplemental.every(({ knowledgePointIds }) => knowledgePointIds.length > 0)).toBe(true);
   });
 
   it('keeps chapter boundary evidence explicit and the unit group scoped to Unit 2', () => {

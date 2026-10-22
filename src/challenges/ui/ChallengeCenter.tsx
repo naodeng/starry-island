@@ -26,8 +26,26 @@ export interface ChallengeBackupImportPreview {
 
 export function getChallengeGroupTitle(group: LoadedPilotGroup['group']): string {
   const { definition } = group;
-  if (definition.kind === 'unit') return '二年级上册数学 · 第二单元';
-  return definition.stage === 'first-half' ? '二年级上册数学 · 前半学期' : '二年级上册数学 · 学期挑战';
+  const termLabel = definition.semester === 1 ? '上册' : '下册';
+  const gradeLabel = ({ 1: '一', 2: '二', 3: '三', 4: '四', 5: '五', 6: '六' } as Record<number, string>)[definition.grade] ?? definition.grade;
+  const subjectLabel = { chinese: '语文', math: '数学', english: '英语' }[definition.subject];
+  const courseLabel = `${gradeLabel}年级${termLabel}${subjectLabel}`;
+
+  if (definition.kind === 'unit') {
+    const unitNumber = Number(definition.sourceUnitIds[0]?.match(/\/unit-(\d+)$/)?.[1]);
+    const unitNumberLabel = ({ 1: '一', 2: '二', 3: '三', 4: '四', 5: '五', 6: '六', 7: '七', 8: '八', 9: '九', 10: '十' } as Record<number, string>)[unitNumber];
+    return Number.isInteger(unitNumber) && unitNumber > 0
+      ? `${courseLabel} · 第${unitNumberLabel ?? unitNumber}单元`
+      : `${courseLabel} · 单元挑战`;
+  }
+
+  const stageLabels: Record<NonNullable<typeof definition.stage>, string> = {
+    'first-half': '前半学期',
+    'second-half': '后半学期',
+    'end-term': '期末综合挑战',
+  };
+  const stageLabel = definition.stage ? stageLabels[definition.stage] : '学期挑战';
+  return `${courseLabel} · ${stageLabel}`;
 }
 
 interface ChallengeCenterProps {

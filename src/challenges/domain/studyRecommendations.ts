@@ -27,6 +27,8 @@ const KNOWLEDGE_POINT_TITLES: Readonly<Record<string, string>> = {
   'angle-comparison': '角的大小比较',
   'equal-groups-multiplication': '认识几个几相加',
   'multiplication-facts': '乘法口诀',
+  'name-and-self-introduction': '姓名与自我介绍',
+  'age-and-class': '年龄与班级',
 };
 
 const DIFFICULTY_ORDER: Readonly<Record<Difficulty, number>> = { basic: 0, advanced: 1, high: 2 };

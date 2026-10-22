@@ -27,9 +27,11 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups.map(({ group, status }) => [group.definition.id, status])).toEqual([
       ['grade-2-term-1-math-unit-02', 'ready'],
       ['grade-2-term-1-math-first-half', 'ready'],
+      ['grade-3-term-1-english-unit-01', 'ready'],
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
+    expect(content.groups[2]?.candidates).toHaveLength(90);
     expect(content.groups.every(({ disabledQuestionIds }) => disabledQuestionIds.length === 0)).toBe(true);
     expect(content.groups[1]?.candidates.every(({ contentFingerprint, activity }) => contentFingerprint && activity.id)).toBe(true);
     expect(content.validation.errors).toEqual([]);
@@ -75,6 +77,34 @@ describe('loadPilotChallengeContent', () => {
       for (const knowledgePointId of knowledgePointIds) {
         expect(learningTasks.some(({ knowledgePointIds: taskIds }) => taskIds.includes(knowledgePointId))).toBe(true);
       }
+    }
+  });
+
+  it('links the new English knowledge points to existing Grade 3 learning tasks', async () => {
+    const content = await loadPilotChallengeContent();
+    const englishGroup = content.groups.find(({ group }) => group.definition.id === 'grade-3-term-1-english-unit-01');
+
+    expect(englishGroup?.learningTasks.some(({ knowledgePointIds }) => knowledgePointIds.includes('name-and-self-introduction'))).toBe(true);
+    expect(englishGroup?.learningTasks.some(({ knowledgePointIds }) => knowledgePointIds.includes('age-and-class'))).toBe(true);
+  });
+
+  it('keeps each new English multiple-choice answer scorable and out of its prompt and hint', async () => {
+    const content = await loadPilotChallengeContent();
+    const englishGroup = content.groups.find(({ group }) => group.definition.id === 'grade-3-term-1-english-unit-01');
+    const supplemental = englishGroup?.candidates.filter(({ activityId }) => activityId.startsWith(
+      'challenge-supplement-grade-3-term-1-english-unit-01-',
+    )) ?? [];
+
+    expect(supplemental).toHaveLength(42);
+    for (const { activity } of supplemental) {
+      expect(activity.kind).toBe('choice');
+      if (activity.kind !== 'choice') continue;
+      const correctOption = activity.options.find(({ id }) => id === activity.correctOptionId);
+      expect(correctOption).toBeDefined();
+      expect(new Set(activity.options.map(({ label }) => label)).size).toBe(activity.options.length);
+      expect(activity.prompt).not.toContain(correctOption?.label);
+      expect(activity.hint).not.toContain(correctOption?.label);
+      expect(submitAnswer(activity, activity.correctOptionId)).toBe(true);
     }
   });
 });

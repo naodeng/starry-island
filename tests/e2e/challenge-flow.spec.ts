@@ -460,6 +460,31 @@ test('opens the local wrong-question notebook from the challenge center', async 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('opens the Grade 3 English Unit 1 pilot without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '三年级上册英语 · 第一单元' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const englishCard = page.locator('.challenge-group-card').filter({
+    has: page.getByRole('heading', { name: '三年级上册英语 · 第一单元' }),
+  });
+
+  await englishCard.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-3-term-1-english-unit-01');
+  await expect(page.getByRole('heading', { name: '三年级上册英语 · 第一单元' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '开始挑战' })).toHaveCount(5);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  await page.getByRole('button', { name: '开始挑战' }).first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-3-term-1-english-unit-01%2Fbasic-01$/);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('clears and restores an in-progress challenge through the 24-hour recovery point', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });

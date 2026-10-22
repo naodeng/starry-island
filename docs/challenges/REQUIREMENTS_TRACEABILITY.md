@@ -4,17 +4,17 @@
 
 ## 当前本地功能切片证据（本地工作区，2026-10-22）
 
-下列状态只适用于单元 2 和前半学期两个试点组，不表示全课程覆盖、远端持续集成、部署或 V1.0 已就绪。
+下列状态只适用于二年级数学单元 2、二年级数学前半学期和三年级英语单元 1 三个试点组，不表示全课程覆盖、远端持续集成、部署或 V1.0 已就绪。
 
 | REQ | 当前切片状态 | 证据 |
 |---|---|---|
-| REQ-036～047 | 题库质量命令、声明式清单校验、生命周期/状态推导、指纹变化报告、确定性去重与相似题提示、两倍候选池和覆盖检查、每个已发布任务 100 种子模拟及 CI 摘要/报告归档，已在当前分支实现。仅以现有两个试点组验证；全课程题库覆盖、人工教学审核和远端 Actions 执行仍未完成 | `scripts/challenges/quality.mjs`；`src/challenges/content/manifestSchema.ts`、`validateManifest.ts`、`questionUniqueness.ts`、`qualityReport.ts`；`.github/workflows/quality.yml`；本地 CLI、单测和构建记录见[测试方案](TEST_STRATEGY.md) |
+| REQ-036～047 | 题库质量命令、声明式清单校验、生命周期/状态推导、指纹变化报告、确定性去重与相似题提示、两倍候选池和覆盖检查、每个已发布任务 100 种子模拟及 CI 摘要/报告归档，已在当前分支实现。以现有三个试点组验证；全课程题库覆盖、独立教学审核和远端 Actions 执行仍未完成 | `scripts/challenges/quality.mjs`；`src/challenges/content/manifestSchema.ts`、`validateManifest.ts`、`questionUniqueness.ts`、`qualityReport.ts`；`.github/workflows/quality.yml`；本地 CLI、单测和构建记录见[测试方案](TEST_STRATEGY.md) |
 | REQ-001 | 路由和进度隔离已实现 | `src/App.tsx`；`src/App.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-004 | 任务组与任务层级已实现；高阶整份试卷覆盖多个必需知识点 | `src/challenges/content/pilot-manifest.json`；组卷测试 |
 | REQ-005 | 通过线和整数比较已实现 | `src/challenges/domain/grading.ts`、`grading.test.ts` |
 | REQ-006 | 首答锁定已实现；闯关页不显示提示或重试 | `src/challenges/domain/attempt.test.ts`；`ChallengeRunner.test.tsx` |
 | REQ-008 | 最佳/最近/次数/曾通过摘要已实现；不保留完整作答历史 | `src/challenges/storage/indexedDbRepository.test.ts`；[数据模型](DATA_MODEL.md) |
-| REQ-009 | 部分实现：确定性组卷仅覆盖两个试点组 | `src/challenges/domain/assemble.ts`；试点内容测试 |
+| REQ-009 | 部分实现：确定性组卷覆盖三个试点组；完整课程覆盖尚未实现 | `src/challenges/domain/assemble.ts`；试点内容测试 |
 | REQ-011 | 已登记试点候选池满足题量要求 | 题库清单；试点清单测试 |
 | REQ-012 | 最近三次已完成试点挑战的题目优先避让已实现 | 数据仓库与组卷测试 |
 | REQ-013 / 014 | 部分实现：复用已支持控件；测量题不纳入试点 | `ChallengeActivityRenderer.tsx`；清单校验测试 |
@@ -23,7 +23,7 @@
 | REQ-018 | 丢弃确认已实现，丢弃不增加完成进度 | `ChallengeRunner.tsx`；数据仓库测试 |
 | REQ-019 / 020 / 021 | 试点星级和五任务徽章推导已实现 | `progress.ts`、`progress.test.ts`；闯关界面测试 |
 | REQ-022 / 023 | 结果页按知识点汇总答错题，并提供到现有学习任务的复习入口；导航不改动课程进度 | `studyRecommendations.ts`、`studyRecommendations.test.ts`；`pilotContent.test.ts`；`ChallengeResult.test.tsx` |
-| REQ-024 / 025 | 当前试点的错题本和跨完成挑战掌握规则已在本地分支提交；尚未覆盖其他年级或学科 | `wrongQuestions.ts`、`wrongQuestions.test.ts`；`indexedDbRepository.test.ts`；`ChallengeWrongQuestions.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
+| REQ-024 / 025 | 当前三个试点题池接入错题本和跨完成挑战掌握规则；其他年级、学科与完整课程仍未覆盖 | `wrongQuestions.ts`、`wrongQuestions.test.ts`；`indexedDbRepository.test.ts`；`ChallengeWrongQuestions.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-031 | 当前试点提供本机累计完成次数、曾通过任务、徽章和各登记组进度；不保存历史曲线或连续天数 | `src/challenges/domain/growth.ts`、`growth.test.ts`；`ChallengeGrowth.tsx`、页面测试；`getAllTaskProgress()` 仓库测试 |
 | REQ-033 / 061 / 062 | 版本化 JSON 导出、SHA-256 校验、导入预览及安全合并已在本地实现；设置迁移单独见 REQ-063 | `src/challenges/domain/backup.ts`、`backupMerge.ts`；IndexedDB 原子合并测试；详见[测试方案](TEST_STRATEGY.md) |
 | REQ-063 | 当前本地切片已实现：备份可选携带主题与语音开关；导入单独预览且默认不应用，只有闯关记录安全合并成功后才更新设置；旧版无偏好字段的 v1 备份继续有效，课程进度排除在外 | `src/challenges/domain/backup.ts`；`ChallengeCenter.tsx`；`ChallengePage.tsx`；备份领域/界面单测与 `tests/e2e/challenge-flow.spec.ts` |
@@ -36,7 +36,7 @@
 | REQ-051 | 静态应用没有 Service Worker 或自动重载；新版本只在用户自行打开/刷新后生效，已确认保存的答题会从原冻结快照恢复；当前没有单独的更新等待界面 | `src/challenges/ui/ChallengeRunner.tsx`；`tests/e2e/challenge-flow.spec.ts` 刷新恢复流程；静态 Vite/Pages 部署 |
 | REQ-052 | 闯关界面通过窄屏、深色、键盘焦点和减少动态效果检查；隔离数据提示文字在深色模式下达到 4.5:1 对比度。屏幕阅读器和独立无障碍审查仍未完成 | `tests/e2e/challenge-flow.spec.ts`；`src/challenges/ui/challenge.css` |
 | REQ-053 | 已实现按需朗读当前题干；只使用设备本地中文语音并受现有语音开关控制，不读取选项/答案/讲解。语音流畅度未作为本次验收项 | `src/sound/localChineseSpeech.ts`；`ChallengeActivityRenderer.tsx` 及测试；闯关浏览器测试 |
-| REQ-054 | 已按挑战组年级映射低（1～2）、中（3～4）、高（5～6）三档，只调整题干字号和留白；年级映射覆盖 1～6 年级。浏览器检查通过中、高档样式切换，当前真实内容组仅有二年级试点 | `densityTier.ts` 及测试；`ChallengeRunner.test.tsx`；闯关浏览器测试 |
+| REQ-054 | 已按挑战组年级映射低（1～2）、中（3～4）、高（5～6）三档，只调整题干字号和留白；年级映射覆盖 1～6 年级。当前真实内容覆盖二、三年级，中、高年级档均有浏览器样式切换验证，但五、六年级尚无真实题库 | `densityTier.ts` 及测试；`ChallengeRunner.test.tsx`；闯关浏览器测试 |
 | REQ-060 | 清除闯关数据前持续提醒先导出长期备份，并说明 24 小时恢复点不能替代长期备份或防止浏览器清理、设备损坏；文案有组件测试，清除与恢复流程有浏览器测试 | `src/challenges/ui/ChallengeDataManagement.tsx`；`ChallengeDataManagement.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-065～069 | 分级清除、强确认、单一 24 小时恢复点、自动替换及成功后消费已在当前工作区实现并通过全量本地验证；尚未推送 | `src/challenges/domain/recovery.ts`；`indexedDbRepository.ts`；`ChallengeDataManagement.tsx`；存储与浏览器流程测试 |
 | REQ-070 | 当前闯关答题写入和数据管理操作使用统一错误分类与中文恢复提示；最新本地验证记录见测试方案；全课程及正式发布门禁仍未完成 | `src/challenges/domain/errors.ts`、`errors.test.ts`；`ChallengeRunner.tsx`；`ChallengeDataManagement.tsx`；[测试记录](TEST_STRATEGY.md) |
@@ -52,7 +52,7 @@
 | REQ-082～084 | 采用静态发布修复；发布摘要维护于 GitHub 更新日志；客户端没有个性化题目修订通知 | `CHANGELOG.zh-CN.md`；静态 Vite/Pages 架构；[产品需求文档](PRD.md) |
 | REQ-027 | 根据用户确认的章节顺序划分前半学期；不是学校日历 | 试点题库清单；清单测试 |
 | REQ-028 | 部分实现：运行时及专用质量命令具备清单门禁；只覆盖当前试点清单，不代表全课程题库完成 | `validateManifest.ts`；`scripts/challenges/quality.mjs`；[测试方案](TEST_STRATEGY.md) |
-| REQ-029 | 部分实现：有闯关中心和单元 2 上下文入口；未覆盖其他组 | 课程目录和路由测试 |
+| REQ-029 | 部分实现：闯关中心支持三个试点组；课程上下文入口已覆盖二年级数学单元 2 和三年级英语单元 1，其他课程入口尚未覆盖 | `ChallengeCenter.tsx`；`unitLinks.ts`；课程目录和路由测试 |
 | REQ-037 / REQ-080 | 指纹变化会生成提示，同时按 REQ-080 保留审核状态 | `fingerprint.ts`；题库清单校验测试 |
 | REQ-055 / 056 | 减少动态效果样式和闯关静音容器已实现 | `challenge.css`；`App.test.tsx` |
 | REQ-058 / 059 | 部分实现：修订号拒绝过期写入；支持时 Web Locks 提供任务级单写者和等待后重新读取/接管，否则以修订号校验兜底 | 写入锁、数据仓库、答题页和浏览器测试 |
@@ -98,7 +98,7 @@
 | REQ-032 | 复用现有身份模型 | 产品需求文档 / 验收测试 |
 | REQ-033 | 本地 JSON 备份/导入 | 产品需求文档 / 验收测试 |
 | REQ-034 | 按引擎→试点→完整覆盖分阶段交付 | 产品需求文档 / 验收测试 |
-| REQ-035 | 试点覆盖不同年级和学科 | 产品需求文档 / 验收测试 |
+| REQ-035 | 部分实现：本地试点覆盖二、三年级及数学、英语，且有单元/学期组；仅代表性切片，尚非所需完整跨年级学科覆盖 | `pilot-manifest.json`；[试点内容审计](pilot-content-audit.md) |
 | REQ-036 | 设置严格发布质量门禁；清单解析或输入加载失败也生成本次错误诊断，不能留下旧成功报告 | 质量检查命令行工具 / 持续集成测试 |
 | REQ-037 | Git 审核清单和内容指纹 | 质量检查命令行工具 / 持续集成测试 |
 | REQ-038 | 题目 ID 全局稳定；`taskId` 在清单所有组间全局唯一，且组 ID 和任务 ID 符合路由格式，防止不可访问或本机进度串用 | `src/challenges/domain/ids.ts`；清单质量检查与路由测试 |

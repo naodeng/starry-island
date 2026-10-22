@@ -60,6 +60,27 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
     )).toEqual(['equal-groups-multiplication', 'multiplication-facts']);
   });
 
+  it('maps self-introduction and age questions to the Grade 3 English unit points', () => {
+    const sourceUnitId = 'grade-3/term-1/english/unit-01';
+
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('“My name is Amy.” 表示什么？', ['我的名字叫 Amy。', '我有一个苹果。', '我喜欢蓝色。']),
+    )).toEqual(['name-and-self-introduction']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('别人问 “How old are you?”，是在问什么？', ['你几岁？', '你叫什么？', '你喜欢什么？']),
+    )).toEqual(['age-and-class']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('核对 name 和 age 两项个人信息。', ['姓名与年龄都正确', '只核对姓名', '只核对年龄']),
+    )).toEqual(['name-and-self-introduction', 'age-and-class']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('向伙伴介绍句子前，先检查什么？', ['核对关键词的意思，再按正确词序读一遍。']),
+    )).toEqual(['name-and-self-introduction']);
+  });
+
   it('fails closed for an unsupported source unit or a question with no detectable core point', () => {
     expect(() => derivePilotQuestionKnowledgePointIds('grade-2/term-1/math/unit-09', choice('计算。'))).toThrow();
     expect(() => derivePilotQuestionKnowledgePointIds(

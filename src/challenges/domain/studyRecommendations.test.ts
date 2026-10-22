@@ -69,6 +69,15 @@ describe('challenge study recommendations', () => {
     expect(recommendations[0]?.learningTask).toEqual(exactTask);
   });
 
+  it('uses Chinese labels for Grade 3 English knowledge points', () => {
+    const recommendations = getStudyRecommendations([
+      wrongQuestion('q1', 'english-name', ['name-and-self-introduction']),
+      wrongQuestion('q2', 'english-age', ['age-and-class']),
+    ], []);
+
+    expect(recommendations.map(({ title }) => title)).toEqual(['姓名与自我介绍', '年龄与班级']);
+  });
+
   it('uses the most focused existing task for challenge-only questions', () => {
     const focusedTask = learningTask();
     const mixedTask = learningTask({
