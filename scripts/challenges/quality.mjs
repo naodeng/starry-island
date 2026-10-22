@@ -3,7 +3,6 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createServer } from 'vite';
 
-const repositoryRoot = fileURLToPath(new URL('../..', import.meta.url));
 const defaultReportDirectory = '.quality-reports';
 
 function usage() {
@@ -41,52 +40,66 @@ function parseArguments(args, ciValue) {
   return options;
 }
 
-async function main() {
+export async function runQualityCommand(args = [], dependencies = {}) {
+  const cwd = dependencies.cwd ?? process.cwd();
+  const env = dependencies.env ?? process.env;
+  const stdout = dependencies.stdout ?? ((value) => process.stdout.write(value));
+  const stderr = dependencies.stderr ?? ((value) => process.stderr.write(value));
   let options;
   try {
-    options = parseArguments(process.argv.slice(2), process.env.CI);
+    options = parseArguments(args, env.CI);
   } catch (error) {
-    process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n${usage()}\n`);
-    process.exitCode = 2;
-    return;
+    stderr(`${error instanceof Error ? error.message : String(error)}\n${usage()}\n`);
+    return 2;
   }
   if (options.help) {
-    process.stdout.write(`${usage()}\n`);
-    return;
+    stdout(`${usage()}\n`);
+    return 0;
   }
 
   let viteServer;
+  let exitCode = 2;
   try {
-    viteServer = await createServer({
-      root: repositoryRoot,
-      server: { middlewareMode: true },
-      appType: 'custom',
-    });
-    const [{ loadChallengeQualityInputs }, { buildChallengeQualityReport, renderChallengeQualityMarkdown }] = await Promise.all([
-      viteServer.ssrLoadModule('/src/challenges/content/qualityInputs.ts'),
-      viteServer.ssrLoadModule('/src/challenges/content/qualityReport.ts'),
-    ]);
+    let modules = dependencies.loadQualityModules ? await dependencies.loadQualityModules() : undefined;
+    if (!modules) {
+      const repositoryRoot = fileURLToPath(new URL('../..', import.meta.url));
+      viteServer = await createServer({
+        root: repositoryRoot,
+        server: { middlewareMode: true },
+        appType: 'custom',
+      });
+      const [inputsModule, reportModule] = await Promise.all([
+        viteServer.ssrLoadModule('/src/challenges/content/qualityInputs.ts'),
+        viteServer.ssrLoadModule('/src/challenges/content/qualityReport.ts'),
+      ]);
+      modules = { ...inputsModule, ...reportModule };
+    }
+    const { loadChallengeQualityInputs, buildChallengeQualityReport, renderChallengeQualityMarkdown } = modules;
     const inputs = await loadChallengeQualityInputs();
     const report = await buildChallengeQualityReport(inputs, { seedCount: options.seedCount });
-    const reportDirectory = resolve(process.cwd(), options.reportDirectory);
+    const reportDirectory = resolve(cwd, options.reportDirectory);
     await mkdir(reportDirectory, { recursive: true });
     await writeFile(resolve(reportDirectory, 'challenge-quality-report.json'), `${JSON.stringify(report, null, 2)}\n`, 'utf8');
     await writeFile(resolve(reportDirectory, 'challenge-quality-report.md'), renderChallengeQualityMarkdown(report), 'utf8');
-    process.stdout.write(`闯关题库质量门禁${report.overall.passed ? '通过' : '未通过'}：${report.overall.blockingIssueCount} 个阻断，${report.overall.warningCount} 条提示。报告目录：${reportDirectory}\n`);
-    process.exitCode = report.overall.passed ? 0 : 1;
+    stdout(`闯关题库质量门禁${report.overall.passed ? '通过' : '未通过'}：${report.overall.blockingIssueCount} 个阻断，${report.overall.warningCount} 条提示。报告目录：${reportDirectory}\n`);
+    exitCode = report.overall.passed ? 0 : 1;
   } catch (error) {
-    process.stderr.write(`闯关题库质量命令失败：${error instanceof Error ? error.message : String(error)}\n`);
-    process.exitCode = 2;
+    stderr(`闯关题库质量命令失败：${error instanceof Error ? error.message : String(error)}\n`);
+    exitCode = 2;
   } finally {
     if (viteServer) {
       try {
         await viteServer.close();
       } catch (error) {
-        process.stderr.write(`关闭 Vite 加载器失败：${error instanceof Error ? error.message : String(error)}\n`);
-        process.exitCode = 2;
+        stderr(`关闭 Vite 加载器失败：${error instanceof Error ? error.message : String(error)}\n`);
+        exitCode = 2;
       }
     }
   }
+  return exitCode;
 }
 
-await main();
+const invokedPath = process.argv[1] ? resolve(process.argv[1]) : '';
+if (import.meta.url.startsWith('file:') && invokedPath === fileURLToPath(import.meta.url)) {
+  process.exitCode = await runQualityCommand(process.argv.slice(2));
+}

@@ -23,21 +23,30 @@ jobs:
           cache: npm
 
       - name: Install dependencies
+        id: install_dependencies
         run: npm ci
 
+      - name: Check challenge question bank quality
+        run: npm run challenge:quality
+
       - name: Run unit tests
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run test:unit
 
       - name: Check coverage thresholds
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run test:coverage
 
       - name: Build static site
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run build
 
       - name: Install Playwright Chromium
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npx playwright install --with-deps chromium
 
       - name: Run browser tests
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run test:e2e
 
       - name: Upload test reports on failure
@@ -50,3 +59,24 @@ jobs:
             playwright-report/
             test-results/
           if-no-files-found: ignore
+
+      - name: Add challenge quality report to workflow summary
+        if: always()
+        run: |
+          echo '### 闯关题库质量报告' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .quality-reports/challenge-quality-report.md ]; then
+            cat .quality-reports/challenge-quality-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '质量命令未生成报告，请查看前序步骤的错误信息。' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload challenge quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge-quality-reports
+          path: |
+            .quality-reports/challenge-quality-report.json
+            .quality-reports/challenge-quality-report.md
+          if-no-files-found: ignore
+          include-hidden-files: true

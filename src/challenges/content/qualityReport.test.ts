@@ -95,6 +95,23 @@ describe('buildChallengeQualityReport', () => {
     expect(report.overall.passed).toBe(true);
   });
 
+  it.each(['planned', 'suspended'] as const)('does not let a %s pool shortage block another released ready group', async (releaseIntent) => {
+    const deferred = cloneInputs(inputs);
+    const unitGroup = deferred.manifest.groups.find(({ definition }) => definition.kind === 'unit')!;
+    const semesterGroup = deferred.manifest.groups.find(({ definition }) => definition.kind === 'semester')!;
+    unitGroup.releaseIntent = releaseIntent;
+    unitGroup.questionIds = [];
+    if (releaseIntent === 'suspended') unitGroup.unavailableReason = '等待补充题库';
+
+    const report = await buildChallengeQualityReport(deferred, { seedCount: 1 });
+    const unitReport = report.groups.find(({ groupId }) => groupId === unitGroup.definition.id)!;
+    const semesterReport = report.groups.find(({ groupId }) => groupId === semesterGroup.definition.id)!;
+
+    expect(unitReport.status).toBe(releaseIntent === 'planned' ? 'planned' : 'unavailable');
+    expect(semesterReport.status).toBe('ready');
+    expect(report.overall.passed).toBe(true);
+  });
+
   it('marks a released group unavailable when any task seed cannot assemble a paper', async () => {
     const invalid = cloneInputs(inputs);
     const group = invalid.manifest.groups.find(({ definition }) => definition.kind === 'unit')!;

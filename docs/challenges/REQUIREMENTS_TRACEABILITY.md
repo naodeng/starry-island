@@ -8,6 +8,7 @@
 
 | REQ | 当前切片状态 | 证据 |
 |---|---|---|
+| REQ-036～047 | 题库质量命令、声明式清单校验、生命周期/状态推导、指纹变化报告、确定性去重与相似题提示、两倍候选池和覆盖检查、每个已发布任务 100 种子模拟及 CI 摘要/报告归档，已在当前分支实现。仅以现有两个试点组验证；全课程题库覆盖、人工教学审核和远端 Actions 执行仍未完成 | `scripts/challenges/quality.mjs`；`src/challenges/content/manifestSchema.ts`、`validateManifest.ts`、`questionUniqueness.ts`、`qualityReport.ts`；`.github/workflows/quality.yml`；本地 CLI、单测和构建记录见[测试方案](TEST_STRATEGY.md) |
 | REQ-001 | 路由和进度隔离已实现 | `src/App.tsx`；`src/App.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-004 | 任务组与任务层级已实现；高阶整份试卷覆盖多个必需知识点 | `src/challenges/content/pilot-manifest.json`；组卷测试 |
 | REQ-005 | 通过线和整数比较已实现 | `src/challenges/domain/grading.ts`、`grading.test.ts` |
@@ -26,7 +27,7 @@
 | REQ-031 | 当前试点提供本机累计完成次数、曾通过任务、徽章和各登记组进度；不保存历史曲线或连续天数 | `src/challenges/domain/growth.ts`、`growth.test.ts`；`ChallengeGrowth.tsx`、页面测试；`getAllTaskProgress()` 仓库测试 |
 | REQ-033 / 061 / 062 | 版本化 JSON 导出、SHA-256 校验、导入预览及安全合并已在本地实现；设置迁移单独见 REQ-063 | `src/challenges/domain/backup.ts`、`backupMerge.ts`；IndexedDB 原子合并测试；详见[测试方案](TEST_STRATEGY.md) |
 | REQ-063 | 当前本地切片已实现：备份可选携带主题与语音开关；导入单独预览且默认不应用，只有闯关记录安全合并成功后才更新设置；旧版无偏好字段的 v1 备份继续有效，课程进度排除在外 | `src/challenges/domain/backup.ts`；`ChallengeCenter.tsx`；`ChallengePage.tsx`；备份领域/界面单测与 `tests/e2e/challenge-flow.spec.ts` |
-| REQ-039 | 当前本地切片已实现快照结构版本 `1`；数据库 v4 迁移有效旧活动快照及 24 小时恢复点内快照。旧 v1 备份先校验原始摘要再归一化已知旧快照；未知版本拒绝。题库全量质量 CLI 与发布门禁尚未完成 | `snapshotSchema.ts`；`backup.ts`；`indexedDbRepository.ts` 及测试 |
+| REQ-039 | 当前本地切片已实现快照结构版本 `1`；数据库 v4 迁移有效旧活动快照及 24 小时恢复点内快照。旧 v1 备份先校验原始摘要再归一化已知旧快照；未知版本拒绝 | `snapshotSchema.ts`；`backup.ts`；`indexedDbRepository.ts` 及测试 |
 | REQ-040 | 当前清单加载器会提供显式 `disabled` 题目 ID；`active`、`disabled`、`deprecated` 生命周期记录仍由清单验证器分别处理 | `pilotContent.ts`；`validateManifest.ts` 及测试 |
 | REQ-041 | 当前本地切片在写入租约内重新读取快照后、恢复或自动补记成绩前检查停用题；命中时保留快照、不计成绩并释放租约。未命中时即使组不可用仍可恢复；无快照时不可新开。旧静态页面无法收到后续发布的停用状态 | `ChallengePage.test.tsx`；`ChallengeRunner.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-048 | 已实现数据库结构版本 1→2→3→4 的顺序迁移；v4 在 IndexedDB 升级事务内迁移有效旧活动快照及恢复点数据，未知或异常内容保留给隔离流程 | `src/challenges/storage/indexedDbRepository.ts`；`indexedDbRepository.test.ts` |
@@ -44,13 +45,13 @@
 | REQ-073 | 本地新增题目修正表单，要求问题描述、修正理由和可核对依据；明确由维护者人工审核且不会自动发布 | `.github/ISSUE_TEMPLATE/question-correction.yml`；[表单说明](ISSUE_FORMS.md) |
 | REQ-074 | 最佳成绩和曾通过状态保持单调；没有完整作答历史时不自动重评分或撤销奖励。可靠证据下的补偿仍是人工处理，当前没有自动补偿工具 | `attempt.ts`、`attempt.test.ts`；`progress.test.ts`；[数据模型](DATA_MODEL.md) |
 | REQ-075 | 已有根更新日志作为 GitHub 发布摘要，并新增结构化题库变更记录格式；本地记录不代表内容变更审批证明 | `CHANGELOG.zh-CN.md`；[内容变更记录](CONTENT_CHANGELOG.md) |
-| REQ-076 | 现有 CI 对 PR 执行全量单测、覆盖率、构建和浏览器测试；影响任务清单与人工教学检查由作者在 PR 中记录，暂无自动题目到任务映射工具 | `.github/workflows/quality.yml`；`DEVELOPMENT_GUIDE.md`；`TEST_STRATEGY.md` |
+| REQ-076 | 当前分支的 Quality 工作流已配置题库质量门禁、中文摘要和报告产物，并保留单测、覆盖率、构建及浏览器测试；该分支尚未推送，远端 Actions 结果未核实。人工教学检查仍由作者完成；没有自动题目到任务的影响分析工具 | `.github/workflows/quality.yml`；`DEVELOPMENT_GUIDE.md`；`TEST_STRATEGY.md` |
 | REQ-077 | 低、中、高三级风险与对应检查范围已写入协作指南；人工检查不能由当前 CI 自动证明 | `DEVELOPMENT_GUIDE.md`；[决策冲突与限制](DECISION_CONFLICTS.md) |
 | REQ-078 / 079 | 当前试点允许作者自审；审核记录保留状态、审核人和时间，内容指纹单独用于变更追踪 | `src/challenges/content/pilot-manifest.json`；`validateManifest.ts` 相关测试 |
 | REQ-081 | 指纹变化提示不自动撤销审核或暂停关联挑战；严重确认问题仍按静态发布流程处理 | `fingerprint.ts`；题库清单校验测试；[产品需求文档](PRD.md) |
 | REQ-082～084 | 采用静态发布修复；发布摘要维护于 GitHub 更新日志；客户端没有个性化题目修订通知 | `CHANGELOG.zh-CN.md`；静态 Vite/Pages 架构；[产品需求文档](PRD.md) |
 | REQ-027 | 根据用户确认的章节顺序划分前半学期；不是学校日历 | 试点题库清单；清单测试 |
-| REQ-028 | 部分实现：运行时有题库清单门禁；尚无专用持续集成报告命令 | `validateManifest.ts`；[测试方案](TEST_STRATEGY.md) |
+| REQ-028 | 部分实现：运行时及专用质量命令具备清单门禁；只覆盖当前试点清单，不代表全课程题库完成 | `validateManifest.ts`；`scripts/challenges/quality.mjs`；[测试方案](TEST_STRATEGY.md) |
 | REQ-029 | 部分实现：有闯关中心和单元 2 上下文入口；未覆盖其他组 | 课程目录和路由测试 |
 | REQ-037 / REQ-080 | 指纹变化会生成提示，同时按 REQ-080 保留审核状态 | `fingerprint.ts`；题库清单校验测试 |
 | REQ-055 / 056 | 减少动态效果样式和闯关静音容器已实现 | `challenge.css`；`App.test.tsx` |

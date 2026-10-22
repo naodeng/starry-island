@@ -7,6 +7,7 @@ import { tmpdir } from 'node:os';
 // @ts-expect-error Node built-ins are available in Vitest, while this browser-first tsconfig omits @types/node.
 import { join, resolve } from 'node:path';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import type { ChallengeQualityReport } from '../domain/types';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 
 declare const process: {
@@ -75,5 +76,44 @@ describe('challenge quality CLI', () => {
     expect(result.error).toBeUndefined();
     expect(result.status).toBe(2);
     expect(result.stderr).toContain('100');
+  });
+
+  it('returns gate exit code 1 and writes diagnostics when a global integrity issue fails quality', async () => {
+    // @ts-expect-error Node ESM 命令模块通过 Vitest 动态加载；此浏览器优先配置未声明该模块类型。
+    const { runQualityCommand } = await import('../../../scripts/challenges/quality.mjs');
+    const failedReport: ChallengeQualityReport = {
+      reportSchemaVersion: 1,
+      manifestVersion: 'fixture-v1',
+      overall: { passed: false, blockingIssueCount: 1, warningCount: 0, releasedGroupCount: 1, readyReleasedGroupCount: 0 },
+      errors: [{ classification: 'global-blocking', code: 'missing-question', path: 'groups.group-a.questionIds', message: 'Question ID is missing.' }],
+      warnings: [],
+      groups: [],
+      contentChanges: [],
+      exactDuplicateGroups: [],
+      similarQuestionPairs: [],
+    };
+    const failedReportDirectory = join(reportDirectory, 'failed-gate');
+    const stdout: string[] = [];
+    const stderr: string[] = [];
+
+    const exitCode = await runQualityCommand(['--report-dir', failedReportDirectory], {
+      cwd: repoRoot,
+      env: { CI: 'true' },
+      loadQualityModules: async () => ({
+        loadChallengeQualityInputs: async () => ({}),
+        buildChallengeQualityReport: async () => failedReport,
+        renderChallengeQualityMarkdown: () => '# 闯关题库质量报告\n\n门禁未通过。\n',
+      }),
+      stdout: (value: string) => stdout.push(value),
+      stderr: (value: string) => stderr.push(value),
+    });
+
+    expect(exitCode).toBe(1);
+    expect(stderr).toEqual([]);
+    expect(stdout.join('')).toContain('未通过');
+    const json = await readFile(join(failedReportDirectory, 'challenge-quality-report.json'), 'utf8');
+    const markdown = await readFile(join(failedReportDirectory, 'challenge-quality-report.md'), 'utf8');
+    expect(json).toContain('missing-question');
+    expect(markdown).toContain('门禁未通过');
   });
 });

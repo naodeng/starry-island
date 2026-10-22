@@ -43,7 +43,7 @@
 
 ---
 
-### Task 1: 泛化清单解析、校验与状态推导
+### 任务 1：泛化清单解析、校验与状态推导
 
 **文件：**
 
@@ -59,21 +59,21 @@
 - 校验结果显式区分全局完整性阻断、`released` 组阻断和信息性提示；不能仅凭扁平 `errors` 数组决定 CI 退出码。
 - 组状态由一个共享解析函数推导；`planned`、`suspended` 和 `released` 行为严格遵守规格状态表。
 
-- [ ] **步骤 1：先写失败解析测试**
+- [x] **步骤 1：先写失败解析测试**
 
   在 `manifestSchema.test.ts` 增加 `rejects malformed root, question and group references with field paths`：对非对象根、缺少 `questions`、无效 `releaseIntent`、错误任务结构断言抛出对应路径错误；合法当前试点清单能解析。
 
-- [ ] **步骤 2：确认测试失败**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/content/manifestSchema.test.ts`
 
   预期：解析器尚不存在，测试失败。
 
-- [ ] **步骤 3：实现结构解析与通用校验**
+- [x] **步骤 3：实现结构解析与通用校验**
 
   加入显式运行时结构检查，再运行业务校验。删除通用校验器对“恰好两个组”的假设；至少有一个组，所有任务/组引用和停用原因按规格验证。校验问题携带全局、发布组或信息性分类，状态推导与 CI 门禁使用该分类；计划/暂停组的候选池不足不阻断其他组，清单解析、稳定 ID、必要引用等全局完整性错误仍阻断 CI。保留独立试点测试断言当前试点清单仍包含预期的两个组。
 
-- [ ] **步骤 4：测试通用组数和审核语义**
+- [x] **步骤 4：测试通用组数和审核语义**
 
   在 `validateManifest.test.ts` 增加 `accepts one or more structurally valid groups`、`keeps a group ready when only its approved content fingerprint changed` 和 `keeps planned and suspended status independent from pool readiness`。
 
@@ -81,11 +81,11 @@
 
   预期：通用清单测试和真实试点内容校验全部通过；指纹变化不撤销审核、不改变状态。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`refactor(challenges): generalize manifest validation`
 
-### Task 2: 实现精确去重与相似题提示
+### 任务 2：实现精确去重与相似题提示
 
 **文件：**
 
@@ -99,21 +99,21 @@
 - `QuestionUniquenessReport` 返回按 `questionId` 排序的精确重复组和相似题对；代表题为稳定 ID 字典序最小项。
 - 相似题规则仅比较同课程范围、同交互题型；按规格规范化题干的 Unicode、空白、标点和数字字面量。
 
-- [ ] **步骤 1：先写失败去重测试**
+- [x] **步骤 1：先写失败去重测试**
 
   增加 `selects the same canonical representative regardless of input order`：打乱输入后精确重复组与代表 ID 不变。增加组校验断言：`released` 组引用重复题时 unavailable；重复记录只在 planned 组时不改变其他 ready 组状态。
 
-- [ ] **步骤 2：确认测试失败**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/content/questionUniqueness.test.ts src/challenges/content/validateManifest.test.ts`
 
   预期：新分析器不存在，精确重复门禁区分测试失败。
 
-- [ ] **步骤 3：实现确定性重复与相似候选分析**
+- [x] **步骤 3：实现确定性重复与相似候选分析**
 
   使用现有 `fingerprintActivity()` 语义识别完整内容精确重复；报告重复代表项，不修改清单。相似候选仅作为可读报告提示，不改变题目资格或状态。
 
-- [ ] **步骤 4：测试资格计数和相似提示**
+- [x] **步骤 4：测试资格计数和相似提示**
 
   增加断言：精确重复项不重复计入两倍候选池；重复题被已发布组引用时阻断该组；只在计划组被引用的重复项不改变无关发布组状态；规范化后相同的数值模板产生稳定提示；相似提示本身不阻断组状态。
 
@@ -121,11 +121,11 @@
 
   预期：精确去重、门禁与生产组卷约束一致，所有单测通过。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`feat(challenges): report deterministic question duplicates`
 
-### Task 3: 构建质量报告与多种子模拟
+### 任务 3：构建质量报告与多种子模拟
 
 **文件：**
 
@@ -140,21 +140,21 @@
 - `ChallengeQualityReport` 包含 `reportSchemaVersion: 1`、`manifestVersion`、总体门禁结果、稳定排序的错误/警告、组与任务统计、指纹差异、精确重复、相似题对和种子模拟摘要；不得包含题干、答案、讲解、学生或浏览器数据。
 - `seedCount` 默认值为 100；每个 seed 由清单版本、任务 ID 和序号稳定派生。`planned` / `suspended` 组不执行发布模拟。
 
-- [ ] **步骤 1：先写失败报告测试**
+- [x] **步骤 1：先写失败报告测试**
 
   增加 `buildChallengeQualityReport runs all 100 deterministic seeds for each released task`：使用真实试点内容构建报告，断言每个 released 任务恰好执行 100 次模拟且成功数/失败数准确。增加固定输入重复运行后报告深度相等的断言。
 
-- [ ] **步骤 2：确认测试失败**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/content/qualityReport.test.ts`
 
   预期：报告构建器不存在，测试失败。
 
-- [ ] **步骤 3：实现报告构建器**
+- [x] **步骤 3：实现报告构建器**
 
   调用共享通用校验、精确重复分析和生产 `assemblePaper()`；对每个 released 任务完整运行固定种子数量。任何组卷失败均保留具体组/任务/seed 诊断并阻断该组。所有数组按稳定 ID 和错误码排序，不加入默认时间戳或随机值。
 
-- [ ] **步骤 4：测试阻断、覆盖和脱敏**
+- [x] **步骤 4：测试阻断、覆盖和脱敏**
 
   增加测试：任一种子失败令对应 released 组 unavailable；两倍池与知识覆盖缺项按规格失败；指纹变更只出现在报告且不让单独有效的发布组失败；JSON/Markdown 序列化不包含题干、答案、讲解或个人数据；相同输入生成相同核心 JSON/Markdown。
 
@@ -162,11 +162,11 @@
 
   预期：全部报告断言通过；当前真实试点任务在 100 种子下保持可组卷。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`feat(challenges): simulate challenge release readiness`
 
-### Task 4: 加载真实课程并增加本地质量命令
+### 任务 4：加载真实课程并增加本地质量命令
 
 **文件：**
 
@@ -182,21 +182,21 @@
 - CLI 通过 Vite `createServer({ server: { middlewareMode: true }, appType: 'custom' })` 与 `ssrLoadModule()` 加载 TypeScript；`finally` 中关闭 Vite server。只允许报告目录参数和本地快速诊断参数；CI 环境不接受低于 100 的种子数。
 - 退出码：`0` 表示没有阻断问题；`1` 表示质量门禁失败；`2` 表示参数、加载或报告写入错误。
 
-- [ ] **步骤 1：先写失败输入加载与 CLI 测试**
+- [x] **步骤 1：先写失败输入加载与 CLI 测试**
 
   `qualityCli.test.ts` 增加测试：从命令行载入真实试点清单及课程单元、生成两个报告文件；同一清单执行两次 JSON 核心内容相同；`--seed-count 99` 在 `CI=true` 时返回参数错误；命令无须打开监听端口、不访问网络，报告内容不含题目正文。
 
-- [ ] **步骤 2：确认测试失败**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/content/qualityCli.test.ts`
 
   预期：加载器和命令入口尚不存在，测试失败。
 
-- [ ] **步骤 3：实现 Vite SSR 加载器和 CLI**
+- [x] **步骤 3：实现 Vite SSR 加载器和 CLI**
 
   `qualityInputs.ts` 通过现有 `loadUnit()` 加载清单所需课程，统一映射活动来源和补充题。`quality.mjs` 使用仓库已有 Vite 依赖在中间件模式加载共享逻辑；不启动网络监听、不增加第三方依赖。将 `.quality-reports/` 加入 `.gitignore`。
 
-- [ ] **步骤 4：运行命令行集成测试**
+- [x] **步骤 4：运行命令行集成测试**
 
   运行：`npm run test:unit -- src/challenges/content/qualityCli.test.ts`
 
@@ -204,40 +204,40 @@
 
   预期：当前两个真实试点组报告为 ready，命令返回 0；输出 JSON 与中文 Markdown；源清单无差异。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`feat(challenges): add local question bank quality CLI`
 
-### Task 5: 接入持续集成并记录发布证据
+### 任务 5：接入持续集成并记录发布证据
 
 **文件：**
 
-- 修改：`package.json`、`.github/workflows/quality.yml`
+- 复用任务 4 已加入 `package.json` 的命令；修改：`.github/workflows/quality.yml`
 - 修改：`docs/challenges/REQUIREMENTS_TRACEABILITY.md`
 - 修改：`docs/challenges/TEST_STRATEGY.md`
 - 修改：`docs/challenges/ARCHITECTURE.md`
 - 修改：`docs/challenges/DEVELOPMENT_GUIDE.md`
 - 按需修改：`docs/challenges/README.md`
 
-- [ ] **步骤 1：定义 CI 失败和报告产物验收**
+- [x] **步骤 1：定义 CI 失败和报告产物验收**
 
   在 CLI 集成测试固定 `released` 质量失败退出码为 `1`，报告仍被写出；全局完整性错误也必须非零退出；`planned` 或 `suspended` 题池不足本身不阻断其他 ready 组。验证工作流摘要和 artifact 上传使用 `if: always()`，门禁失败时仍保留诊断产物，且后续步骤不得把原质量命令失败改写为成功。
 
-- [ ] **步骤 2：将命令加入现有 Quality 工作流**
+- [x] **步骤 2：将命令加入现有 Quality 工作流**
 
   在 `npm ci` 后运行 `npm run challenge:quality` 并保存 JSON/Markdown 到 `.quality-reports/`；用独立的 `if: always()` 步骤将存在的中文 Markdown 追加到 `GITHUB_STEP_SUMMARY`，并以 `if: always()` 上传已有报告。质量命令保持自身失败状态，不用摘要/上传步骤吞掉退出码。保留原单测、覆盖率、构建和 Playwright 步骤。
 
-- [ ] **步骤 3：同步中文协作文档和需求状态**
+- [x] **步骤 3：同步中文协作文档和需求状态**
 
   记录命令用法、报告字段、固定 100 种子规则、失败分类、人工教学审核边界和 CI 证据。将 REQ-036～047 标记为当前实际完成的本地功能范围；不声称全课程题库覆盖，也不将本地结果描述为远端 CI 已通过。
 
-- [ ] **步骤 4：运行完整发布检查**
+- [x] **步骤 4：运行完整发布检查**
 
   运行：`npm run challenge:quality`、`npm run test:coverage`、`npm run build`、`npm run test:e2e -- --workers=1`、`git diff --check`。
 
   预期：所有本地门禁通过；完整报告可读取；现有学习任务和学习进度回归通过。远端 Actions 状态以实际推送后的工作流为准。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`ci(challenges): gate releases on question bank quality`
 
