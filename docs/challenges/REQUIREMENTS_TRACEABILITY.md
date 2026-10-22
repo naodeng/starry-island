@@ -24,7 +24,8 @@
 | REQ-022 / 023 | 结果页按知识点汇总答错题，并提供到现有学习任务的复习入口；导航不改动课程进度 | `studyRecommendations.ts`、`studyRecommendations.test.ts`；`pilotContent.test.ts`；`ChallengeResult.test.tsx` |
 | REQ-024 / 025 | 当前试点的错题本和跨完成挑战掌握规则已在本地分支提交；尚未覆盖其他年级或学科 | `wrongQuestions.ts`、`wrongQuestions.test.ts`；`indexedDbRepository.test.ts`；`ChallengeWrongQuestions.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-031 | 当前试点提供本机累计完成次数、曾通过任务、徽章和各登记组进度；不保存历史曲线或连续天数 | `src/challenges/domain/growth.ts`、`growth.test.ts`；`ChallengeGrowth.tsx`、页面测试；`getAllTaskProgress()` 仓库测试 |
-| REQ-033 / 061 / 062 | 部分实现：版本化 JSON 导出、SHA-256 校验、导入预览及安全合并已提交；偏好设置打包未做 | `src/challenges/domain/backup.ts`、`backupMerge.ts`；IndexedDB 原子合并测试；详见[测试方案](TEST_STRATEGY.md) |
+| REQ-033 / 061 / 062 | 版本化 JSON 导出、SHA-256 校验、导入预览及安全合并已在本地实现；设置迁移单独见 REQ-063 | `src/challenges/domain/backup.ts`、`backupMerge.ts`；IndexedDB 原子合并测试；详见[测试方案](TEST_STRATEGY.md) |
+| REQ-063 | 当前本地切片已实现：备份可选携带主题与语音开关；导入单独预览且默认不应用，只有闯关记录安全合并成功后才更新设置；旧版无偏好字段的 v1 备份继续有效，课程进度排除在外 | `src/challenges/domain/backup.ts`；`ChallengeCenter.tsx`；`ChallengePage.tsx`；备份领域/界面单测与 `tests/e2e/challenge-flow.spec.ts` |
 | REQ-048 | 已实现数据库结构版本 1→2→3 的顺序迁移；升级只增加对象仓库并保留旧数据。版本 1 与版本 2 的保留行为有仓库测试 | `src/challenges/storage/indexedDbRepository.ts`；`indexedDbRepository.test.ts` |
 | REQ-049 | 已实现记录读取前的结构校验；异常答题、进度、错题、最近题目和恢复点会在一个事务内移入隔离仓库，正常读取和备份只返回有效数据。闯关中心展示隔离数量，并仅在用户点击后导出原始记录；事务失败时保留原记录 | `src/challenges/storage/indexedDbRepository.ts`；`repository.ts`；`ChallengeDataManagement.tsx` 及测试 |
 | REQ-050 | 页面与试点题库载入后，断开浏览器网络仍可开始并完成完整挑战；不涵盖冷启动离线或离线刷新 | `tests/e2e/challenge-flow.spec.ts`；本机 IndexedDB 持久化 |
@@ -34,7 +35,7 @@
 | REQ-054 | 已按挑战组年级映射低（1～2）、中（3～4）、高（5～6）三档，只调整题干字号和留白；年级映射覆盖 1～6 年级。浏览器检查通过中、高档样式切换，当前真实内容组仅有二年级试点 | `densityTier.ts` 及测试；`ChallengeRunner.test.tsx`；闯关浏览器测试 |
 | REQ-060 | 清除闯关数据前持续提醒先导出长期备份，并说明 24 小时恢复点不能替代长期备份或防止浏览器清理、设备损坏；文案有组件测试，清除与恢复流程有浏览器测试 | `src/challenges/ui/ChallengeDataManagement.tsx`；`ChallengeDataManagement.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-065～069 | 分级清除、强确认、单一 24 小时恢复点、自动替换及成功后消费已在当前工作区实现并通过全量本地验证；尚未推送 | `src/challenges/domain/recovery.ts`；`indexedDbRepository.ts`；`ChallengeDataManagement.tsx`；存储与浏览器流程测试 |
-| REQ-070 | 当前闯关答题写入和数据管理操作使用统一错误分类与中文恢复提示；最新全量本地验证为 948 项单测和 32 项端到端回归通过；全课程及正式发布门禁仍未完成 | `src/challenges/domain/errors.ts`、`errors.test.ts`；`ChallengeRunner.tsx`；`ChallengeDataManagement.tsx`；[测试记录](TEST_STRATEGY.md) |
+| REQ-070 | 当前闯关答题写入和数据管理操作使用统一错误分类与中文恢复提示；最新全量本地验证为 951 项单测和 33 项端到端回归通过；全课程及正式发布门禁仍未完成 | `src/challenges/domain/errors.ts`、`errors.test.ts`；`ChallengeRunner.tsx`；`ChallengeDataManagement.tsx`；[测试记录](TEST_STRATEGY.md) |
 | REQ-071 | 用户点击后下载白名单诊断 JSON；单测及端到端校验确认没有题目、答案、任务 ID、网址或课程进度字段，也不自动上传 | `src/challenges/domain/diagnostics.ts`、`diagnostics.test.ts`；`ChallengePage.tsx`；`ChallengeCenter.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-072 | 本地新增 GitHub 问题反馈表单，收集复现步骤与环境并提示公开可见和隐私边界；尚未进入远端默认分支 | `.github/ISSUE_TEMPLATE/bug-report.yml`；`config.yml`；[表单说明](ISSUE_FORMS.md) |
 | REQ-073 | 本地新增题目修正表单，要求问题描述、修正理由和可核对依据；明确由维护者人工审核且不会自动发布 | `.github/ISSUE_TEMPLATE/question-correction.yml`；[表单说明](ISSUE_FORMS.md) |

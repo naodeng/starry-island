@@ -3,9 +3,8 @@ import { Button, Card } from 'animal-island-ui';
 import packageJson from '../../../package.json';
 import type { AppRoute } from '../../app/router';
 import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup } from '../domain/backup';
-import type { ChallengeBackup, ChallengeBackupData } from '../domain/backup';
+import type { ChallengeBackup, ChallengeBackupData, ChallengeBackupPreferences } from '../domain/backup';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
-import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import type { ChallengeClearScope, ChallengeRecoveryPointSummary } from '../domain/recovery';
 import { deriveChallengeGrowth } from '../domain/growth';
@@ -16,11 +15,14 @@ import { CHALLENGE_DATABASE_VERSION, createChallengeRepository } from '../storag
 import { loadPilotChallengeContent } from '../content/pilotContent';
 import type { LoadedPilotContent } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
+import type { ChallengeBackupImportPreview } from './ChallengeCenter';
 import ChallengeGroup from './ChallengeGroup';
 import ChallengeGrowth from './ChallengeGrowth';
 import ChallengeRunner from './ChallengeRunner';
 import ChallengeWrongQuestions from './ChallengeWrongQuestions';
 import { getChallengeTaskTitle } from './challengeLabels';
+import { useTheme } from '../../theme/ThemeProvider';
+import { useSound } from '../../sound/SoundProvider';
 import './challenge.css';
 
 function downloadJsonFile(filename: string, value: unknown) {
@@ -53,6 +55,7 @@ type WrongQuestionState =
 interface PendingBackupImport {
   imported: ChallengeBackupData;
   expectedLocal: ChallengeBackupData;
+  preferences: ChallengeBackupPreferences | null;
 }
 
 const MAX_BACKUP_FILE_BYTES = 10 * 1024 * 1024;
@@ -65,6 +68,8 @@ interface ChallengePageProps {
 
 export default function ChallengePage({ route, onNavigate, repository: providedRepository }: ChallengePageProps) {
   const repository = useMemo(() => providedRepository ?? createChallengeRepository(), [providedRepository]);
+  const { preference: themePreference, setPreference: setThemePreference } = useTheme();
+  const { enabled: soundEnabled, setEnabled: setSoundEnabled } = useSound();
   const [content, setContent] = useState<LoadedPilotContent | null>(null);
   const [loading, setLoading] = useState(true);
   const [contentError, setContentError] = useState<string | null>(null);
@@ -99,9 +104,11 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     return result;
   }
 
-  async function exportBackup() {
+  async function exportBackup(includePreferences: boolean) {
     const snapshot = await repository.getBackupSnapshot();
-    const backup = await createChallengeBackup(snapshot);
+    const backup = await createChallengeBackup(snapshot, includePreferences ? {
+      preferences: { theme: themePreference, soundEnabled },
+    } : {});
     downloadChallengeBackup(backup);
   }
 
@@ -137,7 +144,7 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     });
   }
 
-  async function prepareBackupImport(file: File): Promise<ChallengeBackupMergeSummary> {
+  async function prepareBackupImport(file: File): Promise<ChallengeBackupImportPreview> {
     setPendingBackupImport(null);
     if (file.size > MAX_BACKUP_FILE_BYTES) {
       throw new Error('备份文件超过 10 MB，无法安全读取；本机记录没有更改。');
@@ -164,11 +171,11 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
       throw new Error('本机闯关记录结构异常，暂时不能安全合并；现有记录没有更改。');
     }
     const plan = mergeChallengeBackupData(expectedLocal, backup.data);
-    setPendingBackupImport({ imported: backup.data, expectedLocal });
-    return plan.summary;
+    setPendingBackupImport({ imported: backup.data, expectedLocal, preferences: backup.preferences ?? null });
+    return { summary: plan.summary, preferences: backup.preferences ?? null };
   }
 
-  async function confirmBackupImport() {
+  async function confirmBackupImport(applyPreferences: boolean) {
     if (!pendingBackupImport) throw new Error('请重新选择备份文件并预览合并内容。');
     try {
       await repository.mergeBackupData(pendingBackupImport.imported, pendingBackupImport.expectedLocal);
@@ -178,6 +185,10 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
         throw new Error('预览后本机记录发生变化，请重新选择文件并查看最新预览。');
       }
       throw new Error('备份没有导入；本机记录没有更改，可以重新预览后再试。');
+    }
+    if (applyPreferences && pendingBackupImport.preferences) {
+      setThemePreference(pendingBackupImport.preferences.theme);
+      setSoundEnabled(pendingBackupImport.preferences.soundEnabled);
     }
     setPendingBackupImport(null);
     const progress = await repository.getAllTaskProgress().catch(() => null);

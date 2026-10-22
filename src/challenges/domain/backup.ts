@@ -7,11 +7,23 @@ export interface ChallengeBackupData {
   wrongQuestions: WrongQuestionRecord[];
 }
 
+export interface ChallengeBackupPreferences {
+  theme: 'system' | 'light' | 'dark';
+  soundEnabled: boolean;
+}
+
+export interface CreateChallengeBackupOptions {
+  createdAt?: string;
+  preferences?: ChallengeBackupPreferences;
+  cryptoProvider?: Pick<Crypto, 'subtle'>;
+}
+
 export interface ChallengeBackup {
   format: 'starry-island-challenge-backup';
   version: 1;
   createdAt: string;
   data: ChallengeBackupData;
+  preferences?: ChallengeBackupPreferences;
   integrity: {
     algorithm: 'SHA-256';
     digest: string;
@@ -30,6 +42,12 @@ function isNonEmptyString(value: unknown): value is string {
 
 function isTimestamp(value: unknown): value is string {
   return typeof value === 'string' && Number.isFinite(Date.parse(value));
+}
+
+function isChallengeBackupPreferences(value: unknown): value is ChallengeBackupPreferences {
+  return isRecord(value)
+    && (value.theme === 'system' || value.theme === 'light' || value.theme === 'dark')
+    && typeof value.soundEnabled === 'boolean';
 }
 
 function isActivity(value: unknown): boolean {
@@ -239,6 +257,7 @@ function isChallengeBackup(value: unknown): value is ChallengeBackup {
     && value.version === 1
     && isTimestamp(value.createdAt)
     && isBackupData(value.data)
+    && (value.preferences === undefined || isChallengeBackupPreferences(value.preferences))
     && isRecord(value.integrity)
     && value.integrity.algorithm === 'SHA-256'
     && typeof value.integrity.digest === 'string'
@@ -247,11 +266,16 @@ function isChallengeBackup(value: unknown): value is ChallengeBackup {
 
 export async function createChallengeBackup(
   data: ChallengeBackupData,
-  createdAt = new Date().toISOString(),
-  cryptoProvider: CryptoProvider = globalThis.crypto,
+  options: CreateChallengeBackupOptions = {},
 ): Promise<ChallengeBackup> {
+  const createdAt = options.createdAt ?? new Date().toISOString();
+  const preferences = options.preferences;
+  const cryptoProvider = options.cryptoProvider ?? globalThis.crypto;
   if (!isBackupData(data) || !Number.isFinite(Date.parse(createdAt))) {
     throw new Error('The challenge backup data is invalid.');
+  }
+  if (preferences !== undefined && !isChallengeBackupPreferences(preferences)) {
+    throw new Error('The challenge backup preferences are invalid.');
   }
   const canonicalData = JSON.parse(stableSerialize(data)) as ChallengeBackupData;
   const payload = {
@@ -259,6 +283,7 @@ export async function createChallengeBackup(
     version: 1 as const,
     createdAt,
     data: canonicalData,
+    ...(preferences ? { preferences: JSON.parse(stableSerialize(preferences)) as ChallengeBackupPreferences } : {}),
   };
   return {
     ...payload,

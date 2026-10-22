@@ -42,10 +42,21 @@ describe('ChallengeCenter', () => {
     const onExportBackup = vi.fn().mockResolvedValue(undefined);
     render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={onExportBackup} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
 
+    expect(screen.getByRole('checkbox', { name: '备份同时携带主题和语音偏好' })).not.toBeChecked();
     fireEvent.click(screen.getByRole('button', { name: '导出闯关备份' }));
 
     await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('闯关备份已生成并下载到此设备。'));
-    expect(onExportBackup).toHaveBeenCalledOnce();
+    expect(onExportBackup).toHaveBeenCalledWith(false);
+  });
+
+  it('includes preferences in an export only after the user opts in', async () => {
+    const onExportBackup = vi.fn().mockResolvedValue(undefined);
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={onExportBackup} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
+
+    fireEvent.click(screen.getByRole('checkbox', { name: '备份同时携带主题和语音偏好' }));
+    fireEvent.click(screen.getByRole('button', { name: '导出闯关备份' }));
+
+    await waitFor(() => expect(onExportBackup).toHaveBeenCalledWith(true));
   });
 
   it('reports a recoverable backup export error', async () => {
@@ -79,7 +90,10 @@ describe('ChallengeCenter', () => {
   });
 
   it('previews a backup merge and imports only after explicit confirmation', async () => {
-    const onPrepareImportBackup = vi.fn().mockResolvedValue({ ...emptySummary, addedProgressRecords: 2, preservedLocalActiveAttempts: 1 });
+    const onPrepareImportBackup = vi.fn().mockResolvedValue({
+      summary: { ...emptySummary, addedProgressRecords: 2, preservedLocalActiveAttempts: 1 },
+      preferences: { theme: 'dark', soundEnabled: false },
+    });
     const onConfirmImportBackup = vi.fn().mockResolvedValue(undefined);
     const { container } = render(<ChallengeCenter
       groups={[]}
@@ -99,12 +113,14 @@ describe('ChallengeCenter', () => {
     fireEvent.change(fileInput!, { target: { files: [file] } });
 
     expect(await screen.findByRole('group', { name: '导入预览' })).toHaveTextContent('新增成绩 2 项，合并成绩 0 项');
+    expect(screen.getByRole('group', { name: '导入预览' })).toHaveTextContent('备份设置：主题为深色，语音已关闭。');
+    expect(screen.getByRole('checkbox', { name: '应用备份中的主题和语音偏好' })).not.toBeChecked();
     expect(onPrepareImportBackup).toHaveBeenCalledWith(file);
     expect(onConfirmImportBackup).not.toHaveBeenCalled();
 
     fireEvent.click(screen.getByRole('button', { name: '确认安全合并' }));
     await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('闯关备份已安全合并到此设备；课程进度没有改变。'));
-    expect(onConfirmImportBackup).toHaveBeenCalledOnce();
+    expect(onConfirmImportBackup).toHaveBeenCalledWith(false);
   });
 
   it('does not leave a preview available when backup validation fails', async () => {

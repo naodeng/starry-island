@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ChallengeBackupData } from './backup';
-import { createChallengeBackup, isChallengeBackupData, verifyChallengeBackup } from './backup';
+import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup, verifyChallengeBackup } from './backup';
 import type { TaskProgress } from './types';
 
 const emptyData: ChallengeBackupData = {
@@ -12,7 +12,7 @@ const emptyData: ChallengeBackupData = {
 
 describe('challenge backup checksum', () => {
   it('creates a versioned local backup with a SHA-256 checksum', async () => {
-    const backup = await createChallengeBackup(emptyData, '2026-10-22T00:00:00.000Z');
+    const backup = await createChallengeBackup(emptyData, { createdAt: '2026-10-22T00:00:00.000Z' });
 
     expect(backup).toMatchObject({
       format: 'starry-island-challenge-backup',
@@ -39,8 +39,8 @@ describe('challenge backup checksum', () => {
       revision: 1,
     };
     const reordered = Object.fromEntries(Object.entries(progress).reverse()) as unknown as TaskProgress;
-    const first = await createChallengeBackup({ ...emptyData, taskProgress: [progress] }, '2026-10-22T00:00:00.000Z');
-    const second = await createChallengeBackup({ ...emptyData, taskProgress: [reordered] }, '2026-10-22T00:00:00.000Z');
+    const first = await createChallengeBackup({ ...emptyData, taskProgress: [progress] }, { createdAt: '2026-10-22T00:00:00.000Z' });
+    const second = await createChallengeBackup({ ...emptyData, taskProgress: [reordered] }, { createdAt: '2026-10-22T00:00:00.000Z' });
     const changed = { ...first, data: { ...first.data, recentQuestionAttempts: [['new-question']] } };
 
     expect(first.integrity.digest).toBe(second.integrity.digest);
@@ -48,10 +48,35 @@ describe('challenge backup checksum', () => {
   });
 
   it('rejects unsupported versions and malformed backup shapes', async () => {
-    const backup = await createChallengeBackup(emptyData, '2026-10-22T00:00:00.000Z');
+    const backup = await createChallengeBackup(emptyData, { createdAt: '2026-10-22T00:00:00.000Z' });
 
     await expect(verifyChallengeBackup({ ...backup, version: 2 })).resolves.toBe(false);
     await expect(verifyChallengeBackup({ ...backup, data: { ...emptyData, attempts: null } })).resolves.toBe(false);
+  });
+
+  it('optionally includes portable preferences in the checksum while keeping old backups valid', async () => {
+    const preferences = { theme: 'dark', soundEnabled: false } as const;
+    const backup = await createChallengeBackup(emptyData, {
+      createdAt: '2026-10-22T00:00:00.000Z',
+      preferences,
+    });
+
+    expect(backup.preferences).toEqual(preferences);
+    await expect(verifyChallengeBackup(backup)).resolves.toBe(true);
+    await expect(parseChallengeBackup(backup)).resolves.toMatchObject({ preferences });
+
+    const legacyBackup = await createChallengeBackup(emptyData, { createdAt: '2026-10-22T00:00:00.000Z' });
+    expect(legacyBackup).not.toHaveProperty('preferences');
+    await expect(parseChallengeBackup(legacyBackup)).resolves.toMatchObject({ data: emptyData });
+  });
+
+  it('rejects malformed optional preferences before importing a backup', async () => {
+    const backup = await createChallengeBackup(emptyData, { createdAt: '2026-10-22T00:00:00.000Z' });
+
+    await expect(verifyChallengeBackup({
+      ...backup,
+      preferences: { theme: 'neon', soundEnabled: 'off' },
+    })).resolves.toBe(false);
   });
 
   it('rejects duplicate record keys and malformed answer snapshots before import', () => {

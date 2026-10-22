@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Button, Card, Upload } from 'animal-island-ui';
+import { Button, Card, Checkbox, Upload } from 'animal-island-ui';
 import type { UploadCustomRequestOptions } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath } from '../../app/router';
 import type { LoadedPilotGroup } from '../content/pilotContent';
+import type { ChallengeBackupPreferences } from '../domain/backup';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { ChallengeClearScope, ChallengeDataClearResult, ChallengeRecoveryPointSummary } from '../domain/recovery';
 import type { TaskProgress } from '../domain/types';
@@ -13,10 +14,15 @@ import ChallengeDataManagement from './ChallengeDataManagement';
 type BackupImportState =
   | { status: 'idle' }
   | { status: 'reading' }
-  | { status: 'preview'; summary: ChallengeBackupMergeSummary }
+  | { status: 'preview'; summary: ChallengeBackupMergeSummary; preferences: ChallengeBackupPreferences | null; applyPreferences: boolean }
   | { status: 'importing' }
   | { status: 'success' }
   | { status: 'error'; message: string };
+
+export interface ChallengeBackupImportPreview {
+  summary: ChallengeBackupMergeSummary;
+  preferences: ChallengeBackupPreferences | null;
+}
 
 export function getChallengeGroupTitle(group: LoadedPilotGroup['group']): string {
   const { definition } = group;
@@ -29,10 +35,10 @@ interface ChallengeCenterProps {
   progressByTaskId: Readonly<Record<string, TaskProgress>>;
   progressAvailable: boolean;
   onNavigate: (path: string) => void;
-  onExportBackup: () => Promise<void>;
+  onExportBackup: (includePreferences: boolean) => Promise<void>;
   onExportDiagnostics: () => Promise<void>;
-  onPrepareImportBackup: (file: File) => Promise<ChallengeBackupMergeSummary>;
-  onConfirmImportBackup: () => Promise<void>;
+  onPrepareImportBackup: (file: File) => Promise<ChallengeBackupImportPreview>;
+  onConfirmImportBackup: (applyPreferences: boolean) => Promise<void>;
   onCancelImportBackup: () => void;
   initialRecoveryPoint: ChallengeRecoveryPointSummary | null;
   quarantinedRecordCount: number | null;
@@ -58,13 +64,14 @@ export default function ChallengeCenter({
   onExportQuarantinedRecords,
 }: ChallengeCenterProps) {
   const [backupExportState, setBackupExportState] = useState<'idle' | 'exporting' | 'success' | 'error'>('idle');
+  const [includePreferencesInBackup, setIncludePreferencesInBackup] = useState(false);
   const [diagnosticsExportState, setDiagnosticsExportState] = useState<'idle' | 'exporting' | 'success' | 'error'>('idle');
   const [backupImportState, setBackupImportState] = useState<BackupImportState>({ status: 'idle' });
 
   async function exportBackup() {
     setBackupExportState('exporting');
     try {
-      await onExportBackup();
+      await onExportBackup(includePreferencesInBackup);
       setBackupExportState('success');
     } catch {
       setBackupExportState('error');
@@ -84,7 +91,7 @@ export default function ChallengeCenter({
   function selectBackup({ file, onSuccess, onError }: UploadCustomRequestOptions) {
     setBackupImportState({ status: 'reading' });
     void onPrepareImportBackup(file).then((summary) => {
-      setBackupImportState({ status: 'preview', summary });
+      setBackupImportState({ ...summary, status: 'preview', applyPreferences: false });
       onSuccess();
     }).catch((error: unknown) => {
       const message = error instanceof Error ? error.message : '备份文件无法读取；本机记录没有更改。';
@@ -97,9 +104,11 @@ export default function ChallengeCenter({
   }
 
   async function confirmBackupImport() {
+    if (backupImportState.status !== 'preview') return;
+    const applyPreferences = backupImportState.applyPreferences && backupImportState.preferences !== null;
     setBackupImportState({ status: 'importing' });
     try {
-      await onConfirmImportBackup();
+      await onConfirmImportBackup(applyPreferences);
       setBackupImportState({ status: 'success' });
     } catch (error) {
       setBackupImportState({
@@ -131,7 +140,14 @@ export default function ChallengeCenter({
         </header>
         <section className="challenge-backup-panel" aria-labelledby="challenge-backup-heading">
           <h2 id="challenge-backup-heading">本机备份</h2>
-          <p>备份包含闯关记录和未完成答题，不包含课程进度或个人设置。导入前会预览合并结果。</p>
+          <p>备份包含闯关记录和未完成答题，不包含课程进度。主题和语音偏好可选携带；导入时会单独预览，默认不应用。</p>
+          <Checkbox
+            className="challenge-backup-preference-option"
+            options={[{ label: '备份同时携带主题和语音偏好', value: 'preferences' }]}
+            value={includePreferencesInBackup ? ['preferences'] : []}
+            onChange={(values) => setIncludePreferencesInBackup(values.includes('preferences'))}
+            disabled={backupExportState === 'exporting'}
+          />
           <div className="challenge-hero-actions">
             <Button type="default" disabled={backupExportState === 'exporting'} onClick={() => void exportBackup()}>
               {backupExportState === 'exporting' ? '正在生成备份…' : '导出闯关备份'}
@@ -167,6 +183,22 @@ export default function ChallengeCenter({
                 新增错题 {backupImportState.summary.addedWrongQuestions} 项，合并错题 {backupImportState.summary.mergedWrongQuestions} 项。
                 重复成绩与错题次数不会相加。
               </p>
+              {backupImportState.preferences ? (
+                <>
+                  <p>备份设置：主题为{backupImportState.preferences.theme === 'system' ? '跟随系统' : backupImportState.preferences.theme === 'light' ? '浅色' : '深色'}，语音{backupImportState.preferences.soundEnabled ? '已开启' : '已关闭'}。</p>
+                  <Checkbox
+                    className="challenge-backup-preference-option"
+                    options={[{ label: '应用备份中的主题和语音偏好', value: 'preferences' }]}
+                    value={backupImportState.applyPreferences ? ['preferences'] : []}
+                    onChange={(values) => setBackupImportState((current) => current.status === 'preview'
+                      ? { ...current, applyPreferences: values.includes('preferences') }
+                      : current)}
+                    disabled={importBusy}
+                  />
+                </>
+              ) : (
+                <p>此备份不包含主题和语音偏好，导入不会更改本机设置。</p>
+              )}
               {backupImportState.summary.preservedProgressForActiveTasks > 0 && (
                 <p>本机正在进行的任务保留原成绩以保护当前答题；完成任务后，可以重新导入备份合并这些成绩。</p>
               )}

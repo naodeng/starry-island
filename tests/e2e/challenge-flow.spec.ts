@@ -82,6 +82,126 @@ test('downloads a versioned local backup with a valid checksum', async ({ page }
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
 
+test('ports theme and speech preferences only after explicit opt-in', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.addInitScript(() => {
+    localStorage.setItem('china-study-theme-v1', 'light');
+    localStorage.setItem('china-study-sound-enabled-v1', 'true');
+  });
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await page.setViewportSize({ width: 390, height: 844 });
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const exportPreferences = page.getByRole('checkbox', { name: '备份同时携带主题和语音偏好' });
+  await expect(exportPreferences).not.toBeChecked();
+
+  const withoutPreferencesPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: '导出闯关备份' }).click();
+  const withoutPreferences = await withoutPreferencesPromise;
+  const withoutPreferencesPath = await withoutPreferences.path();
+  expect(withoutPreferencesPath).toBeTruthy();
+  expect(JSON.parse(readFileSync(withoutPreferencesPath!, 'utf8'))).not.toHaveProperty('preferences');
+
+  await exportPreferences.focus();
+  await page.keyboard.press('Space');
+  await expect(exportPreferences).toBeChecked();
+  const withPreferencesPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: '导出闯关备份' }).click();
+  const withPreferences = await withPreferencesPromise;
+  const withPreferencesPath = await withPreferences.path();
+  expect(withPreferencesPath).toBeTruthy();
+  const exportedBackup = JSON.parse(readFileSync(withPreferencesPath!, 'utf8')) as Record<string, unknown>;
+  const exportedIntegrity = exportedBackup.integrity as { digest: string };
+  const { integrity: _exportedIntegrity, ...exportedPayload } = exportedBackup;
+  expect(exportedBackup.preferences).toEqual({ theme: 'light', soundEnabled: true });
+  expect(exportedIntegrity.digest).toBe(createHash('sha256').update(stableSerialize(exportedPayload)).digest('hex'));
+
+  const payload = {
+    format: 'starry-island-challenge-backup',
+    version: 1,
+    createdAt: '2026-10-22T00:00:00.000Z',
+    data: { attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [] },
+    preferences: { theme: 'dark', soundEnabled: false },
+  };
+  const backup = {
+    ...payload,
+    integrity: { algorithm: 'SHA-256', digest: createHash('sha256').update(stableSerialize(payload)).digest('hex') },
+  };
+  const backupPath = testInfo.outputPath('preferences-backup.json');
+  writeFileSync(backupPath, JSON.stringify(backup));
+  const backupInput = page.locator('input[type="file"]');
+  await backupInput.setInputFiles(backupPath);
+  const preview = page.getByRole('group', { name: '导入预览' });
+  await expect(preview).toContainText('备份设置：主题为深色，语音已关闭。');
+  const applyPreferences = page.getByRole('checkbox', { name: '应用备份中的主题和语音偏好' });
+  await expect(applyPreferences).not.toBeChecked();
+  await page.getByRole('button', { name: '确认安全合并' }).click();
+  await expect(page.getByRole('status').filter({ hasText: '闯关备份已安全合并到此设备' })).toBeVisible();
+  await expect.poll(() => page.evaluate(() => [
+    localStorage.getItem('china-study-theme-v1'),
+    localStorage.getItem('china-study-sound-enabled-v1'),
+  ])).toEqual(['light', 'true']);
+
+  await backupInput.setInputFiles(backupPath);
+  const secondPreview = page.getByRole('group', { name: '导入预览' });
+  const applyImportedPreferences = page.getByRole('checkbox', { name: '应用备份中的主题和语音偏好' });
+  await expect(applyImportedPreferences).not.toBeChecked();
+  await applyImportedPreferences.focus();
+  await page.keyboard.press('Space');
+  await expect(applyImportedPreferences).toBeChecked();
+  await page.evaluate(() => new Promise<void>((resolve, reject) => {
+    const request = indexedDB.open('starry-island-challenges', 3);
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => {
+      const database = request.result;
+      const transaction = database.transaction('taskProgress', 'readwrite');
+      transaction.objectStore('taskProgress').put({
+        taskId: 'concurrent-preview-change',
+        bestCorrect: 1,
+        bestTotal: 1,
+        latestCorrect: 0,
+        latestTotal: 1,
+        completedCount: 1,
+        everPassed: true,
+        updatedAt: '2026-10-22T00:00:00.000Z',
+        revision: 1,
+      });
+      transaction.oncomplete = () => {
+        database.close();
+        resolve();
+      };
+      transaction.onerror = () => reject(transaction.error);
+    };
+  }));
+  await page.getByRole('button', { name: '确认安全合并' }).click();
+  await expect(page.getByRole('alert')).toHaveText('预览后本机记录发生变化，请重新选择文件并查看最新预览。');
+  await expect.poll(() => page.evaluate(() => [
+    localStorage.getItem('china-study-theme-v1'),
+    localStorage.getItem('china-study-sound-enabled-v1'),
+  ])).toEqual(['light', 'true']);
+
+  await backupInput.setInputFiles(backupPath);
+  const confirmedPreview = page.getByRole('group', { name: '导入预览' });
+  await expect(confirmedPreview).toContainText('新增成绩 0 项，合并成绩 0 项');
+  const confirmedApplyPreferences = page.getByRole('checkbox', { name: '应用备份中的主题和语音偏好' });
+  await expect(confirmedApplyPreferences).not.toBeChecked();
+  await confirmedApplyPreferences.focus();
+  await page.keyboard.press('Space');
+  await expect(confirmedApplyPreferences).toBeChecked();
+  await page.getByRole('button', { name: '确认安全合并' }).click();
+  await expect(page.getByRole('status').filter({ hasText: '闯关备份已安全合并到此设备' })).toBeVisible();
+  await expect.poll(() => page.evaluate(() => [
+    localStorage.getItem('china-study-theme-v1'),
+    localStorage.getItem('china-study-sound-enabled-v1'),
+    document.documentElement.dataset.theme,
+  ])).toEqual(['dark', 'false', 'dark']);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  await expect(secondPreview).not.toBeAttached();
+});
+
 test('downloads a user-requested diagnostics report containing only allowlisted fields', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
