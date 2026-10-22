@@ -48,6 +48,20 @@ export function getChallengeGroupTitle(group: LoadedPilotGroup['group']): string
   return `${courseLabel} · ${stageLabel}`;
 }
 
+export function getChallengeGroupDescription(group: LoadedPilotGroup['group']): string {
+  const { definition } = group;
+  if (definition.kind === 'semester') return '按教材章节顺序覆盖上册前四个单元。';
+
+  switch (definition.subject) {
+    case 'math':
+      return '练习两位数加减法、进位退位和数量关系。';
+    case 'english':
+      return '练习本单元的自我介绍、年龄和班级表达。';
+    case 'chinese':
+      return '阅读本单元课文，练习文本线索、表达方法与习作。';
+  }
+}
+
 interface ChallengeCenterProps {
   groups: LoadedPilotGroup[];
   progressByTaskId: Readonly<Record<string, TaskProgress>>;
@@ -255,11 +269,7 @@ export default function ChallengeCenter({
                 <Card className="challenge-group-card" color="default" key={group.definition.id}>
                   <p className="eyebrow">{group.definition.kind === 'unit' ? '单元闯关' : '学期阶段闯关'}</p>
                   <h3>{getChallengeGroupTitle(group)}</h3>
-                  <p className="challenge-card-description">
-                    {group.definition.kind === 'unit'
-                      ? '练习两位数加减法、进位退位和数量关系。'
-                      : '按教材章节顺序覆盖上册前四个单元。'}
-                  </p>
+                  <p className="challenge-card-description">{getChallengeGroupDescription(group)}</p>
                   <div className="challenge-card-progress">
                     <span>{progressLabel}</span>
                     {passedCount === 5 && <strong>徽章已点亮</strong>}

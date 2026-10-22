@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { ChallengeGroupManifest } from '../domain/types';
+import type { LoadedPilotGroup } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
 import { getChallengeGroupTitle } from './ChallengeCenter';
 import pilotManifest from '../content/pilot-manifest.json';
@@ -35,8 +36,29 @@ function dataManagementProps() {
 describe('ChallengeCenter', () => {
   it('uses the registered unit grade, term, subject, and chapter in its title', () => {
     const englishGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-3-term-1-english-unit-01') as unknown as ChallengeGroupManifest;
+    const chineseGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-5-term-1-chinese-unit-01') as unknown as ChallengeGroupManifest;
 
     expect(getChallengeGroupTitle(englishGroup)).toBe('三年级上册英语 · 第一单元');
+    expect(getChallengeGroupTitle(chineseGroup)).toBe('五年级上册语文 · 第一单元');
+  });
+
+  it('describes unit routes with the registered subject instead of reusing the math description', () => {
+    const englishGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-3-term-1-english-unit-01') as unknown as ChallengeGroupManifest;
+    const chineseGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-5-term-1-chinese-unit-01') as unknown as ChallengeGroupManifest;
+    const groups = [englishGroup, chineseGroup].map((group): LoadedPilotGroup => ({
+      group,
+      status: 'ready',
+      candidates: [],
+      disabledQuestionIds: [],
+      learningTasks: [],
+      issues: [],
+    }));
+
+    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
+
+    expect(screen.getByText('练习本单元的自我介绍、年龄和班级表达。')).toBeInTheDocument();
+    expect(screen.getByText('阅读本单元课文，练习文本线索、表达方法与习作。')).toBeInTheDocument();
+    expect(screen.queryByText('练习两位数加减法、进位退位和数量关系。')).not.toBeInTheDocument();
   });
 
   it('links to the local challenge growth record', () => {

@@ -5,6 +5,7 @@ import type { ChallengeManifest, ChallengeQualityInputs } from '../domain/types'
 import { parseChallengeManifest } from './manifestSchema';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
+import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
 import { buildChallengeQualityReport, renderChallengeQualityMarkdown } from './qualityReport';
 import rawManifest from './pilot-manifest.json';
 
@@ -39,7 +40,7 @@ async function loadPilotInputs(): Promise<MutableChallengeQualityInputs> {
     }
   }
 
-  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities]) {
+  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities]) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }
@@ -100,7 +101,7 @@ describe('buildChallengeQualityReport', () => {
     const report = await buildChallengeQualityReport(duplicated, { seedCount: 1 });
 
     expect(report.overall.passed).toBe(false);
-    expect(report.groups.map(({ status }) => status)).toEqual(['unavailable', 'unavailable', 'ready']);
+    expect(report.groups.map(({ status }) => status)).toEqual(['unavailable', 'unavailable', 'ready', 'ready']);
     expect(report.errors).toContainEqual(expect.objectContaining({ code: 'duplicate-task-id' }));
   });
 

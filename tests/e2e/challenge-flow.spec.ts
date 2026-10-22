@@ -7,6 +7,37 @@ const taskUrl = `/challenges/task/${encodeURIComponent(taskId)}`;
 const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01';
 const semesterTaskUrl = `/challenges/task/${encodeURIComponent(semesterTaskId)}`;
 
+test('opens the Grade 5 Chinese pilot with matching subject routes and preserves learning progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  const mathGroup = page.locator('.challenge-group-card').filter({ hasText: '二年级上册数学 · 第二单元' });
+  const englishGroup = page.locator('.challenge-group-card').filter({ hasText: '三年级上册英语 · 第一单元' });
+  const chineseGroup = page.locator('.challenge-group-card').filter({ hasText: '五年级上册语文 · 第一单元' });
+
+  await expect(mathGroup).toContainText('练习两位数加减法、进位退位和数量关系。');
+  await expect(englishGroup).toContainText('练习本单元的自我介绍、年龄和班级表达。');
+  await expect(chineseGroup).toContainText('阅读本单元课文，练习文本线索、表达方法与习作。');
+  await expect(englishGroup).not.toContainText('练习两位数加减法、进位退位和数量关系。');
+  await expect(chineseGroup).not.toContainText('练习两位数加减法、进位退位和数量关系。');
+
+  await chineseGroup.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-5-term-1-chinese-unit-01');
+  await expect(page.getByRole('heading', { name: '五年级上册语文 · 第一单元' })).toBeVisible();
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-5-term-1-chinese-unit-01%2Fbasic-01$/);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 function stableSerialize(value: unknown): string {
   if (Array.isArray(value)) return `[${value.map(stableSerialize).join(',')}]`;
   if (typeof value === 'object' && value !== null) {

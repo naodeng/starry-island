@@ -11,6 +11,7 @@ import { pathToFileURL } from 'node:url';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import type { ChallengeQualityReport } from '../domain/types';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
+import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 
 declare const process: {
@@ -62,10 +63,11 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(3);
-    expect(report.groups.map(({ status }) => status)).toEqual(['ready', 'ready', 'ready']);
+    expect(report.groups).toHaveLength(4);
+    expect(report.groups.map(({ status }) => status)).toEqual(['ready', 'ready', 'ready', 'ready']);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(pilotChineseSupplementalActivities[0].activity.prompt);
 
     const secondRun = runCli(args);
     expect(secondRun.status).toBe(0);

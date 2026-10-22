@@ -5,6 +5,7 @@ import { parseChallengeManifest } from './manifestSchema';
 import rawManifest from './pilot-manifest.json';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
+import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
 
 function registerActivity(
   activity: ActivityDefinition,
@@ -42,7 +43,7 @@ export async function loadChallengeQualityInputs(manifestValue: unknown = rawMan
     }
   }));
 
-  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities];
+  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities];
   const referencedSupplementalIds = new Set(supplementalActivities
     .filter(({ activity }) => manifest.questions.some((question) => question.activityId === activity.id))
     .map(({ activity }) => activity.id));

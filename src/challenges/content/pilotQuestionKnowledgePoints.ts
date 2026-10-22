@@ -6,6 +6,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/math/unit-03',
   'grade-2/term-1/math/unit-04',
   'grade-3/term-1/english/unit-01',
+  'grade-5/term-1/chinese/unit-01',
 ]);
 
 function activityText(activity: ActivityDefinition): string {
@@ -54,6 +55,26 @@ export function derivePilotQuestionKnowledgePointIds(
         ids.push('age-and-class');
       }
       if (ids.length === 0) throw new Error(`Could not classify English question ${activity.id}.`);
+      return ids;
+    }
+    case 'grade-5/term-1/chinese/unit-01': {
+      const ids: string[] = [];
+      if (activity.id.startsWith('grade-5/term-1/chinese/unit-01/high/task-01/')) {
+        ids.push('class-charter');
+      }
+      if (/班级公约|公约|班级规则|班级.*(建议|讨论|共同目标)|全班.*(讨论|表决)|同学.*意见|建议|规则|表决|倾听|约定|条目|共识/.test(text)) {
+        if (!ids.includes('class-charter')) ids.push('class-charter');
+      }
+      if (/心爱之物|珍惜|珍贵|习作|写作|修改|结尾|开头|物品.*经历|经历.*物品/.test(text)) {
+        ids.push('beloved-object-writing');
+      }
+      if (/白鹭|落花生|桂花|珍珠鸟|蝉|具体事物|借物|抒发感情|作者的感受|思乡|事物.*感情/.test(text)) {
+        ids.push('object-and-emotion');
+      }
+      if (/线索|依据|语境|细节|上下文|篇目|课文|诗句|比较|证据|描写|理解|判断|词义|词语|搭配|温和/.test(text)) {
+        ids.push('reading-evidence');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify Chinese question ${activity.id}.`);
       return ids;
     }
     case 'grade-2/term-1/math/unit-01': {
