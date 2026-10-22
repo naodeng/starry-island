@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import type { ChallengeBackupData } from './backup';
-import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup, verifyChallengeBackup } from './backup';
-import type { TaskProgress } from './types';
+import {
+  createChallengeBackup,
+  isChallengeBackupData,
+  normalizeImportedChallengeBackupData,
+  parseChallengeBackup,
+  verifyChallengeBackup,
+} from './backup';
+import type { ChallengeAttempt, TaskProgress } from './types';
 
 const emptyData: ChallengeBackupData = {
   attempts: [],
@@ -10,7 +16,91 @@ const emptyData: ChallengeBackupData = {
   wrongQuestions: [],
 };
 
+function makeAttempt(): ChallengeAttempt {
+  const activity = {
+    id: 'activity-legacy', kind: 'arithmetic' as const, prompt: '1 + 1', hint: '数一数', explanation: '等于 2。',
+    expression: '1 + 1', correctAnswer: 2,
+  };
+  const question = {
+    questionId: 'question-legacy', activityId: activity.id, difficulty: 'basic' as const,
+    knowledgePointIds: ['addition'], lifecycle: 'active' as const, approved: true, answerLeakageReviewed: true,
+    approvedContentFingerprint: 'fingerprint', contentFingerprint: 'fingerprint', activity,
+  };
+  return {
+    attemptId: 'attempt-legacy', taskId: 'task-legacy', difficulty: 'basic', status: 'in-progress',
+    snapshotSchemaVersion: 1, questions: [question], assemblySeed: 'legacy-seed', contentManifestVersion: 'manifest-v1',
+    answers: { [question.questionId]: 2 }, currentIndex: 1, startedAt: '2026-01-01T00:00:00.000Z',
+    elapsedMs: 1234, revision: 1,
+  };
+}
+
+function stableSerialize(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(stableSerialize).join(',')}]`;
+  if (typeof value === 'object' && value !== null) {
+    const record = value as Record<string, unknown>;
+    return `{${Object.keys(record).filter((key) => record[key] !== undefined).sort().map((key) => `${JSON.stringify(key)}:${stableSerialize(record[key])}`).join(',')}}`;
+  }
+  return JSON.stringify(value) ?? 'undefined';
+}
+
+async function signedBackup<TData>(data: TData) {
+  const payload = {
+    format: 'starry-island-challenge-backup' as const,
+    version: 1 as const,
+    createdAt: '2026-10-22T00:00:00.000Z',
+    data,
+  };
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(stableSerialize(payload)));
+  return {
+    ...payload,
+    integrity: {
+      algorithm: 'SHA-256' as const,
+      digest: Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join(''),
+    },
+  };
+}
+
 describe('challenge backup checksum', () => {
+  it('exports the current snapshot schema without changing the backup format version', async () => {
+    const backup = await createChallengeBackup({ ...emptyData, attempts: [makeAttempt()] }, { createdAt: '2026-10-22T00:00:00.000Z' });
+
+    expect(backup.version).toBe(1);
+    expect(backup.data.attempts[0]?.snapshotSchemaVersion).toBe(1);
+  });
+
+  it('verifies a legacy in-progress snapshot before normalizing it to schema version 1', async () => {
+    const { snapshotSchemaVersion: _version, ...legacyAttempt } = makeAttempt();
+    const backup = await signedBackup({ ...emptyData, attempts: [legacyAttempt] });
+    expect(isChallengeBackupData({ ...emptyData, attempts: [legacyAttempt] })).toBe(false);
+
+    const parsed = await parseChallengeBackup(backup);
+    const normalized = normalizeImportedChallengeBackupData(parsed.data);
+    expect(normalized.attempts[0]).toMatchObject({
+      snapshotSchemaVersion: 1,
+      answers: makeAttempt().answers,
+      questions: makeAttempt().questions,
+      currentIndex: 1,
+      revision: 1,
+    });
+    expect(isChallengeBackupData(normalized)).toBe(true);
+  });
+
+  it('rejects tampered legacy payloads and unknown snapshot schema versions', async () => {
+    const { snapshotSchemaVersion: _version, ...legacyAttempt } = makeAttempt();
+    const legacy = await signedBackup({ ...emptyData, attempts: [legacyAttempt] });
+    const tampered = {
+      ...legacy,
+      data: { ...legacy.data, attempts: [{ ...legacyAttempt, answers: { 'question-legacy': 3 } }] },
+    };
+    await expect(parseChallengeBackup(tampered)).rejects.toThrow('完整性校验失败');
+
+    const future = await signedBackup({
+      ...emptyData,
+      attempts: [{ ...legacyAttempt, snapshotSchemaVersion: 99 }],
+    });
+    await expect(parseChallengeBackup(future)).rejects.toThrow('备份文件格式或数据结构无效');
+  });
+
   it('creates a versioned local backup with a SHA-256 checksum', async () => {
     const backup = await createChallengeBackup(emptyData, { createdAt: '2026-10-22T00:00:00.000Z' });
 

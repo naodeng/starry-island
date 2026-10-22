@@ -1,6 +1,6 @@
 import { submitAnswer } from '../../learning/answers';
-import { isChallengeBackupData } from '../domain/backup';
-import type { ChallengeBackupData } from '../domain/backup';
+import { isChallengeBackupData, normalizeImportedChallengeBackupData } from '../domain/backup';
+import type { ChallengeBackupData, ChallengeBackupImportData } from '../domain/backup';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import { gradeAttempt } from '../domain/grading';
 import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
@@ -90,6 +90,10 @@ function ensureObjectStore(database: IDBDatabase, name: string, options: IDBObje
   if (!database.objectStoreNames.contains(name)) database.createObjectStore(name, options);
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
 const DATABASE_MIGRATIONS: Array<(database: IDBDatabase, transaction: IDBTransaction) => void> = [
   (database) => {
     ensureObjectStore(database, ATTEMPTS_STORE, { keyPath: 'taskId' });
@@ -108,6 +112,20 @@ const DATABASE_MIGRATIONS: Array<(database: IDBDatabase, transaction: IDBTransac
         cursor.update({ ...attempt, snapshotSchemaVersion: CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION });
       }
       cursor.continue();
+    };
+
+    const metaStore = transaction.objectStore(META_STORE);
+    const recoveryPointRequest = metaStore.get(RECOVERY_POINT_KEY);
+    recoveryPointRequest.onsuccess = () => {
+      const recoveryPoint = recoveryPointRequest.result;
+      if (isChallengeRecoveryPoint(recoveryPoint) || !isRecord(recoveryPoint)) return;
+      try {
+        const data = normalizeImportedChallengeBackupData(recoveryPoint.data as ChallengeBackupImportData);
+        const migrated = { ...recoveryPoint, data };
+        if (isChallengeRecoveryPoint(migrated)) metaStore.put(migrated);
+      } catch {
+        // Leave malformed or unknown snapshots untouched for the existing quarantine path.
+      }
     };
   },
 ];

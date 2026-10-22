@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import packageJson from '../../../package.json';
 import type { AppRoute } from '../../app/router';
-import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup } from '../domain/backup';
-import type { ChallengeBackup, ChallengeBackupData, ChallengeBackupPreferences } from '../domain/backup';
+import { createChallengeBackup, isChallengeBackupData, normalizeImportedChallengeBackupData, parseChallengeBackup } from '../domain/backup';
+import type { ChallengeBackupData, ChallengeBackupImport, ChallengeBackupPreferences } from '../domain/backup';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import type { ChallengeClearScope, ChallengeRecoveryPointSummary } from '../domain/recovery';
@@ -155,11 +155,17 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     } catch {
       throw new Error('备份文件不是有效的 JSON；本机记录没有更改。');
     }
-    let backup: ChallengeBackup;
+    let backup: ChallengeBackupImport;
     try {
       backup = await parseChallengeBackup(parsed);
     } catch {
       throw new Error('备份格式或完整性校验无效；本机记录没有更改。');
+    }
+    let imported: ChallengeBackupData;
+    try {
+      imported = normalizeImportedChallengeBackupData(backup.data);
+    } catch {
+      throw new Error('备份中的闯关快照版本不受支持；本机记录没有更改。');
     }
     let expectedLocal: ChallengeBackupData;
     try {
@@ -170,8 +176,8 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     if (!isChallengeBackupData(expectedLocal)) {
       throw new Error('本机闯关记录结构异常，暂时不能安全合并；现有记录没有更改。');
     }
-    const plan = mergeChallengeBackupData(expectedLocal, backup.data);
-    setPendingBackupImport({ imported: backup.data, expectedLocal, preferences: backup.preferences ?? null });
+    const plan = mergeChallengeBackupData(expectedLocal, imported);
+    setPendingBackupImport({ imported, expectedLocal, preferences: backup.preferences ?? null });
     return { summary: plan.summary, preferences: backup.preferences ?? null };
   }
 

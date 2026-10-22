@@ -1,4 +1,5 @@
 import type { ChallengeAttempt, TaskProgress, WrongQuestionRecord } from './types';
+import { CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } from './snapshotSchema';
 
 export interface ChallengeBackupData {
   attempts: ChallengeAttempt[];
@@ -28,6 +29,20 @@ export interface ChallengeBackup {
     algorithm: 'SHA-256';
     digest: string;
   };
+}
+
+export type ChallengeAttemptBackupImport = ChallengeAttempt
+  | (Omit<ChallengeAttempt, 'snapshotSchemaVersion'> & { snapshotSchemaVersion?: undefined });
+
+export interface ChallengeBackupImportData {
+  attempts: ChallengeAttemptBackupImport[];
+  taskProgress: TaskProgress[];
+  recentQuestionAttempts: string[][];
+  wrongQuestions: WrongQuestionRecord[];
+}
+
+export interface ChallengeBackupImport extends Omit<ChallengeBackup, 'data'> {
+  data: ChallengeBackupImportData;
 }
 
 type CryptoProvider = Pick<Crypto, 'subtle'> | undefined;
@@ -134,7 +149,7 @@ function isQuestionSnapshot(value: unknown): boolean {
     && value.activity.id === value.activityId;
 }
 
-function isAttempt(value: unknown): value is ChallengeAttempt {
+function hasValidAttemptFields(value: unknown): boolean {
   if (!isRecord(value)
     || !isNonEmptyString(value.attemptId)
     || !isNonEmptyString(value.taskId)
@@ -164,6 +179,18 @@ function isAttempt(value: unknown): value is ChallengeAttempt {
       || (typeof answer === 'number' && Number.isFinite(answer))
       || (Array.isArray(answer) && answer.every((item) => typeof item === 'string'))
       || (isRecord(answer) && Object.values(answer).every((item) => typeof item === 'string')));
+}
+
+function isAttempt(value: unknown): value is ChallengeAttempt {
+  return isRecord(value)
+    && value.snapshotSchemaVersion === CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION
+    && hasValidAttemptFields(value);
+}
+
+function isAttemptImport(value: unknown): value is ChallengeAttemptBackupImport {
+  return isRecord(value)
+    && (value.snapshotSchemaVersion === undefined || value.snapshotSchemaVersion === CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION)
+    && hasValidAttemptFields(value);
 }
 
 function isTaskProgress(value: unknown): value is TaskProgress {
@@ -203,10 +230,10 @@ function isWrongQuestion(value: unknown): value is WrongQuestionRecord {
     && (value.correctAttemptStreak === 2 || value.masteredAt === undefined);
 }
 
-function isBackupData(value: unknown): value is ChallengeBackupData {
+function hasValidBackupData(value: unknown, validateAttempt: (attempt: unknown) => boolean): boolean {
   if (!isRecord(value)
     || !Array.isArray(value.attempts)
-    || !value.attempts.every(isAttempt)
+    || !value.attempts.every(validateAttempt)
     || !Array.isArray(value.taskProgress)
     || !value.taskProgress.every(isTaskProgress)
     || !Array.isArray(value.recentQuestionAttempts)
@@ -227,8 +254,32 @@ function isBackupData(value: unknown): value is ChallengeBackupData {
     && new Set(wrongIds).size === wrongIds.length;
 }
 
+function isBackupData(value: unknown): value is ChallengeBackupData {
+  return hasValidBackupData(value, isAttempt);
+}
+
+function isBackupImportData(value: unknown): value is ChallengeBackupImportData {
+  return hasValidBackupData(value, isAttemptImport);
+}
+
 export function isChallengeBackupData(value: unknown): value is ChallengeBackupData {
   return isBackupData(value);
+}
+
+export function normalizeImportedChallengeBackupData(data: ChallengeBackupImportData): ChallengeBackupData {
+  if (!isBackupImportData(data)) throw new Error('备份文件格式或数据结构无效。');
+  const attempts = data.attempts.map((attempt): ChallengeAttempt => {
+    if (attempt.snapshotSchemaVersion === undefined) {
+      return { ...attempt, snapshotSchemaVersion: CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } as ChallengeAttempt;
+    }
+    if (attempt.snapshotSchemaVersion !== CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION) {
+      throw new Error('备份中的闯关快照版本不受支持。');
+    }
+    return attempt as ChallengeAttempt;
+  });
+  const normalized = { ...data, attempts };
+  if (!isBackupData(normalized)) throw new Error('备份文件格式或数据结构无效。');
+  return normalized;
 }
 
 function stableSerialize(value: unknown): string {
@@ -251,12 +302,12 @@ async function sha256(value: unknown, cryptoProvider: CryptoProvider): Promise<s
   return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
-function isChallengeBackup(value: unknown): value is ChallengeBackup {
+function isChallengeBackup(value: unknown): value is ChallengeBackupImport {
   return isRecord(value)
     && value.format === 'starry-island-challenge-backup'
     && value.version === 1
     && isTimestamp(value.createdAt)
-    && isBackupData(value.data)
+    && isBackupImportData(value.data)
     && (value.preferences === undefined || isChallengeBackupPreferences(value.preferences))
     && isRecord(value.integrity)
     && value.integrity.algorithm === 'SHA-256'
@@ -307,7 +358,7 @@ export async function verifyChallengeBackup(
 export async function parseChallengeBackup(
   value: unknown,
   cryptoProvider: CryptoProvider = globalThis.crypto,
-): Promise<ChallengeBackup> {
+): Promise<ChallengeBackupImport> {
   if (!isChallengeBackup(value)) throw new Error('备份文件格式或数据结构无效。');
   const { integrity: _integrity, ...payload } = value;
   if (await sha256(payload, cryptoProvider) !== value.integrity.digest) {

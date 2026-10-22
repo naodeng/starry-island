@@ -152,7 +152,7 @@ test('ports theme and speech preferences only after explicit opt-in', async ({ p
   await page.keyboard.press('Space');
   await expect(applyImportedPreferences).toBeChecked();
   await page.evaluate(() => new Promise<void>((resolve, reject) => {
-    const request = indexedDB.open('starry-island-challenges', 3);
+    const request = indexedDB.open('starry-island-challenges');
     request.onerror = () => reject(request.error);
     request.onsuccess = () => {
       const database = request.result;
@@ -226,7 +226,7 @@ test('downloads a user-requested diagnostics report containing only allowlisted 
     format: 'starry-island-challenge-diagnostics',
     version: 1,
     storage: {
-      schemaVersion: 3,
+      schemaVersion: 4,
       recordCounts: { activeAttempts: 0, taskProgress: 0, recentCompletionGroups: 0, wrongQuestions: 0 },
     },
   });
@@ -379,7 +379,7 @@ test('previews and safely merges an active attempt without duplicating data', as
     .toHaveText('闯关备份已安全合并到此设备；课程进度没有改变。');
 
   const stored = await page.evaluate(async (taskIdToRead) => new Promise((resolve, reject) => {
-    const open = indexedDB.open('starry-island-challenges', 3);
+    const open = indexedDB.open('starry-island-challenges');
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
       const database = open.result;
@@ -401,7 +401,7 @@ test('previews and safely merges an active attempt without duplicating data', as
     };
   }), taskId);
   expect(stored).toMatchObject({
-    attempt: { attemptId: 'backup-attempt', currentIndex: 0 },
+    attempt: { attemptId: 'backup-attempt', currentIndex: 0, snapshotSchemaVersion: 1 },
     progress: { completedCount: 1, bestCorrect: 1 },
     recent: { attemptQuestionIds: [['backup-question']] },
     wrongQuestion: { wrongCount: 2 },
@@ -479,7 +479,7 @@ test('clears and restores an in-progress challenge through the 24-hour recovery 
   await expect(page.getByRole('status').filter({ hasText: '已创建 24 小时恢复点' })).toBeVisible();
 
   const afterClear = await page.evaluate(async (taskIdToRead) => new Promise<{ attempt: unknown; recoveryPoint: unknown }>((resolve, reject) => {
-    const open = indexedDB.open('starry-island-challenges', 3);
+    const open = indexedDB.open('starry-island-challenges');
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
       const database = open.result;
@@ -504,7 +504,7 @@ test('clears and restores an in-progress challenge through the 24-hour recovery 
   await expect(page.getByRole('status').filter({ hasText: '已恢复闯关记录' })).toBeVisible();
 
   const restoredAttempt = await page.evaluate(async (taskIdToRead) => new Promise<unknown>((resolve, reject) => {
-    const open = indexedDB.open('starry-island-challenges', 3);
+    const open = indexedDB.open('starry-island-challenges');
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
       const database = open.result;

@@ -504,6 +504,15 @@ describe('IndexedDB challenge repository', () => {
     });
     const answered = submitFirstAnswer(makeAttempt('task-v3', 'attempt-v3', ['question-v3-a', 'question-v3-b']), 'question-v3-a', 1).attempt;
     const { snapshotSchemaVersion: _snapshotSchemaVersion, ...legacyAttempt } = answered;
+    const recoveryCreatedAt = '2026-10-22T00:00:00.000Z';
+    const legacyRecoveryPoint = {
+      key: 'recovery-point',
+      format: 'starry-island-challenge-recovery',
+      version: 1,
+      createdAt: recoveryCreatedAt,
+      expiresAt: '2026-10-23T00:00:00.000Z',
+      data: { attempts: [legacyAttempt], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [] },
+    };
     const progress: TaskProgress = {
       taskId: 'task-v3',
       bestCorrect: 1,
@@ -520,6 +529,7 @@ describe('IndexedDB challenge repository', () => {
       tx.objectStore('attempts').put(legacyAttempt);
       tx.objectStore('taskProgress').put(progress);
       tx.objectStore('challengeMeta').put({ key: 'recent-question-ids', attemptQuestionIds: [['question-v3-a']] });
+      tx.objectStore('challengeMeta').put(legacyRecoveryPoint);
       tx.objectStore('quarantinedRecords').put({ sourceStore: 'fixture', record: { retained: true } });
       tx.oncomplete = () => resolve();
       tx.onerror = () => reject(tx.error);
@@ -533,6 +543,10 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getTaskProgress('task-v3')).toEqual(progress);
     expect(await repository.getRecentQuestionIds()).toEqual(['question-v3-a']);
     expect(await repository.getQuarantinedRecordCount()).toBe(1);
+    expect(await repository.getRecoveryPoint('2026-10-22T12:00:00.000Z')).toEqual({
+      ...legacyRecoveryPoint,
+      data: { ...legacyRecoveryPoint.data, attempts: [{ ...legacyAttempt, snapshotSchemaVersion: 1 }] },
+    });
   });
 
   it('isolates malformed records and keeps valid challenge records readable', async () => {
