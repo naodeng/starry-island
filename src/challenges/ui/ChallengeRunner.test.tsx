@@ -3,7 +3,7 @@ import { fireEvent, render as renderBase, screen, waitFor } from '@testing-libra
 import type { ReactNode } from 'react';
 import { IDBFactory } from 'fake-indexeddb';
 import type { ChoiceActivityDefinition } from '../../content/types';
-import type { ChallengeGroupManifest, ChallengeQuestionSnapshot, ChallengeTaskDefinition } from '../domain/types';
+import type { ChallengeAttempt, ChallengeGroupManifest, ChallengeQuestionSnapshot, ChallengeTaskDefinition } from '../domain/types';
 import { assemblePaper } from '../domain/assemble';
 import { submitFirstAnswer } from '../domain/attempt';
 import { createChallengeRepository } from '../storage/indexedDbRepository';
@@ -77,7 +77,7 @@ function makeLoadedGroup(targetCount: number, grade = 2): { loadedGroup: LoadedP
     releaseIntent: 'released',
   };
   return {
-    loadedGroup: { group, status: 'ready', issues: [], learningTasks: [], candidates: Array.from({ length: Math.max(2, targetCount * 2) }, (_, index) => makeQuestion(`question-${index + 1}`)) },
+    loadedGroup: { group, status: 'ready', issues: [], learningTasks: [], disabledQuestionIds: [], candidates: Array.from({ length: Math.max(2, targetCount * 2) }, (_, index) => makeQuestion(`question-${index + 1}`)) },
     task,
   };
 }
@@ -106,6 +106,125 @@ afterEach(() => {
 });
 
 describe('ChallengeRunner', () => {
+  it('does not offer a new challenge when its group is unavailable and no snapshot exists', async () => {
+    const repository = makeRepository();
+    const beginAttempt = vi.spyOn(repository, 'beginAttempt');
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    loadedGroup.status = 'unavailable';
+    loadedGroup.candidates = [];
+
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    expect(await screen.findByRole('heading', { name: '这条挑战路线暂时不能开始' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: '开始挑战' })).not.toBeInTheDocument();
+    expect(beginAttempt).not.toHaveBeenCalled();
+  });
+
+  it('restores an existing frozen snapshot even when the group is unavailable', async () => {
+    const repository = makeRepository();
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    const assemblySeed = 'frozen-unavailable-attempt';
+    const activeAttempt: ChallengeAttempt = {
+      attemptId: 'frozen-unavailable-attempt',
+      taskId: task.id,
+      difficulty: task.difficulty,
+      status: 'in-progress',
+      snapshotSchemaVersion: 1,
+      questions: assemblePaper(task, loadedGroup.candidates, assemblySeed, []),
+      assemblySeed,
+      contentManifestVersion: 'test-v1',
+      answers: {},
+      currentIndex: 0,
+      startedAt: new Date().toISOString(),
+      elapsedMs: 0,
+      revision: 0,
+    };
+    loadedGroup.status = 'unavailable';
+    loadedGroup.candidates = [];
+    await repository.beginAttempt(activeAttempt);
+
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    expect(await screen.findByRole('heading', { name: activeAttempt.questions[0]!.activity.prompt })).toBeInTheDocument();
+    expect(screen.getByText('已恢复上次保存的进度')).toBeInTheDocument();
+  });
+
+  it('safely pauses a fully answered snapshot that contains a disabled question', async () => {
+    const lockRequestIsFinished = stubHoldingBrowserLock();
+    const repository = makeRepository();
+    const completeAttempt = vi.spyOn(repository, 'completeAttempt');
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    const assemblySeed = 'disabled-complete-attempt';
+    const questions = assemblePaper(task, loadedGroup.candidates, assemblySeed, []);
+    const disabledQuestionId = questions[0]!.questionId;
+    const initialAttempt: ChallengeAttempt = {
+      attemptId: 'disabled-complete-attempt',
+      taskId: task.id,
+      difficulty: task.difficulty,
+      status: 'in-progress',
+      snapshotSchemaVersion: 1,
+      questions,
+      assemblySeed,
+      contentManifestVersion: 'test-v1',
+      answers: {},
+      currentIndex: 0,
+      startedAt: new Date().toISOString(),
+      elapsedMs: 0,
+      revision: 0,
+    };
+    loadedGroup.disabledQuestionIds = [disabledQuestionId];
+    await repository.beginAttempt(initialAttempt);
+    const completedAnswer = submitFirstAnswer(initialAttempt, disabledQuestionId, 'correct').attempt;
+    const activeAttempt = await repository.saveAnswer(task.id, initialAttempt.revision, completedAnswer);
+
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    expect(await screen.findByRole('heading', { name: '这次挑战暂时暂停' })).toBeInTheDocument();
+    expect(screen.getByText(/题目已被标记停用/)).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toEqual(activeAttempt);
+    expect(await repository.getTaskProgress(task.id)).toBeNull();
+    expect(completeAttempt).not.toHaveBeenCalled();
+    await waitFor(() => expect(lockRequestIsFinished()).toBe(true));
+  });
+
+  it('rechecks a concurrently created snapshot before restoring it from the start action', async () => {
+    const repository = makeRepository();
+    const completeAttempt = vi.spyOn(repository, 'completeAttempt');
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+    await screen.findByRole('button', { name: '开始挑战' });
+
+    const assemblySeed = 'concurrent-disabled-attempt';
+    const questions = assemblePaper(task, loadedGroup.candidates, assemblySeed, []);
+    const disabledQuestionId = questions[0]!.questionId;
+    const initialAttempt: ChallengeAttempt = {
+      attemptId: 'concurrent-disabled-attempt',
+      taskId: task.id,
+      difficulty: task.difficulty,
+      status: 'in-progress',
+      snapshotSchemaVersion: 1,
+      questions,
+      assemblySeed,
+      contentManifestVersion: 'test-v1',
+      answers: {},
+      currentIndex: 0,
+      startedAt: new Date().toISOString(),
+      elapsedMs: 0,
+      revision: 0,
+    };
+    await repository.beginAttempt(initialAttempt);
+    const completedAnswer = submitFirstAnswer(initialAttempt, disabledQuestionId, 'correct').attempt;
+    const activeAttempt = await repository.saveAnswer(task.id, initialAttempt.revision, completedAnswer);
+    loadedGroup.disabledQuestionIds.push(disabledQuestionId);
+
+    await userClick(screen.getByRole('button', { name: '开始挑战' }));
+
+    expect(await screen.findByRole('heading', { name: '这次挑战暂时暂停' })).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toEqual(activeAttempt);
+    expect(await repository.getTaskProgress(task.id)).toBeNull();
+    expect(completeAttempt).not.toHaveBeenCalled();
+  });
+
   it('writes snapshot schema version 1 when starting a challenge', async () => {
     const repository = makeRepository();
     const { loadedGroup, task } = makeLoadedGroup(1);

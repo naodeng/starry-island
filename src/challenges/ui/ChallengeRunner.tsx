@@ -62,6 +62,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
   const [loadError, setLoadError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState<ChallengeAttempt | null>(null);
   const [progress, setProgress] = useState<TaskProgress | null>(null);
+  const [safetyPaused, setSafetyPaused] = useState(false);
   const [restored, setRestored] = useState(false);
   const [pendingAnswer, setPendingAnswer] = useState<PendingAnswer | null>(null);
   const [completedResult, setCompletedResult] = useState<CompletedResult | null>(null);
@@ -79,6 +80,10 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     writerLeaseRef.current = null;
   }
 
+  function containsDisabledQuestion(savedAttempt: ChallengeAttempt): boolean {
+    return savedAttempt.questions.some(({ questionId }) => loadedGroup.disabledQuestionIds.includes(questionId));
+  }
+
   useEffect(() => {
     let cancelled = false;
     const lockController = new AbortController();
@@ -87,6 +92,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     setLoadError(null);
     setAttempt(null);
     setProgress(null);
+    setSafetyPaused(false);
     setWaitingForWriter(false);
     setPendingAnswer(null);
     setCompletedResult(null);
@@ -103,6 +109,14 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         writerLeaseRef.current = lease;
         active = await repository.getActiveAttempt(task.id);
         if (!active) releaseWriterLease();
+      }
+      if (active && containsDisabledQuestion(active)) {
+        releaseWriterLease();
+        if (cancelled) return;
+        setWaitingForWriter(false);
+        setSafetyPaused(true);
+        setLoadState('ready');
+        return;
       }
       const savedProgress = await repository.getTaskProgress(task.id);
       if (cancelled) return;
@@ -138,7 +152,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       lockController.abort();
       releaseWriterLease();
     };
-  }, [repository, task.id, reloadRevision]);
+  }, [loadedGroup.disabledQuestionIds, repository, task.id, reloadRevision]);
 
   async function startAttempt() {
     if (busy) return;
@@ -160,6 +174,12 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
 
       const existing = await repository.getActiveAttempt(task.id);
       if (existing) {
+        if (containsDisabledQuestion(existing)) {
+          setSafetyPaused(true);
+          setLoadState('ready');
+          releaseWriterLease();
+          return;
+        }
         const savedProgress = await repository.getTaskProgress(task.id);
         setProgress(savedProgress);
         if (existing.currentIndex === existing.questions.length) {
@@ -171,6 +191,12 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           setAttempt(existing);
           setRestored(true);
         }
+        setLoadState('ready');
+        return;
+      }
+
+      if (loadedGroup.status !== 'ready') {
+        releaseWriterLease();
         setLoadState('ready');
         return;
       }
@@ -205,6 +231,12 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       }
       const existing = await repository.getActiveAttempt(task.id).catch(() => null);
       if (existing) {
+        if (containsDisabledQuestion(existing)) {
+          setSafetyPaused(true);
+          setLoadState('ready');
+          releaseWriterLease();
+          return;
+        }
         setAttempt(existing);
         setRestored(true);
         setLoadState('ready');
@@ -321,6 +353,24 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     return (
       <ChallengeMessage title="暂时无法读取挑战" message={loadError ?? '请重新读取本机进度。'} onAction={reload} actionLabel="重新读取" />
     );
+  }
+
+  if (safetyPaused) {
+    return <ChallengeMessage
+      title="这次挑战暂时暂停"
+      message="这次挑战中的题目已被标记停用。本机已保留原作答记录，不会继续答题或登记成绩。请返回挑战任务，等待题库更新后再继续。"
+      onAction={() => onNavigate(getChallengeGroupPath(loadedGroup.group.definition.id))}
+      actionLabel="返回挑战任务"
+    />;
+  }
+
+  if (!attempt && loadedGroup.status !== 'ready') {
+    return <ChallengeMessage
+      title="这条挑战路线暂时不能开始"
+      message="题库通过必要的内容质量检查后才会开放。"
+      onAction={() => onNavigate(getChallengeGroupPath(loadedGroup.group.definition.id))}
+      actionLabel="返回挑战任务"
+    />;
   }
 
   if (!attempt) {

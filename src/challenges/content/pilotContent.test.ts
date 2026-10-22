@@ -30,6 +30,7 @@ describe('loadPilotChallengeContent', () => {
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
+    expect(content.groups.every(({ disabledQuestionIds }) => disabledQuestionIds.length === 0)).toBe(true);
     expect(content.groups[1]?.candidates.every(({ contentFingerprint, activity }) => contentFingerprint && activity.id)).toBe(true);
     expect(content.validation.errors).toEqual([]);
   });

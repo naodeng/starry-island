@@ -13,7 +13,7 @@
 ## 全局约束
 
 - 新建快照的 `snapshotSchemaVersion` 为 `1`；`contentManifestVersion` 继续记录题库内容版本，不得互相替代。
-- IndexedDB 当前结构版本为 3；升级必须迁移活动记录与 24 小时恢复点内的进行中快照，并保留冻结题目、答案、题目顺序、种子和修订号。
+- IndexedDB 原结构版本为 3，本计划升级至 v4；迁移活动记录与 24 小时恢复点内的进行中快照时，保留冻结题目、答案、题目顺序、种子和修订号。
 - 旧 v1 JSON 备份仍可导入，备份外层仍为 v1；必须先校验原始文件摘要，再补齐旧快照版本字段。
 - 未知快照版本不得推测转换或覆盖；必须保留原始记录并走现有隔离/恢复提示路径。
 - `unavailable` 组禁止新开，但不能只因组状态变化中断已保存快照；仅当前已载入清单中显式 `disabled` 的引用题会触发安全暂停。
@@ -173,29 +173,29 @@
 - 恢复时如快照 ID 命中 `disabledQuestionIds`，释放写入租约、保留原记录并显示中文安全暂停说明；不得自动丢弃、保存答案或记成绩。
 - 停用检查必须在租约内重新读取快照后执行，并先于“所有题目已有答案”的自动补记成绩分支；`startAttempt()` 发现并转为恢复另一标签页的现有快照时也执行同一检查。
 
-- [ ] **步骤 1：先写失败页面测试**
+- [x] **步骤 1：先写失败页面测试**
 
-  在 `ChallengeRunner.test.tsx` 覆盖三种情况：不可用组且无快照时不能开始；不可用组但已有快照且未命中 disabled 时按冻结快照恢复；已有快照命中 disabled 时显示安全暂停提示，IndexedDB 快照和成绩保持原样。
+  在 `ChallengeRunner.test.tsx` 覆盖不可用组且无快照时不能新开、命中 disabled 的已答快照安全暂停以及并发恢复安全检查；在 `ChallengePage.test.tsx` 覆盖不可用组路由仍能恢复未命中 disabled 的冻结快照。
 
-- [ ] **步骤 2：确认测试失败**
-
-  运行：`npm run test:unit -- src/challenges/ui/ChallengeRunner.test.tsx`
-
-  预期：当前 `ChallengePage` 在运行器检查活动快照前拦截不可用组，后两种用例失败。
-
-- [ ] **步骤 3：实现恢复优先检查**
-
-  由内容加载器生成 `disabledQuestionIds`。调整 `ChallengePage`，使任务运行器可以先检查现有快照；调整运行器，仅在新开场景要求组状态为 `ready`，恢复场景在租约内重新读取快照后、任何自动完成或续答处理前按快照 ID 执行安全检查。`startAttempt()` 的并发恢复分支也必须检查。安全暂停时明确释放写入租约且不触碰持久化状态或成绩。
-
-- [ ] **步骤 4：运行组件和相关浏览器回归**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/ui/ChallengeRunner.test.tsx src/challenges/ui/ChallengePage.test.tsx`
 
+  结果：不可用组直接新开测试因显示开始按钮而失败；已答且命中 disabled 的快照被错误自动补记成绩；页面级恢复测试因 `ChallengePage` 过早拦截而失败。
+
+- [x] **步骤 3：实现恢复优先检查**
+
+  由内容加载器生成 `disabledQuestionIds`。调整 `ChallengePage`，使任务运行器可以先检查现有快照；调整运行器，仅在新开场景要求组状态为 `ready`，恢复场景在租约内重新读取快照后、任何自动完成或续答处理前按快照 ID 执行安全检查。`startAttempt()` 的并发恢复分支也必须检查。安全暂停时明确释放写入租约且不触碰持久化状态或成绩。
+
+- [x] **步骤 4：运行组件和相关浏览器回归**
+
+  运行：`npm run test:unit -- src/challenges/ui/ChallengeRunner.test.tsx src/challenges/ui/ChallengePage.test.tsx src/challenges/content/pilotContent.test.ts`
+
   若新增/修改任务页或恢复 UI，再运行：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`
 
-  预期：三种快照行为通过；现有学习流程和闯关恢复不受影响。静态旧页面限制继续在界面/文档中准确表达，不增加自动重载。
+  结果：上述定向单测 20 项通过；`tests/e2e/challenge-flow.spec.ts` 14 项通过；全量单测 141 个文件、961 项通过；`npm run build` 和 `git diff --check` 通过。旧页面限制在 Task 5 文档中说明，不新增自动重载。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`fix(challenges): pause disabled active attempts safely`
 

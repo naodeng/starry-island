@@ -12,6 +12,7 @@ export interface LoadedPilotGroup {
   group: ChallengeGroupManifest;
   status: 'ready' | 'planned' | 'unavailable';
   candidates: ChallengeQuestionSnapshot[];
+  disabledQuestionIds: string[];
   learningTasks: LearningTaskReference[];
   issues: PilotManifestValidationReport['errors'];
 }
@@ -74,6 +75,9 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
 
   const validation = await validatePilotManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
   const questionById = new Map(manifest.questions.map((question) => [question.questionId, question]));
+  const disabledQuestionIds = manifest.questions
+    .filter(({ lifecycle }) => lifecycle === 'disabled')
+    .map(({ questionId }) => questionId);
   const changedFingerprints = new Map(validation.contentChanges.map((change) => [change.questionId, change.currentContentFingerprint]));
   const groups = manifest.groups.map((group): LoadedPilotGroup => {
     const id = group.definition.id;
@@ -94,6 +98,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
       group,
       status,
       candidates: status === 'ready' ? candidates : [],
+      disabledQuestionIds,
       learningTasks: group.definition.sourceUnitIds.flatMap((sourceUnitId) => learningTasksByUnitId.get(sourceUnitId) ?? []),
       issues,
     };

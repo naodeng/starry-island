@@ -353,20 +353,6 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const taskGroup = content.groups.find(({ group }) => group.definition.tasks.some(({ id }) => id === route.taskId));
   const task = taskGroup?.group.definition.tasks.find(({ id }) => id === route.taskId);
   if (!taskGroup || !task) return <ChallengeNotFound onNavigate={onNavigate} />;
-  if (taskGroup.status !== 'ready') {
-    return (
-      <main className="challenge-page">
-        <div className="challenge-shell">
-          <Card className="challenge-message-card" color="default">
-            <p className="eyebrow">内容审核中</p>
-            <h1>这条挑战路线暂时不能开始</h1>
-            <p>题库通过必要的内容质量检查后才会开放。</p>
-            <Button type="primary" onClick={() => onNavigate(`/challenges/group/${encodeURIComponent(taskGroup.group.definition.id)}`)}>返回挑战任务</Button>
-          </Card>
-        </div>
-      </main>
-    );
-  }
 
   return (
     <ChallengeRunner
