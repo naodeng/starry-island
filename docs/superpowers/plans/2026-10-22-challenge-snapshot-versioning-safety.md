@@ -149,7 +149,7 @@
 
 - [ ] **步骤 4：运行备份与导入测试**
 
-  运行：`npm run test:unit -- src/challenges/domain/backup.test.ts src/challenges/domain/backupMerge.test.ts src/challenges/ui/ChallengePage.test.tsx`
+  运行：`npm run test:unit -- src/challenges/domain/backup.test.ts src/challenges/domain/backupMerge.test.ts`，并运行：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`。
 
   预期：旧 v1 与新 v1 备份可导入，完整性失败和未知结构不会写入 IndexedDB，合并仍保留本机进行中记录。
 
