@@ -4,6 +4,7 @@ import type { ChallengeBackupData } from '../domain/backup';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import { gradeAttempt } from '../domain/grading';
 import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
+import { CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } from '../domain/snapshotSchema';
 import {
   createChallengeRecoveryPoint,
   getChallengeDataClearCounts,
@@ -26,7 +27,7 @@ import {
 import type { ChallengeRepository, ChallengeRepositoryOptions, QuarantinedChallengeRecord } from './repository';
 import { transitionWrongQuestion } from '../domain/wrongQuestions';
 
-export const CHALLENGE_DATABASE_VERSION = 3;
+export const CHALLENGE_DATABASE_VERSION = 4;
 const DEFAULT_DATABASE_NAME = 'starry-island-challenges';
 const ATTEMPTS_STORE = 'attempts';
 const PROGRESS_STORE = 'taskProgress';
@@ -43,8 +44,22 @@ interface RecentQuestionIdsRecord {
 }
 
 function isValidAttemptRecord(value: unknown): value is ChallengeAttempt {
-  return isChallengeBackupData({
+  return typeof value === 'object'
+    && value !== null
+    && !Array.isArray(value)
+    && (value as Record<string, unknown>).snapshotSchemaVersion === CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION
+    && isChallengeBackupData({
     attempts: [value as ChallengeAttempt], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
+  });
+}
+
+function isValidLegacyAttemptRecord(value: unknown): boolean {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return false;
+  const record = value as Record<string, unknown>;
+  if (record.snapshotSchemaVersion !== undefined) return false;
+  return isChallengeBackupData({
+    attempts: [{ ...record, snapshotSchemaVersion: CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } as unknown as ChallengeAttempt],
+    taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
   });
 }
 
@@ -75,7 +90,7 @@ function ensureObjectStore(database: IDBDatabase, name: string, options: IDBObje
   if (!database.objectStoreNames.contains(name)) database.createObjectStore(name, options);
 }
 
-const DATABASE_MIGRATIONS: Array<(database: IDBDatabase) => void> = [
+const DATABASE_MIGRATIONS: Array<(database: IDBDatabase, transaction: IDBTransaction) => void> = [
   (database) => {
     ensureObjectStore(database, ATTEMPTS_STORE, { keyPath: 'taskId' });
     ensureObjectStore(database, PROGRESS_STORE, { keyPath: 'taskId' });
@@ -83,11 +98,23 @@ const DATABASE_MIGRATIONS: Array<(database: IDBDatabase) => void> = [
   },
   (database) => ensureObjectStore(database, WRONG_QUESTIONS_STORE, { keyPath: 'questionId' }),
   (database) => ensureObjectStore(database, QUARANTINED_RECORDS_STORE, { autoIncrement: true }),
+  (_database, transaction) => {
+    const cursorRequest = transaction.objectStore(ATTEMPTS_STORE).openCursor();
+    cursorRequest.onsuccess = () => {
+      const cursor = cursorRequest.result;
+      if (!cursor) return;
+      const attempt = cursor.value as Record<string, unknown>;
+      if (isValidLegacyAttemptRecord(attempt)) {
+        cursor.update({ ...attempt, snapshotSchemaVersion: CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION });
+      }
+      cursor.continue();
+    };
+  },
 ];
 
-function applyDatabaseMigrations(database: IDBDatabase, oldVersion: number): void {
+function applyDatabaseMigrations(database: IDBDatabase, transaction: IDBTransaction, oldVersion: number): void {
   for (let version = oldVersion; version < CHALLENGE_DATABASE_VERSION; version += 1) {
-    DATABASE_MIGRATIONS[version]?.(database);
+    DATABASE_MIGRATIONS[version]?.(database, transaction);
   }
 }
 
@@ -308,7 +335,9 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
         return;
       }
       request.onupgradeneeded = (event) => {
-        applyDatabaseMigrations(request.result, event.oldVersion);
+        const upgradeTransaction = request.transaction;
+        if (!upgradeTransaction) throw new ChallengeRepositoryError('Could not obtain the challenge database upgrade transaction.');
+        applyDatabaseMigrations(request.result, upgradeTransaction, event.oldVersion);
       };
       request.onsuccess = () => {
         database = request.result;
