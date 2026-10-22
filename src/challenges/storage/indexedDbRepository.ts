@@ -1,4 +1,5 @@
 import { submitAnswer } from '../../learning/answers';
+import type { ChallengeBackupData } from '../domain/backup';
 import { gradeAttempt } from '../domain/grading';
 import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
 import {
@@ -252,6 +253,42 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
       return transaction<TaskProgress[]>(PROGRESS_STORE, 'readonly', (tx, setResult, fail) => {
         onRequest(tx.objectStore(PROGRESS_STORE).getAll(), fail, (progress) => setResult(progress as TaskProgress[]));
       });
+    },
+
+    getBackupSnapshot() {
+      return transaction<ChallengeBackupData>(
+        [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE],
+        'readonly',
+        (tx, setResult, fail) => {
+          let attempts: ChallengeAttempt[] | undefined;
+          let taskProgress: TaskProgress[] | undefined;
+          let recentQuestionAttempts: string[][] | undefined;
+          let wrongQuestions: WrongQuestionRecord[] | undefined;
+
+          const setWhenReady = () => {
+            if (attempts && taskProgress && recentQuestionAttempts && wrongQuestions) {
+              setResult({ attempts, taskProgress, recentQuestionAttempts, wrongQuestions });
+            }
+          };
+
+          onRequest(tx.objectStore(ATTEMPTS_STORE).getAll(), fail, (records) => {
+            attempts = records as ChallengeAttempt[];
+            setWhenReady();
+          });
+          onRequest(tx.objectStore(PROGRESS_STORE).getAll(), fail, (records) => {
+            taskProgress = records as TaskProgress[];
+            setWhenReady();
+          });
+          onRequest(tx.objectStore(META_STORE).get(RECENT_QUESTION_IDS_KEY), fail, (record) => {
+            recentQuestionAttempts = (record as RecentQuestionIdsRecord | undefined)?.attemptQuestionIds ?? [];
+            setWhenReady();
+          });
+          onRequest(tx.objectStore(WRONG_QUESTIONS_STORE).getAll(), fail, (records) => {
+            wrongQuestions = records as WrongQuestionRecord[];
+            setWhenReady();
+          });
+        },
+      );
     },
 
     getGroupProgress(taskIds) {

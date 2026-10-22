@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import type { AppRoute } from '../../app/router';
+import { createChallengeBackup } from '../domain/backup';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import { deriveChallengeGrowth } from '../domain/growth';
 import type { ChallengeRepository } from '../storage/repository';
@@ -14,6 +15,22 @@ import ChallengeRunner from './ChallengeRunner';
 import ChallengeWrongQuestions from './ChallengeWrongQuestions';
 import { getChallengeTaskTitle } from './challengeLabels';
 import './challenge.css';
+
+function downloadChallengeBackup(backup: Awaited<ReturnType<typeof createChallengeBackup>>) {
+  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = `starry-island-challenges-${backup.createdAt.replace(/[:.]/g, '-')}.json`;
+  anchor.hidden = true;
+  document.body.append(anchor);
+  try {
+    anchor.click();
+  } finally {
+    anchor.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+  }
+}
 
 type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeGrowth' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
 
@@ -37,6 +54,12 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const [progressAvailable, setProgressAvailable] = useState(true);
   const [progressLoading, setProgressLoading] = useState(true);
   const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
+
+  async function exportBackup() {
+    const snapshot = await repository.getBackupSnapshot();
+    const backup = await createChallengeBackup(snapshot);
+    downloadChallengeBackup(backup);
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -135,7 +158,7 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   }
 
   if (route.kind === 'challengeCenter') {
-    return <ChallengeCenter groups={content.groups} progressByTaskId={progressByTaskId} progressAvailable={progressAvailable} onNavigate={onNavigate} />;
+    return <ChallengeCenter groups={content.groups} progressByTaskId={progressByTaskId} progressAvailable={progressAvailable} onNavigate={onNavigate} onExportBackup={exportBackup} />;
   }
 
   if (route.kind === 'challengeGrowth') {

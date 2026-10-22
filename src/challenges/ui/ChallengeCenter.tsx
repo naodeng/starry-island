@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath } from '../../app/router';
@@ -15,9 +16,22 @@ interface ChallengeCenterProps {
   progressByTaskId: Readonly<Record<string, TaskProgress>>;
   progressAvailable: boolean;
   onNavigate: (path: string) => void;
+  onExportBackup: () => Promise<void>;
 }
 
-export default function ChallengeCenter({ groups, progressByTaskId, progressAvailable, onNavigate }: ChallengeCenterProps) {
+export default function ChallengeCenter({ groups, progressByTaskId, progressAvailable, onNavigate, onExportBackup }: ChallengeCenterProps) {
+  const [backupExportState, setBackupExportState] = useState<'idle' | 'exporting' | 'success' | 'error'>('idle');
+
+  async function exportBackup() {
+    setBackupExportState('exporting');
+    try {
+      await onExportBackup();
+      setBackupExportState('success');
+    } catch {
+      setBackupExportState('error');
+    }
+  }
+
   return (
     <main className="challenge-page">
       <div className="challenge-shell">
@@ -28,8 +42,14 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressAvai
           <div className="challenge-hero-actions">
             <Button type="default" onClick={() => onNavigate('/')}>返回课程目录</Button>
             <Button type="default" onClick={() => onNavigate(getChallengeGrowthPath())}>查看成长记录</Button>
+            <Button type="default" disabled={backupExportState === 'exporting'} onClick={() => void exportBackup()}>
+              {backupExportState === 'exporting' ? '正在生成备份…' : '导出闯关备份'}
+            </Button>
             <Button type="primary" onClick={() => onNavigate(getChallengeWrongQuestionsPath())}>打开错题本</Button>
           </div>
+          <p className="challenge-backup-note">备份包含本机闯关记录和未完成答题，不包含课程进度或个人设置。</p>
+          {backupExportState === 'success' && <p className="challenge-backup-status" role="status">闯关备份已生成并下载到此设备。</p>}
+          {backupExportState === 'error' && <p className="challenge-backup-status" role="status">闯关备份没有生成；本机记录没有更改，可以稍后重试。</p>}
         </header>
         {!progressAvailable && <p className="challenge-inline-note" role="status">本机进度暂时没有读出；可以继续挑战，稍后再查看进度。</p>}
         <section className="challenge-section" aria-labelledby="challenge-groups-heading">

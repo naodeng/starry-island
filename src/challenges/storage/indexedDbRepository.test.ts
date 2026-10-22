@@ -113,6 +113,34 @@ describe('IndexedDB challenge repository', () => {
     ]);
   });
 
+  it('reads a consistent local backup snapshot without changing challenge data', async () => {
+    const repository = createRepository();
+    const finished = makeAttempt('task-finished', 'attempt-finished', ['question-right', 'question-wrong']);
+    await repository.beginAttempt(finished);
+    const first = submitFirstAnswer(finished, 'question-right', 1).attempt;
+    const savedFirst = await repository.saveAnswer(finished.taskId, finished.revision, first);
+    const second = submitFirstAnswer(savedFirst, 'question-wrong', 0).attempt;
+    const savedSecond = await repository.saveAnswer(finished.taskId, savedFirst.revision, second);
+    const update = finalizeAttempt(savedSecond, null, '2026-10-22T00:02:00.000Z');
+    await repository.completeAttempt(finished.taskId, savedSecond.revision, update.completedAttempt, update.progress);
+
+    const active = makeAttempt('task-active', 'attempt-active', ['question-active']);
+    await repository.beginAttempt(active);
+    const progressBefore = await repository.getAllTaskProgress();
+    const wrongQuestionsBefore = await repository.getWrongQuestions();
+    const snapshot = await repository.getBackupSnapshot();
+
+    expect(snapshot).toEqual({
+      attempts: [active],
+      taskProgress: progressBefore,
+      recentQuestionAttempts: [['question-right', 'question-wrong']],
+      wrongQuestions: wrongQuestionsBefore,
+    });
+    expect(snapshot.taskProgress).toHaveLength(1);
+    expect(snapshot.wrongQuestions).toMatchObject([{ questionId: 'question-wrong', wrongCount: 1 }]);
+    expect(await repository.getActiveAttempt('task-active')).toEqual(active);
+  });
+
   it('records wrong questions and requires two correct completed attempts to master them', async () => {
     const repository = createRepository();
     const questionIds = ['question-a'];

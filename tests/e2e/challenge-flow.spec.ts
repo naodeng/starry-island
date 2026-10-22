@@ -1,9 +1,20 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
 
 const taskId = 'grade-2-term-1-math-unit-02/basic-01';
 const taskUrl = `/challenges/task/${encodeURIComponent(taskId)}`;
 const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01';
 const semesterTaskUrl = `/challenges/task/${encodeURIComponent(semesterTaskId)}`;
+
+function stableSerialize(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(stableSerialize).join(',')}]`;
+  if (typeof value === 'object' && value !== null) {
+    const record = value as Record<string, unknown>;
+    return `{${Object.keys(record).filter((key) => record[key] !== undefined).sort().map((key) => `${JSON.stringify(key)}:${stableSerialize(record[key])}`).join(',')}}`;
+  }
+  return JSON.stringify(value) ?? 'null';
+}
 
 test('keeps growth statistics readable in both themes', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
@@ -44,6 +55,31 @@ test('keeps growth statistics readable in both themes', async ({ page }) => {
     }
     await page.setViewportSize({ width: 1280, height: 900 });
   }
+});
+
+test('downloads a versioned local backup with a valid checksum', async ({ page }) => {
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: '导出闯关备份' }).click();
+  const download = await downloadPromise;
+  const downloadedPath = await download.path();
+  expect(download.suggestedFilename()).toMatch(/^starry-island-challenges-.+\.json$/);
+  expect(downloadedPath).toBeTruthy();
+  const backup = JSON.parse(readFileSync(downloadedPath!, 'utf8')) as Record<string, unknown>;
+  const integrity = backup.integrity as { algorithm: string; digest: string };
+  const { integrity: _integrity, ...payload } = backup;
+
+  expect(backup).toMatchObject({
+    format: 'starry-island-challenge-backup',
+    version: 1,
+    data: { attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [] },
+  });
+  expect(integrity.algorithm).toBe('SHA-256');
+  expect(integrity.digest).toBe(createHash('sha256').update(stableSerialize(payload)).digest('hex'));
+  await expect(page.getByRole('status')).toHaveText('闯关备份已生成并下载到此设备。');
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
 
 test('opens the local wrong-question notebook from the challenge center', async ({ page }) => {

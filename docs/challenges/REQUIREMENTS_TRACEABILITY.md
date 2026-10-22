@@ -24,6 +24,7 @@
 | REQ-022 / 023 | 结果页按知识点汇总答错题，并提供到现有学习任务的复习入口；导航不改动课程进度 | `studyRecommendations.ts`、`studyRecommendations.test.ts`；`pilotContent.test.ts`；`ChallengeResult.test.tsx` |
 | REQ-024 / 025 | 当前试点的错题本和跨完成挑战掌握规则已在本地分支提交；尚未覆盖其他年级或学科 | `wrongQuestions.ts`、`wrongQuestions.test.ts`；`indexedDbRepository.test.ts`；`ChallengeWrongQuestions.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-031 | 当前试点提供本机累计完成次数、曾通过任务、徽章和各登记组进度；不保存历史曲线或连续天数 | `src/challenges/domain/growth.ts`、`growth.test.ts`；`ChallengeGrowth.tsx`、页面测试；`getAllTaskProgress()` 仓库测试 |
+| REQ-033 / 062 | 部分实现：本机可导出版本化闯关 JSON，并对规范化内容计算 SHA-256；导入、预览和安全合并待做 | `src/challenges/domain/backup.ts`、`backup.test.ts`；`getBackupSnapshot()` 仓库测试；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-027 | 根据用户确认的章节顺序划分前半学期；不是学校日历 | 试点题库清单；清单测试 |
 | REQ-028 | 部分实现：运行时有题库清单门禁；尚无专用持续集成报告命令 | `validateManifest.ts`；[测试方案](TEST_STRATEGY.md) |
 | REQ-029 | 部分实现：有闯关中心和单元 2 上下文入口；未覆盖其他组 | 课程目录和路由测试 |

@@ -59,6 +59,7 @@
 .challenge-growth-route .eyebrow { color: var(--challenge-card-text); }
 .challenge-growth-progress-label, .challenge-growth-badge { margin: 0; color: var(--challenge-card-text); font-weight: 700; }
 .challenge-growth-note { margin: 18px 0 0; color: var(--animal-text-color-secondary); font-size: 14px; line-height: 1.6; }
+.challenge-backup-note, .challenge-backup-status { margin: 0; color: var(--animal-text-color-secondary); font-size: 14px; line-height: 1.6; }
 @media (max-width: 700px) {
   .challenge-page { padding: 18px 14px 42px; }
   .challenge-card-grid, .challenge-task-grid { grid-template-columns: 1fr; }
