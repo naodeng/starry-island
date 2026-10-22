@@ -56,27 +56,27 @@
 - `ChallengeAttempt` 新增必填字段 `snapshotSchemaVersion: number`。
 - 新建挑战时写入当前快照结构版本，保留现有 `contentManifestVersion` 的写入行为。
 
-- [ ] **步骤 1：先写失败测试**
+- [x] **步骤 1：先写失败测试**
 
   在 `ChallengeRunner.test.tsx` 增加 `writes snapshot schema version 1 when starting a challenge`：开始挑战后检查 IndexedDB 中的快照含 `snapshotSchemaVersion: 1`，且 `contentManifestVersion` 仍为传入的题库版本。
 
-- [ ] **步骤 2：确认测试失败**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/ui/ChallengeRunner.test.tsx`
 
   预期：新断言因当前快照缺少结构版本字段而失败。
 
-- [ ] **步骤 3：实现最小改动**
+- [x] **步骤 3：实现最小改动**
 
   在 `snapshotSchema.ts` 导出当前版本常量；更新 `ChallengeAttempt` 并在 `ChallengeRunner.startAttempt()` 创建记录时写入该常量。更新现有测试构造器，使新建的受支持快照均明确携带版本。
 
-- [ ] **步骤 4：运行相关测试**
+- [x] **步骤 4：运行相关测试**
 
   运行：`npm run test:unit -- src/challenges/ui/ChallengeRunner.test.tsx src/challenges/domain/attempt.test.ts`
 
   预期：全部通过，答题、评分和修订号断言保持不变。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`feat(challenges): version active attempt snapshots`
 
@@ -94,27 +94,27 @@
 - 迁移函数接收升级事务；对 `attempts` 使用该事务中的游标更新。不得在 `upgradeneeded` 完成后另开事务补版本。
 - 当前数据库记录验证拒绝未知结构版本，既有隔离仓库保留原始异常记录。
 
-- [ ] **步骤 1：先写失败迁移测试**
+- [x] **步骤 1：先写失败迁移测试**
 
   增加 `upgrades a version 3 challenge database without changing its active attempt`：创建含活动快照、恢复点、成绩和最近题目记录的 v3 数据库；升级后断言活动快照和恢复点内快照仅增加版本 `1`，已保存答案、顺序、索引、种子、内容版本和修订号完全保留，其他仓库记录仍可读。
 
-- [ ] **步骤 2：确认测试失败**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/storage/indexedDbRepository.test.ts -t "version 3 challenge database"`
 
   预期：当前仓库版本仍为 3，迁移测试失败。
 
-- [ ] **步骤 3：实现 v3→v4 迁移**
+- [x] **步骤 3：实现 v3→v4 迁移**
 
   将迁移回调扩展为可使用 `IDBTransaction`，在 v3→v4 的 `upgradeneeded` 事务内遍历并更新旧活动快照，并读取/更新 `recovery-point` 中经完整结构校验的旧快照；仅为确认属于旧结构且缺少字段的快照补版本 `1`。恢复点无法安全归一化时保持原样交给后续隔离流程。迁移失败应中止升级事务，由 IndexedDB 回滚，保留升级前数据库。将记录校验收紧为仅接受当前已支持的结构版本；未知版本记录由现有隔离仓库保留原始内容。
 
-- [ ] **步骤 4：运行迁移和隔离测试**
+- [x] **步骤 4：运行迁移和隔离测试**
 
   运行：`npm run test:unit -- src/challenges/storage/indexedDbRepository.test.ts`
 
   预期：v1、v2、v3 升级用例和异常记录隔离用例通过；原有数据字段无丢失。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`fix(challenges): migrate active snapshot schema`
 
@@ -133,27 +133,27 @@
 - `parseChallengeBackup()` 返回已通过原始结构与摘要校验、但尚未归一化的导入类型；只有调用方在其成功后才能归一化，再生成预览或传给仓库。
 - `ChallengeBackup` 外层格式和版本保持 `starry-island-challenge-backup` / `1`；新导出包含快照结构版本。
 
-- [ ] **步骤 1：先写失败兼容测试**
+- [x] **步骤 1：先写失败兼容测试**
 
   在 `backup.test.ts` 增加：旧 v1 备份缺少快照结构字段仍能通过原始摘要验证；归一化后字段为 `1` 且答案/题目快照不变；字段为未知版本时拒绝；篡改旧备份载荷时摘要验证失败。另断言新导出的进行中快照含版本字段且外层仍为 v1。
 
-- [ ] **步骤 2：确认测试失败**
+- [x] **步骤 2：确认测试失败**
 
   运行：`npm run test:unit -- src/challenges/domain/backup.test.ts`
 
   预期：旧记录当前不能被正确区分和归一化，新增断言失败。
 
-- [ ] **步骤 3：实现验证与归一化顺序**
+- [x] **步骤 3：实现验证与归一化顺序**
 
   拆分“备份导入形状校验”和“当前本地记录校验”：`parseChallengeBackup()` 必须先接受当前快照或已知旧快照形状，基于未修改的导入载荷校验 SHA-256，返回导入类型；页面仅在解析成功后调用归一化函数，再生成预览或合并。仓库和新导出仍严格要求当前版本字段。不得在摘要校验前复制、补字段或序列化改写输入。旧偏好字段仍按原备份规则处理。
 
-- [ ] **步骤 4：运行备份与导入测试**
+- [x] **步骤 4：运行备份与导入测试**
 
   运行：`npm run test:unit -- src/challenges/domain/backup.test.ts src/challenges/domain/backupMerge.test.ts`，并运行：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --workers=1`。
 
   预期：旧 v1 与新 v1 备份可导入，完整性失败和未知结构不会写入 IndexedDB，合并仍保留本机进行中记录。
 
-- [ ] **步骤 5：提交本任务**
+- [x] **步骤 5：提交本任务**
 
   提交信息：`fix(challenges): preserve legacy snapshot backups`
 
