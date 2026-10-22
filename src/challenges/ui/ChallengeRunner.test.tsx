@@ -238,6 +238,10 @@ describe('ChallengeRunner', () => {
         contentManifestVersion: 'test-v1',
       });
     });
+    const progress = screen.getByRole('progressbar');
+    expect(progress).toHaveAttribute('aria-label', '已完成题数');
+    expect(progress).toHaveAttribute('aria-valuenow', '0');
+    expect(progress).toHaveAttribute('aria-valuetext', '已完成 0/1 题');
   });
 
   it('applies the challenge group grade tier to the question card', async () => {

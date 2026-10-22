@@ -407,7 +407,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           <Button type="text" onClick={() => onNavigate(getChallengeGroupPath(loadedGroup.group.definition.id))}>返回任务列表</Button>
           <p className="eyebrow">{task.difficulty === 'basic' ? '基础闯关' : task.difficulty === 'advanced' ? '进阶闯关' : '高阶闯关'}</p>
           <h1>{taskTitle}</h1>
-          <div className="challenge-runner-progress" role="progressbar" aria-label={`题目进度 ${Math.min(attempt.currentIndex + 1, attempt.questions.length)}/${attempt.questions.length}`} aria-valuemin={0} aria-valuemax={attempt.questions.length} aria-valuenow={attempt.currentIndex}>
+          <div className="challenge-runner-progress" role="progressbar" aria-label="已完成题数" aria-valuemin={0} aria-valuemax={attempt.questions.length} aria-valuenow={attempt.currentIndex} aria-valuetext={`已完成 ${attempt.currentIndex}/${attempt.questions.length} 题`}>
             <span>已完成 {attempt.currentIndex}/{attempt.questions.length} 题</span>
             {restored && <strong>已恢复上次保存的进度</strong>}
           </div>

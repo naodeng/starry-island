@@ -629,9 +629,14 @@ test('saves, restores and completes a challenge without changing learning progre
   await expect(page.getByText('已完成 0/15 题')).toBeVisible();
   await expect(page.getByRole('button', { name: /提示|重试/ })).toHaveCount(0);
   await expect(page.getByText('解题说明')).toHaveCount(0);
+  const accessibleProgress = page.getByRole('progressbar', { name: '已完成题数' });
+  await expect(accessibleProgress).toHaveAttribute('aria-valuenow', '0');
+  await expect(accessibleProgress).toHaveAttribute('aria-valuetext', '已完成 0/15 题');
 
   await submitCurrentAnswer(page);
   await expect(page.getByText('已完成 1/15 题')).toBeVisible();
+  await expect(accessibleProgress).toHaveAttribute('aria-valuenow', '1');
+  await expect(accessibleProgress).toHaveAttribute('aria-valuetext', '已完成 1/15 题');
   const nextPrompt = await questionHeading.textContent();
 
   await page.reload();
@@ -810,6 +815,84 @@ test('adapts prompt density to grade tiers while preserving theme and narrow-scr
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   expect(await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
+});
+
+test('keeps an answer pending after an IndexedDB transaction abort and saves it on retry', async ({ page }) => {
+  await page.goto(taskUrl);
+  await expect(page.getByRole('heading', { name: '基础闯关 1' })).toBeVisible();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+
+  await page.evaluate(() => {
+    const originalPut = IDBObjectStore.prototype.put;
+    let injected = false;
+    IDBObjectStore.prototype.put = function (value, key) {
+      if (!injected && this.name === 'attempts') {
+        injected = true;
+        throw new DOMException('Injected storage quota failure', 'QuotaExceededError');
+      }
+      return arguments.length > 1
+        ? originalPut.call(this, value, key)
+        : originalPut.call(this, value);
+    };
+  });
+
+  await submitCurrentAnswer(page);
+  await expect(page.getByRole('alert')).toContainText('本机闯关记录暂时无法读取或保存');
+  await expect(page.getByText('已完成 0/15 题')).toBeVisible();
+  await expect(page.getByRole('button', { name: '重试保存答案' })).toBeVisible();
+
+  await page.getByRole('button', { name: '重试保存答案' }).click();
+  await expect(page.getByText('已完成 1/15 题')).toBeVisible();
+  const nextPrompt = await page.locator('.challenge-activity h2').textContent();
+
+  await page.reload();
+  await expect(page.getByText('已恢复上次保存的进度')).toBeVisible();
+  await expect(page.locator('.challenge-activity h2')).toHaveText(nextPrompt ?? '');
+  await expect(page.getByText('已完成 1/15 题')).toBeVisible();
+});
+
+test('cancelling the browser discard confirmation preserves the challenge before confirmed discard', async ({ page }) => {
+  await page.goto(taskUrl);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  const questionHeading = page.locator('.challenge-activity h2');
+  await expect(questionHeading).toBeVisible();
+  const prompt = await questionHeading.textContent();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  const cancelDialog = page.waitForEvent('dialog');
+  const cancelClick = page.getByRole('button', { name: '放弃本次闯关' }).click();
+  const cancelledConfirmation = await cancelDialog;
+  expect(cancelledConfirmation.message()).toBe('放弃后，这次未完成的闯关记录会删除，也不会计入成绩。要放弃吗？');
+  await cancelledConfirmation.dismiss();
+  await cancelClick;
+  await expect(questionHeading).toHaveText(prompt ?? '');
+  await expect(page.getByText('已完成 0/15 题')).toBeVisible();
+
+  const confirmDialog = page.waitForEvent('dialog');
+  const confirmClick = page.getByRole('button', { name: '放弃本次闯关' }).click();
+  const acceptedConfirmation = await confirmDialog;
+  await acceptedConfirmation.accept();
+  await confirmClick;
+  await expect(page.getByText('准备开始了吗？')).toBeVisible();
+  await expect(page.locator('.challenge-activity h2')).toHaveCount(0);
+
+  const activeAttempt = await page.evaluate(async (id) => new Promise<unknown>((resolve, reject) => {
+    const open = indexedDB.open('starry-island-challenges');
+    open.onerror = () => reject(open.error);
+    open.onsuccess = () => {
+      const database = open.result;
+      const transaction = database.transaction('attempts', 'readonly');
+      const request = transaction.objectStore('attempts').get(id);
+      transaction.oncomplete = () => {
+        resolve(request.result);
+        database.close();
+      };
+      transaction.onerror = () => reject(transaction.error);
+    };
+  }), taskId);
+  expect(activeAttempt).toBeUndefined();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
 
 test('starts and restores a submitted answer in the chapter-ordered semester pilot', async ({ page }) => {
