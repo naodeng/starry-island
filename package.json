@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test:unit": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "challenge:quality": "node scripts/challenges/quality.mjs"
   },
   "dependencies": {
     "animal-island-ui": "^2.2.1",
