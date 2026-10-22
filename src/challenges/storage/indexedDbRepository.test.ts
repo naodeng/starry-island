@@ -1,8 +1,10 @@
-import { afterEach, describe, expect, it } from 'vitest';
-import { IDBFactory } from 'fake-indexeddb';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { IDBFactory, IDBKeyRange as FakeIDBKeyRange } from 'fake-indexeddb';
 import type { ActivityDefinition } from '../../content/types';
+import type { ChallengeBackupData } from '../domain/backup';
 import { finalizeAttempt, submitFirstAnswer } from '../domain/attempt';
 import type { ChallengeAttempt, ChallengeQuestionSnapshot, TaskProgress } from '../domain/types';
+import type { QuarantinedChallengeRecord } from './repository';
 import { ActiveAttemptExistsError, InvalidAttemptTransitionError, RevisionConflictError } from './repository';
 import { CHALLENGE_DATABASE_VERSION, createChallengeRepository } from './indexedDbRepository';
 
@@ -15,6 +17,131 @@ function createRepository() {
   });
   repositories.push(repository);
   return repository;
+}
+
+async function createSeedableRepository(factory = new IDBFactory(), databaseName = `challenge-quarantine-recovery-${crypto.randomUUID()}`) {
+  if (typeof globalThis.IDBKeyRange === 'undefined') vi.stubGlobal('IDBKeyRange', FakeIDBKeyRange);
+  const repository = createChallengeRepository({ factory, databaseName });
+  repositories.push(repository);
+  await repository.getQuarantinedRecordCount();
+  return { repository, factory, databaseName };
+}
+
+function makeLegacyAttempt(taskId = 'task-legacy') {
+  const { snapshotSchemaVersion: _version, ...attempt } = makeAttempt(taskId, `attempt-${taskId}`, [`question-${taskId}`]);
+  return attempt;
+}
+
+function makeQuarantinedRow(
+  record: unknown,
+  overrides: Partial<QuarantinedChallengeRecord> = {},
+): QuarantinedChallengeRecord {
+  return {
+    sourceStore: 'attempts',
+    sourceKey: 'task-legacy',
+    quarantinedAt: '2026-10-22T11:30:00.000Z',
+    reasonCode: 'invalid-attempts',
+    record,
+    ...overrides,
+  };
+}
+
+async function openTestDatabase(factory: IDBFactory, databaseName: string): Promise<IDBDatabase> {
+  return new Promise((resolve, reject) => {
+    const request = factory.open(databaseName);
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+}
+
+async function addQuarantinedRow(
+  factory: IDBFactory,
+  databaseName: string,
+  row: QuarantinedChallengeRecord,
+): Promise<IDBValidKey> {
+  const database = await openTestDatabase(factory, databaseName);
+  try {
+    return await new Promise((resolve, reject) => {
+      const transaction = database.transaction('quarantinedRecords', 'readwrite');
+      const request = transaction.objectStore('quarantinedRecords').add(row);
+      let quarantineId: IDBValidKey;
+      request.onsuccess = () => { quarantineId = request.result; };
+      request.onerror = () => reject(request.error);
+      transaction.oncomplete = () => resolve(quarantineId);
+      transaction.onerror = () => reject(transaction.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error('Could not seed a quarantined record.'));
+    });
+  } finally {
+    database.close();
+  }
+}
+
+async function replaceQuarantinedRow(
+  factory: IDBFactory,
+  databaseName: string,
+  quarantineId: IDBValidKey,
+  row: QuarantinedChallengeRecord,
+): Promise<void> {
+  const database = await openTestDatabase(factory, databaseName);
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const transaction = database.transaction('quarantinedRecords', 'readwrite');
+      transaction.objectStore('quarantinedRecords').put(row, quarantineId);
+      transaction.oncomplete = () => resolve();
+      transaction.onerror = () => reject(transaction.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error('Could not replace a quarantined record.'));
+    });
+  } finally {
+    database.close();
+  }
+}
+
+async function createRepositoryWithRawActiveRecord(
+  rawActiveRecord: unknown,
+  quarantinedRow: QuarantinedChallengeRecord,
+) {
+  const factory = new IDBFactory();
+  const databaseName = `challenge-quarantine-raw-${crypto.randomUUID()}`;
+  const database = await new Promise<IDBDatabase>((resolve, reject) => {
+    const request = factory.open(databaseName, CHALLENGE_DATABASE_VERSION);
+    request.onupgradeneeded = () => {
+      request.result.createObjectStore('attempts', { keyPath: 'taskId' });
+      request.result.createObjectStore('taskProgress', { keyPath: 'taskId' });
+      request.result.createObjectStore('challengeMeta', { keyPath: 'key' });
+      request.result.createObjectStore('wrongQuestions', { keyPath: 'questionId' });
+      request.result.createObjectStore('quarantinedRecords', { autoIncrement: true });
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+  const quarantineId = await new Promise<IDBValidKey>((resolve, reject) => {
+    const transaction = database.transaction(['attempts', 'quarantinedRecords'], 'readwrite');
+    transaction.objectStore('attempts').put(rawActiveRecord);
+    const request = transaction.objectStore('quarantinedRecords').add(quarantinedRow);
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+    transaction.onerror = () => reject(transaction.error);
+    transaction.onabort = () => reject(transaction.error ?? new Error('Could not seed raw challenge records.'));
+  });
+  database.close();
+
+  const repository = createChallengeRepository({ factory, databaseName });
+  repositories.push(repository);
+  return { repository, factory, databaseName, quarantineId };
+}
+
+function activeRecoveryPoint(data: ChallengeBackupData = {
+  attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
+}, now = new Date().toISOString()) {
+  const createdAt = new Date(Date.parse(now) - 60 * 60 * 1000).toISOString();
+  return {
+    key: 'recovery-point',
+    format: 'starry-island-challenge-recovery',
+    version: 1,
+    createdAt,
+    expiresAt: new Date(Date.parse(createdAt) + 24 * 60 * 60 * 1000).toISOString(),
+    data,
+  };
 }
 
 function question(questionId: string, answer = 1): ChallengeQuestionSnapshot {
@@ -102,6 +229,7 @@ async function completeWithWrongAnswer(repository: ReturnType<typeof createChall
 
 afterEach(() => {
   for (const repository of repositories.splice(0)) repository.close();
+  vi.unstubAllGlobals();
 });
 
 describe('IndexedDB challenge repository', () => {
@@ -778,5 +906,324 @@ describe('IndexedDB challenge repository', () => {
     expect(await repository.getTaskProgress('task-1')).toBeNull();
     expect(await repository.getRecentQuestionIds()).toEqual([]);
     expect(await repository.getWrongQuestions()).toEqual([]);
+  });
+});
+
+describe('quarantined challenge record recovery repository', () => {
+  it('pages-quarantined-records-by-primary-key-descending', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    for (let index = 0; index < 105; index += 1) {
+      await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(
+        { privateContent: `answer-${index}` },
+        { sourceStore: 'unknown-store', sourceKey: `key-${index}`, reasonCode: 'unknown-reason' },
+      ));
+    }
+
+    const first = await repository.getQuarantinedRecordPage();
+    const second = await repository.getQuarantinedRecordPage(first.nextCursor ?? undefined);
+    const third = await repository.getQuarantinedRecordPage(second.nextCursor ?? undefined);
+    const allIds = [...first.items, ...second.items, ...third.items].map(({ quarantineId }) => quarantineId);
+
+    expect(first.items).toHaveLength(50);
+    expect(second.items).toHaveLength(50);
+    expect(third.items).toHaveLength(5);
+    expect(first.nextCursor).toBe(56);
+    expect(second.nextCursor).toBe(6);
+    expect(third.nextCursor).toBeNull();
+    expect(allIds).toEqual(Array.from({ length: 105 }, (_, index) => 105 - index));
+  });
+
+  it('returns-safe-page-summaries-without-raw-records', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-page-safe', 'attempt-page-safe', ['question-safe']);
+    await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+
+    const page = await repository.getQuarantinedRecordPage();
+    const exported = await repository.getQuarantinedRecords();
+
+    expect(page.items[0]).toMatchObject({
+      sourceStore: 'attempts', sourceKey: attempt.taskId, status: 'eligible', targetStore: 'attempts', targetKey: attempt.taskId,
+    });
+    expect(page.items[0]).not.toHaveProperty('record');
+    expect(page.items[0]).not.toHaveProperty('answers');
+    expect(exported[0]).toEqual(makeQuarantinedRow(attempt, { sourceKey: attempt.taskId }));
+    expect(exported[0]).not.toHaveProperty('quarantineId');
+  });
+
+  it('previews-record-without-mutating-indexeddb', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-preview', 'attempt-preview', ['question-preview']);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+    const before = await repository.getQuarantinedRecords();
+    const startedAt = Date.now();
+    const now = new Date(startedAt).toISOString();
+
+    const preview = await repository.previewQuarantinedRecord(quarantineId, now);
+    const finishedAt = Date.now();
+
+    expect(preview).toMatchObject({
+      status: 'eligible', quarantineId, targetStore: 'attempts', targetKey: attempt.taskId,
+      normalization: 'none',
+    });
+    if (preview.status !== 'eligible') throw new Error('The attempt should be eligible for preview.');
+    expect(Date.parse(preview.expiresAt)).toBeGreaterThanOrEqual(startedAt + 5 * 60 * 1000);
+    expect(Date.parse(preview.expiresAt)).toBeLessThanOrEqual(finishedAt + 5 * 60 * 1000);
+    expect(preview).toHaveProperty('token');
+    expect(JSON.stringify(preview)).not.toContain('question-preview');
+    expect(await repository.getQuarantinedRecords()).toEqual(before);
+    expect(await repository.getActiveAttempt(attempt.taskId)).toBeNull();
+  });
+
+  it('does-not-extend-preview-lifetime-using-caller-supplied-time', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-preview-expiry-bound', 'attempt-preview-expiry-bound', ['question-preview-expiry-bound']);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+    const startedAt = Date.now();
+    const futureNow = new Date(startedAt + 60 * 60 * 1000).toISOString();
+
+    const preview = await repository.previewQuarantinedRecord(quarantineId, futureNow);
+    const finishedAt = Date.now();
+
+    expect(preview.status).toBe('eligible');
+    if (preview.status !== 'eligible') throw new Error('The attempt should remain eligible for preview.');
+    expect(Date.parse(preview.expiresAt)).toBeGreaterThanOrEqual(startedAt + 5 * 60 * 1000);
+    expect(Date.parse(preview.expiresAt)).toBeLessThanOrEqual(finishedAt + 5 * 60 * 1000);
+  });
+
+  it('marks-active-primary-key-as-conflict', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-conflict-summary', 'attempt-conflict-summary', ['question-conflict-summary']);
+    await repository.beginAttempt(attempt);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+
+    const page = await repository.getQuarantinedRecordPage();
+    const preview = await repository.previewQuarantinedRecord(quarantineId, new Date().toISOString());
+
+    expect(page.items[0]).toMatchObject({ status: 'blocked', blockReason: 'target-conflict' });
+    expect(preview).toEqual({
+      status: 'blocked', quarantineId, sourceStore: 'attempts', reason: 'target-conflict',
+    });
+    expect(await repository.getQuarantinedRecordCount()).toBe(1);
+  });
+
+  it('does-not-sanitize-active-records-during-quarantine-preview', async () => {
+    const attempt = makeAttempt('task-invalid-active-preview', 'attempt-invalid-active-preview', ['question-invalid-active']);
+    const rawActiveRecord = { taskId: attempt.taskId, status: 'corrupt' };
+    const context = await createRepositoryWithRawActiveRecord(rawActiveRecord, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+
+    const preview = await context.repository.previewQuarantinedRecord(context.quarantineId, new Date().toISOString());
+    const database = await openTestDatabase(context.factory, context.databaseName);
+    const rawState = await new Promise<{ active: unknown; quarantined: unknown[] }>((resolve, reject) => {
+      const transaction = database.transaction(['attempts', 'quarantinedRecords'], 'readonly');
+      const activeRequest = transaction.objectStore('attempts').get(attempt.taskId);
+      const quarantineRequest = transaction.objectStore('quarantinedRecords').getAll();
+      let active: unknown;
+      let quarantined: unknown[];
+      activeRequest.onsuccess = () => { active = activeRequest.result; };
+      quarantineRequest.onsuccess = () => { quarantined = quarantineRequest.result; };
+      transaction.oncomplete = () => resolve({ active, quarantined });
+      transaction.onerror = () => reject(transaction.error);
+    });
+    database.close();
+
+    expect(preview).toMatchObject({ status: 'blocked', reason: 'target-conflict' });
+    expect(rawState.active).toEqual(rawActiveRecord);
+    expect(rawState.quarantined).toHaveLength(1);
+  });
+
+  it('restores-confirmed-record-and-legacy-attempt-atomically', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const legacy = makeLegacyAttempt('task-legacy-restore');
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(legacy, {
+      sourceKey: legacy.taskId,
+    }));
+    const preview = await repository.previewQuarantinedRecord(quarantineId, new Date().toISOString());
+
+    expect(preview).toMatchObject({ status: 'eligible', normalization: 'attempt-snapshot-v1' });
+    if (preview.status !== 'eligible') throw new Error('The known legacy attempt should be eligible.');
+    await expect(repository.confirmQuarantinedRecordRestore(preview.token)).resolves.toEqual({ status: 'restored' });
+
+    expect(await repository.getActiveAttempt(legacy.taskId)).toEqual({ ...legacy, snapshotSchemaVersion: 1 });
+    expect(await repository.getQuarantinedRecordCount()).toBe(0);
+  });
+
+  it('restores-recovery-point-only-to-meta-store', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const now = new Date().toISOString();
+    const point = activeRecoveryPoint({
+      attempts: [makeAttempt('task-inside-recovery-point', 'attempt-inside-recovery-point', ['question-inner'])],
+      taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
+    }, now);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(point, {
+      sourceStore: 'challengeMeta', sourceKey: 'recovery-point', reasonCode: 'invalid-recovery-point',
+    }));
+    const preview = await repository.previewQuarantinedRecord(quarantineId, now);
+
+    expect(preview).toMatchObject({ status: 'eligible', targetStore: 'challengeMeta', targetKey: 'recovery-point' });
+    if (preview.status !== 'eligible') throw new Error('The active recovery point should be eligible.');
+    await expect(repository.confirmQuarantinedRecordRestore(preview.token)).resolves.toEqual({ status: 'restored' });
+
+    expect(await repository.getRecoveryPoint(now)).toEqual(point);
+    expect(await repository.getActiveAttempt('task-inside-recovery-point')).toBeNull();
+    expect(await repository.getTaskProgress('task-inside-recovery-point')).toBeNull();
+  });
+
+  it('keeps-quarantined-record-on-target-key-conflict', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-confirm-conflict', 'attempt-confirm-conflict', ['question-confirm-conflict']);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+    const preview = await repository.previewQuarantinedRecord(quarantineId, new Date().toISOString());
+    if (preview.status !== 'eligible') throw new Error('The initial preview should be eligible.');
+    await repository.beginAttempt(attempt);
+
+    await expect(repository.confirmQuarantinedRecordRestore(preview.token)).resolves.toEqual({ status: 'target-conflict' });
+
+    expect(await repository.getActiveAttempt(attempt.taskId)).toEqual(attempt);
+    expect(await repository.getQuarantinedRecordCount()).toBe(1);
+  });
+
+  it('rejects-preview-after-quarantined-row-changes', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-stale-preview', 'attempt-stale-preview', ['question-stale-preview']);
+    const original = makeQuarantinedRow(attempt, { sourceKey: attempt.taskId });
+    const quarantineId = await addQuarantinedRow(factory, databaseName, original);
+    const preview = await repository.previewQuarantinedRecord(quarantineId, new Date().toISOString());
+    if (preview.status !== 'eligible') throw new Error('The initial preview should be eligible.');
+    await replaceQuarantinedRow(factory, databaseName, quarantineId, {
+      ...original,
+      quarantinedAt: '2026-10-22T11:45:00.000Z',
+    });
+
+    await expect(repository.confirmQuarantinedRecordRestore(preview.token)).resolves.toEqual({ status: 'stale-preview' });
+
+    expect(await repository.getActiveAttempt(attempt.taskId)).toBeNull();
+    expect(await repository.getQuarantinedRecordCount()).toBe(1);
+    expect((await repository.getQuarantinedRecords())[0]?.quarantinedAt).toBe('2026-10-22T11:45:00.000Z');
+  });
+
+  it('expires-preview-token-after-five-minutes', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-expired-preview', 'attempt-expired-preview', ['question-expired-preview']);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+    const currentTime = Date.now();
+    vi.spyOn(Date, 'now').mockReturnValue(currentTime);
+    const expiredNow = new Date(currentTime - 6 * 60 * 1000).toISOString();
+    const preview = await repository.previewQuarantinedRecord(quarantineId, expiredNow);
+
+    expect(preview.status).toBe('eligible');
+    if (preview.status !== 'eligible') throw new Error('The attempt should remain eligible for preview.');
+    vi.mocked(Date.now).mockReturnValue(currentTime + 6 * 60 * 1000);
+    await expect(repository.confirmQuarantinedRecordRestore(preview.token)).resolves.toEqual({ status: 'stale-preview' });
+    vi.restoreAllMocks();
+    expect(await repository.getQuarantinedRecordCount()).toBe(1);
+  });
+
+  it('replaces-and-cancels-single-pending-preview', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const firstAttempt = makeAttempt('task-first-preview', 'attempt-first-preview', ['question-first-preview']);
+    const secondAttempt = makeAttempt('task-second-preview', 'attempt-second-preview', ['question-second-preview']);
+    const firstId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(firstAttempt, {
+      sourceKey: firstAttempt.taskId,
+    }));
+    const secondId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(secondAttempt, {
+      sourceKey: secondAttempt.taskId,
+    }));
+    const now = new Date().toISOString();
+    const firstPreview = await repository.previewQuarantinedRecord(firstId, now);
+    const secondPreview = await repository.previewQuarantinedRecord(secondId, now);
+    if (firstPreview.status !== 'eligible' || secondPreview.status !== 'eligible') {
+      throw new Error('Both attempts should be eligible for preview.');
+    }
+
+    await expect(repository.confirmQuarantinedRecordRestore(firstPreview.token)).resolves.toEqual({ status: 'stale-preview' });
+    repository.cancelQuarantinedRecordPreview(secondPreview.token);
+    await expect(repository.confirmQuarantinedRecordRestore(secondPreview.token)).resolves.toEqual({ status: 'stale-preview' });
+    expect(await repository.getQuarantinedRecordCount()).toBe(2);
+  });
+
+  it('invalidates-preview-token-on-close', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-closed-preview', 'attempt-closed-preview', ['question-closed-preview']);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+    const preview = await repository.previewQuarantinedRecord(quarantineId, new Date().toISOString());
+    if (preview.status !== 'eligible') throw new Error('The attempt should be eligible for preview.');
+    repository.close();
+
+    await expect(repository.confirmQuarantinedRecordRestore(preview.token)).resolves.toEqual({ status: 'stale-preview' });
+  });
+
+  it('allows-only-one-of-two-repositories-to-restore', async () => {
+    const { repository: firstRepository, factory, databaseName } = await createSeedableRepository();
+    const secondRepository = createChallengeRepository({ factory, databaseName });
+    repositories.push(secondRepository);
+    const attempt = makeAttempt('task-competing-repositories', 'attempt-competing-repositories', ['question-competing']);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+    const now = new Date().toISOString();
+    const [firstPreview, secondPreview] = await Promise.all([
+      firstRepository.previewQuarantinedRecord(quarantineId, now),
+      secondRepository.previewQuarantinedRecord(quarantineId, now),
+    ]);
+    if (firstPreview.status !== 'eligible' || secondPreview.status !== 'eligible') {
+      throw new Error('Both repositories should be able to preview before either confirms.');
+    }
+
+    const results = await Promise.all([
+      firstRepository.confirmQuarantinedRecordRestore(firstPreview.token),
+      secondRepository.confirmQuarantinedRecordRestore(secondPreview.token),
+    ]);
+
+    expect(results.map(({ status }) => status).sort()).toEqual(['restored', 'stale-preview']);
+    expect(await firstRepository.getActiveAttempt(attempt.taskId)).toEqual(attempt);
+    expect(await firstRepository.getQuarantinedRecordCount()).toBe(0);
+  });
+
+  it('rolls-back-both-stores-when-restore-transaction-aborts', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    const attempt = makeAttempt('task-rollback', 'attempt-rollback', ['question-rollback']);
+    const quarantineId = await addQuarantinedRow(factory, databaseName, makeQuarantinedRow(attempt, {
+      sourceKey: attempt.taskId,
+    }));
+    const preview = await repository.previewQuarantinedRecord(quarantineId, new Date().toISOString());
+    if (preview.status !== 'eligible') throw new Error('The attempt should be eligible for preview.');
+    const database = await openTestDatabase(factory, databaseName);
+    const transaction = database.transaction('attempts', 'readonly');
+    const prototype = Object.getPrototypeOf(transaction.objectStore('attempts')) as Record<string, unknown>;
+    transaction.abort();
+    const originalAdd = prototype.add as (...args: unknown[]) => IDBRequest;
+    prototype.add = function (this: IDBObjectStore, ...args: unknown[]) {
+      const request = originalAdd.apply(this, args);
+      if (this.name === 'attempts') {
+        request.addEventListener('success', () => this.transaction.abort(), { once: true });
+      }
+      return request;
+    };
+
+    try {
+      await expect(repository.confirmQuarantinedRecordRestore(preview.token)).rejects.toBeDefined();
+    } finally {
+      prototype.add = originalAdd;
+      database.close();
+    }
+
+    expect(await repository.getActiveAttempt(attempt.taskId)).toBeNull();
+    expect(await repository.getQuarantinedRecordCount()).toBe(1);
   });
 });

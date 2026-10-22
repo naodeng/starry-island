@@ -1,6 +1,10 @@
 import { submitAnswer } from '../../learning/answers';
 import { isChallengeBackupData, normalizeImportedChallengeBackupData } from '../domain/backup';
 import type { ChallengeBackupData, ChallengeBackupImportData } from '../domain/backup';
+import { prepareQuarantinedRecordForRestore, serializeQuarantineComparableValue } from '../domain/quarantineRecovery';
+import type {
+  QuarantineRecoveryPreparation,
+} from '../domain/quarantineRecovery';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import { gradeAttempt } from '../domain/grading';
 import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
@@ -24,7 +28,16 @@ import {
   InvalidAttemptTransitionError,
   RevisionConflictError,
 } from './repository';
-import type { ChallengeRepository, ChallengeRepositoryOptions, QuarantinedChallengeRecord } from './repository';
+import type {
+  ChallengeRepository,
+  ChallengeRepositoryOptions,
+  QuarantineRecoveryBlockReason,
+  QuarantinedChallengeRecord,
+  QuarantinedRecordPage,
+  QuarantinedRecordSummary,
+  QuarantineRecoveryPreview,
+  QuarantineRestoreResult,
+} from './repository';
 import { transitionWrongQuestion } from '../domain/wrongQuestions';
 
 export const CHALLENGE_DATABASE_VERSION = 4;
@@ -37,6 +50,24 @@ const QUARANTINED_RECORDS_STORE = 'quarantinedRecords';
 const RECENT_QUESTION_IDS_KEY = 'recent-question-ids';
 const RECOVERY_POINT_KEY = 'recovery-point';
 const MAX_RECENT_ATTEMPTS = 3;
+const QUARANTINE_PAGE_SIZE = 50;
+const QUARANTINE_PREVIEW_TTL_MS = 5 * 60 * 1000;
+const QUARANTINE_READ_STORES = [
+  QUARANTINED_RECORDS_STORE,
+  ATTEMPTS_STORE,
+  PROGRESS_STORE,
+  WRONG_QUESTIONS_STORE,
+  META_STORE,
+] as const;
+
+interface PendingQuarantinePreview {
+  token: string;
+  quarantineId: IDBValidKey;
+  row: QuarantinedChallengeRecord;
+  rowFingerprint: string;
+  preparation: Extract<QuarantineRecoveryPreparation, { status: 'eligible' }>;
+  expiresAtMs: number;
+}
 
 interface RecentQuestionIdsRecord {
   key: typeof RECENT_QUESTION_IDS_KEY;
@@ -333,12 +364,57 @@ function flattenRecentQuestionIds(record: RecentQuestionIdsRecord | undefined): 
   return recent;
 }
 
+function summarizeQuarantinedRecord(
+  quarantineId: IDBValidKey,
+  row: QuarantinedChallengeRecord,
+  preparation: QuarantineRecoveryPreparation,
+  overrideReason?: QuarantineRecoveryBlockReason,
+): QuarantinedRecordSummary {
+  if (preparation.status === 'blocked') {
+    return {
+      quarantineId,
+      sourceStore: row.sourceStore,
+      sourceKey: row.sourceKey,
+      quarantinedAt: row.quarantinedAt,
+      reasonCode: row.reasonCode,
+      status: 'blocked',
+      blockReason: preparation.reason,
+    };
+  }
+  if (overrideReason) {
+    return {
+      quarantineId,
+      sourceStore: row.sourceStore,
+      sourceKey: row.sourceKey,
+      quarantinedAt: row.quarantinedAt,
+      reasonCode: row.reasonCode,
+      status: 'blocked',
+      blockReason: overrideReason,
+      targetStore: preparation.targetStore,
+      targetKey: preparation.targetKey,
+    };
+  }
+  return {
+    quarantineId,
+    sourceStore: row.sourceStore,
+    sourceKey: row.sourceKey,
+    quarantinedAt: row.quarantinedAt,
+    reasonCode: row.reasonCode,
+    status: 'eligible',
+    targetStore: preparation.targetStore,
+    targetKey: preparation.targetKey,
+  };
+}
+
 export function createChallengeRepository(options: ChallengeRepositoryOptions = {}): ChallengeRepository {
   const factory = options.factory ?? globalThis.indexedDB;
   const databaseName = options.databaseName ?? DEFAULT_DATABASE_NAME;
   let databasePromise: Promise<IDBDatabase> | undefined;
   let sanitationPromise: Promise<void> | undefined;
   let database: IDBDatabase | undefined;
+  let pendingPreview: PendingQuarantinePreview | null = null;
+  let previewGeneration = 0;
+  let repositoryClosed = false;
 
   function openDatabase(): Promise<IDBDatabase> {
     if (!factory) return Promise.reject(new ChallengeRepositoryError('IndexedDB is unavailable in this browser.'));
@@ -364,6 +440,8 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
           database = undefined;
           databasePromise = undefined;
           sanitationPromise = undefined;
+          pendingPreview = null;
+          previewGeneration += 1;
         };
         resolve(request.result);
       };
@@ -383,15 +461,18 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
     storeNames: string | string[],
     mode: IDBTransactionMode,
     work: (tx: IDBTransaction, setResult: (value: T) => void, fail: (error: Error) => void) => void,
+    options: { skipSanitation?: boolean } = {},
   ): Promise<T> {
     const db = await openDatabase();
-    if (!sanitationPromise) {
-      sanitationPromise = quarantineInvalidRecords(db).catch((error: unknown) => {
-        sanitationPromise = undefined;
-        throw error;
-      });
+    if (!options.skipSanitation) {
+      if (!sanitationPromise) {
+        sanitationPromise = quarantineInvalidRecords(db).catch((error: unknown) => {
+          sanitationPromise = undefined;
+          throw error;
+        });
+      }
+      await sanitationPromise;
     }
-    await sanitationPromise;
     return new Promise<T>((resolve, reject) => {
       let tx: IDBTransaction;
       let result: T;
@@ -677,6 +758,232 @@ function readBackupSnapshot(
       });
     },
 
+    getQuarantinedRecordPage(afterKey) {
+      return transaction<QuarantinedRecordPage>([...QUARANTINE_READ_STORES], 'readonly', (tx, setResult, fail) => {
+        const store = tx.objectStore(QUARANTINED_RECORDS_STORE);
+        const rows: Array<{ quarantineId: IDBValidKey; row: QuarantinedChallengeRecord }> = [];
+        let cursorFinished = false;
+        let pendingTargetReads = 0;
+        let items: Array<QuarantinedRecordSummary | undefined> = [];
+        let nextCursor: IDBValidKey | null = null;
+
+        const finishWhenReady = () => {
+          if (cursorFinished && pendingTargetReads === 0) {
+            setResult({
+              items: items as QuarantinedRecordSummary[],
+              nextCursor,
+            });
+          }
+        };
+
+        const processRows = () => {
+          const visibleRows = rows.slice(0, QUARANTINE_PAGE_SIZE);
+          const hasMore = rows.length > QUARANTINE_PAGE_SIZE;
+          items = Array(visibleRows.length);
+          nextCursor = hasMore ? visibleRows[visibleRows.length - 1]?.quarantineId ?? null : null;
+
+          visibleRows.forEach(({ quarantineId, row }, index) => {
+            const candidate = {
+              sourceStore: row.sourceStore,
+              sourceKey: row.sourceKey,
+              reasonCode: row.reasonCode,
+              record: row.record,
+            };
+            const rowFingerprint = serializeQuarantineComparableValue({ quarantineId, row });
+            const preparation = rowFingerprint === null
+              ? { status: 'blocked' as const, reason: 'uncomparable-value' as const }
+              : prepareQuarantinedRecordForRestore(candidate);
+            if (preparation.status === 'blocked') {
+              items[index] = summarizeQuarantinedRecord(quarantineId, row, preparation);
+              return;
+            }
+
+            pendingTargetReads += 1;
+            const targetRead = tx.objectStore(preparation.targetStore).get(preparation.targetKey);
+            onRequest(targetRead, fail, (target) => {
+              items[index] = summarizeQuarantinedRecord(
+                quarantineId,
+                row,
+                preparation,
+                target === undefined ? undefined : 'target-conflict',
+              );
+              pendingTargetReads -= 1;
+              finishWhenReady();
+            });
+          });
+          cursorFinished = true;
+          finishWhenReady();
+        };
+
+        let range: IDBKeyRange | undefined;
+        try {
+          range = afterKey === undefined ? undefined : globalThis.IDBKeyRange.upperBound(afterKey, true);
+        } catch (error) {
+          fail(new ChallengeRepositoryError('The quarantine page cursor is invalid.', { cause: error }));
+          return;
+        }
+        const cursorRequest = store.openCursor(range, 'prev');
+        cursorRequest.onerror = () => fail(new ChallengeRepositoryError('Could not read quarantined challenge records.', { cause: cursorRequest.error }));
+        cursorRequest.onsuccess = () => {
+          const cursor = cursorRequest.result;
+          if (!cursor) {
+            processRows();
+            return;
+          }
+          rows.push({ quarantineId: cursor.primaryKey, row: cursor.value as QuarantinedChallengeRecord });
+          if (rows.length > QUARANTINE_PAGE_SIZE) {
+            processRows();
+            return;
+          }
+          cursor.continue();
+        };
+      }, { skipSanitation: true });
+    },
+
+    previewQuarantinedRecord(quarantineId, now = new Date().toISOString()) {
+      pendingPreview = null;
+      const generation = ++previewGeneration;
+      const nowMs = Date.parse(now);
+      const blockedPreview = (sourceStore: string, reason: QuarantineRecoveryBlockReason): QuarantineRecoveryPreview => ({
+        status: 'blocked', quarantineId, sourceStore, reason,
+      });
+      if (repositoryClosed) return Promise.resolve(blockedPreview('', 'invalid-record'));
+      if (!Number.isFinite(nowMs)) return Promise.resolve(blockedPreview('', 'invalid-record'));
+
+      return transaction<QuarantineRecoveryPreview>([...QUARANTINE_READ_STORES], 'readonly', (tx, setResult, fail) => {
+        onRequest(tx.objectStore(QUARANTINED_RECORDS_STORE).get(quarantineId), fail, (value) => {
+          if (!value || !isRecord(value)) {
+            setResult(blockedPreview('', 'invalid-record'));
+            return;
+          }
+          const row = value as unknown as QuarantinedChallengeRecord;
+          const candidate = {
+            sourceStore: row.sourceStore,
+            sourceKey: row.sourceKey,
+            reasonCode: row.reasonCode,
+            record: row.record,
+          };
+          const rowFingerprint = serializeQuarantineComparableValue({ quarantineId, row });
+          if (rowFingerprint === null) {
+            setResult(blockedPreview(row.sourceStore, 'uncomparable-value'));
+            return;
+          }
+          const preparation = prepareQuarantinedRecordForRestore(candidate, now);
+          if (preparation.status === 'blocked') {
+            setResult(blockedPreview(row.sourceStore, preparation.reason));
+            return;
+          }
+
+          onRequest(tx.objectStore(preparation.targetStore).get(preparation.targetKey), fail, (target) => {
+            if (target !== undefined) {
+              setResult(blockedPreview(row.sourceStore, 'target-conflict'));
+              return;
+            }
+            if (generation !== previewGeneration || repositoryClosed) {
+              setResult(blockedPreview(row.sourceStore, 'invalid-record'));
+              return;
+            }
+            const expiresAtMs = Date.now() + QUARANTINE_PREVIEW_TTL_MS;
+            const token = crypto.randomUUID();
+            pendingPreview = {
+              token,
+              quarantineId,
+              row,
+              rowFingerprint,
+              preparation,
+              expiresAtMs,
+            };
+            setResult({
+              status: 'eligible',
+              quarantineId,
+              sourceStore: row.sourceStore,
+              sourceKey: row.sourceKey,
+              token,
+              targetStore: preparation.targetStore,
+              targetKey: preparation.targetKey,
+              normalization: preparation.normalization,
+              expiresAt: new Date(expiresAtMs).toISOString(),
+            });
+          });
+        });
+      }, { skipSanitation: true });
+    },
+
+    cancelQuarantinedRecordPreview(token) {
+      if (pendingPreview?.token !== token) return;
+      pendingPreview = null;
+      previewGeneration += 1;
+    },
+
+    confirmQuarantinedRecordRestore(token) {
+      const pending = pendingPreview;
+      if (!pending || pending.token !== token || Date.now() >= pending.expiresAtMs || repositoryClosed) {
+        if (pending?.token === token) pendingPreview = null;
+        return Promise.resolve({ status: 'stale-preview' });
+      }
+      pendingPreview = null;
+      previewGeneration += 1;
+
+      return transaction<QuarantineRestoreResult>(
+        [QUARANTINED_RECORDS_STORE, pending.preparation.targetStore],
+        'readwrite',
+        (tx, setResult, fail) => {
+          const quarantineStore = tx.objectStore(QUARANTINED_RECORDS_STORE);
+          onRequest(quarantineStore.get(pending.quarantineId), fail, (value) => {
+            if (!value || !isRecord(value)) {
+              setResult({ status: 'stale-preview' });
+              return;
+            }
+            const row = value as unknown as QuarantinedChallengeRecord;
+            const rowFingerprint = serializeQuarantineComparableValue({ quarantineId: pending.quarantineId, row });
+            if (rowFingerprint === null || rowFingerprint !== pending.rowFingerprint) {
+              setResult({ status: 'stale-preview' });
+              return;
+            }
+            const preparation = prepareQuarantinedRecordForRestore({
+              sourceStore: row.sourceStore,
+              sourceKey: row.sourceKey,
+              reasonCode: row.reasonCode,
+              record: row.record,
+            });
+            if (preparation.status !== 'eligible'
+              || preparation.targetStore !== pending.preparation.targetStore
+              || preparation.targetKey !== pending.preparation.targetKey) {
+              setResult({ status: 'stale-preview' });
+              return;
+            }
+
+            const targetStore = tx.objectStore(preparation.targetStore);
+            onRequest(targetStore.get(preparation.targetKey), fail, (target) => {
+              if (target !== undefined) {
+                setResult({ status: 'target-conflict' });
+                return;
+              }
+
+              let addRequest: IDBRequest<IDBValidKey>;
+              try {
+                addRequest = targetStore.add(preparation.record) as IDBRequest<IDBValidKey>;
+              } catch (error) {
+                fail(new ChallengeRepositoryError('Could not restore the quarantined challenge record.', { cause: error }));
+                return;
+              }
+              onRequest(addRequest, fail, () => {
+                let deleteRequest: IDBRequest<undefined>;
+                try {
+                  deleteRequest = quarantineStore.delete(pending.quarantineId);
+                } catch (error) {
+                  fail(new ChallengeRepositoryError('Could not remove the restored quarantine copy.', { cause: error }));
+                  return;
+                }
+                onRequest(deleteRequest, fail, () => setResult({ status: 'restored' }));
+              });
+            });
+          });
+        },
+        { skipSanitation: true },
+      );
+    },
+
     beginAttempt(attempt) {
       if (!isValidInitialAttempt(attempt)) {
         return Promise.reject(new InvalidAttemptTransitionError('A new attempt must start at revision zero with no saved answers.'));
@@ -814,6 +1121,9 @@ function readBackupSnapshot(
     },
 
     close() {
+      repositoryClosed = true;
+      pendingPreview = null;
+      previewGeneration += 1;
       database?.close();
       database = undefined;
       databasePromise = undefined;
