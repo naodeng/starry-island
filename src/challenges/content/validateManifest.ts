@@ -3,9 +3,9 @@ import { fingerprintActivity } from './fingerprint';
 import type {
   ChallengeGroupManifest,
   ChallengeManifest,
+  ChallengeManifestValidationReport,
   ChallengeQuestionRecord,
   ChallengeReleaseStatus,
-  PilotManifestValidationReport,
   ValidationIssue,
 } from '../domain/types';
 
@@ -23,14 +23,14 @@ function pathScope(unitId: string): { grade?: number; semester?: number; subject
   };
 }
 
-function addIssue(
-  errors: ValidationIssue[],
+function makeIssue(
+  classification: ValidationIssue['classification'],
   code: string,
   path: string,
   message: string,
   groupId?: string,
-) {
-  errors.push({ code, path, message, ...(groupId ? { groupId } : {}) });
+): ValidationIssue {
+  return { classification, code, path, message, ...(groupId ? { groupId } : {}) };
 }
 
 function compatibleGroupSource(
@@ -56,41 +56,77 @@ function questionIsEligible(question: ChallengeQuestionRecord, activity: Activit
     && SAFE_ACTIVITY_KINDS.has(activity.kind);
 }
 
-export async function validatePilotManifest(
+export function resolveChallengeReleaseStatus(
+  releaseIntent: ChallengeGroupManifest['releaseIntent'],
+  hasReleasedGroupBlockingIssues: boolean,
+  hasGlobalBlockingIssues: boolean,
+): ChallengeReleaseStatus {
+  if (releaseIntent === 'suspended') return 'unavailable';
+  if (releaseIntent === 'planned') return 'planned';
+  return hasReleasedGroupBlockingIssues || hasGlobalBlockingIssues ? 'unavailable' : 'ready';
+}
+
+export async function validateChallengeManifest(
   manifest: ChallengeManifest,
   activitiesById: ReadonlyMap<string, ActivityDefinition>,
   sourceUnitByActivityId: ReadonlyMap<string, string>,
   unitsById: ReadonlyMap<string, CurriculumUnit>,
   subtleCrypto: SubtleCrypto = globalThis.crypto.subtle,
-): Promise<PilotManifestValidationReport> {
+): Promise<ChallengeManifestValidationReport> {
   const errors: ValidationIssue[] = [];
-  const contentChanges: PilotManifestValidationReport['contentChanges'] = [];
   const globalIssues: ValidationIssue[] = [];
+  const informationalIssues: ValidationIssue[] = [];
+  const groupIssuesById: Record<string, ValidationIssue[]> = {};
+  const contentChanges: ChallengeManifestValidationReport['contentChanges'] = [];
   const questionById = new Map<string, ChallengeQuestionRecord>();
   const questionCounts = new Map<string, number>();
   const activityCounts = new Map<string, number>();
   const fingerprintQuestions = new Map<string, string[]>();
   const currentFingerprints = new Map<string, string>();
 
+  function globalIssue(code: string, path: string, message: string, groupId?: string) {
+    const issue = makeIssue('global-blocking', code, path, message, groupId);
+    globalIssues.push(issue);
+    errors.push(issue);
+  }
+
+  function informationIssue(code: string, path: string, message: string, groupId?: string) {
+    informationalIssues.push(makeIssue('informational', code, path, message, groupId));
+  }
+
+  function groupIssue(group: ChallengeGroupManifest, code: string, path: string, message: string) {
+    const classification = group.releaseIntent === 'released' ? 'released-group-blocking' : 'informational';
+    const issue = makeIssue(classification, code, path, message, group.definition.id);
+    (groupIssuesById[group.definition.id] ??= []).push(issue);
+    if (classification === 'released-group-blocking') errors.push(issue);
+    else informationalIssues.push(issue);
+  }
+
+  if (manifest.questions.length === 0) globalIssue('empty-questions', 'questions', 'The manifest must contain at least one question.');
+  if (manifest.groups.length === 0) globalIssue('empty-groups', 'groups', 'The manifest must contain at least one group.');
+  if (!manifest.version.trim()) globalIssue('invalid-manifest-version', 'version', 'The manifest version must be non-empty.');
+
   for (const [index, question] of manifest.questions.entries()) {
     const path = `questions[${index}]`;
+    if (!question.questionId.trim()) globalIssue('invalid-question-id', `${path}.questionId`, 'Question IDs must be non-empty and stable.');
+    if (!question.activityId.trim()) globalIssue('invalid-activity-id', `${path}.activityId`, 'Activity IDs must be non-empty.');
     questionCounts.set(question.questionId, (questionCounts.get(question.questionId) ?? 0) + 1);
     activityCounts.set(question.activityId, (activityCounts.get(question.activityId) ?? 0) + 1);
     if (!questionById.has(question.questionId)) questionById.set(question.questionId, question);
 
     const activity = activitiesById.get(question.activityId);
     if (!activity) {
-      addIssue(errors, 'missing-activity', `${path}.activityId`, `Activity ${question.activityId} was not found.`);
+      globalIssue('missing-activity', `${path}.activityId`, `Activity ${question.activityId} was not found.`);
       continue;
     }
     if (activity.id !== question.activityId) {
-      addIssue(errors, 'activity-id-mismatch', `${path}.activityId`, 'The registry key does not match ActivityDefinition.id.');
+      globalIssue('activity-id-mismatch', `${path}.activityId`, 'The registry key does not match ActivityDefinition.id.');
     }
     if (!sourceUnitByActivityId.has(question.activityId)) {
-      addIssue(errors, 'missing-activity-source', `${path}.activityId`, 'The source unit for this activity is unknown.');
+      globalIssue('missing-activity-source', `${path}.activityId`, 'The source unit for this activity is unknown.');
     }
     if (question.approved && (!question.approvedBy?.trim() || !Number.isFinite(Date.parse(question.approvedAt ?? '')))) {
-      addIssue(errors, 'missing-approval-record', `${path}.approvedAt`, 'Approved questions need an author and valid approval date.');
+      globalIssue('missing-approval-record', `${path}.approvedAt`, 'Approved questions need an author and valid approval date.');
     }
 
     const currentFingerprint = await fingerprintActivity(activity, subtleCrypto);
@@ -104,43 +140,30 @@ export async function validatePilotManifest(
         approvedContentFingerprint: question.approvedContentFingerprint,
         currentContentFingerprint: currentFingerprint,
       });
+      informationIssue('content-fingerprint-changed', path, 'Content changed after the recorded approval fingerprint; approval and release intent are unchanged.');
     }
   }
 
   for (const [questionId, count] of questionCounts) {
-    if (count > 1) addIssue(errors, 'duplicate-question-id', 'questions', `Question ID ${questionId} is registered ${count} times.`);
+    if (count > 1) globalIssue('duplicate-question-id', 'questions', `Question ID ${questionId} is registered ${count} times.`);
   }
   for (const [activityId, count] of activityCounts) {
-    if (count > 1) addIssue(errors, 'duplicate-activity-id', 'questions', `Activity ID ${activityId} is registered ${count} times.`);
+    if (count > 1) globalIssue('duplicate-activity-id', 'questions', `Activity ID ${activityId} is registered ${count} times.`);
   }
   for (const questionIds of fingerprintQuestions.values()) {
     if (questionIds.length > 1) {
-      addIssue(errors, 'duplicate-content-fingerprint', 'questions', `Identical content is registered under ${questionIds.join(', ')}.`);
+      informationIssue('duplicate-content-fingerprint', 'questions', `Identical content is registered under ${questionIds.join(', ')}.`);
     }
   }
 
-  const kinds = manifest.groups.map(({ definition }) => definition.kind);
-  if (kinds.filter((kind) => kind === 'unit').length !== 1 || kinds.filter((kind) => kind === 'semester').length !== 1 || kinds.length !== 2) {
-    const issue = { code: 'invalid-group-count', path: 'groups', message: 'Pilot manifest must contain exactly one unit group and one semester group.' };
-    errors.push(issue);
-    globalIssues.push(issue);
-  }
   const groupIds = new Set<string>();
   for (const group of manifest.groups) {
-    if (groupIds.has(group.definition.id)) {
-      const issue = { code: 'duplicate-group-id', path: `groups.${group.definition.id}`, message: 'Group IDs must be unique.', groupId: group.definition.id };
-      errors.push(issue);
+    if (!group.definition.id.trim()) {
+      globalIssue('invalid-group-id', 'groups', 'Group IDs must be non-empty and stable.');
+    } else if (groupIds.has(group.definition.id)) {
+      globalIssue('duplicate-group-id', `groups.${group.definition.id}`, 'Group IDs must be unique.', group.definition.id);
     }
     groupIds.add(group.definition.id);
-  }
-
-  const groupErrors = new Map<string, ValidationIssue[]>();
-  function groupIssue(group: ChallengeGroupManifest, code: string, path: string, message: string) {
-    const issue = { code, path, message, groupId: group.definition.id };
-    errors.push(issue);
-    const issues = groupErrors.get(group.definition.id) ?? [];
-    issues.push(issue);
-    groupErrors.set(group.definition.id, issues);
   }
 
   for (const group of manifest.groups) {
@@ -156,13 +179,18 @@ export async function validatePilotManifest(
         groupIssue(group, 'missing-stage-evidence', `groups.${groupId}.mappingEvidence`, 'A semester stage needs a stage, source units, and dated mapping evidence.');
       }
     }
+    if (group.releaseIntent === 'suspended' && !group.unavailableReason?.trim()) {
+      groupIssue(group, 'missing-unavailable-reason', `groups.${groupId}.unavailableReason`, 'Suspended groups need a reason.');
+    }
     if (definition.coreKnowledgePointIds.length === 0 || new Set(definition.coreKnowledgePointIds).size !== definition.coreKnowledgePointIds.length) {
       groupIssue(group, 'invalid-core-knowledge-points', `groups.${groupId}.coreKnowledgePointIds`, 'Core knowledge point IDs must be non-empty and unique.');
     }
     for (const unitId of definition.sourceUnitIds) {
       const unit = unitsById.get(unitId);
-      if (!compatibleGroupSource(group, unitId, unitsById)) {
-        groupIssue(group, 'unknown-unit-source', `groups.${groupId}.sourceUnitIds`, `Unknown or mismatched source unit ${unitId}.`);
+      if (!unit) {
+        globalIssue('unknown-unit-source', `groups.${groupId}.sourceUnitIds`, `Unknown source unit ${unitId}.`, groupId);
+      } else if (!compatibleGroupSource(group, unitId, unitsById)) {
+        groupIssue(group, 'mismatched-unit-source', `groups.${groupId}.sourceUnitIds`, `Source unit ${unitId} does not match this group’s grade, term, and subject.`);
       } else if (definition.kind === 'unit' && (unit?.type !== 'unit' || unit.formalUnitNumber === null || !unit.achievementEligible)) {
         groupIssue(group, 'invalid-unit-source', `groups.${groupId}.sourceUnitIds`, `Source ${unitId} is not a formal numbered unit.`);
       }
@@ -205,7 +233,7 @@ export async function validatePilotManifest(
       groupQuestionIdSet.add(questionId);
       const question = questionById.get(questionId);
       if (!question) {
-        groupIssue(group, 'missing-question', `groups.${groupId}.questionIds`, `Question ${questionId} is not registered.`);
+        globalIssue('missing-question', `groups.${groupId}.questionIds`, `Question ${questionId} is not registered.`, groupId);
         continue;
       }
       groupQuestions.push(question);
@@ -252,10 +280,16 @@ export async function validatePilotManifest(
 
   const groupStatusById: Record<string, ChallengeReleaseStatus> = {};
   for (const group of manifest.groups) {
-    if (group.releaseIntent === 'suspended') groupStatusById[group.definition.id] = 'unavailable';
-    else if (group.releaseIntent === 'planned') groupStatusById[group.definition.id] = 'planned';
-    else groupStatusById[group.definition.id] = groupErrors.has(group.definition.id) || globalIssues.length > 0 ? 'unavailable' : 'ready';
+    const groupIssues = groupIssuesById[group.definition.id] ?? [];
+    const hasReleasedGroupBlockingIssues = groupIssues.some(({ classification }) => classification === 'released-group-blocking');
+    groupStatusById[group.definition.id] = resolveChallengeReleaseStatus(
+      group.releaseIntent,
+      hasReleasedGroupBlockingIssues,
+      globalIssues.length > 0,
+    );
   }
 
-  return { errors, contentChanges, groupStatusById };
+  return { errors, globalIssues, groupIssuesById, informationalIssues, contentChanges, groupStatusById };
 }
+
+export const validatePilotManifest = validateChallengeManifest;

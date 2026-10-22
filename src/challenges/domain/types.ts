@@ -67,18 +67,26 @@ export interface ContentFingerprintChange {
 
 export type ChallengeReleaseStatus = 'ready' | 'planned' | 'unavailable';
 
+export type ValidationIssueClassification = 'global-blocking' | 'released-group-blocking' | 'informational';
+
 export interface ValidationIssue {
   code: string;
   path: string;
   message: string;
+  classification: ValidationIssueClassification;
   groupId?: string;
 }
 
-export interface PilotManifestValidationReport {
+export interface ChallengeManifestValidationReport {
   errors: ValidationIssue[];
+  globalIssues: ValidationIssue[];
+  groupIssuesById: Record<string, ValidationIssue[]>;
+  informationalIssues: ValidationIssue[];
   contentChanges: ContentFingerprintChange[];
   groupStatusById: Record<string, ChallengeReleaseStatus>;
 }
+
+export type PilotManifestValidationReport = ChallengeManifestValidationReport;
 
 export interface ChallengeAttempt {
   attemptId: string;

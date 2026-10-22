@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import type { ActivityDefinition, CurriculumUnit, Difficulty } from '../../content/types';
 import { fingerprintActivity } from './fingerprint';
-import { validatePilotManifest } from './validateManifest';
+import { validateChallengeManifest, validatePilotManifest } from './validateManifest';
 import type { ChallengeGroupManifest, ChallengeManifest, ChallengeQuestionRecord } from '../domain/types';
 
 const UNIT_1 = 'grade-2/term-1/math/unit-01';
@@ -162,6 +162,76 @@ describe('validatePilotManifest', () => {
     });
   });
 
+  it('accepts one or more structurally valid groups', async () => {
+    const singleGroup = cloneFixture(fixture);
+    singleGroup.manifest.groups = singleGroup.manifest.groups.slice(0, 1);
+
+    const report = await validateChallengeManifest(singleGroup.manifest, singleGroup.activitiesById, singleGroup.sourceUnitByActivityId, singleGroup.unitsById);
+
+    expect(report.globalIssues).toEqual([]);
+    expect(report.groupStatusById).toEqual({ 'grade-2-term-1-math-unit-01': 'ready' });
+  });
+
+  it('keeps a group ready when only its approved content fingerprint changed', async () => {
+    const changed = cloneFixture(fixture);
+    const record = changed.manifest.questions[0];
+    const activity = changed.activitiesById.get(record.activityId)!;
+    changed.activitiesById.set(record.activityId, { ...activity, prompt: `${activity.prompt}（修订题干）` });
+
+    const report = await validateChallengeManifest(changed.manifest, changed.activitiesById, changed.sourceUnitByActivityId, changed.unitsById);
+
+    expect(record.approved).toBe(true);
+    expect(report.contentChanges.map(({ questionId }) => questionId)).toContain(record.questionId);
+    expect(report.groupStatusById[changed.manifest.groups[0].definition.id]).toBe('ready');
+    expect(report.informationalIssues).toContainEqual(expect.objectContaining({
+      code: 'content-fingerprint-changed',
+      classification: 'informational',
+    }));
+  });
+
+  it('keeps planned and suspended status independent from pool readiness', async () => {
+    const fixtureWithPlannedGroup = cloneFixture(fixture);
+    fixtureWithPlannedGroup.manifest.groups[0].releaseIntent = 'planned';
+    fixtureWithPlannedGroup.manifest.groups[0].questionIds = fixtureWithPlannedGroup.manifest.groups[0].questionIds.slice(0, 3);
+    fixtureWithPlannedGroup.manifest.groups[1].releaseIntent = 'released';
+
+    const plannedReport = await validateChallengeManifest(fixtureWithPlannedGroup.manifest, fixtureWithPlannedGroup.activitiesById, fixtureWithPlannedGroup.sourceUnitByActivityId, fixtureWithPlannedGroup.unitsById);
+    expect(plannedReport.groupStatusById['grade-2-term-1-math-unit-01']).toBe('planned');
+    expect(plannedReport.groupStatusById['grade-2-term-1-math-first-half']).toBe('ready');
+    expect(plannedReport.errors).toEqual([]);
+    expect(plannedReport.informationalIssues).toContainEqual(expect.objectContaining({
+      groupId: 'grade-2-term-1-math-unit-01',
+      code: 'insufficient-candidate-pool',
+      classification: 'informational',
+    }));
+
+    const suspended = cloneFixture(fixtureWithPlannedGroup);
+    suspended.manifest.groups[0].releaseIntent = 'suspended';
+    suspended.manifest.groups[0].unavailableReason = '待补充题库';
+    const suspendedReport = await validateChallengeManifest(suspended.manifest, suspended.activitiesById, suspended.sourceUnitByActivityId, suspended.unitsById);
+    expect(suspendedReport.groupStatusById['grade-2-term-1-math-unit-01']).toBe('unavailable');
+  });
+
+  it('treats unresolved question and source-unit references as global integrity blockers', async () => {
+    const invalid = cloneFixture(fixture);
+    invalid.manifest.groups[0].releaseIntent = 'planned';
+    invalid.manifest.groups[0].questionIds.push('missing-question-id');
+    invalid.manifest.groups[0].definition.sourceUnitIds = ['missing/source-unit'];
+
+    const report = await validateChallengeManifest(invalid.manifest, invalid.activitiesById, invalid.sourceUnitByActivityId, invalid.unitsById);
+
+    expect(report.globalIssues).toContainEqual(expect.objectContaining({
+      code: 'missing-question',
+      classification: 'global-blocking',
+    }));
+    expect(report.globalIssues).toContainEqual(expect.objectContaining({
+      code: 'unknown-unit-source',
+      classification: 'global-blocking',
+    }));
+    expect(report.groupStatusById['grade-2-term-1-math-unit-01']).toBe('planned');
+    expect(report.errors.map(({ code }) => code)).toEqual(expect.arrayContaining(['missing-question', 'unknown-unit-source']));
+  });
+
   it('rejects missing references, duplicate question IDs and shared activity aliases', async () => {
     const missingActivity = cloneFixture(fixture);
     missingActivity.manifest.questions[0].activityId = 'missing/activity';
@@ -255,13 +325,13 @@ describe('validatePilotManifest', () => {
     expect(invalidReport.errors.map(({ code }) => code)).toContain('invalid-question-knowledge-points');
   });
 
-  it('requires exactly one group of each kind and five tasks with the 2/2/1 difficulty structure', async () => {
+  it('allows a single group but still requires five tasks with the 2/2/1 difficulty structure', async () => {
     const invalid = cloneFixture(fixture);
     invalid.manifest.groups.pop();
     invalid.manifest.groups[0].definition.tasks = invalid.manifest.groups[0].definition.tasks.slice(1) as ChallengeGroupManifest['definition']['tasks'];
     const report = await validatePilotManifest(invalid.manifest, invalid.activitiesById, invalid.sourceUnitByActivityId, invalid.unitsById);
 
-    expect(report.errors.map(({ code }) => code)).toContain('invalid-group-count');
+    expect(report.errors.map(({ code }) => code)).not.toContain('invalid-group-count');
     expect(report.errors.map(({ code }) => code)).toContain('invalid-task-structure');
   });
 

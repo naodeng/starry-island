@@ -111,7 +111,14 @@ describe('ChallengePage', () => {
     vi.mocked(loadPilotChallengeContent).mockResolvedValue({
       manifestVersion: 'current-manifest',
       groups: [loadedGroup],
-      validation: { errors: [], contentChanges: [], groupStatusById: { [loadedGroup.group.definition.id]: 'unavailable' } },
+      validation: {
+        errors: [],
+        globalIssues: [],
+        groupIssuesById: {},
+        informationalIssues: [],
+        contentChanges: [],
+        groupStatusById: { [loadedGroup.group.definition.id]: 'unavailable' },
+      },
     });
 
     render(

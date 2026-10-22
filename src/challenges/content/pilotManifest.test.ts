@@ -3,11 +3,12 @@ import type { ActivityDefinition, CurriculumUnit } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
 import type { ChallengeManifest } from '../domain/types';
 import { derivePilotQuestionKnowledgePointIds } from './pilotQuestionKnowledgePoints';
+import { parseChallengeManifest } from './manifestSchema';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
-import { validatePilotManifest } from './validateManifest';
+import { validateChallengeManifest } from './validateManifest';
 import rawManifest from './pilot-manifest.json';
 
-const manifest = rawManifest as ChallengeManifest;
+const manifest: ChallengeManifest = parseChallengeManifest(rawManifest);
 const sourceUnitIds = [1, 2, 3, 4].map((number) => `grade-2/term-1/math/unit-${String(number).padStart(2, '0')}`);
 const safeKinds = new Set(['choice', 'match', 'order', 'categorize', 'arithmetic']);
 
@@ -39,7 +40,7 @@ describe('pilot manifest against the real curriculum', () => {
       sourceUnitByActivityId.set(supplemental.activity.id, sourceUnitIds[1]);
     }
 
-    const report = await validatePilotManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
+    const report = await validateChallengeManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
     expect(report.errors).toEqual([]);
     expect(report.contentChanges).toEqual([]);
     for (const question of manifest.questions) {
@@ -53,6 +54,7 @@ describe('pilot manifest against the real curriculum', () => {
     });
     expect(manifest.groups[0].questionIds).toHaveLength(90);
     expect(manifest.groups[1].questionIds).toHaveLength(226);
+    expect(manifest.groups).toHaveLength(2);
   });
 
   it('keeps chapter boundary evidence explicit and the unit group scoped to Unit 2', () => {

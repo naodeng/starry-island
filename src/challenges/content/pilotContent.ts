@@ -1,12 +1,13 @@
 import type { ActivityDefinition, CurriculumUnit } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
-import type { ChallengeGroupManifest, ChallengeManifest, ChallengeQuestionSnapshot, PilotManifestValidationReport } from '../domain/types';
+import type { ChallengeGroupManifest, ChallengeManifest, ChallengeManifestValidationReport, ChallengeQuestionSnapshot, ValidationIssue } from '../domain/types';
 import type { LearningTaskReference } from '../domain/studyRecommendations';
 import rawManifest from './pilot-manifest.json';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
-import { validatePilotManifest } from './validateManifest';
+import { parseChallengeManifest } from './manifestSchema';
+import { validateChallengeManifest } from './validateManifest';
 
-const manifest = rawManifest as ChallengeManifest;
+const manifest: ChallengeManifest = parseChallengeManifest(rawManifest);
 
 export interface LoadedPilotGroup {
   group: ChallengeGroupManifest;
@@ -14,13 +15,13 @@ export interface LoadedPilotGroup {
   candidates: ChallengeQuestionSnapshot[];
   disabledQuestionIds: string[];
   learningTasks: LearningTaskReference[];
-  issues: PilotManifestValidationReport['errors'];
+  issues: ValidationIssue[];
 }
 
 export interface LoadedPilotContent {
   manifestVersion: string;
   groups: LoadedPilotGroup[];
-  validation: PilotManifestValidationReport;
+  validation: ChallengeManifestValidationReport;
 }
 
 let cachedContent: Promise<LoadedPilotContent> | undefined;
@@ -73,7 +74,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
     }
   }
 
-  const validation = await validatePilotManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
+  const validation = await validateChallengeManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
   const questionById = new Map(manifest.questions.map((question) => [question.questionId, question]));
   const disabledQuestionIds = manifest.questions
     .filter(({ lifecycle }) => lifecycle === 'disabled')
@@ -93,7 +94,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
       });
     }
     const status = validation.groupStatusById[id] ?? 'unavailable';
-    const issues = validation.errors.filter((issue) => !issue.groupId || issue.groupId === id);
+    const issues = [...validation.globalIssues, ...(validation.groupIssuesById[id] ?? [])];
     return {
       group,
       status,
