@@ -4,6 +4,7 @@ import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02Supple
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
+import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
@@ -11,6 +12,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-03',
   'grade-1/term-1/math/unit-04',
   'grade-1/term-1/math/unit-05',
+  'grade-1/term-1/math/unit-06',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -128,6 +130,24 @@ export function derivePilotQuestionKnowledgePointIds(
       if (/[-−]|减法|减去|拿走|去掉|还剩|剩下|取走|用去/u.test(text)) ids.push('subtraction-within-ten');
       if (/比较|大于|小于|不大于|不小于|更大|更小|按得数|得数.*比较|分类标准/u.test(text)) ids.push('comparison-within-ten');
       if (/检查|核对|验算|正确结果|算错|改正|错连|分错|逆运算/u.test(text)) ids.push('checking-within-ten');
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-1/term-1/math/unit-06': {
+      const supplemental = grade1MathUnit06SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/十位|个位|几个十|几个一|数位|整十数|数和.*信息|写数|合起来|组成|\b10\s*\+/u.test(text)
+        || (activity.kind === 'arithmetic' && /^\s*10\s*\+/u.test(activity.expression))) {
+        ids.push('teen-number-composition');
+      }
+      if (/前面|后面|紧挨着|接着数|数到|往前|往后|顺序|排列|从小到大|从大到小|向前退|漏数/u.test(text)) {
+        ids.push('number-sequence-eleven-to-twenty');
+      }
+      if (/比较|比.*大|比.*小|大于|小于|多少|从小到大|从大到小|最小|最大/u.test(text)) {
+        ids.push('number-comparison-eleven-to-twenty');
+      }
       if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
       return [...new Set(ids)];
     }

@@ -48,7 +48,11 @@ describe('challenge impact CLI', () => {
 
   it('lists every same-difficulty task for multiple questions in the real pilot manifest', async () => {
     const manifestBefore = await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest.json'), 'utf8');
-    const manifestFragmentBefore = await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit05.json'), 'utf8');
+    const manifestFragmentPaths = [
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit05.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit06.json'),
+    ];
+    const manifestFragmentsBefore = await Promise.all(manifestFragmentPaths.map((path) => readFile(path, 'utf8')));
     const manifest = rawManifest as unknown as ChallengeManifest;
     const changedQuestions = [manifest.questions[0], manifest.questions.find(({ difficulty }) => difficulty !== manifest.questions[0].difficulty)!];
     const expectedGroups = manifest.groups.filter(({ questionIds }) => (
@@ -72,7 +76,7 @@ describe('challenge impact CLI', () => {
       }
     }
     expect(await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest.json'), 'utf8')).toBe(manifestBefore);
-    expect(await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit05.json'), 'utf8')).toBe(manifestFragmentBefore);
+    expect(await Promise.all(manifestFragmentPaths.map((path) => readFile(path, 'utf8')))).toEqual(manifestFragmentsBefore);
   });
 
   it('returns a distinct status and requires the full quality gate when an ID is unknown', () => {

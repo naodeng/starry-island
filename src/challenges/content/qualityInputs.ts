@@ -11,6 +11,7 @@ import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02Supple
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
+import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 
 function registerActivity(
   activity: ActivityDefinition,
@@ -48,7 +49,7 @@ export async function loadChallengeQualityInputs(manifestValue: unknown = rawMan
     }
   }));
 
-  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities];
+  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities];
   const referencedSupplementalIds = new Set(supplementalActivities
     .filter(({ activity }) => manifest.questions.some((question) => question.activityId === activity.id))
     .map(({ activity }) => activity.id));

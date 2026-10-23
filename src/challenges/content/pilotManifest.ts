@@ -1,6 +1,7 @@
 import type { ChallengeManifest } from '../domain/types';
 import coreManifest from './pilot-manifest.json';
 import grade1MathUnit05Manifest from './pilot-manifest-grade1-math-unit05.json';
+import grade1MathUnit06Manifest from './pilot-manifest-grade1-math-unit06.json';
 
 export function mergeChallengeManifestFragments(fragments: readonly ChallengeManifest[]): ChallengeManifest {
   if (fragments.length === 0) throw new Error('At least one challenge manifest fragment is required.');
@@ -27,6 +28,7 @@ export function mergeChallengeManifestFragments(fragments: readonly ChallengeMan
 const pilotManifest = mergeChallengeManifestFragments([
   coreManifest as ChallengeManifest,
   grade1MathUnit05Manifest as ChallengeManifest,
+  grade1MathUnit06Manifest as ChallengeManifest,
 ]);
 
 export default pilotManifest;

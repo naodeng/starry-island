@@ -382,6 +382,18 @@
 - `npm run test:e2e -- --workers=1`：全量 Chromium 回归 43/43 通过，用时约 6 分钟；之后新增的单元 5 专项回归 1/1 通过，覆盖 390px 窄屏、深色主题、减少动态效果、键盘启动、挑战入口及学习进度不变。Codex 内嵌预览确认第五单元页面列出六个原学习任务和五个挑战任务；该检查读取页面语义内容，不作为截图视觉审查证据。
 - 本地构建与浏览器测试复用静态清单和当前浏览器环境；`git diff --check` 在本节写入后复核。以上证据不代表远端 Actions、部署、独立教学审核或全课程闯关覆盖已经完成。
 
+## 一年级上册数学第六单元（2026-10-23，本地）
+
+- 单元 6“11～20 各数的认识”新增 90 道候选题，其中复用 38 道范围内课程活动、补充 52 道原创题。作者逐题审查后将 10 道涉及 21 以上数字、百位概念或 40/400 的课程活动排除在闯关池外；原学习课程内容没有修改。
+- 定向领域与映射检查：`grade1MathUnit06SupplementalActivities.test.ts`、`pilotQuestionKnowledgePoints.test.ts`；针对题目范围、补充数量和生产评分器的专项测试通过。
+- 全量 `npm run test:unit -- --reporter=dot`：161 个测试文件、1,138 项通过。
+- 集成检查：清单、候选池、质量输入、影响分析、课程入口及覆盖预期测试通过；U6 端到端回归 1/1 通过，覆盖 390px 窄屏、深色主题、减少动态效果、键盘启动、原有六个学习任务与五个挑战任务、课程进度不变。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-unit06-quality-final`：10 组、50 个任务完成 5,000/5,000 次固定种子模拟，0 个阻断项、0 组精确重复、395 条相似题信息；U6 的 1 对相似题复核为不同数值的“前一个数”练习，予以保留。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-unit06-coverage-final`：9/254 个正式单元组、1/108 个学期阶段组；单元任务 45/1,270、学期任务 5/540。
+- `npm run build`：通过，无超过 500 kB 的 JavaScript 分块提示；最大分块为核心闯关清单 450.54 kB，U6 清单片段为 52.19 kB。
+- Playwright 首次在沙箱内因 Chromium MachPortRendezvous 权限失败，未进入页面断言；经授权在正常环境重跑后专项回归通过。全量单测和全量 E2E 待本批次收尾运行。
+- 本节题目审校台账只证明作者自审；独立教育审核、远端 Actions、部署和正式发布仍未完成。
+
 ## 全课程覆盖盘点与 V1.0 门禁（2026-10-23，本地）
 
 - `npm run challenge:coverage -- --report-dir /tmp/starry-island-curriculum-coverage-audit-final`：闯关清单 v0.12 对照课程目录发现 5/254 个正式单元组、1/108 个学期阶段组已发布；单元任务登记 25/1,270，学期任务登记 5/540。报告列出 249 个缺失单元组和 107 个缺失学期阶段组。

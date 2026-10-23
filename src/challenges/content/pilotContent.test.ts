@@ -34,6 +34,7 @@ describe('loadPilotChallengeContent', () => {
       ['grade-1-term-1-math-unit-03', 'ready'],
       ['grade-1-term-1-math-unit-04', 'ready'],
       ['grade-1-term-1-math-unit-05', 'ready'],
+      ['grade-1-term-1-math-unit-06', 'ready'],
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
@@ -43,6 +44,7 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups[5]?.candidates).toHaveLength(90);
     expect(content.groups[6]?.candidates).toHaveLength(90);
     expect(content.groups[7]?.candidates).toHaveLength(90);
+    expect(content.groups[8]?.candidates).toHaveLength(90);
     expect(content.groups.every(({ disabledQuestionIds }) => disabledQuestionIds.length === 0)).toBe(true);
     expect(content.groups[1]?.candidates.every(({ contentFingerprint, activity }) => contentFingerprint && activity.id)).toBe(true);
     expect(content.validation.errors).toEqual([]);
@@ -54,7 +56,7 @@ describe('loadPilotChallengeContent', () => {
       .map((candidate) => [candidate.questionId, candidate]));
     const candidates = [...candidatesByQuestionId.values()];
 
-    expect(candidates).toHaveLength(856);
+    expect(candidates).toHaveLength(946);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 
@@ -91,6 +93,16 @@ describe('loadPilotChallengeContent', () => {
   it('scores every Grade 1 math Unit 4 candidate through the production grader', async () => {
     const content = await loadPilotChallengeContent();
     const group = content.groups.find(({ group }) => group.definition.id === 'grade-1-term-1-math-unit-04');
+    const candidates = group?.candidates ?? [];
+
+    expect(candidates).toHaveLength(90);
+    expect(new Set(candidates.map(({ questionId }) => questionId)).size).toBe(90);
+    expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
+  });
+
+  it('scores every Grade 1 math Unit 6 candidate through the production grader', async () => {
+    const content = await loadPilotChallengeContent();
+    const group = content.groups.find(({ group }) => group.definition.id === 'grade-1-term-1-math-unit-06');
     const candidates = group?.candidates ?? [];
 
     expect(candidates).toHaveLength(90);
