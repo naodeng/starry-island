@@ -379,3 +379,14 @@
 - `npm run challenge:quality -- --report-dir /tmp/starry-island-quality-coverage-gate-final`：0 个阻断项、244 条相似题提示。题库门禁与覆盖门禁检查不同内容；两者均不能替代逐题教学审核。
 - `npm run build`：TypeScript 与 Vite 构建通过，没有超过 500 kB 的 JavaScript 分块提示。Ruby YAML 解析器能解析本地 Quality 工作流；这不是 GitHub Actions 实际运行证据。
 - 以上为本地验证；当前仍缺 249 个正式单元组、107 个学期阶段组、完整题目内容与必要教学审核，远端 Actions、部署和正式发布均未验证。
+
+## 全课程源素材盘点（2026-10-23，本地）
+
+- `npm run challenge:source-audit -- --report-dir /tmp/starry-island-curriculum-source-inventory-final`：载入课程目录的 311 个课程条目，其中 254 个正式单元与基线一致；课程内容模块读取成功。
+- 兼容活动按基础/进阶/高阶分别为 4,076/4,063/4,062 条；每单元每难度在 30 条最低量下的累计素材缺口为 3,544/3,557/3,558 条，共 10,659 条。254 个正式单元没有任何一个在三档都达到 30 条；活动 ID 冲突 0，课程目录问题 0。同一单元同一难度的精确重复数为 0；7 条测量活动排除。
+- 报告按数量和当前渲染兼容性盘点课程活动，不等于闯关候选题已登记、已审核或已发布。报告不包含题干、答案、提示或讲解，也不自动生成补充题。
+- `sourceInventory.test.ts` 与 `sourceInventoryCli.test.mjs`：6/6 通过；覆盖难度统计、支持题型、测量题排除、精确去重、重复 ID、非正式条目过滤、中文报告不泄露题目文本和载入失败时替换旧报告。
+- 新增工具后的全量回归 `npm run test:unit -- --reporter=dot`：157 个测试文件、1,102 项通过；`npm run test:coverage -- --reporter=dot`：157 个测试文件、1,102 项通过，语句 89.22%、分支 83.92%、函数 90.59%、行 91.48%。
+- `npm run challenge:quality`：0 个阻断项、244 条提示；覆盖普通盘点为 5/254 个正式单元组、1/108 个学期阶段组；严格 V1 命令按预期返回 1。生产构建通过，无 JavaScript 分块超过 500 kB。
+- Quality 工作流通过 Ruby YAML 解析。`actionlint` 不在当前环境中，因此没有执行专用 GitHub Actions 静态检查；远端 Actions 未运行。
+- 此记录仅基于本地仓库课程内容，不证明教学正确性或独立教育者审查。覆盖缺口仍为 249 个单元组和 107 个学期阶段组；远端 Actions、部署和发布未验证。

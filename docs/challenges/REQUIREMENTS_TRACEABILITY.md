@@ -8,7 +8,7 @@
 
 | REQ | 当前切片状态 | 证据 |
 |---|---|---|
-| REQ-028、036～047 | 题库质量命令、声明式清单校验、生命周期/状态推导、指纹变化报告、确定性去重与相似题提示、两倍候选池和组卷覆盖检查、每任务 100 种子模拟、CI 报告归档及全课程目录盘点已在当前分支实现。覆盖工具核对 254 个正式单元组、108 个学期阶段组与 540 个学期任务；当前只有 5 个单元组和 1 个学期组。全课程题目审核和远端 Actions 执行仍未完成。Quality 工作流仅在 `v1.*` 标签要求完整覆盖 | `scripts/challenges/quality.mjs`、`scripts/challenges/coverage.mjs`；`src/challenges/content/coverage.ts`；`.github/workflows/quality.yml`；本地 CLI、单测和构建记录见[测试方案](TEST_STRATEGY.md) |
+| REQ-010、028、036～047 | 题库质量命令、声明式清单校验、生命周期/状态推导、指纹变化报告、确定性去重与相似题提示、两倍候选池和组卷覆盖检查、每任务 100 种子模拟、全课程覆盖盘点和课程源素材盘点已在当前分支实现。覆盖工具核对 254 个正式单元组、108 个学期阶段组与 540 个学期任务；当前只有 5 个单元组和 1 个学期组。源素材盘点统计活动数量与题型兼容性，不等于题目已审核；完整题库内容、全课程教学审核和远端 Actions 执行仍未完成。Quality 工作流仅在 `v1.*` 标签要求完整覆盖 | `scripts/challenges/quality.mjs`、`scripts/challenges/coverage.mjs`、`scripts/challenges/source-inventory.mjs`；`src/challenges/content/coverage.ts`、`sourceInventory.ts`；`.github/workflows/quality.yml`；本地 CLI、单测和构建记录见[测试方案](TEST_STRATEGY.md) |
 | REQ-001 | 路由和进度隔离已实现 | `src/App.tsx`；`src/App.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-004 | 任务组与任务层级已实现；高阶整份试卷覆盖多个必需知识点 | `src/challenges/content/pilot-manifest.json`；组卷测试 |
 | REQ-005 | 通过线和整数比较已实现 | `src/challenges/domain/grading.ts`、`grading.test.ts` |

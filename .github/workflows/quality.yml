@@ -31,10 +31,15 @@ jobs:
         run: npm run challenge:quality
 
       - name: Audit challenge coverage
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run challenge:coverage -- --report-dir .quality-reports/curriculum-coverage
 
+      - name: Inventory curriculum challenge source activities
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
+        run: npm run challenge:source-audit -- --report-dir .quality-reports/curriculum-source-inventory
+
       - name: Require complete curriculum coverage for V1 tags
-        if: startsWith(github.ref, 'refs/tags/v1.')
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' && startsWith(github.ref, 'refs/tags/v1.') }}
         run: npm run challenge:coverage -- --report-dir .quality-reports/curriculum-coverage-v1-release --require-complete
 
       - name: Run unit tests
@@ -88,6 +93,16 @@ jobs:
             echo '覆盖盘点未生成报告，请查看前序步骤错误。' >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Add source activity inventory to workflow summary
+        if: always()
+        run: |
+          echo '### 全课程闯关源素材盘点' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.md ]; then
+            cat .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '源素材盘点未生成报告，请查看前序步骤错误。' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Upload challenge quality reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -100,5 +115,7 @@ jobs:
             .quality-reports/curriculum-coverage/curriculum-coverage-report.md
             .quality-reports/curriculum-coverage-v1-release/curriculum-coverage-report.json
             .quality-reports/curriculum-coverage-v1-release/curriculum-coverage-report.md
+            .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.json
+            .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.md
           if-no-files-found: ignore
           include-hidden-files: true
