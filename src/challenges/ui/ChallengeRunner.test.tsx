@@ -349,6 +349,30 @@ describe('ChallengeRunner', () => {
     expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, answers: { [firstQuestion.questionId]: 'wrong' } });
   });
 
+  it('blocks in-app navigation while the submitted answer is still being saved', async () => {
+    const repository = makeRepository();
+    const saveAnswer = repository.saveAnswer.bind(repository);
+    let resolvePendingSave!: (attempt: ChallengeAttempt) => void;
+    const pendingSave = new Promise<ChallengeAttempt>((resolve) => { resolvePendingSave = resolve; });
+    const saveAnswerSpy = vi.spyOn(repository, 'saveAnswer').mockReturnValueOnce(pendingSave);
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    const onNavigate = vi.fn();
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={onNavigate} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    await waitFor(async () => expect(await repository.getActiveAttempt(task.id)).not.toBeNull());
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    await waitFor(() => expect(saveAnswerSpy).toHaveBeenCalledOnce());
+
+    expect(screen.getByRole('button', { name: '返回任务列表' })).toBeDisabled();
+    expect(onNavigate).not.toHaveBeenCalled();
+
+    const [taskId, expectedRevision, nextAttempt] = saveAnswerSpy.mock.calls[0]!;
+    resolvePendingSave(await saveAnswer(taskId, expectedRevision, nextAttempt));
+    expect(await screen.findByRole('heading', { name: nextAttempt.questions[1]!.activity.prompt })).toBeInTheDocument();
+  });
+
   it('explains quota failure without losing the pending answer and retries after space is freed', async () => {
     const repository = makeRepository();
     const saveAnswer = repository.saveAnswer.bind(repository);

@@ -416,7 +416,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     <main className="challenge-page">
       <div className="challenge-shell">
         <header className="challenge-runner-heading">
-          <Button type="text" onClick={() => {
+          <Button type="text" disabled={busy} onClick={() => {
             if (!confirmPendingAnswerAbandonment()) return;
             onNavigate(getChallengeGroupPath(loadedGroup.group.definition.id));
           }}>返回任务列表</Button>
