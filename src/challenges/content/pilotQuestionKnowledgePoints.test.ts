@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { ActivityDefinition } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
 import { derivePilotQuestionKnowledgePointIds } from './pilotQuestionKnowledgePoints';
+import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
 
 const base = {
   id: 'fixture',
@@ -179,6 +180,31 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
       'grade-2/term-1/math/unit-02',
       { ...base, kind: 'arithmetic', prompt: '先加再减。', expression: '28 + 19 - 16', correctAnswer: 31 },
     )).toEqual(['two-digit-addition', 'two-digit-subtraction']);
+  });
+
+  it('maps Grade 1 Unit 8 carrying addition, ten-complement strategy, stories, and checks distinctly', () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-08';
+
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      { ...base, kind: 'arithmetic', prompt: '计算。', expression: '8 + 5', correctAnswer: 13 },
+    )).toEqual(['addition-within-twenty', 'carry-addition-within-twenty', 'make-ten-strategy']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      { ...base, kind: 'arithmetic', prompt: '计算。', expression: '10 + 5', correctAnswer: 15 },
+    )).toEqual(['addition-within-twenty']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('原有 8 个苹果，又放入 5 个。应该列什么算式？', ['8 + 5', '8 - 5']),
+    )).toEqual(['addition-within-twenty', 'carry-addition-within-twenty', 'make-ten-strategy', 'addition-situation-modeling']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('同学把 8 + 5 算成 12，哪项检查能发现错误？', ['12 - 5 = 7', '12 - 5 = 8']),
+    )).toEqual(['addition-within-twenty', 'carry-addition-within-twenty', 'make-ten-strategy', 'addition-checking']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      grade1MathUnit08SupplementalActivities[0]!.activity,
+    )).toEqual(['make-ten-strategy', 'carry-addition-within-twenty']);
   });
 
   it('distinguishes angle parts from angle comparison and multiplication meaning from facts', () => {

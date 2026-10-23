@@ -19,6 +19,7 @@ import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04Supple
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
+import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 
 declare const process: {
@@ -34,6 +35,7 @@ const manifestFragmentPaths = [
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit05.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit06.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit07.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit08.json'),
 ];
 let reportDirectory: string;
 
@@ -76,7 +78,7 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(11);
+    expect(report.groups).toHaveLength(12);
     expect(report.groups.every(({ status }) => status === 'ready')).toBe(true);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
@@ -88,6 +90,7 @@ describe('challenge quality CLI', () => {
     expect(firstJson).not.toContain(grade1MathUnit05SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit06SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit07SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1MathUnit08SupplementalActivities[0].activity.prompt);
 
     const secondRun = runCli(args);
     expect(secondRun.status).toBe(0);

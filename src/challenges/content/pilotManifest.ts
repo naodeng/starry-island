@@ -3,6 +3,7 @@ import coreManifest from './pilot-manifest.json';
 import grade1MathUnit05Manifest from './pilot-manifest-grade1-math-unit05.json';
 import grade1MathUnit06Manifest from './pilot-manifest-grade1-math-unit06.json';
 import grade1MathUnit07Manifest from './pilot-manifest-grade1-math-unit07.json';
+import grade1MathUnit08Manifest from './pilot-manifest-grade1-math-unit08.json';
 
 export function mergeChallengeManifestFragments(fragments: readonly ChallengeManifest[]): ChallengeManifest {
   if (fragments.length === 0) throw new Error('At least one challenge manifest fragment is required.');
@@ -31,6 +32,7 @@ const pilotManifest = mergeChallengeManifestFragments([
   grade1MathUnit05Manifest as ChallengeManifest,
   grade1MathUnit06Manifest as ChallengeManifest,
   grade1MathUnit07Manifest as ChallengeManifest,
+  grade1MathUnit08Manifest as ChallengeManifest,
 ]);
 
 export default pilotManifest;

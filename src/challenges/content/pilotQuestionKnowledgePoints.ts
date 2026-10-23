@@ -6,6 +6,7 @@ import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04Supple
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
+import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
@@ -15,6 +16,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-05',
   'grade-1/term-1/math/unit-06',
   'grade-1/term-1/math/unit-07',
+  'grade-1/term-1/math/unit-08',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -162,6 +164,28 @@ export function derivePilotQuestionKnowledgePointIds(
       if (/半时|时半|指向\s*6|两个数字之间|和.*之间/u.test(text)) ids.push('clock-half-hour-reading');
       if (/时针|分针|短针|长针|指针/u.test(text)) ids.push('clock-hand-roles');
       if (ids.length === 0) throw new Error(`Could not classify Grade 1 clock question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-1/term-1/math/unit-08': {
+      const supplemental = grade1MathUnit08SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      const additions = [...text.matchAll(/(\d{1,2})\s*\+\s*(\d{1,2})/gu)]
+        .map(([, left, right]) => [Number(left), Number(right)] as const);
+      if (additions.length > 0 || /加法|相加|合起来|一共|总数/u.test(text)) ids.push('addition-within-twenty');
+      if (additions.some(([left, right]) => left < 10 && right < 10 && left + right > 10 && left + right <= 20)) {
+        ids.push('carry-addition-within-twenty');
+        ids.push('make-ten-strategy');
+      }
+      if (/凑十|凑成\s*(?:10|十)|拆成.*(?:10|十)/u.test(text)) ids.push('make-ten-strategy');
+      if (/原有|书架|苹果|贴纸|卡片|梨|铅笔|书本|收到|放进|添|得到|一共|总数|合起来|数量/u.test(text)) {
+        ids.push('addition-situation-modeling');
+      }
+      if (/检查|核对|验算|逆运算|改正|算成|正确结果|结果不对|应改|分错|错连/u.test(text)) {
+        ids.push('addition-checking');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 addition question ${activity.id}.`);
       return [...new Set(ids)];
     }
     case 'grade-1/term-1/math/unit-01': {
