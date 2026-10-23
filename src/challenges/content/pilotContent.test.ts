@@ -29,11 +29,13 @@ describe('loadPilotChallengeContent', () => {
       ['grade-2-term-1-math-first-half', 'ready'],
       ['grade-3-term-1-english-unit-01', 'ready'],
       ['grade-5-term-1-chinese-unit-01', 'ready'],
+      ['grade-1-term-1-math-unit-01', 'ready'],
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
     expect(content.groups[2]?.candidates).toHaveLength(90);
     expect(content.groups[3]?.candidates).toHaveLength(90);
+    expect(content.groups[4]?.candidates).toHaveLength(90);
     expect(content.groups.every(({ disabledQuestionIds }) => disabledQuestionIds.length === 0)).toBe(true);
     expect(content.groups[1]?.candidates.every(({ contentFingerprint, activity }) => contentFingerprint && activity.id)).toBe(true);
     expect(content.validation.errors).toEqual([]);
@@ -44,6 +46,16 @@ describe('loadPilotChallengeContent', () => {
     const candidates = content.groups[1]!.candidates;
 
     expect(new Set(candidates.map(({ questionId }) => questionId)).size).toBe(candidates.length);
+    expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
+  });
+
+  it('scores every Grade 1 math Unit 1 candidate through the production grader', async () => {
+    const content = await loadPilotChallengeContent();
+    const group = content.groups.find(({ group }) => group.definition.id === 'grade-1-term-1-math-unit-01');
+    const candidates = group?.candidates ?? [];
+
+    expect(candidates).toHaveLength(90);
+    expect(new Set(candidates.map(({ questionId }) => questionId)).size).toBe(90);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 

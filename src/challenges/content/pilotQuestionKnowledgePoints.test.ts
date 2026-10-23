@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { ActivityDefinition } from '../../content/types';
+import { loadUnit } from '../../content/unitLoader';
 import { derivePilotQuestionKnowledgePointIds } from './pilotQuestionKnowledgePoints';
 
 const base = {
@@ -19,6 +20,31 @@ function choice(prompt: string, labels: string[] = []): ActivityDefinition {
 }
 
 describe('derivePilotQuestionKnowledgePointIds', () => {
+  it('为一年级上册数学第一单元的全部原课程题标注可追踪知识点', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-01';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+    const covered = new Set(tagged.flat());
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(covered).toEqual(new Set(['counting-one-to-one', 'number-sequence', 'quantity-comparison', 'zero-as-none']));
+  });
+
+  it('does not map a one-more arithmetic activity to one-to-one counting', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-01';
+    const unit = await loadUnit(sourceUnitId);
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const arithmetic = activities.find((activity) => activity.kind === 'arithmetic' && activity.prompt.startsWith('算一算：'));
+
+    expect(arithmetic).toBeDefined();
+    expect(derivePilotQuestionKnowledgePointIds(sourceUnitId, arithmetic!)).toEqual(['number-sequence']);
+  });
+
   it('tags length-unit selection separately from measuring and estimating', () => {
     expect(derivePilotQuestionKnowledgePointIds(
       'grade-2/term-1/math/unit-01',

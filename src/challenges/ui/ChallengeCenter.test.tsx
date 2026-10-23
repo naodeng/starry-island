@@ -47,9 +47,11 @@ describe('ChallengeCenter', () => {
   });
 
   it('describes unit routes with the registered subject instead of reusing the math description', () => {
+    const grade1MathGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-01') as unknown as ChallengeGroupManifest;
+    const grade2MathGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-unit-02') as unknown as ChallengeGroupManifest;
     const englishGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-3-term-1-english-unit-01') as unknown as ChallengeGroupManifest;
     const chineseGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-5-term-1-chinese-unit-01') as unknown as ChallengeGroupManifest;
-    const groups = [englishGroup, chineseGroup].map((group): LoadedPilotGroup => ({
+    const groups = [grade1MathGroup, grade2MathGroup, englishGroup, chineseGroup].map((group): LoadedPilotGroup => ({
       group,
       status: 'ready',
       candidates: [],
@@ -60,9 +62,10 @@ describe('ChallengeCenter', () => {
 
     render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
 
+    expect(screen.getByText('练习数一数、比一比和 0 的初步认识。')).toBeInTheDocument();
     expect(screen.getByText('练习本单元的自我介绍、年龄和班级表达。')).toBeInTheDocument();
     expect(screen.getByText('阅读本单元课文，练习文本线索、表达方法与习作。')).toBeInTheDocument();
-    expect(screen.queryByText('练习两位数加减法、进位退位和数量关系。')).not.toBeInTheDocument();
+    expect(screen.getByText('练习两位数加减法、进位退位和数量关系。')).toBeInTheDocument();
   });
 
   it('links to the local challenge growth record', () => {

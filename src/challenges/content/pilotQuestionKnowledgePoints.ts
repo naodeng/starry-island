@@ -1,6 +1,8 @@
 import type { ActivityDefinition } from '../../content/types';
+import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
+  'grade-1/term-1/math/unit-01',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -45,6 +47,27 @@ export function derivePilotQuestionKnowledgePointIds(
 
   const text = activityText(activity);
   switch (sourceUnitId) {
+    case 'grade-1/term-1/math/unit-01': {
+      const supplemental = grade1MathUnit01SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/空盘|一个也没有|没有.*(?:积木|苹果|卡片|球|物品)|还剩.*(?:0|没有)|(?:0|零).*(?:表示|开始|后面|前面|个)|表示.*(?:没有|空)/u.test(text)) {
+        ids.push('zero-as-none');
+      }
+      if (/前面|后面|顺序|排列|紧挨着|接下来|从小到大|从大到小/u.test(text)
+        || (activity.kind === 'arithmetic' && /\+\s*1/u.test(activity.expression))) {
+        ids.push('number-sequence');
+      }
+      if (/数一数|点数|数出|漏数|重复数|逐个|一支一支|总数|一共|每个物品.*数|每.*点一次|数两排|数一排/u.test(text)) {
+        ids.push('counting-one-to-one');
+      }
+      if (/比较|哪个数更大|哪个数更小|比.*(?:大|小)|更多|少|小于|分类|相同|一样多|哪边.*多/u.test(text)) {
+        ids.push('quantity-comparison');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
     case 'grade-3/term-1/english/unit-01': {
       const englishText = englishActivityText(activity);
       const ids: string[] = [];
