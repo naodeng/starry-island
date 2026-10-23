@@ -34,9 +34,9 @@ challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-14	
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-15	进阶	11～20 的数组成；11～20 的大小比较	1	围绕“1 个十和 9 个一组成的数，比 18 大几？”核对选项“1”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-16	进阶	11～20 的数序	15	围绕“□、16、17 按从小到大排列，方框里应填几？”核对选项“15”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-01	高阶	11～20 的数组成；11～20 的大小比较	16	围绕“一个数比 14 大、比 17 小，个位是 6。这个数是几？”核对选项“16”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
-challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-02	高阶	11～20 的数序	17	围绕“从 20 开始往前数，数到第 3 个数是几？”核对选项“17”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-02	高阶	11～20 的数序	漏了 17；20、19、18、17、16、15	逐项核对递减数列，18 后应为 17；补全后每步减少 1。	本次内容复核通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-03	高阶	11～20 的数组成；11～20 的大小比较	20	围绕“18 有 1 个十和 8 个一，再添上 2 个一是几？”核对选项“20”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
-challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-04	高阶	11～20 的大小比较；11～20 的数序	17	围绕“11～20 中，大于 16 的最小数是几？”核对选项“17”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-04	高阶	11～20 的大小比较；11～20 的数组成	不对；十位相同后比较个位，8 大于 6，所以 18 大于 16	复核 18 与 16 的十位相同、个位 8>6；题干中的结论错误，正确项同时说明比较依据。	本次内容复核通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-05	高阶	11～20 的数组成	写成 14	围绕“小安把 1 个十和 4 个一写成了 5。应该怎样改正？”核对选项“写成 14”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-06	高阶	11～20 的数组成；11～20 的大小比较	18	围绕“13、18、15 中，哪个数和“比 19 小 1”的数一样？”核对选项“18”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-07	高阶	11～20 的数序	16	围绕“14、15、□、17，方框里填几才能让数顺着排列？”核对选项“16”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
@@ -44,10 +44,10 @@ challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-08	高�
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-09	高阶	11～20 的数序；11～20 的大小比较	16	围绕“18、17、□、15，按从大到小的顺序排列，方框里填几？”核对选项“16”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-10	高阶	11～20 的大小比较	17 比 19 大	围绕“下面三句话中，哪一句不正确？”核对选项“17 比 19 大”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-11	高阶	11～20 的数组成	还要把 1 个十记作 10，合起来是 13	围绕“小禾说 1 个十和 3 个一合起来是 4。哪项能说明她少看了什么？”核对选项“还要把 1 个十记作 10，合起来是 13”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
-challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-12	高阶	11～20 的数序	15	围绕“从 11 开始往后数 4 个数，第四个数是几？”核对选项“15”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-12	高阶	11～20 的数序；11～20 的大小比较	14	先将 11、15、12、14、13 排成 11、12、13、14、15，再数第 4 张为 14。	本次内容复核通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-13	高阶	11～20 的数组成；11～20 的数序；11～20 的大小比较	18	围绕“一个数有 1 个十，个位比 9 少 1；它比 17 大。这个数是几？”核对选项“18”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-14	高阶	11～20 的数组成；11～20 的大小比较	19，比 18 大	围绕“1 个十和 9 个一组成的数，比 18 大还是小？”核对选项“19，比 18 大”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
-challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-15	高阶	11～20 的数序	13	围绕“10、11、12、□、14 按顺序排列，方框里填几？”核对选项“13”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-15	高阶	11～20 的数序；11～20 的大小比较	11、12、13、14、15；16、17、18、19、20	按“不大于 15”与“大于 15”分组；15 归前组，两组各自递增且完整覆盖 11～20。	本次内容复核通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-16	高阶	11～20 的数组成；11～20 的大小比较	17 大	围绕“1 个十和 6 个一组成的数与 17 比，哪个数大？”核对选项“17 大”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-17	高阶	11～20 的数序；11～20 的大小比较	3 个	围绕“15 和 19 之间有几个数？”核对选项“3 个”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）
 challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-18	高阶	11～20 的数组成；11～20 的数序	19	围绕“18 由 1 个十和 8 个一组成，再添 1 个一后是多少？”核对选项“19”、提示和解析；逐题按 11～20 的数组成、数序与比较范围检查，答案与解释一致，选项互异且未直接泄露答案。	作者自审通过（未独立教育者复核）

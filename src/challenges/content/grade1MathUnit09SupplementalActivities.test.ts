@@ -66,6 +66,13 @@ describe('一年级上册数学第九单元闯关补充题', () => {
     }
   });
 
+  it('高阶位置题不能在题干中直接给出正确选项', () => {
+    const activity = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-high-08'))!.activity;
+    expect(activity.prompt).not.toMatch(/小狗在门的外面/u);
+    expect(activity.prompt).toContain('门的另一侧');
+  });
+
   it('题干彼此唯一且不照搬本单元课程题干', async () => {
     const unit = await loadUnit('grade-1/term-1/math/unit-09');
     expect(unit).toBeDefined();

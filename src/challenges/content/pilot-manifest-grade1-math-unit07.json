@@ -1278,12 +1278,13 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-half-hour-reading",
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "c2e13ac6116ab8f338f87f4b183aff583a41928b8a638ee529c127d802b93170",
+      "approvedContentFingerprint": "a84bf17cee031917ac15285b16f173f1ad896df4c81ff344a83d47a9853cd679",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T08:01:15.000Z"
     },
@@ -1315,7 +1316,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "8d1e9984e32687a9443f3af68c12a33ea5325ea95e21a8962a7255448def77ea",
+      "approvedContentFingerprint": "3990df0d50a9703199fe9675ed6a1e2d6137898b0bbe0f33b31bcbd3216ff066",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T08:01:15.000Z"
     },
@@ -1362,7 +1363,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "66eaba6927689c64f9e157c4312c57e229345d0d4002ebaaa0dde8803f813ec9",
+      "approvedContentFingerprint": "34cb36c058f29abe9eff0c3a72f3c037afd809e3261cf3fc9076df8a4c26b3d4",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T08:01:15.000Z"
     },

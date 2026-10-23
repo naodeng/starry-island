@@ -1092,12 +1092,13 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-09-high-04",
       "difficulty": "high",
       "knowledgePointIds": [
-        "comparison-within-ten"
+        "comparison-within-ten",
+        "number-sequence-eleven-to-twenty"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "c4517e8864191b1785e5e70e12aeb564e40c23d20e42a7b424ebfc74cb6b00e4",
+      "approvedContentFingerprint": "6be90b84a12fd75f3c1c29967b8193cf25cd225ae5c1949e75bb7586005ab476",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T08:30:00.000Z"
     },
@@ -1106,12 +1107,13 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-09-high-05",
       "difficulty": "high",
       "knowledgePointIds": [
-        "subtraction-within-ten"
+        "subtraction-within-ten",
+        "addition-within-twenty"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "6c21f83f69103e372f4a3978904118771b7f7ab6634cfbd9b2e8c85a1b8e4ebf",
+      "approvedContentFingerprint": "44044225156aa669bf703b49ca1e29db9e348cef8d18a5dbfaf7c592cfb21456",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T08:30:00.000Z"
     },
@@ -1155,7 +1157,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "1b0397532c28359a6d6da4b8d2efbd17984e032a96dddca6a015be2de436f138",
+      "approvedContentFingerprint": "44ae4196d71718f994e16a7e7ade6ec942f25bfc345c0ea8effa5ad4ec9d3d0b",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T08:30:00.000Z"
     },
@@ -1240,7 +1242,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "1fa8613e2a0bdd975c6359bdd8116b1070ccbbaeb72b792ed2db8033c3c9239b",
+      "approvedContentFingerprint": "759fa8ed3d5f03f537679b3bf0e53c0b716e3993c1445bd37de999b1da278829",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T08:30:00.000Z"
     },

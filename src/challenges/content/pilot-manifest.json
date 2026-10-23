@@ -633,7 +633,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "7c1222bebd86f61e88255333a28b23c2e45effba7bbbbf901652cc1c0351967e",
+      "approvedContentFingerprint": "c561feb11e43708c186bb171c5fc9bf70d233a1d68f834538f5acca870ab715f",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -647,7 +647,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "11d04ac68c6d2b57c2709c952800e934f21da5580e854d2867ec6c915ec8565d",
+      "approvedContentFingerprint": "33550a4c8fb1c2bc19b42b7baea0924f11ceb5aa007246b3a25d23ba860b3d8f",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -874,7 +874,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "9da6b26d4bb4f67ff7dbe34147b6b68831b0bc182c5af6933eb4610d6689f55f",
+      "approvedContentFingerprint": "4c4f047460d188cd9124a934944c3300ae2950c9ed63cb412a0f10317a768a2a",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -902,7 +902,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "e74575100b67f5ab590a2608eb9b3760fa3b1787162c3f5d5c82d12e5906e193",
+      "approvedContentFingerprint": "a8769f30f5402f74c4b4dfb8c0262ac144a7e5855fded5a67199937f7b1ca453",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -930,7 +930,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "0977aa28617995013a42028472c1499672667bd5305619cd0c659a6d817f3f54",
+      "approvedContentFingerprint": "7913cc3c65ba39565e7b20cf89ce1a11ee16f383514fbe83cb47c0fbb15e32f3",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1015,7 +1015,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "c03299e16a45ae83c9de38b58eae082ea5eeb61a3dd045b1636c144cc24a02c2",
+      "approvedContentFingerprint": "9d756613ae2a2a5a9a72c2d38882d939cca05b745f8af792d414bf6548ad8083",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1024,13 +1024,12 @@
       "activityId": "challenge-supplement-grade-3-term-1-english-unit-01-high-02",
       "difficulty": "high",
       "knowledgePointIds": [
-        "name-and-self-introduction",
         "age-and-class"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "0e0508b2bff49cbfcf1adfa8cf0eb42a47da13090d2a956a1292cdc6f460167d",
+      "approvedContentFingerprint": "413555e8f518310ac7a4338b0e217891f4dab9b01624c7b4d40cdb76d23172c7",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1045,7 +1044,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "e94fec6604f92f4ce13f97a75b4b8dc090acdf85af15099bb09796f20c60b307",
+      "approvedContentFingerprint": "bab33bc32e016a538a2d24b278fb9014bdba7698d394407ed7ac59ab037e37b1",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1054,13 +1053,12 @@
       "activityId": "challenge-supplement-grade-3-term-1-english-unit-01-high-04",
       "difficulty": "high",
       "knowledgePointIds": [
-        "name-and-self-introduction",
-        "age-and-class"
+        "name-and-self-introduction"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "e79e274a805a1fa1fd19bbb2cab1f880f64cf0b88b3fd7fbe8ed93201e67c5e9",
+      "approvedContentFingerprint": "d8c1e52457ae35d8417afdb5629097991deceb89a3d0f8252d4ff826f438a6f0",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1075,7 +1073,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "6b97a91acbbdb03a484fbd43c3b7c062bc45254008d7176cd71d9e2ab1ec0e52",
+      "approvedContentFingerprint": "1baa388f5a71f4dc8269e472b4bb58ad0cb4ede095502355523992369af85210",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1090,7 +1088,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "01622247f314c7e734ef4783732845f34e966832c5a047123c2ce1a45c3c5035",
+      "approvedContentFingerprint": "2605a5076b4297fb7050b07a95f66b80626e2bb60eac109a8740600856f72548",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1105,7 +1103,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "6be33fde680cc531140bff32196d53f7829c7c106945c6561ab310d055c12ed1",
+      "approvedContentFingerprint": "bdd23c699796f936d3429aa39d7606d4082a727867a32eb6d8d7859566966425",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1120,7 +1118,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "99c46e413d29caa620ef220b7c2ec8edee2619b85321d0272229bcc51f0583ba",
+      "approvedContentFingerprint": "3f988570cb72673e240d8ce98960dc25c21dfcc9c3efce0d531e55fa3c5de91f",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1129,13 +1127,12 @@
       "activityId": "challenge-supplement-grade-3-term-1-english-unit-01-high-09",
       "difficulty": "high",
       "knowledgePointIds": [
-        "name-and-self-introduction",
         "age-and-class"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "f00f4eb33e0585f6175d7c64a103d8f5ec75c2357f4842d92aa1a1756c218b4c",
+      "approvedContentFingerprint": "32f83a70c55f03c23db648780f5901d13415204fef42872ddbc1e1c66817f86a",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1150,7 +1147,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "34405c3a3944fbc0b2d740010de4e424bb76c8199431a185d73b912f89bff4fc",
+      "approvedContentFingerprint": "163af8a7b7dbde73773e9655b4ec8a5fb23b1d769766cbf2a45189f48b981a91",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1159,13 +1156,12 @@
       "activityId": "challenge-supplement-grade-3-term-1-english-unit-01-high-11",
       "difficulty": "high",
       "knowledgePointIds": [
-        "name-and-self-introduction",
         "age-and-class"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "85671b241f1387c80abb94f9c197120a3a8c8b62c3c516338ead23e2664cddc2",
+      "approvedContentFingerprint": "eb14e24046287cf244c7c89b12cc4743e751294c757e69358788e2a52185f523",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1180,7 +1176,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "d2762d33a46da413b48b119d6bbed7423a3a3d5d7f7222b210156d8fbb61aa9d",
+      "approvedContentFingerprint": "fda8d66f9cd955ad4c39497166faa518f722eba86151c6bcb7503281e07ea7c5",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1195,7 +1191,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "9e7d898c905c4d86a603cc643dd130a59aa8ec4f1f98799bce1742d7f9255e70",
+      "approvedContentFingerprint": "54f10b4093ac6a662542b91ae13135d9da9f0278cc02432a4484cb0d967410e6",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -1210,7 +1206,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "d1f2ef924120bcdb107f893f64ee0c6f9e5005ac6eb6b76a8c03595c91716317",
+      "approvedContentFingerprint": "6caf22ee2e4d69feef3eb56539bab2e6ed3bb2968441207e162baca6d4e19905",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-22T00:00:00.000Z"
     },
@@ -6943,7 +6939,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "b728b260144b563199b927dc191b5e10c5da61e56bfde9a9f1676575144905a8",
+      "approvedContentFingerprint": "4f9c7b20e3ef91966bf44c4306cc571ea4905efd3142cfa6be296140ff317a9b",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T03:04:10.373Z"
     },
@@ -7048,7 +7044,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "90e308150257a618a95a3c5c7ab61db4d687e88b22f40b648256567c53d43f47",
+      "approvedContentFingerprint": "1f8f61ff5ff1329f5215d6dbb8ceeccf1ce9be87088fa4f5d20fca87b5711bd5",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T03:04:10.373Z"
     },
@@ -7169,7 +7165,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "a5e0362a12166727423510b9b1b32d3d278dc627e7b98e045c81a378cd1fbadf",
+      "approvedContentFingerprint": "a29515e79b95859b20595c47d87e78c33230802665b2e7bbb38ebaa40cfba48c",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T03:04:10.373Z"
     },
@@ -9745,14 +9741,14 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-03-high-10",
       "difficulty": "high",
       "knowledgePointIds": [
-        "checking-within-five",
-        "subtraction-within-five",
-        "number-composition-within-five"
+        "number-composition-within-five",
+        "addition-within-five",
+        "checking-within-five"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "8b65244485948c2274a18b7da540433d672a72228f0528b3b8808f7871d04802",
+      "approvedContentFingerprint": "59e1531b05287aa2ab4591e335f3419d1afe339472fbdf640ffe1fb7b29c9fc1",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T13:25:00.000Z"
     },

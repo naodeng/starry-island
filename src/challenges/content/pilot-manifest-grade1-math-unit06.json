@@ -1220,7 +1220,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "9a8b6a6c1886175ba2301a970c16c4f770b4e43fb0c890278a26a2dd55d9ec8f",
+      "approvedContentFingerprint": "9b4aed1281d8a574988c0e7c6c13247407ac7c9e2dcaa0e87d93695c4cb48c07",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T07:47:00.000Z"
     },
@@ -1245,12 +1245,12 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "number-comparison-eleven-to-twenty",
-        "number-sequence-eleven-to-twenty"
+        "teen-number-composition"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "920111e2574f1ae142e213bf1019e49ed3aee97eb4e3944640094f7a97b2777b",
+      "approvedContentFingerprint": "e6d409faa85ba07d40000001f58a2d46fdcf3d88d2a651fe72596f9f2044da1d",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T07:47:00.000Z"
     },
@@ -1360,12 +1360,13 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-12",
       "difficulty": "high",
       "knowledgePointIds": [
-        "number-sequence-eleven-to-twenty"
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "94f890d5692509e47bb224fae25ebff5a4a4f0c4432259afbca988eb3a5288a8",
+      "approvedContentFingerprint": "7b269b83f0ca6d8a5a60be68afb13578ae038f62e08bc1e17827e4acbd5dce21",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T07:47:00.000Z"
     },
@@ -1405,12 +1406,13 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-15",
       "difficulty": "high",
       "knowledgePointIds": [
-        "number-sequence-eleven-to-twenty"
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "4a0aad5af6f3b3fa7ebeb02b70cc1db1b7e35fb6b45d108355c12e80384356fa",
+      "approvedContentFingerprint": "7037aaa40835c096ed6a2719a1250e962db4250404619a8ca015c77ce2c0e4fd",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T07:47:00.000Z"
     },

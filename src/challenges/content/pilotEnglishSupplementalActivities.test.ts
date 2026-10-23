@@ -14,7 +14,7 @@ describe('Grade 3 English supplemental challenge activities', () => {
 
   it('keeps each declared knowledge point aligned with the visible learning target', () => {
     for (const item of pilotEnglishSupplementalActivities) {
-      expect(derivePilotQuestionKnowledgePointIds(item.sourceUnitId, item.activity)).toEqual(item.knowledgePointIds);
+      expect(derivePilotQuestionKnowledgePointIds(item.sourceUnitId, item.activity), item.activity.id).toEqual(item.knowledgePointIds);
     }
   });
 
@@ -37,6 +37,13 @@ describe('Grade 3 English supplemental challenge activities', () => {
       expect(correct).toBeDefined();
       expect(activity.prompt).not.toContain(correct?.label);
       expect(activity.hint).not.toContain(correct?.label);
+    }
+  });
+
+  it('does not introduce English sentence patterns outside the Myself unit scope', () => {
+    const content = JSON.stringify(pilotEnglishSupplementalActivities);
+    for (const phrase of ['I am eight years old.', 'What is your name?', 'Your name is Ben.', 'I like blue.']) {
+      expect(content).not.toContain(phrase);
     }
   });
 });
