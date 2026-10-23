@@ -1,0 +1,1526 @@
+{
+  "version": "pilot-2026-10-23.19",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-1-math-unit-05",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-1/term-1/math/unit-05"
+        ],
+        "coreKnowledgePointIds": [
+          "number-sequence-within-ten",
+          "number-composition-within-ten",
+          "addition-within-ten",
+          "subtraction-within-ten",
+          "comparison-within-ten",
+          "checking-within-ten"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上册数学; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-23",
+          "notes": "正式编号第五单元“6～10 的认识和加减法”；依据仓库课程清单、单元元数据及固定回退版教材主题登记。候选取自去重后的原课程活动与本单元闯关专用原创补充题。没有把回退来源表述为最新版，未修改原学习 Task。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-1-math-unit-05/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "number-sequence-within-ten",
+              "number-composition-within-ten",
+              "addition-within-ten"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-05/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "subtraction-within-ten",
+              "comparison-within-ten",
+              "checking-within-ten"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-05/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "number-sequence-within-ten",
+              "number-composition-within-ten",
+              "addition-within-ten"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-05/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "subtraction-within-ten",
+              "comparison-within-ten",
+              "checking-within-ten"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-05/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "comparison-within-ten",
+              "checking-within-ten"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-15",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-15",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-15"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7bed7c0719764e49c1a866d48fe8030aa5e03d88867b1fe303a9df3af891cd6f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbee928a9a603c8ab9b141a1ff1d9002c471a2e1c05a8f7c788370fbaf32121f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7be8e335ac3f4060640fc554461dc903845b0013d89b6c22b0cd695f9d086097",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed27d5435afbc3cf07e1b8d5c597555e2b7ea7c88b07df2a837f3f4399dba1ec",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a1d91f36e1992d2c1efadcf1493048adb7136b36cf5d5cfb1404149709f0ec88",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "50df334a15ca43ace9d29bb85fa932ea9142b684936c7f6c473199c2d5408bc4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "84c3cf9c0dd6cefce35783e79339a6a58c6a731a245f70c29dbae415d1bc9673",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f319db68959032f9bb0a846bc5a4be5ec3ed660ad34cf63a140d55e0298d3c93",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "838c0c56752ac2208ac8f8a138b1b6a0b4b09802cd33cab1636562a1f2ccbe45",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f39326f84002b4fce5e15a7a871e910bebd8d209720a1de1e725df59aceaeef",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa6903f0d94a2e3d5abfeb85d436cb8756441a3e6e86985ee65edf3c936a28c8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3265d0f240168a76c536beda261c186694dd243737abd154b0fa7008df2e505d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62ce1c838e41e48c3d3703144f18f0c83ab3f400c28e88388e1077c1c96951fb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9392e442e49a3a542349807a5ae9603edccd2ebea889d4bbc5b2e0b156a8e96e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-05/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf9151acbe999c12608fbbe15b65db9e035a62abdd1a4cfb8cef912e410e4042",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4099bba075eb35c3657a02eb9c60f0440f8277a73735204a2bb9d826f6a6f730",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aee841ed55df2e684ce017857f79560c5b242b2c410662e1e33bb39b4f662a4e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "66c708f9cb598fa1ebc4bc2a4e52e54dc0fbacf92ca59b30eba2eb67bef563be",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0404f38b09bdb42973e8f802a737034ba5eeb4b3ec1034808a47c3ae5d768399",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "00cf0fb9628547a543b9d20be9bec5c0bef1a037d2301146f598714a66dbd5d7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4321dc50e83f93797e23dc0ae1be24c92e268236b159748693ef49a8a323b74e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c1df723a60d2bc2301217765826dd7733aec7b7fc0e14d83bb5ac92fbdb45d7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4aeeedae9a3d8dc6baa898906d6736bfdf563f5d109964d8833433d4ce231379",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b7d4ad2c289f017d08ae1023e05f96c6417841b71d3aea862d55390408bc76cd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c9f3af079f1b2fb464d72fa67c4996c10d5811fb3f51f10d8b41761319e2743",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b5647bfc8bad2c8b4c2684eb05b4481727e13cb306cd41e178a0b7f90ba157b2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "697c69ac69c52b839ac24a7e1952521b9ecfc8bbc5577bcdbbc4ee20baedbe43",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd87232e5ee2911a86715c88683c2ff51ef6d828bc90603f248353a62290725e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8c11c2ab0b7726a31617008dad557aee58fc4d338a0996a7f76fe26bbf7c412",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-basic-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da5019688bd82e11ce64c0ae0ba2a07e43f19c17eb6aa1f8b7bd2c479f1145d1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:15:35.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7a3c327a3dc6c4358d32c4ff3945b7b4e629924305cc4c16ca17c635ce462358",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01a427b879d70e90a8d10c04bfad782cbb81836344f79368e901b0fb2877563d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "33023d02a0656a932cd70a4d718fd28faf817d8b9ba52af49608bb4cacacfce8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d38c769684058f81b5ce16dddd23e122fc0bfd24d37357465675ed4a4bce525",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2bea40260e9003418fd247956d9aa9824924e86f7f5922c39d09270b6dc89f57",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "26e079ab19ab25f840890423b3b7aa3fab8abc1ad06865d9b5b0f6c9d74b4b66",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d9ddc31ea0abd35cd00ebbaabcb8a9a3d2244ded0549e1c4b5e1fdb11a14017b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b69d50933b4d448e8a14565cc638d4c6a6d8baf60d8cab4870d52e267a9781e2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d39e5ad5e7f2d76b5ff1acb2aef0c26f8913dd1982c3d7b49cee0211d3715f3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b2cab988ea2e290f5d718c738601aa48cff289b790a0d44840656631e2989242",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "56644ec19c657a5047ad3fff51e49b2ea1a37df7627f7d8a60b06a6e55177522",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f7d4e3fcb505b4f2aa9ee75910c90c96bdae2ecd2780fe97fe059a20600ffa0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5993d180e5e255e81d3cbecaeb763ca0bec8b2a6af1c922bc88fba472cf4cde9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5a2b259ab1ca664d24afa03b3ace4515fdcdd124dfb523c4780a80b751e1849",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-05/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6a02152eee8f7ac4073b4dcff02a28733f9d1d7ecfe51eae1de84bcf7f1e9a28",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "22810f12721da04c3c91364d905f4e307d1d12d1f5f9ad42ea34eedd071f8736",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c3cd88433d2aa5a79f04bca6ae8f0aa1aae742bb5ed29fbeed01d3781195512d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e50d667d1e5f96f291159bb40574e37691616e0915593db82284d4e314aac9e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5740fd695cbf523dd418a6520d27b4d5d2c7b476a1df64a0aa923c10f1236025",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8cb2828cb7bdcc4896e0fb6400d4036886c66c516a29e4329a1d4c881c490ec4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d0eb82b15e91af576b008adab99ad91a7e1f7b88b347c5229f7b5ae8a998cc1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3e90758e443cee42dc0746c9b7da7b30605f77c65a021058811d30ca0de3ecc1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5b91fc12e17d7da7250dc187e9f785cf28d3a88ca1434f15a690c560e27b225",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44dd2a22b2c943cfe9fdaf42d747ccf8b30a187de1b5b9584ebbd572fd7b079a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "subtraction-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0feb57d8802c28030be81d1ce336cf37a72e4fa877f52029fa1c5947203a7242",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6cb0a0a35cf44beb463456ce110d877d9634f9684d49bb1ba1b9aefa3d341f8c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c486556b773157407759b16bd8b2e709a4554aa1029f497a0388f9633d9db39",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "number-composition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f00f7f26da90dc643102b984fc40a435afe7411531f76939014b396c46c1ff9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a764b1a17a99642375b03a8d1d5c26802d86e320d35477f58d22bd55211b1404",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "subtraction-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92faa4d7bf8b42905443d04caed3f8f165f08f3b82a86376965abb51205c2592",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45fcc508eeb7dc062cb2fceb68c78c49f254012ca83514c3a6d55d35e8c8fbe0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c9db00a6d215944d63e2a451c1d7294f09f47c405699fb47ef69f2679b3269a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb2e0be6a3dbf73f2177a2260031cac191d97af154f193fbec3192e21f2fd6fe",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "850739f3135ec2283e0aff2413ddf539376403a6af96092aa08c07927f3173cd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "comparison-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "515914d2d5b910f5a58538e027ab02b2c792e487c794a5c1ec219db9fc4b528a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "035c21dcdea2aed20275bd520f7b621a8fffe63601841b82e9f80ef7f81ec1c9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62abd0a54afcef2c105d27593632557572946d82d29cbaa3217d85520c478389",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ccc3737463417ab2c415ae358047a11e60be0a5a537c8cd38f113d142b8e7ec",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "77e7faf7c976f370750f6f90ee164859683fcfa3a1e8ba7971e607cebb240f9a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad3c13e27d8ef51242418491bb2464a32da0f4fa0c07123efaeaaaa2b2ddeb49",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02d2fbedd80208a5facadb66868161d6ce3e4356bccb3bcd41839ec88b810ce7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42d35616c72dc97b1a3504077eeef606a1c2a6121aa9d1f6416f3ea218256639",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "comparison-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f4b951db5a6c55312a7118856cbf5eac8721fa25392ec16e19a296031205ed2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a9ab4a3750dcbdc9c84a1a16673f666e71237b0634f6f3ca17028836e927579f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-05/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-05/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "subtraction-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bd3a593280778452fc7b039e417576447381e81ea2d5633aff22cc2c37d740d2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d5ae54cf9721af4d0a4d0321365e7725ee963684fa069869c4e91bc642f19a45",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a841ad297689ba697ae9e8bacc680339b79317ded9a39e15f7bce6a2970d59d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7aa6ca07536f1e597d86a2df50157058aa23d40562842c30d96c95d44ed2964c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e3f88e83cdb9a886e491466f8178c9c92dda80ddd97381dd420bfd34153503e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a9c8a3473226ccd18a094448c242f68ee0cc4a30820325ecaf51c6d537a2d5e0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d0dceb37f316742b1afd3e1b504f6e739b1ca5f02507293e249d3cf6b1d55bb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "subtraction-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ffad84ae7aa6dba6291bdf0f10aac646e6a060875350a92f3e1e5e4d9781ba2b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "subtraction-within-ten",
+        "addition-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf3e0519b3a2dc32c613ad99b68bdf1dca37ba2c6b4df87e5f6120b200cfcb11",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6ccb62a2018353c8eda529a32e246dd1837fd34bf5d2bca81ca7b27113e3fd13",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8bf1acd7567bafa7269182242252ec42196e29bedae62d010c96cf943ff291be",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten",
+        "checking-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d934746c017ec2416bd1cb675c73014ffa51321c04e32853aaa849b7b74858b1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-within-ten",
+        "number-composition-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e754f7913697e587c378de613df328490491fddd77a439617aefad9ccf5b24b9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-ten",
+        "subtraction-within-ten",
+        "comparison-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a97451f1d282131de0c618cdf3e0d5d84aba761a148d2fc742fde0ff000f9043",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "checking-within-ten",
+        "number-sequence-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dd1b102f6940037fcdec13942773db32d2723bb73cd0c50b7a326d432d99c095",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-05-high-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-05-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-within-ten",
+        "addition-within-ten",
+        "subtraction-within-ten"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "40a616d485738f4d2f7264f918cec125dbd86311d175daa017e2b0f647aefc0e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:14:34.000Z"
+    }
+  ]
+}

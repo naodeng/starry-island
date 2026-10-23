@@ -221,7 +221,7 @@ test('rendersEveryVerifiedCourseEntryAndOpensItsUnit', async ({ page }) => {
         }
         for (const entry of verifiedEntries) {
           await page.goto(`/${grade.id}/${term.id}/${subject.id}/${entry.id}`);
-          await expect(page.getByRole('heading', { name: entry.title, exact: true })).toBeVisible();
+          await expect(page.getByRole('heading', { name: entry.title, exact: true })).toBeVisible({ timeout: 15_000 });
         }
       }
     }

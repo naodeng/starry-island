@@ -1,0 +1,1465 @@
+{
+  "version": "pilot-2026-10-23.19",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-1-math-unit-06",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-1/term-1/math/unit-06"
+        ],
+        "coreKnowledgePointIds": [
+          "teen-number-composition",
+          "number-sequence-eleven-to-twenty",
+          "number-comparison-eleven-to-twenty"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上册数学; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-23",
+          "notes": "正式编号第六单元“11～20 各数的认识”；依据课程清单、课程活动范围与固定回退版教材主题登记。题池只纳入复核为本单元范围内的原课程活动与闯关专用原创补充题；未修改原学习 Task。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-1-math-unit-06/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "teen-number-composition",
+              "number-sequence-eleven-to-twenty"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-06/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "number-comparison-eleven-to-twenty"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-06/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "teen-number-composition",
+              "number-comparison-eleven-to-twenty"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-06/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "number-sequence-eleven-to-twenty"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-06/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "teen-number-composition",
+              "number-sequence-eleven-to-twenty",
+              "number-comparison-eleven-to-twenty"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-17",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-18",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-16",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-17",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-18"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0829a3f4cad7a4a3513114e0dbba7d7a05caf257c46d21233c8f970c4b149cf9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "99218f47a7f0b8a523b292b46c0bb210c1e9ae922a70e1722ac91957885b3277",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d66e862170ac71be42d9e8bfaf068e6ae8ea3de0208dde2534f9586b6f567fd2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25858a5293ef54890c0078117ea94906a301321c02c5df0b82eba234eb57dcbf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "970185d90e83d095c39ec51407456649a964065f9ec7f77a8efa36f3343bdd07",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc11c8c65866b7a64662336e6aad7b5f891f0526d806976818c466a0e9580512",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a35eb3fb050c568c42d27d8b1424abce6f20107d7f56a00f6b9bf3698e4ad67",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "684077c87aff4914c771df6b3fd7e4daa97c8821e50856d1f390a5dc61c1a538",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1cf8788c826cc5b4d843fa92a7574b891aee6823af2dd959a2a01560c16bbe9d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13acace772ebd42aad21d6a9d28667aa4ba2f739602bd948406c9c3df3cf412c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4ce207534b467ed2aacd39bf73a14dc02d3d4af3b03d7921a492db9908045d1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-06/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "06313d3446246dc17bc5e97d32a7eea077ab8738e5f601ae353cec8025c1e3b6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf149c72a6579997771cc501f8c35b390779de8b85b4632d3e3bb15288db2cf0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a686d62ee966999ab70090ec8431a9aee4e3eed6fd4bc17e95234545be93733",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d05b5a9bb9aa7189dec608f129e537161d24192ff251724e045498fc7dc6284",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "77392069e89424f60399c0c5a31c3afed2876a571712f949884691b885dfc1e7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5993a2092accfeacded1a1db53656c7dc329b2d92c444e6d9e9e77d14378f47e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f98bc9603a40b15761ddd51bd7a686c383026cf4a48757daaad3456ded4ee649",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e75c8c59ce5607da886e92524b64d1654b4b23c2107399818b8cb4f600b81f2d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "30594038698ed2a630cacf0e9a3c8b9cb091857583a894e379c007dd57759c02",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dcf29c008709f7147560bae325d721721f63bf68fced76edf05da281ec2d8449",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5be5c9de011b745d430437ec3ca677b17eba78306a171e12da6ceb62bd98dcdc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db785932671f968f35e147ca6fb9498140ab80919c9b37208b1ee6342c20e11a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35512c50fb329291688f2e097a2e49177bed2caeb4ea3ec1049d440cba5d3f44",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "de5484246fc0468781f72d4037b623deee7e0811eefde0ed94014bef82c0623c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "529ba8236c83fc881f302645bf03f2ba89abed85a0b7f9a0049aa2395413a429",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "32feab0906e57e940b44e0080de00c143364d9bab39f90333b27089fd3edd7e9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-16",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-16",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "21948e3ab2a5408e8ab3de9c5b01be6d1ee16f6ed80bdfcf3528011fd1cab486",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-17",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-17",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "51bfee1ee91fe42fc444c7fc930381edd912c1915ed1d23159158dfdbc23bd73",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-basic-18",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-basic-18",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af35789643d3c23916df766c27d5f954ed37e2c7fdbf7ffc10493a6b8c335b9d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "437f3ae2e40a3e57cdca45228927394a7e3c748a3d3dfda2ea779ed5dccb0b09",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db0764707f5152ad620e9d0e9cac5b3bfcbaecf835aeecdf2e04ad0accfcdcad",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a555626cc2c8403a8ddacc4445786baf75fa2419461d3546f0b48f6dabb154aa",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5dc9a1bef569ef833fefeac2fba11eecc8e8b6e0da1e3501f68e513500374d5d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a81f56c1899ec4a30295b0590666ed5be65fa90b6dc461cf2ae5521257ce06d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff3f244df7f28607b7603f5c93fa296c65ea35abd006beef2bb261c7a2568b8f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb30f3b302de6aa3d308c96ec668686e0a1d920f4b52781a4937c39debbea4da",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "33d642cbbf66dd289af4c60c733de66cb4c9d3ed59140babd4c4422c170bcc57",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f39f0a1ad2dd7c41d2c9b412ddc77666e2aa6a47c04d0f92d2460b2a1ffe8ef",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5598e5d49104b740324d8af20bd6daade02a3fc2baffba606368cf027518f59e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8563efa6cd1ea64cf8929174cce37efee8d49c43a4f445023b2b938fcca5c0d2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "46a0161adb8cddd0d083a856d37e802711683627803a95cabc6fb1a280fb9e89",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ebcb2aa87f6c911f9d0fa7c830fcb3bf679c7dcb53622f8c5e22abd11c08e6c3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-06/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29ccde1aa2d3d1a605bca811a11560830f56dcffa215b262b1dde68429b59b90",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2da8e10fc00ad9070024b857ad11591e73c98d68287c1556f1c9a4e06f423a8a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "71eb1310152573212a9a5b02921f0552a6c0e2e04d5711478db12be0411fb177",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0af1738660381fb6bd729ffc1284320ed64eace9ea8180bd29fe903c95f4a4a3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c77420ab88dbb027fe4de6b1b506f15c40a7082141d0071fc3dcb87ac5a2439",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5bd23d69cb18221eb3652c9be2ce9fe40ba1e2131e16f63119cb16f16493c8c4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3027c7fc9dca810a84cad714501531cbcb16b803adf375db4cd5ef28e0bae6ee",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "38f0ad3417547b63d4e07eece53c1428eeb79db4a3c530deddbdcfc63bdb8b1b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18ab4294d95eccb59520c53877f64c4b74301bffe5aff5ec8557e065b85005ad",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff736e660af972b462c69f84b798db31683eb30f01c8cf85ab475259842adafb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5398616fbe845197c611ad1f708c6d86f1216ccf25960d1670f53673fb3b5012",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7fb92d50451298c25d9a2c108128ba0699e2a49fa219091d89e33fa8e078eb37",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8816107175c091916fcfc97966e3e47cc1c480eca60046e446e2657e452dfe99",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8496e85f02c99f616f56e3a11aa17a0aba2af9d0d7a8f28b5e27de5a4f99b4f6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "124cd8ba7d26684f92bc6c413867ff1ff58a63cde8dca6b86554220c4b83bef2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5518f5c27c53cbd2a21509fcdab9f2e31280c25551ec6f8d57880a7139e4bcee",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-advanced-16",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8fd70689cbcb01c21534be86ecc56ff8c03c6b60b3318930e8ed39fd3ffe94f7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e1f09c8c08646556f2b91c80b486ccfd55a4354b5184325f196d52167b51cef5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d865c61ff5f4e228f023fa224fd07de29bc52752522b76e68c7cfbd4a6d88c06",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "442c20002a8c0ad867d53cf9c3e286c96e480e2f5e269ac4f651df3cb49037a0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3082233fcac88815a1fd2c3f47a3a8245c53a8addab178575af614c26c21be2c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b70a48f57f3c2d0e6d786437d3a5baa451489998be90100cb420bf9cc5a032c8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e8ba457503fd0b0e9db94a0f9ca3ccc3684ca0ab61ae9420ecb5134cbcfc08f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c0e5fdb966c9e133971a4c39ecb9bb0aa956c383ad9727402bff34a4383fb21",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44729bb53ac6b44c49c7b34dfe551975e77db62b87519da7de229ead95215a97",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "186d83a25f8af4d819c0ceaed9e2696c9383c5dab9bda77ef51baff9136be3e6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1dbfa55fbe7a51c4fa78e41b1965e2d8d599e7c350ed3dad98268586e3d163cb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2770d963a8f2e7bfdc734145ebec19659c9607943c7d6a66b522a262f905c021",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-06/high/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-06/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a3c87830f9ffa33def1c771b2c43d7d1d3d0bc7f70e8b093accf6293bcf6113",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e496fc5515bae82f7a943a13da37d41b08f2c03decb7c91132bd2728c5f2474e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b4aed1281d8a574988c0e7c6c13247407ac7c9e2dcaa0e87d93695c4cb48c07",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cd77ff789d547f4251a9a9c04d0448347ca581e99f3e37be7ea5cde4bfb41ac9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty",
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6d409faa85ba07d40000001f58a2d46fdcf3d88d2a651fe72596f9f2044da1d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "08e1fe08f7117e60f0a9c901ed581f559c8b3eae27aafd7ad13ca52a7b397dda",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f21a49a93f3bea38c53cb31f94043a2ac4812ca2196788cdafc591796a980946",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cbf3994b2ad31adc9fe7f311d37e9e447f03bbea58411ddab7f53e592a6a9778",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5316a7e44eacc5dd5641f2f478f43543c2b9523f16539a7d3959a1b610310eec",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "59819ee9eb1694b5787d2d575111f1ed2c5c5217940793ec0247976b5b7017b9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8ee21fb1403bcae00f833ca6e3afdb76d27b936324beceec47faab207d60514e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f2e888adb0b89c3f863420dc86ccf38e02def906998938fb44f7a886fb823231",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b269b83f0ca6d8a5a60be68afb13578ae038f62e08bc1e17827e4acbd5dce21",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e74a2907c0398b32347009c8075321e0388b62e30c141264c1187954430016cb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a52962e3ffb87f8ee5bccd38a88b3dec44dd680f6ad70daade1730537d97949c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7037aaa40835c096ed6a2719a1250e962db4250404619a8ca015c77ce2c0e4fd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-16",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afee9164bfef5f47b26ef6fed0dbf40ddeb98143d44b68bc32fa261c50a6342f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-17",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-sequence-eleven-to-twenty",
+        "number-comparison-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5cf5fb1b5f0c1b4b2b313e1ced81dc9df52b8ca57439b30a8372ee4b86117cb1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-06-high-18",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-06-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "teen-number-composition",
+        "number-sequence-eleven-to-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0233a4df4235eeca2bb3611aae31c935f1873b07600e8f6a9ef448826c3e5076",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T07:47:00.000Z"
+    }
+  ]
+}

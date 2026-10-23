@@ -1,13 +1,14 @@
 import { useId, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { ArrowRightIcon, CheckCircleIcon, ChevronDownIcon } from 'naive-icons';
-import { getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
+import { getChallengeGroupPath, getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CurriculumUnit, Difficulty, LearningTask } from '../../content/types';
 import { getSessionsForDifficulty } from '../../content/sessionUtils';
 import CompanionAvatar, { COMPANION_PROFILES } from '../mascots/CompanionAvatar';
 import HeroGuide from '../mascots/HeroGuide';
 import CourseBreadcrumbs from './CourseBreadcrumbs';
+import { getPilotUnitChallengeGroupId } from '../../challenges/content/unitLinks';
 
 interface UnitOverviewProps {
   unitKey: string;
@@ -74,6 +75,7 @@ export default function UnitOverview({
       ? '家长提示：本课程依据人教社公开最新版教材内容设计。'
       : '家长提示：本课程教材来源正在核对中。';
   const firstBasicTask = allBasicSessions.length > 0 ? unit.difficultyTracks.basic.tasks[0] : undefined;
+  const pilotChallengeGroupId = !selectedTask ? getPilotUnitChallengeGroupId(unitKey) : undefined;
   const nextSessionIndex = selectedTask
     ? Math.max(0, selectedTask.sessions.findIndex((session) => !completedSessionIds.includes(session.id)))
     : -1;
@@ -180,6 +182,19 @@ export default function UnitOverview({
               </div>
               <Button type="default" onClick={() => onNavigate('/')}>返回课程目录</Button>
             </div>
+
+            {pilotChallengeGroupId && (
+              <Card className="unit-challenge-entry" color="default">
+                <div>
+                  <p className="eyebrow">闯关练习 · 与学习进度分开记录</p>
+                  <h2>试试本单元闯关</h2>
+                  <p>闯关不提供提示或重试，也不会改变这里的学习场次进度。</p>
+                </div>
+                <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate(getChallengeGroupPath(pilotChallengeGroupId))}>
+                  进入闯关挑战
+                </Button>
+              </Card>
+            )}
 
             <div className="difficulty-track-list">
               {difficulties.map((difficulty) => {

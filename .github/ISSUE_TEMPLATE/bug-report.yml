@@ -1,0 +1,54 @@
+name: 问题反馈
+description: 报告星岛学园中的功能故障、数据异常或显示问题
+title: "[问题反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        提交后，问题会出现在 GitHub 仓库中，可能对公众可见。请先搜索已有问题；不要填写孩子的姓名、学校、班级、联系方式或其他可识别信息，也不要上传包含个人信息的截图。
+        诊断文件不会自动附加。如确有需要，请在应用内手动导出脱敏诊断信息后再自行决定是否附上。
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 你原本希望发生什么？
+      description: 用简短的话描述你期待的结果。
+      placeholder: 例如：刷新页面后，未完成的闯关可以继续。
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: 实际发生了什么？
+      description: 请描述页面显示或操作结果，不要粘贴个人信息。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 如何再次遇到这个问题？
+      description: 按顺序列出复现步骤；如果无法稳定复现，也请说明。
+      placeholder: |
+        1. 打开……
+        2. 选择……
+        3. 点击……
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: 使用的浏览器
+      options:
+        - 不确定
+        - Chrome 或 Edge
+        - Safari
+        - Firefox
+        - 其他
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy-check
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我已检查内容，不含孩子或家庭的可识别信息。
+          required: true

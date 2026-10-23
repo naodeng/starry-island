@@ -1,0 +1,59 @@
+name: 题目修正建议
+description: 报告题目答案、讲解、表达或难度方面的问题，供维护者人工审核
+title: "[题目修正] "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        由家长、教师或维护者代为提交。提交后内容会出现在 GitHub 仓库中，可能对公众可见。题目修正不会自动改动课程或闯关内容，维护者会先核对依据和影响范围。
+        请勿填写孩子姓名、学校、班级、成绩或联系方式；教材依据请记录书名、版次、印刷页码或公开链接，不要粘贴大段教材原文或上传教材扫描页。
+  - type: input
+    id: question-location
+    attributes:
+      label: 题目位置或编号
+      description: 填写年级、学期、学科、单元和题目编号；不知道编号时描述所在页面。
+      placeholder: 例如：二年级上册数学第二单元，某个基础挑战
+    validations:
+      required: true
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: 问题类型
+      options:
+        - 答案或判分有误
+        - 题意不清或表达不适龄
+        - 讲解有误或不充分
+        - 难度或知识范围不合适
+        - 题目重复或内容失效
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: 具体问题
+      description: 说明题目哪里不准确或不合适；避免包含任何学生个人信息。
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-correction
+    attributes:
+      label: 建议修正及理由
+      description: 如涉及答案，请说明正确答案及推理过程；如涉及难度或表达，请说明原因。
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: 可核对的依据
+      description: 提供教材书名、版次、印刷页码或公开来源链接。引用教材时只需提供定位信息和简短必要摘录。
+      placeholder: 例如：教材名称、册次、印刷页码；或公开参考链接
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy-check
+    attributes:
+      label: 隐私与版权确认
+      options:
+        - label: 我已移除孩子及家庭的可识别信息，也没有上传教材扫描页或大段原文。
+          required: true

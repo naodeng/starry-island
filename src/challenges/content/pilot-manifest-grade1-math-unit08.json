@@ -1,0 +1,1574 @@
+{
+  "version": "pilot-2026-10-23.19",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34a5ce5f0a367c0cfb7e13cb861e09e52ea3e8ba7f5c7df4bba1c36bf6de3cd4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e8f0523b8e0cbe36c0bbfb2a02e8bb41a66394b70d34da9cb30faf96dd7d6f2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c7b9ae0a68f0a3fb7cd697d3a3a591a0430f458a112897722c759615226dbff2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9a276e1f8a857d5b6c6d3bb5a6c4e392a93731c45735a1968918dfbd0983a8b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bd5fd6f92eae307efda7827d401d531722172f26690fbc08804292b12c87e403",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29dfaa36dc8a08d0937ebe0eebadd0ede5116946e670cfd2ac3c34001ec46e3d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-situation-modeling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1699386bb666ca6f87b29f8f5663a0177b7ec58e5c8ee0bf942efd2dd8662cd8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "651fa3878ef7e7331db6e90ad545104cff85cf093250fbaa37f66462a97b36e7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4e033817be01532c64c6d2126cc8b1771e3ea8c4cce7a1ec11c93b2e6dc4c20",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a8450e5fab40b8e01b42eb3ace0c9e764309f205dead34fc5b272cedc67eaf2f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc31cf72ff8d6da7f4e34e3d9ff4e67c057517c658b9e3c3bc4b25d730712253",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7740994b20aee86d38a80d671f737141b1ec134b5160b91856a5eb758dbc3982",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17d4642dd8b807c9bf83407320a2d4739aa3bd81ba0033bf8b2a5a4d69235bf5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d2cb177fdd31c4584b6b61a78ad95e381601c4f34bbc89bc2d1ecbe9f7f7a2d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-situation-modeling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f2b931b7ef59e37eeaf46f6391c531a237d18b0371731d47b06c91f4c611d1a5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-08/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e31a52e8bee2a5befb31f9c86eb937f595850043ddb54985e71c92da40cfddd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d84458b77889e27b81c48445f9127a74234fe6fdb8362be63d6597312b72958",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b61e7f777d50d007e86a8f499cc2078142b7c296c19150a501853d7c69bc972",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4feb71e74714995c1a9db1027855b4b81982f859c6345df4b337933536b7a9f8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d626eee589fabec03823c86054bdc6a55a66c65f273c7e3f31f96e69d7427c2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d3bef0949418bba105a4995de683cbbd4cda7e7d2ec7a5b94b18f38ba699ff6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-situation-modeling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75ca62fdf2a58f275e92efe32daed76d5dd94fccd0419733b9f7044c3aced460",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-situation-modeling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ca7bc890ae5a0d2aa254dfd990b91b4208a96bae1d200ee2755a75e8d37dfe3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa35afe12d2e5dbaad21f6d251906b80810f5623417bcf08cae8ce155158a1ef",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3c8a328a4ec196d3d6306758cbc2a31e592f28c9eb42f14f9b5fdaf6e5fbd69",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3aed0b45812b041ad1bba8c106f0ecffce6b00d2d23003f8fd18fab9ff7324b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "20188beda1d0816bfea848eba5f64f12d0117ad32c395de368e14c68196e64da",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "54758b280fda477ef5faf891fc998bda2cc1f7a9ec88ca240f59bb988bf1bfa0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eb1ec13a5fff728f49a0d5464855c61b5cae1d950cb74d04930de4fcc7ccee65",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-situation-modeling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f84482071877a8a9c6d9a9c0d34e94cc6703b2c06c755212c5573cb07de65df",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "562c164a5635fd278fe4339abe6121643c9a06c04e57af3b52f86e55b3d08caf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e592207c7273e16d285488647705c3e542afbd1f943a2c526fecba41e3bcfffb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3ba315504e0d5fcb29e02a3256c3b1deb717db3e31147e84e8a1b4d98fd5ebe",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "462b81ff171ea0c1a2c07f7a0e3d5675faba5ab0b4b74a6e90889b23eea3ee1f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "478193efd86e4b1d7446014dc9a0790e3eb9d416c6db2356fb33582039bc9f56",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "carry-addition-within-twenty",
+        "make-ten-strategy",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afdee96bdc3c6503f36db34a4b1e64f68588ee3e6d121c83855ff907c70de661",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff3b4af2b02a5e36c3e45cf39fc2191f8eecf713cfd8fc952bd5790f80a0d51f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aabb30224b363ecfe8bd2b7863522627087c6b113880be7cfc87512586ec06cd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a100786c77170f52bbfffb04522b53b58991d33b92dc7324c2d4c1f28420e176",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5fcbb163f3706b7d1006174fb3909b17ca8627710ab8b591a1e09c19fa4de4b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "48ca80c10ab71dbcfb58a0e75d8b7ce9198818e334f900f9acaaab93285ac064",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8ebbe86ef2f8ca6aee7d6c2ddbed86b13f01c0c347dfaf7b2192b91c5411ecf2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-08/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-within-twenty",
+        "addition-situation-modeling",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "88e760a96abfe99413638037a704b1dfe30027b78ff839c0eee8b9339d2bb414",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2d5b773ab209d6e71733a0a232062486927012fa8f250099cae4391cf242c3ca",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "429bddcfe40e044bbedaab84a60ce1810170e42af5fa65ed143a73d4652333b5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b588d6a239c1fc5a59e0cd2ce0f5187bd40c337fced7bf66237628f090f9b138",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf6e46f2d754df4133e56b319c41e25d0b7d58d428d864644e15be5b121ed732",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64ecf533d7357dcf2aa0f56f2f28e92f51013d839efc0857cfcdb828c21a2cdb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd79803fb8d35454775d2597a515686041d35eb2fb83b1c5667f6b0600018030",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c87c7fdc8d6e3b92a727d42ea6279dbe0e24d5e8ceac3911255468ecd0d046d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93d7295d829c49dbd5e7e2082c660c725cdb3c332dd69b8a8c1472c4c78af978",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0689779c87e36f047050f8010149f89ee2a65d3a3d2cbc40a976b8038d8c8018",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed333fb22d2d0aa5876374b218e321af98c2d834d23abcdd4cafbf9ee16e6ba9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b834cd4807a9fb2e61e98a32a9f9e1bb6d0d3368cdc8a208a22489722892cbe",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "98783b3ac8320464625fcb88ef2da4bf696ba51fdc5fb7d2167484d01138ab0e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05f3a7970541907ecc566aff288bb3e2c9933cd5e36c4b2c6ebd3935e1e2c93f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64e8b030781aa677b6e22ae40149af3c9f13483dc3d6cc2696ef8db45838d108",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e64f3e38487024fd3bd85dc2686ee0a3efec134ce50b5e9ac6f770a1c2024e95",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "97335b7172fbea6652992c429f7ed1abc5480fee4c19b99a41b8d702b7bdb598",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "798351f008cb02d34abeb69bd18e490239b4254c50e77720fbc1d50a5ad83cc3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "234ca09d4ebf8e375d3dc7c2bf68fd40625a67885e58ae15e8542dcf83aa6850",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87b00f469650e482627d768b06c0696ac6399da6cfbf98b2ea17e86e38b56db8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75dd80d64a4a78ee11fad01c996a0f5bcce9966e31acf3be7bb2ecc7d24610f1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "552956c6a18c4251d175f5539a23dbfebb3808ae576b81a0e236c960ade731e1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2afc014f7240115ab13d6dc3adb7d1bb300e4431e3890a2700759ef5ae314b5e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1faa114cbda5c9361d08ab5420f17aef81059a889b0500b351ddf762a319a137",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0cd86427462e1426e623b5a8c342d0f785185e56157991247f4840240eb91bb2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "645dabf2f0c2f168bc99aec978ea8292170e3d1a53ce0f840f47c66bbb3fbfc0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8bcb50f53c364b1356e1b7b51e3801d86a56f07ab27a15281a7b19b0fff5c263",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93e8290bf15307f306f5f68193a46cfdfe8db65733659b74f8e0b9c12763f55f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "391a0404275f2972c802a6144e3c937fd2833f28c62e05ed9ffcaf2ab1f4613b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc2136a8c55cd588d9b93544b69e374cc16e3808e5036a26567cdf85a9a70392",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-16",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0738693098e81e17537d4fc73c81b9d19648243a3d161ff20030711be527b584",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c6c9f9f7397276dd60f9a4b96ac55aa77265b99711f5dbf0e8dda2e59005d8b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "925d899a5471cea44e621f70cd805e7e1b1b454120c69caff30d5da13d4f16b9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef7d6a161d627ca4dba03780b3f150c60ea4bd6bc0529cd636593b0a7937d9a7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ffa7c2bf5ac980f46e0b2495e01c8a445e8ac42699062f604adabf8238fc867",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1903a47645c865c05df478b1a3da74eeb25c471aa5a6de6d7ab4b8090664ffe1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e5feec31c7bc5cd5482fd876c680370d759b638153e4da696a807483424faa9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3231c8ed9ee56830e0e7ab947f29428190bec23233c6fb9817cf15cabe7da71",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37fbe7e9329317b2b94d2a959b539eba50efe22bd2eadabf53039c1ef3a384f5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42e333af401a68689dd5af23950c6177d8607421a4b40303f77cfa42bf91afcf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70673bf2a8a607f7525184f81c2f3e124c09178e50cf1d0be36b046aebe4b217",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "82206203b25769e174c23b227f5a2cccd22173e9ac03b2484df9d663439ee36d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e29dc0bd59fa9f2391d049dc1fc298ee30b9a48e1ef5bc1ae4f720b5272c550",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty",
+        "addition-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61140caf7950758f616620498f3b0f13e7c212e598945d6b67f88962b47f948f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "32778dae4e173e3c8df162323088a629327b785c2c8d86af58b3cd48a9a84282",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "make-ten-strategy",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7863b2ff2c93cea758d9fce3eb5835ddd0be3c763ebbdcca413a2f17510de58c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-16",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-checking",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f0320cacf5a25a6859a70dbe538c3d30f2989b2070f0a23adacdb8d90ac6684",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-17",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-08-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-situation-modeling",
+        "carry-addition-within-twenty"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e8b842d2511cb36ca8de58a3fd7ee2143103178fc6cf3a9bfed333605ec1f484",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:30:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-1-math-unit-08",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-1/term-1/math/unit-08"
+        ],
+        "coreKnowledgePointIds": [
+          "make-ten-strategy",
+          "carry-addition-within-twenty",
+          "addition-within-twenty",
+          "addition-situation-modeling",
+          "addition-checking"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上册数学; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-23",
+          "notes": "正式编号第八单元“20 以内的进位加法”；排除 5 道跨难度精确重复课程题后，保留课程题 basic 16 道、advanced 14 道、high 13 道，并分别补充原创题 14、16、17 道；补题覆盖凑十、进位、情境列式和验算；未修改原学习 Task。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-1-math-unit-08/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "addition-within-twenty",
+              "make-ten-strategy",
+              "carry-addition-within-twenty"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-08/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "addition-within-twenty",
+              "addition-situation-modeling",
+              "addition-checking"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-08/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "addition-within-twenty",
+              "make-ten-strategy",
+              "addition-situation-modeling"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-08/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "carry-addition-within-twenty",
+              "addition-checking"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-08/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "make-ten-strategy",
+              "carry-addition-within-twenty",
+              "addition-within-twenty",
+              "addition-situation-modeling",
+              "addition-checking"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-08/basic/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-08/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-08/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-basic-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-advanced-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-08-high-17"
+      ],
+      "releaseIntent": "released"
+    }
+  ]
+}

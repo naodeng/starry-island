@@ -3,6 +3,7 @@ name: Quality
 on:
   push:
     branches: [main, 'codex/**']
+    tags: ['v1.*']
   pull_request:
     branches: [main]
 
@@ -23,21 +24,42 @@ jobs:
           cache: npm
 
       - name: Install dependencies
+        id: install_dependencies
         run: npm ci
 
+      - name: Check challenge question bank quality
+        run: npm run challenge:quality
+
+      - name: Audit challenge coverage
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
+        run: npm run challenge:coverage -- --report-dir .quality-reports/curriculum-coverage
+
+      - name: Inventory curriculum challenge source activities
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
+        run: npm run challenge:source-audit -- --report-dir .quality-reports/curriculum-source-inventory
+
+      - name: Require complete curriculum coverage for V1 tags
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' && startsWith(github.ref, 'refs/tags/v1.') }}
+        run: npm run challenge:coverage -- --report-dir .quality-reports/curriculum-coverage-v1-release --require-complete
+
       - name: Run unit tests
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run test:unit
 
       - name: Check coverage thresholds
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run test:coverage
 
       - name: Build static site
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run build
 
       - name: Install Playwright Chromium
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npx playwright install --with-deps chromium
 
       - name: Run browser tests
+        if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
         run: npm run test:e2e
 
       - name: Upload test reports on failure
@@ -50,3 +72,50 @@ jobs:
             playwright-report/
             test-results/
           if-no-files-found: ignore
+
+      - name: Add challenge quality report to workflow summary
+        if: always()
+        run: |
+          echo '### 闯关题库质量报告' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .quality-reports/challenge-quality-report.md ]; then
+            cat .quality-reports/challenge-quality-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '质量命令未生成报告，请查看前序步骤的错误信息。' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Add curriculum coverage report to workflow summary
+        if: always()
+        run: |
+          echo '### 闯关全课程覆盖盘点' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .quality-reports/curriculum-coverage/curriculum-coverage-report.md ]; then
+            cat .quality-reports/curriculum-coverage/curriculum-coverage-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '覆盖盘点未生成报告，请查看前序步骤错误。' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Add source activity inventory to workflow summary
+        if: always()
+        run: |
+          echo '### 全课程闯关源素材盘点' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.md ]; then
+            cat .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '源素材盘点未生成报告，请查看前序步骤错误。' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload challenge quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: challenge-quality-reports
+          path: |
+            .quality-reports/challenge-quality-report.json
+            .quality-reports/challenge-quality-report.md
+            .quality-reports/curriculum-coverage/curriculum-coverage-report.json
+            .quality-reports/curriculum-coverage/curriculum-coverage-report.md
+            .quality-reports/curriculum-coverage-v1-release/curriculum-coverage-report.json
+            .quality-reports/curriculum-coverage-v1-release/curriculum-coverage-report.md
+            .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.json
+            .quality-reports/curriculum-source-inventory/curriculum-source-inventory-report.md
+          if-no-files-found: ignore
+          include-hidden-files: true
