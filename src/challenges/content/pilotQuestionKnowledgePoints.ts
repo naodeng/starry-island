@@ -5,6 +5,7 @@ import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03Supple
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
+import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
@@ -13,6 +14,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-04',
   'grade-1/term-1/math/unit-05',
   'grade-1/term-1/math/unit-06',
+  'grade-1/term-1/math/unit-07',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -149,6 +151,17 @@ export function derivePilotQuestionKnowledgePointIds(
         ids.push('number-comparison-eleven-to-twenty');
       }
       if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-1/term-1/math/unit-07': {
+      const supplemental = grade1MathUnit07SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/整时|几时|指向\s*12|表示.*时刻/u.test(text)) ids.push('clock-whole-hour-reading');
+      if (/半时|时半|指向\s*6|两个数字之间|和.*之间/u.test(text)) ids.push('clock-half-hour-reading');
+      if (/时针|分针|短针|长针|指针/u.test(text)) ids.push('clock-hand-roles');
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 clock question ${activity.id}.`);
       return [...new Set(ids)];
     }
     case 'grade-1/term-1/math/unit-01': {

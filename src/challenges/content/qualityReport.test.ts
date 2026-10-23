@@ -12,6 +12,7 @@ import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03Supple
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
+import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
 import { buildChallengeQualityReport, renderChallengeQualityMarkdown } from './qualityReport';
 import rawManifest from './pilotManifest';
 
@@ -46,7 +47,7 @@ async function loadPilotInputs(): Promise<MutableChallengeQualityInputs> {
     }
   }
 
-  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities]) {
+  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities, ...grade1MathUnit07SupplementalActivities]) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }
@@ -111,7 +112,7 @@ describe('buildChallengeQualityReport', () => {
       unitGroup.definition.id,
       semesterGroup.definition.id,
     ].sort());
-    expect(report.groups.filter(({ status }) => status === 'ready')).toHaveLength(8);
+    expect(report.groups.filter(({ status }) => status === 'ready')).toHaveLength(9);
     expect(report.errors).toContainEqual(expect.objectContaining({ code: 'duplicate-task-id' }));
   });
 

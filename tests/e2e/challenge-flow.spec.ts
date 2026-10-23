@@ -835,6 +835,28 @@ test('opens the Grade 1 math Unit 6 challenge on a narrow dark screen without ch
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('opens the Grade 1 math Unit 7 challenge on a narrow dark screen without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-1/math/unit-07');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-07');
+  await expect(page.getByRole('heading', { name: '一年级上册数学 · 第七单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('clears and restores an in-progress challenge through the 24-hour recovery point', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });

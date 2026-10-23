@@ -1,0 +1,1551 @@
+{
+  "version": "pilot-2026-10-23.17",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c9e98a3376241accebf8421e8938d96d530ff95a1969948080a5a6a2af31e26b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f7113539c269c67b831207a3133ff77a284e606587a43fbc633f515143a67a5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8205791a5c6132568bc40af777d95dc3c6aa8d6836a33c157e78cacace81ecc3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1441fb9f1fa345785b08fac388eb305bc784aaaff7c793540c836571965ed61c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4cf3a4832d7a5f843e0ba272e9664a3b35d8a968f966dfafad95808da2e1a08",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f26a08a09d567fd39214e284ac8f5877fc8b85f81a46efebc07dd0831858ce6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02143c2472585ac97bb3cd83659177a55a482b4c5e68ca62f60b6827e5de6152",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6cba21a5c888a36a9980766e616e0369eb56899ea85895f1f0ceffad7eb02c8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "654d087fb2f757fa8d0616734238ee18da781aa858c4b78949742778fb772c73",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "068794bdf4c601dab32a82ce4a9d918f770bdfef4b8cd0c1859943ea14f0c3b6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5c7dde1b07d1f7b9bca48ae2af925b3746572a2f13aabd9db8843553dc803a2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "725099117c0e57eb2d90f351cea2b6903912dd354f793f4da4178547818380a8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "360e89bb28f907c49080171fa3c142c74ef092d852e4b389ed61f695b8495dfa",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "19bda0dfc149eed73d9fd0a30d0107a33031acd8789478df9e719682af6d1f70",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f684f969a8b12b2170e1052137a7845da8060e35bc56a9bdeb7b94ec1924422",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "673d421667f1d0cb34b60abfcc9e5c87e00b228fb61e79931db415d81011cb1f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13e7cec6322c33e5de54df0253359960076de4384eb6518a5bca847f5b8aea8d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8cd1e4d5de65400f1b97b7e1aaadc1e168ee02a371f40832cceb4e924664f055",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b46285bc2b6c32da829ea9869f791917d98d1e7729246a6c41ef9132b65217c6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0954452dceac94c09212d45bb00a8a5f473e468de7d3699767665a75af90149c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07bd1eb471322d381662ed15e0c4a2a9aa99ebaa30576314f55456c647cbc433",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6b6fe2b37513e6253aba589f21061f10b77fd04521d21ee5b53c58af1e44423",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "90f64126240e28da6c14a0ab55543542e9701ae380292d03568f6d890b01c768",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fee67497874d48d15d3404351940318c1283c9e6ac4df4c12b2b5f697ba2e98e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10eb28c0ed708afda84d2d16c45b1dc81dd7485bebef73c7c6ea5c05667d4e86",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e175e95441af6b544b849404bdade28c59b0287b43a9a14ca05567af5ace9ac4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0e9afc266f473f63ad50d8e46440c53f4fbc27fc9db777271606432674b789bc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "509a21dfffba15a1c69a7947c952c58613125eb0d746eaf53becedf586a50077",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "40ee5b5a437ac6d5349e51062f3d2762f4fc5caa1416a6bc75be57b036e07944",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "815f5beba321e6a26328006ce2b073967249ef44470380bbaad53a29ed2e0083",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a572ea7c4fc3b158b304196abd52e4156d9969bd4ef0b1eb1a617af3ae70a631",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92b8806e1b63419dc8482a177ab0552d3f5d039032ddb089ed511ac24937960e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18052d7cdd4b509d2d798fde7f9e587fa845fac48bb5468ce8ea3ebb961779ee",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "905d4278cfa0bd5baacac2386e317768be0fafb57e5320a49112be85fc006e1d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3da8945361a485be0c332519aba85c99490e46bebe503ab4801bac624717c899",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "655abbcbeac2f25770d0584a2d75ab8d695b253f7fa00b8a4f3f700aad588943",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5ce2f6324d8101377a727f1a31d412a2b50747cadcec75c104e0105d3948e024",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5164edd634a6c001ec9a3dec431e9cf508dccb719263031a5b24d6e69de1a76",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "079298782e592a4d53e4e834f84bc004273d9435c9078ef233ee26d8204ca19f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "33f87d8acfacffa9e30c0552411475cba1e0970e324ea54df6af78c175605cf8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed297febe6ceac07f12803abd6131e08275853a1f4f804269644c8517b5caba7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4cca4e671d5b9a9a5208756b5379de9beaaf18ca360e5c14733743ed92ed4baf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e71c41cd82b68a46ccf736787469d5e95343af45efdaa822cb550516d8bcd6c2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8bd86b01bef6807865ba967feaefa16a6c30942b7b4d1fd1816cfe95d8846593",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "addd53b76b330b74e597803498e68f8de12a78ed9ec20ab3caaf356c8263fe5d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d1ac6befda7d6bb63caeb2e5eeb5a14678b3df939b478c2641ce88e05e0f3d9b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc1e29c53ca48cb78ed908d64472f71ba4563da71b4574da12590f6468588af2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f305ef7254b79f817a3ff73a86801f4751fef0a2ae8b4b8c40b84bf3a78a96fc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3233e849bf0b6ae747c38c8376ae14baebce32f98b8ca99786ace002ce7dff07",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf27b92271aeb39189a3221b4512fb3413480b77263986a0acad5261314e9d6e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13370fa36cdf83469464966aa0b42d6bee6f3d2c70765f1b10fb28c10180f753",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc7c0e122d1464845eb621aa7480640a7dd831f01b920fbc078338073df2f4b0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5cf1d568a7dc4a4d83651d0a61d7f98341b8377e35e21c7ff5a0114a6f2d0a7c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e0cdbf3c4de5582ff96cb146060fb292a2cf624fd29327df700efe72458f1cf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7311901d6f43028765a1a3f640ed6bddba2528b9d5a92e6da107ea2b67e5539f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b0e4e377c686d70dd3238fe319a274b9657f8c4a69452249fe4ebd655442114e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "77765b9ae9ff3a990f766afbc09dbfb633e90a27e8bdd27c00fb80204e7c77ec",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e20be544d753252fb34df5575170deaecd2f9c50ed155acf6efe9dc69eacc687",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "54e0a0881ba07f11cbaa879d5fd02cce756b5c1c2b5212bdbda11e26d97308ad",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f05e9b6bcaa7ef38bb6d78210ca904ff9fd50078711ace08873b6942149ef86",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f49a24eb0d9e1eec265a0729e6fab5e6f1a34c4d4769db12f43ae62d4dfb0719",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "38a1efe15a15490d65e4df04414d724ac3b7f0a886a96ff83f76c84dcef456f7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0ffdbebb8d83548f8b598ce6293f4db897c40db32456c9bf74fd7bbb9abb524c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37cf014aa55b1f656ecde431bc42c52b89549b95bb2c63dbcfd04ab613c16c46",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34f402f4b5b510efded926a2da29daca581469dd444601f970233cae2872e59d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6dfda593b436f675b8a2ad806e12e16fe78c0e00b442e531d29482597dd8b978",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "08215751479b6c4b3b00bb4b7d2f23afd0332b1e1a481d9ad8edd86c6b5c408d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2867875ae3a78bccc4bcb21ad3b1b42b20cb00bdba49877b964f767641e38bfc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eddb848cde3dadffc90e9271490354b5807b5b10db70418e25dd000e179497c4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75cb29836001e5924daaba07158c9fdfac5d1f14eb3987c6fd445f0cbce9a0bf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3d4cead32643f2dceab3704afd9adf96974f285dbe35dd3d118395daf9b63b7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc32c040bc38707f749208c497bd4275b6aaca9fd1f1ecaf868eb002829ab0d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0fa8ce0fcbc1b2e379dba290e0f83bb27c6bcc7622b9d60853497feaaf423d9a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab0ec12bca59c13c5cb3141d0a7f9dd3f9383daa38b49974c8a8a314259ddddd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f775450b142ebbc466eb85fb192a1db9d6ac09495b3d951d4e02c3061b2f67e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0bd46a402d75fa5c7612d82f0949812bcbbd8b6fa1ec476c76f822e5696d4d41",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44cb20c3695e6eb95a811b769f550eba0f2d74c5bf869e5b1e2dbc5daed3d2ed",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb5d277f193db89b54829a378bc680da7a510e62bd4992dc83f94e229bafd7c2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4799de58fe32bb346ff93fc28a8b751e22240e901fdc8c83a14a785c471a223d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "51e0394455f01f120d1358c19b76c5b4b7e713e2e79e736d36f3e1b2a9df1ad9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "14a19dfdc8f3f9dddb01f2d5b7c94dfb488867b97e19860daac450b20afefe5d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dcff0e9dd19ff1a08dfa546ec1f0a8f7497dabaca690a9618d1d4e3af06207d3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "493a6dc83fbdeaf4743080d581c9bff1e653c458a309e7115cbac63911581444",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c2e13ac6116ab8f338f87f4b183aff583a41928b8a638ee529c127d802b93170",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "96a6be2fa72047808a3344d7a0cbc0646239ba23aacb098d9d1746dd4da86755",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d1e9984e32687a9443f3af68c12a33ea5325ea95e21a8962a7255448def77ea",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5d3671cf807de5d5443a4db8da89b90cd8dabcc6547b497b43ef1f21bd24628",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bdd81e3629553e24711b79b5b7629ae2e4088c51e3814008f492aa90b65f27c5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "66eaba6927689c64f9e157c4312c57e229345d0d4002ebaaa0dde8803f813ec9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-15",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-whole-hour-reading",
+        "clock-half-hour-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "28c1173020a910853190a24d4b7c11e51cc81d5a37312a602b1ff2f0069c830d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T08:01:15.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-1-math-unit-07",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-1/term-1/math/unit-07"
+        ],
+        "coreKnowledgePointIds": [
+          "clock-whole-hour-reading",
+          "clock-half-hour-reading",
+          "clock-hand-roles"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上册数学; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-23",
+          "notes": "正式编号第七单元“认识钟表”，范围为整时、半时与指针辨认；每档排除一条引入分钟概念的课程活动，不修改原学习 Task。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-1-math-unit-07/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-whole-hour-reading",
+              "clock-hand-roles"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-07/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-half-hour-reading",
+              "clock-hand-roles"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-07/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-whole-hour-reading",
+              "clock-half-hour-reading"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-07/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-half-hour-reading",
+              "clock-hand-roles"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-07/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-whole-hour-reading",
+              "clock-half-hour-reading",
+              "clock-hand-roles"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-07/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-basic-15",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-advanced-15",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-07/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-07-high-15"
+      ],
+      "releaseIntent": "released"
+    }
+  ]
+}
