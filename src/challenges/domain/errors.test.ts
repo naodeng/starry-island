@@ -20,8 +20,10 @@ describe('challenge error recovery guidance', () => {
     });
     const result = classifyChallengeError(wrapped);
 
-    expect(result).toMatchObject({ kind: 'storage-full', recovery: 'make-space', actionLabel: '导出备份或清理空间' });
-    expect(result.message).toContain('设备可用空间不足');
+    expect(result).toMatchObject({ kind: 'storage-full', recovery: 'make-space', actionLabel: '释放空间后重试' });
+    expect(result.message).toContain('设备存储空间不足');
+    expect(result.message).toContain('不要清除此网站的数据');
+    expect(result.message).not.toContain('导出闯关备份');
     expect(result.message).not.toContain('private storage detail');
   });
 

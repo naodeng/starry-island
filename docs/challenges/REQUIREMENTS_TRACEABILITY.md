@@ -19,7 +19,7 @@
 | REQ-012 | 最近三次已完成试点挑战的题目优先避让已实现 | 数据仓库与组卷测试 |
 | REQ-013 / 014 | 部分实现：复用已支持控件；测量题不纳入试点 | `ChallengeActivityRenderer.tsx`；清单校验测试 |
 | REQ-015 | 部分实现：检查试点候选池和组装后试卷的知识点覆盖 | 题库清单与试点内容测试 |
-| REQ-016 / 017 | 记录用时、确认后保存答案与刷新恢复已实现；完整载入后可断网完成挑战。离线冷启动、离线刷新和配额恢复尚未验证 | `src/challenges/storage/`；`tests/e2e/challenge-flow.spec.ts` |
+| REQ-016 / 017 | 记录用时、确认后保存答案与刷新恢复已实现；完整载入后可断网完成挑战。配额异常时会保护待保存答案、明确刷新丢失风险并提供安全重试；真实配额耗尽、空间释放和离线冷启动/刷新尚未验证 | `src/challenges/ui/ChallengeRunner.tsx`；错误与组件测试；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-018 | 丢弃确认已实现，丢弃不增加完成进度 | `ChallengeRunner.tsx`；数据仓库测试 |
 | REQ-019 / 020 / 021 | 试点星级和五任务徽章推导已实现 | `progress.ts`、`progress.test.ts`；闯关界面测试 |
 | REQ-022 / 023 | 结果页按知识点汇总答错题，并提供到现有学习任务的复习入口；导航不改动课程进度 | `studyRecommendations.ts`、`studyRecommendations.test.ts`；`pilotContent.test.ts`；`ChallengeResult.test.tsx` |

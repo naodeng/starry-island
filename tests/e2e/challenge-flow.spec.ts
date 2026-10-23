@@ -1033,6 +1033,15 @@ test('keeps an answer pending after an IndexedDB transaction abort and saves it 
   await expect(page.getByText('已完成 0/15 题')).toBeVisible();
   await expect(page.getByRole('button', { name: '重试保存答案' })).toBeVisible();
 
+  const reloadDialog = page.waitForEvent('dialog');
+  const reloadClick = page.getByRole('button', { name: '重新读取已保存进度' }).click();
+  const pendingAnswerDialog = await reloadDialog;
+  expect(pendingAnswerDialog.message()).toBe('本题答案尚未保存。重新读取或离开本页会放弃这个答案，已确认保存的进度仍会保留。要继续吗？');
+  await pendingAnswerDialog.dismiss();
+  await reloadClick;
+  await expect(page.getByRole('button', { name: '重试保存答案' })).toBeVisible();
+  await expect(page.getByText('已完成 0/15 题')).toBeVisible();
+
   await page.getByRole('button', { name: '重试保存答案' }).click();
   await expect(page.getByText('已完成 1/15 题')).toBeVisible();
   const nextPrompt = await page.locator('.challenge-activity h2').textContent();

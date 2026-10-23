@@ -102,6 +102,7 @@ function stubHoldingBrowserLock() {
 
 afterEach(() => {
   for (const repository of repositories.splice(0)) repository.close();
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
 
@@ -346,6 +347,108 @@ describe('ChallengeRunner', () => {
     await userClick(screen.getByRole('button', { name: '重试保存答案' }));
     expect(await screen.findByRole('heading', { name: nextQuestion.activity.prompt })).toBeInTheDocument();
     expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, answers: { [firstQuestion.questionId]: 'wrong' } });
+  });
+
+  it('explains quota failure without losing the pending answer and retries after space is freed', async () => {
+    const repository = makeRepository();
+    const saveAnswer = repository.saveAnswer.bind(repository);
+    vi.spyOn(repository, 'saveAnswer')
+      .mockRejectedValueOnce(new DOMException('quota reached', 'QuotaExceededError'))
+      .mockImplementationOnce(saveAnswer);
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    const firstQuestion = active!.questions[0]!;
+    const nextQuestion = active!.questions[1]!;
+
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('本题答案尚未保存');
+    expect(alert).toHaveTextContent('关闭或刷新会丢失');
+    expect(alert).toHaveTextContent('已确认保存的答案仍在本机');
+    expect(alert).toHaveTextContent('不要清除此网站的数据');
+    expect(screen.getByRole('heading', { name: firstQuestion.activity.prompt })).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 0, answers: {} });
+
+    await userClick(screen.getByRole('button', { name: '重试保存答案' }));
+
+    expect(await screen.findByRole('heading', { name: nextQuestion.activity.prompt })).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, answers: { [firstQuestion.questionId]: 'wrong' } });
+  });
+
+  it('asks before reloading when it would discard an unsaved answer', async () => {
+    const repository = makeRepository();
+    vi.spyOn(repository, 'saveAnswer').mockRejectedValueOnce(new DOMException('quota reached', 'QuotaExceededError'));
+    const confirm = vi.spyOn(window, 'confirm');
+    confirm.mockReturnValue(false);
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    const firstQuestion = active!.questions[0]!;
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    await screen.findByRole('alert');
+
+    await userClick(screen.getByRole('button', { name: '重新读取已保存进度' }));
+
+    expect(confirm).toHaveBeenCalledWith('本题答案尚未保存。重新读取或离开本页会放弃这个答案，已确认保存的进度仍会保留。要继续吗？');
+    expect(screen.getByRole('heading', { name: firstQuestion.activity.prompt })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '重试保存答案' })).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 0, answers: {} });
+
+    confirm.mockReturnValue(true);
+    await userClick(screen.getByRole('button', { name: '重新读取已保存进度' }));
+
+    expect(await screen.findByText('已恢复上次保存的进度')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: '重试保存答案' })).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: firstQuestion.activity.prompt })).toBeInTheDocument();
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 0, answers: {} });
+  });
+
+  it('asks before returning to the task list when it would discard an unsaved answer', async () => {
+    const repository = makeRepository();
+    vi.spyOn(repository, 'saveAnswer').mockRejectedValueOnce(new DOMException('quota reached', 'QuotaExceededError'));
+    const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false);
+    const onNavigate = vi.fn();
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={onNavigate} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    const firstQuestion = active!.questions[0]!;
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    await screen.findByRole('alert');
+
+    await userClick(screen.getByRole('button', { name: '返回任务列表' }));
+
+    expect(confirm).toHaveBeenCalledWith('本题答案尚未保存。重新读取或离开本页会放弃这个答案，已确认保存的进度仍会保留。要继续吗？');
+    expect(onNavigate).not.toHaveBeenCalled();
+    expect(screen.getByRole('heading', { name: firstQuestion.activity.prompt })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '重试保存答案' })).toBeInTheDocument();
+
+    confirm.mockReturnValue(true);
+    await userClick(screen.getByRole('button', { name: '返回任务列表' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/challenges/group/test-unit-group');
   });
 
   it('does not mistake another tab answer with the same revision for this page write', async () => {

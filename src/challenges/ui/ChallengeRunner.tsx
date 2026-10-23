@@ -8,7 +8,7 @@ import type { ChallengeAnswer, ChallengeAttempt, ChallengeResult as ChallengeRes
 import { CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } from '../domain/snapshotSchema';
 import { assemblePaper } from '../domain/assemble';
 import { finalizeAttempt, submitFirstAnswer } from '../domain/attempt';
-import { getChallengeErrorMessage } from '../domain/errors';
+import { classifyChallengeError, getChallengeErrorMessage } from '../domain/errors';
 import { getChallengeDensityTier } from './densityTier';
 import ChallengeActivityRenderer from './ChallengeActivityRenderer';
 import ChallengeResult from './ChallengeResult';
@@ -73,7 +73,14 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
   const writerLeaseRef = useRef<ChallengeWriterLease | null>(null);
   const lockControllerRef = useRef<AbortController | null>(null);
 
-  const reload = useCallback(() => setReloadRevision((revision) => revision + 1), []);
+  function confirmPendingAnswerAbandonment(): boolean {
+    return !pendingAnswer || window.confirm('本题答案尚未保存。重新读取或离开本页会放弃这个答案，已确认保存的进度仍会保留。要继续吗？');
+  }
+
+  const reload = useCallback(() => {
+    if (!confirmPendingAnswerAbandonment()) return;
+    setReloadRevision((revision) => revision + 1);
+  }, [pendingAnswer]);
 
   function releaseWriterLease() {
     writerLeaseRef.current?.release();
@@ -267,16 +274,21 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         releaseWriterLease();
       }
     } catch (error) {
+      const guidance = classifyChallengeError(error);
       const current = await repository.getActiveAttempt(task.id).catch(() => null);
       if (current && isSameAttemptSnapshot(current, pending.nextAttempt)) {
         setAttempt(current);
         setPendingAnswer(null);
         setSaveError(current.currentIndex === current.questions.length
-          ? '全部答案已保存，但成绩暂时没有完成记录。请重试保存成绩。'
+          ? guidance.kind === 'storage-full'
+            ? `全部答案都已保存，但成绩还没有写入。${guidance.message}`
+            : '全部答案已保存，但成绩暂时没有完成记录。请重试保存成绩。'
           : null);
       } else {
         setPendingAnswer(pending);
-        setSaveError(getChallengeErrorMessage(error, '答案还没有保存成功。请重试保存，或退出后再恢复这次挑战。'));
+        setSaveError(guidance.kind === 'storage-full'
+          ? `本题答案尚未保存。这个答案暂时只保留在当前页面内，关闭或刷新会丢失；已确认保存的答案仍在本机。${guidance.message}`
+          : getChallengeErrorMessage(error, '答案还没有保存成功。请重试保存，或退出后再恢复这次挑战。'));
       }
     } finally {
       setBusy(false);
@@ -404,7 +416,10 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     <main className="challenge-page">
       <div className="challenge-shell">
         <header className="challenge-runner-heading">
-          <Button type="text" onClick={() => onNavigate(getChallengeGroupPath(loadedGroup.group.definition.id))}>返回任务列表</Button>
+          <Button type="text" onClick={() => {
+            if (!confirmPendingAnswerAbandonment()) return;
+            onNavigate(getChallengeGroupPath(loadedGroup.group.definition.id));
+          }}>返回任务列表</Button>
           <p className="eyebrow">{task.difficulty === 'basic' ? '基础闯关' : task.difficulty === 'advanced' ? '进阶闯关' : '高阶闯关'}</p>
           <h1>{taskTitle}</h1>
           <div className="challenge-runner-progress" role="progressbar" aria-label="已完成题数" aria-valuemin={0} aria-valuemax={attempt.questions.length} aria-valuenow={attempt.currentIndex} aria-valuetext={`已完成 ${attempt.currentIndex}/${attempt.questions.length} 题`}>

@@ -16,8 +16,8 @@ const GUIDANCE: Record<ChallengeErrorKind, Omit<ChallengeErrorGuidance, 'kind'>>
   },
   'storage-full': {
     recovery: 'make-space',
-    actionLabel: '导出备份或清理空间',
-    message: '设备可用空间不足，这一步没有完成。请先导出闯关备份或清理设备空间，再重试。',
+    actionLabel: '释放空间后重试',
+    message: '设备存储空间不足，这一步没有完成。请释放设备存储空间后重试；不要清除此网站的数据，以免删除本机闯关记录。',
   },
   'storage-unavailable': {
     recovery: 'retry',
