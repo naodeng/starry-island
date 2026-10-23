@@ -38,6 +38,12 @@ describe('parseChallengeManifest', () => {
     };
     malformedTask.groups[0].definition.tasks[0].targetCount = '15';
     expectPathError(malformedTask, 'groups[0].definition.tasks[0].targetCount');
+
+    const malformedLearningTaskUnits = structuredClone(rawManifest) as unknown as {
+      groups: Array<{ definition: Record<string, unknown> }>;
+    };
+    malformedLearningTaskUnits.groups[0].definition.learningTaskUnitIds = [42];
+    expectPathError(malformedLearningTaskUnits, 'groups[0].definition.learningTaskUnitIds[0]');
   });
 
   it('parses the current pilot manifest without changing its data', () => {

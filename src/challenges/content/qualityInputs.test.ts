@@ -4,6 +4,7 @@ import { loadChallengeQualityInputs } from './qualityInputs';
 import rawManifest from './pilotManifest';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
+import { validateChallengeManifest } from './validateManifest';
 
 function clonePilotManifest(): ChallengeManifest {
   return structuredClone(rawManifest) as unknown as ChallengeManifest;
@@ -53,5 +54,24 @@ describe('loadChallengeQualityInputs', () => {
     expect(question).toBeDefined();
     expect(input.activitiesById.has(activityId)).toBe(true);
     expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-3/term-1/english/unit-01');
+  });
+
+  it('blocks Grade 1 Term 1 review links that point to a different term', async () => {
+    const manifest = clonePilotManifest();
+    const reviewGroup = manifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-09')!;
+    reviewGroup.definition.learningTaskUnitIds = ['grade-1/term-2/math/unit-01'];
+    const input = await loadChallengeQualityInputs(manifest);
+
+    const report = await validateChallengeManifest(
+      input.manifest,
+      input.activitiesById,
+      input.sourceUnitByActivityId,
+      input.unitsById,
+    );
+
+    expect(report.groupIssuesById[reviewGroup.definition.id]).toContainEqual(expect.objectContaining({
+      code: 'mismatched-learning-task-unit',
+      path: `groups.${reviewGroup.definition.id}.learningTaskUnitIds`,
+    }));
   });
 });

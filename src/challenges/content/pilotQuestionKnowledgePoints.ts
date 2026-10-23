@@ -7,6 +7,7 @@ import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05Supple
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
 import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
+import { grade1MathUnit09SupplementalActivities } from './grade1MathUnit09SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
@@ -17,6 +18,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-06',
   'grade-1/term-1/math/unit-07',
   'grade-1/term-1/math/unit-08',
+  'grade-1/term-1/math/unit-09',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -186,6 +188,48 @@ export function derivePilotQuestionKnowledgePointIds(
         ids.push('addition-checking');
       }
       if (ids.length === 0) throw new Error(`Could not classify Grade 1 addition question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-1/term-1/math/unit-09': {
+      const supplemental = grade1MathUnit09SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const correctOption = activity.kind === 'choice'
+        ? activity.options.find(({ id }) => id === activity.correctOptionId)?.label ?? ''
+        : '';
+      const reviewText = activity.kind === 'choice' ? `${activity.prompt} ${correctOption}` : text;
+      const ids: string[] = [];
+      const additions = [...reviewText.matchAll(/(\d{1,2})\s*\+\s*(\d{1,2})/gu)];
+      const subtractions = [...reviewText.matchAll(/(\d{1,2})\s*[-−]\s*(\d{1,2})/gu)];
+      const isAdditionCheck = /检查|核对|验算|改正|算成/u.test(reviewText) && additions.length > 0;
+      if (additions.length > 0 || /加法|相加|合起来|一共|总数/u.test(reviewText)) ids.push('addition-within-twenty');
+      if (/从小到大|从大到小|接着数|数到|漏数|按顺序|连续数|十位|个位|几个一|一十/u.test(reviewText)) {
+        ids.push('number-sequence-eleven-to-twenty');
+      }
+      const promptNumbers = [...activity.prompt.matchAll(/(\d{1,2})/gu)].map(([, value]) => Number(value));
+      if (/比较|比.*大|比.*小|更多|更少/u.test(activity.prompt)) {
+        ids.push(promptNumbers.some((value) => value > 10) ? 'number-comparison-eleven-to-twenty' : 'comparison-within-ten');
+      }
+      const hasTeenNumberTakeaway = /拿出|拿走|取出|用去|吃掉/u.test(reviewText)
+        && ([...reviewText.matchAll(/(\d{1,2})/gu)].some(([, value]) => Number(value) > 10)
+          || (/原有|又放/u.test(activity.prompt) && promptNumbers.length >= 2 && promptNumbers[0]! + promptNumbers[1]! > 10));
+      if ((subtractions.some(([, left, right]) => Number(left) > 10 && Number(right) > 0) || hasTeenNumberTakeaway)
+        && !isAdditionCheck) {
+        throw new Error(`Question ${activity.id} is outside the Grade 1 Term 1 review scope.`);
+      }
+      if (subtractions.some(([, left, right]) => Number(left) <= 10 && Number(right) <= Number(left))
+        || (/拿出|拿走|取出|吃掉|还剩/u.test(reviewText) && /\b(?:[1-9]|10)\b/u.test(reviewText))) {
+        ids.push('subtraction-within-ten');
+      }
+      if (isAdditionCheck || /检查|核对|验算|改正|算成/u.test(reviewText)) ids.push('addition-checking');
+      if (/又放|又来|一共|总数|两排|合起来/u.test(reviewText) && additions.length > 0) ids.push('addition-situation-modeling');
+      if (/参照物|位置|左边|右边|前面|后面|里面|外面|上下|左右/u.test(reviewText)) ids.push('relative-position');
+      if (/立体图形|正方体|长方体|圆柱体|球体|整体外形|骰子/u.test(reviewText)) ids.push('solid-shape-recognition');
+      if (/平平的面|平面|弯曲的面|弯曲面|圆形底|棱|表面/u.test(reviewText)) ids.push('solid-shape-features');
+      if (/滚动|能滚|不能滚|叠放|放稳|稳稳/u.test(reviewText)) ids.push('solid-shape-use');
+      if (/半时|时半|分针指向\s*6|两个数字之间/u.test(reviewText)) ids.push('clock-half-hour-reading');
+      else if (/时刻|整时|分针指向\s*12|\d{1,2}\s*时|时针|分针/u.test(reviewText)) ids.push('clock-whole-hour-reading');
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 math review question ${activity.id}.`);
       return [...new Set(ids)];
     }
     case 'grade-1/term-1/math/unit-01': {

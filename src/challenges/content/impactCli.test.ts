@@ -53,6 +53,7 @@ describe('challenge impact CLI', () => {
       resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit06.json'),
       resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit07.json'),
       resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit08.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit09.json'),
     ];
     const manifestFragmentsBefore = await Promise.all(manifestFragmentPaths.map((path) => readFile(path, 'utf8')));
     const manifest = rawManifest as unknown as ChallengeManifest;

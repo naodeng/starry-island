@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { ActivityDefinition } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
 import { derivePilotQuestionKnowledgePointIds } from './pilotQuestionKnowledgePoints';
+import { grade1MathUnit09SupplementalActivities } from './grade1MathUnit09SupplementalActivities';
 import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
 
 const base = {
@@ -205,6 +206,79 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
       sourceUnitId,
       grade1MathUnit08SupplementalActivities[0]!.activity,
     )).toEqual(['make-ten-strategy', 'carry-addition-within-twenty']);
+  });
+
+  it('maps Grade 1 Unit 9 review activities to taught number, position, shape, and clock points', () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-09';
+
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('计算：8 + 4 = ?', ['12', '11', '13']),
+    )).toEqual(['addition-within-twenty']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('比较 9 和 5，哪句话正确？', ['9 比 5 大', '9 比 5 小']),
+    )).toEqual(['comparison-within-ten']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('比较 18 和 13，哪句话正确？', ['18 比 13 大', '18 比 13 小']),
+    )).toEqual(['number-comparison-eleven-to-twenty']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('小狗在小猫左边，小猫在小狗的哪边？', ['右边', '左边']),
+    )).toEqual(['relative-position']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('哪种立体图形有弯曲侧面和两个圆形平面？', ['圆柱体', '球体']),
+    )).toEqual(['solid-shape-recognition', 'solid-shape-features']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('分针指向 12，时针指向 5，表示什么时刻？', ['5 时整', '5 时半']),
+    )).toEqual(['clock-whole-hour-reading']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      grade1MathUnit09SupplementalActivities[0]!.activity,
+    )).toEqual(['addition-within-twenty']);
+    expect(() => derivePilotQuestionKnowledgePointIds(
+      sourceUnitId,
+      choice('盒子里有 14 个积木，拿出 5 个后，还剩几个？', ['9', '8', '10']),
+    )).toThrow('outside the Grade 1 Term 1 review scope');
+  });
+
+  it('classifies every retained Grade 1 Unit 9 course candidate and rejects direct teen subtraction', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-09';
+    const unit = await loadUnit(sourceUnitId);
+    const excludedActivityIds = new Set([
+      `${sourceUnitId}/basic/task-01/session-01/question-07`,
+      `${sourceUnitId}/basic/task-02/session-01/question-07`,
+      `${sourceUnitId}/advanced/task-01/session-01/question-07`,
+      `${sourceUnitId}/advanced/task-01/session-01/question-08`,
+      `${sourceUnitId}/advanced/task-02/session-01/question-07`,
+      `${sourceUnitId}/high/task-01/session-01/question-01`,
+      `${sourceUnitId}/high/task-01/session-01/question-07`,
+      `${sourceUnitId}/high/task-02/session-01/question-07`,
+    ]);
+    const outOfScopeSubtractionIds = [
+      `${sourceUnitId}/basic/task-01/session-01/question-07`,
+      `${sourceUnitId}/basic/task-02/session-01/question-07`,
+      `${sourceUnitId}/advanced/task-01/session-01/question-07`,
+      `${sourceUnitId}/advanced/task-01/session-01/question-08`,
+      `${sourceUnitId}/advanced/task-02/session-01/question-07`,
+      `${sourceUnitId}/high/task-01/session-01/question-07`,
+      `${sourceUnitId}/high/task-02/session-01/question-07`,
+    ];
+    const retainedActivities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)))
+      .filter(({ id }) => !excludedActivityIds.has(id));
+
+    expect(retainedActivities).toHaveLength(40);
+    expect(retainedActivities.every((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity).length > 0)).toBe(true);
+    for (const activityId of outOfScopeSubtractionIds) {
+      const activity = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks)
+        .flatMap((task) => task.sessions.flatMap((session) => session.activities))
+        .find(({ id }) => id === activityId)!;
+      expect(() => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity)).toThrow('outside the Grade 1 Term 1 review scope');
+    }
   });
 
   it('distinguishes angle parts from angle comparison and multiplication meaning from facts', () => {

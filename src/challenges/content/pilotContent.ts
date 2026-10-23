@@ -14,6 +14,7 @@ import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05Supple
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
 import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
+import { grade1MathUnit09SupplementalActivities } from './grade1MathUnit09SupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 import { validateChallengeManifest } from './validateManifest';
 
@@ -45,9 +46,12 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
   for (const question of manifest.questions) {
     knowledgePointIdsByActivityId.set(question.activityId, question.knowledgePointIds);
   }
-  const sourceUnitIds = [...new Set(manifest.groups.flatMap(({ definition }) => definition.sourceUnitIds))];
+  const unitIdsToLoad = [...new Set(manifest.groups.flatMap(({ definition }) => [
+    ...definition.sourceUnitIds,
+    ...(definition.learningTaskUnitIds ?? []),
+  ]))];
 
-  await Promise.all(sourceUnitIds.map(async (sourceUnitId) => {
+  await Promise.all(unitIdsToLoad.map(async (sourceUnitId) => {
     const unit = await loadUnit(sourceUnitId);
     if (!unit) throw new Error(`Could not load challenge source unit ${sourceUnitId}.`);
     unitsById.set(sourceUnitId, unit);
@@ -75,7 +79,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
     }
   }));
 
-  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities, ...grade1MathUnit07SupplementalActivities, ...grade1MathUnit08SupplementalActivities]) {
+  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities, ...grade1MathUnit07SupplementalActivities, ...grade1MathUnit08SupplementalActivities, ...grade1MathUnit09SupplementalActivities]) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }
@@ -106,7 +110,8 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
       status,
       candidates: status === 'ready' ? candidates : [],
       disabledQuestionIds,
-      learningTasks: group.definition.sourceUnitIds.flatMap((sourceUnitId) => learningTasksByUnitId.get(sourceUnitId) ?? []),
+      learningTasks: (group.definition.learningTaskUnitIds ?? group.definition.sourceUnitIds)
+        .flatMap((sourceUnitId) => learningTasksByUnitId.get(sourceUnitId) ?? []),
       issues,
     };
   });

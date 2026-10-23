@@ -34,6 +34,7 @@ export interface ChallengeGroupDefinition {
   semester: 1 | 2;
   subject: SubjectId;
   sourceUnitIds: string[];
+  learningTaskUnitIds?: string[];
   stage?: 'first-half' | 'second-half' | 'end-term';
   coreKnowledgePointIds: string[];
   mappingEvidence: { source: string; checkedAt: string; notes: string };

@@ -37,6 +37,7 @@ describe('loadPilotChallengeContent', () => {
       ['grade-1-term-1-math-unit-06', 'ready'],
       ['grade-1-term-1-math-unit-07', 'ready'],
       ['grade-1-term-1-math-unit-08', 'ready'],
+      ['grade-1-term-1-math-unit-09', 'ready'],
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
@@ -47,6 +48,7 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups[6]?.candidates).toHaveLength(90);
     expect(content.groups[7]?.candidates).toHaveLength(90);
     expect(content.groups[8]?.candidates).toHaveLength(90);
+    expect(content.groups.at(-1)?.candidates).toHaveLength(90);
     expect(content.groups.every(({ disabledQuestionIds }) => disabledQuestionIds.length === 0)).toBe(true);
     expect(content.groups[1]?.candidates.every(({ contentFingerprint, activity }) => contentFingerprint && activity.id)).toBe(true);
     expect(content.validation.errors).toEqual([]);
@@ -58,7 +60,7 @@ describe('loadPilotChallengeContent', () => {
       .map((candidate) => [candidate.questionId, candidate]));
     const candidates = [...candidatesByQuestionId.values()];
 
-    expect(candidates).toHaveLength(1126);
+    expect(candidates).toHaveLength(1216);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 
@@ -165,6 +167,44 @@ describe('loadPilotChallengeContent', () => {
         expect(learningTasks.some(({ knowledgePointIds: taskIds }) => taskIds.includes(knowledgePointId))).toBe(true);
       }
     }
+  });
+
+  it('keeps Unit 9 question provenance separate from its cross-unit review links', async () => {
+    const content = await loadPilotChallengeContent();
+    const reviewGroup = content.groups.find(({ group }) => group.definition.id === 'grade-1-term-1-math-unit-09');
+    const candidateActivityIds = new Set(reviewGroup?.candidates.map(({ activityId }) => activityId));
+
+    expect(reviewGroup).toBeDefined();
+    expect(reviewGroup?.group.definition.sourceUnitIds).toEqual(['grade-1/term-1/math/unit-09']);
+    expect(reviewGroup?.group.definition.learningTaskUnitIds).toEqual([
+      'grade-1/term-1/math/unit-01',
+      'grade-1/term-1/math/unit-02',
+      'grade-1/term-1/math/unit-03',
+      'grade-1/term-1/math/unit-04',
+      'grade-1/term-1/math/unit-05',
+      'grade-1/term-1/math/unit-06',
+      'grade-1/term-1/math/unit-07',
+      'grade-1/term-1/math/unit-08',
+      'grade-1/term-1/math/unit-09',
+    ]);
+    expect(reviewGroup?.candidates).toHaveLength(90);
+    const excludedActivityIds = [
+      'grade-1/term-1/math/unit-09/basic/task-01/session-01/question-07',
+      'grade-1/term-1/math/unit-09/basic/task-02/session-01/question-07',
+      'grade-1/term-1/math/unit-09/advanced/task-01/session-01/question-07',
+      'grade-1/term-1/math/unit-09/advanced/task-01/session-01/question-08',
+      'grade-1/term-1/math/unit-09/advanced/task-02/session-01/question-07',
+      'grade-1/term-1/math/unit-09/high/task-01/session-01/question-01',
+      'grade-1/term-1/math/unit-09/high/task-01/session-01/question-07',
+      'grade-1/term-1/math/unit-09/high/task-02/session-01/question-07',
+    ];
+    expect(excludedActivityIds.filter((activityId) => candidateActivityIds.has(activityId))).toEqual([]);
+    expect(reviewGroup?.learningTasks.map(({ unitKey }) => unitKey)).toEqual(expect.arrayContaining([
+      'grade-1/term-1/math/unit-02',
+      'grade-1/term-1/math/unit-04',
+      'grade-1/term-1/math/unit-07',
+      'grade-1/term-1/math/unit-08',
+    ]));
   });
 
   it('links the new English knowledge points to existing Grade 3 learning tasks', async () => {

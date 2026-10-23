@@ -218,6 +218,16 @@ export async function validateChallengeManifest(
         groupIssue(group, 'invalid-unit-source', `groups.${groupId}.sourceUnitIds`, `Source ${unitId} is not a formal numbered unit.`);
       }
     }
+    for (const unitId of definition.learningTaskUnitIds ?? []) {
+      const unit = unitsById.get(unitId);
+      if (!unit) {
+        globalIssue('unknown-learning-task-unit', `groups.${groupId}.learningTaskUnitIds`, `Unknown learning task unit ${unitId}.`, groupId);
+      } else if (!isCompatibleChallengeGroupSource(group, unitId, unitsById)) {
+        groupIssue(group, 'mismatched-learning-task-unit', `groups.${groupId}.learningTaskUnitIds`, `Learning task unit ${unitId} does not match this group’s grade, term, and subject.`);
+      } else if (unit.type !== 'unit' || unit.formalUnitNumber === null || !unit.achievementEligible) {
+        groupIssue(group, 'invalid-learning-task-unit', `groups.${groupId}.learningTaskUnitIds`, `Learning task source ${unitId} is not a formal learning unit.`);
+      }
+    }
 
     const tasks = Array.isArray(definition.tasks) ? definition.tasks : [];
     const difficultyCounts = Object.fromEntries(DIFFICULTIES.map((difficulty) => [difficulty, tasks.filter((task) => task.difficulty === difficulty).length])) as Record<Difficulty, number>;

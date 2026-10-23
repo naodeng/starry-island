@@ -88,6 +88,9 @@ function parseGroup(value: unknown, path: string): void {
   }
   requiredString(definition.subject, `${path}.definition.subject`);
   stringArray(definition.sourceUnitIds, `${path}.definition.sourceUnitIds`);
+  if (definition.learningTaskUnitIds !== undefined) {
+    stringArray(definition.learningTaskUnitIds, `${path}.definition.learningTaskUnitIds`);
+  }
   if (definition.stage !== undefined && (typeof definition.stage !== 'string' || !STAGES.has(definition.stage))) {
     fail(`${path}.definition.stage`, 'first-half, second-half, or end-term when present');
   }

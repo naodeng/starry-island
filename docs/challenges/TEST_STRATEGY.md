@@ -454,3 +454,16 @@
 - `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-unit08-coverage-final`：11/254 个正式单元组、1/108 个学期阶段组；单元任务 55/1,270、学期任务 5/540。
 - `npm run build`：TypeScript 与 Vite 构建通过，无超过 500 kB 的 JavaScript 分块提示；核心闯关清单 450.54 kB，U8 清单片段 54.24 kB。分块低于提示线不证明首次加载或闯关路由总传输量下降。
 - 以上均为本地验证；完整全量测试与覆盖率将在 U9 收尾执行。未推送，远端 Actions、部署和发布状态未验证；作者自审不替代必要的独立教学审核。
+
+## 一年级上册数学第九单元总复习（2026-10-23，本地）
+
+- U9 专项及集成测试七个文件、81 项通过，覆盖 50 道补充题的生产评分器答案键、三档知识点覆盖、数值与教学范围、答案提示泄漏、课程原题重复、候选池/补救课程链接和覆盖统计。
+- `npm run test:unit -- --reporter=dot`：164 个测试文件、1,162 项通过。
+- `npm run test:coverage -- --reporter=dot`：164 个测试文件、1,162 项通过；语句 89.48%、分支 84.13%、函数 90.90%、行 91.74%，现有覆盖率门槛通过。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-unit09-quality-final-check`：13 个已发布组、65 个任务完成 6,500/6,500 次固定种子模拟；0 个阻断项、0 组精确重复、542 条相似题模板提示。U9 占 52 条，其中 42 条与课程原题的模板复用有关、10 条来自原创题的相似练习句式；均为提示，不等同精确重复。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-unit09-coverage-final-check`：12/254 个正式单元组、1/108 个学期阶段组；单元任务 60/1,270、学期任务 5/540。
+- `npm run test:e2e -- --workers=1`：48/48 通过，用时 6.1 分钟；包括全课程已核实单元扫描、U9 入口/窄屏/深色模式/键盘路径、课程进度保持和既有存储与答题回归。
+- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Unit 9 challenge' --workers=1`：U9 课程入口端到端 1/1 通过；浏览器构建启动阻断由 `pilotContent.ts` 中未使用的局部变量触发，删除无用途的变量后 `npm run build` 与该 E2E 均通过。
+- `npm run build`：通过；最大 JavaScript 分块为核心闯关清单 450.54 kB，U9 清单片段 52.18 kB，没有超过 500 kB 的提示。该结果不说明闯关路由所需分块的合计传输量下降。
+- `git diff --check`：通过。
+- 以上是本地自动化及作者自审证据；独立教育者审核、远端 Actions、部署和 V1.0 发布条件仍未完成。
