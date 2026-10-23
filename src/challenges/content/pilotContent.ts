@@ -2,7 +2,7 @@ import type { ActivityDefinition, CurriculumUnit } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
 import type { ChallengeGroupManifest, ChallengeManifest, ChallengeManifestValidationReport, ChallengeQuestionSnapshot, ValidationIssue } from '../domain/types';
 import type { LearningTaskReference } from '../domain/studyRecommendations';
-import rawManifest from './pilot-manifest.json';
+import rawManifest from './pilotManifest';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
 import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
@@ -10,6 +10,7 @@ import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01Supple
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
+import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 import { validateChallengeManifest } from './validateManifest';
 
@@ -71,7 +72,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
     }
   }));
 
-  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities]) {
+  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities]) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }

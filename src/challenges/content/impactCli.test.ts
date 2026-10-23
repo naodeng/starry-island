@@ -8,7 +8,7 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import type { ChallengeManifest } from '../domain/types';
-import rawManifest from './pilot-manifest.json';
+import rawManifest from './pilotManifest';
 
 declare const process: {
   cwd(): string;
@@ -48,6 +48,7 @@ describe('challenge impact CLI', () => {
 
   it('lists every same-difficulty task for multiple questions in the real pilot manifest', async () => {
     const manifestBefore = await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest.json'), 'utf8');
+    const manifestFragmentBefore = await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit05.json'), 'utf8');
     const manifest = rawManifest as unknown as ChallengeManifest;
     const changedQuestions = [manifest.questions[0], manifest.questions.find(({ difficulty }) => difficulty !== manifest.questions[0].difficulty)!];
     const expectedGroups = manifest.groups.filter(({ questionIds }) => (
@@ -71,6 +72,7 @@ describe('challenge impact CLI', () => {
       }
     }
     expect(await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest.json'), 'utf8')).toBe(manifestBefore);
+    expect(await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit05.json'), 'utf8')).toBe(manifestFragmentBefore);
   });
 
   it('returns a distinct status and requires the full quality gate when an ID is unknown', () => {

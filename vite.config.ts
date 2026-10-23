@@ -16,6 +16,10 @@ export default defineConfig({
               test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest\.json$/,
             },
             {
+              name: 'challenge-manifest-grade1-unit05',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade1-math-unit05\.json$/,
+            },
+            {
               name: 'challenge-supplemental-activities',
               test: /[\\/]src[\\/]challenges[\\/]content[\\/].*SupplementalActivities\.ts$/,
             },

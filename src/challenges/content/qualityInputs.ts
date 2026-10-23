@@ -2,7 +2,7 @@ import type { ActivityDefinition, CurriculumUnit } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
 import type { ChallengeManifest, ChallengeQualityInputs } from '../domain/types';
 import { parseChallengeManifest } from './manifestSchema';
-import rawManifest from './pilot-manifest.json';
+import rawManifest from './pilotManifest';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
 import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
@@ -10,6 +10,7 @@ import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01Supple
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
+import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 
 function registerActivity(
   activity: ActivityDefinition,
@@ -47,7 +48,7 @@ export async function loadChallengeQualityInputs(manifestValue: unknown = rawMan
     }
   }));
 
-  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities];
+  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities];
   const referencedSupplementalIds = new Set(supplementalActivities
     .filter(({ activity }) => manifest.questions.some((question) => question.activityId === activity.id))
     .map(({ activity }) => activity.id));

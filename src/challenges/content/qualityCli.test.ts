@@ -16,6 +16,7 @@ import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01Supple
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
+import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 
 declare const process: {
@@ -27,6 +28,7 @@ declare const process: {
 const repoRoot = process.cwd();
 const cliPath = resolve(repoRoot, 'scripts/challenges/quality.mjs');
 const manifestPath = resolve(repoRoot, 'src/challenges/content/pilot-manifest.json');
+const manifestFragmentPath = resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit05.json');
 let reportDirectory: string;
 
 function runCli(args: string[], options: { ci?: string } = {}) {
@@ -52,6 +54,7 @@ describe('challenge quality CLI', () => {
 
   it('loads the real pilot, writes deterministic reports and leaves source content unchanged', async () => {
     const manifestBefore = await readFile(manifestPath, 'utf8');
+    const fragmentBefore = await readFile(manifestFragmentPath, 'utf8');
     const args = ['--report-dir', reportDirectory];
     const firstRun = runCli(args);
     expect(firstRun.error).toBeUndefined();
@@ -67,8 +70,8 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(8);
-    expect(report.groups.map(({ status }) => status)).toEqual(['ready', 'ready', 'ready', 'ready', 'ready', 'ready', 'ready', 'ready']);
+    expect(report.groups).toHaveLength(9);
+    expect(report.groups.map(({ status }) => status)).toEqual(['ready', 'ready', 'ready', 'ready', 'ready', 'ready', 'ready', 'ready', 'ready']);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(pilotChineseSupplementalActivities[0].activity.prompt);
@@ -76,11 +79,13 @@ describe('challenge quality CLI', () => {
     expect(firstJson).not.toContain(grade1MathUnit02SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit03SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit04SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1MathUnit05SupplementalActivities[0].activity.prompt);
 
     const secondRun = runCli(args);
     expect(secondRun.status).toBe(0);
     expect(await readFile(jsonPath, 'utf8')).toBe(firstJson);
     expect(await readFile(manifestPath, 'utf8')).toBe(manifestBefore);
+    expect(await readFile(manifestFragmentPath, 'utf8')).toBe(fragmentBefore);
   });
 
   it('rejects a quick seed count below 100 in CI with parameter exit code 2', () => {

@@ -68,6 +68,27 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
     expect(covered).toEqual(new Set(['solid-shape-recognition', 'solid-shape-features', 'solid-shape-use']));
   });
 
+  it('为一年级上册数学第五单元全部原课程题映射数与运算知识点', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-05';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+    const covered = new Set(tagged.flat());
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(covered).toEqual(new Set([
+      'number-sequence-within-ten',
+      'number-composition-within-ten',
+      'addition-within-ten',
+      'subtraction-within-ten',
+      'comparison-within-ten',
+      'checking-within-ten',
+    ]));
+  });
+
   it('maps a route-ordering activity to route sequence knowledge', async () => {
     const sourceUnitId = 'grade-1/term-1/math/unit-02';
     const unit = await loadUnit(sourceUnitId);

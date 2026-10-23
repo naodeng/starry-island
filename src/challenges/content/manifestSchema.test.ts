@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import rawManifest from './pilot-manifest.json';
+import rawManifest from './pilotManifest';
 import { parseChallengeManifest } from './manifestSchema';
 
 function expectPathError(value: unknown, path: string) {
@@ -17,23 +17,23 @@ describe('parseChallengeManifest', () => {
   it('rejects malformed root, question and group references with field paths', () => {
     expectPathError(null, '$');
 
-    const missingQuestions = structuredClone(rawManifest) as Record<string, unknown>;
+    const missingQuestions = structuredClone(rawManifest) as unknown as Record<string, unknown>;
     delete missingQuestions.questions;
     expectPathError(missingQuestions, 'questions');
 
-    const malformedQuestion = structuredClone(rawManifest) as {
+    const malformedQuestion = structuredClone(rawManifest) as unknown as {
       questions: Array<Record<string, unknown>>;
     };
     malformedQuestion.questions[0].activityId = 42;
     expectPathError(malformedQuestion, 'questions[0].activityId');
 
-    const invalidReleaseIntent = structuredClone(rawManifest) as {
+    const invalidReleaseIntent = structuredClone(rawManifest) as unknown as {
       groups: Array<Record<string, unknown>>;
     };
     invalidReleaseIntent.groups[0].releaseIntent = 'published';
     expectPathError(invalidReleaseIntent, 'groups[0].releaseIntent');
 
-    const malformedTask = structuredClone(rawManifest) as {
+    const malformedTask = structuredClone(rawManifest) as unknown as {
       groups: Array<{ definition: { tasks: Array<Record<string, unknown>> } }>;
     };
     malformedTask.groups[0].definition.tasks[0].targetCount = '15';

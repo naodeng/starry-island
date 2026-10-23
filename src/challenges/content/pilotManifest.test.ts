@@ -11,8 +11,12 @@ import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01Supple
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
+import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
+import { mergeChallengeManifestFragments } from './pilotManifest';
 import { validateChallengeManifest } from './validateManifest';
-import rawManifest from './pilot-manifest.json';
+import coreManifest from './pilot-manifest.json';
+import grade1MathUnit05Manifest from './pilot-manifest-grade1-math-unit05.json';
+import rawManifest from './pilotManifest';
 
 const manifest: ChallengeManifest = parseChallengeManifest(rawManifest);
 const sourceUnitIds = [1, 2, 3, 4].map((number) => `grade-2/term-1/math/unit-${String(number).padStart(2, '0')}`);
@@ -22,15 +26,47 @@ const grade1MathSourceUnitId = 'grade-1/term-1/math/unit-01';
 const grade1MathUnit02SourceUnitId = 'grade-1/term-1/math/unit-02';
 const grade1MathUnit03SourceUnitId = 'grade-1/term-1/math/unit-03';
 const grade1MathUnit04SourceUnitId = 'grade-1/term-1/math/unit-04';
+const grade1MathUnit05SourceUnitId = 'grade-1/term-1/math/unit-05';
 const safeKinds = new Set(['choice', 'match', 'order', 'categorize', 'arithmetic']);
 
 describe('pilot manifest against the real curriculum', () => {
+  it('merges independently bundled manifest fragments without losing registry entries', () => {
+    expect(coreManifest.groups).toHaveLength(8);
+    expect(grade1MathUnit05Manifest.groups.map(({ definition }) => definition.id)).toEqual(['grade-1-term-1-math-unit-05']);
+    expect(mergeChallengeManifestFragments([
+      coreManifest as ChallengeManifest,
+      grade1MathUnit05Manifest as ChallengeManifest,
+    ])).toEqual(rawManifest);
+  });
+
+  it('rejects manifest fragments with mismatched versions', () => {
+    expect(() => mergeChallengeManifestFragments([])).toThrow('At least one challenge manifest fragment is required.');
+    expect(() => mergeChallengeManifestFragments([
+      { version: 'v1', questions: [], groups: [] },
+      { version: 'v2', questions: [], groups: [] },
+    ])).toThrow('Challenge manifest fragments must use the same version.');
+  });
+
+  it('rejects duplicate question and group identifiers across fragments', () => {
+    const firstQuestion = (coreManifest as ChallengeManifest).questions[0];
+    const firstGroup = (coreManifest as ChallengeManifest).groups[0];
+
+    expect(() => mergeChallengeManifestFragments([
+      { version: 'v1', questions: [firstQuestion], groups: [] },
+      { version: 'v1', questions: [firstQuestion], groups: [] },
+    ])).toThrow('Challenge manifest fragments contain duplicate question IDs.');
+    expect(() => mergeChallengeManifestFragments([
+      { version: 'v1', questions: [], groups: [firstGroup] },
+      { version: 'v1', questions: [], groups: [firstGroup] },
+    ])).toThrow('Challenge manifest fragments contain duplicate group IDs.');
+  });
+
   it('resolves all candidates and passes every released group gate', async () => {
     const activitiesById = new Map<string, ActivityDefinition>();
     const sourceUnitByActivityId = new Map<string, string>();
     const unitsById = new Map<string, CurriculumUnit>();
 
-    for (const sourceUnitId of [...sourceUnitIds, englishSourceUnitId, chineseSourceUnitId, grade1MathSourceUnitId, grade1MathUnit02SourceUnitId, grade1MathUnit03SourceUnitId, grade1MathUnit04SourceUnitId]) {
+    for (const sourceUnitId of [...sourceUnitIds, englishSourceUnitId, chineseSourceUnitId, grade1MathSourceUnitId, grade1MathUnit02SourceUnitId, grade1MathUnit03SourceUnitId, grade1MathUnit04SourceUnitId, grade1MathUnit05SourceUnitId]) {
       const unit = await loadUnit(sourceUnitId);
       expect(unit).toBeDefined();
       unitsById.set(sourceUnitId, unit!);
@@ -75,6 +111,10 @@ describe('pilot manifest against the real curriculum', () => {
       activitiesById.set(supplemental.activity.id, supplemental.activity);
       sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
     }
+    for (const supplemental of grade1MathUnit05SupplementalActivities) {
+      activitiesById.set(supplemental.activity.id, supplemental.activity);
+      sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
+    }
 
     const report = await validateChallengeManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
     expect(report.errors).toEqual([]);
@@ -93,13 +133,14 @@ describe('pilot manifest against the real curriculum', () => {
       'grade-1-term-1-math-unit-02': 'ready',
       'grade-1-term-1-math-unit-03': 'ready',
       'grade-1-term-1-math-unit-04': 'ready',
+      'grade-1-term-1-math-unit-05': 'ready',
     });
     expect(manifest.groups[0].questionIds).toHaveLength(90);
     expect(manifest.groups[1].questionIds).toHaveLength(226);
     expect(manifest.groups[2]?.questionIds).toHaveLength(90);
     expect(manifest.groups[4]?.questionIds).toHaveLength(90);
-    expect(manifest.questions).toHaveLength(766);
-    expect(manifest.groups).toHaveLength(8);
+    expect(manifest.questions).toHaveLength(856);
+    expect(manifest.groups).toHaveLength(9);
   });
 
   it('registers Grade 1 math Unit 2 with verified position and route knowledge coverage', () => {
@@ -191,6 +232,51 @@ describe('pilot manifest against the real curriculum', () => {
       difficulty,
       questions.filter((question) => question.difficulty === difficulty).length,
     ]))).toEqual({ basic: 30, advanced: 30, high: 30 });
+  });
+
+  it('registers Grade 1 math Unit 5 with 30 unique candidates per difficulty and core coverage', () => {
+    const group = manifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-05');
+    const questions = manifest.questions.filter(({ questionId }) => group?.questionIds.includes(questionId));
+
+    expect(group?.definition).toMatchObject({
+      kind: 'unit',
+      grade: 1,
+      semester: 1,
+      subject: 'math',
+      sourceUnitIds: [grade1MathUnit05SourceUnitId],
+      coreKnowledgePointIds: [
+        'number-sequence-within-ten',
+        'number-composition-within-ten',
+        'addition-within-ten',
+        'subtraction-within-ten',
+        'comparison-within-ten',
+        'checking-within-ten',
+      ],
+    });
+    expect(group?.releaseIntent).toBe('released');
+    expect(questions).toHaveLength(90);
+    expect(new Set(questions.map(({ questionId }) => questionId)).size).toBe(90);
+    expect(Object.fromEntries(['basic', 'advanced', 'high'].map((difficulty) => [
+      difficulty,
+      questions.filter((question) => question.difficulty === difficulty).length,
+    ]))).toEqual({ basic: 30, advanced: 30, high: 30 });
+    expect(Object.fromEntries(['basic', 'advanced', 'high'].map((difficulty) => [
+      difficulty,
+      questions.filter((question) => question.difficulty === difficulty
+        && question.activityId.includes('grade-1/term-1/math/unit-05/')).length,
+    ]))).toEqual({ basic: 15, advanced: 15, high: 15 });
+    expect(Object.fromEntries(['basic', 'advanced', 'high'].map((difficulty) => [
+      difficulty,
+      questions.filter((question) => question.difficulty === difficulty
+        && question.activityId.startsWith('challenge-supplement-grade-1-term-1-math-unit-05-')).length,
+    ]))).toEqual({ basic: 15, advanced: 15, high: 15 });
+    for (const duplicateSourceId of [
+      `${grade1MathUnit05SourceUnitId}/basic/task-01/session-01/question-02`,
+      `${grade1MathUnit05SourceUnitId}/advanced/task-02/session-01/question-02`,
+      `${grade1MathUnit05SourceUnitId}/high/task-01/session-01/question-02`,
+    ]) {
+      expect(questions.some(({ activityId }) => activityId === duplicateSourceId)).toBe(false);
+    }
   });
 
   it('registers the first-grade math unit as a complete candidate pool without changing the course tasks', () => {

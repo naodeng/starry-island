@@ -33,6 +33,7 @@ describe('loadPilotChallengeContent', () => {
       ['grade-1-term-1-math-unit-02', 'ready'],
       ['grade-1-term-1-math-unit-03', 'ready'],
       ['grade-1-term-1-math-unit-04', 'ready'],
+      ['grade-1-term-1-math-unit-05', 'ready'],
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
@@ -53,7 +54,7 @@ describe('loadPilotChallengeContent', () => {
       .map((candidate) => [candidate.questionId, candidate]));
     const candidates = [...candidatesByQuestionId.values()];
 
-    expect(candidates).toHaveLength(766);
+    expect(candidates).toHaveLength(856);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 

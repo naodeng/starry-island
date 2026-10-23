@@ -3,12 +3,14 @@ import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01Supple
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
+import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
   'grade-1/term-1/math/unit-02',
   'grade-1/term-1/math/unit-03',
   'grade-1/term-1/math/unit-04',
+  'grade-1/term-1/math/unit-05',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -114,6 +116,20 @@ export function derivePilotQuestionKnowledgePointIds(
       }
       if (ids.length === 0) throw new Error(`Could not classify solid-shape question ${activity.id}.`);
       return ids;
+    }
+    case 'grade-1/term-1/math/unit-05': {
+      const supplemental = grade1MathUnit05SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/从小到大|从大到小|前面|后面|数序|接着数|连续数|漏数/u.test(text)) ids.push('number-sequence-within-ten');
+      if (/组成|合成|分成|合起来|合在一起|两部分|几和几/u.test(text)) ids.push('number-composition-within-ten');
+      if (/[+]|加法|加上|相加|增加|又收到|又放上/u.test(text)) ids.push('addition-within-ten');
+      if (/[-−]|减法|减去|拿走|去掉|还剩|剩下|取走|用去/u.test(text)) ids.push('subtraction-within-ten');
+      if (/比较|大于|小于|不大于|不小于|更大|更小|按得数|得数.*比较|分类标准/u.test(text)) ids.push('comparison-within-ten');
+      if (/检查|核对|验算|正确结果|算错|改正|错连|分错|逆运算/u.test(text)) ids.push('checking-within-ten');
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
+      return [...new Set(ids)];
     }
     case 'grade-1/term-1/math/unit-01': {
       const supplemental = grade1MathUnit01SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);

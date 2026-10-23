@@ -38,18 +38,19 @@ async function loadCurrentCoverageModule() {
     appType: 'custom',
   });
   try {
-    return await server.ssrLoadModule('/src/challenges/content/coverage.ts');
+    const [coverageModule, manifestModule] = await Promise.all([
+      server.ssrLoadModule('/src/challenges/content/coverage.ts'),
+      server.ssrLoadModule('/src/challenges/content/pilotManifest.ts'),
+    ]);
+    return { ...coverageModule, manifest: manifestModule.default };
   } finally {
     await server.close();
   }
 }
 
-async function loadCurrentInputs() {
-  const [curriculumText, manifestText] = await Promise.all([
-    readFile(resolve(repositoryRoot, 'src/content/curriculum-manifest.json'), 'utf8'),
-    readFile(resolve(repositoryRoot, 'src/challenges/content/pilot-manifest.json'), 'utf8'),
-  ]);
-  return { curriculum: JSON.parse(curriculumText), manifest: JSON.parse(manifestText) };
+async function loadCurrentInputs(manifest) {
+  const curriculumText = await readFile(resolve(repositoryRoot, 'src/content/curriculum-manifest.json'), 'utf8');
+  return { curriculum: JSON.parse(curriculumText), manifest };
 }
 
 function createFailureReport(error) {
@@ -101,7 +102,9 @@ export async function runCoverageCommand(args = [], dependencies = {}, cwd = pro
     await mkdir(reportDirectory, { recursive: true });
     await Promise.all(reportFileNames.map((name) => rm(resolve(reportDirectory, name), { force: true })));
     const coverageModule = await (dependencies.loadCoverageModule ?? loadCurrentCoverageModule)();
-    const inputs = await (dependencies.loadInputs ?? loadCurrentInputs)();
+    const inputs = dependencies.loadInputs
+      ? await dependencies.loadInputs()
+      : await loadCurrentInputs(coverageModule.manifest);
     const report = coverageModule.analyzeCurriculumCoverage(inputs.curriculum, inputs.manifest);
     await writeReport(reportDirectory, report, coverageModule.renderCurriculumCoverageMarkdown(report));
     const auditStatus = report.complete ? 'V1.0 覆盖门禁通过' : options.requireComplete ? 'V1.0 覆盖门禁未通过' : '覆盖盘点完成';

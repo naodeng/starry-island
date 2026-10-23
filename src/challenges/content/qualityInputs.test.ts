@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { ChallengeManifest } from '../domain/types';
 import { loadChallengeQualityInputs } from './qualityInputs';
-import rawManifest from './pilot-manifest.json';
+import rawManifest from './pilotManifest';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
 

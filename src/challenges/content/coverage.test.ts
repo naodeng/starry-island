@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { ChallengeManifest, ChallengeGroupManifest, ChallengeGroupDefinition } from '../domain/types';
 import type { CoverageCurriculumCatalog } from './coverage';
 import curriculumManifest from '../../content/curriculum-manifest.json';
-import challengeManifest from './pilot-manifest.json';
+import challengeManifest from './pilotManifest';
 import { analyzeCurriculumCoverage } from './coverage';
 
 const fixtureTargets = {
@@ -119,14 +119,14 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(report.expected).toEqual({ unitGroups: 254, unitTasks: 1270, semesterGroups: 108, semesterTasks: 540 });
     expect(report.registered).toEqual({
-      unitGroups: 7,
-      releasedUnitGroups: 7,
-      unitTasks: 35,
+      unitGroups: 8,
+      releasedUnitGroups: 8,
+      unitTasks: 40,
       semesterGroups: 1,
       releasedSemesterGroups: 1,
       semesterTasks: 5,
     });
-    expect(report.missing.unitGroupIds).toHaveLength(247);
+    expect(report.missing.unitGroupIds).toHaveLength(246);
     expect(report.missing.semesterGroupIds).toHaveLength(107);
     expect(report.unreleasedGroupIds).toEqual([]);
     expect(report.taskIssues).toEqual([]);

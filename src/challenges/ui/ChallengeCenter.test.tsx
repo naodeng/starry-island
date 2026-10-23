@@ -5,7 +5,7 @@ import type { ChallengeGroupManifest } from '../domain/types';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
 import { getChallengeGroupTitle } from './ChallengeCenter';
-import pilotManifest from '../content/pilot-manifest.json';
+import pilotManifest from '../content/pilotManifest';
 
 const emptySummary: ChallengeBackupMergeSummary = {
   addedActiveAttempts: 0,
