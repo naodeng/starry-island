@@ -402,3 +402,12 @@
 - 静态构建预览截图已人工检查：1280px 桌面浅色课程页、390px 深色并减少动态效果课程页，以及桌面闯关组页；第三单元入口、原有六个学习任务和五个闯关任务均清楚可见。浏览器键盘进入路径另由端到端测试覆盖；本次未做屏幕阅读器实测。
 - `npm run challenge:coverage -- --require-complete --report-dir /private/tmp/starry-island-challenge-coverage-strict-final`：按预期返回退出码 1，严格 V1.0 门禁指出仍缺 248 个单元组和 107 个学期阶段组；这确认 V1.0 尚未就绪，不阻断当前渐进开发分支。
 - `git diff --check`：通过。以上均为本地验证；没有推送，远端 Actions、部署和发布状态未验证。作者自审及自动门禁不能替代必要的独立教学审核，也不代表 V1.0 全课程覆盖完成。
+
+## 一年级上册数学第四单元试点（2026-10-23，本地）
+
+- `npm run test:unit -- --reporter=dot`：159 个测试文件、1,120 项全部通过。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-quality-u4-final`：8 个已发布组、40 个任务完成 4,000/4,000 次固定种子模拟；0 个阻断项、0 组精确重复、298 条相似题提示。其中 U4 有 24 条提示来自原课程在不同难度复用题干模板；42 道 U4 原创补充题未增加相似题模板提示。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-coverage-u4-final`：7/254 个正式单元组、1/108 个学期阶段组已登记；单元任务 35/1,270，学期任务 5/540，仍缺 247 个正式单元组和 107 个学期阶段组。
+- `npm run test:e2e -- --workers=1`：43/43 通过，用时 5.5 分钟；新增 U4 流程覆盖 390px 深色窄屏、减少动态效果、键盘进入、五个挑战任务、六个原课程任务仍在和 `china-study-progress-v1` 未改变。
+- `npm run build`：通过；最大 JavaScript 分块 `challenge-manifest` 为 450.54 kB，低于 500 kB 提示线。拆分只证明单块低于提示线，不表示路由总传输量下降。
+- `git diff --check`：通过。当前工作区没有远端 Actions、部署或独立教育工作者审核证据；本地试点状态不等于 V1.0 完成或正式发布批准。

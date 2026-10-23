@@ -9,6 +9,7 @@ import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalAc
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
+import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 import { buildChallengeQualityReport, renderChallengeQualityMarkdown } from './qualityReport';
 import rawManifest from './pilot-manifest.json';
 
@@ -43,7 +44,7 @@ async function loadPilotInputs(): Promise<MutableChallengeQualityInputs> {
     }
   }
 
-  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities]) {
+  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities]) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }
@@ -108,7 +109,7 @@ describe('buildChallengeQualityReport', () => {
       unitGroup.definition.id,
       semesterGroup.definition.id,
     ].sort());
-    expect(report.groups.filter(({ status }) => status === 'ready')).toHaveLength(5);
+    expect(report.groups.filter(({ status }) => status === 'ready')).toHaveLength(6);
     expect(report.errors).toContainEqual(expect.objectContaining({ code: 'duplicate-task-id' }));
   });
 

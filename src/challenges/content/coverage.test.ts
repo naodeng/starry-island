@@ -119,14 +119,14 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(report.expected).toEqual({ unitGroups: 254, unitTasks: 1270, semesterGroups: 108, semesterTasks: 540 });
     expect(report.registered).toEqual({
-      unitGroups: 6,
-      releasedUnitGroups: 6,
-      unitTasks: 30,
+      unitGroups: 7,
+      releasedUnitGroups: 7,
+      unitTasks: 35,
       semesterGroups: 1,
       releasedSemesterGroups: 1,
       semesterTasks: 5,
     });
-    expect(report.missing.unitGroupIds).toHaveLength(248);
+    expect(report.missing.unitGroupIds).toHaveLength(247);
     expect(report.missing.semesterGroupIds).toHaveLength(107);
     expect(report.unreleasedGroupIds).toEqual([]);
     expect(report.taskIssues).toEqual([]);

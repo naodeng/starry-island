@@ -2,11 +2,13 @@ import type { ActivityDefinition } from '../../content/types';
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
+import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
   'grade-1/term-1/math/unit-02',
   'grade-1/term-1/math/unit-03',
+  'grade-1/term-1/math/unit-04',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -83,6 +85,35 @@ export function derivePilotQuestionKnowledgePointIds(
       if (/检查|核对|验算|正确结果|算错|改正|错连|分错/u.test(text)) ids.push('checking-within-five');
       if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
       return [...new Set(ids)];
+    }
+    case 'grade-1/term-1/math/unit-04': {
+      const supplemental = grade1MathUnit04SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const fields = [activity.prompt];
+      if (activity.kind === 'choice') {
+        const correctOption = activity.options.find(({ id }) => id === activity.correctOptionId);
+        if (correctOption) fields.push(correctOption.label);
+      }
+      if (activity.kind === 'match') fields.push(...activity.pairs.flatMap(({ left, right }) => [left, right]));
+      if (activity.kind === 'order') fields.push(...activity.items.map(({ label }) => label));
+      if (activity.kind === 'categorize') {
+        fields.push(...activity.categories.map(({ label }) => label));
+        fields.push(...activity.items.map(({ label }) => label));
+      }
+      const geometryText = fields.join(' ');
+      const ids: string[] = [];
+      if (/最像|相似|辨认|立体图形|骰子|足球|水杯|盒子|整体形状|属于哪种|什么形状|球体|正方体|长方体|圆柱体/u.test(geometryText)) {
+        ids.push('solid-shape-recognition');
+      }
+      if (/平平的面|平面|弯曲的面|弯曲面|侧面|底面|棱|顶点|表面|特征|外形/u.test(geometryText)) {
+        ids.push('solid-shape-features');
+      }
+      if (/滚动|能滚|不能滚|叠|稳|底座|分类|分成|排列|步骤|观察|贴着桌面|接触桌面|轻轻推|正确排列/u.test(geometryText)) {
+        ids.push('solid-shape-use');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify solid-shape question ${activity.id}.`);
+      return ids;
     }
     case 'grade-1/term-1/math/unit-01': {
       const supplemental = grade1MathUnit01SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);

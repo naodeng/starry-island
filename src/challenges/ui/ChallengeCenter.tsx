@@ -68,6 +68,9 @@ export function getChallengeGroupDescription(group: LoadedPilotGroup['group']): 
       if (definition.sourceUnitIds[0] === 'grade-1/term-1/math/unit-03') {
         return '练习 5 以内数的组成、比较与加减法。';
       }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/math/unit-04') {
+        return '认识球体、圆柱体、正方体和长方体，并观察它们的特点。';
+      }
       return '练习两位数加减法、进位退位和数量关系。';
     case 'english':
       return '练习本单元的自我介绍、年龄和班级表达。';

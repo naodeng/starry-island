@@ -1,5 +1,5 @@
 {
-  "version": "pilot-2026-10-23.13",
+  "version": "pilot-2026-10-23.14",
   "questions": [
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-02-advanced-01",
@@ -9850,6 +9850,1332 @@
       "approvedContentFingerprint": "17a79c20effc853e6688645d4d99f86b5f7cb78a8910c717d18a507022e30813",
       "approvedBy": "Codex 内容作者自审",
       "approvedAt": "2026-10-23T13:25:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "778bbddf0a26b3da107ce56df91a70a7eb9507fc6b761949b5ec42a693792c98",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "73d778a3635546f6ce5696eeb6e6bd89705ad77a308e5d724e85c21573ce3da9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "95dc6a48e5095c68bb49588b45faebd7115d10a5ddb37f4cf7b211177b34b18e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "57fe956a9d815205d73696bcc570fe51fac3be8e779989310eb3604432c7e108",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e0312a9f83702dd806ee68ae8e271d09778b82a45ee4ab0f29e6343f14827196",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d0a80fa6be96ad609124f29a5ce4ecb2b5938a30251d393aebdaa05daa7bdd2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dcd49005375fb84dfd392ed695fe283c6f5cbf8f93e34e8577f3e62820f1a565",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec3ffd3ce2196d75ccf828274d7940e745fb823af2e672fd1afcfd9f09105e79",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9586b2920f3ad6f5c0cdde32406f8dcf6e99a7fea520fcf0a6e45028499e56f4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49b538c05f32b02b66c3ee8a9e3c073c910bce0076e820af4248e81262fe1442",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8239868fb63c79089cae5e27863f81d021211fa23a83d41d48a6137835aa013",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41a81f36bbfc9724ecc9a68dc272ecd620cfaa34add8f062929ccf109b02932d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cfc26b74f86d2b8d0eff78cb4229c2a483670234165eb870973772ee2b2b0750",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a45244640ef022e68fe539353221213da9350687eacdd7e29263bc913d0c172f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07aa9e43d457e472fc477aedd0a6e4aa71b7e820f013f2fa78d52067c9163cab",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-04/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7716f2a51122b96442914c2fd56cf643e81ef0c88b966644fab91e0a09e25d02",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "174ba5fd164e03885f7b921072d8ec494507487d3892df0f5a46fd606b59a096",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6173cd1ebba33427263112df35b5ee8241ed4330dc176b18c77c92cb07d0af1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2300da377cee83a98911d9abac0fc5d2412e20d4346fab8e24cb965688b868e1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "edc56242224f2013b40a3aa5ecdc6113473b331fb536428fee8c9c39a5d78a78",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47243ad2ae64a54706c5bcf9ee59209d0cd0c568e0805634ea37fdf4eabafad8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec10d8dbf76f6756e6d6619e8e9edb67940f81ff632d5a15eb880721cff01647",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a38eaa6b33da23cc3cdda5ace9bc1caf1bfe640bb18c99db249c98c3bb65f87a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "867a7dafbd4be96b6fde58e676c21e66685052916b89763c1e1ba64b5139bb15",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e79dbde0ae862cec492343c26f4c49bdd33fa0352ec1fe6820d1d526820d516b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "12d90534a152efa2b7fb19b2c00c56b6fa58bbf07a860ac18b642530c111559e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6e092e57a49f3a632ed595d960fe2690ff143beb7e9d9767f3910448b2a07e2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "84ea1c82ae86d5a21fec812325b9632dc57812aa6f3dbff0219f0fa6d27715d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec03f33ebc9c88d57147e0c92e3b92f2ac38fc3e5e7a59df2fa12b1a179054ea",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "abd83610f271265d3f90b69560b8ae98a21a420230aae4487be1d6783a157564",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4636ad14e8fb45c65fc4b5f2f08579c7b1543ecf70bb6963ecd2962132a4dc68",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "51d525f9987160cab7a56fe2ec38fbf88fb2b5ae80e4cab7ee558159dad50a5c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e495b7719cb2d951356e9f893668dd827af107cab412839a542347982121c61a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2bea93b69e24773b822ee8dfba7f42a530b95492eee746b5ad419e6280dff7f2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2cb173cadd588eb898ec95801713a2b7e8baaed77588ef6775ebc9becb1e4974",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f62061d1a56246d79c54000fe95f1217e23d8dc764295e4ae0288df83d119f16",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbac850582ea458922d45437a7193510be09dbecb7fd87c2062c17a6d2877920",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e22405f78274b15a640b2f9c9d8f4091853b1f508fa2e371876af31ea7ff4c25",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2534545bf9681618ad1333ba7efb6e08b103538b1088c570ae4891ff36914334",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3a8e9b585066e0158ed81086c19af2b3f37673725c68200967702b762d84491",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c7a761da46bdebdf41f49a1d29ca3e72b3d28207931d76fc1909bbd7136af16",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c1e0096887011a25c6c23ab83df515ffd02820ac93634f2deef9b2118187cf5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "04991f2ac66bc7827602a9b5274dbcc783b36e1566b66d55bf06d818b4c1439e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0e7e19d4b7c4338657dc710de3550ad8bb4d13d1917aa94a89af41afd369e3e1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e576ebf5b23de584efa8578f427ffed4fc8cd10c70734febb288c66600c004f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d3d88b2df942019ff824bb765e67a4fb86906a042b82c25c7c0edf7311c93ca",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "df36504121c98f03fbee559455a503107f8d6238acabd7678d70296c7c932b90",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1305a8ace8627d4d15eed8197e7d59a28c2c2c9981f87772d1d5a8aef9de1527",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1c03538aee7462fb91db09a1aa6fa47f5a33a51227bc14e3a096f4dbd1d5ad9d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7673096b9ac678737525b4eda71e5cb4d2e8adaf7ec1d41df82d2b81755c9a48",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a95b14cc232f53e8826db978da569a91629a5f4dd2e93f2b238e58f387892443",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4b1ca28cdf93a312bf191934fb89c8a5b7a6cf497373f2a7e88f2c33eac2192",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aec79c2b42fe1d42e8cb7c5805f58f79034d11a79af0b43895b0c18f506e86ce",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f069be8688feaf2ec2e40059688ccaa794341710ae6e3f90c5142488ff85da2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29d0fb3952e9955c2b2c113c386dfe8d98b3617d66e21681488ee04ca2df22c1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc21753c25445cd65df00642309f426efc21978d6e411c879da180ae6bbbdb6a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "402fb19f333cf19a23aba1697a05d922c8c41489adfe04ffb24c66a384f140f4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3ab50dbf39167edabfb352bd6b4742e6a21ac12614dcb49bce9e589bbd2a98f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8dff9db3636d2382dcfb7ff032254d1c7dc8a8a942a87e8d1984b30be4e3d6c4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "solid-shape-features",
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7370a91e2cbb916cc46b777b3e8c1136d2ebd520d693d401b77fe23e7d73542c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d412b193fd933ed5ae2590771b2844f3aea731cb256a2860a7770934dd195f5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ee671d94e9fba2e71c57b8fa072c05e7561424984108a7dbbc148c71e2604b17",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8b57067fe686bfb0746e29fee06a42867ccf17c7c93d6ebf9c8333dccc3d4f47",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a0897d9552f54f3b1a194f50cfe962e97bbb7baac7edfef1f6b5cb941c093fef",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "895e7f1accd8540bc80d95f9ee36d3137ef71cb643c5a3264015da5ab0522fd7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6ebf35ce23b31577171f9a4783c18e5f3d9da0cefdcd8ef77ee1783798f25a07",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75a637610f127fade860f0605b354dbf5cd3925785d6ec7cba7f10242399082a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "465bfc08d1db43cd3f964edb5accd38fdf3e776686c9347fc6078a40354c3c96",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "deaeb43c7aed7f60f6742c665361eb55d1b8b6da941d856b93363411ebf5d415",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a37fb57a96eace09662f6c079f1ebf3ccbb73a8849a80b85a2d609caaa30598a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "48f003784f2c9b426c9f8dd3efa3eb222ed3ab322d45de566275ca02f6379986",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb598a0f4c80711c07f7f3bec2cd0bc1d0a7cdf77d7c378d58e220701e4fcca2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-05",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29cc2a54bd3a7c495e0401a2d2691b9ce3081fc883f402729080948eb6a82b30",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5e7a7f9f6aa2af9d77df6d07ccfb25a475ce5892076308baca3981e06c159c6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e0988d06dfe333673b274f7d6aa45bdf572b21eb8a66748f462673d48885802a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/math/unit-04/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cc40a2ae78eb301e28964a9520bf8262e29ad424c9c66ce3141c57515124431c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-01",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f99a392ab45b1ba53b8e6e8936a16b119cde7903545ceaafed7d04467ad5890",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-02",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0e09b28c55f5614cc8b4fcfc1996b38100c2726c1f00b865d4451894b29ed056",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-03",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bdeb1e0da32a91931e4d032909f96f22efd9a1fc37b58edc788f988558440fd0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-04",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e1da52da96a85bdb186abbfd7f4b63ebd9589246ff6fd091f59fe15bce17c6d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-05",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "39fa30f612f9bc802edc9501e201d9296250469f4c892d114a3d0e91a8205bc6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-06",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "32de5110cf053edb59e83bc69935f07669b89b30e2a6dc8cf6573c5e861a8885",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-07",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6a750d1ed1874cfd5cde5f264eab9d598b3fc87b5cdc03f2cd9e773d1733c1b0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-08",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3df2b6967d29d81c4fdd77f7ee73b254f1350844876b085c64cb70f352d9e451",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-09",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-features",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb11af1d374eb07ea2dc75a0f8b77b152f3221b313549bcf469b1bb892c77703",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-10",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c08edb5cb7bd287830fbef8d46cba720867ceab65c5f83641f474c1558db299c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-11",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6f813b2b431fd8602e173bb35c7679e8943ce0b2cdb562234c27968c55f92e2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-12",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7eb54e733309931585ded6b618f6c611c82f4756b6d2ce88134742e64015a99c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-13",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-use",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f7b546bed3d6596d86e8883cceb6fe444b88c45fe00008f711c390384f4a5066",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T06:05:36.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-14",
+      "activityId": "challenge-supplement-grade-1-term-1-math-unit-04-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "solid-shape-recognition",
+        "solid-shape-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8c1c908cee0dd940053f219875c4ec4a94d7bf27e5c343938980e55b4669bf7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-23T05:49:54.914Z"
     }
   ],
   "groups": [
@@ -11159,6 +12485,169 @@
         "challenge-question:challenge-supplement-grade-1-term-1-math-unit-03-high-14",
         "challenge-question:challenge-supplement-grade-1-term-1-math-unit-03-high-15",
         "challenge-question:challenge-supplement-grade-1-term-1-math-unit-03-high-16"
+      ],
+      "releaseIntent": "released"
+    },
+    {
+      "definition": {
+        "id": "grade-1-term-1-math-unit-04",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-1/term-1/math/unit-04"
+        ],
+        "coreKnowledgePointIds": [
+          "solid-shape-recognition",
+          "solid-shape-features",
+          "solid-shape-use"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上册数学; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-23",
+          "notes": "正式编号第四单元“认识图形（一）”；依据仓库课程清单、单元元数据及固定回退版教材主题登记。候选取自原课程活动与本单元闯关专用原创补充题。没有把回退来源表述为最新版，未修改原学习 Task。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-1-math-unit-04/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "solid-shape-recognition",
+              "solid-shape-features"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-04/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "solid-shape-recognition",
+              "solid-shape-use"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-04/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "solid-shape-recognition",
+              "solid-shape-features"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-04/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "solid-shape-features",
+              "solid-shape-use"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-math-unit-04/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "solid-shape-recognition",
+              "solid-shape-features",
+              "solid-shape-use"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-04/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-basic-14",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-04/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-advanced-14",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/math/unit-04/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-math-unit-04-high-14"
       ],
       "releaseIntent": "released"
     }
