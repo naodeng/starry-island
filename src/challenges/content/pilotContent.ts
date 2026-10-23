@@ -8,6 +8,7 @@ import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalAc
 import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
+import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 import { validateChallengeManifest } from './validateManifest';
 
@@ -69,7 +70,7 @@ async function buildPilotContent(): Promise<LoadedPilotContent> {
     }
   }));
 
-  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities]) {
+  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities]) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }

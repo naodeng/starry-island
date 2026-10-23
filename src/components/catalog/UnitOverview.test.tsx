@@ -38,6 +38,21 @@ describe('UnitOverview', () => {
     expect(screen.getByRole('button', { name: /查看本单元知识地图/ })).toBeInTheDocument();
   });
 
+  it('adds the Grade 1 math Unit 3 challenge entry without replacing its learning tasks', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+    const pilotUnitKey = 'grade-1/term-1/math/unit-03';
+    const pilotUnit = curriculum.units[pilotUnitKey];
+    render(<UnitOverview unitKey={pilotUnitKey} unit={pilotUnit} completedSessionIds={[]} onNavigate={onNavigate} />);
+
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    await user.click(screen.getByRole('button', { name: '进入闯关挑战' }));
+
+    expect(onNavigate).toHaveBeenCalledWith(getChallengeGroupPath('grade-1-term-1-math-unit-03'));
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    expect(screen.getByText(/不会改变这里的学习场次进度/)).toBeInTheDocument();
+  });
+
   it('shows the Grade 3 English Unit 1 challenge without replacing the learning tasks', async () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();

@@ -49,10 +49,11 @@ describe('ChallengeCenter', () => {
   it('describes unit routes with the registered subject instead of reusing the math description', () => {
     const grade1MathGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-01') as unknown as ChallengeGroupManifest;
     const grade1PositionGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-02') as unknown as ChallengeGroupManifest;
+    const grade1AdditionGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-03') as unknown as ChallengeGroupManifest;
     const grade2MathGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-unit-02') as unknown as ChallengeGroupManifest;
     const englishGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-3-term-1-english-unit-01') as unknown as ChallengeGroupManifest;
     const chineseGroup = pilotManifest.groups.find(({ definition }) => definition.id === 'grade-5-term-1-chinese-unit-01') as unknown as ChallengeGroupManifest;
-    const groups = [grade1MathGroup, grade1PositionGroup, grade2MathGroup, englishGroup, chineseGroup].map((group): LoadedPilotGroup => ({
+    const groups = [grade1MathGroup, grade1PositionGroup, grade1AdditionGroup, grade2MathGroup, englishGroup, chineseGroup].map((group): LoadedPilotGroup => ({
       group,
       status: 'ready',
       candidates: [],
@@ -65,6 +66,7 @@ describe('ChallengeCenter', () => {
 
     expect(screen.getByText('练习数一数、比一比和 0 的初步认识。')).toBeInTheDocument();
     expect(screen.getByText('练习上下、前后、左右、里外和按顺序描述路线。')).toBeInTheDocument();
+    expect(screen.getByText('练习 5 以内数的组成、比较与加减法。')).toBeInTheDocument();
     expect(screen.getByText('练习本单元的自我介绍、年龄和班级表达。')).toBeInTheDocument();
     expect(screen.getByText('阅读本单元课文，练习文本线索、表达方法与习作。')).toBeInTheDocument();
     expect(screen.getByText('练习两位数加减法、进位退位和数量关系。')).toBeInTheDocument();

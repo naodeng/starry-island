@@ -9,6 +9,7 @@ import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalAc
 import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
+import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { validateChallengeManifest } from './validateManifest';
 import rawManifest from './pilot-manifest.json';
 
@@ -18,6 +19,7 @@ const englishSourceUnitId = 'grade-3/term-1/english/unit-01';
 const chineseSourceUnitId = 'grade-5/term-1/chinese/unit-01';
 const grade1MathSourceUnitId = 'grade-1/term-1/math/unit-01';
 const grade1MathUnit02SourceUnitId = 'grade-1/term-1/math/unit-02';
+const grade1MathUnit03SourceUnitId = 'grade-1/term-1/math/unit-03';
 const safeKinds = new Set(['choice', 'match', 'order', 'categorize', 'arithmetic']);
 
 describe('pilot manifest against the real curriculum', () => {
@@ -26,7 +28,7 @@ describe('pilot manifest against the real curriculum', () => {
     const sourceUnitByActivityId = new Map<string, string>();
     const unitsById = new Map<string, CurriculumUnit>();
 
-    for (const sourceUnitId of [...sourceUnitIds, englishSourceUnitId, chineseSourceUnitId, grade1MathSourceUnitId, grade1MathUnit02SourceUnitId]) {
+    for (const sourceUnitId of [...sourceUnitIds, englishSourceUnitId, chineseSourceUnitId, grade1MathSourceUnitId, grade1MathUnit02SourceUnitId, grade1MathUnit03SourceUnitId]) {
       const unit = await loadUnit(sourceUnitId);
       expect(unit).toBeDefined();
       unitsById.set(sourceUnitId, unit!);
@@ -63,6 +65,10 @@ describe('pilot manifest against the real curriculum', () => {
       activitiesById.set(supplemental.activity.id, supplemental.activity);
       sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
     }
+    for (const supplemental of grade1MathUnit03SupplementalActivities) {
+      activitiesById.set(supplemental.activity.id, supplemental.activity);
+      sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
+    }
 
     const report = await validateChallengeManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
     expect(report.errors).toEqual([]);
@@ -79,13 +85,14 @@ describe('pilot manifest against the real curriculum', () => {
       'grade-5-term-1-chinese-unit-01': 'ready',
       'grade-1-term-1-math-unit-01': 'ready',
       'grade-1-term-1-math-unit-02': 'ready',
+      'grade-1-term-1-math-unit-03': 'ready',
     });
     expect(manifest.groups[0].questionIds).toHaveLength(90);
     expect(manifest.groups[1].questionIds).toHaveLength(226);
     expect(manifest.groups[2]?.questionIds).toHaveLength(90);
     expect(manifest.groups[4]?.questionIds).toHaveLength(90);
-    expect(manifest.questions).toHaveLength(586);
-    expect(manifest.groups).toHaveLength(6);
+    expect(manifest.questions).toHaveLength(676);
+    expect(manifest.groups).toHaveLength(7);
   });
 
   it('registers Grade 1 math Unit 2 with verified position and route knowledge coverage', () => {
@@ -114,6 +121,48 @@ describe('pilot manifest against the real curriculum', () => {
       difficulty,
       supplemental.filter((question) => question.difficulty === difficulty).length,
     ]))).toEqual({ basic: 14, advanced: 14, high: 14 });
+  });
+
+  it('registers Grade 1 math Unit 3 with 30 unique candidates per difficulty', () => {
+    const group = manifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-03');
+    const questions = manifest.questions.filter(({ activityId }) => activityId.includes('grade-1/term-1/math/unit-03/')
+      || activityId.startsWith('challenge-supplement-grade-1-term-1-math-unit-03-'));
+
+    expect(group?.definition).toMatchObject({
+      kind: 'unit',
+      grade: 1,
+      semester: 1,
+      subject: 'math',
+      sourceUnitIds: [grade1MathUnit03SourceUnitId],
+      coreKnowledgePointIds: [
+        'number-composition-within-five',
+        'addition-within-five',
+        'subtraction-within-five',
+        'comparison-within-five',
+        'checking-within-five',
+      ],
+    });
+    expect(group?.questionIds).toHaveLength(90);
+    expect(new Set(questions.map(({ questionId }) => questionId)).size).toBe(90);
+    expect(Object.fromEntries(['basic', 'advanced', 'high'].map((difficulty) => [
+      difficulty,
+      questions.filter((question) => question.difficulty === difficulty).length,
+    ]))).toEqual({ basic: 30, advanced: 30, high: 30 });
+    expect(group?.releaseIntent).toBe('released');
+  });
+
+  it('excludes the three duplicate source activities from the Unit 3 challenge pool without editing the course', () => {
+    const group = manifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-math-unit-03');
+    const excludedActivityIds = [
+      'grade-1/term-1/math/unit-03/advanced/task-02/session-01/question-02',
+      'grade-1/term-1/math/unit-03/high/task-01/session-01/question-01',
+      'grade-1/term-1/math/unit-03/high/task-01/session-01/question-02',
+    ];
+
+    for (const activityId of excludedActivityIds) {
+      expect(manifest.questions.some((question) => question.activityId === activityId)).toBe(false);
+    }
+    expect(group?.questionIds).toHaveLength(90);
   });
 
   it('registers the first-grade math unit as a complete candidate pool without changing the course tasks', () => {

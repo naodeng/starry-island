@@ -390,3 +390,13 @@
 - `npm run challenge:quality`：0 个阻断项、244 条提示；覆盖普通盘点为 5/254 个正式单元组、1/108 个学期阶段组；严格 V1 命令按预期返回 1。生产构建通过，无 JavaScript 分块超过 500 kB。
 - Quality 工作流通过 Ruby YAML 解析。`actionlint` 不在当前环境中，因此没有执行专用 GitHub Actions 静态检查；远端 Actions 未运行。
 - 此记录仅基于本地仓库课程内容，不证明教学正确性或独立教育者审查。覆盖缺口仍为 249 个单元组和 107 个学期阶段组；远端 Actions、部署和发布未验证。
+
+## 一年级上册数学第三单元试点（2026-10-23，本地）
+
+- 新增第三单元闯关组，基础、进阶、高阶各登记 30 道候选题；从闯关池排除 3 道跨难度重复课程题，新增 45 道闯关专用原创题。未改动课程 Task、学习进度或原有答题交互；新增题的逐题作者自审记录见[第三单元题目审校台账](grade-1-term-1-math-unit-03-question-review.tsv)，独立教育工作者审核尚未完成。
+- `npm run test:unit`：158 个测试文件、1,111 项通过；`npm run test:coverage -- --reporter=dot`：158 个测试文件、1,111 项通过，语句 89.25%、分支 83.89%、函数 90.62%、行 91.51%。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-challenge-quality-unit03-final`：七组全部就绪，35 个任务完成 3,500/3,500 次固定种子组卷模拟；0 个阻断、0 组精确重复、274 条相似题提示。45 道新增补充题未命中相似题提示；提示仍需结合教学语义判断。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-challenge-coverage-unit03-final`：6/254 个正式单元组、1/108 个学期阶段组已发布；登记 30/1,270 个单元任务和 5/540 个学期任务，尚缺 248 个单元组和 107 个学期阶段组。
+- `npm run test:e2e -- --workers=1`：42/42 通过，用时 5.2 分钟，覆盖完整课程入口扫描、第三单元课程入口、键盘进入挑战、原课程任务仍在、课程进度不变及既有学习和闯关流程。
+- `npm run build`：通过；最大 JavaScript 分块为 `challenge-manifest` 398.77 kB，未触发 500 kB 提示。闯关清单、课程清单及闯关页面仍分为独立分块；此结果不代表首屏 JavaScript 总传输量下降。
+- `git diff --check`：通过。以上均为本地验证；没有推送，远端 Actions、部署和发布状态未验证。作者自审及自动门禁不能替代必要的独立教学审核，也不代表 V1.0 全课程覆盖完成。

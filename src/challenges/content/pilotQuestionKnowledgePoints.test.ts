@@ -34,6 +34,26 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
     expect(covered).toEqual(new Set(['relative-position', 'reference-point', 'route-sequence']));
   });
 
+  it('为一年级上册数学第三单元全部原课程题映射组成、加减、比较和验算知识点', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-03';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+    const covered = new Set(tagged.flat());
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(covered).toEqual(new Set([
+      'number-composition-within-five',
+      'addition-within-five',
+      'subtraction-within-five',
+      'comparison-within-five',
+      'checking-within-five',
+    ]));
+  });
+
   it('maps a route-ordering activity to route sequence knowledge', async () => {
     const sourceUnitId = 'grade-1/term-1/math/unit-02';
     const unit = await loadUnit(sourceUnitId);

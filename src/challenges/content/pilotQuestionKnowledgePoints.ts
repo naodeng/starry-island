@@ -1,10 +1,12 @@
 import type { ActivityDefinition } from '../../content/types';
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
+import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
   'grade-1/term-1/math/unit-02',
+  'grade-1/term-1/math/unit-03',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -64,6 +66,21 @@ export function derivePilotQuestionKnowledgePointIds(
       if (/位置|上面|下面|左边|右边|前面|后面|里面|外面|上下|左右|里外/u.test(text)) {
         ids.push('relative-position');
       }
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-1/term-1/math/unit-03': {
+      const supplemental = grade1MathUnit03SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/组成|拆开|合起来|合成|加起来|凑成|\+/u.test(text)) ids.push('number-composition-within-five');
+      if (/[+]|加法|加上|相加|增加|又收到|又放上/u.test(text)) ids.push('addition-within-five');
+      if (/[-−]|减法|减去|拿走|去掉|还剩|剩下|取走|用去/u.test(text)) ids.push('subtraction-within-five');
+      if (/比较|大于|小于|不大于|不小于|更大|更小|从小到大|从大到小|按得数|分类标准/u.test(text)) {
+        ids.push('comparison-within-five');
+      }
+      if (/检查|核对|验算|正确结果|算错|改正|错连|分错/u.test(text)) ids.push('checking-within-five');
       if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
       return [...new Set(ids)];
     }
