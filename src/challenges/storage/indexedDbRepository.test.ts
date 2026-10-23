@@ -677,6 +677,49 @@ describe('IndexedDB challenge repository', () => {
     });
   });
 
+  it('closes an open request that succeeds after a blocked upgrade was reported', async () => {
+    const factory = new IDBFactory();
+    const databaseName = `challenge-upgrade-unblocked-${crypto.randomUUID()}`;
+    const blocker = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = factory.open(databaseName, 1);
+      request.onupgradeneeded = () => {
+        request.result.createObjectStore('attempts', { keyPath: 'taskId' });
+        request.result.createObjectStore('taskProgress', { keyPath: 'taskId' });
+        request.result.createObjectStore('challengeMeta', { keyPath: 'key' });
+      };
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+
+    let resolveLateOpen!: () => void;
+    const lateOpen = new Promise<void>((resolve) => { resolveLateOpen = resolve; });
+    const observedFactory = Object.create(factory) as IDBFactory;
+    observedFactory.open = ((name: string, version?: number) => {
+      const request = factory.open(name, version);
+      request.addEventListener('success', resolveLateOpen, { once: true });
+      return request;
+    }) as typeof factory.open;
+    const repository = createChallengeRepository({ factory: observedFactory, databaseName });
+    repositories.push(repository);
+
+    await expect(repository.getTaskProgress('task-blocked')).rejects.toThrow('upgrade is blocked');
+    blocker.close();
+    await lateOpen;
+    await expect(repository.getTaskProgress('task-blocked')).resolves.toBeNull();
+    repository.close();
+
+    const upgradeOutcome = await new Promise<'opened' | 'blocked' | 'failed'>((resolve) => {
+      const request = factory.open(databaseName, CHALLENGE_DATABASE_VERSION + 1);
+      request.onblocked = () => resolve('blocked');
+      request.onsuccess = () => {
+        request.result.close();
+        resolve('opened');
+      };
+      request.onerror = () => resolve('failed');
+    });
+    expect(upgradeOutcome).toBe('opened');
+  });
+
   it('isolates malformed records and keeps valid challenge records readable', async () => {
     const factory = new IDBFactory();
     const databaseName = `challenge-quarantine-${crypto.randomUUID()}`;

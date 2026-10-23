@@ -420,41 +420,61 @@ export function createChallengeRepository(options: ChallengeRepositoryOptions = 
     if (!factory) return Promise.reject(new ChallengeRepositoryError('IndexedDB is unavailable in this browser.'));
     if (databasePromise) return databasePromise;
 
-    databasePromise = new Promise((resolve, reject) => {
-      let request: IDBOpenDBRequest;
-      try {
-        request = factory.open(databaseName, CHALLENGE_DATABASE_VERSION);
-      } catch (error) {
-        reject(new ChallengeRepositoryError('Could not open the challenge database.', { cause: error }));
+    let resolveOpen!: (value: IDBDatabase) => void;
+    let rejectOpen!: (reason: Error) => void;
+    const openingPromise = new Promise<IDBDatabase>((resolve, reject) => {
+      resolveOpen = resolve;
+      rejectOpen = reject;
+    });
+    databasePromise = openingPromise;
+    let settled = false;
+    let request: IDBOpenDBRequest;
+    try {
+      request = factory.open(databaseName, CHALLENGE_DATABASE_VERSION);
+    } catch (error) {
+      settled = true;
+      if (databasePromise === openingPromise) databasePromise = undefined;
+      rejectOpen(new ChallengeRepositoryError('Could not open the challenge database.', { cause: error }));
+      return openingPromise;
+    }
+    request.onupgradeneeded = (event) => {
+      const upgradeTransaction = request.transaction;
+      if (!upgradeTransaction) throw new ChallengeRepositoryError('Could not obtain the challenge database upgrade transaction.');
+      applyDatabaseMigrations(request.result, upgradeTransaction, event.oldVersion);
+    };
+    request.onsuccess = () => {
+      const openedDatabase = request.result;
+      if (settled || repositoryClosed) {
+        openedDatabase.close();
         return;
       }
-      request.onupgradeneeded = (event) => {
-        const upgradeTransaction = request.transaction;
-        if (!upgradeTransaction) throw new ChallengeRepositoryError('Could not obtain the challenge database upgrade transaction.');
-        applyDatabaseMigrations(request.result, upgradeTransaction, event.oldVersion);
-      };
-      request.onsuccess = () => {
-        database = request.result;
-        database.onversionchange = () => {
-          database?.close();
+      settled = true;
+      database = openedDatabase;
+      openedDatabase.onversionchange = () => {
+        openedDatabase.close();
+        if (database === openedDatabase) {
           database = undefined;
-          databasePromise = undefined;
+          if (databasePromise === openingPromise) databasePromise = undefined;
           sanitationPromise = undefined;
           pendingPreview = null;
           previewGeneration += 1;
-        };
-        resolve(request.result);
+        }
       };
-      request.onerror = () => {
-        databasePromise = undefined;
-        reject(new ChallengeRepositoryError('Could not open the challenge database.', { cause: request.error }));
-      };
-      request.onblocked = () => {
-        databasePromise = undefined;
-        reject(new ChallengeRepositoryError('The challenge database upgrade is blocked by another open tab.'));
-      };
-    });
-    return databasePromise;
+      resolveOpen(openedDatabase);
+    };
+    request.onerror = () => {
+      if (settled) return;
+      settled = true;
+      if (databasePromise === openingPromise) databasePromise = undefined;
+      rejectOpen(new ChallengeRepositoryError('Could not open the challenge database.', { cause: request.error }));
+    };
+    request.onblocked = () => {
+      if (settled) return;
+      settled = true;
+      if (databasePromise === openingPromise) databasePromise = undefined;
+      rejectOpen(new ChallengeRepositoryError('The challenge database upgrade is blocked by another open tab.'));
+    };
+    return openingPromise;
   }
 
   async function transaction<T>(
