@@ -45,7 +45,7 @@
 | REQ-073 | 本地新增题目修正表单，要求问题描述、修正理由和可核对依据；明确由维护者人工审核且不会自动发布 | `.github/ISSUE_TEMPLATE/question-correction.yml`；[表单说明](ISSUE_FORMS.md) |
 | REQ-074 | 最佳成绩和曾通过状态保持单调；没有完整作答历史时不自动重评分或撤销奖励。可靠证据下的补偿仍是人工处理，当前没有自动补偿工具 | `attempt.ts`、`attempt.test.ts`；`progress.test.ts`；[数据模型](DATA_MODEL.md) |
 | REQ-075 | 已有根更新日志作为 GitHub 发布摘要，并新增结构化题库变更记录格式；本地记录不代表内容变更审批证明 | `CHANGELOG.zh-CN.md`；[内容变更记录](CONTENT_CHANGELOG.md) |
-| REQ-076 | 当前分支的 Quality 工作流已配置题库质量门禁、中文摘要和报告产物，并保留单测、覆盖率、构建及浏览器测试；该分支尚未推送，远端 Actions 结果未核实。人工教学检查仍由作者完成；没有自动题目到任务的影响分析工具 | `.github/workflows/quality.yml`；`DEVELOPMENT_GUIDE.md`；`TEST_STRATEGY.md` |
+| REQ-076 | 当前分支配置了题库质量门禁、中文摘要和报告产物，并新增只读题目 ID 影响分析，按候选池列出所有可能受影响的同难度任务；未知 ID 明确要求完整门禁。仍需作者完成必要人工教学检查；本分支尚未推送，远端 Actions 结果未核实 | `scripts/challenges/impact.mjs`；`src/challenges/content/impactAnalysis.ts`；`.github/workflows/quality.yml`；`DEVELOPMENT_GUIDE.md`；`TEST_STRATEGY.md` |
 | REQ-077 | 低、中、高三级风险与对应检查范围已写入协作指南；人工检查不能由当前 CI 自动证明 | `DEVELOPMENT_GUIDE.md`；[决策冲突与限制](DECISION_CONFLICTS.md) |
 | REQ-078 / 079 | 当前试点允许作者自审；审核记录保留状态、审核人和时间，内容指纹单独用于变更追踪 | `src/challenges/content/pilot-manifest.json`；`validateManifest.ts` 相关测试 |
 | REQ-081 | 指纹变化提示不自动撤销审核或暂停关联挑战；严重确认问题仍按静态发布流程处理 | `fingerprint.ts`；题库清单校验测试；[产品需求文档](PRD.md) |
