@@ -11,6 +11,7 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "challenge:quality": "node scripts/challenges/quality.mjs",
+    "challenge:coverage": "node scripts/challenges/coverage.mjs",
     "challenge:impact": "node scripts/challenges/impact.mjs"
   },
   "dependencies": {

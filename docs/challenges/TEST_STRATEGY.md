@@ -369,3 +369,13 @@
 - 清单一致性检查：42 道补充题的答案、知识点、内容指纹均与活动源码及逐题台账一致，42 道题都按 REQ-080 保留原审核状态。
 - 手动截图检查：未能完成。命令行 Chrome 无法访问受沙箱限制的 Crashpad 用户目录，Playwright CLI 使用的独立 Chromium 未安装；自动化回归覆盖闯关入口、主题和 390px/768px/1280px 布局。
 - `git diff --check`：通过。以上为本地证据；没有推送，因此远端 Actions、部署和发布状态未验证。作者自审及代码复核不能替代必要的独立教学审核，也不代表已经完成全课程闯关覆盖。
+
+## 全课程覆盖盘点与 V1.0 门禁（2026-10-23，本地）
+
+- `npm run challenge:coverage -- --report-dir /tmp/starry-island-curriculum-coverage-audit-final`：闯关清单 v0.12 对照课程目录发现 5/254 个正式单元组、1/108 个学期阶段组已发布；单元任务登记 25/1,270，学期任务登记 5/540。报告列出 249 个缺失单元组和 107 个缺失学期阶段组。
+- `npm run challenge:coverage -- --require-complete`：当前清单按预期返回失败；V1.0 严格模式会阻断缺失组、未发布组、任务结构/难度错误及课程映射异常。常规分支模式只记录缺口，不阻断渐进式开发。
+- `src/challenges/content/coverage.test.ts` 与 `coverageCli.test.mjs` 覆盖完整/缺失清单、冻结的 254 个正式单元、108 个阶段组和 36 个年级/学期/学科组合、被替换的组合、重复或非预期组、任务分布、来源映射、严格退出码和失败时替换旧报告；全量回归 `npm run test:unit -- --reporter=dot`：155 个测试文件、1,096 项通过。
+- `npm run test:coverage -- --reporter=dot`：155 个测试文件、1,096 项通过；语句 89.11%、分支 83.84%、函数 90.54%、行 91.40%，既有覆盖率门槛通过。
+- `npm run challenge:quality -- --report-dir /tmp/starry-island-quality-coverage-gate-final`：0 个阻断项、244 条相似题提示。题库门禁与覆盖门禁检查不同内容；两者均不能替代逐题教学审核。
+- `npm run build`：TypeScript 与 Vite 构建通过，没有超过 500 kB 的 JavaScript 分块提示。Ruby YAML 解析器能解析本地 Quality 工作流；这不是 GitHub Actions 实际运行证据。
+- 以上为本地验证；当前仍缺 249 个正式单元组、107 个学期阶段组、完整题目内容与必要教学审核，远端 Actions、部署和正式发布均未验证。

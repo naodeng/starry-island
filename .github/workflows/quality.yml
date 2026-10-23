@@ -3,6 +3,7 @@ name: Quality
 on:
   push:
     branches: [main, 'codex/**']
+    tags: ['v1.*']
   pull_request:
     branches: [main]
 
@@ -28,6 +29,13 @@ jobs:
 
       - name: Check challenge question bank quality
         run: npm run challenge:quality
+
+      - name: Audit challenge coverage
+        run: npm run challenge:coverage -- --report-dir .quality-reports/curriculum-coverage
+
+      - name: Require complete curriculum coverage for V1 tags
+        if: startsWith(github.ref, 'refs/tags/v1.')
+        run: npm run challenge:coverage -- --report-dir .quality-reports/curriculum-coverage-v1-release --require-complete
 
       - name: Run unit tests
         if: ${{ !cancelled() && steps.install_dependencies.outcome == 'success' }}
@@ -70,6 +78,16 @@ jobs:
             echo '质量命令未生成报告，请查看前序步骤的错误信息。' >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Add curriculum coverage report to workflow summary
+        if: always()
+        run: |
+          echo '### 闯关全课程覆盖盘点' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .quality-reports/curriculum-coverage/curriculum-coverage-report.md ]; then
+            cat .quality-reports/curriculum-coverage/curriculum-coverage-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '覆盖盘点未生成报告，请查看前序步骤错误。' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Upload challenge quality reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -78,5 +96,9 @@ jobs:
           path: |
             .quality-reports/challenge-quality-report.json
             .quality-reports/challenge-quality-report.md
+            .quality-reports/curriculum-coverage/curriculum-coverage-report.json
+            .quality-reports/curriculum-coverage/curriculum-coverage-report.md
+            .quality-reports/curriculum-coverage-v1-release/curriculum-coverage-report.json
+            .quality-reports/curriculum-coverage-v1-release/curriculum-coverage-report.md
           if-no-files-found: ignore
           include-hidden-files: true

@@ -8,7 +8,7 @@
 
 | REQ | 当前切片状态 | 证据 |
 |---|---|---|
-| REQ-036～047 | 题库质量命令、声明式清单校验、生命周期/状态推导、指纹变化报告、确定性去重与相似题提示、两倍候选池和覆盖检查、每个已发布任务 100 种子模拟及 CI 摘要/报告归档，已在当前分支实现。以现有六个试点组验证；全课程题库覆盖、独立教学审核和远端 Actions 执行仍未完成 | `scripts/challenges/quality.mjs`；`src/challenges/content/manifestSchema.ts`、`validateManifest.ts`、`questionUniqueness.ts`、`qualityReport.ts`；`.github/workflows/quality.yml`；本地 CLI、单测和构建记录见[测试方案](TEST_STRATEGY.md) |
+| REQ-028、036～047 | 题库质量命令、声明式清单校验、生命周期/状态推导、指纹变化报告、确定性去重与相似题提示、两倍候选池和组卷覆盖检查、每任务 100 种子模拟、CI 报告归档及全课程目录盘点已在当前分支实现。覆盖工具核对 254 个正式单元组、108 个学期阶段组与 540 个学期任务；当前只有 5 个单元组和 1 个学期组。全课程题目审核和远端 Actions 执行仍未完成。Quality 工作流仅在 `v1.*` 标签要求完整覆盖 | `scripts/challenges/quality.mjs`、`scripts/challenges/coverage.mjs`；`src/challenges/content/coverage.ts`；`.github/workflows/quality.yml`；本地 CLI、单测和构建记录见[测试方案](TEST_STRATEGY.md) |
 | REQ-001 | 路由和进度隔离已实现 | `src/App.tsx`；`src/App.test.tsx`；`tests/e2e/challenge-flow.spec.ts` |
 | REQ-004 | 任务组与任务层级已实现；高阶整份试卷覆盖多个必需知识点 | `src/challenges/content/pilot-manifest.json`；组卷测试 |
 | REQ-005 | 通过线和整数比较已实现 | `src/challenges/domain/grading.ts`、`grading.test.ts` |
@@ -51,7 +51,7 @@
 | REQ-081 | 指纹变化提示不自动撤销审核或暂停关联挑战；严重确认问题仍按静态发布流程处理 | `fingerprint.ts`；题库清单校验测试；[产品需求文档](PRD.md) |
 | REQ-082～084 | 采用静态发布修复；发布摘要维护于 GitHub 更新日志；客户端没有个性化题目修订通知 | `CHANGELOG.zh-CN.md`；静态 Vite/Pages 架构；[产品需求文档](PRD.md) |
 | REQ-027 | 根据用户确认的章节顺序划分前半学期；不是学校日历 | 试点题库清单；清单测试 |
-| REQ-028 | 部分实现：运行时及专用质量命令具备清单门禁；只覆盖当前试点清单，不代表全课程题库完成 | `validateManifest.ts`；`scripts/challenges/quality.mjs`；[测试方案](TEST_STRATEGY.md) |
+| REQ-028 | 部分实现：题库质量命令校验当前试点清单；全课程盘点可按 254 个正式单元组、108 个学期阶段组和冻结的 36 个年级/学期/学科组合核对目录及登记状态，`v1.*` 标签启用严格完整性检查。当前仅登记 5 个单元组和 1 个学期组，题库内容仍未覆盖全课程 | `validateManifest.ts`；`scripts/challenges/quality.mjs`；`scripts/challenges/coverage.mjs`；[测试方案](TEST_STRATEGY.md) |
 | REQ-029 | 部分实现：闯关中心支持六个试点组；课程上下文入口已覆盖一年级数学单元 1～2、二年级数学单元 2、三年级英语单元 1 和五年级语文单元 1，其他课程入口尚未覆盖 | `ChallengeCenter.tsx`；`unitLinks.ts`；课程目录和路由测试 |
 | REQ-037 / REQ-080 | 指纹变化会生成提示，同时按 REQ-080 保留审核状态 | `fingerprint.ts`；题库清单校验测试 |
 | REQ-055 / 056 | 减少动态效果样式和闯关静音容器已实现 | `challenge.css`；`App.test.tsx` |
