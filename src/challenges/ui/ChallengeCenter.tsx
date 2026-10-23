@@ -62,6 +62,9 @@ export function getChallengeGroupDescription(group: LoadedPilotGroup['group']): 
       if (definition.sourceUnitIds[0] === 'grade-1/term-1/math/unit-01') {
         return '练习数一数、比一比和 0 的初步认识。';
       }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/math/unit-02') {
+        return '练习上下、前后、左右、里外和按顺序描述路线。';
+      }
       return '练习两位数加减法、进位退位和数量关系。';
     case 'english':
       return '练习本单元的自我介绍、年龄和班级表达。';

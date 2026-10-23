@@ -20,6 +20,43 @@ function choice(prompt: string, labels: string[] = []): ActivityDefinition {
 }
 
 describe('derivePilotQuestionKnowledgePointIds', () => {
+  it('为一年级上册数学第二单元的位置活动映射知识点', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-02';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+    const covered = new Set(tagged.flat());
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(covered).toEqual(new Set(['relative-position', 'reference-point', 'route-sequence']));
+  });
+
+  it('maps a route-ordering activity to route sequence knowledge', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-02';
+    const unit = await loadUnit(sourceUnitId);
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const route = activities.find((activity) => activity.prompt.includes('路线顺序'));
+
+    expect(route).toBeDefined();
+    expect(derivePilotQuestionKnowledgePointIds(sourceUnitId, route!)).toEqual(['route-sequence']);
+  });
+
+  it('maps a route card that names its observation direction to both route and reference knowledge', async () => {
+    const sourceUnitId = 'grade-1/term-1/math/unit-02';
+    const unit = await loadUnit(sourceUnitId);
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const route = activities.find((activity) => activity.kind === 'choice'
+      && activity.options.some(({ label }) => label.includes('起点和观察方向')));
+
+    expect(route).toBeDefined();
+    expect(derivePilotQuestionKnowledgePointIds(sourceUnitId, route!)).toEqual(['route-sequence', 'reference-point']);
+  });
+
   it('为一年级上册数学第一单元的全部原课程题标注可追踪知识点', async () => {
     const sourceUnitId = 'grade-1/term-1/math/unit-01';
     const unit = await loadUnit(sourceUnitId);

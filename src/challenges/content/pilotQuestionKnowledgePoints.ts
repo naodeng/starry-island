@@ -1,8 +1,10 @@
 import type { ActivityDefinition } from '../../content/types';
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
+import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-1/math/unit-01',
+  'grade-1/term-1/math/unit-02',
   'grade-2/term-1/math/unit-01',
   'grade-2/term-1/math/unit-02',
   'grade-2/term-1/math/unit-03',
@@ -47,6 +49,24 @@ export function derivePilotQuestionKnowledgePointIds(
 
   const text = activityText(activity);
   switch (sourceUnitId) {
+    case 'grade-1/term-1/math/unit-02': {
+      const supplemental = grade1MathUnit02SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+      if (/路线|路线卡|路线顺序|步骤|出发|到达/u.test(text)) {
+        const ids = ['route-sequence'];
+        if (/参照物|参照方向|观察方向|面向/u.test(text)) ids.push('reference-point');
+        return ids;
+      }
+      const ids: string[] = [];
+      if (/参照物|参照方向|站在.*看|站到|转向|面对面|对.*来说|观察方向|起点/u.test(text)) {
+        ids.push('reference-point');
+      }
+      if (/位置|上面|下面|左边|右边|前面|后面|里面|外面|上下|左右|里外/u.test(text)) {
+        ids.push('relative-position');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify Grade 1 math question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
     case 'grade-1/term-1/math/unit-01': {
       const supplemental = grade1MathUnit01SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
       if (supplemental) return [...supplemental.knowledgePointIds];

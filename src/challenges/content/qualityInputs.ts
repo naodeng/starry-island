@@ -7,6 +7,7 @@ import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
 import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
+import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 
 function registerActivity(
   activity: ActivityDefinition,
@@ -44,7 +45,7 @@ export async function loadChallengeQualityInputs(manifestValue: unknown = rawMan
     }
   }));
 
-  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities];
+  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities];
   const referencedSupplementalIds = new Set(supplementalActivities
     .filter(({ activity }) => manifest.questions.some((question) => question.activityId === activity.id))
     .map(({ activity }) => activity.id));

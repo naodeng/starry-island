@@ -727,6 +727,26 @@ test('opens the Grade 1 math Unit 1 challenge from the center without changing c
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('opens the Grade 1 math Unit 2 position challenge from the center without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册数学 · 第二单元' });
+
+  await expect(group).toContainText('练习上下、前后、左右、里外和按顺序描述路线。');
+  await group.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-02');
+  await expect(page.getByRole('heading', { name: '一年级上册数学 · 第二单元' })).toBeVisible();
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('clears and restores an in-progress challenge through the 24-hour recovery point', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
