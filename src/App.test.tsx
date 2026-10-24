@@ -37,8 +37,8 @@ describe('App', () => {
     const user = userEvent.setup();
     render(<App />);
 
-    expect(await screen.findByRole('heading', { name: '星岛学园 · Starry Island' })).toBeInTheDocument();
-    await waitFor(() => expect(document.title).toBe('星岛学园 | Starry Island'));
+    expect(await screen.findByRole('heading', { name: '今天，想从哪里出发？' })).toBeInTheDocument();
+    await waitFor(() => expect(document.title).toBe('今天，想从哪里出发？ | 星岛学园'));
     expect(screen.getByRole('contentinfo', { name: '版权与许可' })).toHaveTextContent('© 2026 naodeng All Rights Reserved.');
     expect(screen.getByRole('link', { name: 'naodeng 的个人网站' })).toHaveAttribute('href', 'https://inaodeng.com');
     await user.click(screen.getByRole('button', { name: '打开导航菜单' }));

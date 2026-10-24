@@ -9,6 +9,7 @@ import ProjectLegalFooter from './components/layout/ProjectLegalFooter';
 import AppHeader from './components/layout/AppHeader';
 const CourseBreadcrumbs = lazy(() => import('./components/catalog/CourseBreadcrumbs'));
 const CourseCatalog = lazy(() => import('./components/catalog/CourseCatalog'));
+const HomeDashboard = lazy(() => import('./components/home/HomeDashboard'));
 const UnitOverview = lazy(() => import('./components/catalog/UnitOverview'));
 const SessionPlayer = lazy(() => import('./components/game/SessionPlayer'));
 const AchievementPage = lazy(() => import('./components/achievements/AchievementPage'));
@@ -158,18 +159,7 @@ export default function App() {
       </main>
     );
   } else if (route.kind === 'home') {
-    page = (
-      <main className="home-dashboard-placeholder">
-        <div className="catalog-shell">
-          <h1>星岛学园 · Starry Island</h1>
-          <p>今天想从哪里出发？继续课程学习，或开启一段独立闯关。</p>
-          <div className="home-dashboard-placeholder-actions">
-            <Button type="primary" onClick={() => navigate('/courses')}>浏览课程</Button>
-            <Button type="default" onClick={() => navigate('/challenges')}>进入闯关中心</Button>
-          </div>
-        </div>
-      </main>
-    );
+    page = <HomeDashboard progress={progress} onNavigate={navigate} />;
   } else if (route.kind === 'catalog') {
     page = <CourseCatalog progress={progress} onNavigate={navigate} onApplyLearningStart={handleLearningStart} />;
   } else if (route.kind === 'achievements') {

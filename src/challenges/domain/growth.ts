@@ -1,6 +1,17 @@
 import type { ChallengeGroupDefinition, TaskProgress } from './types';
 import { deriveGroupProgress } from './progress';
 
+export interface ChallengeGrowthDefinition {
+  id: ChallengeGroupDefinition['id'];
+  kind: ChallengeGroupDefinition['kind'];
+  grade: ChallengeGroupDefinition['grade'];
+  semester: ChallengeGroupDefinition['semester'];
+  subject: ChallengeGroupDefinition['subject'];
+  sourceUnitIds: readonly ChallengeGroupDefinition['sourceUnitIds'][number][];
+  stage?: ChallengeGroupDefinition['stage'];
+  tasks: readonly { id: string }[];
+}
+
 export interface ChallengeGrowthGroup {
   groupId: string;
   kind: ChallengeGroupDefinition['kind'];
@@ -22,7 +33,7 @@ export interface ChallengeGrowthSummary {
 }
 
 export function deriveChallengeGrowth(
-  groups: readonly ChallengeGroupDefinition[],
+  groups: readonly ChallengeGrowthDefinition[],
   taskProgress: readonly TaskProgress[],
 ): ChallengeGrowthSummary {
   const uniqueProgress = new Map(taskProgress.map((progress) => [progress.taskId, progress]));
@@ -35,7 +46,7 @@ export function deriveChallengeGrowth(
       grade: group.grade,
       semester: group.semester,
       subject: group.subject,
-      sourceUnitIds: group.sourceUnitIds,
+      sourceUnitIds: [...group.sourceUnitIds],
       ...(group.stage ? { stage: group.stage } : {}),
       taskCount: group.tasks.length,
       passedTaskCount: progress.passedCount,

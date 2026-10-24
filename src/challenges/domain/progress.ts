@@ -1,4 +1,4 @@
-import type { ChallengeGroupDefinition, TaskProgress } from './types';
+import type { ChallengeTaskDefinition, TaskProgress } from './types';
 
 export interface GroupProgress {
   passedCount: number;
@@ -6,7 +6,7 @@ export interface GroupProgress {
 }
 
 export function deriveGroupProgress(
-  group: ChallengeGroupDefinition,
+  group: { tasks: readonly Pick<ChallengeTaskDefinition, 'id'>[] },
   taskProgress: readonly TaskProgress[],
 ): GroupProgress {
   const passedTaskIds = new Set(taskProgress.filter(({ everPassed }) => everPassed).map(({ taskId }) => taskId));
