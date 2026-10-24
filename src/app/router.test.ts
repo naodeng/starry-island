@@ -26,7 +26,8 @@ describe('router', () => {
     expect(getChallengeGrowthPath()).toBe('/challenges/growth');
     expect(resolveRoute('/challenges')).toEqual({ kind: 'challengeCenter' });
     expect(resolveRoute('/challenges/wrong-questions')).toEqual({ kind: 'challengeWrongQuestions' });
-    expect(resolveRoute('/challenges/growth')).toEqual({ kind: 'challengeGrowth' });
+    expect(resolveRoute('/challenges/growth')).toEqual({ kind: 'growth', initialView: 'challenge' });
+    expect(resolveRoute('/growth')).toEqual({ kind: 'growth', initialView: 'overview' });
     expect(resolveRoute(getChallengeGroupPath(groupId))).toEqual({ kind: 'challengeGroup', groupId });
     expect(resolveRoute(getChallengeTaskPath(taskId))).toEqual({ kind: 'challengeTask', taskId });
   });
@@ -54,7 +55,7 @@ describe('router', () => {
     const sessionPath = `${taskPath}/session-01`;
 
     expect(resolveRoute('/courses', instance)).toEqual({ kind: 'catalog' });
-    expect(resolveRoute('/achievements', instance)).toEqual({ kind: 'achievements' });
+    expect(resolveRoute('/achievements', instance)).toEqual({ kind: 'growth', initialView: 'learning' });
     expect(resolveRoute(`/${unitKey}`, instance)).toMatchObject({ kind: 'unit', unitKey });
     expect(resolveRoute(taskPath, instance)).toMatchObject({
       kind: 'task',
@@ -80,6 +81,14 @@ describe('router', () => {
     expect(resolveRoute('/courses', instance)).toEqual({ kind: 'catalog' });
     expect(resolveRoute(taskPath, instance)).toMatchObject({ kind: 'task', task: { id: `${unitKey}/basic/task-01` } });
     expect(resolveRoute(sessionPath, instance)).toMatchObject({ kind: 'session', session: { id: `${unitKey}/basic/task-01/session-01` } });
+  });
+
+  it('mapsGrowthAliasesToTheirOriginalGrowthViews', () => {
+    expect(resolveRoute('/growth')).toEqual({ kind: 'growth', initialView: 'overview' });
+    expect(resolveRoute('/achievements')).toEqual({ kind: 'growth', initialView: 'learning' });
+    expect(resolveRoute('/challenges/growth')).toEqual({ kind: 'growth', initialView: 'challenge' });
+    expect(resolveRoute('/grade-2/term-1/chinese/unit-01/basic/task-01/session-01', createPlayableCurriculum()).kind).toBe('session');
+    expect(resolveRoute(getChallengeTaskPath('grade-2-term-1-math-first-half/high-01')).kind).toBe('challengeTask');
   });
 
   it('rejectsUnknownSubjectsAndMalformedNestedSlugs', () => {

@@ -160,8 +160,10 @@ test('keeps growth statistics readable in both themes', async ({ page }) => {
   for (const theme of ['light', 'dark'] as const) {
     await page.emulateMedia({ colorScheme: theme, reducedMotion: theme === 'dark' ? 'reduce' : 'no-preference' });
     await page.goto('/challenges/growth');
-    await expect(page.getByRole('heading', { name: '闯关成长记录' })).toBeVisible();
-    await expect(page).toHaveTitle('闯关成长记录 | 星岛学园');
+    await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
+    await expect(page.getByRole('tab', { name: '闯关成长' })).toHaveAttribute('aria-selected', 'true');
+    await expect(page.getByRole('heading', { name: '闯关成长记录', level: 2 })).toBeVisible();
+    await expect(page).toHaveTitle('成长中心 | 星岛学园');
     await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe(theme);
 
     const textContrasts = await page.locator('.challenge-growth-metric, .challenge-growth-route').evaluateAll((cards) => {
@@ -185,11 +187,13 @@ test('keeps growth statistics readable in both themes', async ({ page }) => {
 
     await page.setViewportSize({ width: 390, height: 844 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-    await page.keyboard.press('Tab');
-    const backButton = page.getByRole('button', { name: '返回闯关中心' });
-    expect(await backButton.evaluate((element) => document.activeElement === element && element.matches(':focus-visible'))).toBe(true);
+    const growthTab = page.getByRole('tab', { name: '闯关成长' });
+    await growthTab.focus();
+    await page.keyboard.press('ArrowLeft');
+    const focusedTab = page.getByRole('tab', { name: '学习星图' });
+    expect(await focusedTab.evaluate((element) => document.activeElement === element && element.matches(':focus-visible'))).toBe(true);
     if (theme === 'dark') {
-      expect(await backButton.evaluate((element) => Number.parseFloat(getComputedStyle(element).transitionDuration))).toBeLessThan(0.001);
+      expect(await focusedTab.evaluate((element) => Number.parseFloat(getComputedStyle(element).transitionDuration))).toBeLessThan(0.001);
     }
     await page.setViewportSize({ width: 1280, height: 900 });
   }

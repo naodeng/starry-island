@@ -14,41 +14,42 @@ const summary: ChallengeGrowthSummary = {
 };
 
 describe('ChallengeGrowth', () => {
-  it('announces while local growth data is loading', () => {
-    render(<ChallengeGrowth summary={summary} status="loading" onNavigate={vi.fn()} />);
+  it('announces loading state as an embeddable section', () => {
+    const { container } = render(<ChallengeGrowth summary={summary} status="loading" onRetry={vi.fn()} />);
 
-    expect(screen.getByRole('main')).toHaveAttribute('aria-busy', 'true');
-    expect(screen.getByRole('heading', { name: '正在读取成长记录…' })).toBeInTheDocument();
+    expect(screen.getByRole('status')).toHaveTextContent('正在读取成长记录');
+    expect(container.querySelector('.challenge-growth-view')).toHaveAttribute('aria-busy', 'true');
+    expect(screen.queryByRole('main')).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { level: 1 })).not.toBeInTheDocument();
   });
 
-  it('keeps records intact and offers a return path when local growth data cannot be read', () => {
-    const onNavigate = vi.fn();
-    render(<ChallengeGrowth summary={summary} status="error" onNavigate={onNavigate} />);
+  it('keeps local records intact and offers a retry when storage is unavailable', () => {
+    const onRetry = vi.fn();
+    render(<ChallengeGrowth summary={summary} status="error" onRetry={onRetry} />);
 
     expect(screen.getByRole('heading', { name: '成长记录暂时无法打开' })).toBeInTheDocument();
     expect(screen.getByText(/闯关记录没有被更改/)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: '返回闯关中心' }));
-    expect(onNavigate).toHaveBeenCalledWith('/challenges');
+    fireEvent.click(screen.getByRole('button', { name: '重新读取闯关进度' }));
+    expect(onRetry).toHaveBeenCalledOnce();
   });
 
-  it('shows local progress totals and the progress of each registered group', () => {
-    render(<ChallengeGrowth summary={summary} status="ready" onNavigate={vi.fn()} />);
+  it('shows local progress totals and registered route progress without owning a page heading', () => {
+    render(<ChallengeGrowth summary={summary} status="ready" onRetry={vi.fn()} />);
 
-    expect(screen.getByRole('heading', { name: '闯关成长记录' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '闯关成长记录', level: 2 })).toBeInTheDocument();
     expect(screen.getByText('8 次')).toBeInTheDocument();
     expect(screen.getByText('3 个任务')).toBeInTheDocument();
     expect(screen.getByText('0 枚徽章')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '二年级上册 · 数学 · 第2单元' }).closest('li')).toHaveTextContent('3/5 个任务已通过');
     expect(screen.getByRole('heading', { name: '二年级上册 · 数学 · 前半学期' }).closest('li')).toHaveTextContent('0/5 个任务已通过');
     expect(screen.getByText(/只统计此设备保存的数据/)).toBeInTheDocument();
+    expect(screen.queryByRole('main')).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { level: 1 })).not.toBeInTheDocument();
   });
 
-  it('shows an encouraging empty state and returns to the challenge center', () => {
-    const onNavigate = vi.fn();
-    render(<ChallengeGrowth summary={{ completedAttempts: 0, passedTaskCount: 0, earnedBadgeCount: 0, groups: [] }} status="ready" onNavigate={onNavigate} />);
+  it('shows an encouraging empty state after a successful read', () => {
+    render(<ChallengeGrowth summary={{ completedAttempts: 0, passedTaskCount: 0, earnedBadgeCount: 0, groups: [] }} status="ready" onRetry={vi.fn()} />);
 
     expect(screen.getByRole('status')).toHaveTextContent('完成一场挑战后，成长记录会出现在这里。');
-    fireEvent.click(screen.getByRole('button', { name: '返回闯关中心' }));
-    expect(onNavigate).toHaveBeenCalledWith('/challenges');
   });
 });

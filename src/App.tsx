@@ -12,7 +12,7 @@ const CourseCatalog = lazy(() => import('./components/catalog/CourseCatalog'));
 const HomeDashboard = lazy(() => import('./components/home/HomeDashboard'));
 const UnitOverview = lazy(() => import('./components/catalog/UnitOverview'));
 const SessionPlayer = lazy(() => import('./components/game/SessionPlayer'));
-const AchievementPage = lazy(() => import('./components/achievements/AchievementPage'));
+const GrowthPage = lazy(() => import('./components/growth/GrowthPage'));
 const ChallengePage = lazy(() => import('./challenges/ui/ChallengePage'));
 import './styles/catalog.css';
 import './styles/game.css';
@@ -162,9 +162,9 @@ export default function App() {
     page = <HomeDashboard progress={progress} onNavigate={navigate} />;
   } else if (route.kind === 'catalog') {
     page = <CourseCatalog progress={progress} onNavigate={navigate} onApplyLearningStart={handleLearningStart} />;
-  } else if (route.kind === 'achievements') {
-    page = <AchievementPage progress={progress} onNavigate={navigate} />;
-  } else if (route.kind === 'challengeCenter' || route.kind === 'challengeGrowth' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
+  } else if (route.kind === 'growth') {
+    page = <GrowthPage progress={progress} initialView={route.initialView} onNavigate={navigate} />;
+  } else if (route.kind === 'challengeCenter' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
     page = <div data-sound-silent="true"><ChallengePage route={route} onNavigate={navigate} /></div>;
   } else if (route.kind === 'unit') {
     page = <UnitOverview unitKey={route.unitKey} unit={route.unit} completedSessionIds={effectiveCompletedSessionIds} onNavigate={navigate} />;

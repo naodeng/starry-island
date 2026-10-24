@@ -7,9 +7,8 @@ import { isValidChallengeGroupId, isValidChallengeTaskId } from '../challenges/d
 export type AppRoute =
   | { kind: 'home' }
   | { kind: 'catalog' }
-  | { kind: 'achievements' }
+  | { kind: 'growth'; initialView: 'overview' | 'learning' | 'challenge' }
   | { kind: 'challengeCenter' }
-  | { kind: 'challengeGrowth' }
   | { kind: 'challengeWrongQuestions' }
   | { kind: 'challengeGroup'; groupId: string }
   | { kind: 'challengeTask'; taskId: string }
@@ -98,10 +97,11 @@ export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit
   const normalized = pathname.replace(/\/+$/, '') || '/';
   if (normalized === '/') return { kind: 'home' };
   if (normalized === '/courses') return { kind: 'catalog' };
-  if (normalized === '/achievements') return { kind: 'achievements' };
+  if (normalized === '/growth') return { kind: 'growth', initialView: 'overview' };
+  if (normalized === '/achievements') return { kind: 'growth', initialView: 'learning' };
 
   if (normalized === '/challenges') return { kind: 'challengeCenter' };
-  if (normalized === '/challenges/growth') return { kind: 'challengeGrowth' };
+  if (normalized === '/challenges/growth') return { kind: 'growth', initialView: 'challenge' };
   if (normalized === '/challenges/wrong-questions') return { kind: 'challengeWrongQuestions' };
   if (normalized.startsWith('/challenges/')) {
     const match = /^\/challenges\/(group|task)\/([^/]+)$/.exec(normalized);

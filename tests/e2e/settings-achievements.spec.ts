@@ -18,7 +18,8 @@ test('persistsThemeLearningStartAndSoundPreference', async ({ page }) => {
     .toEqual({ grade: 2, term: 2, unit: 1 });
   await page.getByRole('dialog').getByRole('button', { name: '查看成就详情' }).click();
   await expect(page).toHaveURL(/\/achievements$/);
-  await expect(page.getByRole('heading', { name: '我的成就星图' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
+  await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
 
   await page.goto('/');
   await page.getByRole('button', { name: '设置' }).click();
@@ -48,7 +49,8 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
   ]) {
     await page.setViewportSize(viewport);
     await page.goto('/achievements');
-    await expect(page.getByRole('heading', { name: '我的成就星图' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
+    await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
     await expect(page.locator('.exploration-zone')).toHaveCount(12);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
     const horizontalPadding = await page.locator('.achievement-page').evaluate((element) => ({

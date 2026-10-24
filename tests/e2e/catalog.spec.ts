@@ -18,7 +18,8 @@ test('showsCatalogExplorationProgressAndOpensAchievementDetails', async ({ page 
   await hero.getByRole('button', { name: /成就详情/ }).click();
 
   await expect(page).toHaveURL(/\/achievements$/);
-  await expect(page.getByRole('heading', { name: '我的成就星图' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
+  await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
 });
 
 test('updatesTheHighlightedCourseAndMovesKeyboardFocusToItsSelectors', async ({ page }) => {

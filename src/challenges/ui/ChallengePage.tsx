@@ -7,7 +7,6 @@ import type { ChallengeBackupData, ChallengeBackupImport, ChallengeBackupPrefere
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import type { ChallengeClearScope, ChallengeRecoveryPointSummary } from '../domain/recovery';
-import { deriveChallengeGrowth } from '../domain/growth';
 import { createChallengeDiagnosticReport } from '../domain/diagnostics';
 import type { ChallengeRecoveryRestoreResult, ChallengeRepository } from '../storage/repository';
 import { RevisionConflictError } from '../storage/repository';
@@ -17,7 +16,6 @@ import type { LoadedPilotContent } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
 import type { ChallengeBackupImportPreview } from './ChallengeCenter';
 import ChallengeGroup from './ChallengeGroup';
-import ChallengeGrowth from './ChallengeGrowth';
 import ChallengeRunner from './ChallengeRunner';
 import ChallengeWrongQuestions from './ChallengeWrongQuestions';
 import { getChallengeTaskTitle } from './challengeLabels';
@@ -45,7 +43,7 @@ function downloadChallengeBackup(backup: Awaited<ReturnType<typeof createChallen
   downloadJsonFile(`starry-island-challenges-${backup.createdAt.replace(/[:.]/g, '-')}.json`, backup);
 }
 
-type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeGrowth' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
+type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
 
 type WrongQuestionState =
   | { status: 'loading' }
@@ -75,7 +73,6 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   const [contentError, setContentError] = useState<string | null>(null);
   const [progressByTaskId, setProgressByTaskId] = useState<Record<string, TaskProgress>>({});
   const [progressAvailable, setProgressAvailable] = useState(true);
-  const [progressLoading, setProgressLoading] = useState(true);
   const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
   const [pendingBackupImport, setPendingBackupImport] = useState<PendingBackupImport | null>(null);
   const [recoveryPoint, setRecoveryPoint] = useState<ChallengeRecoveryPointSummary | null>(null);
@@ -269,18 +266,15 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   useEffect(() => {
     if (!content) return;
     let cancelled = false;
-    setProgressLoading(true);
     repository.getAllTaskProgress().then((entries) => {
       if (cancelled) return;
       const progress: Record<string, TaskProgress> = {};
       for (const item of entries) progress[item.taskId] = item;
       setProgressByTaskId(progress);
       setProgressAvailable(true);
-      setProgressLoading(false);
     }).catch(() => {
       if (cancelled) return;
       setProgressAvailable(false);
-      setProgressLoading(false);
     });
     return () => { cancelled = true; };
   }, [content, repository, route]);
@@ -351,11 +345,6 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
         onConfirmQuarantinedRecordRestore={restoreQuarantinedRecord}
       />
     );
-  }
-
-  if (route.kind === 'challengeGrowth') {
-    const summary = deriveChallengeGrowth(content.groups.map(({ group }) => group.definition), Object.values(progressByTaskId));
-    return <ChallengeGrowth summary={summary} status={progressLoading ? 'loading' : progressAvailable ? 'ready' : 'error'} onNavigate={onNavigate} />;
   }
 
   if (route.kind === 'challengeGroup') {

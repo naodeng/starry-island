@@ -1,11 +1,11 @@
 import { Button, Card, Progress } from 'animal-island-ui';
-import { getChallengeCenterPath, getSubjectTitle } from '../../app/router';
+import { getSubjectTitle } from '../../app/router';
 import type { ChallengeGrowthGroup, ChallengeGrowthSummary } from '../domain/growth';
 
 interface ChallengeGrowthProps {
   summary: ChallengeGrowthSummary;
   status: 'loading' | 'ready' | 'error';
-  onNavigate: (path: string) => void;
+  onRetry: () => void;
 }
 
 function getGroupTitle(group: ChallengeGrowthGroup): string {
@@ -26,37 +26,36 @@ function getGroupTitle(group: ChallengeGrowthGroup): string {
   return `${gradeName}年级${term} · ${getSubjectTitle(group.subject)} · ${scope}`;
 }
 
-export default function ChallengeGrowth({ summary, status, onNavigate }: ChallengeGrowthProps) {
+export default function ChallengeGrowth({ summary, status, onRetry }: ChallengeGrowthProps) {
   if (status === 'loading') {
-    return <main className="challenge-page" aria-live="polite" aria-busy="true"><div className="challenge-shell"><h1>正在读取成长记录…</h1></div></main>;
+    return (
+      <section className="challenge-growth-view" aria-live="polite" aria-busy="true">
+        <h2>闯关成长</h2>
+        <p role="status">正在读取成长记录…</p>
+      </section>
+    );
   }
 
   if (status === 'error') {
     return (
-      <main className="challenge-page">
-        <div className="challenge-shell">
-          <Card className="challenge-message-card" color="default">
-            <p className="eyebrow">本机数据暂时没有读出</p>
-            <h1>成长记录暂时无法打开</h1>
-            <p>闯关记录没有被更改。返回闯关中心后可以继续挑战，之后再查看成长记录。</p>
-            <Button type="primary" onClick={() => onNavigate(getChallengeCenterPath())}>返回闯关中心</Button>
-          </Card>
-        </div>
-      </main>
+      <section className="challenge-growth-view" aria-labelledby="challenge-growth-error-heading">
+        <h2 id="challenge-growth-error-heading">闯关成长</h2>
+        <Card className="challenge-message-card" color="default" role="alert">
+          <p className="eyebrow">本机数据暂时没有读出</p>
+          <h3>成长记录暂时无法打开</h3>
+          <p>闯关记录没有被更改，稍后可以重试读取。</p>
+          <Button type="primary" onClick={onRetry}>重新读取闯关进度</Button>
+        </Card>
+      </section>
     );
   }
 
   return (
-    <main className="challenge-page">
-      <div className="challenge-shell">
-        <header className="challenge-subpage-heading">
-          <Button type="text" onClick={() => onNavigate(getChallengeCenterPath())}>返回闯关中心</Button>
-          <p className="eyebrow">仅此设备可见 · 闯关记录</p>
-          <h1>闯关成长记录</h1>
-          <p>看看已经完成的挑战、通过的任务和点亮的组徽章。</p>
-        </header>
+    <div className="challenge-growth-view">
+      <h2>闯关成长记录</h2>
+      <p className="challenge-growth-intro">看看已经完成的挑战、通过的任务和点亮的组徽章。这里只显示本机汇总，不推测挑战发生时间。</p>
 
-        <section className="challenge-section" aria-labelledby="challenge-growth-summary-heading">
+        <section className="challenge-section" aria-label="闯关成长摘要" aria-labelledby="challenge-growth-summary-heading">
           <div className="challenge-section-heading">
             <div>
               <p className="eyebrow">本机累计记录</p>
@@ -116,7 +115,6 @@ export default function ChallengeGrowth({ summary, status, onNavigate }: Challen
         </section>
 
         <p className="challenge-growth-note">只统计此设备保存的数据；不保存完整作答历史，也不统计连续学习天数。</p>
-      </div>
-    </main>
+    </div>
   );
 }
