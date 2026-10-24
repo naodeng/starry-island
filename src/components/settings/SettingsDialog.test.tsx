@@ -56,10 +56,12 @@ describe('SettingsDialog', () => {
     await user.click(dialog.getByRole('combobox', { name: '从第几单元开始' }));
     await user.click(await dialog.findByRole('option', { name: '第 2 单元' }));
     await user.click(screen.getByRole('button', { name: '应用学习起点' }));
+    expect(onApplyLearningStart).not.toHaveBeenCalled();
+    await user.click(screen.getByRole('button', { name: '确认并应用学习起点' }));
     expect(onApplyLearningStart).toHaveBeenCalledWith({ grade: 2, term: 1, unit: 2 });
 
-    await user.click(screen.getByRole('button', { name: /查看成就详情/ }));
-    expect(onNavigate).toHaveBeenCalledWith('/achievements');
+    await user.click(screen.getByRole('button', { name: /查看成长详情/ }));
+    expect(onNavigate).toHaveBeenCalledWith('/growth');
   });
 
   it('updatesTheResolvedThemeWhenTheSystemPreferenceChanges', () => {
@@ -103,6 +105,7 @@ describe('SettingsDialog', () => {
     expect(screen.queryByText(/尚未登记到课程目录/)).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: '应用学习起点' })).toBeEnabled();
     await user.click(screen.getByRole('button', { name: '应用学习起点' }));
+    await user.click(screen.getByRole('button', { name: '确认并应用学习起点' }));
     expect(onApplyLearningStart).toHaveBeenCalledWith({ grade: 4, term: 2, unit: 1 });
   });
 

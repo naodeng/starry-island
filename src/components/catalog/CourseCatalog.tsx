@@ -3,29 +3,25 @@ import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon, SettingsIcon, StarIcon } from 'naive-icons';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CatalogUnitEntry, SubjectId } from '../../content/types';
-import type { LearningPosition } from '../../achievements/position';
 import type { ProgressState } from '../../storage/progress';
 import { getUnitPath } from '../../app/router';
 import { COMPANION_IDS, COMPANION_PROFILES } from '../mascots/CompanionAvatar';
 import CompanionAvatar from '../mascots/CompanionAvatar';
 import HeroGuide from '../mascots/HeroGuide';
 import AchievementSummary from '../achievements/AchievementSummary';
-import SettingsDialog from '../settings/SettingsDialog';
 import CourseBreadcrumbs from './CourseBreadcrumbs';
 
 interface CourseCatalogProps {
   progress: ProgressState;
   onNavigate: (path: string) => void;
-  onApplyLearningStart: (position: LearningPosition) => void;
 }
 
-export default function CourseCatalog({ progress, onNavigate, onApplyLearningStart }: CourseCatalogProps) {
+export default function CourseCatalog({ progress, onNavigate }: CourseCatalogProps) {
   const initialGrade = curriculumManifest.grades.find((entry) => entry.id === `grade-${progress.learningStart?.grade}`) ?? curriculumManifest.grades[0];
   const initialTerm = initialGrade?.terms.find((entry) => entry.id === `term-${progress.learningStart?.term}`) ?? initialGrade?.terms[0];
   const [subjectId, setSubjectId] = useState<SubjectId>('chinese');
   const [gradeId, setGradeId] = useState(initialGrade?.id ?? 'grade-2');
   const [termId, setTermId] = useState(initialTerm?.id ?? 'term-1');
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const courseSelectionRef = useRef<HTMLDivElement>(null);
   const grade = curriculumManifest.grades.find((entry) => entry.id === gradeId) ?? curriculumManifest.grades[0];
   const term = grade?.terms.find((entry) => entry.id === termId) ?? grade?.terms[0];
@@ -50,17 +46,6 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
     if (unit.status === 'active') onNavigate(getUnitPath(unit.curriculumUnitKey!));
   }
 
-  function applyLearningStart(position: LearningPosition) {
-    const nextGrade = curriculumManifest.grades.find((entry) => entry.id === `grade-${position.grade}`);
-    const nextTerm = nextGrade?.terms.find((entry) => entry.id === `term-${position.term}`);
-    if (nextGrade && nextTerm) {
-      setGradeId(nextGrade.id);
-      setTermId(nextTerm.id);
-      setSubjectId(nextTerm.subjects.find((entry) => entry.id === 'chinese')?.id ?? nextTerm.subjects[0]?.id ?? 'chinese');
-    }
-    onApplyLearningStart(position);
-  }
-
   function focusCourseSelection() {
     const target = courseSelectionRef.current;
     if (!target) return;
@@ -74,7 +59,7 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
       <div className="catalog-shell">
         <div className="catalog-topbar">
           <CourseBreadcrumbs items={[{ label: '课程目录' }]} onNavigate={onNavigate} />
-          <Button type="default" className="catalog-settings-button" icon={<SettingsIcon size={18} aria-hidden="true" />} onClick={() => setSettingsOpen(true)}>
+          <Button type="default" className="catalog-settings-button" icon={<SettingsIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/settings')}>
             设置
           </Button>
         </div>
@@ -255,16 +240,6 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
           <span className="footer-orbit" aria-hidden="true"><StarIcon size={22} /></span>
         </footer>
       </div>
-      <SettingsDialog
-        open={settingsOpen}
-        progress={progress}
-        onClose={() => setSettingsOpen(false)}
-        onApplyLearningStart={applyLearningStart}
-        onNavigate={(path) => {
-          setSettingsOpen(false);
-          onNavigate(path);
-        }}
-      />
     </main>
   );
 }

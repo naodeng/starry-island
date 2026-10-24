@@ -28,6 +28,8 @@ describe('router', () => {
     expect(resolveRoute('/challenges/wrong-questions')).toEqual({ kind: 'challengeWrongQuestions' });
     expect(resolveRoute('/challenges/growth')).toEqual({ kind: 'growth', initialView: 'challenge' });
     expect(resolveRoute('/growth')).toEqual({ kind: 'growth', initialView: 'overview' });
+    expect(resolveRoute('/settings')).toEqual({ kind: 'settings' });
+    expect(resolveRoute('/settings/backup')).toEqual({ kind: 'settingsBackup' });
     expect(resolveRoute(getChallengeGroupPath(groupId))).toEqual({ kind: 'challengeGroup', groupId });
     expect(resolveRoute(getChallengeTaskPath(taskId))).toEqual({ kind: 'challengeTask', taskId });
   });

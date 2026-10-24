@@ -200,8 +200,8 @@ test('keeps growth statistics readable in both themes', async ({ page }) => {
 });
 
 test('downloads a versioned local backup with a valid checksum', async ({ page }) => {
-  await page.goto('/challenges');
-  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: '导出闯关备份' }).click();
@@ -231,8 +231,8 @@ test('ports theme and speech preferences only after explicit opt-in', async ({ p
     localStorage.setItem('china-study-theme-v1', 'light');
     localStorage.setItem('china-study-sound-enabled-v1', 'true');
   });
-  await page.goto('/challenges');
-  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   await page.setViewportSize({ width: 390, height: 844 });
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
@@ -347,8 +347,8 @@ test('ports theme and speech preferences only after explicit opt-in', async ({ p
 test('downloads a user-requested diagnostics report containing only allowlisted fields', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
-  await page.goto('/challenges');
-  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   await expect(page.getByText(/只有点击后才会生成并下载；不会自动上传。/)).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
@@ -405,8 +405,8 @@ test('isolates malformed local records and exports them only after an explicit a
     };
   }));
 
-  await page.goto('/challenges');
-  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   await expect(page.getByText(/发现 1 条结构异常的闯关记录/)).toBeVisible();
   await expect(page.getByText(/文件可能包含题目和作答内容/)).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
@@ -454,8 +454,8 @@ test('restores-known-legacy-attempt-after-preview-and-confirmation', async ({ pa
   const taskIdToRestore = 'e2e-quarantine-legacy-task';
   const originalAttempt = makeQuarantineAttempt(taskIdToRestore, false);
   await seedQuarantinedAttempt(page, originalAttempt);
-  await page.goto('/challenges');
-  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   await expect(page.getByText(/发现 1 条结构异常的闯关记录/)).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
@@ -500,8 +500,8 @@ test('keeps-conflicting-quarantined-record-and-export-available', async ({ page 
   const taskIdWithConflict = 'e2e-quarantine-conflicting-task';
   const activeAttempt = makeQuarantineAttempt(taskIdWithConflict, true);
   await seedQuarantinedAttempt(page, activeAttempt, activeAttempt);
-  await page.goto('/challenges');
-  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await page.getByRole('button', { name: '检查可恢复记录' }).click();
@@ -535,8 +535,8 @@ test('keeps-conflicting-quarantined-record-and-export-available', async ({ page 
 test('previews and safely merges an active attempt without duplicating data', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
-  await page.goto('/challenges');
-  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const question = {
     questionId: 'backup-question',
@@ -650,6 +650,28 @@ test('previews and safely merges an active attempt without duplicating data', as
   });
   expect(JSON.stringify(report)).not.toContain('backup-question');
   expect(JSON.stringify(report)).not.toContain('1 + 1');
+});
+
+test('plays a local challenge answer cue after the saved answer advances the task', async ({ page }) => {
+  await page.addInitScript(() => {
+    const testWindow = window as Window & { __challengeCueSources: string[] };
+    testWindow.__challengeCueSources = [];
+    HTMLMediaElement.prototype.play = function playChallengeCue() {
+      testWindow.__challengeCueSources.push(this.src.replace(window.location.origin, ''));
+      return Promise.resolve();
+    };
+  });
+  await page.goto(taskUrl);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+
+  await page.getByRole('group', { name: '选择一个答案' }).getByRole('button').first().click();
+  await page.getByRole('button', { name: '提交答案' }).click();
+
+  await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+  await expect.poll(() => page.evaluate(() => (window as Window & { __challengeCueSources: string[] }).__challengeCueSources)).toHaveLength(1);
+  const [source] = await page.evaluate(() => (window as Window & { __challengeCueSources: string[] }).__challengeCueSources);
+  expect(source).toMatch(/^\/audio\/answer-(correct|incorrect)\.mp3$/);
 });
 
 test('opens the local wrong-question notebook from the challenge center', async ({ page }) => {
@@ -913,7 +935,8 @@ test('clears and restores an in-progress challenge through the 24-hour recovery 
   await page.getByRole('button', { name: '开始挑战' }).click();
   await expect(page.getByText('已完成 0/15 题')).toBeVisible();
 
-  await page.goto('/challenges');
+  await page.goto('/settings/backup');
+  await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   await expect(page.getByRole('heading', { name: '数据管理与恢复' })).toBeVisible();
   await page.getByRole('button', { name: '清除全部闯关数据' }).click();
   const confirmation = page.getByRole('group', { name: '清除确认' });

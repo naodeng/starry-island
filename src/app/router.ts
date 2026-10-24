@@ -8,6 +8,8 @@ export type AppRoute =
   | { kind: 'home' }
   | { kind: 'catalog' }
   | { kind: 'growth'; initialView: 'overview' | 'learning' | 'challenge' }
+  | { kind: 'settings' }
+  | { kind: 'settingsBackup' }
   | { kind: 'challengeCenter' }
   | { kind: 'challengeWrongQuestions' }
   | { kind: 'challengeGroup'; groupId: string }
@@ -99,6 +101,8 @@ export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit
   if (normalized === '/courses') return { kind: 'catalog' };
   if (normalized === '/growth') return { kind: 'growth', initialView: 'overview' };
   if (normalized === '/achievements') return { kind: 'growth', initialView: 'learning' };
+  if (normalized === '/settings') return { kind: 'settings' };
+  if (normalized === '/settings/backup') return { kind: 'settingsBackup' };
 
   if (normalized === '/challenges') return { kind: 'challengeCenter' };
   if (normalized === '/challenges/growth') return { kind: 'growth', initialView: 'challenge' };

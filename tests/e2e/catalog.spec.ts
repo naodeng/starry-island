@@ -256,12 +256,13 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     }
 
     await page.getByRole('button', { name: '设置' }).click();
-    const dialog = page.getByRole('dialog');
-    await expect(dialog.locator('.project-legal-footer--dialog')).toContainText('PolyForm Noncommercial License 1.0.0');
-    await expect(dialog.getByRole('heading', { name: '学习进度设置' })).toBeVisible();
-    await expect(dialog.getByRole('button', { name: '应用学习起点' })).toBeVisible();
+    await expect(page).toHaveURL(/\/settings$/);
+    await expect(page.getByRole('heading', { name: '设置', level: 1 })).toBeVisible();
+    await expect(page.locator('.project-legal-footer--page')).toContainText('PolyForm Noncommercial License 1.0.0');
+    await expect(page.getByRole('heading', { name: '学习进度设置' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '应用学习起点' })).toBeVisible();
     if (viewport.width === 390) {
-      const themeLabel = page.locator('.settings-modal .theme-switcher-options [class*="animal-radioItem"] [class*="animal-label"]').first();
+      const themeLabel = page.locator('.settings-page .theme-switcher-options [class*="animal-radioItem"] [class*="animal-label"]').first();
       const dimensions = await themeLabel.evaluate((element) => {
         const style = getComputedStyle(element);
         return {
@@ -276,10 +277,9 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     }
 
     const geometry = await page.evaluate((viewportWidth) => {
-      const modal = document.querySelector('.settings-modal > [class*="animal-modalClipped"]');
-      const body = document.querySelector('.settings-modal [class*="animal-body"]');
-      if (!(modal instanceof HTMLElement) || !(body instanceof HTMLElement)) return null;
-      const bounds = modal.getBoundingClientRect();
+      const panel = document.querySelector('.settings-page .settings-panel');
+      if (!(panel instanceof HTMLElement)) return null;
+      const bounds = panel.getBoundingClientRect();
       return {
         left: bounds.left,
         right: bounds.right,
@@ -287,27 +287,15 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
         bottom: bounds.bottom,
         width: viewportWidth,
         height: window.innerHeight,
-        bodyCanScroll: body.scrollHeight > body.clientHeight,
+        pageCanScroll: document.documentElement.scrollHeight > window.innerHeight,
       };
     }, viewport.width);
     expect(geometry).not.toBeNull();
     expect(geometry!.left).toBeGreaterThanOrEqual(0);
     expect(geometry!.right).toBeLessThanOrEqual(geometry!.width);
     expect(geometry!.top).toBeGreaterThanOrEqual(0);
-    expect(geometry!.bottom).toBeLessThanOrEqual(geometry!.height);
-    if (viewport.width === 390) expect(geometry!.bodyCanScroll).toBe(true);
-
-    if (viewport.width === 390) {
-      await page.locator('.settings-modal [class*="animal-body"]').evaluate((element) => {
-        element.scrollTop = element.scrollHeight;
-      });
-      const closeBounds = await dialog.getByRole('button', { name: '关闭设置' }).boundingBox();
-      expect(closeBounds?.y).toBeGreaterThanOrEqual(0);
-      expect(closeBounds!.y + closeBounds!.height).toBeLessThanOrEqual(viewport.height);
-    }
-
-    await page.getByRole('button', { name: '关闭设置' }).click();
-    await expect(dialog).toBeHidden();
+    expect(geometry!.bottom).toBeGreaterThanOrEqual(0);
+    if (viewport.width === 390) expect(geometry!.pageCanScroll).toBe(true);
   }
 });
 

@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { getChallengeGroupPath } from '../../app/router';
+import { submitAnswer as isAnswerCorrect } from '../../learning/answers';
+import { useSound } from '../../sound/SoundProvider';
+import { getAnswerSoundFeedback } from '../../sound/soundCues';
+import type { FeedbackStatus } from '../../learning/feedback';
 import type { ChallengeRepository } from '../storage/repository';
 import { acquireChallengeWriterLease, type ChallengeWriterLease } from '../storage/writerLock';
 import type { LoadedPilotGroup } from '../content/pilotContent';
@@ -24,6 +28,8 @@ interface ChallengeRunnerProps {
 
 interface PendingAnswer {
   nextAttempt: ChallengeAttempt;
+  feedbackStatus: FeedbackStatus;
+  previousConsecutiveCorrectCount: number;
 }
 
 interface CompletedResult {
@@ -45,6 +51,22 @@ function isSameAttemptSnapshot(left: ChallengeAttempt, right: ChallengeAttempt):
   return stableSerialize(left) === stableSerialize(right);
 }
 
+function countTrailingCorrectAnswers(attempt: ChallengeAttempt, endExclusive: number): number {
+  let count = 0;
+  for (let index = Math.min(endExclusive, attempt.questions.length) - 1; index >= 0; index -= 1) {
+    const question = attempt.questions[index];
+    if (!question || !Object.prototype.hasOwnProperty.call(attempt.answers, question.questionId)
+      || !isAnswerCorrect(question.activity, attempt.answers[question.questionId])) break;
+    count += 1;
+  }
+  return count;
+}
+
+function getSavedAnswerFeedbackStatus(attempt: ChallengeAttempt, index: number): FeedbackStatus {
+  const question = attempt.questions[index];
+  return question && isAnswerCorrect(question.activity, attempt.answers[question.questionId]) ? 'correct' : 'incorrect';
+}
+
 type LoadState = 'loading' | 'ready' | 'error';
 
 async function completeSavedAttempt(
@@ -58,6 +80,7 @@ async function completeSavedAttempt(
 }
 
 export default function ChallengeRunner({ loadedGroup, task, repository, manifestVersion, taskTitle, onNavigate }: ChallengeRunnerProps) {
+  const { playCue } = useSound();
   const [loadState, setLoadState] = useState<LoadState>('loading');
   const [loadError, setLoadError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState<ChallengeAttempt | null>(null);
@@ -72,6 +95,19 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
   const [reloadRevision, setReloadRevision] = useState(0);
   const writerLeaseRef = useRef<ChallengeWriterLease | null>(null);
   const lockControllerRef = useRef<AbortController | null>(null);
+  const playCueRef = useRef(playCue);
+  const completionCuePlayedRef = useRef(false);
+
+  useEffect(() => {
+    playCueRef.current = playCue;
+  }, [playCue]);
+
+  function playFinalAnswerCue(status: FeedbackStatus, previousConsecutiveCorrectCount: number) {
+    if (completionCuePlayedRef.current) return;
+    const { cue } = getAnswerSoundFeedback(status, previousConsecutiveCorrectCount, true);
+    playCueRef.current(cue);
+    completionCuePlayedRef.current = true;
+  }
 
   function confirmPendingAnswerAbandonment(): boolean {
     return !pendingAnswer || window.confirm('本题答案尚未保存。重新读取或离开本页会放弃这个答案，已确认保存的进度仍会保留。要继续吗？');
@@ -135,6 +171,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           if (cancelled) return;
           setProgress(completed.progress);
           setCompletedResult(completed);
+          playFinalAnswerCue(getSavedAnswerFeedbackStatus(active, active.currentIndex - 1), countTrailingCorrectAnswers(active, active.currentIndex - 1));
           setRestored(true);
           releaseWriterLease();
           setLoadState('ready');
@@ -193,6 +230,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           const completed = await completeSavedAttempt(repository, existing, savedProgress);
           setProgress(completed.progress);
           setCompletedResult(completed);
+          playFinalAnswerCue(getSavedAnswerFeedbackStatus(existing, existing.currentIndex - 1), countTrailingCorrectAnswers(existing, existing.currentIndex - 1));
           releaseWriterLease();
         } else {
           setAttempt(existing);
@@ -271,7 +309,10 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         const completed = await completeSavedAttempt(repository, saved, await repository.getTaskProgress(task.id));
         setProgress(completed.progress);
         setCompletedResult(completed);
+        playFinalAnswerCue(pending.feedbackStatus, pending.previousConsecutiveCorrectCount);
         releaseWriterLease();
+      } else {
+        playCueRef.current(getAnswerSoundFeedback(pending.feedbackStatus, pending.previousConsecutiveCorrectCount, false).cue);
       }
     } catch (error) {
       const guidance = classifyChallengeError(error);
@@ -284,6 +325,9 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
             ? `全部答案都已保存，但成绩还没有写入。${guidance.message}`
             : '全部答案已保存，但成绩暂时没有完成记录。请重试保存成绩。'
           : null);
+        if (current.currentIndex < current.questions.length) {
+          playCueRef.current(getAnswerSoundFeedback(pending.feedbackStatus, pending.previousConsecutiveCorrectCount, false).cue);
+        }
       } else {
         setPendingAnswer(pending);
         setSaveError(guidance.kind === 'storage-full'
@@ -303,6 +347,8 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     const elapsedMs = Math.max(attempt.elapsedMs, Date.now() - Date.parse(attempt.startedAt));
     void persistPendingAnswer({
       nextAttempt: { ...transition.attempt, elapsedMs },
+      feedbackStatus: transition.correct ? 'correct' : 'incorrect',
+      previousConsecutiveCorrectCount: countTrailingCorrectAnswers(attempt, attempt.currentIndex),
     });
   }
 
@@ -315,6 +361,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       const completed = await completeSavedAttempt(repository, attempt, savedProgress);
       setProgress(completed.progress);
       setCompletedResult(completed);
+      playFinalAnswerCue(getSavedAnswerFeedbackStatus(attempt, attempt.currentIndex - 1), countTrailingCorrectAnswers(attempt, attempt.currentIndex - 1));
       releaseWriterLease();
     } catch (error) {
       setSaveError(getChallengeErrorMessage(error, '挑战结果还没有保存成功。请重试完成保存。'));

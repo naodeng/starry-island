@@ -13,6 +13,8 @@ const HomeDashboard = lazy(() => import('./components/home/HomeDashboard'));
 const UnitOverview = lazy(() => import('./components/catalog/UnitOverview'));
 const SessionPlayer = lazy(() => import('./components/game/SessionPlayer'));
 const GrowthPage = lazy(() => import('./components/growth/GrowthPage'));
+const SettingsPage = lazy(() => import('./components/settings/SettingsPage'));
+const ChallengeDataManagementPage = lazy(() => import('./challenges/ui/ChallengeDataManagementPage'));
 const ChallengePage = lazy(() => import('./challenges/ui/ChallengePage'));
 import './styles/catalog.css';
 import './styles/game.css';
@@ -161,9 +163,13 @@ export default function App() {
   } else if (route.kind === 'home') {
     page = <HomeDashboard progress={progress} onNavigate={navigate} />;
   } else if (route.kind === 'catalog') {
-    page = <CourseCatalog progress={progress} onNavigate={navigate} onApplyLearningStart={handleLearningStart} />;
+    page = <CourseCatalog progress={progress} onNavigate={navigate} />;
   } else if (route.kind === 'growth') {
     page = <GrowthPage progress={progress} initialView={route.initialView} onNavigate={navigate} />;
+  } else if (route.kind === 'settings') {
+    page = <SettingsPage progress={progress} onApplyLearningStart={handleLearningStart} onNavigate={navigate} />;
+  } else if (route.kind === 'settingsBackup') {
+    page = <ChallengeDataManagementPage onNavigate={navigate} />;
   } else if (route.kind === 'challengeCenter' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
     page = <div data-sound-silent="true"><ChallengePage route={route} onNavigate={navigate} /></div>;
   } else if (route.kind === 'unit') {

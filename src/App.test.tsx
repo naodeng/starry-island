@@ -46,8 +46,9 @@ describe('App', () => {
     expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
     await user.click(await screen.findByRole('button', { name: '设置' }));
 
-    expect(screen.getByRole('dialog')).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: '显示主题' })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/settings');
+    expect(await screen.findByRole('heading', { name: '设置', level: 1 })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: '显示主题' })).toBeInTheDocument();
   });
 
   it('opensTheLazyChallengeCenterAndCrossSubjectPilotGroups', async () => {
@@ -76,20 +77,33 @@ describe('App', () => {
     expect(playedSources).toHaveLength(soundsBeforeChallengeNavigation);
   });
 
-  it('appliesTheChosenLearningStartToTheVisibleCourseCatalog', async () => {
+  it('appliesTheChosenLearningStartFromTheDedicatedSettingsPage', async () => {
     const user = userEvent.setup();
     window.history.replaceState({}, '', '/courses');
     render(<App />);
 
     await user.click(await screen.findByRole('button', { name: '设置' }));
-    const dialog = within(screen.getByRole('dialog'));
-    await user.click(dialog.getByRole('combobox', { name: '学期' }));
-    await user.click(await dialog.findByRole('option', { name: '下学期' }));
+    await user.click(screen.getByRole('combobox', { name: '学期' }));
+    await user.click(await screen.findByRole('option', { name: '下学期' }));
     await user.click(screen.getByRole('button', { name: '应用学习起点' }));
-    await user.click(screen.getByRole('button', { name: '关闭设置' }));
+    await user.click(screen.getByRole('button', { name: '确认并应用学习起点' }));
 
+    expect(screen.getByRole('heading', { name: '设置', level: 1 })).toBeInTheDocument();
     expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('下学期');
     expect(window.localStorage.getItem('china-study-progress-v1')).toContain('"term":2');
+  });
+
+  it('opens backup management from settings without entering the challenge center', async () => {
+    const user = userEvent.setup();
+    window.history.replaceState({}, '', '/settings');
+    render(<App />);
+
+    await user.click(await screen.findByRole('button', { name: '打开备份与恢复' }));
+
+    expect(window.location.pathname).toBe('/settings/backup');
+    expect(await screen.findByRole('heading', { name: '备份与恢复暂时无法打开' })).toBeInTheDocument();
+    expect(screen.getByText(/现有闯关记录没有被更改/)).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: '闯关中心' })).not.toBeInTheDocument();
   });
 
   it('returnsFromASessionThroughHistoryAndMovesFocusToEachRouteHeading', async () => {
@@ -127,6 +141,7 @@ describe('App', () => {
     window.history.replaceState({}, '', '/courses');
     const view = render(<App />);
     await user.click(await screen.findByRole('button', { name: '设置' }));
+    expect(window.location.pathname).toBe('/settings');
     expect(playedSources).toEqual(['/audio/interaction-click.mp3']);
 
     const soundSwitch = screen.getByRole('switch', { name: '语音提示与交互音效' });
@@ -138,7 +153,7 @@ describe('App', () => {
 
     view.unmount();
     render(<App />);
-    await user.click(await screen.findByRole('button', { name: '设置' }));
+    expect(await screen.findByRole('heading', { name: '设置', level: 1 })).toBeInTheDocument();
     expect(screen.getByRole('switch', { name: '语音提示与交互音效' })).not.toBeChecked();
     expect(playedSources).toHaveLength(1);
   });

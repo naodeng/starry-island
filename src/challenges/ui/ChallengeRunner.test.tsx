@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render as renderBase, screen, waitFor } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { IDBFactory } from 'fake-indexeddb';
@@ -14,6 +14,31 @@ import { SoundProvider } from '../../sound/SoundProvider';
 import ChallengeRunner from './ChallengeRunner';
 
 const repositories: ChallengeRepository[] = [];
+const playedCueSources: string[] = [];
+const cueAudioInstances: CueTestAudio[] = [];
+
+class CueTestAudio {
+  currentTime = 0;
+  paused = true;
+  preload = 'auto';
+  volume = 1;
+  play = vi.fn(() => {
+    this.paused = false;
+    playedCueSources.push(this.src);
+    return Promise.resolve();
+  });
+  pause = vi.fn(() => { this.paused = true; });
+
+  constructor(public src: string) {
+    cueAudioInstances.push(this);
+  }
+}
+
+function stubChallengeAudio() {
+  playedCueSources.length = 0;
+  cueAudioInstances.length = 0;
+  vi.stubGlobal('Audio', CueTestAudio);
+}
 
 function render(ui: ReactNode) {
   return renderBase(<SoundProvider>{ui}</SoundProvider>);
@@ -102,8 +127,17 @@ function stubHoldingBrowserLock() {
 
 afterEach(() => {
   for (const repository of repositories.splice(0)) repository.close();
+  playedCueSources.length = 0;
+  cueAudioInstances.length = 0;
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
+});
+
+beforeEach(() => {
+  window.localStorage.clear();
+  playedCueSources.length = 0;
+  cueAudioInstances.length = 0;
+  vi.stubGlobal('Audio', CueTestAudio);
 });
 
 describe('ChallengeRunner', () => {
@@ -289,6 +323,169 @@ describe('ChallengeRunner', () => {
     render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={onNavigate} />);
     expect(await screen.findByText(/最好成绩 0\/1 · 已完成 1 次/)).toBeInTheDocument();
     expect(screen.queryByText(`解题说明 ${currentQuestion.questionId}。`)).not.toBeInTheDocument();
+  });
+
+  it('plays one answer cue only after the saved answer advances the task', async () => {
+    stubChallengeAudio();
+    const repository = makeRepository();
+    const saveAnswer = vi.spyOn(repository, 'saveAnswer');
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    const firstQuestion = active!.questions[0]!;
+    const nextQuestion = active!.questions[1]!;
+    fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(await screen.findByRole('heading', { name: nextQuestion.activity.prompt })).toBeInTheDocument();
+    expect(playedCueSources).toEqual(['/audio/answer-correct.mp3']);
+    expect(saveAnswer.mock.invocationCallOrder[0]).toBeLessThan(cueAudioInstances[0]!.play.mock.invocationCallOrder[0]!);
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, answers: { [firstQuestion.questionId]: 'correct' } });
+  });
+
+  it('uses the existing consecutive-correct streak cue after a saved correct answer', async () => {
+    stubChallengeAudio();
+    const repository = makeRepository();
+    const { loadedGroup, task } = makeLoadedGroup(3);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    expect(await screen.findByRole('heading', { name: active!.questions[1]!.activity.prompt })).toBeInTheDocument();
+    expect(playedCueSources).toEqual(['/audio/answer-correct.mp3']);
+
+    fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    expect(await screen.findByRole('heading', { name: active!.questions[2]!.activity.prompt })).toBeInTheDocument();
+    expect(playedCueSources).toEqual(['/audio/answer-correct.mp3', '/audio/answer-streak.mp3']);
+  });
+
+  it('respects the local sound preference while keeping the saved task usable', async () => {
+    stubChallengeAudio();
+    window.localStorage.setItem('china-study-sound-enabled-v1', 'false');
+    const repository = makeRepository();
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(await screen.findByRole('heading', { name: active!.questions[1]!.activity.prompt })).toBeInTheDocument();
+    expect(playedCueSources).toEqual([]);
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1 });
+  });
+
+  it('does not play an answer cue when IndexedDB rejects the answer write', async () => {
+    stubChallengeAudio();
+    const repository = makeRepository();
+    vi.spyOn(repository, 'saveAnswer').mockRejectedValueOnce(new Error('temporary storage failure'));
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    await waitFor(async () => expect(await repository.getActiveAttempt(task.id)).not.toBeNull());
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('答案还没有保存成功');
+    expect(playedCueSources).toEqual([]);
+    expect(cueAudioInstances).toHaveLength(0);
+  });
+
+  it('plays the pending answer cue only after a successful retry', async () => {
+    stubChallengeAudio();
+    const repository = makeRepository();
+    const saveAnswer = repository.saveAnswer.bind(repository);
+    vi.spyOn(repository, 'saveAnswer')
+      .mockRejectedValueOnce(new Error('temporary storage failure'))
+      .mockImplementationOnce(saveAnswer);
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    await waitFor(async () => expect(await repository.getActiveAttempt(task.id)).not.toBeNull());
+    const active = await repository.getActiveAttempt(task.id);
+    const nextQuestion = active!.questions[1]!;
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    await screen.findByRole('alert');
+    expect(playedCueSources).toEqual([]);
+
+    await userClick(screen.getByRole('button', { name: '重试保存答案' }));
+
+    expect(await screen.findByRole('heading', { name: nextQuestion.activity.prompt })).toBeInTheDocument();
+    expect(playedCueSources).toEqual(['/audio/answer-incorrect.mp3']);
+  });
+
+  it('plays the final cue after attempt and progress save, and only once after reopening', async () => {
+    stubChallengeAudio();
+    const repository = makeRepository();
+    const saveAnswer = vi.spyOn(repository, 'saveAnswer');
+    const completeAttempt = repository.completeAttempt.bind(repository);
+    const completionGate = {} as { resolve?: () => void };
+    const completionPending = new Promise<void>((resolve) => { completionGate.resolve = resolve; });
+    const completeAttemptSpy = vi.spyOn(repository, 'completeAttempt').mockImplementation(async (...args) => {
+      await completionPending;
+      await completeAttempt(...args);
+    });
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    const view = render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    await waitFor(async () => expect(await repository.getActiveAttempt(task.id)).not.toBeNull());
+    fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    await waitFor(() => expect(completeAttemptSpy).toHaveBeenCalledOnce());
+    expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, status: 'in-progress' });
+    expect(playedCueSources).toEqual([]);
+    expect(saveAnswer.mock.invocationCallOrder[0]).toBeLessThan(completeAttemptSpy.mock.invocationCallOrder[0]!);
+
+    completionGate.resolve?.();
+    expect(await screen.findByText('100 分')).toBeInTheDocument();
+    await waitFor(() => expect(playedCueSources).toEqual(['/audio/session-complete.mp3']));
+    expect(completeAttemptSpy.mock.invocationCallOrder[0]).toBeLessThan(cueAudioInstances[0]!.play.mock.invocationCallOrder[0]!);
+    expect(await repository.getActiveAttempt(task.id)).toBeNull();
+    expect(await repository.getTaskProgress(task.id)).toMatchObject({ completedCount: 1 });
+
+    view.unmount();
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+    expect(await screen.findByRole('button', { name: '再次挑战' })).toBeInTheDocument();
+    expect(playedCueSources).toEqual(['/audio/session-complete.mp3']);
+  });
+
+  it('keeps an incorrect final answer on the incorrect cue instead of session-complete', async () => {
+    stubChallengeAudio();
+    const repository = makeRepository();
+    const completeAttempt = vi.spyOn(repository, 'completeAttempt');
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    await waitFor(async () => expect(await repository.getActiveAttempt(task.id)).not.toBeNull());
+    fireEvent.click(screen.getByRole('button', { name: '另一个答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(await screen.findByText('0 分')).toBeInTheDocument();
+    expect(completeAttempt).toHaveBeenCalledOnce();
+    expect(playedCueSources).toEqual(['/audio/answer-incorrect.mp3']);
   });
 
   it('restores the exact saved question order after a confirmed answer and reopening an active task', async () => {

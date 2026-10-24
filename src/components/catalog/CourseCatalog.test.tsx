@@ -11,7 +11,7 @@ function renderCatalog(onNavigate = vi.fn()) {
   return render(
     <SoundProvider>
       <ThemeProvider>
-        <CourseCatalog progress={progress} onNavigate={onNavigate} onApplyLearningStart={vi.fn()} />
+        <CourseCatalog progress={progress} onNavigate={onNavigate} />
       </ThemeProvider>
     </SoundProvider>,
   );
@@ -54,6 +54,17 @@ describe('CourseCatalog', () => {
     await user.click(screen.getByRole('button', { name: '进入闯关中心' }));
 
     expect(onNavigate).toHaveBeenCalledWith('/challenges');
+  });
+
+  it('navigatesToDedicatedSettingsInsteadOfOpeningAModal', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+    renderCatalog(onNavigate);
+
+    await user.click(screen.getByRole('button', { name: '设置' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/settings');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('opensVerifiedChineseAndMathUnits', async () => {

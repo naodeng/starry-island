@@ -356,7 +356,7 @@
 .settings-dialog-header .eyebrow { margin: 0; }
 .settings-section { display: grid; gap: 9px; padding: 16px 0; border-bottom: 1px solid var(--animal-border-color-light); }
 .settings-section:last-child { padding-bottom: 2px; border-bottom: 0; }
-.settings-section h3 { margin: 0; color: var(--animal-text-color); font-size: 18px; }
+.settings-section :is(h2, h3) { margin: 0; color: var(--animal-text-color); font-size: 18px; }
 .settings-section > p, .settings-achievement-link p { margin: 0; color: var(--animal-text-color-secondary); font-size: 13px; line-height: 1.6; }
 .settings-modal .theme-switcher { justify-content: flex-start; width: max-content; max-width: 100%; color: var(--animal-text-color); border-color: var(--animal-border-color); background: var(--animal-bg-color-secondary); box-shadow: none; }
 .settings-modal .theme-switcher-options { display: flex; flex-wrap: wrap; }
