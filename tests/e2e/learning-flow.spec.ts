@@ -226,6 +226,10 @@ test('playsAnswerCuesInOrderAndSavesEightQuestionProgress', async ({ page }) => 
   expect((await readAudioEvents(page)).some((event) => event.type === 'play' && event.src === '/audio/interaction-click.mp3')).toBe(true);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('china-study-progress-v1') ?? '{}').completedSessionIds))
     .toContain('grade-2/term-1/chinese/unit-01/basic/task-01/session-01');
+
+  await page.goto('/');
+  const recentLearning = page.getByRole('region', { name: '最近学习记录' });
+  await expect(recentLearning.getByRole('link').first()).toHaveAttribute('href', sessionUrl);
 });
 
 test('keepsAnsweringWhenBrowserRejectsAudioPlayback', async ({ page }) => {
