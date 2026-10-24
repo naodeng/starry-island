@@ -3,22 +3,30 @@ import { getAssumedCompletedSessionIds, getRegisteredLearningPositions } from '.
 import type { LearningPosition } from '../achievements/position';
 
 export interface ProgressState {
-  schemaVersion: 3;
+  schemaVersion: 4;
   completedSessionIds: string[];
+  recentCompletions: RecentCompletion[];
   learningStart: LearningPosition | null;
 }
 
+export interface RecentCompletion {
+  sessionId: string;
+  completedAt: string;
+}
+
 const STORAGE_KEY = 'china-study-progress-v1';
+const MAX_RECENT_COMPLETIONS = 20;
 let memoryProgress: ProgressState = createEmptyProgress();
 
 function createEmptyProgress(): ProgressState {
-  return { schemaVersion: 3, completedSessionIds: [], learningStart: null };
+  return { schemaVersion: 4, completedSessionIds: [], recentCompletions: [], learningStart: null };
 }
 
 function copyProgress(progress: ProgressState): ProgressState {
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     completedSessionIds: [...progress.completedSessionIds],
+    recentCompletions: progress.recentCompletions.map((completion) => ({ ...completion })),
     learningStart: progress.learningStart ? { ...progress.learningStart } : null,
   };
 }
@@ -37,15 +45,23 @@ function parseLearningStart(value: unknown): LearningPosition | null {
   return { grade: Number(position.grade), term: position.term, unit: Number(position.unit) };
 }
 
+function isCanonicalIsoDateTime(value: unknown): value is string {
+  if (typeof value !== 'string') return false;
+  const timestamp = Date.parse(value);
+  return Number.isFinite(timestamp) && new Date(timestamp).toISOString() === value;
+}
+
 function parseProgress(value: unknown): ProgressState | null {
   if (!value || typeof value !== 'object') return null;
   const candidate = value as {
     schemaVersion?: unknown;
     completedSessionIds?: unknown;
+    recentCompletions?: unknown;
     learningStart?: unknown;
   };
-  if ((candidate.schemaVersion !== 1 && candidate.schemaVersion !== 2 && candidate.schemaVersion !== 3)
+  if ((candidate.schemaVersion !== 1 && candidate.schemaVersion !== 2 && candidate.schemaVersion !== 3 && candidate.schemaVersion !== 4)
     || !Array.isArray(candidate.completedSessionIds)) return null;
+  if (candidate.schemaVersion === 4 && !Array.isArray(candidate.recentCompletions)) return null;
 
   const currentSessionIds = getCurrentSessionIds();
   const completedSessionIds = [...new Set(candidate.completedSessionIds.filter((id): id is string => (
@@ -54,7 +70,21 @@ function parseProgress(value: unknown): ProgressState | null {
   const learningStart = parseLearningStart(candidate.learningStart);
   if (candidate.learningStart !== null && candidate.learningStart !== undefined && learningStart === null) return null;
 
-  return { schemaVersion: 3, completedSessionIds, learningStart };
+  const recentCompletions = candidate.schemaVersion === 4
+    ? (candidate.recentCompletions as unknown[])
+      .flatMap((entry): RecentCompletion[] => {
+        if (!entry || typeof entry !== 'object') return [];
+        const completion = entry as { sessionId?: unknown; completedAt?: unknown };
+        if (typeof completion.sessionId !== 'string'
+          || !currentSessionIds.has(completion.sessionId)
+          || !isCanonicalIsoDateTime(completion.completedAt)) return [];
+        return [{ sessionId: completion.sessionId, completedAt: completion.completedAt }];
+      })
+      .sort((left, right) => Date.parse(right.completedAt) - Date.parse(left.completedAt))
+      .slice(0, MAX_RECENT_COMPLETIONS)
+    : [];
+
+  return { schemaVersion: 4, completedSessionIds, recentCompletions, learningStart };
 }
 
 export function loadProgress(): ProgressState {
@@ -87,11 +117,12 @@ export function saveProgress(progress: ProgressState): ProgressState {
   return copyProgress(memoryProgress);
 }
 
-export function completeSession(progress: ProgressState, sessionId: string): ProgressState {
-  if (!sessionId.trim() || progress.completedSessionIds.includes(sessionId)) return saveProgress(progress);
+export function completeSession(progress: ProgressState, sessionId: string, completedAt = new Date().toISOString()): ProgressState {
+  if (!sessionId.trim() || !getCurrentSessionIds().has(sessionId) || !isCanonicalIsoDateTime(completedAt)) return saveProgress(progress);
   return saveProgress({
-    schemaVersion: 3,
-    completedSessionIds: [...progress.completedSessionIds, sessionId],
+    schemaVersion: 4,
+    completedSessionIds: [...new Set([...progress.completedSessionIds, sessionId])],
+    recentCompletions: [...progress.recentCompletions, { sessionId, completedAt }],
     learningStart: progress.learningStart,
   });
 }
@@ -101,5 +132,10 @@ export function setLearningStart(startAt: LearningPosition): ProgressState {
     position.grade === startAt.grade && position.term === startAt.term && position.unit === startAt.unit
   ));
   if (!isRegistered) return loadProgress();
-  return saveProgress({ schemaVersion: 3, completedSessionIds: getAssumedCompletedSessionIds(startAt), learningStart: startAt });
+  const progress = loadProgress();
+  return saveProgress({
+    ...progress,
+    completedSessionIds: getAssumedCompletedSessionIds(startAt),
+    learningStart: startAt,
+  });
 }

@@ -5,7 +5,7 @@ import CourseCatalog from './CourseCatalog';
 import ThemeProvider from '../../theme/ThemeProvider';
 import { SoundProvider } from '../../sound/SoundProvider';
 
-const progress = { schemaVersion: 3 as const, completedSessionIds: [], learningStart: null };
+const progress = { schemaVersion: 4 as const, completedSessionIds: [], recentCompletions: [], learningStart: null };
 
 function renderCatalog(onNavigate = vi.fn()) {
   return render(

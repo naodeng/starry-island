@@ -18,7 +18,7 @@ describe('SettingsDialog', () => {
         <ThemeProvider>
           <SettingsDialog
             open
-            progress={{ schemaVersion: 3, completedSessionIds: [], learningStart: null }}
+            progress={{ schemaVersion: 4, completedSessionIds: [], recentCompletions: [], learningStart: null }}
             onClose={vi.fn()}
             onApplyLearningStart={onApplyLearningStart}
             onNavigate={onNavigate}
@@ -92,7 +92,7 @@ describe('SettingsDialog', () => {
         <ThemeProvider>
           <SettingsDialog
             open
-            progress={{ schemaVersion: 3, completedSessionIds: [], learningStart: { grade: 4, term: 2, unit: 1 } }}
+            progress={{ schemaVersion: 4, completedSessionIds: [], recentCompletions: [], learningStart: { grade: 4, term: 2, unit: 1 } }}
             onClose={vi.fn()}
             onApplyLearningStart={onApplyLearningStart}
             onNavigate={vi.fn()}
@@ -112,7 +112,7 @@ describe('SettingsDialog', () => {
         <ThemeProvider>
           <SettingsDialog
             open
-            progress={{ schemaVersion: 3, completedSessionIds: [], learningStart: { grade: 6, term: 2, unit: 7 } }}
+            progress={{ schemaVersion: 4, completedSessionIds: [], recentCompletions: [], learningStart: { grade: 6, term: 2, unit: 7 } }}
             onClose={vi.fn()}
             onApplyLearningStart={vi.fn()}
             onNavigate={vi.fn()}
