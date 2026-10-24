@@ -6,6 +6,7 @@ import { getNewCosmicRank } from './achievements/progress';
 import { getTaskPath, resolveAppRoute, resolveRoute } from './app/router';
 import type { AppRoute } from './app/router';
 import ProjectLegalFooter from './components/layout/ProjectLegalFooter';
+import AppHeader from './components/layout/AppHeader';
 const CourseBreadcrumbs = lazy(() => import('./components/catalog/CourseBreadcrumbs'));
 const CourseCatalog = lazy(() => import('./components/catalog/CourseCatalog'));
 const UnitOverview = lazy(() => import('./components/catalog/UnitOverview'));
@@ -14,6 +15,7 @@ const AchievementPage = lazy(() => import('./components/achievements/Achievement
 const ChallengePage = lazy(() => import('./challenges/ui/ChallengePage'));
 import './styles/catalog.css';
 import './styles/game.css';
+import './styles/app-shell.css';
 import { completeSession, loadProgress, setLearningStart } from './storage/progress';
 import ThemeProvider from './theme/ThemeProvider';
 import { SoundProvider, useSound } from './sound/SoundProvider';
@@ -45,7 +47,7 @@ function PageRouteEffects({ navigationRevision }: { navigationRevision: number }
   return null;
 }
 
-function AppFrame({ page, navigationRevision }: { page: ReactNode; navigationRevision: number }) {
+function AppFrame({ page, navigationRevision, onNavigate }: { page: ReactNode; navigationRevision: number; onNavigate: (path: string) => void }) {
   const { playCue } = useSound();
 
   function playInteractionCue(event: MouseEvent<HTMLDivElement>) {
@@ -60,6 +62,7 @@ function AppFrame({ page, navigationRevision }: { page: ReactNode; navigationRev
 
   return (
     <div className="app-frame" onClick={playInteractionCue}>
+      <AppHeader onNavigate={onNavigate} />
       <Suspense fallback={<RouteLoading message="正在准备这段学习旅程…" />}>
         <>{page}<PageRouteEffects key={navigationRevision} navigationRevision={navigationRevision} /></>
       </Suspense>
@@ -154,6 +157,19 @@ export default function App() {
         </div>
       </main>
     );
+  } else if (route.kind === 'home') {
+    page = (
+      <main className="home-dashboard-placeholder">
+        <div className="catalog-shell">
+          <h1>星岛学园 · Starry Island</h1>
+          <p>今天想从哪里出发？继续课程学习，或开启一段独立闯关。</p>
+          <div className="home-dashboard-placeholder-actions">
+            <Button type="primary" onClick={() => navigate('/courses')}>浏览课程</Button>
+            <Button type="default" onClick={() => navigate('/challenges')}>进入闯关中心</Button>
+          </div>
+        </div>
+      </main>
+    );
   } else if (route.kind === 'catalog') {
     page = <CourseCatalog progress={progress} onNavigate={navigate} onApplyLearningStart={handleLearningStart} />;
   } else if (route.kind === 'achievements') {
@@ -195,12 +211,12 @@ export default function App() {
     page = (
       <main className="route-message-page">
         <div className="catalog-shell">
-          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/' }, { label: route.title }]} onNavigate={navigate} />
+          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/courses' }, { label: route.title }]} onNavigate={navigate} />
           <Card className="route-message-card" color="default">
             <p className="eyebrow">学习小岛正在建设</p>
             <h1>{route.title}</h1>
             <p>我们正在核对教材版本、设计合适的小游戏，准备好后就会开放。</p>
-            <Button type="primary" onClick={() => navigate('/')}>回到课程目录</Button>
+            <Button type="primary" onClick={() => navigate('/courses')}>回到课程目录</Button>
           </Card>
         </div>
       </main>
@@ -209,12 +225,12 @@ export default function App() {
     page = (
       <main className="route-message-page route-message-page--not-found">
         <div className="catalog-shell">
-          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/' }, { label: '页面未找到' }]} onNavigate={navigate} />
+          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/courses' }, { label: '页面未找到' }]} onNavigate={navigate} />
           <Card className="route-message-card" color="default">
             <p className="eyebrow">路线暂时中断</p>
             <h1>没有找到这门课程</h1>
             <p>别担心，从课程目录重新选择一座已经开放的学习岛吧。</p>
-            <Button type="primary" onClick={() => navigate('/')}>回到课程目录</Button>
+            <Button type="primary" onClick={() => navigate('/courses')}>回到课程目录</Button>
           </Card>
         </div>
       </main>
@@ -224,7 +240,7 @@ export default function App() {
   return (
     <SoundProvider>
       <ThemeProvider>
-      <AppFrame page={page} navigationRevision={navigationRevision} />
+      <AppFrame page={page} navigationRevision={navigationRevision} onNavigate={navigate} />
       </ThemeProvider>
     </SoundProvider>
   );

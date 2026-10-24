@@ -5,6 +5,7 @@ import type { Curriculum, CurriculumUnit, Difficulty, LearningSession, LearningT
 import { isValidChallengeGroupId, isValidChallengeTaskId } from '../challenges/domain/ids';
 
 export type AppRoute =
+  | { kind: 'home' }
   | { kind: 'catalog' }
   | { kind: 'achievements' }
   | { kind: 'challengeCenter' }
@@ -95,7 +96,8 @@ function mapLegacySession(unit: CurriculumUnit, unitKey: string, legacySessionSl
 
 export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit?: CurriculumUnit): AppRoute {
   const normalized = pathname.replace(/\/+$/, '') || '/';
-  if (normalized === '/') return { kind: 'catalog' };
+  if (normalized === '/') return { kind: 'home' };
+  if (normalized === '/courses') return { kind: 'catalog' };
   if (normalized === '/achievements') return { kind: 'achievements' };
 
   if (normalized === '/challenges') return { kind: 'challengeCenter' };

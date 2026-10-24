@@ -6,7 +6,7 @@ export default function AchievementPage({ progress, onNavigate }: { progress: Pr
   return (
     <main className="achievement-page">
       <div className="catalog-shell">
-        <CourseBreadcrumbs items={[{ label: '课程目录', path: '/' }, { label: '我的成就' }]} onNavigate={onNavigate} />
+        <CourseBreadcrumbs items={[{ label: '课程目录', path: '/courses' }, { label: '我的成就' }]} onNavigate={onNavigate} />
         <header className="achievement-page-heading">
           <p className="eyebrow">飞船荣誉舱</p>
           <h1>我的成就星图</h1>

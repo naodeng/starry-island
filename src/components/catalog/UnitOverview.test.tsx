@@ -9,6 +9,16 @@ const unitKey = 'grade-2/term-1/chinese/unit-01';
 const unit = curriculum.units[unitKey];
 
 describe('UnitOverview', () => {
+  it('returnsToTheCourseCatalogRoute', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+    render(<UnitOverview unitKey={unitKey} unit={unit} completedSessionIds={[]} onNavigate={onNavigate} />);
+
+    await user.click(screen.getByRole('button', { name: '返回课程目录' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/courses');
+  });
+
   it('showsThreeDifficultyTracksAndBasicTasks', async () => {
     const user = userEvent.setup();
     render(<UnitOverview unitKey={unitKey} unit={unit} completedSessionIds={[]} onNavigate={vi.fn()} />);

@@ -321,7 +321,7 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
             <p className="eyebrow">闯关中心</p>
             <h1>挑战暂时没有打开</h1>
             <p>{contentError}</p>
-            <Button type="primary" onClick={() => onNavigate('/')}>返回课程目录</Button>
+            <Button type="primary" onClick={() => onNavigate('/courses')}>返回课程目录</Button>
           </Card>
         </div>
       </main>

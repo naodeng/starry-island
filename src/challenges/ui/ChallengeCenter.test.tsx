@@ -82,6 +82,15 @@ describe('ChallengeCenter', () => {
     expect(onNavigate).toHaveBeenCalledWith('/challenges/growth');
   });
 
+  it('returnsToTheCourseCatalogRoute', () => {
+    const onNavigate = vi.fn();
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={onNavigate} onExportBackup={vi.fn()} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '返回课程目录' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/courses');
+  });
+
   it('exports a local JSON backup and confirms success without changing learning data', async () => {
     const onExportBackup = vi.fn().mockResolvedValue(undefined);
     render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} onExportBackup={onExportBackup} onPrepareImportBackup={vi.fn()} onConfirmImportBackup={vi.fn()} onCancelImportBackup={vi.fn()} {...dataManagementProps()} />);

@@ -33,7 +33,7 @@ describe('App', () => {
     window.history.replaceState({}, '', '/');
   });
 
-  it('renders catalog and opens settings', async () => {
+  it('rendersHomeAndOpensTheCourseCatalogFromGlobalNavigation', async () => {
     const user = userEvent.setup();
     render(<App />);
 
@@ -41,6 +41,9 @@ describe('App', () => {
     await waitFor(() => expect(document.title).toBe('星岛学园 | Starry Island'));
     expect(screen.getByRole('contentinfo', { name: '版权与许可' })).toHaveTextContent('© 2026 naodeng All Rights Reserved.');
     expect(screen.getByRole('link', { name: 'naodeng 的个人网站' })).toHaveAttribute('href', 'https://inaodeng.com');
+    await user.click(screen.getByRole('button', { name: '打开导航菜单' }));
+    await user.click(screen.getByRole('button', { name: '课程' }));
+    expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
     await user.click(await screen.findByRole('button', { name: '设置' }));
 
     expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -75,6 +78,7 @@ describe('App', () => {
 
   it('appliesTheChosenLearningStartToTheVisibleCourseCatalog', async () => {
     const user = userEvent.setup();
+    window.history.replaceState({}, '', '/courses');
     render(<App />);
 
     await user.click(await screen.findByRole('button', { name: '设置' }));
@@ -90,6 +94,7 @@ describe('App', () => {
 
   it('returnsFromASessionThroughHistoryAndMovesFocusToEachRouteHeading', async () => {
     const user = userEvent.setup();
+    window.history.replaceState({}, '', '/courses');
     render(<App />);
     const pushState = vi.spyOn(window.history, 'pushState');
     const historyBack = vi.spyOn(window.history, 'back').mockImplementation(() => {});
@@ -119,6 +124,7 @@ describe('App', () => {
 
   it('persistsTheSoundSwitchAndKeepsItselfSilentWhenSoundIsDisabled', async () => {
     const user = userEvent.setup();
+    window.history.replaceState({}, '', '/courses');
     const view = render(<App />);
     await user.click(await screen.findByRole('button', { name: '设置' }));
     expect(playedSources).toEqual(['/audio/interaction-click.mp3']);

@@ -53,7 +53,7 @@ describe('router', () => {
     const taskPath = `/${unitKey}/basic/task-01`;
     const sessionPath = `${taskPath}/session-01`;
 
-    expect(resolveRoute('/', instance)).toEqual({ kind: 'catalog' });
+    expect(resolveRoute('/courses', instance)).toEqual({ kind: 'catalog' });
     expect(resolveRoute('/achievements', instance)).toEqual({ kind: 'achievements' });
     expect(resolveRoute(`/${unitKey}`, instance)).toMatchObject({ kind: 'unit', unitKey });
     expect(resolveRoute(taskPath, instance)).toMatchObject({
@@ -69,6 +69,17 @@ describe('router', () => {
       task: { id: `${unitKey}/basic/task-01` },
       session: { id: `${unitKey}/basic/task-01/session-01` },
     });
+  });
+
+  it('resolvesHomeAndCourseCatalogSeparatelyWithoutChangingCourseDeepLinks', () => {
+    const instance = createPlayableCurriculum();
+    const taskPath = `/${unitKey}/basic/task-01`;
+    const sessionPath = `${taskPath}/session-01`;
+
+    expect(resolveRoute('/', instance)).toEqual({ kind: 'home' });
+    expect(resolveRoute('/courses', instance)).toEqual({ kind: 'catalog' });
+    expect(resolveRoute(taskPath, instance)).toMatchObject({ kind: 'task', task: { id: `${unitKey}/basic/task-01` } });
+    expect(resolveRoute(sessionPath, instance)).toMatchObject({ kind: 'session', session: { id: `${unitKey}/basic/task-01/session-01` } });
   });
 
   it('rejectsUnknownSubjectsAndMalformedNestedSlugs', () => {

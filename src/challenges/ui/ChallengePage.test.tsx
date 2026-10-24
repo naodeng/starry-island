@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { IDBFactory } from 'fake-indexeddb';
 import type { ChoiceActivityDefinition } from '../../content/types';
 import ThemeProvider from '../../theme/ThemeProvider';
@@ -134,5 +134,22 @@ describe('ChallengePage', () => {
     expect(screen.getByText('已恢复上次保存的进度')).toBeInTheDocument();
     expect(await repository.getActiveAttempt(taskId)).toEqual(activeAttempt);
     expect(await repository.getTaskProgress(taskId)).toBeNull();
+  });
+
+  it('returnsToTheCourseCatalogWhenChallengeContentCannotLoad', async () => {
+    const onNavigate = vi.fn();
+    vi.mocked(loadPilotChallengeContent).mockRejectedValueOnce(new Error('content unavailable'));
+
+    render(
+      <ThemeProvider>
+        <SoundProvider>
+          <ChallengePage route={{ kind: 'challengeCenter' }} onNavigate={onNavigate} />
+        </SoundProvider>
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(await screen.findByRole('button', { name: '返回课程目录' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/courses');
   });
 });

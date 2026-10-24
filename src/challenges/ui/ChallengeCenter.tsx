@@ -190,7 +190,7 @@ export default function ChallengeCenter({
           <h1>闯关中心</h1>
           <p>每道题只提交一次答案。完成挑战后，可以查看得分和解题讲解。</p>
           <div className="challenge-hero-actions">
-            <Button type="default" onClick={() => onNavigate('/')}>返回课程目录</Button>
+            <Button type="default" onClick={() => onNavigate('/courses')}>返回课程目录</Button>
             <Button type="default" onClick={() => onNavigate(getChallengeGrowthPath())}>查看成长记录</Button>
             <Button type="primary" onClick={() => onNavigate(getChallengeWrongQuestionsPath())}>打开错题本</Button>
           </div>

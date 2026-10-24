@@ -97,7 +97,7 @@ export default function UnitOverview({
   const reviewId = `${disclosureId}-review`;
 
   const breadcrumbItems = [
-    { label: '课程目录', path: '/' },
+    { label: '课程目录', path: '/courses' },
     { label: gradeAndTerm.grade },
     { label: gradeAndTerm.term },
     { label: subjectTitle },
@@ -180,7 +180,7 @@ export default function UnitOverview({
                 <p className="eyebrow">选择任务</p>
                 <h2>准备好就出发</h2>
               </div>
-              <Button type="default" onClick={() => onNavigate('/')}>返回课程目录</Button>
+              <Button type="default" onClick={() => onNavigate('/courses')}>返回课程目录</Button>
             </div>
 
             {pilotChallengeGroupId && (
