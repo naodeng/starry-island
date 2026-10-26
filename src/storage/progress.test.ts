@@ -43,8 +43,11 @@ describe('progress storage', () => {
       completedSessionIds: [currentSessionId],
       recentCompletions: [
         { sessionId: currentSessionId, completedAt: '2026-10-24T01:02:03.000Z' },
+        null,
+        42,
         { sessionId: 'removed/session', completedAt: '2026-10-24T01:02:03.000Z' },
         { sessionId: currentSessionId, completedAt: 'yesterday' },
+        { sessionId: currentSessionId, completedAt: 42 },
       ],
       learningStart: null,
     }));

@@ -652,7 +652,7 @@ test('previews and safely merges an active attempt without duplicating data', as
   expect(JSON.stringify(report)).not.toContain('1 + 1');
 });
 
-test('plays a local challenge answer cue after the saved answer advances the task', async ({ page }) => {
+test('plays a local challenge answer cue after saving a submitted answer', async ({ page }) => {
   await page.addInitScript(() => {
     const testWindow = window as Window & { __challengeCueSources: string[] };
     testWindow.__challengeCueSources = [];
@@ -665,8 +665,28 @@ test('plays a local challenge answer cue after the saved answer advances the tas
   await page.getByRole('button', { name: '开始挑战' }).click();
   await expect(page.locator('.challenge-activity h2')).toBeVisible();
 
-  await page.getByRole('group', { name: '选择一个答案' }).getByRole('button').first().click();
-  await page.getByRole('button', { name: '提交答案' }).click();
+  const choiceGroup = page.getByRole('group', { name: '选择一个答案' });
+  const leftMatchGroup = page.getByRole('group', { name: '左侧词语' });
+  const rightMatchGroup = page.getByRole('group', { name: '右侧词语' });
+  const categoryGroups = page.locator('.categorize-activity [role="group"]');
+  const arithmeticAnswer = page.getByRole('spinbutton', { name: '输入计算结果' });
+
+  if (await choiceGroup.count()) {
+    await choiceGroup.getByRole('button').first().click();
+  } else if (await leftMatchGroup.count() && await rightMatchGroup.count()) {
+    const pairCount = await leftMatchGroup.getByRole('button').count();
+    for (let index = 0; index < pairCount; index += 1) {
+      await leftMatchGroup.getByRole('button').nth(index).click();
+      await rightMatchGroup.getByRole('button').nth(index).click();
+    }
+  } else if (await categoryGroups.count()) {
+    for (let index = 0; index < await categoryGroups.count(); index += 1) {
+      await categoryGroups.nth(index).getByRole('button').first().click();
+    }
+  } else if (await arithmeticAnswer.count()) {
+    await arithmeticAnswer.fill('0');
+  }
+  await page.locator('.challenge-activity .activity-submit-action').click();
 
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
   await expect.poll(() => page.evaluate(() => (window as Window & { __challengeCueSources: string[] }).__challengeCueSources)).toHaveLength(1);

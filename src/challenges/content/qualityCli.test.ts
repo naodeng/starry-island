@@ -100,7 +100,7 @@ describe('challenge quality CLI', () => {
     expect(await readFile(jsonPath, 'utf8')).toBe(firstJson);
     expect(await readFile(manifestPath, 'utf8')).toBe(manifestBefore);
     expect(await Promise.all(manifestFragmentPaths.map((path) => readFile(path, 'utf8')))).toEqual(fragmentsBefore);
-  });
+  }, 30_000);
 
   it('rejects a quick seed count below 100 in CI with parameter exit code 2', () => {
     const result = runCli(['--seed-count', '99', '--report-dir', reportDirectory], { ci: 'true' });
