@@ -23,6 +23,25 @@ function unitGroup(id: string, grade: number, subject: 'chinese' | 'math' | 'eng
   };
 }
 
+function grade2Term1StageGroup(
+  id: string,
+  subject: 'chinese' | 'math' | 'english',
+  stage: NonNullable<ChallengeGrowthDefinition['stage']>,
+  unitNumbers: readonly number[],
+): ChallengeGrowthDefinition {
+  return {
+    id,
+    kind: 'semester',
+    grade: 2,
+    semester: 1,
+    subject,
+    sourceUnitIds: unitNumbers.map((unitNumber) =>
+      `grade-2/term-1/${subject}/unit-${String(unitNumber).padStart(2, '0')}`),
+    stage,
+    tasks: growthTasks(id),
+  };
+}
+
 export const growthGroups: readonly ChallengeGrowthDefinition[] = [
   unitGroup('grade-2-term-1-math-unit-02', 2, 'math', 2),
   {
@@ -317,4 +336,11 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
   unitGroup('grade-2-term-1-english-unit-04', 2, 'english', 4),
   unitGroup('grade-2-term-1-english-unit-05', 2, 'english', 5),
   unitGroup('grade-2-term-1-english-unit-06', 2, 'english', 6),
+  grade2Term1StageGroup('grade-2-term-1-chinese-second-half', 'chinese', 'second-half', [5, 6, 7, 8]),
+  grade2Term1StageGroup('grade-2-term-1-chinese-end-term', 'chinese', 'end-term', [1, 2, 3, 4, 5, 6, 7, 8]),
+  grade2Term1StageGroup('grade-2-term-1-math-second-half', 'math', 'second-half', [5, 6, 7, 8, 9]),
+  grade2Term1StageGroup('grade-2-term-1-math-end-term', 'math', 'end-term', [1, 2, 3, 4, 5, 6, 7, 8, 9]),
+  grade2Term1StageGroup('grade-2-term-1-english-first-half', 'english', 'first-half', [1, 2, 3]),
+  grade2Term1StageGroup('grade-2-term-1-english-second-half', 'english', 'second-half', [4, 5, 6]),
+  grade2Term1StageGroup('grade-2-term-1-english-end-term', 'english', 'end-term', [1, 2, 3, 4, 5, 6]),
 ];

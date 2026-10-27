@@ -1350,6 +1350,24 @@ test('opens the Grade 2 Chinese first-half semester stage without changing cours
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('opens the Grade 2 English first-half semester stage without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const firstHalfCard = page.locator('.challenge-group-card').filter({
+    has: page.getByRole('heading', { name: '二年级上册英语 · 前半学期' }),
+  });
+
+  await expect(firstHalfCard).toContainText('按教材章节顺序练习上册前半部分内容。');
+  await firstHalfCard.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-first-half');
+  await expect(page.getByRole('heading', { name: '二年级上册英语 · 前半学期' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '开始挑战' })).toHaveCount(5);
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('opens the Grade 1 math Unit 1 challenge from the center without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });

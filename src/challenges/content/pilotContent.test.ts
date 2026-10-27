@@ -99,6 +99,13 @@ describe('loadPilotChallengeContent', () => {
       ['grade-2-term-1-english-unit-04', 'ready'],
       ['grade-2-term-1-english-unit-05', 'ready'],
       ['grade-2-term-1-english-unit-06', 'ready'],
+      ['grade-2-term-1-chinese-second-half', 'ready'],
+      ['grade-2-term-1-chinese-end-term', 'ready'],
+      ['grade-2-term-1-math-second-half', 'ready'],
+      ['grade-2-term-1-math-end-term', 'ready'],
+      ['grade-2-term-1-english-first-half', 'ready'],
+      ['grade-2-term-1-english-second-half', 'ready'],
+      ['grade-2-term-1-english-end-term', 'ready'],
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
@@ -154,6 +161,14 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups[72]?.candidates).toHaveLength(90);
     expect(content.groups[73]?.group.definition.id).toBe('grade-2-term-1-english-unit-06');
     expect(content.groups[73]?.candidates).toHaveLength(90);
+    expect(content.groups[74]?.group.definition.id).toBe('grade-2-term-1-chinese-second-half');
+    expect(content.groups[74]?.candidates).toHaveLength(360);
+    expect(content.groups[75]?.candidates).toHaveLength(720);
+    expect(content.groups[76]?.candidates).toHaveLength(450);
+    expect(content.groups[77]?.candidates).toHaveLength(782);
+    expect(content.groups[78]?.candidates).toHaveLength(270);
+    expect(content.groups[79]?.candidates).toHaveLength(270);
+    expect(content.groups[80]?.candidates).toHaveLength(540);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-03')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-04')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-05')?.candidates).toHaveLength(90);

@@ -44,6 +44,9 @@ import grade2Term1EnglishUnit03Manifest from './pilot-manifest-grade2-term1-engl
 import grade2Term1EnglishUnit04Manifest from './pilot-manifest-grade2-term1-english-unit04.json';
 import grade2Term1EnglishUnit05Manifest from './pilot-manifest-grade2-term1-english-unit05.json';
 import grade2Term1EnglishUnit06Manifest from './pilot-manifest-grade2-term1-english-unit06.json';
+import grade2Term1ChineseStagesManifest from './pilot-manifest-grade2-term1-chinese-stages.json';
+import grade2Term1MathStagesManifest from './pilot-manifest-grade2-term1-math-stages.json';
+import grade2Term1EnglishStagesManifest from './pilot-manifest-grade2-term1-english-stages.json';
 
 export function mergeChallengeManifestFragments(fragments: readonly ChallengeManifest[]): ChallengeManifest {
   if (fragments.length === 0) throw new Error('At least one challenge manifest fragment is required.');
@@ -113,6 +116,9 @@ const pilotManifest = mergeChallengeManifestFragments([
   grade2Term1EnglishUnit04Manifest as unknown as ChallengeManifest,
   grade2Term1EnglishUnit05Manifest as unknown as ChallengeManifest,
   grade2Term1EnglishUnit06Manifest as unknown as ChallengeManifest,
+  grade2Term1ChineseStagesManifest as unknown as ChallengeManifest,
+  grade2Term1MathStagesManifest as unknown as ChallengeManifest,
+  grade2Term1EnglishStagesManifest as unknown as ChallengeManifest,
 ]);
 
 export default pilotManifest;
