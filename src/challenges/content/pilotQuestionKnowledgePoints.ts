@@ -46,6 +46,7 @@ import { grade2Term1MathUnit09SupplementalActivities } from './grade2Term1MathUn
 import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1EnglishUnit01SupplementalActivities';
 import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
 import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
+import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1EnglishUnit04SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-2/chinese/unit-01',
@@ -105,6 +106,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/english/unit-01',
   'grade-2/term-1/english/unit-02',
   'grade-2/term-1/english/unit-03',
+  'grade-2/term-1/english/unit-04',
   'grade-2/term-1/chinese/unit-01',
   'grade-2/term-1/chinese/unit-02',
   'grade-2/term-1/chinese/unit-03',
@@ -890,6 +892,23 @@ export function derivePilotQuestionKnowledgePointIds(
         ids.push('friendly-description');
       }
       if (ids.length === 0) throw new Error(`Could not classify Grade 2 English unit 3 question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-2/term-1/english/unit-04': {
+      const supplemental = grade2Term1EnglishUnit04SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/\b(?:bookshop|supermarket|zoo|park|school|hospital)\b|书店|超市|动物园|公园|学校|医院/iu.test(text)) {
+        ids.push('community-place-vocabulary');
+      }
+      if (/\b(?:where are you|where is she|where is he|where are you going|going to|at school|at the)\b|要去哪里|正要去|正要前往|在哪里|当前位置|前往/iu.test(text)) {
+        ids.push('location-and-destination-phrases');
+      }
+      if (/\b(?:buy|buying|shop|shopping|see animals|go to class)\b|买书|购买书籍|日常用品|日用品|看动物|户外散步|休闲|上课|看医生|就医|学习|用途|购物|活动目的/iu.test(text)) {
+        ids.push('place-purpose-and-sentences');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify Grade 2 English community question ${activity.id}.`);
       return [...new Set(ids)];
     }
     case 'grade-2/term-1/math/unit-02': {

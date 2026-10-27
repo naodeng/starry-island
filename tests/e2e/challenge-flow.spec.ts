@@ -1127,6 +1127,35 @@ test('opens the Grade 2 English Unit 3 challenge from My Friends without changin
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('opens the Grade 2 English Unit 4 challenge from In the Community without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });
+  await page.goto('/grade-2/term-1/english/unit-04');
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.reload();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-unit-04');
+  await expect(page.getByRole('heading', { name: '二年级上册英语 · 第四单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-english-unit-04%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('opens the Grade 1 English Unit 1 challenge without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });

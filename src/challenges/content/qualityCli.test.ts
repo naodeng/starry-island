@@ -125,7 +125,7 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(70);
+    expect(report.groups).toHaveLength(71);
     expect(report.groups.every(({ status }) => status === 'ready')).toBe(true);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
