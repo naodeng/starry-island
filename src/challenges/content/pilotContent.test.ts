@@ -84,6 +84,7 @@ describe('loadPilotChallengeContent', () => {
       ['grade-2-term-1-chinese-unit-06', 'ready'],
       ['grade-2-term-1-chinese-unit-07', 'ready'],
       ['grade-2-term-1-chinese-unit-08', 'ready'],
+      ['grade-2-term-1-chinese-first-half', 'ready'],
       ['grade-2-term-1-math-unit-01', 'ready'],
       ['grade-2-term-1-math-unit-03', 'ready'],
       ['grade-2-term-1-math-unit-04', 'ready'],
@@ -137,22 +138,22 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-chinese-unit-08')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-07')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-08')?.candidates).toHaveLength(90);
-    expect(content.groups[64]?.group.definition.id).toBe('grade-2-term-1-math-unit-07');
-    expect(content.groups[65]?.group.definition.id).toBe('grade-2-term-1-math-unit-08');
-    expect(content.groups[66]?.group.definition.id).toBe('grade-2-term-1-math-unit-09');
-    expect(content.groups[66]?.candidates).toHaveLength(90);
-    expect(content.groups[67]?.group.definition.id).toBe('grade-2-term-1-english-unit-01');
+    expect(content.groups[65]?.group.definition.id).toBe('grade-2-term-1-math-unit-07');
+    expect(content.groups[66]?.group.definition.id).toBe('grade-2-term-1-math-unit-08');
+    expect(content.groups[67]?.group.definition.id).toBe('grade-2-term-1-math-unit-09');
     expect(content.groups[67]?.candidates).toHaveLength(90);
-    expect(content.groups[68]?.group.definition.id).toBe('grade-2-term-1-english-unit-02');
+    expect(content.groups[68]?.group.definition.id).toBe('grade-2-term-1-english-unit-01');
     expect(content.groups[68]?.candidates).toHaveLength(90);
-    expect(content.groups[69]?.group.definition.id).toBe('grade-2-term-1-english-unit-03');
+    expect(content.groups[69]?.group.definition.id).toBe('grade-2-term-1-english-unit-02');
     expect(content.groups[69]?.candidates).toHaveLength(90);
-    expect(content.groups[70]?.group.definition.id).toBe('grade-2-term-1-english-unit-04');
+    expect(content.groups[70]?.group.definition.id).toBe('grade-2-term-1-english-unit-03');
     expect(content.groups[70]?.candidates).toHaveLength(90);
-    expect(content.groups[71]?.group.definition.id).toBe('grade-2-term-1-english-unit-05');
+    expect(content.groups[71]?.group.definition.id).toBe('grade-2-term-1-english-unit-04');
     expect(content.groups[71]?.candidates).toHaveLength(90);
-    expect(content.groups[72]?.group.definition.id).toBe('grade-2-term-1-english-unit-06');
+    expect(content.groups[72]?.group.definition.id).toBe('grade-2-term-1-english-unit-05');
     expect(content.groups[72]?.candidates).toHaveLength(90);
+    expect(content.groups[73]?.group.definition.id).toBe('grade-2-term-1-english-unit-06');
+    expect(content.groups[73]?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-03')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-04')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-05')?.candidates).toHaveLength(90);

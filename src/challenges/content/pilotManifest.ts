@@ -29,6 +29,7 @@ import grade2Term1ChineseUnit05Manifest from './pilot-manifest-grade2-term1-chin
 import grade2Term1ChineseUnit06Manifest from './pilot-manifest-grade2-term1-chinese-unit06.json';
 import grade2Term1ChineseUnit07Manifest from './pilot-manifest-grade2-term1-chinese-unit07.json';
 import grade2Term1ChineseUnit08Manifest from './pilot-manifest-grade2-term1-chinese-unit08.json';
+import grade2Term1ChineseFirstHalfManifest from './pilot-manifest-grade2-term1-chinese-first-half.json';
 import grade2Term1MathUnit01Manifest from './pilot-manifest-grade2-term1-math-unit01.json';
 import grade2Term1MathUnit03Manifest from './pilot-manifest-grade2-term1-math-unit03.json';
 import grade2Term1MathUnit04Manifest from './pilot-manifest-grade2-term1-math-unit04.json';
@@ -97,6 +98,7 @@ const pilotManifest = mergeChallengeManifestFragments([
   grade2Term1ChineseUnit06Manifest as unknown as ChallengeManifest,
   grade2Term1ChineseUnit07Manifest as unknown as ChallengeManifest,
   grade2Term1ChineseUnit08Manifest as unknown as ChallengeManifest,
+  grade2Term1ChineseFirstHalfManifest as unknown as ChallengeManifest,
   grade2Term1MathUnit01Manifest as unknown as ChallengeManifest,
   grade2Term1MathUnit03Manifest as unknown as ChallengeManifest,
   grade2Term1MathUnit04Manifest as unknown as ChallengeManifest,

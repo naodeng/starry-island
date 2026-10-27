@@ -91,6 +91,7 @@ import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1Eng
 import { grade2Term1EnglishUnit05SupplementalActivities } from './grade2Term1EnglishUnit05SupplementalActivities';
 import { grade2Term1EnglishUnit06SupplementalActivities } from './grade2Term1EnglishUnit06SupplementalActivities';
 import grade2Term1ChineseUnit08Manifest from './pilot-manifest-grade2-term1-chinese-unit08.json';
+import grade2Term1ChineseFirstHalfManifest from './pilot-manifest-grade2-term1-chinese-first-half.json';
 import grade2Term1MathUnit01Manifest from './pilot-manifest-grade2-term1-math-unit01.json';
 import grade2Term1MathUnit03Manifest from './pilot-manifest-grade2-term1-math-unit03.json';
 import grade2Term1MathUnit04Manifest from './pilot-manifest-grade2-term1-math-unit04.json';
@@ -296,6 +297,7 @@ describe('pilot manifest against the real curriculum', () => {
       grade2Term1ChineseUnit06Manifest as unknown as ChallengeManifest,
       grade2Term1ChineseUnit07Manifest as unknown as ChallengeManifest,
       grade2Term1ChineseUnit08Manifest as unknown as ChallengeManifest,
+      grade2Term1ChineseFirstHalfManifest as unknown as ChallengeManifest,
       grade2Term1MathUnit01Manifest as unknown as ChallengeManifest,
       grade2Term1MathUnit03Manifest as unknown as ChallengeManifest,
       grade2Term1MathUnit04Manifest as unknown as ChallengeManifest,
@@ -595,6 +597,7 @@ describe('pilot manifest against the real curriculum', () => {
       'grade-2-term-1-chinese-unit-06': 'ready',
       'grade-2-term-1-chinese-unit-07': 'ready',
       'grade-2-term-1-chinese-unit-08': 'ready',
+      'grade-2-term-1-chinese-first-half': 'ready',
       'grade-2-term-1-math-unit-01': 'ready',
       'grade-2-term-1-math-unit-03': 'ready',
       'grade-2-term-1-math-unit-04': 'ready',
@@ -666,7 +669,7 @@ describe('pilot manifest against the real curriculum', () => {
     expect(manifest.groups[2]?.questionIds).toHaveLength(90);
     expect(manifest.groups[4]?.questionIds).toHaveLength(90);
     expect(manifest.questions).toHaveLength(5575);
-    expect(manifest.groups).toHaveLength(73);
+    expect(manifest.groups).toHaveLength(74);
   });
 
   it('registers all 90 Grade 1 Term 2 Math Unit 8 review candidates with source mappings', () => {
