@@ -1,0 +1,1461 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa10d657cb4acf00e3ccce4e0064168e899afb6a1470298783b6d252322e71b5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afdd5b7c38103ca0b15fbd53b640902ad72e19880e933c83a681f441d0f1f920",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a561bb0f94f65b2bf416ffe6663bf170b7b748fc80e318a3889b4695ffc9b973",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc419295479ae5c45c2f62fe98dff0a4963df1c88ee72349af1a23f405ff6fe5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "485387e09e5131bd15e1641c3c29472482e7e6c8c50b695de83132aeb8739317",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "595b74bb49763080ebe4fa5369c1d1d55f5dd85ab6f4f2c128a44f1c2841f2c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "526ba8be03a46917649bc9b92dc2a756ef09265b198bd357dd2c8010e8e9ba3f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "840203b503255cb936148d9a4a5843562e7584afb5c80a2c7eb4e341bd7766a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "955a365e1c4c965cb6a5d779c2bdb1d085b215450d55baec92a73fe1211c391d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8117d695bd56f6c1491657df9d80290499e310aeb466a7e4dc8677cb08e04eca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5da13e8e1c2ee910c69c41ce70901f54194b1b3bc12a0145ee01ca75163fb68d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a261120f826d67bbacbdfa7c19602a4ba1a2cf977ffe40408492b0371909f1b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "994f907aa2776877387af40cb465617c58f0c38416c6e4db1fef95cb71c5d783",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-06/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "452c4feb31bedee1cd91a6ddb04aa99c0bb4e4a2f20bacb8660ff3eee4e4085a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c74211c94a7b13865e157c9f511b59e76bacd35705acfc5b04ec73bd7797c26",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "654abd9e47ef771925b64a620ccf7761afbf46d71d405d99bfe7ae0d780c954e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac4aebd137163ebc94e07e9fcb1ce8a250a0ac0056e811cc6ef08bc928c47a07",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "708f40b119e6027100ffa15f11ce45c0897dc8151e520d715e79ef18690eb153",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9fa28bce3a8150f6990f929bea382dd382f7a45febcba680c8a52e909ca169b1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "51914631361aa21046ef3ff3e8dcabc1619eb9001eceacb67b9a161519b70011",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "635b44323430455036c487d0c2b645f42167309139cbcd0d07d93b0d3ed5db13",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a827964406e03245e51f77c515a330fd4aaa61d3324f001d205389d4d04aaa8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e15b67f20c12dc4261f65bcb9023cd8e860870e9a3441b77e4259a4aadb9acc5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "66880a510703c73f674863227845c6a58d64f08d172b88e5c1cbf85691339758",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8a9aa0bf59b2f828d96aecdaf4504c9b8f92873a5198615afb960785a9646c2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec99b9d43e6412cd3cad1a34ab66c371a9b95f47e417e8aaf20a8a6736c0acc3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8b8c846f0facacef85ac62ffad26e09bec674e906a6155acfff2c2de14f7443",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5861381a9322f794573fb21b551e130d6ef9ae4bb520f8f282270b529fef0e31",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9909a688467d9190c9ff56008b6653ca28e444fc15887da962c4aff6b95a940e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f21812c83ed47eaae46efc7fd2fa3bcb49db4a4b5040b775e5eacab5fab2151",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-06/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "88230cfcd945e19de1aa9d8bd001d91ef02ae13449330281fd8bd875c6776eb3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "43bd6fa6548826209d968878757e16f56542e036454c06b8c7edcb611e85e206",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17cad9ad29c478211add822ccb648538fdeba249e53a68325ebef73eeb6fa1e3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ad6e2e19686ebe175f1b74e3c0532a3d49a3d522b8d6e833b7ac0e4e60c00e1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e46dc5ebe2a7b137508aa0b04cabf61424f034e3c51eb0ccc45b2535bcff255",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "540c3244741a5c6f7b334c7d0696711a7077c7212262f699245291b43678f64f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a98cdc2214aa5ec7aa642bf2222a19ba94465d422cbf79b56aec5709baab00d0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f713d0c1510b1b2e187a5ec39fd98617f35cad530a37a0bbc345f0e6eb1ce53",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "39f5cc29a3c132ad400c2205056878bfa7fc6fd7b997d220eb8759e266100fd6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a376d70db30ca53e5d714e2ad3ecf9164c07a48fa055db6e9c27174ef0775865",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b045d211e4d932807bccdc99e44f4e3b9743cf3464262fa8d9c8333fcbfdbec5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c1d91836c0ec8c1ca15b3aee2187b0e09fed706e25a8c80097b7faa0a153956",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ac5c2ed6f9721c4eb313c6381993d964e04cee28ca1d5c0893fcc308ac09293",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0cebfe74f8f1d6b43c2d4b86403f594f4f77c020f9fd5c46757b9c65bb867510",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fad904f43165ac6c2d567511b89af45c3860ecb104e1ce2d93c1895ada8c0381",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b0da62bc9749d4b305917b648c878d568b591e449294ff2eb8807d5649f94727",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-basic-16",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ece9a88b31f9fb729791c4ff86035e009ba9991c8d7079d1cda3ee8f2ca38aea",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f14e23dc8014d3af4476ac5d63f872e4757b2c9c487d21d2edd2ae5b4de62f2b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "004db5d5797e6b50b2e2ca415c0ba083b1528d0e12c5f20b047d5024dd627c19",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f7a2eebcbfe608c198ffae50a9e2e9a1017dd79c8c89980679cdf645f6484725",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c164c2c05c90a631a79b26a89e66e26225246e8f0f78cc3fa307a4e769bd0d3e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6e333ce1eb6dfcb187559bea48900ee0ff5a1236ee3c71cfccc666a2e0084b2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a0423b3aca3924466d9c7dcf2fc300433fdd7c34e7e20edaabf0c9c82c9b92b5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b7f04ce318cf8efc2793f7a8cfce122a2a8918da57205cf31c7689efe251fe1b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "396993ae651aa0a10a542343828161276827f362c37d53bbf0a7f3030b016e6d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7291a2833f1d7355fa5acff3e940db1cc0345d54e95aae885e8d53759bbd9f2b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d5270b0e2b7f9dc91dab31672296202f6a932c465f9a45fe8447a0a90596fc80",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "def867ccb5947ad05fdf78a4ca70324f1bbf11d541ed25b212476c72483c34d2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4195039e4b1f008c6a63dc7e22cd52663fb39d0ce651135b9a5a7a831d42ac5e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "076ac48d485026869f2ccfdbc24e8e538f3ecdce89f454a6ad0da84e5ab582ff",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "03326c95cb836c636f7e529bf5fb25baa9bec443bf23eb5c06e17a96e9ed7c71",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c62b04becf44cc0700b37b2bdf6173d97e3ac51f5baa08f69015b4288978136",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e8d74e08f0922a86d7d833f63c58662fa65899c160d1018b6574193d177376b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c96e0673833e3d93d7a5d50ef2bfeebdab88adf1b7dd612f5e0fb624957b2562",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-18",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44a5fcc21cf8a902ae6c2525208e49a03de6d8ecadfca4c454781d07b099a938",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-19",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6bbbe1297abdf230770613e093f5a18d8791fa3b5ceff4926b6c076c330e6535",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-20",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f93a34232c3052dd960a992103f35a3a6a7f0807ebb0390cb7c5d27274e468a7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-21",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-21",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aae133f892132964588181258a5026117e98da60e465d7cdebccc1e387539521",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-22",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-22",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "689af0c74d23b91e140e10337497c21f8b03e6b129a5d5038ee3c103ffa0b718",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-23",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-advanced-23",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3c77ee280b8f3ce09d2a66ef47a452502ea17bde30f52d00b42c0e6ef25585d5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b7f06f9c62ed04a8e86f27927a9578b3e06ca3ce01e075448d918037caa7d7e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "817ae0ee3d414f1632c1e685b1f72152789208ee3db43b09ad6dc7bcbcc674fa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2d7952a0b28f543b64245e0f670530ec513f330034d7bbb8a180ec4ee1159803",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0fa9e89e3499ac4f2b988c77663a634bcd23be5fa1767fbf5ad6e419a526d8a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb7a0b6ec574d471c15fe779b3f64113568b73850b663a16942b774b474d4d47",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b8d590867c70f7b33a257954a678000476248f83cf374526ffc1ef6776fc0e9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "40d2d28cb02a70e50ee79b04ca1cbdc3fee7343a0477484f3ad530042b4e539d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8ccbb2d14a988d50acdb1c321760dfb1a7b5b47afe0b1f4f0440988e7d76a4a5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c810a33b19b286abbde6fbc9c586fe5faee2daa897eb991cbdc8b2a0e86959bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34cfaf33656df592a39ef1952d7dada7d8d14d71147ff33f6e0caf1f4dfd433e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f711851044722965e1517046d34f7b584337d51e852b6a47ab5ed7a30090e37d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "15caa37960ff2acfb510d18930c0c4b68b03b8e092b3189332977212996c2ddb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "248b0e3a5b86cd58ca23064ddd8a19805c1042b62f5fdbab33a621893a13e32e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5ad11aa4403f6ce650fd005bebaa1a579cf3af538e9b0d6ccc2cb58a54ae5047",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "38db92462761756a12df8aa1aa6dce46c18c4ee5ae5f2c0837171d05a4d86daa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a6e94a96124820fd3ca7b6532ce37d176c22a63a22d2de91b68bb8bd884ff295",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "holiday-greetings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5049837ea177a14aa59e6ae8c225eef9106cde669e2a7ca33dc1cf42c369f032",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-18",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a448dd55fab094e7a2a611dc4324068bf53999fb331c3f9ae6b4a877e8114512",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-19",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-19",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a5b2917dbd0280611c3104b3638542da55b5247aed31146db1914badd691e05",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-20",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-06-high-20",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "holiday-vocabulary",
+        "holiday-greetings",
+        "gratitude-and-polite-responses"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42767dfd0b776e8a548e607bab9310493515432e519b36f8f4c74491fcf51648",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-english-unit-06",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-2/term-1/english/unit-06"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/english/unit-06"
+        ],
+        "coreKnowledgePointIds": [
+          "holiday-vocabulary",
+          "holiday-greetings",
+          "gratitude-and-polite-responses"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级上册英语；docs/curriculum/grade-2-question-review.tsv；src/content/grade-2/term-1/english/unit-06/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应 Happy Holidays 单元中的 card、present、Christmas tree、Father Christmas，圣诞节和新年祝福，以及感谢与礼貌回应。教材目录使用项目登记的 TapXWorld 固定回退快照（tapx-fallback），学校是否开设英语尚未确认。原课程48道活动、六个学习Task、学习进度和交互均不变；闯关候选池排除17道跨档重复或同档重复的课程题，保留31道兼容原课程题并新增59道原创题，三档各30道。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-1-english-unit-06/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "holiday-vocabulary"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-06/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "holiday-greetings",
+              "gratitude-and-polite-responses"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-06/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "holiday-vocabulary",
+              "holiday-greetings"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-06/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "gratitude-and-polite-responses"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-06/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "holiday-vocabulary",
+              "holiday-greetings",
+              "gratitude-and-polite-responses"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-06/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-06/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-06/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-06/high/task-02/session-01/question-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-basic-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-18",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-19",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-20",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-21",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-22",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-advanced-23",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-18",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-19",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-06-high-20"
+      ]
+    }
+  ]
+}

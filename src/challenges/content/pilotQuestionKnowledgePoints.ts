@@ -48,6 +48,7 @@ import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1Eng
 import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
 import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1EnglishUnit04SupplementalActivities';
 import { grade2Term1EnglishUnit05SupplementalActivities } from './grade2Term1EnglishUnit05SupplementalActivities';
+import { grade2Term1EnglishUnit06SupplementalActivities } from './grade2Term1EnglishUnit06SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-2/chinese/unit-01',
@@ -109,6 +110,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/english/unit-03',
   'grade-2/term-1/english/unit-04',
   'grade-2/term-1/english/unit-05',
+  'grade-2/term-1/english/unit-06',
   'grade-2/term-1/chinese/unit-01',
   'grade-2/term-1/chinese/unit-02',
   'grade-2/term-1/chinese/unit-03',
@@ -928,6 +930,23 @@ export function derivePilotQuestionKnowledgePointIds(
       if (activity.kind === 'match' || activity.kind === 'categorize') ids.push('park-and-nature-vocabulary');
       if (activity.kind === 'order') ids.push('can-see-sentences');
       if (ids.length === 0) throw new Error(`Could not classify Grade 2 English park question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-2/term-1/english/unit-06': {
+      const supplemental = grade2Term1EnglishUnit06SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/\b(?:card|present|christmas tree|father christmas)\b|卡片|礼物|圣诞树|圣诞老人|节日人物|节日物品/iu.test(text)) {
+        ids.push('holiday-vocabulary');
+      }
+      if (/\b(?:merry christmas|happy new year)\b|圣诞快乐|新年快乐|节日祝福|新年祝福/iu.test(text)) {
+        ids.push('holiday-greetings');
+      }
+      if (/\b(?:thank you|you are welcome)\b|谢谢|感谢|不客气|回应感谢|表达感谢/iu.test(text)) {
+        ids.push('gratitude-and-polite-responses');
+      }
+      if (ids.length === 0) throw new Error(`Could not classify Grade 2 English holiday question ${activity.id}.`);
       return [...new Set(ids)];
     }
     case 'grade-2/term-1/math/unit-02': {
