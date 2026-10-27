@@ -18,7 +18,6 @@ const places = lessonProfile(
     { label: 'zoo', categoryIndex: 1 }, { label: 'park', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“我正要去动物园”。', items: ['the', 'zoo', '.', 'I', 'going', 'to', 'am'], correctOrderIndices: [3, 6, 4, 5, 0, 1, 2] },
-  { matchPrompt: '将 bookshop、supermarket、zoo、park 四个社区地点词与中文意思配对。', categorizePrompt: '按购物地点和游览休闲地点整理 bookshop、supermarket、zoo、park。' },
 );
 
 const communityPlaces = lessonProfile(
@@ -38,7 +37,6 @@ const communityPlaces = lessonProfile(
     { label: 'bookshop', categoryIndex: 1 }, { label: 'supermarket', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“她在医院”。', items: ['hospital', 'the', 'She', '.', 'at', 'is'], correctOrderIndices: [2, 5, 4, 1, 0, 3] },
-  { matchPrompt: '为 school、hospital、bookshop、supermarket 找到对应的中文地点。', categorizePrompt: '将 school、hospital、bookshop、supermarket 按学习就医和购物用途分类。' },
 );
 
 const askForDirections = lessonProfile(
@@ -58,7 +56,6 @@ const askForDirections = lessonProfile(
     { label: 'She is at school.', categoryIndex: 1 }, { label: 'He is at the hospital.', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“我们正要去公园”。', items: ['park', 'going', 'We', 'the', '.', 'to', 'are'], correctOrderIndices: [2, 6, 1, 5, 3, 0, 4] },
-  { matchPrompt: '把 zoo、park、school、hospital 四张地点词卡连到中文意思。', categorizePrompt: '判断句子表示 go to 前往还是 at 当前所在，再将句子分类。' },
 );
 
 const placeHelpers = lessonProfile(
@@ -78,7 +75,6 @@ const placeHelpers = lessonProfile(
     { label: 'hospital', categoryIndex: 1 }, { label: 'school', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“他正要去超市”。', items: ['the', 'supermarket', 'He', 'to', 'going', '.', 'is'], correctOrderIndices: [2, 6, 4, 3, 0, 1, 5] },
-  { matchPrompt: '把 supermarket、bookshop、hospital、school 与相应的中文地点配起来。', categorizePrompt: '按买东西地点与学习或服务地点整理 supermarket、bookshop、hospital、school。' },
 );
 
 const purposeAndPlaces = lessonProfile(
@@ -98,7 +94,6 @@ const purposeAndPlaces = lessonProfile(
     { label: 'park', categoryIndex: 1 }, { label: 'zoo', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“我正要去学校”。', items: ['school', 'to', 'I', 'going', '.', 'am'], correctOrderIndices: [2, 5, 3, 1, 0, 4] },
-  { matchPrompt: '将 school、hospital、park、zoo 四个词卡与中文意思配对。', categorizePrompt: '按学习服务和休闲游览用途给 school、hospital、park、zoo 分类。' },
 );
 
 const communitySentenceBuilder = lessonProfile(
@@ -118,7 +113,6 @@ const communitySentenceBuilder = lessonProfile(
     { label: 'zoo', categoryIndex: 1 }, { label: 'park', categoryIndex: 1 },
   ],
   { prompt: '把词卡排成“我正要去动物园”。', items: ['the', 'zoo', '.', 'I', 'going', 'to', 'am'], correctOrderIndices: [3, 6, 4, 5, 0, 1, 2] },
-  { matchPrompt: '请为 bookshop、supermarket、zoo、park 选择各自对应的中文释义。', categorizePrompt: '把 bookshop、supermarket、zoo、park 分到购物办事和休闲游览两组。' },
 );
 
 export const unit = buildEnglishUnit({

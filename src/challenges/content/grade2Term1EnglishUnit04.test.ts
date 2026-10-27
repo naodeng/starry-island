@@ -108,6 +108,19 @@ function readTsv(path: string): Array<Record<string, string>> {
 }
 
 describe('二年级上册英语第四单元闯关', () => {
+  it('保留原课程匹配和分类活动的通用题干', async () => {
+    const unit = await loadUnit(sourceUnitId);
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks)
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities));
+
+    const matchPrompts = activities.filter(({ kind }) => kind === 'match').map(({ prompt }) => prompt);
+    const categorizePrompts = activities.filter(({ kind }) => kind === 'categorize').map(({ prompt }) => prompt);
+    expect(matchPrompts.length).toBeGreaterThan(0);
+    expect(matchPrompts.every((prompt) => prompt === '把词卡和对应的中文意思或信息连起来。')).toBe(true);
+    expect(categorizePrompts.length).toBeGreaterThan(0);
+    expect(categorizePrompts.every((prompt) => prompt === '把词卡放进合适的词语小队。')).toBe(true);
+  });
+
   it('把 In the Community 登记为正式闯关组并保留原48道课程活动和六个学习任务', async () => {
     expect(getPilotUnitChallengeGroupId(sourceUnitId)).toBe(groupId);
     expect(growthGroups.find(({ id }) => id === groupId)).toMatchObject({
@@ -234,6 +247,12 @@ describe('二年级上册英语第四单元闯关', () => {
     expect(excludedSourceActivityIds.every((activityId) => courseActivityIds.has(activityId))).toBe(true);
     const uniqueness = await analyzeQuestionUniqueness(questions, inputs.activitiesById, inputs.sourceUnitByActivityId);
     expect(uniqueness.exactDuplicateGroups).toEqual([]);
-    expect(uniqueness.similarQuestionPairs).toEqual([]);
+    expect(uniqueness.similarQuestionPairs).toHaveLength(18);
+    expect(uniqueness.similarQuestionPairs.filter(({ activityKind }) => activityKind === 'match')).toHaveLength(3);
+    expect(uniqueness.similarQuestionPairs.filter(({ activityKind }) => activityKind === 'categorize')).toHaveLength(15);
+    expect(uniqueness.similarQuestionPairs.every(({ reason }) => reason.startsWith('题干经 Unicode NFKC'))).toBe(true);
+    const reviewedTemplateQuestionIds = new Set(uniqueness.similarQuestionPairs.flatMap(({ questionIds }) => questionIds));
+    expect(rows.filter(({ 题目ID }) => reviewedTemplateQuestionIds.has(题目ID))
+      .every(({ 审核状态 }) => 审核状态.includes('相似题提示人工复核'))).toBe(true);
   });
 });

@@ -39,7 +39,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "d3dc569a65294e5f2e6ca9b734312f819e288bcd440198e70c70bf401626ea6a",
+      "approvedContentFingerprint": "c167a311a6d6c3688b4525e92cd76a9f87f85a56cb485a92821a1343dc4e4a6e",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -97,7 +97,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "52e5897d807be0bf5971d2cfc526b0bf502e813568ad893b5f421cda39d678b8",
+      "approvedContentFingerprint": "6ec6c8a85d7f30a1c1bbf9619e80788495c12069263bb055a15de756d631bfaf",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -212,7 +212,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "0606d1cb2fdb21ba679904018b59d63ae235099ea76e2f284977efe7848a02a1",
+      "approvedContentFingerprint": "1e9727aff4d03e0c501dacaaff119540cc5d4bc6d4310379fee250240cc45799",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -268,7 +268,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "e3d3de54588f46ce42f1472363f57d14f3990847204feb160cd588a5f3d6bee9",
+      "approvedContentFingerprint": "26144d7a0602a878526ad19e7b0da69450b7dcacd6c39c0e10f9ea4ac4821f1c",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -326,7 +326,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "d748fe49985ca6dc16b597c2f4b0a16e11f7d83187e44df1f501d9f04814114a",
+      "approvedContentFingerprint": "c4a0c174447cf5b46383919df2c0779a5d7eec16b0343685a615d16f684d972f",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -400,7 +400,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "36537988842aaa79275f2e201a61400881a8f963b3a1e2a9cb08d45fc5c4263e",
+      "approvedContentFingerprint": "e4dc9b598b53983125d4e403330af5a81e2171f7b70bf7d28462a2b2ac387d62",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -457,7 +457,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "5af6a5c75ad9731287e578012efbe5dbcca70a495c240b1348a2b504a1e6524a",
+      "approvedContentFingerprint": "86842678ad439060924990c2bb09a097f27dd0ac2f991701b4781c066561373f",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -502,7 +502,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "c976023d3cd7c2ecc756c0f34d799c231c0e8a7aecd9f6ede21d348b11906148",
+      "approvedContentFingerprint": "765b88e517f266030d9a638e30fa39d65530ecdcd6fd16ec59d0ed272427eff0",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -604,7 +604,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "23d666b4b7b532fd43ad1a2e39456b55fa4438c2667699c835565ba9ee892baf",
+      "approvedContentFingerprint": "7551384fb4dbc7dfb5759a8ec51c7876352df91b0617f2c20a544e9cccb62b29",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -1355,7 +1355,7 @@
         "mappingEvidence": {
           "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射；docs/curriculum/grade-2-question-review.tsv；src/content/grade-2/term-1/english/unit-04/index.ts",
           "checkedAt": "2026-10-27",
-          "notes": "对应 In the Community 单元中的社区地点词、询问当前位置与目的地、at 和 going to 的表达及地点用途。教材目录使用项目裁定的 TapXWorld 固定回退快照（tapx-fallback），学校是否开设英语尚未确认。保留42道兼容课程活动并新增48道原创题，三档各30道；从闯关候选池排除6道与其他难度目标重复的课程活动，但不修改原课程活动、六个学习任务、学习进度和交互。"
+          "notes": "对应 In the Community 单元中的社区地点词、询问当前位置与目的地、at 和 going to 的表达及地点用途。教材目录使用项目裁定的 TapXWorld 固定回退快照（tapx-fallback），学校是否开设英语尚未确认。保留 42 道兼容课程活动并新增 48 道原创题，三档各 30 道；仅从挑战候选池排除 6 道与其他难度目标重复的课程活动。原课程 48 道活动、六个学习 Task、学习进度和交互保持不变。"
         },
         "tasks": [
           {
