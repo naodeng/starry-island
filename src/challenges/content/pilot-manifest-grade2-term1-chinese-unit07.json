@@ -1,0 +1,1495 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-chinese-unit-07",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-1/chinese/unit-07"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/chinese/unit-07"
+        ],
+        "coreKnowledgePointIds": [
+          "seasonal-scenery-clues",
+          "weather-observation-and-change",
+          "fog-and-visibility-inference",
+          "story-event-sequence",
+          "care-and-safe-action"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#目录映射; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-1/chinese/unit-07/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应二年级上册第七单元“四季与自然”，主题依据固定教材清单中的《古诗二首》《雾在哪里》《雪孩子》和课程 sourceTopics。目录沿用项目固定 TapXWorld 回退快照，不表示采用人教社 2025 修订版。复用本单元 48 道现有学习活动并新增 42 道原创闯关题；未修改任何学习 Task。"
+        },
+        "tasks": [
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-07/basic-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "seasonal-scenery-clues",
+              "weather-observation-and-change",
+              "fog-and-visibility-inference"
+            ]
+          },
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-07/basic-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "story-event-sequence",
+              "care-and-safe-action"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-07/advanced-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "seasonal-scenery-clues",
+              "weather-observation-and-change",
+              "fog-and-visibility-inference"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-07/advanced-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "story-event-sequence",
+              "care-and-safe-action",
+              "fog-and-visibility-inference"
+            ]
+          },
+          {
+            "difficulty": "high",
+            "id": "grade-2-term-1-chinese-unit-07/high-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "seasonal-scenery-clues",
+              "weather-observation-and-change",
+              "fog-and-visibility-inference",
+              "story-event-sequence",
+              "care-and-safe-action"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-14"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3dbe335795c9472d5e12cb45c28637f3cf6133066fb4043f3cec943db00c5651",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "22ec85fc3f9ad89a29257fc4ce9c06d73c06a520c99a2dd9d9548ee4de4dd440",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6c232990a5912cdcbee2dea80fee85c473194ad4ba7eaa778896e3f64e1d223",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea4d54be29398d9c6c56bca606c324072a41a769ffc9dc1d0bcc559af50349c6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "40b511c7122082c6e9c650428905b35f844c1a69b5a8b3c7e9c1946b47e9d9a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07afea82a1db1e827cbd19a0400a96f690bc2c79d6b8c231fa6ed04329e867be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d7d5a112af41d8e86cd78a0af72155f94c538323642fb050e1ab7002a4ee61a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e4de469be9f3ee25810909f908189df74472f1f1e662c0c56d4de5657a28a4e7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ec5ccfd0a957a0893a653539016fd89a94cbc3d549aa4dc895db662db993478",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52f12b68fe7f9945a1b66f39790a6b6b625e30607d943083044e70e848ad3411",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d81ec8ba04d28bc882f96eb13ea24f36f144e2fbd5f4ae21772e0768e01bb92",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da2d863fd5dc01d60c145c2287f04fd11a53c76c049edadf196fed3e30df7d87",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8763b3b4fc262bb7726df883c1e3d1f2db3f772b47dec8946aee32d6f80b5000",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afb8f712758ad0e28d5bf9501f1a04c68ecd1498450a7d31d29d9c6e77f44ba1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f7f6f884cebb4901d797b7ed145299adf566021170cf1c486edd3c60e4f806a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-07/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2fdec6fbdbf3fc26e251180973c64a6d2f0d9e75b0b990757efe39c8e82b5c61",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "46eae37b7bb7b4febb543a264aa49125998dd615ebb1eed7c888a3a96bf4c4e5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "841aac39568865299c9fbf1a61be094e0bb6c6c4d8828b78f1d7e728185c9dc2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "392b00625dab322e2e42726bfaf4a7569dfdb426d25292e268d30a03f3285094",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c0f20da9ea5c2d993c8495331125987dd773cb944ca3036aa5cffd0e5f3083d4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b319f13f3bb5584387f290fdfac00a4d31243b99ea5ca9313810dfbc62ef25fa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "12e9f8e4be7c4f42eee6b59278a4fee956646e347c359580c08bfa753ebc7c4f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4387eded4f3943c922be6dee029686c52b7602ee9324a443552b780cf115163b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2e3a1ba76e61c33ee0e8d4009648688d26c02be1052e2e469d210ae9626be72",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e964e9131317de9974a038831b82e74b1106370fa09acd2e33292512248ba01d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "99e134aba018c23cdcbdf1e02147426cae4125bd49627ee6871aa3dd62c078dd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b064c8b493c2c5f8f8223ab5973933de5851c48941b0c4d6a45ccca6f44599e0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7634397cf718c31f7bcd9614a25c243a3bfa2faf76f6f334dac8a76dab1ce7f5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc9e6377563d1aedea8e5a02604f3fb764341b5f9a68a7465c90ae25efc6aa5a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09e3a1a3eccee83e13f105c289a5c1d5f9a34ec12161aac46e3f6f915485b8b8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "care-and-safe-action",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "23f82f5981d4b10c9d78b561e87bbf531fb99a2d2683dd24aa42c47df5492a49",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-07/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd3643f08ab382087a9d5328268a79f9a32c415b5b6c4fd3b7ca36fc4aac7c46",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2cd8866246e453e5ce2854eec0ca93d55eb9895bb5463c16f5ee78f611624725",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "293f9a6d30d9b432abd7b0e8e8b657f90104bf3dfbdaac149b3c0ebda1be36ad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "492cd6b0e205c1b1f07fe4f7075b29cd9fbc17229511601faebbf23c381809a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6dd5ba5bd438a1662dbea75f7392a7baaacd09696eaf6589f4f66f59d7cbc94e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c72d6fe032fa8cece185848bdc7cf4a466dd9a3d0ecd52ff8e5d89f452631744",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c47b66a4a064424e623739ae09a2ace22d1169335a2ac60cca2cad63633f704",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a20b1df74e92d3199d78fc2d585d14a1fdcc6daf2d19c883ff28a7929369280",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f839d10f9cefbecff9ad6a88d10d85cb593df696abc5aabf9540efb26c88fae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ac901cf0e882028c3931d7e11694a7ccddfe37bbd58be1a259ff0cb7ca78a62",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b00e490775dbe04c44be3702cd4f4931790239a736e48cefab0b3c9e84fdb96",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "328569b29ff6d8392d0d39ecfbf970f829de2592325c5e51c1242f19aaf6a17c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-sequence",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9828ae5fa53fe4f73225faa4e9a2a7ef24708ecf1c6e3dcc3012887da5057148",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "19d534686940fc6b600c52682b269fe7d70482afb4c6298c1116c7e120f95a04",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cbe75400944a6419eb0a8d1a710a515e8c1d0ebd4007b9cffb28bcd9fb09cf3d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "182ba7e750475a873afa28af8ae8307e01137cb692c92dfca1e7d50892b21d44",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-07/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da001185981c16b987ceb7b9c81ea4e55deea14591f7c0495149a9e4bafdad5c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6fb888654c8eb502123be456934d6217557145a4af435d386fd0d50203cb2781",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6481d23b71f08ec56e70e885b1c7fa887f09eee2382dffdc00de496426f26ee3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1a7a889797d2f83b05948d6354f8b70c34d6808b978fd344482616c48e742c2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d13e479e1cf8870d3aa1b420a8a762982b0a4c1f8f736529891b50b70e43ec6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b89d6bc51dd098e75d69068badf9b52b90b9b2dd2ea1512426b3b23f6863a739",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07f63be001d7e294b997296a1f8afa35efa8eb5f424ae870dd3590f313dcf3e3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18c1284b7ea6e2bacf1b6b580d71f179f741d77292a5c789151595548a0a3d80",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bd5ecead0df0cbdb44b342f4047d09a1ddf2268fe0686f45b6a50fb75f5fe7a2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "378ea36ac47b2f8406595df4abc555eef00f9db811d2addd66560bab9c581822",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8a6f4ab09fb34fa92bfeeb512ccf38b7b3821cfeb730008727fcaae168f9225",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f941497599b20bf1877ba510ebc69b7ced28522ad163bf5cc600520c3d5495e3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3334c7da72a248b6f423609c8dd4f9ba91575c767e4ad2d8fccc96f8da25c62b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "care-and-safe-action",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c362bee1a7495f27aa5e2521daa62314f9fed767d64a6254afc2a27d39f827c8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "38debafc92f5beef972dd24c3898af223638f00e244d105b97d01366110c2060",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b16343b16a5b6c892714c463e2505365e133fdd976002e8e4c255326ec96a818",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1e46e48e95800540aaac82a8b9397795ef3689155ee5fbcd5f949d7c31a74b03",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bdce55007f3bb93c2a89eab3178432cf8987cdea5e0d819df3d3926a61d13acb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a0d3433db77e90f97af55b7a233f438312d96e325ffefd6c00465faa1696cf99",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36b9ac32c68a05c851b40db739d1208548754cf02ad5dc922f5b837b073b0668",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "344abeaf235332c3f426c1a79481f808e62cb42a8c933bf887d79e405e2b2c94",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "53c85e85596fe215b187d3f5bd8c7ae5c43298e6884508b1c15012557d561b48",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ca5f5cc990c652e12952e85586436f33227965f038e667c03f2ca872186a74ba",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "078c07478fb73e869b835a7c40b5d4f7b691dae73503a2bc2c0af89ef0183d5c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3cbe6430aea92967dd89b47c9b271f8cc9a14e6680bfa98ad047a1877b0ca714",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b5eb7c912f7b1996b6552247881f0c944b4ae93d7a8d71d7efb0675d762e335",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6344a472d3579eeb09b88201bdba865c68f0eb6fc413b3fd8119192c61a6965",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "care-and-safe-action",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "de62ab22c75b11aa1a4344fc3f8e61bd05eeccc11646ed7b454e880760de70c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "808461990660bcd8b9aec2186e37266d96f90a91e61d4ed6dd395a45600230d3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "fog-and-visibility-inference",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ccbce7ffc0dd2fd77e64ab8afdedd0e9e390d68aad7ec84b352a746466d6d296",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a959d1dfeb3a99cf793d0be5012618d5896ec694054507e24eed154bd70cac99",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f931d399daa1f85e1f75e4b459df5be19ca671e45c39afb783f2ef7237b268d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "care-and-safe-action",
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6cc7cf9573c4311ed26a47249470f0c76dd821040cefc3d5f844341a1be33ae7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "861951d7ac030774522b42cd81dd8d4b4b1d900e60370dbaaae74645a5432527",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f980515a3fb4612afdcac21766cde47d211fdb91de3d4607c1449f273f68698",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "care-and-safe-action",
+        "fog-and-visibility-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed6bac3516ed66bb92675532197051ecbfadbc334fe1ac57b8c7dd0b9b36ef10",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change",
+        "story-event-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f7de13260e399a81bf9559b663a2ce7d1ea851acef5a53759c9ba63b9a93f276",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fog-and-visibility-inference",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6407e19a197843466052c9b7e3ca75f819e621cde0e0ed3dd240be01ef9ee60a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-sequence",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37c6675796891a08e5ff4ca9d844fd45c5c434d2a58f90b5ff8e9a61d282d7c9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "care-and-safe-action",
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "653b1f24f50e27ccee46a99fd894c092735efbd14537dce427a86295c2a335c0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e350e05a242500893dfb04842d979533ac1a88347ec9c8352f7c15c137b53f2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-observation-and-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac4e1853c93df91bc710e11ffdba4d7f36849f6fba96841aa20b102f21185f86",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-07-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-07-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-scenery-clues",
+        "weather-observation-and-change",
+        "fog-and-visibility-inference",
+        "story-event-sequence",
+        "care-and-safe-action"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35792827123fb3d7dd0b1b2d0e09a8a55259d009712be634d1b509e01960aad7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ]
+}

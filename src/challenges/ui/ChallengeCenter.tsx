@@ -4,6 +4,26 @@ import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestio
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { TaskProgress } from '../domain/types';
 
+export function sortChallengeGroupsForDisplay(groups: readonly LoadedPilotGroup[]): LoadedPilotGroup[] {
+  const subjectOrder = { chinese: 0, math: 1, english: 2 } as const;
+  const stageOrder = { 'first-half': 0, 'second-half': 1, 'end-term': 2 } as const;
+  const unitNumber = (group: LoadedPilotGroup) => Number(group.group.definition.sourceUnitIds[0]?.match(/\/unit-(\d+)$/u)?.[1] ?? Number.MAX_SAFE_INTEGER);
+
+  return [...groups].sort((left, right) => {
+    const a = left.group.definition;
+    const b = right.group.definition;
+    return a.grade - b.grade
+      || a.semester - b.semester
+      || subjectOrder[a.subject] - subjectOrder[b.subject]
+      || (a.kind === 'unit' ? 0 : 1) - (b.kind === 'unit' ? 0 : 1)
+      || (a.kind === 'unit' && b.kind === 'unit'
+        ? unitNumber(left) - unitNumber(right)
+        : (a.kind === 'semester' ? stageOrder[a.stage ?? 'first-half'] : 0)
+          - (b.kind === 'semester' ? stageOrder[b.stage ?? 'first-half'] : 0))
+      || a.id.localeCompare(b.id);
+  });
+}
+
 export function getChallengeGroupTitle(group: LoadedPilotGroup['group']): string {
   const { definition } = group;
   const termLabel = definition.semester === 1 ? '上册' : '下册';
@@ -30,10 +50,21 @@ export function getChallengeGroupTitle(group: LoadedPilotGroup['group']): string
 
 export function getChallengeGroupDescription(group: LoadedPilotGroup['group']): string {
   const { definition } = group;
-  if (definition.kind === 'semester') return '按教材章节顺序覆盖上册前四个单元。';
+  if (definition.kind === 'semester') {
+    const orderedContent = definition.subject === 'chinese' ? '课程主题' : '教材章节';
+    if (definition.stage === 'first-half') return `按${orderedContent}顺序练习${definition.semester === 1 ? '上' : '下'}册前半部分内容。`;
+    if (definition.stage === 'second-half') return `按${orderedContent}顺序练习${definition.semester === 1 ? '上' : '下'}册后半部分内容。`;
+    return `综合练习本册已登记的课程内容。`;
+  }
 
   switch (definition.subject) {
     case 'math':
+      if (definition.sourceUnitIds[0] === 'grade-1/term-2/math/unit-01') {
+        return '练习三角形、长方形、正方形和圆的辨认、特征观察与简单拼组。';
+      }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-2/math/unit-03') {
+        return '练习按标准分类、记录数量、读取分类结果并检查记录。';
+      }
       if (definition.sourceUnitIds[0] === 'grade-1/term-1/math/unit-01') {
         return '练习数一数、比一比和 0 的初步认识。';
       }
@@ -48,6 +79,24 @@ export function getChallengeGroupDescription(group: LoadedPilotGroup['group']): 
       }
       return '练习两位数加减法、进位退位和数量关系。';
     case 'english':
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/english/unit-01') {
+        return '练习问候与告别、课堂指令和学习用品表达。';
+      }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/english/unit-02') {
+        return '练习眼、耳、鼻、口等面部词汇、相关指令和简单介绍句。';
+      }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/english/unit-03') {
+        return '练习常见动物名称，以及描述动物和表达喜好的简单句。';
+      }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/english/unit-04') {
+        return '练习 1～10 的英文数词、数数顺序和“How many books?”等数量表达。';
+      }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/english/unit-05') {
+        return '练习 red、blue、yellow、green 颜色词、询问颜色和描述颜色。';
+      }
+      if (definition.sourceUnitIds[0] === 'grade-1/term-1/english/unit-06') {
+        return '练习 apple、pear、banana、orange 水果词，按类别分组并表达水果喜好。';
+      }
       return '练习本单元的自我介绍、年龄和班级表达。';
     case 'chinese':
       return '阅读本单元课文，练习文本线索、表达方法与习作。';
@@ -85,7 +134,7 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressAvai
             </div>
           </div>
           <div className="challenge-card-grid">
-            {groups.map(({ group, status, issues }) => {
+            {sortChallengeGroupsForDisplay(groups).map(({ group, status, issues }) => {
               const taskProgress = group.definition.tasks.map(({ id }) => progressByTaskId[id]).filter(Boolean);
               const passedCount = taskProgress.filter(({ everPassed }) => everPassed).length;
               const progressLabel = status === 'ready'

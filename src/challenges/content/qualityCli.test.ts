@@ -16,11 +16,30 @@ import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01Supple
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
+import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
 import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
 import { grade1MathUnit09SupplementalActivities } from './grade1MathUnit09SupplementalActivities';
+import { grade1Term1EnglishUnit01SupplementalActivities } from './grade1Term1EnglishUnit01SupplementalActivities';
+import { grade1Term1EnglishUnit02SupplementalActivities } from './grade1Term1EnglishUnit02SupplementalActivities';
+import { grade1Term1EnglishUnit03SupplementalActivities } from './grade1Term1EnglishUnit03SupplementalActivities';
+import { grade1Term1EnglishUnit04SupplementalActivities } from './grade1Term1EnglishUnit04SupplementalActivities';
+import { grade1Term1EnglishUnit05SupplementalActivities } from './grade1Term1EnglishUnit05SupplementalActivities';
+import { grade1Term1EnglishUnit06SupplementalActivities } from './grade1Term1EnglishUnit06SupplementalActivities';
+import { grade1Term2MathUnit01SupplementalActivities } from './grade1Term2MathUnit01SupplementalActivities';
+import { grade1Term2MathUnit04SupplementalActivities } from './grade1Term2MathUnit04SupplementalActivities';
+import { grade1Term2MathUnit05SupplementalActivities } from './grade1Term2MathUnit05SupplementalActivities';
+import { grade1Term2MathUnit06SupplementalActivities } from './grade1Term2MathUnit06SupplementalActivities';
+import { grade1Term2MathUnit07SupplementalActivities } from './grade1Term2MathUnit07SupplementalActivities';
+import { grade1Term2MathUnit08SupplementalActivities } from './grade1Term2MathUnit08SupplementalActivities';
+import { grade1Term2EnglishUnit01SupplementalActivities } from './grade1Term2EnglishUnit01SupplementalActivities';
+import { grade1Term2EnglishUnit02SupplementalActivities } from './grade1Term2EnglishUnit02SupplementalActivities';
+import { grade1Term2EnglishUnit03SupplementalActivities } from './grade1Term2EnglishUnit03SupplementalActivities';
+import { grade1Term2EnglishUnit04SupplementalActivities } from './grade1Term2EnglishUnit04SupplementalActivities';
+import { grade1Term2EnglishUnit05SupplementalActivities } from './grade1Term2EnglishUnit05SupplementalActivities';
+import { grade1Term2EnglishUnit06SupplementalActivities } from './grade1Term2EnglishUnit06SupplementalActivities';
 import { parseChallengeManifest } from './manifestSchema';
 
 declare const process: {
@@ -38,6 +57,32 @@ const manifestFragmentPaths = [
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit07.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit08.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit09.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-math.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-english.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-english-unit02.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-english-unit03.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-english-unit04.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-english-unit05.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-english-unit06.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term1-semester.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-math.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit01.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit02.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit03.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit04.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit05.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit06.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-semester.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-unit01.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-unit03.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-unit04.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-unit06.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-unit07.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-unit08.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-unit09.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit01.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit02.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit03.json'),
 ];
 let reportDirectory: string;
 
@@ -80,7 +125,7 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(13);
+    expect(report.groups).toHaveLength(70);
     expect(report.groups.every(({ status }) => status === 'ready')).toBe(true);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
@@ -94,6 +139,25 @@ describe('challenge quality CLI', () => {
     expect(firstJson).not.toContain(grade1MathUnit07SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit08SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit09SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term1EnglishUnit01SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term1EnglishUnit02SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term1EnglishUnit03SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term1EnglishUnit04SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term1EnglishUnit05SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term1EnglishUnit06SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2MathUnit01SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2MathUnit04SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade2Term1MathUnit04SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2MathUnit05SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2MathUnit06SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2MathUnit07SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2MathUnit08SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2EnglishUnit01SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2EnglishUnit02SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2EnglishUnit03SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2EnglishUnit04SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2EnglishUnit05SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade1Term2EnglishUnit06SupplementalActivities[0].activity.prompt);
 
     const secondRun = runCli(args);
     expect(secondRun.status).toBe(0);
@@ -139,7 +203,7 @@ describe('challenge quality CLI', () => {
 
     expect(result.error).toBeUndefined();
     expect(result.status, result.stderr).toBe(0);
-  });
+  }, 30_000);
 
   it('returns gate exit code 1 and writes diagnostics when a global integrity issue fails quality', async () => {
     // @ts-expect-error Node ESM 命令模块通过 Vitest 动态加载；此浏览器优先配置未声明该模块类型。

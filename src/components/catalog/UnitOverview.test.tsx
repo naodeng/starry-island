@@ -108,7 +108,8 @@ describe('UnitOverview', () => {
   });
 
   it('doesNotShowChallengeEntryForNonPilotUnits', () => {
-    render(<UnitOverview unitKey={unitKey} unit={unit} completedSessionIds={[]} onNavigate={vi.fn()} />);
+    const nonPilotUnitKey = 'grade-2/term-2/math/unit-09';
+    render(<UnitOverview unitKey={nonPilotUnitKey} unit={curriculum.units[nonPilotUnitKey]} completedSessionIds={[]} onNavigate={vi.fn()} />);
 
     expect(screen.queryByRole('button', { name: '进入闯关挑战' })).not.toBeInTheDocument();
   });

@@ -1,0 +1,1492 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "efe5fd262a2cdf965610b03c87f8bd160f70951bccf916e7c6815f7880a4587e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e0fc1eaa2be8f554a9d3371330884d7b9345a724faaaded95a17ac4bb275a1f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3743d7a5f2fdc1286811f1a925b57b61263d3f98dbe73343a45e84714779e3e4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cc9d801497aaf64b4595182d548013c898fa7342ad4e78839fc3ea7acee60a76",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ccb54c4c4708e2bc554548b7f8f5b3cd19e652cf13e30fc854a4bf919d97f20",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d6451cd4cbe5cfbd95b1bb807931537429615dc31d6bb0e7a3dcc3bffde5aa45",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "51bb229ed4b2c0814bd68607ff76eaa255497ff7782189bcc4f6c02fde389981",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11f6d2bbb01021e87c8731331c403e80bee7a1e49cfd06d518db8a04c4f54c60",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3b351074be14793c0bc8f46a4da557674a9b03ffb747b10d5c093ea450291309",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "408bd9c4e29b4cbff07317509fcf6d071b0dcd1643abacd5675c877dabb81fff",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3aff79177016adec00c464718a505a619c50fe557a39b5e290db9de0fcde62bc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aaa1f4766c4dda99922642e7d7ecec22429b1d2366e9e3e947ada1e389c2b4a2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0713774b817fba3c5decf07019168d5aec6c6d5b8474bff90469c3a4d8316b59",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "50e8c919d128f3d8ce95f041a02521ecf960ce1a0e9c8348571c4a280617ff92",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ebd79e6e7e9e6e4d3fccabac98b6412f20bc51cd1b4060107fc2f4af52dc029c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-06/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ce6c9633e33ba2dcf9c42f4f55ba121351bacb2f8e161cdc24e229ecda0b9c56",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c0e2772fefbd4425ec831f9bfdd87ba4e8357179a2cc25c328095ee916460bd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "315c1002d9059dc4ba3e897848b60719b343b2f70785e076f05bf8863c5b40be",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a12d382920ec40a76327db55e81f674c1fc20aef20e6ac53f3fb0777656ad2e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1cbe1b98d62e648ab0ff7ec1060ce5cbd8adedea5c7e0497cd78567c6bcf2526",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c9885fdd4d29c298cab261a1dc8374a33d9ef96e681bb166ad286e629d4ea19",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e3e316d06c060edf3539f9ff05c771c9ec40f1f6ab3bc38c3a17cdafffd4396",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01e3f2dbd4de7d1630a5afe19cf774ae4c2341a06dc2b3332e47c14b22909c94",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ba64aeaa7191522791c51c171eead1bdb1f33ae49b17cf7020483f2087231c8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "773ace7fcb8e77ae48df6777f9f42d1665d4661015ad797635a46257eb1e9a56",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "020de91fd1da08ca85fc117e3510a43f4aac1d7b24333b83108e5694886dde79",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "095584bc468c9cac0a939b8bf2c09fe8a6a02c6026afb0399b130831c43ede77",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07f4d3ab74eef25cf3f2148f35e7a3fcf85d417031e97e9ab169d0980637e9cc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "016f05479ff405ccb675aa8a5b95252282699b5bf5dc6f58e838132f9ce60018",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f660ebad85d8ccc0531779bdd17520dc48b3170630c61928a7fc08ef81a13b29",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09276f5d88e0bea2e9187ecaf3efedb9a7021ee8f084d48eb7439d49018a55d6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9134e008f018a5bda22a8533eab3adf95405e5310514770e980f0566e3cff54f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c447b7b07f5382bb8ec5e83fbc2d45aee7ddb9977a5a2bf4a6953d49a0449e48",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "91f8e045f551215c8e35e96c944b608b61350cff1008d88bb4e05479e086a281",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0d70f7a4ef4e53ed3a4c519663cc54ab58990320dccff29b0eaa4326b5eee7d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b49d88c487f678e5020b7f3e6f4bbb47fa8b236bd2ce330f48646f0b1b9b731c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f576e9b8aa00b1800754e36bf161f1e8bd006c985046c4e61b2afa088782aaa",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4bfd7c7390311de7a5d7f0b369b3c85927a7322adf12755f6dc76f1004e139f5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d4d103a8a538ec91b705abe91c3f1cbba5df3172911ad5ace1064daed57193e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "254bf619dc2cbfa8ac0b3c4ddd310f77944b90f9b88eef665dbee3e500bd3f26",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d659c9358312a0e1e0d8d773141fe0b24740d101e40a5f2fc01e02d89ebda4f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "55729d651a30753d0b2030895b9819e31f80f7b2969379c690abc907c0e0860f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec7a77f8f49dc0b530f2c372a43e8d1e283251c599fec10c71180e41b1eed56c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da6ef9771fe39157bd2f335e1dfb8d2622caa7f1d4c55dde1ad651ba195cb4c3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ca4c6065d034b758e1e0ec5e9dbb40142ffe64b0bb4ed74dbbe0288f9dd7aa02",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3d9d15ff83f8b164e75e59ab5c1bb282c1602cb03dee75ac547bab8b8bc6a7c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25480bdb3a424401f827e8e0dd453e37ed00278acf12b46f2711cdf394f5b666",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b08bebb873058083afec435b3855bcab199c047082cd6fa9ac3b6f108c520e2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1a38df83fd9c59395e790f3691e8ff8ed6a6779f445d5439bf60cd69dbcad9c9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3f62602ee02e2106fef0a74fbf344caac16c5765946b2b018e85794de1057d4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b762473a3a3db7df67171a1d98aff2d2e4a6d6a4f13a8a1f2c223d943226b97d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a54b69203ef2b106b8153d14c42e0148e99fa1f70b3821ca8aa1d89453c1ed23",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3efe481075d0d23c9456592f3361560a768b38cba1bff1dc8578947d0d4364cf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-16",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1a0dd159beaf33ae35512837f4edee29452855350045adfcef4505af5ba9d2a7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-17",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "812af483b43a2255f149077dd2c451716d2050ca9b6269b784f1e0488287d4a8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-18",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b24e6c20aeb4c4a088a52aaf84645e771b2c3fb968aa731b6084689fa82c325",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-19",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0bb0cf979cd136e88441ee271201a44c8416dcea55ea05b0ac9d13132d28ae7a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-20",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8ac50d89570047706f6662802fbf3402db21c37a1ba732705f03aa14f8f30ff6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-21",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-21",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "91c11cf84588700944a1ceb67234c092b6b9f463401b247350b0042488b5384f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-22",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-advanced-22",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6ede0de473fbb6fcb4d18d3a72d5075a32bb2143bf9ce5d45fbed6514ab5fc20",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "82e4df9fe562f6cee2dc0b4c57b64af0691073d50326c797d8070395d605b1f0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c22f0e3dfac39616496832c94bacbfa5ec709455ed932cba83b6196fd4690a48",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "57174cc6fe95382b919813fba426234b36e9bd0aea5cc62427f88ac5f139f041",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb15ed206154b914b0752acd5aefb2744720fec60843de0711499faa74e6386a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-description-sentences",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "97c224881ae0bbf68106b43fb6b2629ae9c65491714a27c3529a85796e864a77",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "08b46b14f4d39273acc85f3d6cf024a841de50fccf3eaeaabc33b18bce145dee",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "26e29d497a5dcbe9e9f5eefb49484a0fa4f308970d6288a6c91af73f8dfd4fad",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "14ebd7fe6c54003132fa40ccce4b3288152ef9b3b72e094611a20b5dcac5252f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87344550c1a4b2d6f6233de5bc537c669ad51e432a50c50e39cad88e89adbeb6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-06/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c7420fa3275a93eaa100fb7e2293fa2ddd88f28323e2bbb5eef945829bcc074",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9b946228d7f3b20a4f9e40b5e8b4d4202c91309184fa249f0ffb97e67fcc2bc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9fb6a0d7a07eb9135d09bbe4c45ded9fffe7a258e49959387f6d5c91c923a01",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6c8d893bbaafdb4919796f33958cfe247c99748629ddf2bc048fc6c8d1914be",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "67b331fd5e03dc99575701890e4bb371fb916d393c6393522ad12b3f7cc55472",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d93b3f521dff4a90e56d601007e12203611d3415e525e9e5d4dd83044ab37db5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d35aac77923036cf598773334607fde58d7ed0b3aefcc098616592aa262e895",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c40f3e47420ec01a2244e2e49348926cfb6f9a4653e6bab9bdac5bb862148de",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8b23a27a69a593a435d2e9418d7f112178f148c3a9c54cf68abf44b86d42c5b4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07b5291704b3f01841d2c8a970cb58923fadb25455aff9571fa33c217cfe5d0e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35acec77e0f8744f73d58c2b73028fc470284bb7f59276527392320454558501",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7af89804d1872cad89a5e8df82423b4bff21926ebe4aae26b793bdae0cc30a5b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "71cb94198d95c66a0118e97820061a075046e707bd3ec082409d53c3e816a7b5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70a7f29d1d109eac9c5f612fa18c03943ce80398b6ccaae4cf8b1105be99acc6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e8e00b65591b7ca109695aadc4df4f365e95179e1bb6e9f7c6207e5f9c1a616e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-15",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4eaf0b528e125a5860548c07cb5fe956d1b37518a52d6fd593dd0fd067ac3887",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-16",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad06ab1434d80a9512c1089465d95284a3f096ba6d5b6b98dbf0f1717f280999",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-17",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17945a13a25dbbc7a2da1660582d84bf5ab4927feabf00321532581f7791afa3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-18",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4a7d04e57129550ed383b639785ba5b4b15bb03546595d7e3cff52f9f6297ba",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-19",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-19",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5890e8b5952f588c8d9fa751eb919f4f41fd07eff7e4bc2c6618ee72c1ddc92",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-20",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-06-high-20",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clothes-word-meanings",
+        "clothes-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da8d3e7ec52c8c730da562f853c0655af173cf0a7d1da6a221774d9bb56185e0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-2-english-unit-06",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 2,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-1/term-2/english/unit-06"
+        ],
+        "coreKnowledgePointIds": [
+          "clothes-word-meanings",
+          "clothes-category-classification",
+          "clothes-description-sentences",
+          "clothes-description-word-order"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#固定快照目录映射; src/content/grade-1-and-3/catalog.ts; src/content/grade-1-and-3/english/lessonFactory.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应 Clothes 单元衣物词义、上衣/其他衣物分类和 This is my… 句型及词序；采用课程台账记录的 TapXWorld 固定回退快照，英语学校开设状态仍未确认。48 道原课程活动中14道重复题仅从闯关池排除，不修改原学习 Task；新增56道原创题（基础14、进阶22、高阶20），均为作者自审，未独立教育者复核。目录主题提及颜色描述，但本单元48道实际课程活动未出现颜色题，故本批不扩写未由课程活动核实的颜色内容。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-2-english-unit-06/basic-01",
+            "difficulty": "basic",
+            "requiredKnowledgePointIds": [
+              "clothes-word-meanings",
+              "clothes-category-classification"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-06/basic-02",
+            "difficulty": "basic",
+            "requiredKnowledgePointIds": [
+              "clothes-description-sentences",
+              "clothes-description-word-order"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-06/advanced-01",
+            "difficulty": "advanced",
+            "requiredKnowledgePointIds": [
+              "clothes-word-meanings",
+              "clothes-category-classification"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-06/advanced-02",
+            "difficulty": "advanced",
+            "requiredKnowledgePointIds": [
+              "clothes-description-sentences",
+              "clothes-description-word-order"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-06/high-01",
+            "difficulty": "high",
+            "requiredKnowledgePointIds": [
+              "clothes-word-meanings",
+              "clothes-category-classification",
+              "clothes-description-sentences",
+              "clothes-description-word-order"
+            ],
+            "targetCount": 15
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-06/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-basic-14",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-06/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-15",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-16",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-17",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-18",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-19",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-20",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-21",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-advanced-22",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-06/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-15",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-16",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-17",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-18",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-19",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-06-high-20"
+      ],
+      "releaseIntent": "released"
+    }
+  ]
+}

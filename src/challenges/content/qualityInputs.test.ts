@@ -4,6 +4,32 @@ import { loadChallengeQualityInputs } from './qualityInputs';
 import rawManifest from './pilotManifest';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
 import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
+import { grade1Term1EnglishUnit04SupplementalActivities } from './grade1Term1EnglishUnit04SupplementalActivities';
+import { grade1Term1EnglishUnit05SupplementalActivities } from './grade1Term1EnglishUnit05SupplementalActivities';
+import { grade1Term1EnglishUnit06SupplementalActivities } from './grade1Term1EnglishUnit06SupplementalActivities';
+import { grade1Term2MathUnit01SupplementalActivities } from './grade1Term2MathUnit01SupplementalActivities';
+import { grade1Term2MathUnit02SupplementalActivities } from './grade1Term2MathUnit02SupplementalActivities';
+import { grade1Term2MathUnit06SupplementalActivities } from './grade1Term2MathUnit06SupplementalActivities';
+import { grade1Term2MathUnit07SupplementalActivities } from './grade1Term2MathUnit07SupplementalActivities';
+import { grade1Term2MathUnit08SupplementalActivities } from './grade1Term2MathUnit08SupplementalActivities';
+import { grade1Term2EnglishUnit01SupplementalActivities } from './grade1Term2EnglishUnit01SupplementalActivities';
+import { grade1Term2EnglishUnit02SupplementalActivities } from './grade1Term2EnglishUnit02SupplementalActivities';
+import { grade1Term2EnglishUnit03SupplementalActivities } from './grade1Term2EnglishUnit03SupplementalActivities';
+import { grade1Term2EnglishUnit04SupplementalActivities } from './grade1Term2EnglishUnit04SupplementalActivities';
+import { grade1Term2EnglishUnit05SupplementalActivities } from './grade1Term2EnglishUnit05SupplementalActivities';
+import { grade1Term2EnglishUnit06SupplementalActivities } from './grade1Term2EnglishUnit06SupplementalActivities';
+import { grade1Term2ChineseSemesterSupplementalActivities } from './grade1Term2ChineseSemesterSupplementalActivities';
+import { grade2Term1ChineseUnit04SupplementalActivities } from './grade2Term1ChineseUnit04SupplementalActivities';
+import { grade2Term1ChineseUnit05SupplementalActivities } from './grade2Term1ChineseUnit05SupplementalActivities';
+import { grade2Term1ChineseUnit06SupplementalActivities } from './grade2Term1ChineseUnit06SupplementalActivities';
+import { grade2Term1ChineseUnit07SupplementalActivities } from './grade2Term1ChineseUnit07SupplementalActivities';
+import { grade2Term1ChineseUnit08SupplementalActivities } from './grade2Term1ChineseUnit08SupplementalActivities';
+import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
+import { grade2Term1MathUnit08SupplementalActivities } from './grade2Term1MathUnit08SupplementalActivities';
+import { grade2Term1MathUnit09SupplementalActivities } from './grade2Term1MathUnit09SupplementalActivities';
+import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1EnglishUnit01SupplementalActivities';
+import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
+import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
 import { validateChallengeManifest } from './validateManifest';
 
 function clonePilotManifest(): ChallengeManifest {
@@ -34,7 +60,7 @@ describe('loadChallengeQualityInputs', () => {
 
   it('loads supplemental question sources for a semester-only manifest', async () => {
     const manifest = clonePilotManifest();
-    manifest.groups = manifest.groups.filter(({ definition }) => definition.kind === 'semester');
+    manifest.groups = manifest.groups.filter(({ definition }) => definition.id === 'grade-2-term-1-math-first-half');
     const referencedQuestionIds = new Set(manifest.groups.flatMap(({ questionIds }) => questionIds));
     manifest.questions = manifest.questions.filter(({ questionId }) => referencedQuestionIds.has(questionId));
 
@@ -54,6 +80,290 @@ describe('loadChallengeQualityInputs', () => {
     expect(question).toBeDefined();
     expect(input.activitiesById.has(activityId)).toBe(true);
     expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-3/term-1/english/unit-01');
+  });
+
+  it('loads Grade 1 English Unit 4 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term1EnglishUnit04SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-1/english/unit-04');
+  });
+
+  it('loads Grade 1 English Unit 5 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term1EnglishUnit05SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-1/english/unit-05');
+  });
+
+  it('loads Grade 1 English Unit 6 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term1EnglishUnit06SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-1/english/unit-06');
+  });
+
+  it('loads Grade 1 Term 2 Math Unit 1 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term2MathUnit01SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/math/unit-01');
+  });
+
+  it('loads Grade 1 Term 2 Math Unit 2 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term2MathUnit02SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/math/unit-02');
+  });
+
+  it('loads Grade 1 Term 2 Math Unit 6 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term2MathUnit06SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/math/unit-06');
+  });
+
+  it('loads Grade 1 Term 2 Math Unit 7 supplemental activities from their declared unit', async () => {
+    const activityId = grade1Term2MathUnit07SupplementalActivities[0]!.activity.id;
+    const question = rawManifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(rawManifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/math/unit-07');
+  });
+
+  it('loads Grade 1 Term 2 Math Unit 8 supplemental activities from their declared unit', async () => {
+    const activityId = grade1Term2MathUnit08SupplementalActivities[0]!.activity.id;
+    const question = rawManifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(rawManifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/math/unit-08');
+  });
+
+  it('loads Grade 1 Term 2 English Unit 1 supplemental activities from their declared unit', async () => {
+    const activityId = grade1Term2EnglishUnit01SupplementalActivities[0]!.activity.id;
+    const question = rawManifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(rawManifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/english/unit-01');
+  });
+
+  it('loads Grade 1 Term 2 English Unit 2 supplemental activities from their declared unit', async () => {
+    const activityId = grade1Term2EnglishUnit02SupplementalActivities[0]!.activity.id;
+    const question = rawManifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(rawManifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/english/unit-02');
+  });
+
+  it('loads Grade 1 Term 2 English Unit 3 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term2EnglishUnit03SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/english/unit-03');
+  });
+
+  it('loads Grade 1 Term 2 English Unit 4 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term2EnglishUnit04SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/english/unit-04');
+  });
+
+  it('loads Grade 2 Chinese Unit 4 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1ChineseUnit04SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/chinese/unit-04');
+  });
+
+  it('loads Grade 2 Chinese Unit 5 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1ChineseUnit05SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/chinese/unit-05');
+  });
+
+  it('loads Grade 2 Chinese Unit 6 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1ChineseUnit06SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/chinese/unit-06');
+  });
+
+  it('loads Grade 2 Chinese Unit 7 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1ChineseUnit07SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/chinese/unit-07');
+  });
+
+  it('loads Grade 2 Chinese Unit 8 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1ChineseUnit08SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/chinese/unit-08');
+  });
+
+  it('loads Grade 2 Math Unit 4 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1MathUnit04SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-04');
+  });
+
+  it('loads Grade 2 Math Unit 8 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1MathUnit08SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-08');
+  });
+
+  it('loads Grade 2 Math Unit 9 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1MathUnit09SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-09');
+  });
+
+  it('loads Grade 2 English Unit 1 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1EnglishUnit01SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(grade2Term1EnglishUnit01SupplementalActivities).toHaveLength(54);
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/english/unit-01');
+  });
+
+  it('loads Grade 2 English Unit 2 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1EnglishUnit02SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(grade2Term1EnglishUnit02SupplementalActivities).toHaveLength(54);
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/english/unit-02');
+  });
+
+  it('loads Grade 2 English Unit 3 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade2Term1EnglishUnit03SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(grade2Term1EnglishUnit03SupplementalActivities).toHaveLength(56);
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/english/unit-03');
+  });
+
+  it('loads Grade 1 Term 2 English Unit 5 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term2EnglishUnit05SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/english/unit-05');
+  });
+
+  it('loads Grade 1 Term 2 English Unit 6 supplemental activities from their declared unit', async () => {
+    const manifest = clonePilotManifest();
+    const activityId = grade1Term2EnglishUnit06SupplementalActivities[0]!.activity.id;
+    const question = manifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(manifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/english/unit-06');
+  });
+
+  it('loads Grade 1 Term 2 Chinese semester supplements from their mapped themes', async () => {
+    const activityId = grade1Term2ChineseSemesterSupplementalActivities[0]!.activity.id;
+    const question = rawManifest.questions.find(({ activityId: id }) => id === activityId);
+    const input = await loadChallengeQualityInputs(rawManifest);
+
+    expect(question).toBeDefined();
+    expect(input.activitiesById.has(activityId)).toBe(true);
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-1/term-2/chinese/unit-01');
   });
 
   it('blocks Grade 1 Term 1 review links that point to a different term', async () => {

@@ -466,6 +466,7 @@
 - `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Unit 9 challenge' --workers=1`：U9 课程入口端到端 1/1 通过；浏览器构建启动阻断由 `pilotContent.ts` 中未使用的局部变量触发，删除无用途的变量后 `npm run build` 与该 E2E 均通过。
 - `npm run build`：通过；最大 JavaScript 分块为核心闯关清单 450.54 kB，U9 清单片段 52.18 kB，没有超过 500 kB 的提示。该结果不说明闯关路由所需分块的合计传输量下降。
 - `git diff --check`：通过。
+
 - 以上是本地自动化及作者自审证据；独立教育者审核、远端 Actions、部署和 V1.0 发布条件仍未完成。
 
 ## PR #6 代码与题目质量复核修正（2026-10-23，本地）
@@ -479,3 +480,405 @@
 - `npm run build`：TypeScript 与 Vite 生产构建通过；最大 JavaScript 分块为核心闯关清单 450.44 kB，没有超过 500 kB 的提示。分块大小不代表闯关路由所需 JavaScript 的合计传输量。
 - `npm run test:e2e -- --workers=1`：48/48 通过，用时 6.3 分钟；覆盖全课程目录扫描、闯关入口、窄屏与主题、答题保存/恢复、评分流程及原学习进度保持。
 - `git diff --check`：通过。以上本地结果不能代替远端 CI、部署或独立教育工作者审核；界面未改动，因此没有另做截图视觉检查。
+
+## 一年级上册英语单元 2 挑战组（2026-10-26，本地工作区）
+
+- 全量 `npm run test:unit -- --reporter=dot`：177 个测试文件、1,228 项通过。新增清单后，首次全量运行发现旧测试固定假设只有 13 组/65 个任务，并且质量报告测试夹具未加载新增英语题源；通过更新夹具与断言解决，未修改运行时质量算法。修复后的全量测试通过。
+- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 1 English Unit 2 challenge' --workers=1`：1/1 通过。第一次沙箱尝试在页面运行前因 Chromium `MachPortRendezvous` 权限失败；同一命令经正常环境执行后通过。
+- `npm run challenge:quality -- --report-dir /tmp/starry-island-grade1-english-u2-quality-final`：18 个发布组、90 个任务完成 9,000/9,000 次固定种子组卷模拟；发布门禁通过，0 个阻断、574 条相似题提示。单元 2 为 ready，五任务 500/500 成功；16 条相似题提示都指向该单元现有课程活动，原创补充题未命中。相似题提示不是重复判定。
+- `npm run challenge:coverage -- --report-dir /tmp/starry-island-grade1-english-u2-coverage-final`：全仓 14/254 个单元组、4/108 个阶段组；单元任务 70/1,270，阶段任务 20/540。一年级 11/29 个单元组、3/18 个阶段组，尚缺 18 个单元组和 15 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /tmp/starry-island-grade1-english-u2-source-final`：读取 254/254 个正式单元；达到每难度最低素材量的单元为 0/0/0。该素材盘点不代表闯关候选的审校或发布情况。
+- `npm run build`：通过，无超过 500 kB 的 JavaScript 分块提示；最大 `challenge-manifest` 分块 450.44 kB。低于单块提示线不代表页面总传输量或首屏加载已下降。
+- 本节是本地实现和作者自审的记录；独立教学审核、一年级完整覆盖、远端 Actions、部署和正式发布仍未完成。本轮没有提交或推送课程改动。
+
+## 一年级上册英语单元 3「Animals」挑战组（2026-10-26，本地工作区）
+
+- `npm run test:unit -- --reporter=dot`：178 个测试文件、1,231 项通过；U3 相关 10 个测试文件、74 项通过。
+- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 1 English Unit 3 challenge' --workers=1`：1/1 通过，验证课程上下文入口、挑战组和现有课程进度不变。
+- `npm run challenge:quality -- --report-dir /tmp/starry-island-grade1-english-u3-quality-final2`：19 个组、95 个任务完成 9,500/9,500 次固定种子模拟；0 个阻断、575 条提示。U3 五项任务 500/500 成功，质量状态为 `ready`；一条相似题提示经作者复核属于同一排序指令下的不同句子目标，不是精确重复。
+- `npm run challenge:coverage -- --report-dir /tmp/starry-island-grade1-english-u3-coverage-final2`：15/254 个单元组、4/108 个阶段组；单元任务 75/1,270，阶段任务 20/540。一年级 12/29 个单元组、3/18 个阶段组，缺 17 个单元组和 15 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /tmp/starry-island-grade1-english-u3-source-audit-final2`：读取 254/254 个正式单元；基础、进阶、高阶达到最低兼容课程素材量的单元均为 0。此盘点只统计课程活动，不代表审题通过。
+- `npm run build`：通过，无超过 500 kB 的 JavaScript 分块提示；最大 `challenge-manifest` 为 450.44 kB。`git diff --check` 与整体验收记录在本轮最终检查中。
+- U3 题池为 26 道保留课程活动与 64 道原创补充题；逐题自审台账覆盖 90 道候选。内容作者未获得独立教育工作者复核；学校开课状态仍未确认。课程学习 Task、进度和交互保持不变；本地内容未提交或推送。
+
+## 一年级上册英语单元 4「Numbers」挑战组（2026-10-26，本地工作区）
+
+- U4 专项题库测试 3/3 通过；完整单测 179 个测试文件、1,237 项通过；覆盖率套件同样 1,237 项通过（语句 89.66%、分支 84.03%）。并发运行单测和覆盖率时，质量报告的 5 秒测试单独超时；停止并发后两套全量命令均通过。
+- `npm run challenge:quality`：20 个组、100 个任务固定种子模拟通过，0 个阻断项；U4 `ready`，每档 30 道有效候选，五任务 500/500 成功。该组无精确重复；4 条相似模板提示均为课程原题在不同任务间复用。
+- `npm run challenge:coverage`：16/254 个单元组、4/108 个阶段组；80/1,270 个单元任务、20/540 个阶段任务。一年级 13/29 个单元组、3/18 个阶段组，缺 16 个单元组和 15 个阶段组。
+- `npm run challenge:source-audit`：盘点 254/254 个正式单元；基础、进阶、高阶达到每档 30 条兼容课程素材的单元均为 0。源素材盘点和挑战题池的原创补充量分别记录，不能相互替代。
+- `npm run build`：通过，无超过 500 kB 的 JavaScript 分块提示；最大闯关题库清单块 450.44 kB。U4 窄屏深色/减少动态效果/键盘进入课程挑战的定向 E2E 1/1 通过；`npm run test:e2e -- --workers=1` 完整 60/60 通过（5.5 分钟）；`git diff --check` 通过。
+- 90 道候选逐题作者自审；修正高阶题把铅笔量词写成“本”的问题，并同步审核指纹。独立教育工作者审核未完成；学校开课状态未确认。课程 Task、进度和答题交互未修改。本地改动未提交或推送。
+
+## 一年级上册英语单元 5「Colours」闯关组（2026-10-26，本地工作区）
+
+- U5 专项测试 3/3 通过；完整 `npm run test:unit -- --reporter=dot` 为 180 个测试文件、1,243 项通过。`npm run test:coverage -- --reporter=dot` 同样 1,243 项通过，语句覆盖率 89.69%、分支 84.05%、函数 91.4%、行 92.06%。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-u5-quality-final`：21 组、105 个任务完成 10,500/10,500 次固定种子模拟；0 个阻断项、596 条信息提示。U5 为 `ready`，每档 30 道有效候选，五项任务 500/500 成功，17 条相似模板提示为信息项。
+- `npm run challenge:coverage`：17/254 个正式单元组、4/108 个阶段组；单元任务 85/1,270、阶段任务 20/540。一年级 14/29 个单元组、3/18 个阶段组，仍缺 15 个单元组和 15 个阶段组。`npm run challenge:source-audit` 扫描 254/254 个单元；英语单元 5 每档有 16 道兼容课程活动、无重复，距最低 30 道候选各差 14 道。
+- `npm run build`：通过；`ChallengePage` 最大 457.67 kB，核心闯关清单块 450.44 kB，无超过 500 kB 的 JavaScript 分块提示。未以此推断页面总传输量或性能改善。
+- U5 课程入口 E2E 1/1 通过；曾有一轮完整 E2E 60/61，唯一失败为五年级语文题目页面的 390px `scrollWidth` 检查。该用例定向重复 5 次均通过，最终完整 `npm run test:e2e -- --workers=1` 为 61/61 通过（5.6 分钟）；失败未复现，具体触发原因尚未确定，因此未据此改动产品代码。
+- 题目台账覆盖 90 道候选；42 道原创补充题经作者逐题自审。学校开课状态仍未确认；独立教育工作者审核、远端 Actions 与正式发布未完成。本地内容未提交或推送。
+
+## 一年级上册语文与英语学期阶段组收尾（2026-10-26，本地工作区）
+
+- 新增语文前半、后半、期末综合和英语前半、后半、期末综合六个学期组。语文按课程主题顺序映射，英语按单元顺序映射；英语学校开设状态仍为未确认。六份逐题台账共 1,848 条候选记录，题目映射覆盖已登记主题知识点；原创题与复用课程题均由作者自审，独立教育工作者审核尚未完成。
+- `npm run test:unit -- --reporter=dot`：182 个测试文件、1,261 项通过。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-term1-stages-quality-final`：28 个发布组、140 个任务均为 `ready`；每任务 100 次固定种子模拟，合计 14,000 次成功；0 个阻断项，807 条相似题提示。提示需人工语义复核，不等同精确重复判定。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-term1-stages-coverage-final`：18/254 个正式单元组、10/108 个阶段组；单元任务 90/1,270、阶段任务 50/540。一年级仍为 15/29 个单元组、9/18 个阶段组，尚缺 14 个单元组和 9 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-term1-stages-source-audit-final`：读取 254/254 个正式单元；达到每难度 30 条最低兼容课程活动量的单元为 0。该盘点只统计课程源素材，不代表闯关候选审核状态。
+- `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 1 Chinese theme-based semester stage' --workers=1`：1/1 通过，覆盖 390px 窄屏、深色主题、减少动态效果、阶段入口和课程进度保持。
+- `npm run build` 与 `git diff --check`：通过；最大 JavaScript 分块 `ChallengePage` 为 459.56 kB，阶段清单片段为 360.72 kB，没有超过 500 kB 的分块提示。
+- 这是上册阶段组的本地实现记录。一年级下册、其他年级、独立教学审核、远端 Actions、部署与正式发布仍未完成；本地改动尚未提交或推送。
+
+## 一年级下册数学单元 1「认识图形（二）」及当前复核（2026-10-26）
+
+- 题池 90 道、每档 30 道；48 道课程活动中选择 46 道进入挑战池，排除两道跨任务重复模板，新增 44 道原创题。原课程活动和六个学习 Task 未改动。90 道候选的自审记录见[题目台账](grade-1-term-2-math-unit-01-question-review.tsv)。
+- TDD 复核发现基础、进阶题池各一组跨任务同题干提示；先观察回归测试失败，再从挑战池移除两道重复候选并加原创题替代。修复后同难度跨任务重复为 0，答案键、知识点映射、审核指纹和台账一致。作者自审不替代独立教育工作者审核。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-term2-math-u1-quality-review-final`：全清单 29 个发布组、145 个任务通过，0 阻断、0 精确重复、831 条相似题提示；U1 `ready`，五项任务 500/500 模拟成功。U1 的 24 条提示均为跨难度课程题模板复用；新原创题无相似题提示。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-coverage-final`：19/254 个正式单元组、10/108 个阶段组；单元任务 95/1,270、阶段任务 50/540。一年级已登记 16/29 个正式单元组、9/18 个阶段组，仍缺 13 个单元组和 9 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-source-audit-final`：扫描 254/254 个正式课程单元；基础、进阶、高阶达到每档 30 条唯一兼容课程素材的单元数均为 0。该盘点只统计课程素材，不代表闯关题目审校。
+- `npm run test:unit` 与 `npm run test:coverage` 均为 184 个测试文件、1,270 项通过；覆盖率语句 89.81%、分支 84.13%、函数 91.54%、行 92.18%。
+- U1 课程页入口 E2E 1/1 通过，包含学习进度保持检查。`npm run build` 通过；最大 JavaScript 分块为 `ChallengePage` 459.79 kB，没有超过 500 kB 的分块警告。`git diff --check` 通过。
+- GitHub Actions run `40198229694` 失败于旧提交 `2ee37e6`，问题包括质量 CLI 测试 5 秒超时、存储进度分支覆盖不足和两项过时 E2E 断言。修复提交 `3480493` 上 PR #6 的最新 `verify` 检查及 Cloudflare Pages 预览部署成功；该远端提交不含本地未提交课程扩展。
+- 以上为本地实施、作者自审和自动化验证；一年级其余下册内容、独立教学审核、年级完整覆盖放行及正式发布仍未完成。
+
+## 一年级下册数学单元 2「20 以内的退位减法」（2026-10-26）
+
+- 题池 90 道、每档 30 道；48 道课程活动中保留 44 道，排除 4 道高阶候选，新增 46 道原创题。课程活动和学习 Task 保持不变。全部 90 道题目记录在[中文审校台账](grade-1-term-2-math-unit-02-question-review.tsv)，作者自审不等于独立教育工作者审核。
+- 审查发现高阶原题存在两道跨难度重复算式、一题重复的步骤排序，以及一题超出本单元已核实方法范围。它们仅从闯关候选池排除。补入两道原创高阶题后，按答案键、指纹、知识点与审核台账复核。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-u2-quality-final`：30 个发布组、150 个任务，0 个阻断、865 条信息提示；U2 `ready`，五项任务 500/500 固定种子模拟通过。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-u2-coverage-final`：20/254 个正式单元组、10/108 个阶段组；单元任务 100/1,270、阶段任务 50/540。一年级 17/29 个单元组、9/18 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-u2-source-audit-final`：读取 254/254 个正式课程单元；达到每难度 30 条最低兼容课程素材量的单元仍为 0。
+- 定向题库和映射测试 133/133 通过；全量 `npm run test:unit -- --reporter=dot` 和 `npm run test:coverage -- --reporter=dot` 均为 186 个文件、1,281 项通过。覆盖率语句 89.85%、分支 84.16%、函数 91.56%、行 92.20%。
+- U2 课程页入口 E2E 1/1 通过，并核对课程学习任务和进度不变；完整 `npm run test:e2e -- --workers=1` 为 65/65。`npm run build` 和 `git diff --check` 通过；最大 JavaScript 分块 `ChallengePage` 为 459.80 kB，没有超过 500 kB 的分块提示。
+- 全量检查首次发现 `growthSummaryReader.test.ts` 仍断言 145 个任务、`qualityCli.test.ts` 仍断言 29 个发布组；两处快照已更新为 150 和 30，重跑全量单测通过。
+
+## 一年级下册数学单元 3「分类与整理」闯关组复核（2026-10-26，本地）
+
+- `npm run test:unit -- --reporter=dot`：188 个测试文件、1,292 项通过。专项复核涉及 6 个测试文件、68 项通过；逐题台账与清单同步验证通过。
+- `npm run test:coverage -- --reporter=dot`：188 个文件、1,292 项通过；语句覆盖率 89.90%、分支 84.15%、函数 91.61%、行 92.25%。覆盖率插桩下的慢测试曾超过原 5 秒默认上限；将 Vitest 默认超时调至 15 秒并对少数重型模拟测试设局部余量后，全套通过，断言与模拟种子数未降低。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-grade1-term2-math-u3-quality-review2`：31 个已发布组和 155 个任务全部通过，0 个阻断、867 条相似题提示、0 组精确重复。U3 `ready`，五项任务 500/500 固定种子组卷成功；同难度提示为 0，两条跨难度不同数值练习提示经人工复核保留。
+- `npm run challenge:coverage`：21/254 个正式单元组、10/108 个学期阶段组；单元任务 105/1,270、阶段任务 50/540。一年级为 18/29 个单元组、9/18 个阶段组，完整覆盖仍未完成。
+- `npm run challenge:source-audit`：扫描 254/254 个正式课程单元；达到基础、进阶、高阶每档最低 30 条兼容课程素材量的正式单元均为 0。源素材盘点不代表候选题审校或教学审核。
+- 完整 `npm run test:e2e -- --workers=1`：66/66 通过；U3 重复题替换后的入口定向 E2E 1/1 通过，核对课程学习任务和进度未变。
+- `npm run build`：通过，无超过 500 kB 的 JavaScript 分块提示；最大块为核心闯关清单 450.44 kB，`ChallengePage` 为 377.30 kB。通过在 Vite 分块配置中单独拆分既有的一年级上册数学、英语清单，修复实际出现的 775.83 kB `ChallengePage` 超限块；此优化分配单块大小，不据此声称总传输量下降。
+- `git diff --check`：最终结果见本轮交付检查。题目台账为作者自审，尚未进行独立教育工作者审核；完整一年级覆盖、远端 Actions 和发布状态均未完成。
+
+## 一年级下册数学单元 4 最终验证（2026-10-26）
+
+- `npm run test:unit -- --reporter=dot`：190 个测试文件、1,301 项通过。
+- `npm run test:coverage -- --reporter=dot`：190 个测试文件、1,301 项通过；语句 89.94%、分支 84.18%、函数 91.64%、行 92.29%。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-grade1-term2-math-u4-quality-final`：32 个发布组、160 个任务；0 个阻断项、867 条相似题提示。U4 `ready`，三个难度档各 30 道有效题，五项任务固定种子模拟 500/500 成功，U4 没有质量警告。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-grade1-term2-math-u4-coverage-final`：22/254 个正式单元组、10/108 个阶段组；单元任务 110/1,270、阶段任务 50/540。一年级 19/29 个单元组、9/18 个阶段组，仍缺 10 个单元组和 9 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-grade1-term2-math-u4-source-final`：读取 254/254 个正式单元；基础、进阶、高阶均有 0 个单元达到每档 30 道兼容课程素材门槛。
+- `npm run build`：通过；最大 JavaScript 分块为 `challenge-manifest` 的 450.44 kB，没有超过 500 kB 的分块提示。该分块值不代表挑战路由所需资源合计。
+- `npm run test:e2e -- --workers=1`：66/66 通过。完整回归曾捕获一年级上册数学 U4 的长匹配文案把右侧列撑宽至 202px、整页宽度达到 401px 的问题；在 `game.css` 为匹配列和按钮文字补充可收缩换行规则，并在窄屏用例固定到该配对题后，全量回归通过。该样式同时用于学习和闯关的匹配活动。
+- `git diff --check`：通过。题目由作者逐题自审；独立教育审核、一年级完整覆盖、远端 Actions 和正式发布仍未完成。
+
+## 一年级下册数学单元 5 最终验证（2026-10-26）
+
+- U5 题池共有 90 道候选，基础、进阶、高阶各 30 道；原课程 48 道活动保留 21 道不同目标候选，另 27 道只从挑战池排除；新增 69 道原创题。中文逐题台账记录所有候选题的答案、知识点、题意核对和作者自审状态。学习任务、课程活动和进度未修改。
+- U5 定向集成测试 11 个文件、118 项通过。完整 `npm run test:unit -- --reporter=dot`：192 个测试文件、1,307 项通过；`npm run test:coverage -- --reporter=dot`：同样 192 个文件、1,307 项通过，语句 89.96%、分支 84.16%、函数 91.66%、行 92.32%。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-grade1-term2-math-u5-quality-final`：33 个已发布组、165 个任务完成 16,500/16,500 次固定种子模拟，0 个阻断、867 条全库提示；U5 为 `ready`，四个核心知识点完整，五任务 500/500 成功且该组没有质量警告。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-grade1-term2-math-u5-coverage-final`：23/254 个正式单元组、10/108 个阶段组；单元任务 115/1,270、阶段任务 50/540。一年级为 20/29 个单元组、9/18 个阶段组，仍缺 9 个单元组和 9 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-grade1-term2-math-u5-source-final`：扫描 254/254 个正式单元；基础、进阶、高阶均无单元达到每档 30 道兼容课程素材量。该素材盘点不等同题目审核。
+- `npm run build`：通过，最大 JavaScript 分块为 `challenge-manifest` 的 450.44 kB，无超过 500 kB 的提示。首次构建发现并移除了 U5 补充题模块中的未使用常量，随后重新构建通过。
+- `npm run test:e2e -- --workers=1`：完整浏览器回归 66/66 通过；新增 U5 专项浏览器用例随后以 `npx playwright test tests/e2e/challenge-flow.spec.ts --grep "Grade 1 Term 2 Math Unit 5" --workers=1` 定向运行 1/1 通过，覆盖窄屏深色主题、键盘进入、六个原学习任务、五个挑战任务和学习进度保持。
+- 以上为本地证据；课程题目仅完成作者自审，独立教育工作者审核、一年级完整覆盖、远端 Actions 和正式发布仍未完成。
+
+## 一年级下册数学单元 6 最终验证（2026-10-26）
+
+- U6 候选池共 90 道，基础、进阶、高阶各 30 道；48 道课程活动中选取 15 道不同目标题（每档 5 道），并新增 75 道原创题（每档 25 道）。逐题记录见[U6 中文审校台账](grade-1-term-2-math-unit-06-question-review.tsv)。原学习活动、六个学习 Task、进度和交互均未修改。
+- U6 专项 4 个测试文件、53 项通过。完整 `npm run test:unit -- --reporter=dot`：194 个文件、1,315 项通过；`npm run test:coverage -- --reporter=dot`：同样 194 个文件、1,315 项通过，语句覆盖率 89.98%、分支 84.19%、函数 91.69%、行 92.36%。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-u6-quality-final`：34 个已登记组、170 个任务完成 17,000/17,000 次固定种子模拟，0 个阻断、867 条全库提示；U6 状态 `ready`，三档各 30 道有效候选、三个知识点覆盖完整，五项任务 500/500 成功，组内 0 条相似题提示和 0 条内容指纹变化。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-u6-coverage-final`：24/254 个单元组、10/108 个阶段组；单元任务 120/1,270、阶段任务 50/540。一年级当前为 21/29 个单元组、9/18 个阶段组，仍缺 8 个单元组和 9 个阶段组。`npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-u6-source-final` 扫描 254/254 个正式单元，基础、进阶、高阶均无单元达到每档 30 道兼容课程素材量；素材盘点不等于题目审校。
+- `npm run build` 通过；最大 JavaScript 分块为 `challenge-manifest` 的 450.44 kB，没有超过 500 kB 的提示。
+- `npm run test:e2e -- --workers=1`：完整浏览器回归 68/68 通过。新增 U6 课程入口用例确认可从课程页进入挑战，原六个学习任务和学习进度保持不变；窄屏、深色主题、键盘与减少动态效果路径均纳入当前挑战入口回归。
+- `git diff --check` 通过。以上为本地工作区证据；U6 题目仅完成作者自审，独立教育工作者审核、全年级覆盖、一年级完整放行、远端 Actions 和正式发布仍未完成。
+
+## 一年级下册数学单元 7 最终验证（2026-10-26，本地工作区）
+
+- U7 候选池共 90 道，基础、进阶、高阶各 30 道；48 道原课程活动中选取 15 道不同目标活动，并新增 75 道原创题。逐题记录见[U7 中文审校台账](grade-1-term-2-math-unit-07-question-review.tsv)。原学习活动、六个学习 Task、进度和交互均未修改。
+- U7 专项及集成测试 126 项通过；全量 `npm run test:unit -- --reporter=dot`：196 个测试文件、1,323 项通过。完整 `npm run test:e2e -- --workers=1`：69/69 通过，含 U7 课程入口回归；确认原学习任务列表与学习进度不变。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-u7-quality-final`：35 个已登记组、175 个任务完成 17,500/17,500 次固定种子模拟，0 个阻断、867 条全库信息提示；U7 状态 `ready`，各难度有效候选 30 道、知识点覆盖完整，五个任务 500/500 成功，组内无重复或相似题质量提示。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-u7-coverage-final`：25/254 个正式单元组、10/108 个学期阶段组；单元任务 125/1,270，阶段任务 50/540。一年级当前为 22/29 个单元组、9/18 个阶段组，仍缺 7 个单元组和 9 个阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-u7-source-final`：扫描 254/254 个正式课程单元；基础、进阶、高阶均无单元达到每档 30 道兼容课程素材量。源素材盘点不等同题目审核。
+- `npm run build`：通过，无超过 500 kB 的 JavaScript 分块提示；最大块为 `ChallengePage` 462.33 kB。首次构建拦截了 U7 补题模块中的一个未使用常量，移除后构建通过。
+- `git diff --check` 通过。所有 90 道题当前只有作者自审；独立教育工作者审核、一年级覆盖放行、远端 Actions 和正式发布仍未完成。
+
+## 一年级下册数学单元 8 最终验证（2026-10-26，本地工作区）
+
+- U8 候选池共 90 道，基础、进阶、高阶各 30 道；从 48 道原课程活动中保留 15 道不同目标题，新增 75 道原创题。逐题作者自审记录见[U8 中文审校台账](grade-1-term-2-math-unit-08-question-review.tsv)，原课程活动、学习 Task、进度和交互保持不变。
+- U8 专项测试和清单映射相关 4 个文件、59 项通过。TDD 增加 10 道代表性题目的知识点断言；首次运行按预期发现数位组成、比较、图形题误带“数列”标签，随后修正 8 道题并同步清单及台账；排序题保留数序标签，金额题标签保持原样。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-u8-quality-tag-review`：整库 36 个已发布组、180 个任务完成 18,000/18,000 次固定种子模拟，0 个阻断、867 条全库提示；U8 状态 `ready`，三档各 30 道有效候选、目标知识点覆盖完整、组内无质量提示，五项任务 500/500 成功。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-u8-coverage-tag-final`：26/254 个正式单元组、10/108 个学期阶段组；单元任务 130/1,270，阶段任务 50/540。一年级为 23/29 个单元组和 9/18 个阶段组，仍缺 6 个下册英语单元组及 9 个下册阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-island-u8-source-tag-final`：扫描 254/254 个正式课程单元；基础、进阶、高阶均无单元达到每档 30 道兼容课程素材量。该素材盘点仅供候选盘点，不代表题目审校结论。
+- 全量 `npm run test:unit -- --reporter=dot` 与 `npm run test:coverage -- --reporter=dot` 均为 198 个测试文件、1,333 项通过；语句覆盖率 90.04%、分支 84.23%、函数 91.75%、行 92.47%。
+- 完整 `npm run test:e2e -- --workers=1`：70/70 通过；知识点标签修正后，U8 课程入口定向 E2E 1/1 通过，原课程任务和学习进度保持不变。`npm run build` 通过，最大 JavaScript 分块 `ChallengePage` 为 486.29 kB，无超过 500 kB 的提示；`git diff --check` 通过。
+- 以上是本地实现、作者自审与自动化验证，不等于独立教育工作者复核。一年级覆盖放行、远端 Actions 和正式发布尚未完成。
+
+## 一年级下册英语单元 1 最终验证（2026-10-26，本地工作区）
+
+- U1 候选池 90 道，基础、进阶、高阶各 30 道；从 48 道原课程活动选择 38 道，排除 10 道跨难度重复候选只作用于闯关池，新增 52 道原创题。详见[逐题作者自审台账](grade-1-term-2-english-unit-01-question-review.tsv)。原课程任务和进度未修改。
+- U1 专项内容测试覆盖候选池、答案键、选项、提示、解释、知识点、源题映射、候选排除、课程入口和台账；全量 npm run test:unit 为 199 个文件、1,339 项通过。
+- npm run challenge:quality：整库 37 组、185 个任务固定种子模拟 18,500/18,500 成功，0 个阻断、871 条信息提示；U1 状态 ready，三档各 30 道有效题，四个知识点均覆盖，五个任务各 100/100 成功。U1 的四条同模板提示已逐题核对，属于词汇、句子或顺序不同的练习，不是重复题。
+- npm run challenge:coverage：27/254 个单元组、10/108 个阶段组；单元任务 135/1,270、阶段任务 50/540。一年级 24/29 个单元组、9/18 个阶段组，仍缺 5 个下册英语单元组和 9 个学期阶段组。
+- npm run build 通过，没有超过 500 kB 的 JavaScript 分块提示；最大块 challenge-manifest 为 450.44 kB，ChallengePage 为 62.18 kB。此次还修正了 Vite 分组规则中的数字正则，启用一年级数学和英语题库独立分块。
+- 课程入口 E2E 曾在分块修正前通过 1/1。分块修正后两次重跑均在 Chromium 启动时因 macOS MachPortRendezvousServer 权限拒绝而未执行测试断言；不将其记为代码回归或通过结果。后续需在浏览器进程可正常启动的环境复跑。
+- 当前题目只有作者自审，不能代替独立教育工作者审核；完整一年级覆盖、远端 Actions 和发布批准尚未完成。
+
+
+## 一年级下册英语单元 2 最终验证（2026-10-26，本地工作区）
+
+- U2 候选池 90 道，三档各 30 道；从 48 道原课程活动选取 38 道，排除 10 道重复候选仅作用于挑战题池，新增 52 道原创题。作者逐题自审台账覆盖全部 90 道，独立教育者复核仍未完成。
+- TDD 复核修正 near 对称位置关系误判和可成立倒装干扰项；相关知识点映射、题目指纹和逐题台账同步更新。
+- U2 状态 ready，四个知识点均覆盖，五个任务固定种子模拟 500/500 成功；整库 38 组、190 个任务模拟 19,000/19,000 成功、0 个阻断、875 条信息提示，其中 U2 有 4 条同模板信息提示。
+- 覆盖盘点：28/254 个单元组、10/108 个阶段组；单元任务 140/1,270、阶段任务 50/540。一年级 25/29 个单元组、9/18 个阶段组，仍缺 4 个单元组、9 个阶段组。
+- npm run test:unit：200 个测试文件、1,344 项通过。U2 课程页入口定向 E2E：1/1 通过，覆盖 390px 深色窄屏、减少动态效果、键盘触发入口、五项任务及学习进度不变。
+- npm run build 通过，最大 JavaScript 分块为 challenge-manifest 450.44 kB，无超过 500 kB 提示。完整 E2E 套件未在本轮运行。
+- 本地未提交或推送；当前题库仅有作者自审，不能替代独立教育工作者审核。一年级完整覆盖、远端 Actions 和正式发布仍未完成。
+
+
+## 一年级下册英语单元 3「Toys」最终验证（2026-10-26，本地工作区）
+
+- U3 候选池 90 道，三档各 30 道；从 48 道原课程活动中保留 38 道，排除 10 道重复候选只作用于闯关池，新增 52 道原创题（基础/进阶/高阶 14/20/18）。测试核对四个知识点映射、题目 ID 与指纹、题量分布、正确答案、选项互异、提示、讲解、实际评分器和逐题台账。
+- U3 专项测试：4/4 通过。作者复核质量报告发现的 4 对同模板候选题，题目使用不同词对或不同句子排序，没有精确重复；保留为信息提示。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-grade1-term2-english-u3-quality-final2`：全库 39 个组、195 个任务，19,500/19,500 次模拟成功，0 个阻断、879 条信息提示；U3 状态 `ready`，五项任务 500/500 成功，四个知识点均覆盖。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-grade1-term2-english-u3-coverage-final2`：29/254 个正式单元组、10/108 个学期阶段组；单元任务 145/1,270、阶段任务 50/540。一年级为 26/29 个单元组和 9/18 个阶段组，仍缺 3 个单元组和 9 个阶段组。
+- `npm run test:unit -- --reporter=dot`：201 个测试文件、1,351 项通过。`npm run test:e2e -- --workers=1`：73/73 通过，用时 5.5 分钟；U3 课程入口及学习进度不变检查通过。
+- `npm run build`：通过，最大 JavaScript 分块为 450.44 kB，无超过 500 kB 提示。`git diff --check` 通过。
+- 本地未提交或推送；候选题仅完成作者自审，独立教育工作者复核、一年级覆盖放行、远端 Actions 和正式发布仍未完成。
+
+## 一年级下册英语单元 4「Food」最终验证（2026-10-27，本地工作区）
+
+- U4 专项测试覆盖来源映射、38 道课程候选保留与 10 道挑战池排除、52 道原创题、90 道候选指纹唯一、三档题量、答案键、互异选项、提示与讲解、知识点、作者审校台账及真实评分器。
+- 质量门禁：U4 状态 `ready`，基础/进阶/高阶有效唯一题各 30 道，四个知识点齐全；五个任务各 100/100 次固定种子模拟成功。全库 40 组、200 个任务完成 20,000/20,000 次模拟，0 阻断、883 条信息提示；U4 的 4 组相似题提示逐对核对后保留为不同词汇目标或句子材料。
+- `npm run test:unit -- --reporter=dot`：202 个测试文件、1,358 项通过。此前发现质量报告测试夹具未包含 U4 补充题、CLI 仍断言 39 组；已补齐夹具并更新为 40 组，相关测试 15/15 通过后全量复跑通过。
+- U4 课程入口定向 E2E 1/1 通过，覆盖窄屏深色与减少动态效果，并确认挑战入口不改变原学习进度。`npm run build` 通过，最大 JavaScript 分块 450.44 kB，无超过 500 kB 提示。
+- `npm run challenge:coverage`：30/254 个正式单元组、10/108 个阶段组；单元任务 150/1,270、阶段任务 50/540。一年级为 27/29 个单元组、9/18 个阶段组，仍缺 2 个单元组和 9 个阶段组。
+- 题库作者自审完成，但独立教育工作者审核未完成；当前验证不构成一年级完整覆盖放行、远端 Actions 或正式发布证明。
+
+## 一年级下册英语单元 5「Drink」最终验证（2026-10-27，本地工作区）
+
+- U5 专项测试覆盖 48 道源题知识点映射、10 道重复课程题仅从闯关池排除、52 道原创题、三档各 30 道候选、题意和答案键、选项、提示、讲解、真实评分器、候选指纹与 90 行中文审校台账。
+- 修正两道与题意不一致的原创答案：把“请求牛奶并认出茶”改为 `Can I have milk?；tea`；把四种饮品按顺序译成中文，答案改为“水、果汁、牛奶、茶”。题库指纹与审校台账同步更新。
+- 定向集成测试 9 个文件、108 项通过，覆盖内容、清单合并、质量报告、命令行、覆盖统计、课程入口映射和成长摘要；全量 `npm run test:unit -- --reporter=dot` 为 203 个测试文件、1,364 项通过。
+- U5 课程入口 E2E 1/1 通过：窄屏、深色主题、减少动态效果、键盘进入挑战；确认六个原学习任务可见且原学习进度不变。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-grade1-term2-english-u5-quality-final`：全库 41 个发布组、205 个任务完成 20,500/20,500 次模拟，0 阻断、887 条信息提示；U5 `ready`，五个任务各 100/100 成功。U5 四对相似模板提示逐对核对，分别为不同词对、饮品词或问句目标，保留为提示。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-grade1-term2-english-u5-coverage-final`：31/254 个单元组、10/108 个阶段组；单元任务 155/1,270、阶段任务 50/540。一年级已登记 28/29 个单元组、9/18 个阶段组。
+- `npm run build` 通过；最大 JavaScript 分块 450.44 kB，无超过 500 kB 提示。`git diff --check` 通过。完整端到端套件未在本轮运行，仅运行 U5 定向入口回归。
+- 独立教育工作者审核和一年级完整覆盖放行尚未完成。
+
+## 一年级下册英语单元 6「Clothes」阶段验证（2026-10-27，本地工作区）
+
+- U6 候选池共 90 道，基础、进阶、高阶各 30 道。从 48 道原课程活动中保留 34 道不同目标题，仅在闯关池排除 14 道重复题；新增 56 道原创题（基础/进阶/高阶 14/22/20）。逐题记录见[U6 中文审校台账](grade-1-term-2-english-unit-06-question-review.tsv)。课程目录还写有颜色描述，但现有 U6 活动未教学颜色词或句型，因此未扩展到颜色题；原课程 Task、学习进度和交互保持不变。
+- 专项及集成回归：11 个测试文件、144 项通过，覆盖题量、知识点映射、答案与提示解释、重复候选排除、清单与质量命令、覆盖统计、课程入口映射和成长统计。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-island-grade1-term2-english-u6-quality-final`：整库 42 个组、210 个任务完成 21,000/21,000 次固定种子模拟，0 个阻断；U6 `ready`，三档各 30 道有效唯一题，四个知识点覆盖完整，五项任务 500/500 成功。两条 U6 信息提示已逐项复核：配对题使用不同衣物词卡，词序题分别排列衬衫和 T 恤句子；题目目标材料不同，不是精确重复。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-island-grade1-term2-english-u6-coverage-final`：32/254 个单元组、10/108 个阶段组；单元任务 160/1,270，阶段任务 50/540。一年级为 29/29 个单元组和 9/18 个阶段组，仍缺下册语文、数学、英语各三个阶段组。
+- U6 课程入口定向 E2E：1/1 通过，确认从课程页进入挑战后六个学习任务和原学习进度保持不变；窄屏、深色主题、键盘进入和减少动态效果路径纳入该测试。`npm run build` 通过，无超过 500 kB 的 JavaScript 分块提示，最大 JavaScript 分块为 450.44 kB。
+- 当前题目仅完成作者逐题自审；独立教育工作者复核、一年级完整覆盖放行、完整端到端套件、远端 Actions 与正式发布尚未完成。
+
+## 一年级覆盖完成与二年级语文单元 2（2026-10-27，本地工作区）
+
+- 全量单测：`npm run test:unit -- --reporter=dot`，208 个测试文件、1,387 项通过。三项初始回归失败分别来自过期的非试点单元夹具、硬编码的成长统计数量和成长索引顺序；修正为真实非试点夹具、按索引动态计数并与清单顺序一致后通过。
+- 浏览器回归：`npm run test:e2e -- --workers=1`，76/76 通过，覆盖课程目录、已有学习流程、闯关、成长、备份/恢复、数据冲突、年级题干密度、窄屏主题与键盘交互。
+- 题库门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-u2-after-fixes`，0 个阻断、897 条信息提示。二年级上册语文 U2 为 `ready`；基础、进阶、高阶分别有 30 道有效唯一候选，六个核心知识点逐档覆盖，五项任务各 100/100 次模拟成功。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-u2-after-fixes`，34/254 个正式单元组、19/108 个学期阶段组；单元任务 170/1,270，阶段任务 95/540。一年级 29/29 个正式单元组、18/18 个阶段组；二年级当前 3/47 个单元组、1/18 个阶段组。
+- 源素材盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-u2-final`，254/254 个正式单元均未达到基础、进阶或高阶每难度 30 道兼容课程素材门槛；该盘点不替代逐题审校。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块 450.44 kB，没有超过 500 kB 的提示。`git diff --check` 通过。
+- 远端 CI 修复证据：原 Quality run `40198229694` 的覆盖率未达到 `src/storage/progress.ts` 的 100% 门槛（语句 97.22%、分支 97.4%），浏览器测试中的挑战答题提示音用例超时，课程刷新冒烟用例未找到页面标题。后续 run `40262064234` 的单测、覆盖率、构建和浏览器步骤全部通过，验证提交 `3480493`；这说明后续代码已修复该 CI 失败，但不回写旧运行状态。该远端运行不包含当前本地未提交的课程扩展。
+- 当前变更尚未提交或推送。题目完成作者自审；独立教育工作者审核和全课程覆盖仍未完成。
+
+## 二年级上册语文单元 3「学习与成长」（2026-10-27，本地工作区）
+
+- 专项与集成回归：U3 专项测试及六个清单/覆盖集成测试通过。全量单测首次运行发现 6 项 `qualityReport.test.ts` 失败；根因是测试自维护的补题夹具未登记 U3 补充活动，而生产质量输入已正确注册。补入 U3 夹具后，该测试文件 10/10 通过，全量单测 209 个文件、1,391 项通过；覆盖率套件同为 209 个文件、1,391 项通过。
+- 浏览器回归：`npm run test:e2e -- --workers=1`，76/76 通过（5.9 分钟）；覆盖现有课程、学习进度保护、闯关、备份/恢复、数据冲突、离线完成、键盘和窄屏交互。
+- 题库质量：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-u3-final`，全库 54 个发布组、270 个任务，0 个阻断、897 条提示。U3 状态 `ready`，五个任务分别完成 100/100 次固定种子组卷模拟，合计 500/500 成功；本组 0 阻断、0 条提示，三档均有 30 道有效唯一候选并覆盖五个知识点。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-u3-final`，登记 35/254 个正式单元组、19/108 个学期阶段组；单元任务 175/1,270、阶段任务 95/540，未发布组 0。二年级已登记 4/47 个单元组和 1/18 个阶段组，仍缺 43 个单元组、17 个阶段组。
+- 源素材盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-u3-final`，254/254 个正式单元未达到三个难度各 30 道兼容课程素材的门槛；当前统计缺口为 10,659 条。这是素材数量和兼容性盘点，不等于审核合格题目。
+- 覆盖率与构建：`npm run test:coverage` 通过（语句 90.32%、分支 84.42%、函数 91.98%、行 92.78%）；`npm run build` 通过，最大 JavaScript 分块 450.44 kB，没有超过 500 kB 的提示。
+- U3 作者逐题自审记录见[逐题审校台账](grade-2-term-1-chinese-unit-03-question-review.tsv)。独立教育工作者复核、二年级完整覆盖和正式发布门禁仍未完成；改动仅在本地，未提交或推送。
+- `git diff --check`：通过。
+
+## 二年级上册语文单元 4「山水风光」（2026-10-27，本地工作区）
+
+- 源素材盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-u4-reviewed`，254/254 个正式单元均未达到每档 30 道兼容课程素材门槛；U4 每档有 16 道兼容课程题，缺 14 道。原课程内容和 48 道学习活动保持不变。
+- 逐题复核：[U4 中文审校台账](grade-2-term-1-chinese-unit-04-question-review.tsv)登记 90 道候选；基础、进阶、高阶各 30 道，其中新增原创题各 14 道。复核并修正两处把桃子带入《葡萄沟》情境的内容、一道未完整回答开头/主体/结尾的题目、一个知识点映射，以及与原课程题重复的词义配对；题目、答案键、提示、解释、台账和审核指纹已同步。题目由作者自审，独立教育工作者复核未完成。
+- 专项单测：`grade2Term1ChineseUnit04.test.ts` 的 4 项通过；全量 `npm run test:unit -- --reporter=dot` 为 210 个测试文件、1,397 项通过。
+- 覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot`，210 个测试文件、1,397 项通过；语句 90.33%、分支 84.41%、函数 92.00%、行 92.81%。
+- 课程入口浏览器回归：`npm run test:e2e -- --workers=1 --grep "Grade 2 Chinese Unit 4"`，1/1 通过；窄屏、深色主题、减少动态效果与键盘进入路径均在测试中，确认六个原学习任务仍在且原学习进度未改变。本轮未重跑完整 E2E 套件。
+- 题库门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-u4-reviewed`，全库 55 组、275 个任务、0 个阻断、897 条信息提示。U4 状态 `ready`，五个任务合计 500/500 次固定种子组卷模拟成功；三档各 30 道有效唯一候选且覆盖五个知识点，本组无阻断或提示。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-u4-reviewed`，36/254 个正式单元组、19/108 个学期阶段组；单元任务 180/1,270、阶段任务 95/540。二年级当前 5/47 个单元组、1/18 个阶段组，仍缺 42 个单元组和 17 个阶段组。
+- `npm run build` 通过，最大 JavaScript 分块 450.44 kB，无超过 500 kB 的提示；`git diff --check` 通过。完整课程覆盖、独立教育审核、完整 E2E 回归、远端 Actions 与正式发布尚未完成。
+- 以上为本地自动化及作者自审证据；独立教育者审核、远端 Actions、部署和 V1.0 发布条件仍未完成。
+
+## 二年级上册语文单元 5「观察与思考」（2026-10-27，本地工作区）
+
+- 专项与清单集成：U5 专项测试以及 `pilotContent`、`pilotManifest`、覆盖、质量输入/报告/CLI、课程入口测试共 8 个文件、114 项通过。测试核对 48 道原课程活动和六个学习任务保留，42 道新增题的独立答案、映射、题干/提示泄漏、指纹、唯一性与 90 行中文审校台账一致。
+- 全量单测：`npm run test:unit -- --reporter=dot`，211 个测试文件、1,403 项通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot`，211 个测试文件、1,403 项通过；语句 90.34%、分支 84.39%、函数 92.02%、行 92.83%。
+- 浏览器回归：`npm run test:e2e -- --workers=1 --grep "Grade 2 Chinese Unit 5"`，1/1 通过。用例核对课程页六个原学习任务、键盘打开闯关、窄屏深色与减少动态效果下进入题目，并确认课程进度未变化；本轮未重跑完整 E2E 套件。
+- 题库质量：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-u5-final`，全库 56 组、280 个任务，0 个阻断、897 条提示。U5 状态 `ready`，五个任务各完成 100/100 次固定种子模拟，总计 500/500；三档各 30 道有效唯一候选并覆盖全部五个知识点，本组 0 阻断、0 条相似题提示。
+- 覆盖与源素材：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-u5-final` 报告 37/254 个单元组、19/108 个学期组，单元任务 185/1,270、学期任务 95/540；`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-u5-final` 完成 254 个单元盘点。源素材门槛只反映课程兼容活动数量，不代表审核合格题量。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块 450.44 kB，没有超过 500 kB 的提示。
+- 以上是本地自动检查与作者逐题自审。独立教育者复核、完整 E2E 回归、远端 Actions、二年级整体放行和正式发布仍未完成。
+
+## 2026-10-27 二年级上册语文单元 6 验证
+
+- 专项集成：U6 内容测试及 `pilotContent`、`pilotManifest`、覆盖、质量输入/报告、课程入口测试共 7 个文件、111 项通过。检查保留 48 道原课程活动与六个学习任务，新增 42 道原创题独立答案、生产评分映射、三选项、题干/提示泄漏、五个知识点、唯一性、指纹和 90 行中文审校台账。
+- 全量单测：`npm run test:unit -- --reporter=dot`，212 个测试文件、1,409 项通过。
+- 全量覆盖率：`npm run test:coverage -- --reporter=dot --testTimeout=30000`，212 个测试文件、1,409 项通过；语句 90.35%、分支 84.38%、函数 92.04%、行 92.86%。延长超时是为覆盖率运行中的既有重型测试留出时间。
+- 浏览器回归：`npm run test:e2e -- --workers=1 --grep "Grade 2 Chinese Unit 6"`，1/1 通过。覆盖课程页六个既有学习任务、键盘打开闯关、窄屏深色与减少动态效果下启动任务，并确认学习进度不变。该定向回归在分块调整后重跑通过；完整 E2E 套件未运行。
+- 题库质量：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-u6-final`，全库 57 组、285 个任务，0 个阻断、897 条信息提示。U6 为 `ready`，五个任务各 100/100 次固定种子模拟成功；三档各 30 道有效候选并覆盖五个知识点，本组无阻断或相似题提示。
+- 覆盖与源素材：覆盖报告为 38/254 个正式单元组、19/108 个学期组，单元任务 190/1,270、学期任务 95/540；二年级 7/47 个单元组。源素材盘点完成 254 个单元审计，U6 各难度有 16 道兼容唯一课程活动，距 30 道素材门槛各缺 14 道；源素材数量不代表题目审核通过。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块为 450.44 kB，无超过 500 kB 的提示。为二年级上册语文按单元拆分清单和补充题分块；E2E 重跑未报告分块警告。
+- 独立教育者复核、完整 E2E 回归、远端 Actions、二年级整体放行和正式发布仍未完成。以上质量结果是自动门禁与作者逐题自审，不能替代教学审核。
+
+## 2026-10-27 二年级上册语文单元 7 验证
+
+- 专项集成：U7 内容、`pilotContent`、`pilotManifest`、覆盖、质量输入/报告/CLI、知识点映射和课程入口共 9 个测试文件、151 项通过。检查保留 48 道课程活动与六个学习任务，新增 42 道原创题的独立答案、生产评分映射、选项、提示泄漏、知识点、唯一性、指纹和 90 行中文审校台账。
+- 全量单测：`npm run test:unit -- --reporter=dot`，213 个测试文件、1,415 项通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，213 个测试文件、1,415 项通过；语句 90.35%、分支 84.36%、函数 92.05%、行 92.88%。
+- 浏览器回归：`npm run test:e2e -- --workers=1 --grep "Grade 2 Chinese Unit 7"`，1/1 通过。确认课程入口可达、六个原学习任务保留、闯关启动后原学习进度不变；覆盖窄屏、深色主题、减少动态效果和键盘操作。本轮未运行完整 E2E 套件。
+- 题库质量：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-u7-final`，全库 58 组、290 个任务完成固定种子模拟，0 个阻断、897 条信息提示。U7 为 `ready`；五个任务各 100/100 成功，三档各有 30 道有效唯一候选并覆盖五个知识点，本组 0 阻断、0 条相似题提示。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-u7-final` 报告 39/254 个正式单元组、19/108 个学期阶段组；单元任务 195/1,270、学期任务 95/540。二年级为 8/47 个单元组、1/18 个学期阶段组。U7 原课程兼容素材每档 16 道，距素材盘点最低量差 14 道；该数字不代表审核合格题量。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块为 450.44 kB，没有超过 500 kB 的提示。
+- 本地自动验证和作者逐题自审通过；独立教育者复核、完整 E2E、远端 Actions、二年级整体放行和正式发布仍未完成。
+
+## 2026-10-27 二年级上册语文单元 8 验证
+
+- 专项集成：U8 内容、清单加载/校验、课程入口、知识点映射、覆盖、质量输入/报告/CLI 和题库评分相关 7 个测试文件、119 项通过；另在答案与题意修正后重跑 U8 专项 4 项通过。覆盖 48 道原课程活动、六个学习任务、42 道原创题答案、知识点映射、三选项、提示泄漏、指纹、唯一性和 90 行中文台账。
+- 全量单测：`npm run test:unit -- --reporter=dot`，214 个测试文件、1,421 项通过。
+- 全量覆盖率：`npm run test:coverage`，214 个测试文件、1,421 项通过；语句 90.36%、分支 84.35%、函数 92.07%、行 92.91%。
+- 浏览器回归：`npm run test:e2e -- --workers=1 --grep "Grade 2 Chinese Unit 8"`，1/1 通过。覆盖 390px 深色窄屏、减少动态效果、键盘打开挑战、保留六个原学习任务并启动闯关，确认 `china-study-progress-v1` 不变。本轮未运行完整 E2E 套件。
+- 题库质量：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-u8-final`，全库 59 组、295 个任务，0 个阻断、897 条信息提示。U8 状态 `ready`，五个任务各 100/100 次模拟成功；三档有效唯一候选各 30 道、五个知识点逐档覆盖，本组无阻断和相似题提示。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-u8-final` 报告 40/254 个正式单元组、19/108 个学期阶段组；单元任务 200/1,270、学期任务 95/540。二年级为 9/47 个单元组、1/18 个阶段组。
+- 源素材盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-grade2-u8-final` 覆盖全部 254 个正式单元；U8 每难度各有 16 道兼容唯一课程活动，距最低素材量各缺 14 道。全课程达到 30 道源素材最低量的单元数仍为基础、进阶、高阶各 0；源素材数量不代表题目审核通过。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块 450.44 kB，没有超过 500 kB 的提示。
+- 自动验证和作者逐题自审通过；独立教育者复核、完整 E2E、远端 Actions、二年级整体放行和正式发布仍未完成。
+
+## 2026-10-27 二年级上册数学单元 1 验证
+
+- 专项单元测试：`npm run test:unit -- src/challenges/content/grade2Term1MathUnit01.test.ts`，5/5 通过。覆盖 90 道候选的知识点映射、答案、审核指纹、唯一性与中文台账；验证课程保留 48 道活动和六个学习 Task。
+- 全量单测：`npm run test:unit -- --reporter=dot`，215 个测试文件、1,428 项通过。第一次全量运行发现 9 个旧断言未纳入新组；补齐质量测试夹具，保持成长索引顺序与清单顺序一致，并将“非试点”课程样例换成未登记的数学 U5 后重跑通过。
+- 浏览器回归：`npm run test:e2e -- --workers=1 --grep "Grade 2 Math Unit 1"`，1/1 通过。由课程页进入 U1 闯关，确认原课程任务仍在且闯关开始没有改变课程进度。
+- 题库质量：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-math-u1-final`，全库 60 组、300 个任务，0 个阻断、897 条信息提示。U1 为 `ready`，基础/进阶/高阶各 30 道有效唯一候选，五个任务各 100/100 次模拟成功。本组两条相似模板提示已人工核对，按不同数据和正确答案保留。
+- 覆盖与素材：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-math-u1-final` 报告 41/254 个正式单元组、19/108 个阶段组；单元任务 205/1,270、阶段任务 95/540。`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-math-u1-final` 审计全部 254 个单元；U1 每档有 13/15/14 道兼容唯一课程素材，距素材盘点最低量差 17/15/16 道。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块 450.46 kB，无超过 500 kB 的警告。第一次构建发现新增测试缺少仓库既有的 Node 类型抑制与字符串类型声明；按相邻测试模式修正后构建通过。
+- 独立教育者复核、完整 E2E、远端 Actions、二年级整体验收和正式发布仍未完成。质量门禁与作者逐题自审不等于独立教学审核。
+
+## 2026-10-27 二年级上册数学单元 3「角的初步认识」
+
+- 专项测试：U3 内容测试 5/5 通过，覆盖 90 道候选、42 道原创题答案、知识点、评分映射、台账、指纹及唯一性；确认原有 48 道课程活动和六个学习 Task 未改变。
+- 全量单测：`npm run test:unit -- --reporter=dot`，216 个测试文件、1,434 项通过。
+- 浏览器回归：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 Math Unit 3' --workers=1`，1/1 通过。从课程页进入挑战后，原六个学习任务及课程进度保持不变。
+- 题库质量：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-math-u3-final`，全库 61 个组、305 个任务，0 个阻断、897 条信息提示。U3 状态 `ready`，基础/进阶/高阶各有 30 道有效唯一题，五个任务固定种子模拟 500/500 成功；本组无阻断或提示。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-math-u3-final`，42/254 个正式单元组、19/108 个阶段组；单元任务 210/1,270、阶段任务 95/540。二年级为 11/47 个单元组、1/18 个阶段组，仍缺 36 个单元组和 17 个阶段组。
+- 源素材盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-math-u3-final`，审计全部 254 个正式单元；U3 每档有 16 道兼容且唯一的课程活动，距 30 道素材盘点最低量各差 14 道。此数量仅盘点原课程素材，不等于教学审核通过。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块为 450.46 kB，没有超过 500 kB 的提示。本轮未运行完整 E2E 套件或全量覆盖率。
+- 42 道原创题已完成作者逐题自审；独立教育者复核、完整 E2E、二年级整体验收、远端 Actions 与正式发布仍未完成。改动尚未提交或推送。
+
+## 2026-10-27 二年级上册数学单元 4「表内乘法（一）」
+
+- 专项与集成回归：U4 专项测试及清单、题库输入与报告、命令行、覆盖统计相关测试共 8 个文件、126 项通过。全量 `npm run test:unit -- --reporter=dot` 为 217 个测试文件、1,441 项通过；首次集成运行发现两处全库题数断言仍使用 4,566，按当前清单更新为 4,585 后通过。
+- 课程入口浏览器回归：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 Math Unit 4' --workers=1`，1/1 通过。测试确认课程的六个原学习任务保留、启动闯关不改变原课程进度，并检查窄屏深色和减少动态效果路径。
+- 题库门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-math-u4-final`，全库 62 组、310 个任务，0 个阻断、897 条信息提示。U4 状态 `ready`，五个任务固定种子模拟 500/500 成功，三档各有 30 道有效唯一候选且覆盖知识点，本组无相似题提示。
+- 覆盖与题源：覆盖报告为 43/254 个正式单元组、19/108 个阶段组；单元任务 215/1,270、阶段任务 95/540。题源盘点覆盖全部 254 个单元；U4 按兼容性统计每档各有 16 道原课程素材。同模板及重复题仅从挑战池排除，未修改课程活动。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块为 450.46 kB，没有超过 500 kB 的警告；`git diff --check` 通过。本轮没有运行完整浏览器测试套件。
+- 题目已完成作者逐题自审，独立教育工作者复核尚未完成；二年级整体放行、远端 Actions 和正式发布门禁仍未完成。
+
+## 2026-10-27 二年级上册数学单元 5「观察物体（一）」
+
+- 专项回归：`npm run test:unit -- src/challenges/content/grade2Term1MathUnit05.test.ts src/challenges/content/unitLinks.test.ts src/challenges/content/pilotManifest.test.ts src/challenges/content/coverage.test.ts src/challenges/content/qualityReport.test.ts`，5 个文件 76 项通过。专项断言核对 90 道候选、42 道原创题独立答案、评分映射、题面/选项/提示/解析与逐题台账一致、指纹、唯一性、知识点，以及原课程 48 道活动和六个学习任务保留。
+- 题目复核：作者逐题自审发现并修订 4 处观察证据或方向表达；修订后同步答案快照、题目指纹和中文台账。独立教育者复核尚未完成。
+- 题库门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-math-u5-final`，当前报告为全库 63 组、315 个任务，0 个阻断、897 条提示；U5 `ready`，五任务共 500/500 次固定种子模拟通过，无本组阻断或相似题提示。
+- 覆盖与题源：覆盖统计为 44/254 个正式单元组、19/108 个阶段组；单元任务 220/1,270、阶段任务 95/540。题源盘点检查 254 个正式单元；U5 每难度有 16 道兼容唯一原课程素材，距离源素材最低量各差 14 道。源素材数量不表示审核合格题量。
+- 课程入口浏览器回归：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep "Grade 2 Math Unit 5" --workers=1`，1/1 通过。用例验证 390px 窄屏、深色主题、减少动态效果、键盘打开挑战、五个任务入口、保留六个原学习任务，以及启动闯关前后课程进度不变。
+- 全量单测：`npm run test:unit -- --reporter=dot`，218 个测试文件、1,448 项全部通过。首次运行发现原“非试点单元”样例指向新纳入挑战的 U5；将测试样例改为尚未登记的数学 U6 后，专项 12/12 与全量重跑均通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，218 个测试文件、1,448 项通过；语句 90.44%、分支 84.39%、函数 92.14%、行 92.97%。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块 450.46 kB，没有超过 500 kB 的提示；`git diff --check` 通过。
+- 发布边界：本地自动门禁与作者自审通过不等于独立教学审核、二年级整体验收或正式发布批准；改动未提交或推送。
+
+## 2026-10-27 二年级上册数学单元 6「表内乘法（二）」
+
+- 专项集成：U6 内容、清单加载、覆盖、质量报告和课程入口相关测试共 9 个文件、131 项通过。确认 48 道原课程活动和六个学习 Task 保留；新增 42 道原创题；90 道候选、逐题中文台账、知识点映射、独立答案、评分选项、题面泄漏、指纹和唯一性一致。
+- 作者逐题复核：检查了本组 233 条信息级相似题提示，均来自不同乘数、数量或分类目标的相同题型模板；没有完全重复题组，90 个审核指纹唯一。相似模板提示仍保留在门禁报告中，不将其描述为零提示或独立教学审核。
+- 题库门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-math-u6` 通过；全库 64 组、320 个任务，0 个阻断、1,130 条信息提示。U6 为 `ready`，五个任务各完成 100/100 次固定种子模拟，共 500/500；每档 30 道候选并覆盖本组知识点。
+- 覆盖与题源：`npm run challenge:coverage` 统计 45/254 个正式单元组、19/108 个阶段组；单元任务 225/1,270、阶段任务 95/540。`npm run challenge:source-audit` 审计全部 254 个单元；U6 每档有 16 道兼容的原课程素材，距离 30 道素材盘点门槛各差 14 道。源素材数量不等于已审核题量。
+- 全量单测：`npm run test:unit -- --reporter=dot`，219 个测试文件、1,454 项通过。首次回归发现“非试点单元”夹具指向新纳入的 U6，已改为未登记单元并重跑通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，219 个测试文件、1,454 项通过；语句 90.45%、分支 84.39%、函数 92.16%、行 93.00%。
+- 课程入口浏览器回归：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 Math Unit 6' --workers=1`，1/1 通过；测试覆盖窄屏、深色主题、减少动态效果、键盘入口、原课程六个学习任务及进度保持。本轮未运行完整 E2E 套件。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块 450.46 kB，未出现超过 500 kB 的提示；`git diff --check` 通过。
+- 独立教育者复核、完整 E2E、远端 Actions、二年级整体放行和正式发布仍未完成；本记录是本地自动门禁与作者自审，不代表年级验收。
+
+## 2026-10-27 二年级上册数学单元 7「认识时间」
+
+- 专项回归：U7 课程来源、候选池、题目清单与中文台账专项测试通过；确认原课程 48 道活动和六个学习 Task 保留，闯关池 90 道候选、每档 30 道，原创题答案、实际评分器、知识点、提示、解析、指纹和台账一致。
+- 题目复核：作者逐题检查全部 90 道候选。原课程题“钟面上数字之间，分针走一小格是多少分”将答案从 5 分修正为 1 分，并保留讲解中“相邻数字间隔含 5 小格、合计 5 分”的区分。复核相似题提示时发现一条原创题与课程原题题干完全相同，已改为反向求开始时刻；另一道重复指针读数题改为考查分针转一圈与时针移动的关系。专项测试现在断言本组候选题题干不重复、无完全重复题，答案和指纹与逐题台账一致。
+- 题库质量门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-math-u7-reviewed` 通过；全库 65 组、325 个任务，0 个阻断、1,141 条提示。U7 为 `ready`，五任务共 500/500 次固定种子模拟成功，0 个完全重复题组，11 条本组相似题信息提示；提示已逐项复核，主要来自不同时间数值下的同类钟面与经过时间练习。
+- 覆盖与题源：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-math-u7-final` 统计 46/254 个正式单元组、19/108 个阶段组；单元任务 230/1,270、阶段任务 95/540。`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-math-u7-final` 检查全部 254 个正式单元；U7 每难度有 16 道兼容唯一的原课程素材，距素材盘点门槛还差 14 道。补充题会扩大闯关池，不会改变源素材统计。
+- 全量单测：`npm run test:unit -- --reporter=dot`，221 个测试文件、1,461 项通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，221 个测试文件、1,461 项通过；语句 90.48%、分支 84.41%、函数 92.18%、行 93.03%。
+- 课程入口浏览器回归：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 Math Unit 7' --workers=1`，1/1 通过；验证窄屏、深色主题、减少动态效果、键盘进入挑战、原六个学习任务和课程进度保持。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块 450.46 kB，没有超过 500 kB 提示；`git diff --check` 通过。
+- 作者自审与自动门禁不等于独立教学审核。独立教育者复核、完整 E2E、远端 Actions、二年级整体放行和正式发布仍未完成；本地改动未提交或推送。
+
+## 2026-10-27 二年级上册数学单元 8「数学广角——搭配（一）」
+
+- 专项回归：U8 内容、清单加载/校验、课程入口、知识点映射、覆盖、质量输入/报告/CLI 等 8 个测试文件、130 项通过。测试逐项核对 48 道原课程活动和六个学习 Task 保留、42 道原创题答案与生产评分器一致、选项和讲解无答案泄漏、知识点、指纹、唯一性及 90 行中文审校台账。
+- 作者逐题自审：检查 90 道候选题及其题干、答案、评分、提示、解析和台账；明确使用“搭配”而非超出该年级要求的排列术语。独立教育者复核尚未完成。
+- 题库门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-quality-grade2-math-u8-final` 通过；全库 66 组、330 个任务，0 个阻断、1,141 条信息提示。U8 为 `ready`，基础/进阶/高阶各 30 道有效候选并覆盖 8 个细项知识点，五个任务固定种子模拟合计 500/500 成功，本组无质量警告。
+- 覆盖与题源：`npm run challenge:coverage -- --report-dir /private/tmp/starry-coverage-grade2-math-u8-final` 统计 47/254 个正式单元组、19/108 个阶段组；单元任务 235/1,270、阶段任务 95/540。二年级已登记 16/47 个单元组，仍缺 31 个。`npm run challenge:source-audit -- --report-dir /private/tmp/starry-source-audit-grade2-math-u8-final` 审计全部 254 个正式单元；U8 每档有 16 道兼容唯一原课程素材，距离 30 道素材盘点最低量各差 14 道。源素材数不代表通过闯关题审核的题量。
+- 全量单测：`npm run test:unit -- --reporter=dot`，222 个测试文件、1,467 项通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，222 个测试文件、1,467 项通过；语句 90.53%、分支 84.47%、函数 92.20%、行 93.06%。
+- 课程入口浏览器回归：`npx playwright test tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 Math Unit 8' --workers=1`，1/1 通过。覆盖 390px 窄屏、深色主题、减少动态效果、键盘打开挑战、保留六个学习任务，并确认闯关入口不更改课程学习进度。本轮未运行完整 E2E 套件。
+- 生产构建与分块：`npm run build` 通过且没有超过 500 kB 的提示。曾出现的 506.86 kB 分块由挑战页静态引入多个二年级数学 JSON 课程清单造成；为 U1、U3～U8 清单增加独立拆分规则后，最大分块 450.46 kB，挑战页分块 181.71 kB，U8 清单分块 61.65 kB。
+- `git diff --check` 结果以本次最终复核为准。作者自审和自动门禁不等于独立教学审核；完整 E2E、远端 Actions、二年级整体验收和正式发布仍未完成，本地改动尚未提交或推送。
+
+## 2026-10-27 二年级上册数学单元 9「总复习」
+
+- U9 专项回归 6 项通过，核对课程入口、48 道原课程活动和六个学习 Task 保持、45 道原创题答案与生产评分器一致、知识点覆盖、三选项、答案泄漏、90 道候选及审校台账一致性。原题池排除 1 道测量交互和 2 道重复题干；原课程未修改。
+- [U9 中文逐题审校台账](grade-2-term-1-math-unit-09-question-review.tsv)逐项记录90道候选的题目、来源、知识点、答案、选项、提示、解析和作者审核状态。作者自审完成，独立教育者复核未完成。
+- `npm run challenge:quality -- --report-dir /private/tmp/starry-grade2-unit09-quality-final` 通过：全库67组、335个任务，0个阻断、1,141条信息提示；U9 状态 `ready`，基础/进阶/高阶各30道有效题、10个复习/细分知识点逐档覆盖，五个任务固定种子模拟500/500成功，本组0条质量提示。
+- `npm run challenge:coverage -- --report-dir /private/tmp/starry-grade2-unit09-coverage`：48/254个正式单元组、19/108个阶段组；单元任务240/1,270、阶段任务95/540。二年级已登记17/47个单元组，仍缺30个单元组和17个阶段组。
+- `npm run challenge:source-audit -- --report-dir /private/tmp/starry-grade2-unit09-source` 检查全部254个正式单元。U9 原素材基础档16道（15道兼容，1道测量交互不兼容），进阶和高阶各16道兼容活动；补题数量不计入源素材盘点，兼容素材量也不等于审核合格题量。
+- 全量 `npm run test:unit -- --reporter=dot`：223个测试文件、1,474项通过。全量覆盖率同为223个文件、1,474项通过；语句90.58%、分支84.52%、函数92.22%、行93.09%。
+- U9 课程入口 Playwright 回归 1/1 通过：390px 窄屏、深色主题、减少动态效果、键盘进入挑战；确认六个学习 Task 与本地课程进度不变。本轮没有运行完整 E2E 套件。
+- `npm run build` 通过，无超过500 kB的 JavaScript 分块提示；最大分块450.46 kB，U9清单分块59.46 kB。该结果不表示挑战路由的分块合计传输量下降。
+- 独立教学复核、完整 E2E、远端 Actions、二年级整体放行和正式发布尚未完成；本地改动未提交或推送。
+
+## 2026-10-27 二年级上册英语单元 1「My Family」
+
+- 专项 TDD 回归：`npx vitest run src/challenges/content/grade2Term1EnglishUnit01.test.ts src/challenges/content/qualityInputs.test.ts src/challenges/content/pilotManifest.test.ts`，3 个文件、57 项通过。覆盖 90 道候选、三档各 30 道、12 道被挑战池排除的重复/重叠课程题、54 道原创题的答案硬编码、生产评分器、知识点、选项唯一性、答案泄漏、指纹和逐题台账；确认原课程 48 道活动、六个学习 Task 均保留。
+- 质量门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-grade2-english-u1-final-quality` 通过。全库 68 组、340 个任务，0 个阻断、1,147 条信息提示；U1 状态 `ready`，基础/进阶/高阶各 30 道有效唯一题，五个任务模拟 500/500 成功，0 个完全重复题组。6 条同模板提示已按词卡集合、输入形式和认知层级逐条复核并记录于台账；作者接受其信息提示性质。
+- 覆盖与题源：`npm run challenge:coverage -- --report-dir /private/tmp/starry-grade2-english-u1-final-coverage` 统计 49/254 个正式单元组、19/108 个阶段组；单元任务 245/1,270、阶段任务 95/540。`npm run challenge:source-audit -- --report-dir /private/tmp/starry-grade2-english-u1-final-source` 审计全部 254 个正式单元；所有单元每个难度的兼容课程素材都未达到 30 道最低素材量。源素材统计不代表闯关审核合格题量。
+- 全量单测：`npm run test:unit -- --reporter=dot`，224 个文件、1,481 项通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，224 个文件、1,481 项通过；语句 90.60%、分支 84.52%、函数 92.25%、行 93.12%。
+- 课程入口 E2E：`npm run test:e2e -- --grep 'Grade 2 English Unit 1 challenge' --workers=1`，1/1 通过；确认键盘进入、390px 窄屏、深色主题、减少动态效果、六个原学习任务和课程进度保持。
+- `npm run build` 通过，无超过 500 kB 的 JavaScript 分块提示；最大分块 450.46 kB。`git diff --check` 通过。
+- 本地题目审校为作者自审，独立教育者复核尚未完成。完整 E2E、远端 Actions、二年级整体验收和正式发布仍待完成；本地改动未提交或推送。
+
+## 2026-10-27 二年级上册英语单元 2「Boys and Girls」
+
+- 专项回归：U2 内容、题库、知识点、清单、质量输入、覆盖和课程入口测试通过；专项 U2 用例与关联测试共 5 个文件、91 项通过。全量运行发现 `qualityReport.test.ts` 的测试输入没有登记 U2 补充题，导致 6 项质量报告断言受全库数据影响；补入对应补充活动后，全量单测通过。
+- 题目审校：[U2 中文逐题审校台账](grade-2-term-1-english-unit-02-question-review.tsv)覆盖 90 道候选（36 道兼容课程题、54 道原创题），记录答案、知识点、选项、提示、解析和作者逐题自审；原课程 48 道活动及六个学习 Task 保持不变。独立教育者复核尚未完成。
+- 模板提示裁定：质量门禁对 5 道分类候选产生 10 条两两相似提示。逐项检查分类对象后，从先前候选排除清单之外再排除 4 道目标重复题，保留按句子整体分类的高阶题。另有 1 条匹配提示经复核后保留：基础档匹配人物词，高阶档匹配同伴关系与人物词。原课程活动未改。
+- 质量门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-grade2-english-u2-quality-final` 通过；全库 69 组、345 个任务，0 个阻断、1,148 条信息提示。U2 为 `ready`，每档 30 道有效唯一候选，五个任务固定种子模拟 500/500 成功；本组保留 1 条经复核的信息提示。
+- 覆盖与题源：`npm run challenge:coverage -- --report-dir /private/tmp/starry-grade2-english-u2-coverage-final` 统计 50/254 个正式单元组、19/108 个阶段组，单元任务 250/1,270、阶段任务 95/540；二年级登记 19/47 个单元组、1/18 个阶段组，仍缺 28 个单元组和 17 个阶段组。源素材盘点仍无单元达到每难度 30 道兼容素材门槛，该指标不是闯关合格题量。
+- 全量单测：`npm run test:unit -- --reporter=dot`，225 个文件、1,485 项通过。初次全量运行曾因测试夹具缺少 U2 补充活动失败 6 项；修复夹具后同一命令通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，225 个文件、1,485 项通过；语句 90.62%、分支 84.53%、函数 92.27%、行 93.14%。
+- 课程入口浏览器回归：`npm run test:e2e -- --grep 'Grade 2 English Unit 2 challenge' --workers=1`，1/1 通过；核对 390px 窄屏、深色主题、减少动态效果、键盘进入、原六个学习任务和课程进度不变。本轮未运行完整 E2E 套件。
+- 生产构建与差异检查：`npm run build` 通过，最大 JavaScript 分块 450.46 kB，无超过 500 kB 提示；`git diff --check` 通过。
+- 作者自审和自动门禁不等于独立教育者复核。完整 E2E、远端 Actions、二年级整体验收及正式发布仍未完成；本地改动未提交或推送。
+
+## 2026-10-27 二年级上册英语单元 3「My Friends」
+
+- 专项审校与回归：U3 专项测试、清单、知识点、质量输入、覆盖和内容报告等 6 个文件共 121 项通过。专项用例核验 90 道候选、34 道保留课程题与 56 道原创题、56 道原创题的硬编码答案、生产评分器、知识点、选项、提示/解析、指纹、排除清单及 90 行中文审校台账；原课程 48 道活动和六个学习 Task 保持不变。
+- 题库质量：`npm run challenge:quality` 通过；全库 70 个发布组、350 个任务，0 个阻断、1,148 条信息提示。U3 状态 `ready`，三档有效唯一候选各 30 道，五个任务固定种子模拟共 500/500 成功；本组 0 个阻断、0 条提示。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-grade2-english-u3-final-coverage` 统计 51/254 个正式单元组、19/108 个学期阶段组，单元任务 255/1,270、阶段任务 95/540；二年级为 20/47 个单元组和 1/18 个阶段组，仍缺 27 个单元组和 17 个阶段组。
+- 题源盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-grade2-english-u3-final-source` 审计 254/254 个正式单元。U3 原课程活动每档 16 道兼容且唯一题，距离每档 30 道的素材盘点最低量差 14 道；该指标只描述课程原素材，不代表补题审核情况或教学审核通过。
+- 全量单测：`npm run test:unit -- --reporter=dot`，226 个测试文件、1,489 项通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，226 个文件、1,489 项通过；语句 90.64%、分支 84.55%、函数 92.29%、行 93.16%。
+- 课程入口 E2E：`npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 English Unit 3 challenge' --workers=1`，1/1 通过；验证 1280px 桌面浅色、390px 窄屏深色、减少动态效果、课程页键盘入口、五项挑战入口、六个原学习任务和课程进度不变。
+- 生产构建：`npm run build` 通过；最大 JavaScript 分块 450.46 kB，无超过 500 kB 的提示。`git diff --check` 通过。
+- U3 逐题作者自审完成，独立教育者复核尚未完成。完整 E2E、远端 Actions、二年级整体验收和正式发布仍未完成；本地改动未提交或推送。下一项按教材顺序为二年级上册英语 U4。

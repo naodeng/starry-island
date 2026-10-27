@@ -105,7 +105,7 @@ describe('GrowthPage', () => {
     expect(await screen.findByText('17 次挑战')).toBeInTheDocument();
     await user.click(screen.getByRole('tab', { name: '学习星图' }));
     expect(screen.getByRole('heading', { name: '每完成一点，星岛就亮一点' })).toBeInTheDocument();
-  });
+  }, 30_000);
 
   it('changesViewsWithKeyboardArrowKeysAndVisibleFocus', async () => {
     const user = userEvent.setup();

@@ -29,13 +29,13 @@ describe('loadChallengeGrowthSummary', () => {
     const summary = await loadChallengeGrowthSummary(() => repository);
 
     expect(repository.getGroupProgress).toHaveBeenCalledWith(growthGroups.flatMap((group) => group.tasks.map(({ id }) => id)));
-    expect(repository.getGroupProgress.mock.calls[0]![0]).toHaveLength(65);
+    expect(repository.getGroupProgress.mock.calls[0]![0]).toHaveLength(growthGroups.length * 5);
     expect(summary).toMatchObject({
       completedAttempts: 2,
       passedTaskCount: 1,
       earnedBadgeCount: 0,
     });
-    expect(summary.groups).toHaveLength(13);
+    expect(summary.groups).toHaveLength(growthGroups.length);
     expect(summary.groups[0]).toMatchObject({ groupId: 'grade-2-term-1-math-unit-02', taskCount: 5, passedTaskCount: 1, badgeEarned: false });
     expect(repository.close).toHaveBeenCalledOnce();
   });

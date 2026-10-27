@@ -1,0 +1,1722 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8bfcf7ff9cf0d8078d5033d4889cefde9565d746e583e320994ab161b099f18",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5eed68a57461699a47dc05596f56d9578b12f351d9064a91c6003be47234e7d4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3798edca12143252b88fc5d06766d06c73ecfd13f59dbb1dba5a92af5f8c29f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05060605f6d78118a1bd8a53417b4b6b21152bd3b912ba6125871a5552e11227",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "709b60adc24268e3479ffce96eb4be0bc66756d5fc11d502a46746eadda4ba2a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "489e1c5b6ef8d9cfefc9209648b709bec425e9ef1c0cdcd9a6779c5c1b4e8962",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d46ab5d1de0ddafe7ec353e9cc834f85e37766b23c9215ade6f76badbdf110a6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a79ce2c6ec8c5aa324e1656a536e37070d7f172c483d4b63b58c4196af5f7aa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "061421b7fa69227020e2c702497891f81a3be19f57f7f65ed57f2504a6caf4b6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c697ea9741416971741028b1fe72bad68d77542d0e9dc4b5f3b2cb76fc08c96",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05872ef0868bb73dfff8dcd91efa3286e1b1627a814801314364962298de5293",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7aa4ce5d362f07bd023b4e136ade055f451ff9c2a0284fbad9509cda1800d9d7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb056aaad5569527ecb07b2971f24c6a60bfd914a0b906b896bd888c435f9212",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8b9f0427dc165aab2cf6c4dafd8f33c3b2f1c796649d5b530284f7b24e70dad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "54f356ff68453d0e1657bdbe36e533645c94cb2e956a41ed3c0ebabc93264587",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-07/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87762058515f8a5f63cff49069c44e340ca8b2e3309e34e431b6eceb4a2627ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "63c5f3da6ed8acca9782b1dd2c1a8edf44d622cc03bc44eb3c0d06568906c988",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "674174a4933e5330eab39edd6d4da38556d35b4a4e649b272eaca4d1d736ca8a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "749d782ddde85ea70eff044f4f2adc22ea50635405b8b437ffd0fc855c799da7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6e202bcdb898bdb319b6fe920162439236bc4d45d2fcb7340390dbc36f56cb5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d3436b926e128bf3ec8c59d286c143284843da7bfbcb8aa0339d601898bb151",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35ee769092905c9fe415016d67ea06937e6fcd88e50b8cfd313e08ccfc3e3f34",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c839ca06596437733799fa5eec1369adadb66185f013c9c39ea62ddfa09dad38",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "hour-minute-conversion",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "344c4d250b8a3fd709fcd1582e000ba760d358e6b3f8bace9673873ff739a6bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7894faa51a43083025b1df879e87701f0dad5544c49e561337997414b6369b7e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0ad9d2e6285336bd5e8d1ec72c7cc2118cbcb3acc8c687024d9444235dd3f5d3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "895c92565c34c550df2c4881a7240c8e38d18eb9349ba5f1b07536b163ca91a6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "46221fbff6eba2dca02d897ab7b4b42c034255f9a17000db3b9c0f7084013d34",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b14786067cdaac3a1984aef260a3a3eb070ddcd716ff2d356e2da3062b59dd27",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "237b77417494449fdada76a523d4db70155653694d1cd9a6524afdac9e138760",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles",
+        "hour-minute-conversion",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b0aa2395c9901da16f54ee9577513f4277676bc1083b4a11daffcc9cd2d5ddd6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f911c9efe47ee2ac669286ea57c004a41dc8558c936484973b5150b5a9b1fffa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a5c0263ec798d50209ead5bfea8c86838d8f1a8685e9b48d58d9a070f0fd1c1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d449365e7aa15f08c18004212c6f37e58cbf42505e56b82f09899d24c0024b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5905ee741aa54555975ec17252d467dac9f4719ba630cbac20dab682507130ad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5513597a6bed5bad6aae77655478cf189cafde59efb5f3e523b557ada65df3d8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9828cc5480291c1f8627ce6760794373a0558943920c134b805b904d316dfa58",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64d91d3a34aee8e4c2ca9ffdae64024a4c4aae5cf49010fbc3aa33fa168a2f16",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3cc1ef83fedafa5431e96fbd8c0c01f56caf697b757cb44f3e0051612d104ed5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c6aa12b01b2145aa61729e33b6810fe45205a06272a7c9c90cd75871ff7bdde",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5e54b3c4071b8fe3261903886a61dc48f6e616b47c4cc2c8e50d9c11130895a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2141aa8c31a2d04b25dbcbc29e630643607397a8db1aa8cb49c805573c64b9be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d9b94dd87ee85eca36c929f64147c61cc6dfb01bea9b546d2d53d90e14af806",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "54e77896fc58b41dc79122c91759b013dde7272a00d357fd87a7317feddf83f7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ed2e635f4ca7ddf2807e9995f09fcc6d37167b2d14250cf7ae676d5c924742e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18e054faad7eec186171ed7b7db119805f8859a48012944b5caf2b9b62f96933",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "hour-minute-conversion",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "653ff9228b1c38f9699d0b2e54843e1270cbe4e6b32e3e621cb28f253cbda437",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-07/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "43af0a2b8b68dd669d67b35bbd73bf8d626b639c211720df4a28f186088f62af",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3521bd6fce3522ecd098db6c47db712c8df0efb878ae6877d62309f7c76fe56",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3dff262bdfd2aafa17c8f106f2982eb152806eb3dd7fe9c67001dc94f7b66bb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a45c1663631aa1bc583b227d92c94dcd6c20243861413562ea1a9748a646e97e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-hand-roles",
+        "clock-five-minute-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "595a42cac857b3d67eb7cd6063ce67dba35c98c0404e40d9c229eda2aaf9484d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "210796d2246e618baf5880a3fc715eec419f5805946134bb6a061df3774fb879",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-hand-roles",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69604f474a6754c1fb407f39fe13fcb3e051f4f70d2dd23a64e9a5d219cbd1fe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-hand-roles",
+        "clock-five-minute-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9fcfb71d82622031084428c60c2fe942951cbf24b00cf716e4e2d6a1dfde312f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f911768ebe732b1024d530addcfcac5995a9e461bfc989d74817a550947195e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd03d244e91ea18b597befcc88af858716268457b6a4af466c8f4641a28811d6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7268b3c31c52e75da0c2076de58f1922e550b639132dfc03cf14f5eea3238914",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-hand-roles",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d34b6a3fead5fd2a81130bb42feb3c3fc77f780fadf559d4bfe94035c5d917b6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e39caa9a262060ef65b41c4160de4612659b8f8c473c413b8b3cd433b8ad4c60",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d1a8cd6185455e778cff23632fcb99c182148cf94e322e8a21d484e7c47c0a9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-hand-roles",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45de8b28982f78bb61c6539b2d6c778fac0161d8bee4dcef77abaf8977a490d3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "df849269b017677248d784815203f34dc676fd027e9a398218ac701503795555",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aaf4608170450c1463a80d863730893bf39fd043d9cea68a59044f5a6289e25b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5081d31320a237231e06384d78ced4cee06551edc1e4d96b6599371390f4225",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db41f49c23a9c15b2c7ad226833d3130bb38117f9c95cb9c14f676300e3d76ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69237fd6ed90b3ad82dee9b16dc434f4662c28b4f896e04e0c03d25223b43a22",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b13795d49d095c16e21e7f3a4afa36b752c778894ebe4392ec6fc09cef9f4e02",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d61cd8434a4da647d206fe42f17a020e899d874e48314ecb97d291556c48141",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "98b8a3efe4330c7e94be9e9a0057e71ce13f179a915cb34f1178503b681d81cd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8b85858d83cf3d2b445f2ee37206afa4b832a608a29cc8df538171bbb08bc1ef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dbde31af85a1454deecdedf91aee61240dbe84c1fcf895a4bb625a996c04a876",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "143ad1fec289d33c7927a3aad603eefa5c893f4edcbd2b6e5a438687b7efedbf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d725d284930544e6de2bc981a53bac1fd28cfa49fc67c3312dfab31ae94fe24d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "clock-five-minute-reading",
+        "clock-hand-roles"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "197a25a5b0b97a65fb45003984f73657fc329fd018d35829b0d4b91067862dbe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62aa647a61f9fa560a7e7d2eaff6935e0f43a2843321841b6368676c09922525",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62d91ba77789637cec3a98642caf767a63e2688b89b804568a2557454a5dc115",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f648cd56ca886791a7187245c2a83f5725278ac10d799b7e5c51320818c87779",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "663a70aa4873821a760a55c434e5ced5eff17e1586c7dcfe2962b14d3e63bf2b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b09f90b9b2485c293ac89da655d1c449f3dc8bab2be63c9c8fb1338ba78de137",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f9863ae01187246fe1de29f7cd7efe7d365b9706cf7d215d60e565bbc837e67",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e269c1e26af785a9a90284d5c967a4ce02141a6be004f94f69f0d830b46ef1b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d480a44c80bcac1c50769e9596f047038719c387650643d8e0ba9dbd2d935d1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "53eb00e58983773d7c41dcbbe1d972cc50a838a71676ca289008fbc6521906bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "hour-minute-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f91630ee1ef9bf39040cde87762090b38b192808ab5898c91f2ec1fe57c8122",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6bb64a2f1aca78776694dd8f43475d202447e6954dd881d71f2c3a0157ce86ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9ffd4e2b7df3e20cb4578d0b5dfd9ec09dd9fddf0caddc0cfecda222e71332f3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea910d4064c7e1c873f67719167589fbb22b6940c8bb6ccc5e76732383936cc1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "266352f2aebc060e8585a9130f44f87677e76d951ab818918e3f0074b79af95c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-07-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clock-reading-and-time-units",
+        "time-relationships-and-application",
+        "elapsed-time-calculation",
+        "time-schedule-planning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "241fde73c9be6e99fe292db5dc021def0eb54fdd608772219aba08c483c67edf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-math-unit-07",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-1/math/unit-07"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/math/unit-07"
+        ],
+        "coreKnowledgePointIds": [
+          "clock-reading-and-time-units",
+          "time-relationships-and-application"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级上册数学；src/content/grade-2/term-1/math/unit-07/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应认识时针和分针、按5分钟间隔读写时间、理解1时等于60分及解决简单经过时间问题。教材目录使用项目裁定的 TapXWorld 固定回退快照（tapx-fallback），不表示采用人教社修订版。保留原有48道课程活动和六个学习Task，新增42道原创题；不改变课程任务、进度或交互。两个核心知识点表示本单元跨题型共同要求，逐题知识点另行记录钟面读法、时分关系、经过时间和时间安排等细项。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-1-math-unit-07/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-reading-and-time-units"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-07/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "time-relationships-and-application"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-07/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-reading-and-time-units"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-07/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "time-relationships-and-application"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-07/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "clock-reading-and-time-units",
+              "time-relationships-and-application"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-07/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-07/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-07/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-07-high-14"
+      ]
+    }
+  ]
+}

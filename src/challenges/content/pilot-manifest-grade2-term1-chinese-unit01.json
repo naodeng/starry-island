@@ -1,0 +1,1525 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-2-term-1-chinese-unit-01",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-1/chinese/unit-01"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/chinese/unit-01"
+        ],
+        "coreKnowledgePointIds": [
+          "growth-sequence",
+          "observation-evidence",
+          "seed-dispersal",
+          "water-observation"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-1/chinese/unit-01/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应二年级上册第一单元“大自然的秘密”，围绕成长顺序、水的自然现象、种子传播和观察表达。教材目录按项目已固定的 TapXWorld 回退快照；不表示采用人教社 2025 修订版。复用本单元现有学习活动，并新增 34 道原创闯关题；未修改学习 Task。"
+        },
+        "tasks": [
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-01/basic-01",
+            "requiredKnowledgePointIds": [
+              "growth-sequence",
+              "observation-evidence"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-01/basic-02",
+            "requiredKnowledgePointIds": [
+              "water-observation",
+              "seed-dispersal",
+              "observation-evidence"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-01/advanced-01",
+            "requiredKnowledgePointIds": [
+              "water-observation",
+              "seed-dispersal",
+              "observation-evidence"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-01/advanced-02",
+            "requiredKnowledgePointIds": [
+              "growth-sequence",
+              "observation-evidence"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "high",
+            "id": "grade-2-term-1-chinese-unit-01/high-01",
+            "requiredKnowledgePointIds": [
+              "growth-sequence",
+              "water-observation",
+              "seed-dispersal",
+              "observation-evidence"
+            ],
+            "targetCount": 15
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-14"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7de2ef349e7c4e3c4cdd7de2297a16af5672de6efecde0d34bae773397d925e5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1727fc719cf2ba2675e752e0c147c646d14dc81afc46cbca31606958afa7540b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2fac9e2054611a4707e813a55f986ce46f597e7067b1afd9c103095f808c7e28",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1cd8413d7f66cfa5c9a7c3937d2d75654f8b061c4a07cbdb4fee4530817b19ef",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b944f31cb2959e13e52094caf729546ebcfda0964ebbb9e38c32adaa39298df",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f33927c60c9c8593e52ca971040cff55f35bbc781eb7bfe89819b5057d211f84",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68ec163dbe72421e7cceace8179ca1447258c86c4abea63125bcf350e9e6f141",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f340b0fa65ed3ce127cc636681e0d59fd16fd2607f9534ed3e1577ca555aa3c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29ea3609e663236d4d125a114395d1b580338dc4558b7be217602235a1a2fae1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e9a1833ab99c1855b57b9a3faee30e1500459fc9bc66c359fc72775bb9314d4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "23543ed4399e2d868831bb36a916f6e9119dfb01ea6b26c6d2f6c3627a4a25cd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9477e47500de17da21b3e92d552a211ba4a67ec9d2653c6e247a0cc7fcf79148",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "528a1b3827bb86c5149b7751ce66b05ef811b4d5e7f13b73314e20d9a2de8f11",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d6551ce64c277f8e08dd0f6d7e1322f0e0c3e88c70fee5253dc14e1dc322beb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9647872d787c25a000817bef65d21494daada625ce4aa07e1ae344a6001385b3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61af06e155b5f44bc7bdbf9e64ed8252487629ccc4c800d0ec36d88e0a91da71",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45b69c4eef73c3231b4b5476d242069912b0d376b7c573fb7906ededc620754e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6c0f9ba6dd8531f74bc4629d37252e2ae245abff74b4ff9d9b0c016c11b87da",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da6613f86e3fb24849c029537afa5a86f1073dfb9a4b5ac01d6a9da9931db3e8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36a863e7594300f06b81cd684b074585629ab5f5193936403df80367a382d6a2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0be2e7224ef6c3b5e04c22e7ad20893b12a0bbc92e7f54106c695036b01abbbd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e023abf5f1c1cf8d785bfd027d1724e815e6c5c0f8c731ed3459fada990a15b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3af892f8a6783f81020215fbf70546bf93424d3006207da1ca1b95b65781fe6f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-01/basic/task-03/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f596342f7a03b0ee7e30a43f85aac6a1c0893edd3ca97ef78cf8be89d5fc8722",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d7657c5b3b2d5092135f82d3750c7889fe54450ccb1aeee8c4a35114fbe72747",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e909b9b6a8379ff6bdf6c53d1f4fb85553d023763882d004728516bd57c6a82c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f911661161b6cbb314d100fff96587a1d52928ccbe915f88d7e050f55824e07",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d9caaf7a93e9a49925f3e99fdbf00a2b276bd6e20c963818dab0fef7f22ddf9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35a47447d5cdfd0ff6f2f9665c5d83b3ead78c4484fe729e0706d237b1181664",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92db5704f1e9691d738a0cdfc8a058cef4cbbdf9d56a66a6bdf4f245604662e0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47a7e143312ec190db996369d1223de915c8c24f0f2cf4132865b629797c372b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d93e7ea0689bf224028ec5e155a54ae031ef0074387f9de1d84f28fce88bf6f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "48e25d0852055238cf0e23b5253c1f516c6788993a7d53a14015f7762c0fc0da",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c582f13225d25b538de48ded640155ceffceaf0439d1c0e3069aadaaf5cc66a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba71567fb536268fd745afeb0bf4f6c6d44cf5c31214a6aa47f98d25bc0473f2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "76ea5b69ea3c90ee6433af9720877b03acb6c6b647438b7d4de4bce533d073d8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a62187721583fb6d9112865b492b422b8ddcea21869cfb0ed22aa9ef73f3394b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85dcd25782326357a0650b37baecc311cb5823f274cea39d08722cc983c1d158",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "03d1cbd22337d6c53bbcad8542f38cfbc0e80a1ab89f56d2d62b81578040342b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-01/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0e62a3aadf396820b9ca5caa592d20e36e8a397fa3c9aa0300731863d52d292b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f9b8d34700d7b313e790d929182a6ad1f27a145a1964dfbdd926b98e9f11b8a9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1a462ef7255d2254814d0f16eda9bfed0d31575434c1d0d9021244b440f7a66e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09a20e846859c7d7826f9381828aafafbf040c7e43016995fe33d368aa283bdc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9ab7e65e5ea92776ebbc551303a7e0cba132e30ca9307e421e89fed8f5d5b30d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6090e961d09481555f35eaedeb4dfe655bb2d7b13dbe2ff12a8c623b468a774a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "55ab7b1b057ac5f96a89549baf22493faa7bf328ac9987d5faa50c4f0b860227",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69153cd9e9b7c6f1e772745413c71efcd91326e44dbfe4df0d1bcdc447cc68cc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b7e43e3cf45ccfc3e79cb470ef6f57e6833ec0601022b8ab07d0f6a21f1876d6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01f287da3fefa9ca083c5f3b67975c2d43f63d0a588305f1952a2761847a2d0c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9ec76c36b9ecf2d4e555278b296667af31b482253fad4c28f2b9a52e267015f4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "001cecd965a8546d77193705a1f37108287cd21eefe5dc62eeabe6688b50f861",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f424fee4c29fd7b47b3571e22bd062ddbced85bbb71df2b10847333d6461ddd9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d25159a1de585c5c47636a5c3ee38d745336b6bc45566a3e4a220ce6d934d53f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e43b8d09dd3fa35dea0e38d79374e99bab0058d991da8d961eab5e50fa66c9fe",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed306a49a27bb8294b75c0d540eeb12828b64bfd60c4bcfd351ed20aba91bf74",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-01/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a1e19202ac5debf4efeaf77823942d6e4e22963b02f7175bb4390e472d30400",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e0a33d8189fed80f0900e7e710a45647a997274137a3cf4abffbd22c86d7bafb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7866b20f7b56a5cb105642de6ddbea97c4281ab39913f83cc201298989817f90",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f2a2948ca2b9360f5691dbec2ce53000dcf2b7bec4fd78092685bc1a2ce303d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b487897512385414c982d8f150838b0c68a9ecdbbdcb28d90c72063528b54f87",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aed759735a603488b90e9ddefeec6e3e94db1fac8ae75a5f058dc7bdac17244a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cbffcf9ac9276a7fef010e23493cd6ef2f6a84d9b29bf45bdfdb7a6708a5e4d3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07660f9b9fa17e633a7249e1bada3b9afc8892812a93332fdce7d273f8796fec",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dff6cfab9783fda1cdc3398ddb51f196b413ef28fd2837f064cf9a0fcc85bef2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6bf39cd0db12a1be49b5be473ba47f786b822c30311bd95915a4de3c0239a98f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9d1b805d3ff0e5b8ff0c80d547a2ce2a6ae47ce2d80ced5fea942d1ee8a9c740",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a924650ceb51ac2606e7fc0d2155f556c61d7a7c2eeb9ee966b902a9b84f0ea4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9e1678847d11a263703d4a77a1238e2fb21e58b914593091c199fefbfda6c6a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "50a8a6bc49d09e7681080000091622cbc72237e7eb33a52371675141b73019e7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b56e1ce6c50750c96ddb575f352e86f65524e1486eac67d1fb4e48518e16e961",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "33110a8117707442dfccf35a89d38cbd741d7b8f0b574e649f1d9ab2944311e8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07cedfd79be58e423b3a271dd5c6c347631d2da15c2083c99e51509985659975",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf1aaa921898b465a10b33815413d90712f6dbe9ff3f43a7c978a9eb48e5734f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1108ca60cbdffc1527bf39c414dfcfa07cc74edde094e54bc5ae9c837c30ceac",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5156fe4febd41695bc684b4f2ed1a6968646a8bc848c83b6e4c54e36995e26b1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d56acfd1d11be5d00948f6c730ad3287eaad363268482d282872764a7089a5f1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7fafaacc37ea5b7ff316ed6208474c1c57aff0e71c9f5f00bc62ab0a1ed93ab1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "251e18ea7fc970cd19da508125cb5f261ccf4def84d49cbc32f4e070c5875ecf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef9541889215639131fbdeb2658264a6ce0c8394afad1becc6e4d78eaed09303",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "074b1545f05960d481ee5f008030209fb3dbc0c75d5ed477f2e099bb9b15020b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3244c40fdfaf3303a96049a778b2446847a90088ede94d334c0330424d04f16e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "31022dda0f3e39679063673a436d6dad58bb8b511010ef6defbc1fbe8e3e3b6d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "914d13abbf70e14befd385f07d743245a12a92752943337a443d900a29234797",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "82753377cd36c59efac1756a4195a1bbbfd312662d0f2dc7be1066c0d5a99a9a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "67830f6a6b7ffe0aab166042f93852435a14135ab3a9a9331ca8507a9ed243fe",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ecb86f229777fbc06fcfb785573344778c24b64b7474dcbc536c1bc9c154d1f1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3e609aa004ca6d0bf626ba30158c8de8df7726e5ffce3fd58e8b2e663d909c88",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seed-dispersal",
+        "water-observation",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "53c7031eff7a04521b6299b6221f851f19d6c2a872cdd2feeafe92e9e7f479e2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8fec7660066a72d1542f11cc7dcb97892386e82010e530132dff40f924eee09",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-01-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-01-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence",
+        "water-observation",
+        "seed-dispersal",
+        "observation-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af0d9f9aebe704d5fd03df59b855750c3437177636dc0285187e2053b201aa50",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ]
+}

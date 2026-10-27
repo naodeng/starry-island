@@ -1,0 +1,1497 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-2-english-unit-04",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 2,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-1/term-2/english/unit-04"
+        ],
+        "coreKnowledgePointIds": [
+          "food-word-meanings",
+          "food-category-classification",
+          "food-preference-expressions",
+          "food-sentence-word-order"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#固定快照目录映射; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-26",
+          "notes": "对应 Food 单元食物词义、食物类别、喜好问答和问句词序；采用课程台账记录的 TapXWorld 固定回退快照，英语学校开设状态仍未确认。48 道原课程活动中10道跨难度重复题仅从闯关池排除，不修改原学习 Task；新增52道原创题（基础14、进阶20、高阶18），题库和审校台账标记为作者自审，未独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-2-english-unit-04/basic-01",
+            "difficulty": "basic",
+            "requiredKnowledgePointIds": [
+              "food-word-meanings",
+              "food-category-classification"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-04/basic-02",
+            "difficulty": "basic",
+            "requiredKnowledgePointIds": [
+              "food-preference-expressions",
+              "food-sentence-word-order"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-04/advanced-01",
+            "difficulty": "advanced",
+            "requiredKnowledgePointIds": [
+              "food-word-meanings",
+              "food-category-classification"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-04/advanced-02",
+            "difficulty": "advanced",
+            "requiredKnowledgePointIds": [
+              "food-preference-expressions",
+              "food-sentence-word-order"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-04/high-01",
+            "difficulty": "high",
+            "requiredKnowledgePointIds": [
+              "food-word-meanings",
+              "food-category-classification",
+              "food-preference-expressions",
+              "food-sentence-word-order"
+            ],
+            "targetCount": 15
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-14",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-15",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-16",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-17",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-18",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-19",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-20",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-15",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-16",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-17",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-18"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac3e4e94c0bd184cdbd181db3b37f1fe20e77162f0a1cf9027a6999a79146b97",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5aa0488b21cfb38f438d456a9b999d2ca6a254089c70b1c1739307bce32cdb0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "362c76527b9892717dc569ee7de94456b66449a17e19bdfcdd8b0ff81ac20c67",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "739f2c8340030833128eab2b003bdc3f3c083160df1ff01c408cdc4a865fc6d7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "873c6fb723bf0b75422253cabcc732171cb8085e49a009d3355a4eb095578dad",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4011ed240af8e07b512dd0aad7d917dfbe53bf844b8b16b52b3189af3385290d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da513c484cd1e0053fd84d3f7be23978b0ab881067ef43f4d669ff471a37b577",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f75dbc507c98b784c72beffb8835798e14db3be7cb2c3a52204e5874c94438b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c54820fee77385499bb6591fc51dc9b7d15b9318588f8fd9d6766c72d4a6b82b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c478221a77c1e87e65e9c8abd701c68ea19f15e994e8ba71c827bf6ea0d91deb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "be16f4f2db606a7f480d2dc2a5dc3e866122e2a87d4e50fa7c5f60583f6d528a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1cab0a5a0c75106cb4daa5ec02541b84b1a3586daa9eccab521f1d62ed1090ab",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "811198ceb969496ac7b3fb75cd84c92df0a4b8a4635c23904ec7aa02601d44bc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e329dae9cfcfe8516984663564f3b4028a3afda355a0499194088544f684223",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "470a6b2fdb94206b92db7b51a12a51f847b7d52f9d7480a7e41c4985200db2ad",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-04/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52fc37949433f2eae25e503909766555406339e68deedacd72756b069d2bba6a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93679e6672cc1b28f14935aead33754b0a1723ce5d142d94a84ad59ce4efb502",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44e7e4ff851a5f7d44362a6018b2c468dfcf9bf53d029b5554d7c066485bfca0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f14d011ef0c0fa87d258b8955eea062074d745f28c21a1148b47809eae538d9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cd127e23048417c39ec6967a4aed5a2c289696d7bf0cd66111fa4d999a766327",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0df80de9bdd72c301ce6f27c6f7e0d3f2e2a7d63ed842b356bffa4d179afcf06",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37d32586c292251aede0f4041733f1e0f1200a672d630099e80b4803cde0db48",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "83bbadb0bf3a7c4469d331ff9463eec87ae9e7deb975859b1bc39e4b40f7543a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "071b338ce3eefa5f605e339fafe892c47279ba52709cd35d988d46f4453a25ed",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "72ceb418b35b388c5aa4d2b0ff86097ba696b541bbe9e0031d5efd64b34a3ea0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-04/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "30627282b0b1deae03a1bd44fbadee73a976abd363227527213c29501265684b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4842ff528dacb46bbc110911a5e0ad9f0d71b8a83d6c1d902a16998b1a5c14c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3c88e96c8c0f24423d1d931ac1edc60a6ded43e7583335c85751db0c37ccbd04",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "244a40c421fb5fbd24a7c41e7c423a803f5309ed4b9d38f61312eae3fb63587e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c008a5e8ee4816c0aea5712cd52b98a89ded0b9329d22e63f52df943f81bc1c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "94037848ca7e1b18999b2c1146fe6460b476501d6bdb374859af17d6eed82ad0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3b9af6db89d492c5c95a6566090ea53ac16c615965cac2bcee50ac58a7c158c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3de911fcd60e8edd53c38c7fba4bae94ee29445a05cca3e133424841268bb042",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "445b3f6f65ea7504ee09cc46795904e10c7971191282730e93d043947dbf704f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8cfecafe013371a48b69d8f993faac01c50f3fd6a1f1422d9e86ee0bd14962ad",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "134bb8d55a1c29bda8d9bf22c359d9e0ba7301fc69dc120cfcf0ea6e2e93681d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c2e8fbb15e4f1ed89bbc5c9bdc53ab73ac8aee83cb7aa4ef814cf4a69c43c72",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-04/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-04/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "33b71f8d310e802c7772114ef32cefb5e7aaaa290da76cf98fe7c58be17c6aa0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8659628b02b867bc414f48820e0cf91c41fa3ff8d5ab4dd39379633f30f496d2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8142a7945d09dcd6418fbf1226c81f75c76c4abdef0f1525e93e08a081f1b00b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61995852ea9700866bfc5d9ff9ac0e7dd136b242101fd62963390abf675ff9fc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "793c47e4bc61e5616d57776cfb11e91670d6976b73dad18fb7f86d15fdef0753",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "220049b4070dad0c9aadfeb4ae75995da4b5ef8f92384e4aa16fa45e4ea7f904",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-category-classification",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "51ac180d7a4c417935cbab4da6a872fc8073cf8725ea2d1e1ddfe3c0c5e975e6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eed1cc60373815baedfe03bfb0d23edc23547fed8da4529eea81bdd201d4fa75",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a6c5f11ae78c3d5e0c598f5aab439e22c492821f394c8ac221f11dd5f3ee62a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0246ee7b45f99e791694e3f14d73f6f0b517602b9dbd2e2df52b87a5117857e1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6eb8adc1b2b572ae296394ea43f23610785efc53ecb068b322f7095f0a0f951",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-sentence-word-order",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dfb9bccb7f877e4486941b81fe9350c4163a10c1cc6a80159e2652798b97ef37",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-sentence-word-order",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "180ae0b61db4b4251fbf275d01dffcd1bab6bf8c3db43f930b1f86ecc8658d74",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db8e7327298f52853b732a0139d39ea6707f34084ee4f07453353f8db2e7d891",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-category-classification",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4e80695a0d277f2aaf8198be31b3b55f809febaffb14dfbf20a5e27df9024067",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d349a97a86ed181775517cfa3e9cb7599c9b11f7fd276ecc2a271a3182da4733",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-category-classification",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7d92c0f5fd39994f34bd408f851a0fee8b35e9f2072c6c2115dfc38e32a71400",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17452b3ea29fb0acae5e8b233afb57af473dc33ed5456c89f6b86bd35bad62e4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7843589044c7fadf0d6cd0daa1eea7bfdbc842e76c3206cd0624b9d109bacb84",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "459fce07b7b039e56c075bdfc08f564abc8f92698e3b6cf5304503157775b444",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eeb6791e137dd0f58c78a671dbc075f7fbec0806fe5ade1e67e66480cf8ae78e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-sentence-word-order",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "821b1eb3a7e14e98bb7acb9e18c2d9cfe6822a2210459ae545865fcbf682b061",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5ecb8b127565ba5446474a8deaddac1a4ae0126be4ee0caad6bac040c1364fe",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79a62e0663aa053309f1c34009caba89df517afc60c35aaa572fc027b5e59add",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37a79ca64c29d2b4105dfd7b2b33f41b492c8f812e17cf70be17e33f74428c4d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbbba4e67e1beb4c082ca85402052e6273c4595c5951fd97cb666c71fe2625d4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-category-classification",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d0779b3912a6185b3e6000df654fdfd35422c9f989c04a368660a3d6ee56098f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4cc1b72ba73b47bc7cc238fd1df2c23a635fae6ed2cf87629a189bdc819826d8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6598e5808594e8caef426686989924a0a7633c1097dc53ed305ab70cc6b23a26",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "81d308931cf35989a470e64240e752de24e41e99486effba06d9430b485f984f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-16",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-category-classification",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb7b9ef0d3a7428a6ecb18d702c9baf0b99fbc3ad00df8458c5e184c8d0c3f30",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-17",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d9b81d369c46773b8cc4003dd9216e17725a1d3afd08dff1f80b035d1496bfc1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-18",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c9d3a1de7db1cec1a02c103aed68f93b9a4e24a1230cba353469b083c38e9ee3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-19",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5b3f2653283bbe08f881b9676ce86b540631fbd4e62e87f5d94af41b41453cf6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-advanced-20",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b814b534f03544c9e00d084069daf7b4355e16e0955767939fa6d2c6b06a42b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "56f883b64d09a801dd1d103c53033611a5cfef245a127486547fd3a2724da32d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "53b27c116164490e32b63a307bc6cb93e50c9059aa3d795b1f285c8956d889a5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-sentence-word-order",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e9bb6cdca87229ac2eb1939a830ef27ab2fc4f5ea029f72ad1c30823f60e1674",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e38c35bc496ac5c4b0ec740bf494aa7096d805f814fa854a7f543f98aa09744a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e0f4ca0dc562d4adb230db2a0f4d6ea7c630a56ab3ad06b60d057b2e4e61c839",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0d4f177adf502767b4dd470a4ffa3d1ead832fe5add677609e962b78af115d27",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f79064c8c0a71a48612dcd6347ff247d379fd7bf92291041012f63afb7c3500",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4e502532388cdae57125003a8a24a4e432759fb87ff2da80eaa481db32f3c3e6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-category-classification",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49bba04a8849ff134412918bc68abcba9254b90b2f524334feeffab1186fa2fa",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05f92c98d502d13b0751fa62eaffe66356c94d51c99dff0f5243745f956607cc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93a74db6187cb58ec662f609e75db9a010ceb393d5cbd93cedd3fccaf1896919",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c96f13d98f01c0271ed9e58b006ae307c18281d4fc76c2bf59fb7bc537958f8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-category-classification",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ab4576963dfd549840b43f38cc5dd1e02f1b289f5f8f08c60e142a3921e4762",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-sentence-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d4c19b6c7dbcae7b7f9d2d4e74b2961b23a931d27f0e78e489f67681d8168b7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-15",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-preference-expressions",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e4ee1ad022018ad836de5df1937718ae92a8c7baa3d48b68556b1bd6fd23e15e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-16",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f92a3ea8912f910c36a219e5b44b095530c0f39ccac4e9b84e931a92b3df081a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-17",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-preference-expressions",
+        "food-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fdf91c55935cde89ccf5cf4b16365e5fd37fefec26d60ea18d7340920e49aef3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-04-high-18",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-04-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-word-meanings",
+        "food-category-classification",
+        "food-preference-expressions"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47844286f5df5bd6bc16dd986dd9962addb862e2d3770175a1c410e54578ae7c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    }
+  ]
+}

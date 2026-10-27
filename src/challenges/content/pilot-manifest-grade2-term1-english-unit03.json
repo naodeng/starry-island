@@ -1,0 +1,1522 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5bb27043716d20fcc34fd693a766960d6f9a1033e257f3fadaf52ffc989925b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b1ac364083b2d2a0acd50d231499b383c6eea598f54f160bef1fce15ea890e4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9893e6f529e5f3eba8a170e5db4e621a089286fa9e88a2cdb9f20867af8817a5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2dfad2865a3369f411a9ae4b4507f62f12616cd8addd9466e913c65e5247e95b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6ef7257922461d80e89104c8cab8cbcabbb4998d0bc5016f19f8c1fb2003c76",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4ccfe0d199b5f84911db4a895bb1d597eb8d411c7d9555cb4bef70bc6ee1a90",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02cdce8c010415ee27a559748c9c851ea669901e3571f83e215a368532c11376",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "831f1f6f4ccd94ff6b424bbccb78bf3d0badb78ca2c8c66cec5b58d84ddf606f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4428757d5bd665a97f3c6ef5217de41986aa8e47491dac716918ad4f0e47eae7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9443fa4c5b95ddf0d681a9ae320cc613335e6aa364c95b3fd6e836b34572f8f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "baeeb89ff390e76a856e3dabca73d44eb12d0f96ac29c68fa132462a254a56f3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-03/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e41665060d32bd67aa9208fa3c471f04ee3af52ae3d1352ed15dc905fd870b2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b36ae0c3f525cb756f1b941e5f32e09399ed902b742685a3420226048be3746",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2dcd3f70445ced019eef6801f32675b1bbe2e35ae43aa45eae814db4a664e0b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b1dc2dfe62eb2b1c212feafde07f421d65d86a4c6018fd951086777178b6c38",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65055f8d44f7c39dc9f5b349aade9a83f7a58be5ece692d0114e25688d41f58a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c7646a201e446b437d08a35753ad89f14a570797dd28b2c36d2e74f69783bb1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "14ab4ba4d9b3e57502d9c3edacf326449aeda884555b34fb02d1a61383d92997",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef63d20d500d2ff2d48c874b08340bce42e79b2b4a3ecbe0aaa0bed7191d7ce2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e0b2fe336f0d2cfbb3a9f88994add645bb674dae082c3778b86ce178626abbb6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10d0011ae7c61237bc7dc01d174525ba74f16d3b5f504106376113285bb0ea6f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b7c94ae8a81fe20b48cc0d111d230b514588087636130d2907f8ba3e2e6f2a3b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f57dd128d12a98e3a1118ffd23bb7e97fdf1205ef8528124eb0eeabd5c672dfe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f72f6dc696d1d83b88c099d1fffad4144101a576eeb018e37fc944d76462665",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db1a713892df7f2a61764f522d1b3105aa9b5d93869256aaa8a30928b4b37223",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eb6c1f4d7e10e1fb30b2a4b5150cf0d50755b552b7a55d01742ea1da65d727e5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b866132babac21101a9d60e93ef10dcc9fdb520738fd7462ddfdca48117c249f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f21be8cfda2befca9e811e04610233f630eac7a7d4923871e38cd453cd8a0802",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4075d9ddd674a11759c7c81601c794d5056ea10e694de3a67425d04b85426450",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a8b52d40011bb9a3a8a3fd1794d8fe5ab15cd99e5ede81e667167bac9ec1317",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "672228f8dc4635940e3984d555685ee63bd06d6cc90992b4d3a18c229e49f610",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "451320bbff1014b5c16034a4772bb220d7d625d3e0c8053d8c946853be23545b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a27cbd37d9e5b3b62a0dd1518d9a7cb012a1e4d24e0248087bd6b21c14aa3001",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-03/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c3003b5639b87565d6917c7506cd90f8b326af28e29e7d6132598069c6b46bd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ffdf24386d4cd6829cc40e2bcf7a0a58deb1700bec6ad36e3a18ab9afc925f09",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d0c90d95cce2f3e92a5f3ab6d00722891eb9e37354c98deb42fd86d4469fc90",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aa45b64ce6d560cae1c98a1b0e70c3ceedd5a1c5a8966ead7c7152931c43c574",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37a169b41708a711aa25fe7a8d1df6d1e08d82040498493990d7693f03509c10",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65cc3531e217edf9dc4bf8887aec6cf83c3ebb540125e1e7ae813e7db38861cf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8b73e1a0c3f547ecc13e142b6ecd4ad8662181d4e8eb9d00e4db1e5b886b7794",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "280d49f3d29732b45665d9650db3b8c216dc6324dc81acec36967365f228c4af",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4e5a1944ed6253926ef995d006c0b8c0afb6062680aee23f38f0eb4c505edf5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d2c6b8bc3df22085b950d8668e57841fe9a65dd7f61cdfeff27d5590c8923f9c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45d75151aa8b3e087a5eed6beddf5ed339c76155e963ca3afa67479d03dba9dc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e29488221b1bd0209b12f8d09a6aefe3bc2140b98cf0c57ed336e2fc3336829f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9ded1662ecdcba8fd76cee03cc7c1f4021177599fe1277ee8364bea9533542a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "66039ce674d1b7e26f57f0f3e11c436fc5b6bd308a63314c4b6ec044ab789243",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f67dc879c5cdf62ef14aac62e6396c3775be0770c006a3a8ba3ad1e627c7594",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a3137940e8e2de34a6c0f52ae625a261f25a3e0733acceb6b1f6bd1eb5d528b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-16",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba741ef11b8db8fe8b3e8f3450e13c540344acd6d55388a4696976aeda4b2e16",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-17",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3babcdf2ecb10b350bea872d2c4aaa0c04d8ba7927d3419b8214a87e29fb82c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-18",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-basic-18",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc98dcde1964892ffef713859e966f65fef18756f8dda8690cc38993f2caf170",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cea3977ed44fa517498589723afae15c20e4abd1327b5ebb04b9023227e951cb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8cf4b0d5623d1d0eadd280737ede1a9fd5eb51c47db03f084cb85cd034c4f66",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8465b8b3264773a76487a59af65751a4780fcc09c277e5b6d0a29d85daeee98",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c83be517d8cb90300681fc589481e389bdc1239a8f2bb375a11810d7ec6e28ca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fb3aa5754f0d2cde3d52b32e474305567719f717a6d98a70e79f6a19c98aae1d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c44988e7bc9d32ef569581a36774e106bc164a5075b03a10b6d3af3eb4b1580",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aec5d3eb2e02e9fde797e3946121b19ef57160434710ae5f4b4751eaf13716dd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d7ed3a7ed10f68d0a8191fceabce29cf827b758eb4cb8e474c5aedf89756b063",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f8321068a9b79f15220bfb12d5193436e3ee745ac0134b7b1a5f19087702b989",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a12fd50e75ae522510ff7dfd0d035505de0206afed2e86d2a448450c17caad96",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92dec323949a17fb02e169370464c3d08967b5d5692d5a0d752bcb0e06b7aaf5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab38b6f1fd5ee1addde3fafcd4fd50b8c2f75e1012e5b8e63ca0a8812dadba95",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02fdbc98cf8610b30257fa3951ecb6a9778ac9e5dae0390bd669e4507b6e5bb6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2c93d7a894da1d9de4266fcf6220dfa45b504bd22240d4c2504032b2f322f9b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4ea85e6be1c9bda5df3e8d69779b68e7a2fbdf677dee930cbd247e13cfee7cf8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afc106cf5160d0462a661abf758b796d6d83c1041c5f9e5c0cd3228233bfccc3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5f8b30ddb3763e9d33525081cfdb0d6f2eff2b1ae3799ad161aaff27d61aa1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-18",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a613681e5c6b2de4f6349982caa435d3c9e119d7f4884957f2821f4c99518ea2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-19",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b256217334283cd31954e1c9a8f78bf5d259d18d2f5da032f968e5c7923c214d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-20",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9efbdeabc583b09afdc88c4235d874cfb2ebe82e6d8e03c344c7592488af3d53",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c4dd9b5b9528f750169bd113cbbaf6e19e58ef946d10d0a95fddae139f2e7358",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a2db5b60e60e7c9223a2e44299724047e9e429e8b6239ef8966fab71c674aea0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c35100ecebbbefbf3b9dac4e62e6c8401b5e4492b232584410442d0ab216847",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c1fba2bd8a345a54b381f3e025a319e389c00c868852e37f42c9c947c3fbf8d4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29dd11a2ae2f644dc07fd03dff35f939204e315bd15a19a712ac868dd1279fce",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cfdec1148607a8de5430ebdcbfa720f61acd13d4ac8e7dfbb0ebf5f608229de0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d5a20c182d63f8e56d59083131b7192e6f81b4670829adaa038fb7075bbc626",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4885a8633ddbe186ddaa7777710388b93262cd3fa9e7c91f40e0c6f5b0db807b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "170f381704eef8f4c26133d971bd4d4225eaccc703c507721d95224169583192",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d550d11041c1e890111ffa5d19337cb146288bb0bd987e9e187aff558a13cd80",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9ad2e95bf7d402b167359393332592596c4a493ba148c388a455317d2d5285d8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea27df9490920b68fbb1fc21afeb28eea943c637643ee2ce6bb4764d693e560f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37bbd6b6def8b5fa05b5bacc2c7bb1d99703c7194bce7a6f4ef311aa9f3c790b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "893a740b22c559154b1463c396905705f6fcd88b02f18642e6b0905a8b6eb177",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8af6612abec35765732bf69e79f97eac25bdfd82317499d139d66f63edf9d453",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45f9e25147c64a3d60f8848a243e5843739caa3cdd9a205cfc183519888c60ed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c61eea3515c8ac6e7c5965d7fb51cc726ac90f5ace47724393325ba57d58172",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-18",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-03-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "height-and-size-words",
+        "appearance-words",
+        "friendly-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "91e9b17a89982d0f70a2b4a654429e3fd9b2be76616b403643a3cecff46938bb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-english-unit-03",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-2/term-1/english/unit-03"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/english/unit-03"
+        ],
+        "coreKnowledgePointIds": [
+          "height-and-size-words",
+          "appearance-words",
+          "friendly-description"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射；docs/curriculum/grade-2-question-review.tsv；src/content/grade-2/term-1/english/unit-03/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应单元 My Friends 中描述身高、大小/体型、外貌及友好介绍的学习内容。教材目录按项目裁定使用 TapXWorld 固定回退快照（tapx-fallback），开学进度尚未核实；不得将回退版称为人教社最新版。候选池包含34道保留的兼容课程题和56道原创题，三档各30道；原课程活动、六个学习任务、学习进度和交互保持不变。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-1-english-unit-03/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "height-and-size-words"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-03/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "appearance-words",
+              "friendly-description"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-03/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "height-and-size-words",
+              "appearance-words"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-03/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "height-and-size-words",
+              "friendly-description"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-03/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "height-and-size-words",
+              "appearance-words",
+              "friendly-description"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-03/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-03/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-03/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-basic-18",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-18",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-19",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-advanced-20",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-03-high-18"
+      ]
+    }
+  ]
+}

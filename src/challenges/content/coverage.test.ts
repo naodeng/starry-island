@@ -119,15 +119,15 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(report.expected).toEqual({ unitGroups: 254, unitTasks: 1270, semesterGroups: 108, semesterTasks: 540 });
     expect(report.registered).toEqual({
-      unitGroups: 12,
-      releasedUnitGroups: 12,
-      unitTasks: 60,
-      semesterGroups: 1,
-      releasedSemesterGroups: 1,
-      semesterTasks: 5,
+      unitGroups: 51,
+      releasedUnitGroups: 51,
+      unitTasks: 255,
+      semesterGroups: 19,
+      releasedSemesterGroups: 19,
+      semesterTasks: 95,
     });
-    expect(report.missing.unitGroupIds).toHaveLength(242);
-    expect(report.missing.semesterGroupIds).toHaveLength(107);
+    expect(report.missing.unitGroupIds).toHaveLength(203);
+    expect(report.missing.semesterGroupIds).toHaveLength(89);
     expect(report.unreleasedGroupIds).toEqual([]);
     expect(report.taskIssues).toEqual([]);
     expect(report.mappingIssues).toEqual([]);
@@ -135,6 +135,326 @@ describe('analyzeCurriculumCoverage', () => {
     expect(report.catalogIssues).toEqual([]);
     expect(report.unexpectedGroupIds).toEqual([]);
     expect(report.complete).toBe(false);
+  });
+
+  it('reports the remaining Grade 1 coverage without blocking incremental development', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const grade1ReleasedGroups = challengeManifest.groups.filter(({ definition, releaseIntent }) =>
+      definition.grade === 1 && releaseIntent === 'released');
+
+    expect(grade1ReleasedGroups.filter(({ definition }) => definition.kind === 'unit')).toHaveLength(29);
+    expect(grade1ReleasedGroups.filter(({ definition }) => definition.kind === 'semester')).toHaveLength(18);
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.unreleasedGroupIds.filter((id) => id.startsWith('grade-1-'))).toEqual([]);
+  });
+
+  it('tracks the current Grade 2 incremental coverage without relaxing the full-catalog target', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const grade2ReleasedGroups = challengeManifest.groups.filter(({ definition, releaseIntent }) =>
+      definition.grade === 2 && releaseIntent === 'released');
+
+    expect(grade2ReleasedGroups.filter(({ definition }) => definition.kind === 'unit')).toHaveLength(20);
+    expect(grade2ReleasedGroups.filter(({ definition }) => definition.kind === 'semester')).toHaveLength(1);
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+    expect(report.unreleasedGroupIds.filter((id) => id.startsWith('grade-2-'))).toEqual([]);
+  });
+
+  it('includes Grade 2 Term 1 Math Unit 1 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-unit-01');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Term 1 Math Unit 3 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-unit-03');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Term 1 Math Unit 4 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-unit-04');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Term 1 Math Unit 5 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-unit-05');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Term 1 Math Unit 6 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-unit-06');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Chinese Unit 4 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-chinese-unit-04');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Chinese Unit 5 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-chinese-unit-05');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Chinese Unit 6 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-chinese-unit-06');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Chinese Unit 7 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-chinese-unit-07');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes Grade 2 Chinese Unit 8 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-chinese-unit-08');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(27);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(17);
+  });
+
+  it('includes the Grade 1 English Unit 3 expansion in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-english-unit-03');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255, semesterGroups: 19, releasedSemesterGroups: 19, semesterTasks: 95 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes the Grade 1 English Unit 4 expansion in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-english-unit-04');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255, semesterGroups: 19, releasedSemesterGroups: 19, semesterTasks: 95 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes the Grade 1 English Unit 5 expansion in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-english-unit-05');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255, semesterGroups: 19, releasedSemesterGroups: 19, semesterTasks: 95 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes the Grade 1 English Unit 6 expansion in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-1-english-unit-06');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255, semesterGroups: 19, releasedSemesterGroups: 19, semesterTasks: 95 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 1 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-01');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255, semesterGroups: 19, releasedSemesterGroups: 19, semesterTasks: 95 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 2 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-02');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255, semesterGroups: 19, releasedSemesterGroups: 19, semesterTasks: 95 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 3 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-03');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 4 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-04');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 5 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-05');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 6 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-06');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 7 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-07');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 Math Unit 8 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-math-unit-08');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 English Unit 1 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-english-unit-01');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 English Unit 3 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-english-unit-03');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 English Unit 4 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-english-unit-04');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 English Unit 5 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-english-unit-05');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 1 Term 2 English Unit 6 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-1-term-2-english-unit-06');
+
+    expect(group?.releaseIntent).toBe('released');
+    expect(group?.questionIds).toHaveLength(90);
+    expect(report.registered).toMatchObject({ unitGroups: 51, releasedUnitGroups: 51, unitTasks: 255 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
 
   it('counts all formal units and all three semester stages, including their fifteen required tasks', () => {

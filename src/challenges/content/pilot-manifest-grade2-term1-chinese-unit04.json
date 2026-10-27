@@ -1,0 +1,1488 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-2-term-1-chinese-unit-04",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-1/chinese/unit-04"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/chinese/unit-04"
+        ],
+        "coreKnowledgePointIds": [
+          "landscape-location-and-features",
+          "observation-and-imagination",
+          "travel-order-and-description",
+          "regional-products-and-hospitality",
+          "landscape-information-organization"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#目录映射; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-1/chinese/unit-04/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应二年级上册第四单元“山水风光”，覆盖风景位置与特点、观察和想象、游览顺序与介绍、地方物产与待客、信息组织。目录沿用项目固定的 TapXWorld 回退快照，不表示采用人教社 2025 修订版。复用本单元 48 道现有学习活动并新增 42 道原创闯关题；未修改任何学习 Task。"
+        },
+        "tasks": [
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-04/basic-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "landscape-location-and-features",
+              "observation-and-imagination"
+            ]
+          },
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-04/basic-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "travel-order-and-description",
+              "regional-products-and-hospitality",
+              "landscape-information-organization"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-04/advanced-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "landscape-location-and-features",
+              "observation-and-imagination",
+              "landscape-information-organization"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-04/advanced-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "travel-order-and-description",
+              "regional-products-and-hospitality",
+              "landscape-information-organization"
+            ]
+          },
+          {
+            "difficulty": "high",
+            "id": "grade-2-term-1-chinese-unit-04/high-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "landscape-location-and-features",
+              "observation-and-imagination",
+              "travel-order-and-description",
+              "regional-products-and-hospitality",
+              "landscape-information-organization"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-14",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-14",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-14"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3f0897703d25d74e1647ffb112a98481e196879bb18c7caf62a629c906ec772",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0edd26445ddb3c32209862d75a197feb305c1a8a192b4f2c37844401288f5789",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec6ce8e118ed58d8897bcc60a8b8629fa0b4b599f75bf38699f08db6bcb50d8d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7d6c83a41611b3b2853ca8dd0c6816e06accc2a0d896572f9fa49717dde73806",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2bb5e4ebeae3c176dd24d07537abaeeaa72967a5cccc43bd66401f2a54b2aacf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c16f3c9f9f4d259e48eb461b41e49f65f752594451624eb6a265479a5fcd9d4c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5c6a0afbb1abb5ade016e9c4f427637474dc5827fac3a84ff6538f420867b35",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0944ef7e003a6d418dc3c855827a0ec3942137ff1058a3000dd8faf92d0eb09a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bad6cccaf453af1df6f429414497dc733ad0ddb871aba6d3ac1073c6da87e5df",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "242d535e40c39ba7af1827b48b250a77e651b36fc33e5faf9eba3b960a6452df",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "76bc902bea0ab098d14f1b03ddc47e99e8d694360e9c34c8a07522e0db31a015",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68f92a0eb72478267af74c6fba2f8651e00f56bbe77206e82884a3deb5040aef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25b404960e0fa244f5b8e26f485c3eef5f010a26f4fc17c352302f15271c0bfe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "59a49b6e1b2c1557a1ce7c5f8b53c8945993373fdd455f7020fd14102ca9c537",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d6cb564824290ab8f645e413ba732044db9d0cab1136ad4a970f002fb1656f4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-04/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "98cee41f6f42f996438d4f69644a675388c1e008954ae113f39039aaf7cb2931",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "22a3d01d14bf488681101531f2c059c5a462baafdaf8a044587f97c2a9abdd22",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2994011887ac4f9cb9ab3ab6c2c70b9b59dfc2a0f3a7b6ba7daa5740213e471",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c3bcc17e7da455725c1bc818ac64cfa1e4623411be5e2a5cd56a702e3866d95a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41503669fb4c64471e815e128da8d924783fca713be8620f8d0ee7c3472b92ff",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "182eca49e776af50b02c1fee3bb4fa62fb445911105fcef0b7a94c8fa3fc65ed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc0b52140dbb7b54bda1b28be20ab51a97523d4ef192bc08fdb9b50128fe38dc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7477ad6253b9c1c3fcae90e2d2bc71f0e7a26ca9d5f688146adbe94e58694f50",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "682697f156fdb8d984d666a0d4b47be063aa1173a76d625c43bd7761149b494d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a9a8e67fce177e6081fdff0613ade7bf2d355e316270f768ba2d192b9356d673",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e41ef07ff6b312675299b3ed3be7f130e48f7ba3fb1e982e6df43a8e616ebe72",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dbf656d8720cdd054545b432aa31ff019b94cf842423830227c2621310d4877f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a34f878632202a22c82cfd9c3ac8df060a0049c072764eed52de4b421bac9a1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11316d3b7ab02c61078ba5a310d7adea116d8cc588b1b18fd2cf36de9845d0d1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f7b40e246801d8b61a4c262a7becddf132eb96185387bc09d28232136492990",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab0ed32ec58c7d4f48d413547710afc997a5a9e262bca089862b99dfac9ef572",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bd06eb158a100cdf31a343f6c1e22668992a056a27808e5ab18040d68d944cc6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b093da6006397a0b79f9500d9ef56b467cb4188b54ad86e8373d6e28410c955f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "039d149c166f829f5938f81390f526e308d5ce53bb3fb3737bdb09c6c4e92231",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18cc09041fb5709b0ad62e656c8345cba8d5395a8ef4adc63f01195a12e90554",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "611809903a74ca903da192774c5929cb0110567545e30669b06a9d8caee11cda",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bdb8e6f7d42c4d4e0c0660cd50b569073ed4bccf82c3ade3e5b32c3b244bcbe2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3357baa4fe0b72b4fbc3430015f78eb35bd3c4a1831833488b01e57a9973c07d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3d8117e1c1a0ad30778d5160fe969b47030689b70b9e46b3732250072bd4bd1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9895de35fd8cc2164f7cc4d69470a703ded7545f3c386d062a714245a202ae08",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9dd417ec9bf09da45dba0f8b91e73127676187a009f2faa10ec31839d4fa4b5b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6845b9c3a9a412f8abc9bffec0e46e48ae7df7dc57e6a70b3f6788c4c5dc42c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c60ac972b9acd28c1ee13bfdedddcda9f92904fc6cf1ead892d20c25e7f6d95",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8c10636d0861a198cd1eb5fe1bc43c37b01e4c120c96db6dc046ad9dfbbbd74",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e96f543b728e092f477ac580a78a9b61433a410acd48fa9ed45d7867768b9f87",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-04/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a1398e0670be3b73ea9a86bfd5d36a30692a9219b050983c99b766df0fa10d38",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "957c84a6355c59443e6ff7128683adbb6cb0d22ecea3c6a8006b847cc49cdf98",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3af23aafa9f4203b70092e05a5bfa14c37c725b30d6e7e0a8a260a129863962",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0db28eb51cb6dd9f24154b67455c4139082e1e26f129c5485dfb8c641eaa6935",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "058dd46a4b3f53a4496655e8c50b5debbfceb5b6e7f44130f6ade51372cae273",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cba3347b9c4298a7163912f878b40e7c568c5924a29e16b8d45269a900b32efe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "904d81d1418b77c6fdfb7861e0233f32a1a5d9ee10df6a9d1ce8ea5f628d3b55",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4eed6b40ebedc15d0fe125285ee9e263908dac9f79846287c32336cd0d874adf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3bb235e1853ae6dcde50b452101b46084fe1e892902c9abcbfa2ebc27788518e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8700d3b293487a9fdca2fc04b1f2e6e176ca615a3ac456931702b8791646fe2b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "976097d4c4039dc5614bbc6510ddf3ed38d9ee9468cfdd21b7f0e8293fb6d5e8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b5f7f7203e8c331dba2e85b2ccd3b818c10f32e6e8d7ca7bdee02577a5921990",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-and-imagination",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7dec3cccdf2956af98325a2e978ecc65b4ec59c92366adfec96a74917609dc1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8a84ad060976c00009c9cc832ad0dc5a1327b40f94d09175698315a33fcd26c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a690991c978c93faae07c993a4f2e858e3bec63c202864dc5596ba3f6c3ee224",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cdfcc4e6365fce939331b126896874aa76142f1ca2d81a3c9a9f4ed971c5b4ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4639e6532226b4f1027eade578ef57207a69d03ab11545027bb25d541074409d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2fa88e01dbee36fa37ac1defce4659dda286ca5f4d483c4eb075da629e485ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8dd2e1d75366fe00e8273de561c603b6dcb25a5d23e37c697cee950c7dc0e6a9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "140a4bb3f32002a6e471bb4c18347916740de5647e953d1aef41df232aa6c8f0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab4204ee415bec86d17f36f56bc4092a764e92df95faf50691f793d804a0fdec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d2f6cfd94a9e5a0999614bcd0255a9e93ff5993ac066df5d5ac6d160a865af0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d387203df20590c784eded92af60bb875aeff5ac89d6458ca065ffe1c4570b47",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "587aa1f52e375f5fcb98e899840ae23521350cf33936ce78eabd3de81989d704",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25f359e7b1629c7bf7d1e2893489786cd776a3ce416175f039fad9a113c74c10",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "523f46a9a1759b822be44b39f731b49b75a9be3b5fca4126acb66aed85647bee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5822821c0d121b53fddc42d4dd055b1e036074e1e207a6f480bd93269e5b094c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f7050b3ad1c396b782e746bcc792bc6f5612ce00180e0b68fdf5ce9f19666d8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0833e1fdaafe7be60c978961e27c0a6d456d8c6d5f24666454f90d3ac5340cbd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-and-imagination",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf6eb54567cb84782f152151ab9dfefcc92f2c8ef6703d25d97836a2a9220944",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-04/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34754e146e333ac13d49217c66e34530ade80ac286a8008ab09908b700d8c518",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-location-and-features",
+        "regional-products-and-hospitality"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c524ae64be9b0a6c2dc0da1ffd72be8f2c1880f8f45fd28999113c19750b46fa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8bf715f73b9050bcce2c04e5e796925703ada00f381aa04605b865a4ec60790",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b0d56177f378594e5e3824090cbe74ff020cc9b49ffdc6807efbb46973a71f7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41a08f9fd08a27d2c86e6590df5e69b655cc81cb1ce9c44a1d77fd51880d2344",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "landscape-location-and-features"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07539c63b054608964005daf74a10b78c4cd7047604b41fd887e2679c6681122",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c22645992bd9b3e24b160f25794051296c3064120117c42efd1f94d38ae5e0e3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e711749a67c95ca6a32c5125f6f2d258bf2be31f2443b00002cf68857da8ec4b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-information-organization",
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c8d3c435a355b9a47ad521f7595c24ee1f7636a363b34a7c561ce8781a70b77",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "landscape-location-and-features",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a6694fd6bf8281e0f94f97527afc22a822001ba59bfa2e3ec0847b73d64ba953",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "regional-products-and-hospitality",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3c98a93f61cdb591a704223e54a1585e7644aca1717a14c4cfaab436028b5bf6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "travel-order-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ddaa31c54648c1cffb31465800d3354cfaa6fe8677cb9e0bca2658de4d6023ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-and-imagination"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "15abae03fd35ba9387252ff8ed517c432841ffbdae88d35b264b3fe2c18f4c4c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "travel-order-and-description",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7105a92b67ce7582f923582e5dbb51ef8523f1aaadc5802d14c1809788e0b37f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-04-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-04-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-and-imagination",
+        "landscape-information-organization"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "644d4f2381a6a9bfe047645a7c04066a88ac9ae8d1fed366172a70ab8ba13693",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,773 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-math-unit-03",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-1/math/unit-03"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/math/unit-03"
+        ],
+        "coreKnowledgePointIds": [
+          "angle-parts",
+          "angle-comparison"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级上册数学；docs/curriculum/grade-2-question-review.tsv；src/content/grade-2/term-1/math/unit-03/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应固定教材清单中的角的组成、顶点与两条边、用直角作参照比较角的大小。教材目录使用项目裁定的 TapXWorld 固定回退快照（tapx-fallback），不表示采用人教社修订版。复用本单元48道兼容课程活动，保留六个原学习Task；新增42道原创选择题（每档14道），使每档各有30道挑战候选。题目不引入度数或量角器内容。"
+        },
+        "tasks": [
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-math-unit-03/basic-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "angle-parts"
+            ]
+          },
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-math-unit-03/basic-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "angle-comparison"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-math-unit-03/advanced-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "angle-parts"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-math-unit-03/advanced-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "angle-comparison"
+            ]
+          },
+          {
+            "difficulty": "high",
+            "id": "grade-2-term-1-math-unit-03/high-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "angle-parts",
+              "angle-comparison"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-14",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-14",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-14"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "534f06124854dd00c2f292c814f56551477cdea57046ed85a5150578a2aa87ed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.800Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a4f33cc49fb9aad1a94964a7e0601109d46076544132539b23d0ba1198abe704",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65a4d3c48f75bff5a56744923cd3e70982eae69ba67f0304929b86e740f1468c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f80ac5bbfd298664d741187bb17c9281be839a4b23f478d5b6f2710c16af3048",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9fe3a3672e5bd15dd14a6bf7af3e273ffe03480b8ab8fdcf91b49d7179fd45a9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a7dc3b5b87ff43394c9cb4e9d2080a5fe8be3f6d5363ad08b5f6ac5af8d8db5f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09118b4e5a73fe7b972ad02de536e293a29437420ed6130d1355fe5f15fa7e50",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "967a8c90660632e95494125b95e85552842fbec64d1ffd4f9b08072a9239fee9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "67d2abccaacd2311b8b7929bd48a1b338aad0b46d021e649fe4e7ec48944581f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f59e00a10c71dc0d442d179b30c68dda3f9f0f699f10089d47fa77108ba469eb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4847b314df3ec31ff2d2895172e5697c6537ceb0db4833b44329067407533d8c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc0ad4b20a9259c474869796ea36aa0590268014700d47ef05bb6757e58a4dd1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6c15876b1c95e1295b1807a8842b75d1fd73a7da287e2f4e22fecf746ddef00",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3cd587406ca8f16499ae50a0ed69daf80bc3fa5227f9eadfed89c45720bb31c4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5da14181ededcb450c8a2e23f2c871a65c60dacb681efdac23a12b39991651b3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2053fea907eccd4f5a86052ff044b57d1755bb4955db60e9e0316e17df4329f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "debea47b18bda2db54c8b94d9f09413da59ae259a96594b110bacd3f638543d6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "91eb135fa5865bdd6d2bed8bff39b699d92e9f9ce2d0806cd4c4a46bd9849ac8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93d3ee9357ce17f97b1c291d7827f786fdef10be7aacf3776acd77296c1df9f5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92404069cfd37a9c2ae1031e34064941de8614ecbc0703ae4ada0f1992c4df49",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87af27f9a52bd5b2d0c2a5aed7d1ac5a07e98a5b58347cd8328b43464b4140bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ca031126e195baeb3aabbc25fe1e64cf054a83d392a26309ec293ae31de64842",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "57b8cd02112f32be1c2f9209818a300a009fa48f2bfba9e8c495c83d97b78446",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34e38689a5b9dce51f4648913fbdc80b2e7539d6998396858d2afc3c6aeacd6f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4422ca753b3e95db680cc67fa150192f6089e9b010cdc8bde51671d2e97973ce",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a65ec8b9c718f19cca021189e4388ea9f056f0801f5421fef6ce9060514e9fa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-parts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "08fd3b6e2c8d0be8536aaf7a54d5b29625b416ed666a3a6ac3ea4a0d231e6a99",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7974e04bccec544914a9a76c321a0ace00475d9d9334e301efdf995c7fdd13c4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64a15b96de5d6b2586ba95ec899324a5453ed0b7c9396b6cfea0d8cd2ea8dc6a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07d274f66db81af411806eebbe234073b43aba32b4de680bf27d64d6165cc5a5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba6ab522ded0f30f231e4d7cbe53475629d6a5a407b7dd2ed5ca02cbd459360b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ca1cba79e26cd0ec96e9e6d771e93fdaec1e80b4e1a0be31ac7994ba61ba5a77",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "daae153a33df88ddaa39ec8cedf3c77c327466c7877f6965e497e201d45298ec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf3fae5720c29632740e7d5f9115d17affa13bb3e321f2975d8a9724f28d131d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a4a862de3260e1df6c8a60ae5059ff36e9453f2981e64dc72909fe6f3bdc043c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e218e50a151d31b235b5acba36fd91b6c663281a2b08453e17512cf0ae0a8ba8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3da459d8cb67adb49633699ab8dbdf399e386430bcde21bc11c7b57f9b1b3421",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf82dc50511cfc54e22811bfba2aa8ad903277c55fb68b12973a354e96c6dd53",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a9030ff30858e48436455378e1e8aa71d24ebb57234e496bfec8cb52e2f8551",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b746348dfa84754137ae715ee85614906724c739601b6596efc8ba048fcde137",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f198a1c059ec30208b4b1096516333492d0c968a706cd2fc0cd029a8c6553783",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "angle-parts",
+        "angle-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "028636217984e74dd419237269161d5bd416e06f4388be3ff6b132d243ec8213",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T05:10:05.801Z"
+    }
+  ]
+}

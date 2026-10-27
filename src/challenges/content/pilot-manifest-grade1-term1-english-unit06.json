@@ -1,0 +1,1477 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-1-english-unit-06",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 1,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-1/term-1/english/unit-06"
+        ],
+        "coreKnowledgePointIds": [
+          "fruit-word-vocabulary",
+          "fruit-classification",
+          "fruit-preferences"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#固定快照目录映射; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-26",
+          "notes": "对应 Fruit 单元登记的 apple、pear、banana、orange 水果词、“苹果/其他水果”分类，以及 What fruit do you like?、I like bananas. 等课程表达；采用课程台账记录的 TapXWorld 固定回退快照（5a80345f2043ba6f8db8d7be9cf3db82725ff1f7），学校开课状态仍未确认。原课程保留48道学习活动且不修改；闯关候选池排除14道跨难度重复词义、分类、提示线索及跨单元重复题，保留其余34道课程活动并补充56道原创题。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-1-english-unit-06/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fruit-word-vocabulary"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-06/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fruit-classification",
+              "fruit-preferences"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-06/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fruit-word-vocabulary",
+              "fruit-preferences"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-06/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fruit-classification",
+              "fruit-preferences"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-06/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fruit-word-vocabulary",
+              "fruit-classification",
+              "fruit-preferences"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-17",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-18",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-19",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-20",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-21",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-22",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-17",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-18",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-19"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c90df6136f315c59a2586ac7ce8a55fddad95fa7abea09d8be318809407f4ae5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ee608e0e56ab7c6c736f64ee138488292a62096bda14f90f8f4e73d1657106b4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2a9c4706dc856cb488d3ca662c38a872ac2fc81762012500fad43d785c4236f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "382eb5d25fa3d789cddc54dc3ffd5b80890b3e69ebf63f4b5664e2967334ba21",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d40860c351fe9cce582e2fb87eee8ab57a4aaa764de46fdedbb3a768fcb28333",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4ee7df1df8b251d686a2b64876092db508267b4782de49d62214a2c812ace0cc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5ca5df0b07792c688995d23a2574cb952316d028b2959a24f0d4dff8ef1745b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5b4a79cf589be07c02a702e393aa55b50d4edfc9295925092456eec323ffe84",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d1daefcec63603c50d3dc5ddc62e7b184b03684bd995ef82ab56d4e7b6140a4c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92e0e6e96ac8655ce8bf4a1c490492143b4d88355ac8853bb6f874a66598a230",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5248cec3e2a17a5dc261d0b0fd0ade2ee12de65d45f33bbca9cc7c9a4fcc02e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "543224e4b47e24b4b5daf99a2c0c8104b157e2d3851ea564ff3ece877dcec2ab",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2886bfc26a24c2d4903f4894a5a351a78bd08c7eaf010412925f87229053a386",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e128b90c6148c903688fd132476567f16fd776fec140e5cf3cc68bc1d2371683",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-06/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6d0d001e9fff5373da3f046f0a53188a729e3041b5a1431847f4ad6e1ff9ac3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b68c26e0593edd0957a2b81c45c4e3fb5c46060367248c360af91e55891c8fa",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab1848fa99411b11e5511fd1a052b696dc7909a39ce9c45311b1115095716b17",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b88bbe4ec433fcadc8b6a733a2dbb38cbb4099e766b432e93bc99542b029813a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "66d4c6020bf4d554d027eb0b9f4f0dd120148908240b34523f5d0e5430f74795",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70adc1bcf5a66e50b4a31ef76f0dde6801548989a761c3c6da07bccdbcd71ce8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2e1d24b3c7bb25e345990c288bf3c1c8f9c1d27580a22e4a1b1f421cd5cce540",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92553f1f560eaae0faf08d5f61657e079fd22b75c3c10cac46259c8ec96b50ac",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-06/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fb9765f09ed154eeeee4426371de6a234342dad582a95dac53c3ea557d059fdd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dea76c35ddd7f5ebc939248c64e26ec4802789d317ba3b88aedb087d37521a2b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6918acb5f2f8ca004b63e1060365fc18be1752c9a98f62f89ef73cfc10754865",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87cda2a918d0dcfd1baca60880ede5a5422eb27b8a42d6ab79abd6120834a82f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "26b4e8ca9271df2ee0981b0fca62111567b7388f1e858cb8d3ef2bf5e1a24855",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb40dc0fe926d3d6d55a2dd909c8e9a24d2a7e25813d0157eb66554f3c67b3c3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fec4bb9d0b9038b1410179b2fb9509119b0796befa9f077fa5cce1a8456c4f40",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "490afa77185bf10c979e7bec53179b3b352767f3680218769d22879d8e8005d6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68b2b0d1824094e7320cf576de8253319dd1935489a85e3348ec718c871bd07e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b2037e63477c976ece3c950e1a8cf30c6011ecad5118a4c693b2b4d9534d3d84",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ebe783ee1026ef16d0619fa3ce59925b88c85946b079f001d2e1ceb279c815ff",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-06/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-06/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f7a9e98776781bfb34b8f25c3274746590461fbef6bcff302f94986febf15b9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8136465177c67078032c3add772ff21ad84e3ee8c3744fcf36f6ce2f11dcc7b2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3860044ffcc46c3c710a48c73dc94ce11b7495460db796e84536111ce0ff7995",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "06c0d90662a554c55bfd29202d327005a761f2a3328705d4772c1c803294172a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b2c088d95a176f8668a699cecbf580c712d785214a69d4f82b02dadc8d5fbb32",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8f49a6ce68e36abf18127201819f698fe0606609f0bf79368c58aaa3ea9be08",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0fc8351fa950b8e6286d4b2a25536c6ac12315096df7394f2d0b9908eb8b4f46",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e385a301ba0a20aaa7cdbf2a29411977752511a49018f39fbeb82691c13fa246",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c49e88f3333e632a1abe6d8413836725eec75c2b9dfd99c3b3366bb79c6094f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f14072e7ad1fc908c9ab45d7cbf99027a8608e423b4f02fd0c3d9fc2380bc0b6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d02f7bff038e9aaa90626a9528efd2d0524738480180b1977b635ec0a0db4d81",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4bbe541d1d1a9903c67b1dfc3a4238942d638138b2902c854ec45424c0b98c61",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6b8f6932fa9046db603213268182814634577341b620c0dbfcfee12535cd207",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61173bb6d5bd7d18b7886425968190e981d1ff5e870e86088468f65c704abe67",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea083119f3a712f3cd6009637c391cf19896e0254200e9b0f06ca6fd857e1606",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-basic-15",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fruit-classification",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f8004382f82ad1a072c267077c5d0d988b3e6e865812eddcf70629fe45a07772",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7fa0def9c8ad013b1e00e1e4883abed49441f69fcc91ce51087d577ed353a518",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3829789e718bf43d18ada25c6d5d1e8c9e575f2d2cefa8e051c3742a0c79293e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aa30ca7616118092678678c216170b4d9cecd39669db8ba7d22b3452ae7347b4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc3983cc4244d7252177574c4caa39874e23deebe90cb1c03b368d857bc344a5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-classification",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8dc86dd68aadfb4f34f4caa4939e7de62f6f27948a7cd6c38ce0babef19f818",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "280c4b5f3eeaf293ea4126076d89eadcc8b83790d3b411995a1ffee4cb66a41e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1e6e6cc6c9d730c38bf0fef4cd7426c39a1470253979826837b1c813fbfaa445",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a8824df248984c2f8906654b4c6d322503842edaed42a0487f2059b22d779fba",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6df13909a6c2125719cb514b8a57f3512c3f5d91fd3bd64a9ac263d58cd49c6f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79e1107fdbbff734fe86d2eed717b05c00beebb1652996e1a2cfdcb23a65b54b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5830fb133da70536b644cd4a80547d629a0d0710f030190991eae23add9462a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab1e7a7a307e892e4f7bc13fdf7bbc1b7b6e098f04603d387954a7a92f211d61",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac588e77fc14678cba834b9935de0ce38733167e1eb586975003cdba806ecaf2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e47f3a526f9390df30d6ef8ec7c85c144eb7a10526d83d1ac88dd96bccb195a2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79836bd9e8b7eef0638b87ca73d125baac2109239a98622b8ebc2dc518d4fc35",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-16",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0def11cc9847a0dc744e7d9440f4b7e489a447e0b4b0b0d5cf398164d19f5df0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-17",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-classification",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ce11613dc0061ea53c5c819d4f70ee349d3a2ff45bcd25ea53e9ec1af0d161a2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-18",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3e5ae9d9ba3d4dea61c1ce4a710f7caf955737fd8fbee316a738984aa8421084",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-19",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d1aee4e1ede3407913da84d87679c6c548535b98d3531559ebe8b783cd55428",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-20",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-classification",
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69132586ba09ee59e11fd5fc3973318b92306b6ad49943f856e539998bc05d63",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-21",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-21",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c483d351840a6e2279bc984df2286353cabe103a890e8160d3fe306de02c61e8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-advanced-22",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-advanced-22",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3bd5db2b859c44ae8ccc45735480704b8efdb97b25e4fa1d31e38d42503f1dca",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-01",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64a3d9472f877d55845644715cba18b54c7f614962296845486a2b56cafb0c41",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-02",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "89bf0264f57e2a88ac9069ab1433f47f6a5dce5d8f299aadef0d5652b9feb3d2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-03",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c0872c923fac7081531bfb6a1fdbcdb0b2d86de3a996cd639222d4ff61b44c9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-04",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-classification",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5f3031322820e258be18a952c4276ac60995815765217167f6afbf009273736",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-05",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1c4171d687782b1f3ac0db1789400cd83b9df1fb859b524329d5b4887de7f3f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-06",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44aec5e44a2a98f7644538350d829d254c0c18829ae40c3eb999d71397996f9c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-07",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a7329e747ad166f5983c2429ed38dad6059f60b41fd60d7e32e7cd8cc70a8cc4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-08",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "74f8b827dcc55c32e0d2d17cc0ccff43f30bc485ae33abb4eceb0dfa3fec48af",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-09",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3881fff259560c5c440984f0fb4fffe03911dd7660dda6292f64bca17a97937",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-10",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9cb9d1e086926fd992de53bcdd2fc08e236426c1774d7505b9a21b41b4d6d05d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-11",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a807507529dd55d5d749874f12dbe475e024aef3dede8c165f7f92899778bfd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-12",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-classification",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f5cdce372ade6041588d6937f2acca9e4f67af14ec30f236e4a8de4bcd355d8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-13",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0738e4509e4362c5535b87bdf90e194ed160925ccda246acafa93c6e4e8da593",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-14",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-classification",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fe3b6aa01db939db29ac0aac92a3efcb2d97a7fea00fd442aaa08a70ccdd59e3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-15",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-classification",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fb39edb1cbab85e54a14021e378236c6f06d7dc0c165b180eed42f8d5a6e0a97",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-16",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cc53e02072d3a153015ad67440387f3c783747b1ebb0f38cff6276d2d46d752f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-17",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "53110f18bdd38c087c5d8cda8992434d66756e85cb16150c2e3b75c78c90ad01",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-18",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-preferences",
+        "fruit-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4eb62e5a6ab885da4dde3b5585f3f9ee39f572ee36457c8d00205ac4afbb323",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-06-high-19",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-06-high-19",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fruit-word-vocabulary",
+        "fruit-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1506d3901bf2cdf90bef39c27631166ddd2a8206473a35356f3dda16d099f62c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    }
+  ]
+}

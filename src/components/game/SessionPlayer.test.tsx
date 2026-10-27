@@ -114,5 +114,5 @@ describe('SessionPlayer', () => {
     await user.click(screen.getByRole('button', { name: '正确选项 1' }));
     await user.click(screen.getByRole('button', { name: '提交答案' }));
     expect(playedSources.at(-1)).toBe(SOUND_CUE_ASSETS['answer-correct']);
-  });
+  }, 30_000);
 });

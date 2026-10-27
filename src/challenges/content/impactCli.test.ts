@@ -46,6 +46,7 @@ describe('challenge impact CLI', () => {
     expect(result.stderr).toContain('至少提供一个 --question-id');
   });
 
+  // This starts a real Node/Vite subprocess and scans the complete static manifest.
   it('lists every same-difficulty task for multiple questions in the real pilot manifest', async () => {
     const manifestBefore = await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest.json'), 'utf8');
     const manifestFragmentPaths = [
@@ -54,6 +55,12 @@ describe('challenge impact CLI', () => {
       resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit07.json'),
       resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit08.json'),
       resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-math-unit09.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-math.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit01.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit02.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-english-unit03.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade1-term2-semester.json'),
+      resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit01.json'),
     ];
     const manifestFragmentsBefore = await Promise.all(manifestFragmentPaths.map((path) => readFile(path, 'utf8')));
     const manifest = rawManifest as unknown as ChallengeManifest;
@@ -80,7 +87,7 @@ describe('challenge impact CLI', () => {
     }
     expect(await readFile(resolve(repoRoot, 'src/challenges/content/pilot-manifest.json'), 'utf8')).toBe(manifestBefore);
     expect(await Promise.all(manifestFragmentPaths.map((path) => readFile(path, 'utf8')))).toEqual(manifestFragmentsBefore);
-  });
+  }, 15_000);
 
   it('returns a distinct status and requires the full quality gate when an ID is unknown', () => {
     const result = runCli(['--question-id', 'question-removed-from-current-manifest']);

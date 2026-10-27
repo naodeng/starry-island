@@ -4,6 +4,13 @@ import { loadUnit } from '../../content/unitLoader';
 import { derivePilotQuestionKnowledgePointIds } from './pilotQuestionKnowledgePoints';
 import { grade1MathUnit09SupplementalActivities } from './grade1MathUnit09SupplementalActivities';
 import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
+import { grade1Term2MathUnit02SupplementalActivities } from './grade1Term2MathUnit02SupplementalActivities';
+import { grade1Term2MathUnit03SupplementalActivities } from './grade1Term2MathUnit03SupplementalActivities';
+import { grade1Term2MathUnit04SupplementalActivities } from './grade1Term2MathUnit04SupplementalActivities';
+import { grade1Term2MathUnit05SupplementalActivities } from './grade1Term2MathUnit05SupplementalActivities';
+import { grade1Term2MathUnit06SupplementalActivities } from './grade1Term2MathUnit06SupplementalActivities';
+import { grade1Term2MathUnit07SupplementalActivities } from './grade1Term2MathUnit07SupplementalActivities';
+import { grade1Term2MathUnit08SupplementalActivities } from './grade1Term2MathUnit08SupplementalActivities';
 
 const base = {
   id: 'fixture',
@@ -22,6 +29,325 @@ function choice(prompt: string, labels: string[] = []): ActivityDefinition {
 }
 
 describe('derivePilotQuestionKnowledgePointIds', () => {
+  it('maps every Grade 1 Term 1 Chinese theme activity to its registered theme knowledge point', async () => {
+    const pointByUnit = new Map([
+      ['grade-1/term-1/chinese/unit-01', 'daily-life-literacy-and-character-meanings'],
+      ['grade-1/term-1/chinese/unit-02', 'initials-finals-and-tone-marking'],
+      ['grade-1/term-1/chinese/unit-03', 'compound-nasal-finals-and-whole-syllables'],
+      ['grade-1/term-1/chinese/unit-04', 'seasons-weather-and-natural-observation'],
+      ['grade-1/term-1/chinese/unit-05', 'common-character-meanings-in-daily-life'],
+      ['grade-1/term-1/chinese/unit-06', 'shadow-observation-and-animal-features'],
+      ['grade-1/term-1/chinese/unit-07', 'size-and-distance-comparison'],
+      ['grade-1/term-1/chinese/unit-08', 'nature-imagination-and-story-sequence'],
+    ]);
+
+    for (const [sourceUnitId, expectedPointId] of pointByUnit) {
+      const unit = await loadUnit(sourceUnitId);
+      const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+        .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+      expect(activities).toHaveLength(48);
+      expect(activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity)))
+        .toEqual(Array.from({ length: 48 }, () => [expectedPointId]));
+    }
+  });
+
+  it('maps every Grade 1 Term 2 Math Unit 1 activity to a plane-shape knowledge point', async () => {
+    const sourceUnitId = 'grade-1/term-2/math/unit-01';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'plane-shape-recognition',
+      'plane-shape-features',
+      'plane-shape-composition',
+    ]));
+    expect(activities.some((activity) => activity.prompt.includes('整体轮廓')
+      && derivePilotQuestionKnowledgePointIds(sourceUnitId, activity).includes('plane-shape-features'))).toBe(true);
+  });
+
+  it('maps every Grade 1 Term 2 Math Unit 2 source activity to subtraction knowledge points', async () => {
+    const sourceUnitId = 'grade-1/term-2/math/unit-02';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.includes('subtraction-within-20'))).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'subtraction-within-20',
+      'subtraction-strategy',
+      'inverse-operation-check',
+    ]));
+  });
+
+  it('maps every Grade 1 Term 2 Math Unit 3 source activity to classification knowledge points', async () => {
+    const sourceUnitId = 'grade-1/term-2/math/unit-03';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'classification-standard',
+      'classification-recording',
+      'classification-results',
+      'classification-checking',
+    ]));
+  });
+
+  it('maps all Grade 1 Term 2 English Unit 3 source activities to the four toy knowledge points', async () => {
+    const sourceUnitId = 'grade-1/term-2/english/unit-03';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'toy-word-meanings',
+      'toy-type-classification',
+      'toy-description-sentences',
+      'toy-sentence-word-order',
+    ]));
+  });
+
+  it('maps all Grade 1 Term 2 English Unit 4 source activities to the four food knowledge points', async () => {
+    const sourceUnitId = 'grade-1/term-2/english/unit-04';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'food-word-meanings',
+      'food-category-classification',
+      'food-preference-expressions',
+      'food-sentence-word-order',
+    ]));
+  });
+
+  it('maps every Grade 1 Term 2 Math Unit 4 source activity to number and place-value knowledge points', async () => {
+    const sourceUnitId = 'grade-1/term-2/math/unit-04';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'two-digit-number-composition',
+      'number-sequence-to-100',
+      'number-comparison-to-100',
+      'tens-and-hundreds',
+    ]));
+    const tagsByActivityId = new Map(activities.map((activity) => [
+      activity.id,
+      derivePilotQuestionKnowledgePointIds(sourceUnitId, activity),
+    ]));
+    expect(tagsByActivityId.get(`${sourceUnitId}/basic/task-01/session-01/question-01`))
+      .toEqual(['two-digit-number-composition']);
+    expect(tagsByActivityId.get(`${sourceUnitId}/basic/task-01/session-01/question-04`))
+      .toEqual(['number-sequence-to-100']);
+    expect(tagsByActivityId.get(`${sourceUnitId}/basic/task-01/session-01/question-06`))
+      .toEqual(['tens-and-hundreds']);
+    expect(tagsByActivityId.get(`${sourceUnitId}/basic/task-01/session-01/question-07`))
+      .toEqual(['number-comparison-to-100']);
+    expect(tagsByActivityId.get(`${sourceUnitId}/advanced/task-01/session-01/question-08`))
+      .toEqual(['tens-and-hundreds']);
+  });
+
+  it('maps every Grade 1 Term 2 Math Unit 6 source activity to addition and subtraction knowledge points', async () => {
+    const sourceUnitId = 'grade-1/term-2/math/unit-06';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'two-digit-add-subtract-one',
+      'tens-add-subtract',
+      'two-digit-add-subtract-tens',
+    ]));
+    const tagsByActivityId = new Map(activities.map((activity) => [
+      activity.id,
+      derivePilotQuestionKnowledgePointIds(sourceUnitId, activity),
+    ]));
+    expect(tagsByActivityId.get(`${sourceUnitId}/basic/task-01/session-01/question-01`))
+      .toEqual(['two-digit-add-subtract-one']);
+    expect(tagsByActivityId.get(`${sourceUnitId}/basic/task-01/session-01/question-04`))
+      .toEqual(['tens-add-subtract']);
+    expect(tagsByActivityId.get(`${sourceUnitId}/basic/task-01/session-01/question-05`))
+      .toContain('two-digit-add-subtract-one');
+    expect(tagsByActivityId.get(`${sourceUnitId}/advanced/task-01/session-01/question-05`))
+      .toEqual(['two-digit-add-subtract-one', 'tens-add-subtract']);
+  });
+
+  it('uses authored knowledge-point tags for Grade 1 Term 2 Math Unit 6 supplements', () => {
+    for (const supplemental of grade1Term2MathUnit06SupplementalActivities) {
+      expect(derivePilotQuestionKnowledgePointIds(supplemental.sourceUnitId, supplemental.activity))
+        .toEqual(supplemental.knowledgePointIds);
+    }
+    expect(new Set(grade1Term2MathUnit06SupplementalActivities.flatMap(({ knowledgePointIds }) => knowledgePointIds))).toEqual(new Set([
+      'two-digit-add-subtract-one',
+      'tens-add-subtract',
+      'two-digit-add-subtract-tens',
+    ]));
+  });
+
+  it('maps every Grade 1 Term 2 Math Unit 7 activity to pattern knowledge points', async () => {
+    const sourceUnitId = 'grade-1/term-2/math/unit-07';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'repeating-shape-patterns',
+      'number-patterns',
+      'pattern-rule-validation',
+    ]));
+  });
+
+  it('uses authored knowledge-point tags for Grade 1 Term 2 Math Unit 7 supplements', () => {
+    for (const supplemental of grade1Term2MathUnit07SupplementalActivities) {
+      expect(derivePilotQuestionKnowledgePointIds(supplemental.sourceUnitId, supplemental.activity))
+        .toEqual(supplemental.knowledgePointIds);
+    }
+    expect(new Set(grade1Term2MathUnit07SupplementalActivities.flatMap(({ knowledgePointIds }) => knowledgePointIds))).toEqual(new Set([
+      'repeating-shape-patterns',
+      'number-patterns',
+      'pattern-rule-validation',
+    ]));
+  });
+
+  it('maps every Grade 1 Term 2 Math Unit 8 activity and keeps authored review tags', async () => {
+    const sourceUnitId = 'grade-1/term-2/math/unit-08';
+    const unit = await loadUnit(sourceUnitId);
+    expect(unit).toBeDefined();
+    const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+    const failures = activities.flatMap((activity) => {
+      try {
+        derivePilotQuestionKnowledgePointIds(sourceUnitId, activity);
+        return [];
+      } catch (error) {
+        return [{ id: activity.id, prompt: activity.prompt, error: String(error) }];
+      }
+    });
+    expect(failures).toEqual([]);
+    const tagged = activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity));
+
+    expect(activities).toHaveLength(48);
+    expect(tagged.every((knowledgePointIds) => knowledgePointIds.length > 0)).toBe(true);
+    expect(new Set(tagged.flat())).toEqual(new Set([
+      'plane-shape-recognition',
+      'plane-shape-features',
+      'classification-standard',
+      'classification-recording',
+      'classification-results',
+      'classification-checking',
+      'currency-denominations',
+      'two-digit-add-subtract-one',
+      'two-digit-add-subtract-tens',
+      'inverse-operation-check',
+      'subtraction-within-20',
+      'subtraction-strategy',
+      'number-comparison-to-100',
+      'number-sequence-to-100',
+      'two-digit-number-composition',
+      'repeating-shape-patterns',
+      'pattern-rule-validation',
+      'yuan-jiao-fen-conversion',
+      'money-composition-and-comparison',
+    ]));
+    expect(tagged[7]).toContain('inverse-operation-check');
+    expect(tagged[15]).toContain('two-digit-add-subtract-one');
+    const classifications = activities.find(({ id }) => id === `${sourceUnitId}/basic/task-02/session-01/question-04`)!;
+    expect(derivePilotQuestionKnowledgePointIds(sourceUnitId, classifications)).not.toContain('currency-denominations');
+    const moneyReview = activities.find(({ id }) => id === `${sourceUnitId}/basic/task-02/session-01/question-03`)!;
+    expect(derivePilotQuestionKnowledgePointIds(sourceUnitId, moneyReview)).toContain('yuan-jiao-fen-conversion');
+    expect(derivePilotQuestionKnowledgePointIds(sourceUnitId, moneyReview)).toContain('money-composition-and-comparison');
+
+    for (const supplemental of grade1Term2MathUnit08SupplementalActivities) {
+      expect(derivePilotQuestionKnowledgePointIds(supplemental.sourceUnitId, supplemental.activity))
+        .toEqual(supplemental.knowledgePointIds);
+    }
+  });
+
+  it('uses authored knowledge-point tags for Grade 1 Term 2 Math Unit 2 supplements', () => {
+    for (const supplemental of grade1Term2MathUnit02SupplementalActivities) {
+      expect(derivePilotQuestionKnowledgePointIds(supplemental.sourceUnitId, supplemental.activity))
+        .toEqual(supplemental.knowledgePointIds);
+    }
+    expect(new Set(grade1Term2MathUnit02SupplementalActivities.flatMap(({ knowledgePointIds }) => knowledgePointIds))).toEqual(new Set([
+      'subtraction-within-20',
+      'subtraction-strategy',
+      'inverse-operation-check',
+    ]));
+  });
+
+  it('uses authored knowledge-point tags for Grade 1 Term 2 Math Unit 3 supplements', () => {
+    for (const supplemental of grade1Term2MathUnit03SupplementalActivities) {
+      expect(derivePilotQuestionKnowledgePointIds(supplemental.sourceUnitId, supplemental.activity))
+        .toEqual(supplemental.knowledgePointIds);
+    }
+    expect(new Set(grade1Term2MathUnit03SupplementalActivities.flatMap(({ knowledgePointIds }) => knowledgePointIds))).toEqual(new Set([
+      'classification-standard',
+      'classification-recording',
+      'classification-results',
+      'classification-checking',
+    ]));
+  });
+
+  it('uses authored knowledge-point tags for Grade 1 Term 2 Math Unit 4 supplements', () => {
+    for (const supplemental of grade1Term2MathUnit04SupplementalActivities) {
+      expect(derivePilotQuestionKnowledgePointIds(supplemental.sourceUnitId, supplemental.activity))
+        .toEqual(supplemental.knowledgePointIds);
+    }
+    expect(new Set(grade1Term2MathUnit04SupplementalActivities.flatMap(({ knowledgePointIds }) => knowledgePointIds))).toEqual(new Set([
+      'two-digit-number-composition',
+      'number-sequence-to-100',
+      'number-comparison-to-100',
+      'tens-and-hundreds',
+    ]));
+  });
+
+  it('uses authored knowledge-point tags for Grade 1 Term 2 Math Unit 5 supplements', () => {
+    for (const supplemental of grade1Term2MathUnit05SupplementalActivities) {
+      expect(derivePilotQuestionKnowledgePointIds(supplemental.sourceUnitId, supplemental.activity))
+        .toEqual(supplemental.knowledgePointIds);
+    }
+    expect(new Set(grade1Term2MathUnit05SupplementalActivities.flatMap(({ knowledgePointIds }) => knowledgePointIds))).toEqual(new Set([
+      'currency-denominations',
+      'yuan-jiao-fen-conversion',
+      'money-composition-and-comparison',
+      'money-addition-and-change',
+    ]));
+  });
+
   it('为一年级上册数学第二单元的位置活动映射知识点', async () => {
     const sourceUnitId = 'grade-1/term-1/math/unit-02';
     const unit = await loadUnit(sourceUnitId);
@@ -318,7 +644,7 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
   });
 
   it('fails closed for an unsupported source unit or a question with no detectable core point', () => {
-    expect(() => derivePilotQuestionKnowledgePointIds('grade-2/term-1/math/unit-09', choice('计算。'))).toThrow();
+    expect(() => derivePilotQuestionKnowledgePointIds('grade-6/term-1/math/unit-01', choice('计算。'))).toThrow();
     expect(() => derivePilotQuestionKnowledgePointIds(
       'grade-2/term-1/math/unit-02',
       choice('请看图。'),

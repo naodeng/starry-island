@@ -753,6 +753,556 @@ test('opens the Grade 3 English Unit 1 pilot without changing course progress', 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('opens the Grade 2 Chinese Unit 4 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/chinese/unit-04');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-04');
+  await expect(page.getByRole('heading', { name: '二年级上册语文 · 第四单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-chinese-unit-04%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Chinese Unit 5 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/chinese/unit-05');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-05');
+  await expect(page.getByRole('heading', { name: '二年级上册语文 · 第五单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-chinese-unit-05%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Chinese Unit 6 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/chinese/unit-06');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-06');
+  await expect(page.getByRole('heading', { name: '二年级上册语文 · 第六单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-chinese-unit-06%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Chinese Unit 7 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/chinese/unit-07');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-07');
+  await expect(page.getByRole('heading', { name: '二年级上册语文 · 第七单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-chinese-unit-07%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Chinese Unit 8 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/chinese/unit-08');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-08');
+  await expect(page.getByRole('heading', { name: '二年级上册语文 · 第八单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-chinese-unit-08%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 1 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-01');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-01');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第一单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-01%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 3 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-03');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-03');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第三单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-03%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 4 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-04');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-04');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第四单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-04%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 5 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-05');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-05');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第五单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-05%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 6 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-06');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-06');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第六单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-06%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 7 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-07');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-07');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第七单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-07%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 8 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-08');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-08');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第八单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-08%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 9 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-09');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-09');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第九单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-09%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 English Unit 1 challenge from My Family without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/english/unit-01');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-unit-01');
+  await expect(page.getByRole('heading', { name: '二年级上册英语 · 第一单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-english-unit-01%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 English Unit 2 challenge from Boys and Girls without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/english/unit-02');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-unit-02');
+  await expect(page.getByRole('heading', { name: '二年级上册英语 · 第二单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-english-unit-02%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 English Unit 3 challenge from My Friends without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });
+  await page.goto('/grade-2/term-1/english/unit-03');
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.reload();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-unit-03');
+  await expect(page.getByRole('heading', { name: '二年级上册英语 · 第三单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-english-unit-03%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 English Unit 1 challenge without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册英语 · 第一单元' });
+
+  await expect(group).toContainText('练习问候与告别、课堂指令和学习用品表达。');
+  await group.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-01');
+  await expect(page.getByRole('heading', { name: '一年级上册英语 · 第一单元' })).toBeVisible();
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-1-term-1-english-unit-01%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 English Unit 2 challenge without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册英语 · 第二单元' });
+
+  await expect(group).toContainText('练习眼、耳、鼻、口等面部词汇、相关指令和简单介绍句。');
+  await group.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-02');
+  await expect(page.getByRole('heading', { name: '一年级上册英语 · 第二单元' })).toBeVisible();
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-1-term-1-english-unit-02%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 English Unit 3 challenge without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册英语 · 第三单元' });
+
+  await expect(group).toContainText('练习常见动物名称，以及描述动物和表达喜好的简单句。');
+  const viewChallengeTasks = group.getByRole('button', { name: '查看挑战任务' });
+  await viewChallengeTasks.focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-03');
+  await expect(page.getByRole('heading', { name: '一年级上册英语 · 第三单元' })).toBeVisible();
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-1-term-1-english-unit-03%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 English Unit 4 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-1/english/unit-04');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-04');
+  await expect(page.getByRole('heading', { name: '一年级上册英语 · 第四单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 English Unit 5 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-1/english/unit-05');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-05');
+  await expect(page.getByRole('heading', { name: '一年级上册英语 · 第五单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 English Unit 6 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-1/english/unit-06');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-06');
+  await expect(page.getByRole('heading', { name: '一年级上册英语 · 第六单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Math second-half stage and preserves course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/challenges');
+  await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const secondHalfCard = page.locator('.challenge-group-card').filter({
+    has: page.getByRole('heading', { name: '一年级上册数学 · 后半学期' }),
+  });
+
+  await expect(secondHalfCard).toContainText('按教材章节顺序练习上册后半部分内容。');
+  await secondHalfCard.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-second-half');
+  await expect(page.getByRole('heading', { name: '一年级上册数学 · 后半学期' })).toBeVisible();
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-1-term-1-math-second-half%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Chinese theme-based semester stage without changing course progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/challenges');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const firstHalfCard = page.locator('.challenge-group-card').filter({
+    has: page.getByRole('heading', { name: '一年级上册语文 · 前半学期' }),
+  });
+
+  await expect(firstHalfCard).toContainText('按课程主题顺序练习上册前半部分内容。');
+  await firstHalfCard.getByRole('button', { name: '查看挑战任务' }).click();
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-1-chinese-first-half');
+  await expect(page.getByRole('heading', { name: '一年级上册语文 · 前半学期' })).toBeVisible();
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('opens the Grade 1 math Unit 1 challenge from the center without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
@@ -818,6 +1368,13 @@ test('opens the Grade 1 math Unit 3 challenge from its course page without chang
 test('opens the Grade 1 math Unit 4 challenge on a narrow dark screen without changing learning tasks or progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.addInitScript(() => {
+    let call = 0;
+    Object.defineProperty(globalThis.crypto, 'randomUUID', {
+      configurable: true,
+      value: () => call++ === 0 ? 'layout-diagnostic-1' : 'layout-diagnostic-attempt',
+    });
+  });
   await page.goto('/grade-1/term-1/math/unit-04');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
@@ -832,7 +1389,8 @@ test('opens the Grade 1 math Unit 4 challenge on a narrow dark screen without ch
   await expect(startButtons).toHaveCount(5);
   await startButtons.first().click();
   await page.getByRole('button', { name: '开始挑战' }).click();
-  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  await expect(page.locator('.challenge-activity h2')).toHaveText('把立体图形和相似物体的整体外形连起来。');
+  await expect(page.getByRole('group', { name: '左侧词语' })).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
@@ -937,6 +1495,292 @@ test('opens the Grade 1 math Unit 9 challenge on a narrow dark screen without ch
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-09');
   await expect(page.getByRole('heading', { name: '一年级上册数学 · 第九单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 Math Unit 1 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/math/unit-01');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-01');
+  await expect(page.getByRole('heading', { name: '一年级下册数学 · 第一单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 Math Unit 2 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/math/unit-02');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-02');
+  await expect(page.getByRole('heading', { name: '一年级下册数学 · 第二单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 Math Unit 3 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/math/unit-03');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-03');
+  await expect(page.getByRole('heading', { name: '一年级下册数学 · 第三单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 Math Unit 5 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/math/unit-05');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-05');
+  await expect(page.getByRole('heading', { name: '一年级下册数学 · 第五单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 Math Unit 6 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/math/unit-06');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-06');
+  await expect(page.getByRole('heading', { name: '一年级下册数学 · 第六单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 Math Unit 7 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/math/unit-07');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-07');
+  await expect(page.getByRole('heading', { name: '一年级下册数学 · 第七单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 Math Unit 8 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/math/unit-08');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-08');
+  await expect(page.getByRole('heading', { name: '一年级下册数学 · 第八单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 English Unit 1 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/english/unit-01');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-01');
+  await expect(page.getByRole('heading', { name: '一年级下册英语 · 第一单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 English Unit 2 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/english/unit-02');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-02');
+  await expect(page.getByRole('heading', { name: '一年级下册英语 · 第二单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 English Unit 3 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/english/unit-03');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-03');
+  await expect(page.getByRole('heading', { name: '一年级下册英语 · 第三单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 English Unit 4 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/english/unit-04');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-04');
+  await expect(page.getByRole('heading', { name: '一年级下册英语 · 第四单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 English Unit 5 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/english/unit-05');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-05');
+  await expect(page.getByRole('heading', { name: '一年级下册英语 · 第五单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 1 Term 2 English Unit 6 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-1/term-2/english/unit-06');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-06');
+  await expect(page.getByRole('heading', { name: '一年级下册英语 · 第六单元' })).toBeVisible();
 
   const startButtons = page.getByRole('button', { name: '开始挑战' });
   await expect(startButtons).toHaveCount(5);

@@ -90,4 +90,41 @@ describe('analyzeQuestionUniqueness', () => {
     }));
     expect(JSON.stringify(report)).not.toContain('小明有');
   });
+
+  it('detects duplicate categorize questions even when nested identifiers differ', async () => {
+    const questions = [
+      makeQuestion('question-a', 'activity-a'),
+      makeQuestion('question-b', 'activity-b'),
+    ];
+    const activitiesById = new Map<string, ActivityDefinition>([
+      ['activity-a', {
+        id: 'activity-a',
+        kind: 'categorize',
+        prompt: '按水果分类，orange 应放在哪组？',
+        hint: '先回忆词义。',
+        explanation: 'orange 是橙子，属于其他水果。',
+        categories: [{ id: 'a-fruit', label: '其他水果' }, { id: 'a-apple', label: '苹果' }],
+        items: [{ id: 'a-item-orange', label: 'orange', categoryId: 'a-fruit' }],
+      }],
+      ['activity-b', {
+        id: 'activity-b',
+        kind: 'categorize',
+        prompt: '按水果分类，orange 应放在哪组？',
+        hint: '想一想水果词。',
+        explanation: 'orange 表示橙子。',
+        categories: [{ id: 'b-apple', label: '苹果' }, { id: 'b-fruit', label: '其他水果' }],
+        items: [{ id: 'b-item-orange', label: 'orange', categoryId: 'b-fruit' }],
+      }],
+    ]);
+    const sourceUnitByActivityId = new Map([['activity-a', UNIT_ID], ['activity-b', UNIT_ID]]);
+
+    const report = await analyzeQuestionUniqueness(questions, activitiesById, sourceUnitByActivityId);
+
+    expect(report.exactDuplicateGroups).toHaveLength(0);
+    expect(report.similarQuestionPairs).toHaveLength(1);
+    expect(report.similarQuestionPairs[0]).toEqual(expect.objectContaining({
+      questionIds: ['question-a', 'question-b'],
+      reason: '交互内容与答案结构相同，但嵌套标识不同；建议人工确认是否为重复题。',
+    }));
+  });
 });

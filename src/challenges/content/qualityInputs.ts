@@ -15,6 +15,46 @@ import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06Supple
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
 import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
 import { grade1MathUnit09SupplementalActivities } from './grade1MathUnit09SupplementalActivities';
+import { grade1Term1EnglishUnit01SupplementalActivities } from './grade1Term1EnglishUnit01SupplementalActivities';
+import { grade1Term1EnglishUnit02SupplementalActivities } from './grade1Term1EnglishUnit02SupplementalActivities';
+import { grade1Term1EnglishUnit03SupplementalActivities } from './grade1Term1EnglishUnit03SupplementalActivities';
+import { grade1Term1EnglishUnit04SupplementalActivities } from './grade1Term1EnglishUnit04SupplementalActivities';
+import { grade1Term1EnglishUnit05SupplementalActivities } from './grade1Term1EnglishUnit05SupplementalActivities';
+import { grade1Term1EnglishUnit06SupplementalActivities } from './grade1Term1EnglishUnit06SupplementalActivities';
+import { grade1Term2MathUnit01SupplementalActivities } from './grade1Term2MathUnit01SupplementalActivities';
+import { grade1Term2MathUnit02SupplementalActivities } from './grade1Term2MathUnit02SupplementalActivities';
+import { grade1Term2MathUnit03SupplementalActivities } from './grade1Term2MathUnit03SupplementalActivities';
+import { grade1Term2MathUnit04SupplementalActivities } from './grade1Term2MathUnit04SupplementalActivities';
+import { grade1Term2MathUnit05SupplementalActivities } from './grade1Term2MathUnit05SupplementalActivities';
+import { grade1Term2MathUnit06SupplementalActivities } from './grade1Term2MathUnit06SupplementalActivities';
+import { grade1Term2MathUnit07SupplementalActivities } from './grade1Term2MathUnit07SupplementalActivities';
+import { grade1Term2MathUnit08SupplementalActivities } from './grade1Term2MathUnit08SupplementalActivities';
+import { grade1Term2EnglishUnit01SupplementalActivities } from './grade1Term2EnglishUnit01SupplementalActivities';
+import { grade1Term2EnglishUnit02SupplementalActivities } from './grade1Term2EnglishUnit02SupplementalActivities';
+import { grade1Term2EnglishUnit03SupplementalActivities } from './grade1Term2EnglishUnit03SupplementalActivities';
+import { grade1Term2EnglishUnit04SupplementalActivities } from './grade1Term2EnglishUnit04SupplementalActivities';
+import { grade1Term2EnglishUnit05SupplementalActivities } from './grade1Term2EnglishUnit05SupplementalActivities';
+import { grade1Term2EnglishUnit06SupplementalActivities } from './grade1Term2EnglishUnit06SupplementalActivities';
+import { grade1Term2ChineseSemesterSupplementalActivities } from './grade1Term2ChineseSemesterSupplementalActivities';
+import { grade2Term1ChineseUnit01SupplementalActivities } from './grade2Term1ChineseUnit01SupplementalActivities';
+import { grade2Term1ChineseUnit02SupplementalActivities } from './grade2Term1ChineseUnit02SupplementalActivities';
+import { grade2Term1ChineseUnit03SupplementalActivities } from './grade2Term1ChineseUnit03SupplementalActivities';
+import { grade2Term1ChineseUnit04SupplementalActivities } from './grade2Term1ChineseUnit04SupplementalActivities';
+import { grade2Term1ChineseUnit05SupplementalActivities } from './grade2Term1ChineseUnit05SupplementalActivities';
+import { grade2Term1ChineseUnit06SupplementalActivities } from './grade2Term1ChineseUnit06SupplementalActivities';
+import { grade2Term1ChineseUnit07SupplementalActivities } from './grade2Term1ChineseUnit07SupplementalActivities';
+import { grade2Term1ChineseUnit08SupplementalActivities } from './grade2Term1ChineseUnit08SupplementalActivities';
+import { grade2Term1MathUnit01SupplementalActivities } from './grade2Term1MathUnit01SupplementalActivities';
+import { grade2Term1MathUnit03SupplementalActivities } from './grade2Term1MathUnit03SupplementalActivities';
+import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
+import { grade2Term1MathUnit05SupplementalActivities } from './grade2Term1MathUnit05SupplementalActivities';
+import { grade2Term1MathUnit06SupplementalActivities } from './grade2Term1MathUnit06SupplementalActivities';
+import { grade2Term1MathUnit07SupplementalActivities } from './grade2Term1MathUnit07SupplementalActivities';
+import { grade2Term1MathUnit08SupplementalActivities } from './grade2Term1MathUnit08SupplementalActivities';
+import { grade2Term1MathUnit09SupplementalActivities } from './grade2Term1MathUnit09SupplementalActivities';
+import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1EnglishUnit01SupplementalActivities';
+import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
+import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
 
 function registerActivity(
   activity: ActivityDefinition,
@@ -56,7 +96,7 @@ export async function loadChallengeQualityInputs(manifestValue: unknown = rawMan
     }
   }));
 
-  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities, ...grade1MathUnit07SupplementalActivities, ...grade1MathUnit08SupplementalActivities, ...grade1MathUnit09SupplementalActivities];
+  const supplementalActivities = [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities, ...grade1MathUnit07SupplementalActivities, ...grade1MathUnit08SupplementalActivities, ...grade1MathUnit09SupplementalActivities, ...grade1Term1EnglishUnit01SupplementalActivities, ...grade1Term1EnglishUnit02SupplementalActivities, ...grade1Term1EnglishUnit03SupplementalActivities, ...grade1Term1EnglishUnit04SupplementalActivities, ...grade1Term1EnglishUnit05SupplementalActivities, ...grade1Term1EnglishUnit06SupplementalActivities, ...grade1Term2MathUnit01SupplementalActivities, ...grade1Term2MathUnit02SupplementalActivities, ...grade1Term2MathUnit03SupplementalActivities, ...grade1Term2MathUnit04SupplementalActivities, ...grade1Term2MathUnit05SupplementalActivities, ...grade1Term2MathUnit06SupplementalActivities, ...grade1Term2MathUnit07SupplementalActivities, ...grade1Term2MathUnit08SupplementalActivities, ...grade1Term2EnglishUnit01SupplementalActivities, ...grade1Term2EnglishUnit02SupplementalActivities, ...grade1Term2EnglishUnit03SupplementalActivities, ...grade1Term2EnglishUnit04SupplementalActivities, ...grade1Term2EnglishUnit05SupplementalActivities, ...grade1Term2EnglishUnit06SupplementalActivities, ...grade1Term2ChineseSemesterSupplementalActivities, ...grade2Term1ChineseUnit01SupplementalActivities, ...grade2Term1ChineseUnit02SupplementalActivities, ...grade2Term1ChineseUnit03SupplementalActivities, ...grade2Term1ChineseUnit04SupplementalActivities, ...grade2Term1ChineseUnit05SupplementalActivities, ...grade2Term1ChineseUnit06SupplementalActivities, ...grade2Term1ChineseUnit07SupplementalActivities, ...grade2Term1ChineseUnit08SupplementalActivities, ...grade2Term1MathUnit01SupplementalActivities, ...grade2Term1MathUnit03SupplementalActivities, ...grade2Term1MathUnit04SupplementalActivities, ...grade2Term1MathUnit05SupplementalActivities, ...grade2Term1MathUnit06SupplementalActivities, ...grade2Term1MathUnit07SupplementalActivities, ...grade2Term1MathUnit08SupplementalActivities, ...grade2Term1MathUnit09SupplementalActivities, ...grade2Term1EnglishUnit01SupplementalActivities, ...grade2Term1EnglishUnit02SupplementalActivities, ...grade2Term1EnglishUnit03SupplementalActivities];
   const referencedSupplementalIds = new Set(supplementalActivities
     .filter(({ activity }) => manifest.questions.some((question) => question.activityId === activity.id))
     .map(({ activity }) => activity.id));

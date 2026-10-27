@@ -15,6 +15,72 @@ function normalizePrompt(prompt: string): string {
     .trim();
 }
 
+function semanticActivityContent(activity: ActivityDefinition): unknown {
+  const prompt = activity.prompt;
+  switch (activity.kind) {
+    case 'choice': {
+      const correctLabel = activity.options.find(({ id }) => id === activity.correctOptionId)?.label ?? '';
+      return {
+        kind: activity.kind,
+        prompt,
+        options: activity.options.map(({ label }) => label).sort(compareText),
+        correctLabel,
+      };
+    }
+    case 'match':
+      return {
+        kind: activity.kind,
+        prompt,
+        pairs: activity.pairs.map(({ left, right }) => ({ left, right }))
+          .sort((left, right) => compareText(left.left, right.left) || compareText(left.right, right.right)),
+      };
+    case 'order': {
+      const labelsById = new Map(activity.items.map(({ id, label }) => [id, label]));
+      return {
+        kind: activity.kind,
+        prompt,
+        items: activity.items.map(({ label }) => label).sort(compareText),
+        correctOrder: activity.correctOrder.map((id) => labelsById.get(id) ?? ''),
+      };
+    }
+    case 'categorize': {
+      const labelsByCategoryId = new Map(activity.categories.map(({ id, label }) => [id, label]));
+      return {
+        kind: activity.kind,
+        prompt,
+        categories: activity.categories.map(({ label }) => label).sort(compareText),
+        assignments: activity.items.map(({ label, categoryId }) => ({
+          item: label,
+          category: labelsByCategoryId.get(categoryId) ?? '',
+        })).sort((left, right) => compareText(left.item, right.item) || compareText(left.category, right.category)),
+      };
+    }
+    case 'measurement':
+      return {
+        kind: activity.kind,
+        prompt,
+        objectLabel: activity.objectLabel,
+        targetLengthCm: activity.targetLengthCm,
+        minCm: activity.minCm,
+        maxCm: activity.maxCm,
+      };
+    case 'arithmetic':
+      return {
+        kind: activity.kind,
+        prompt,
+        expression: activity.expression,
+        correctAnswer: activity.correctAnswer,
+        carryBorrowSteps: activity.carryBorrowSteps ?? [],
+      };
+  }
+}
+
+async function fingerprintSemanticContent(activity: ActivityDefinition, subtleCrypto: SubtleCrypto): Promise<string> {
+  const canonicalJson = JSON.stringify(semanticActivityContent(activity));
+  const digest = await subtleCrypto.digest('SHA-256', new TextEncoder().encode(canonicalJson));
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
 export async function analyzeQuestionUniqueness(
   questions: readonly ChallengeQuestionRecord[],
   activitiesById: ReadonlyMap<string, ActivityDefinition>,
@@ -29,6 +95,7 @@ export async function analyzeQuestionUniqueness(
       activity,
       sourceUnitId: sourceUnitByActivityId.get(question.activityId),
       fingerprint: await fingerprintActivity(activity, subtleCrypto),
+      semanticFingerprint: await fingerprintSemanticContent(activity, subtleCrypto),
     };
   }));
 
@@ -56,7 +123,13 @@ export async function analyzeQuestionUniqueness(
       || compareText(left.fingerprint, right.fingerprint));
 
   const exactFingerprintSet = new Set(exactDuplicateGroups.map(({ fingerprint }) => fingerprint));
-  const templateBuckets = new Map<string, Array<{ questionId: string; fingerprint: string; sourceUnitId: string; activityKind: ActivityDefinition['kind'] }>>();
+  const templateBuckets = new Map<string, Array<{
+    questionId: string;
+    fingerprint: string;
+    semanticFingerprint: string;
+    sourceUnitId: string;
+    activityKind: ActivityDefinition['kind'];
+  }>>();
   for (const result of fingerprints) {
     if (!result?.sourceUnitId || !result.activity.prompt.trim()) continue;
     const normalizedPrompt = normalizePrompt(result.activity.prompt);
@@ -66,6 +139,7 @@ export async function analyzeQuestionUniqueness(
     bucket.push({
       questionId: result.question.questionId,
       fingerprint: result.fingerprint,
+      semanticFingerprint: result.semanticFingerprint,
       sourceUnitId: result.sourceUnitId,
       activityKind: result.activity.kind,
     });
@@ -88,7 +162,9 @@ export async function analyzeQuestionUniqueness(
           questionIds: [left.questionId, right.questionId],
           sourceUnitId: left.sourceUnitId,
           activityKind: left.activityKind,
-          reason: '题干经 Unicode NFKC、空白与标点规范化，并将数字替换为占位符后相同；这只是候选提示。',
+          reason: left.semanticFingerprint === right.semanticFingerprint
+            ? '交互内容与答案结构相同，但嵌套标识不同；建议人工确认是否为重复题。'
+            : '题干经 Unicode NFKC、空白与标点规范化，并将数字替换为占位符后相同；这只是候选提示。',
         });
       }
     }
