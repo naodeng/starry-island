@@ -88,6 +88,7 @@ import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1Eng
 import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
 import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
 import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1EnglishUnit04SupplementalActivities';
+import { grade2Term1EnglishUnit05SupplementalActivities } from './grade2Term1EnglishUnit05SupplementalActivities';
 import grade2Term1ChineseUnit08Manifest from './pilot-manifest-grade2-term1-chinese-unit08.json';
 import grade2Term1MathUnit01Manifest from './pilot-manifest-grade2-term1-math-unit01.json';
 import grade2Term1MathUnit03Manifest from './pilot-manifest-grade2-term1-math-unit03.json';
@@ -101,6 +102,7 @@ import grade2Term1EnglishUnit01Manifest from './pilot-manifest-grade2-term1-engl
 import grade2Term1EnglishUnit02Manifest from './pilot-manifest-grade2-term1-english-unit02.json';
 import grade2Term1EnglishUnit03Manifest from './pilot-manifest-grade2-term1-english-unit03.json';
 import grade2Term1EnglishUnit04Manifest from './pilot-manifest-grade2-term1-english-unit04.json';
+import grade2Term1EnglishUnit05Manifest from './pilot-manifest-grade2-term1-english-unit05.json';
 import rawManifest from './pilotManifest';
 
 const manifest: ChallengeManifest = parseChallengeManifest(rawManifest);
@@ -255,6 +257,9 @@ describe('pilot manifest against the real curriculum', () => {
     expect(grade2Term1EnglishUnit04Manifest.groups.map(({ definition }) => definition.id)).toEqual([
       'grade-2-term-1-english-unit-04',
     ]);
+    expect(grade2Term1EnglishUnit05Manifest.groups.map(({ definition }) => definition.id)).toEqual([
+      'grade-2-term-1-english-unit-05',
+    ]);
     expect(mergeChallengeManifestFragments([
       coreManifest as ChallengeManifest,
       grade1MathUnit05Manifest as ChallengeManifest,
@@ -298,6 +303,7 @@ describe('pilot manifest against the real curriculum', () => {
       grade2Term1EnglishUnit02Manifest as unknown as ChallengeManifest,
       grade2Term1EnglishUnit03Manifest as unknown as ChallengeManifest,
       grade2Term1EnglishUnit04Manifest as unknown as ChallengeManifest,
+      grade2Term1EnglishUnit05Manifest as unknown as ChallengeManifest,
     ])).toEqual(rawManifest);
   });
 
@@ -328,7 +334,7 @@ describe('pilot manifest against the real curriculum', () => {
     const sourceUnitByActivityId = new Map<string, string>();
     const unitsById = new Map<string, CurriculumUnit>();
 
-    for (const sourceUnitId of [...sourceUnitIds, 'grade-2/term-1/math/unit-05', 'grade-2/term-1/math/unit-06', 'grade-2/term-1/math/unit-07', 'grade-2/term-1/math/unit-08', 'grade-2/term-1/math/unit-09', 'grade-2/term-1/english/unit-01', 'grade-2/term-1/english/unit-02', 'grade-2/term-1/english/unit-03', 'grade-2/term-1/english/unit-04', 'grade-2/term-1/chinese/unit-01', 'grade-2/term-1/chinese/unit-02', 'grade-2/term-1/chinese/unit-03', 'grade-2/term-1/chinese/unit-04', 'grade-2/term-1/chinese/unit-05', 'grade-2/term-1/chinese/unit-06', 'grade-2/term-1/chinese/unit-07', 'grade-2/term-1/chinese/unit-08', englishSourceUnitId, chineseSourceUnitId, grade1MathSourceUnitId, grade1MathUnit02SourceUnitId, grade1MathUnit03SourceUnitId, grade1MathUnit04SourceUnitId, grade1MathUnit05SourceUnitId, grade1MathUnit06SourceUnitId, grade1MathUnit07SourceUnitId, grade1MathUnit08SourceUnitId, grade1MathUnit09SourceUnitId, grade1EnglishUnit01SourceUnitId, 'grade-1/term-1/english/unit-02', 'grade-1/term-1/english/unit-03', grade1EnglishUnit04SourceUnitId, grade1EnglishUnit05SourceUnitId, grade1EnglishUnit06SourceUnitId, 'grade-1/term-2/math/unit-01', 'grade-1/term-2/math/unit-02', grade1Term2MathUnit03SourceUnitId, grade1Term2MathUnit04SourceUnitId, grade1Term2MathUnit05SourceUnitId, grade1Term2MathUnit06SourceUnitId, 'grade-1/term-2/math/unit-07', grade1Term2MathUnit08SourceUnitId, 'grade-1/term-2/english/unit-01', 'grade-1/term-2/english/unit-02', 'grade-1/term-2/english/unit-03', 'grade-1/term-2/english/unit-04', grade1Term2EnglishUnit05SourceUnitId, grade1Term2EnglishUnit06SourceUnitId, ...Array.from({ length: 8 }, (_, index) => `grade-1/term-1/chinese/unit-${String(index + 1).padStart(2, '0')}`), ...Array.from({ length: 8 }, (_, index) => `grade-1/term-2/chinese/unit-${String(index + 1).padStart(2, '0')}`)]) {
+    for (const sourceUnitId of [...sourceUnitIds, 'grade-2/term-1/math/unit-05', 'grade-2/term-1/math/unit-06', 'grade-2/term-1/math/unit-07', 'grade-2/term-1/math/unit-08', 'grade-2/term-1/math/unit-09', 'grade-2/term-1/english/unit-01', 'grade-2/term-1/english/unit-02', 'grade-2/term-1/english/unit-03', 'grade-2/term-1/english/unit-04', 'grade-2/term-1/english/unit-05', 'grade-2/term-1/chinese/unit-01', 'grade-2/term-1/chinese/unit-02', 'grade-2/term-1/chinese/unit-03', 'grade-2/term-1/chinese/unit-04', 'grade-2/term-1/chinese/unit-05', 'grade-2/term-1/chinese/unit-06', 'grade-2/term-1/chinese/unit-07', 'grade-2/term-1/chinese/unit-08', englishSourceUnitId, chineseSourceUnitId, grade1MathSourceUnitId, grade1MathUnit02SourceUnitId, grade1MathUnit03SourceUnitId, grade1MathUnit04SourceUnitId, grade1MathUnit05SourceUnitId, grade1MathUnit06SourceUnitId, grade1MathUnit07SourceUnitId, grade1MathUnit08SourceUnitId, grade1MathUnit09SourceUnitId, grade1EnglishUnit01SourceUnitId, 'grade-1/term-1/english/unit-02', 'grade-1/term-1/english/unit-03', grade1EnglishUnit04SourceUnitId, grade1EnglishUnit05SourceUnitId, grade1EnglishUnit06SourceUnitId, 'grade-1/term-2/math/unit-01', 'grade-1/term-2/math/unit-02', grade1Term2MathUnit03SourceUnitId, grade1Term2MathUnit04SourceUnitId, grade1Term2MathUnit05SourceUnitId, grade1Term2MathUnit06SourceUnitId, 'grade-1/term-2/math/unit-07', grade1Term2MathUnit08SourceUnitId, 'grade-1/term-2/english/unit-01', 'grade-1/term-2/english/unit-02', 'grade-1/term-2/english/unit-03', 'grade-1/term-2/english/unit-04', grade1Term2EnglishUnit05SourceUnitId, grade1Term2EnglishUnit06SourceUnitId, ...Array.from({ length: 8 }, (_, index) => `grade-1/term-1/chinese/unit-${String(index + 1).padStart(2, '0')}`), ...Array.from({ length: 8 }, (_, index) => `grade-1/term-2/chinese/unit-${String(index + 1).padStart(2, '0')}`)]) {
       const unit = await loadUnit(sourceUnitId);
       expect(unit).toBeDefined();
       unitsById.set(sourceUnitId, unit!);
@@ -557,6 +563,10 @@ describe('pilot manifest against the real curriculum', () => {
       activitiesById.set(supplemental.activity.id, supplemental.activity);
       sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
     }
+    for (const supplemental of grade2Term1EnglishUnit05SupplementalActivities) {
+      activitiesById.set(supplemental.activity.id, supplemental.activity);
+      sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
+    }
 
     const report = await validateChallengeManifest(manifest, activitiesById, sourceUnitByActivityId, unitsById);
     expect(report.errors).toEqual([]);
@@ -587,6 +597,7 @@ describe('pilot manifest against the real curriculum', () => {
       'grade-2-term-1-english-unit-02': 'ready',
       'grade-2-term-1-english-unit-03': 'ready',
       'grade-2-term-1-english-unit-04': 'ready',
+      'grade-2-term-1-english-unit-05': 'ready',
       'grade-2-term-1-math-unit-02': 'ready',
       'grade-2-term-1-math-first-half': 'ready',
       'grade-3-term-1-english-unit-01': 'ready',
@@ -643,8 +654,8 @@ describe('pilot manifest against the real curriculum', () => {
     expect(manifest.groups[1].questionIds).toHaveLength(226);
     expect(manifest.groups[2]?.questionIds).toHaveLength(90);
     expect(manifest.groups[4]?.questionIds).toHaveLength(90);
-    expect(manifest.questions).toHaveLength(5395);
-    expect(manifest.groups).toHaveLength(71);
+    expect(manifest.questions).toHaveLength(5485);
+    expect(manifest.groups).toHaveLength(72);
   });
 
   it('registers all 90 Grade 1 Term 2 Math Unit 8 review candidates with source mappings', () => {

@@ -1,0 +1,1479 @@
+{
+  "version": "pilot-2026-10-27.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d27483ac94bae73f598a45bfcbf016fd3be5fbc2b3337c6cf28b72f59fa31c55",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11f60b69310f712094c5ffc26a7cfa6d7859f71ac0e585a53b3a6ba9b717bd3f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93603f35762b23adbced63643c66ce43e47a162e5f07bfb0776ceadc2f03d73e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9df1bc88b30d5a2531b481e3bdf6f30d755b3e6353d18703451864003087b0be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a4a1ba0f051161d4bd85d76d969bc08518a7e02986c26cdd627fc891a288f041",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35d85788b1e26763a313c3212b1b07b9aeaa28664ce31adf2e53f8ae3b42591c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d920bfed9a39b2bad49804cafb4281b24ace41670c1ebfe957c9d5aaf7c4bbbe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b53a4f53640a7fe392666d8eacf73e5c00d7367025b312ec71604cb272e8710f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e9f95fec2e5ed16860a46464fa44e6c409586603251ae1df207cbec6b747e65d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e1cd4b8e1f7ff08ead9ed5af764fb69abb5e42fafc1e21f70be34c0b1682706a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba0d1b6bc6acaca0547a96151681115321247edefd9a1259a4751a078e111af5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52a920e06af89b2017eab22bbe6ed43378e48c70e4bbfbb9716e22646f9fa373",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d380b9d81436e42086c04ee2ae581048bc3193df79ae66e60a4ef344a7c1e038",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "482a9799574826d8e2504788dc875bc9b231a3339a82a3fc9b1d9034f00b50cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18777ce6dfc97f1afe3a902e1b0e91f83f4f05c153339080db10ee8d05cf3c2b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-05/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e469ca5f3728fea94bf495d5a7a3ad2f33840c7fe6bd792ee17fa5f2b753a4df",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "309d4937586b159224c8ebf642516753bc016af64666374a1be0bac44cc7cae3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7e76c9f76d6e8cf75002792092a5f91d180abc7df801a1672ce8ff29289104b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3b22acef4a120e9c2f05850ecc62c9df52d906c69193a98b6410dc2b48b7646a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "954c0089d6cba75b10adc62ef69e62292bd0e926f11d77b13eb2878d46425e54",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68b79e9755cbd61a1993811e34438fed92fdb4a7db699acf42ac8fad9a62ebd9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a6217e5750aed9c2a046079de1dfeb0a7967fb8ae7d1bca61d6974bfce952b73",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc83edacfa03e50cdd79cf9ac6798e69addcee512baf4afa37b746a231b5d982",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa2a815b49674f5d792bbc22743fc23b7079ab2c97d99bcc88dc88b554a89c1a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e1aad8f98bf3b6dd24292dcae6c1b6d7ba15903d96c8ae07e95aa494782b26b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "686f190cfd9d36d00bec73efb92c13ef1c81d1376dc434c9640a4568c8544089",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5b902f7013bb4a7b5a7cfe5e366a205659c046197a99f6c6511d199fe881c88a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c98e3ddabafe1691f81654807edf968637f87ddfa168d54fb565e7512deae555",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "32530262797e7096fcabd0ea027d5124bead14de8d00bf824b6d66860c003ebf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37bc7f2bd5d46d08a7dec845c88861ef2ab602d7863b2e869a92a2dfbf1cbca8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2d100a8ac814f79ec42fc7d656a5bff6759b17074ab6e9641f6edc56788a9033",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "458c25b04dd1ec3480b7cc1c836930393aa47d67212e15df02f4719b82f9cf53",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a92a09e52fb127ffe662cc3ea8775c8c64948e71573ddc7d732dce18c881183b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01db5c016333c5d8ca354f55d8d623f233bf4511521ad283a934925916713edc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "909aa7e410a052e05e136e67d5cb9cf852648e7bd02b9e5c86323a442ac70b8f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0b835d63ed25a4a301cfb0e0a48109189f0540938f1a240e09f8a3d3b3a987c4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9204da1a3c8090c523afa915472993958e6d74d819690cdc04e908dc2e12eec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5dfa5a01275ef19cfbf17edf6932c4eee84a4ed9fb459785baeb84b0d694a211",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "adfc7aa6383441e5da6a7292c6904eb908a21be2edea8f18e467929e0c1fd360",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences",
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f975042c02dc67428f3333c2403e387233d4d96ed304530fd1eb47664edaff8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences",
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec6b44fa5e257f51ca9497675e8bef8e49aa923e0d9cdf93c1ffa7d1934e928b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-05/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9539c5c9adb8980fde6adde6923e7de85b134a91d67d752b46c311e8801dde10",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d65289cea2af496eefb885f10c3c59186a9df20f35cce05fed0ec3578e97724e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6f59fc32a2a6da727059fe3f396a971edaef02563661db0a48ed436da7408e9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "31cda683f0d21743d068e5ed1e6f9570b6c3e138269da850d77b18a169de4de8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85ea6b4e75cf072f5ebe9c914fd3557cbd097ae02c9065e3f86a471a8753a506",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed730b6d80e7b085b4f05c5e037ca094e1738a4cc410421d7fc5b199cc9bf92d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bdfcbf584ca31cdbb4c09536385d526607ab9ac164dce54fbc1a02674df7df65",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36d7186834a55158bf10386c7e5f9ab17abe1f49b49ab72f3ededd4bb5c61976",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "27e5617163fb8d24e0a1ecac387d4d425475c56fdfddef1a69d18e25677dddbe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f804a44a727d8885c30f47fc0419d0d74669a538be4f986ecee4d7a6fd8da535",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f8e99b39103ef30671733721dfd4248ff190b2472613885d0c09d3112277dcca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f6c26bb4d48660ebc3fa531deee7a9a9644047e78a3023a7d8c66875ffdf233",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f478527c7c1ab6f3db5beccb1e40425975991f6f9ee08d32f1d9c23d3b0e0264",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "21fd194a370436529280eb418c144285b6d1caed4ba4e6e8f7009d929134bf8e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f89791479089718f2726f168d2545a1b6157d86fa56003f72b4ed6e8e7f1a5c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0c4bb58e383a2e6781f6a86661b76b6132fbdddff3e29f900a917690a9d51654",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc1f3df322a38bbca563d09ca17a3d3e0af9244e5a5ff8615bf1a7e52de2a527",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc856af25485c738297c30cb6a085574382e50357f1bbf7bcddc857276eb4481",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8881605f0751816ee70715bb63cc2d5136b1d58d77f0fca6e84c2db74af2b8f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "df6e256d2acbf32e55603f2a45922e6a9e6014504343b5f62fa49f94a6ce4716",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "787a0fced3627981be202e1510633ec8f31a1918a25b15b8662a4999dbab03c0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10a93a6649a52a47d07c63cde3e96501e31431697348fabaf16dbcae0d594025",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d4ca1f86d5f560d6b0250b83037689f7067b1044a3a0eecb271a1205bff1b01",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a70720356138bad6626968a16b016c32cccb0941745b75de07d953a1372ea89",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dda440ef99298ea78505f63eea5da424b32b92d6a3ca2147d57210e8eb9bbd60",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "86b7127ede83a23ece07590397091b32b1cc1da2e830d26c229dec1bd8bf967a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10f4f7fc5b6740b316214e36d099929517845ad1bd14e8e9fa27cfd5e2c59105",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3857ded4cc850d2533136bcfb541128e217bc441bb35c5f75efbe9b394af4128",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d47b32e81a4df31fbf443b7f16c0029c78ebb51f27141eac444f212e9d3e8f38",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7df4ea22dfa7a9f26a46901e5397aef054cc643a35c2297cd890f11f3d94da3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1da3ff678481f9483e65ba0fb88863ec50c00a15eb4c932dd325037f43c499c1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13edfbfe2f6b5d73bd2f3fbd8a6114dafe40ae9c18fd975233fac4693e1ed76f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-18",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9c095e0161fb9d73b60f2b9816535da46262466183310e61b94a84fa6da9ed1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b456cb7bb1cbe2ff752cfdf36ad525d6233de763af09c3cfac1bf2ff12fdaaca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "970fae20b343df598fa01d5a631c586a84fd6b35f4e627abede22efe938d9646",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b78e5736659dd739aa3b4468dc52b02ab3012470d79532305a4fbccab5c29d68",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fad7d3fa6d29d4138cebd912ce88b058ebf1ba56d3fd40f00e43e74930d44e29",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9d101e1d0ac26d71acac02792f426e0a2daa9b3cb3bd0c03ce8ae26c88b00046",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62069fd3c3174820af94fe63f484792b87012a952fe099408e087fbc7d710ad5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "questions-about-objects-and-observations"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5a4b0cd7790a91a933e75f2d4249b7c389c89d9ea7bcc1aa218fedc31a09210",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b361ec3e8d6c066fd230ad3d477d523b8ec9813024decb101214df2788b453be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b876507a761af2fc464a47ada92b93395acf4e4807f6a4032144883e1c1ca0a8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "questions-about-objects-and-observations",
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2bc2934e7c91d55bfbcc02e3c4fe75c5dc51d3c583d88dfb33040ec060f585f6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ac055d176cf9b462f85f08a734e8159729f1bdbfd3ba5af0d4a594e95fa2f0b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3587c6668a031c982686df8d86a69a293f6b169191e3cc48222c204312709c13",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afd2b854347b6cc99628714b6e35e51e6c17ce8355c7f1786c6be69635f636c8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d7b6ec8450ec0d3d3ab45d5d4460308a097fc3f9c0f1965c46dd34c2f74b9c7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ddbd48f5eea4a03a87a06ae0e9ca9dab7d1345ef0be5991485a469c446297c0d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-05-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "park-and-nature-vocabulary",
+        "can-see-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf5344c873913ec63cf74beed28cb65434c28b0223f258e343951ecf1672986a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-english-unit-05",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-2/term-1/english/unit-05"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/english/unit-05"
+        ],
+        "coreKnowledgePointIds": [
+          "park-and-nature-vocabulary",
+          "can-see-sentences",
+          "questions-about-objects-and-observations"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射；docs/curriculum/grade-2-question-review.tsv；src/content/grade-2/term-1/english/unit-05/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应 In the Park 单元中的公园与自然词汇、I can see 句型，以及 What is this? 和 What can you see? 两类问句。教材目录沿用项目登记的 TapXWorld 固定回退快照（tapx-fallback），学校是否开设英语尚未确认。原课程 48 道活动、六个学习 Task、学习进度和交互保持不变；闯关池排除 6 道跨难度完全重复的课程活动，保留 42 道兼容课程题并新增 48 道原创题，三档各 30 道。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-1-english-unit-05/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "park-and-nature-vocabulary"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-05/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "can-see-sentences",
+              "questions-about-objects-and-observations"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-05/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "park-and-nature-vocabulary",
+              "can-see-sentences"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-05/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "questions-about-objects-and-observations"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-05/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "park-and-nature-vocabulary",
+              "can-see-sentences",
+              "questions-about-objects-and-observations"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-05/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-05/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-05/high/task-02/session-01/question-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-advanced-18",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-05-high-16"
+      ]
+    }
+  ]
+}

@@ -896,3 +896,14 @@
 - 全量覆盖率：`npm run test:coverage -- --exclude '**/grade2Term1EnglishUnit05.test.ts' --maxWorkers=2 --reporter=dot --testTimeout=30000`，227 个测试文件、1,494 项通过；语句 90.67%、分支 84.56%、函数 92.31%、行 93.19%。
 - 生产构建：`npm run build` 通过；最大 JavaScript 分块为 `ChallengePage` 480.18 kB，小于 500 kB 提示线，无超限提示。该结果只说明最大单块没有越线，不表示所有课程分块的总传输量下降。
 - `git diff --check` 通过。独立教育者复核、完整 E2E、远端 Actions、二年级整体放行和正式发布仍未完成；本记录仅表示本地作者自审及自动验证结果。该批次提交到本地功能分支后仍需另行推送。
+
+## 2026-10-27 二年级上册英语单元 5「In the Park」
+
+- U5 专项回归：6 个测试文件、55 项通过。覆盖候选池和课程活动映射、原课程 48 道活动与六个学习 Task 不变、90 道候选和中文逐题审校台账、答案与生产评分、知识点、选项、提示/解析、指纹、题目唯一性及错误答案排除。
+- 全量单测：`npm run test:unit -- --reporter=dot`，228 个测试文件、1,497 项通过。
+- 全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，228 个测试文件、1,497 项通过；语句 90.69%、分支 84.59%、函数 92.33%、行 93.21%。
+- 题库质量门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-grade2-english-u5-quality-final-20261027` 通过；全库 72 个组、360 个任务，0 个阻断、1,185 条信息提示。U5 为 `ready`，三档各 30 道有效唯一候选，五任务固定种子模拟 500/500 成功；19 条同模板提示经逐题核对并记录理由。
+- 覆盖门禁：`npm run challenge:coverage -- --report-dir /private/tmp/starry-grade2-english-u5-coverage-20261027` 通过；53/254 个单元组、19/108 个阶段组，265/1,270 个单元任务、95/540 个阶段任务。二年级为 22/47 个单元组、1/18 个阶段组，仍缺 25 个单元组和 17 个阶段组。
+- 浏览器手动检查：在 390×844 的内嵌预览中检查课程页与挑战组页；键盘 Enter 可从课程入口进入 U5 挑战组，页面横向宽度未溢出。未开始挑战，未执行自动 E2E，也未将此检查记录为课程进度/存储回归证明。
+- 生产构建：`npm run build` 通过，无超过 500 kB 提示。Vite 新增二年级上册英语题库清单和补充题分块；`ChallengePage` 193.83 kB、英语清单 269.85 kB、英语补充题 87.08 kB，最大分块为 450.46 kB。
+- 作者逐题自审已完成；独立教育者复核、完整 E2E、远端 Actions、二年级整体验收和正式发布仍未完成。`git diff --check` 在提交前重跑。

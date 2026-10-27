@@ -56,6 +56,7 @@ import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1Eng
 import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
 import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
 import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1EnglishUnit04SupplementalActivities';
+import { grade2Term1EnglishUnit05SupplementalActivities } from './grade2Term1EnglishUnit05SupplementalActivities';
 import { buildChallengeQualityReport, renderChallengeQualityMarkdown } from './qualityReport';
 import rawManifest from './pilotManifest';
 
@@ -142,6 +143,11 @@ async function loadPilotInputs(): Promise<MutableChallengeQualityInputs> {
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }
   for (const supplemental of grade2Term1EnglishUnit04SupplementalActivities) {
+    activitiesById.set(supplemental.activity.id, supplemental.activity);
+    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
+  }
+
+  for (const supplemental of grade2Term1EnglishUnit05SupplementalActivities) {
     activitiesById.set(supplemental.activity.id, supplemental.activity);
     sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
   }

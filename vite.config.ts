@@ -136,6 +136,10 @@ export default defineConfig({
               test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term1-math-unit09\.json$/,
             },
             {
+              name: 'challenge-manifest-grade2-term1-english',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term1-english-unit\d{2}\.json$/,
+            },
+            {
               name: 'challenge-supplemental-grade2-term1-math',
               test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilotSupplementalActivities\.ts$/,
             },
@@ -166,6 +170,10 @@ export default defineConfig({
             {
               name: 'challenge-supplemental-grade2-term1-chinese',
               test: /[\\/]src[\\/]challenges[\\/]content[\\/]grade2Term1ChineseUnit\d{2}SupplementalActivities\.ts$/,
+            },
+            {
+              name: 'challenge-supplemental-grade2-term1-english',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]grade2Term1EnglishUnit\d{2}SupplementalActivities\.ts$/,
             },
             {
               name: 'curriculum-manifest',

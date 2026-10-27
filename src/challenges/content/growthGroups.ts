@@ -300,4 +300,5 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
   unitGroup('grade-2-term-1-english-unit-02', 2, 'english', 2),
   unitGroup('grade-2-term-1-english-unit-03', 2, 'english', 3),
   unitGroup('grade-2-term-1-english-unit-04', 2, 'english', 4),
+  unitGroup('grade-2-term-1-english-unit-05', 2, 'english', 5),
 ];

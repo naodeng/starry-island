@@ -47,6 +47,7 @@ import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1Eng
 import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
 import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
 import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1EnglishUnit04SupplementalActivities';
+import { grade2Term1EnglishUnit05SupplementalActivities } from './grade2Term1EnglishUnit05SupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-2/chinese/unit-01',
@@ -107,6 +108,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/english/unit-02',
   'grade-2/term-1/english/unit-03',
   'grade-2/term-1/english/unit-04',
+  'grade-2/term-1/english/unit-05',
   'grade-2/term-1/chinese/unit-01',
   'grade-2/term-1/chinese/unit-02',
   'grade-2/term-1/chinese/unit-03',
@@ -909,6 +911,23 @@ export function derivePilotQuestionKnowledgePointIds(
         ids.push('place-purpose-and-sentences');
       }
       if (ids.length === 0) throw new Error(`Could not classify Grade 2 English community question ${activity.id}.`);
+      return [...new Set(ids)];
+    }
+    case 'grade-2/term-1/english/unit-05': {
+      const supplemental = grade2Term1EnglishUnit05SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+
+      const ids: string[] = [];
+      if (/\b(?:lake|boat|tree|grass|flower|hill)\b|湖|小船|树|草|花|小山/iu.test(text)) {
+        ids.push('park-and-nature-vocabulary');
+      }
+      if (/\bI can see\b|我能看见|排成.{0,12}句|句子卡/iu.test(text)) ids.push('can-see-sentences');
+      if (/\bWhat is this\b|\bWhat can you see\b|这是什么|你能看见什么|询问.{0,8}(?:东西|事物|看见)/iu.test(text)) {
+        ids.push('questions-about-objects-and-observations');
+      }
+      if (activity.kind === 'match' || activity.kind === 'categorize') ids.push('park-and-nature-vocabulary');
+      if (activity.kind === 'order') ids.push('can-see-sentences');
+      if (ids.length === 0) throw new Error(`Could not classify Grade 2 English park question ${activity.id}.`);
       return [...new Set(ids)];
     }
     case 'grade-2/term-1/math/unit-02': {

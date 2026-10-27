@@ -83,6 +83,7 @@ const manifestFragmentPaths = [
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit01.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit02.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit03.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-unit05.json'),
 ];
 let reportDirectory: string;
 
@@ -125,7 +126,7 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(71);
+    expect(report.groups).toHaveLength(72);
     expect(report.groups.every(({ status }) => status === 'ready')).toBe(true);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
