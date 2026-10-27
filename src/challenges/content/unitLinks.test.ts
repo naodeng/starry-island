@@ -24,6 +24,7 @@ describe('getPilotUnitChallengeGroupId', () => {
     expect(getPilotUnitChallengeGroupId('grade-2/term-1/chinese/unit-06')).toBe('grade-2-term-1-chinese-unit-06');
     expect(getPilotUnitChallengeGroupId('grade-2/term-1/chinese/unit-07')).toBe('grade-2-term-1-chinese-unit-07');
     expect(getPilotUnitChallengeGroupId('grade-2/term-1/chinese/unit-08')).toBe('grade-2-term-1-chinese-unit-08');
+    expect(getPilotUnitChallengeGroupId('grade-2/term-2/chinese/unit-01')).toBe('grade-2-term-2-chinese-unit-01');
     expect(getPilotUnitChallengeGroupId('grade-3/term-1/english/unit-01')).toBe('grade-3-term-1-english-unit-01');
     expect(getPilotUnitChallengeGroupId('grade-5/term-1/chinese/unit-01')).toBe('grade-5-term-1-chinese-unit-01');
     expect(getPilotUnitChallengeGroupId('grade-1/term-1/math/unit-01')).toBe('grade-1-term-1-math-unit-01');

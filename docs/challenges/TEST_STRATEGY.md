@@ -941,3 +941,15 @@
 - 浏览器回归：完整 `npm run test:e2e -- --workers=1` 为 95/95 通过。首次浏览器构建报告 `ChallengePage` 534.12 kB；随后将三科阶段清单拆成独立构建块。拆分后的新构建无 500 kB 警告，三个阶段清单块分别为 100.79、106.88、98.43 kB，`ChallengePage` 为 228.31 kB；针对拆分后英文阶段路由的 E2E 为 1/1 通过。完整 95 项回归是在分块修正前运行，分块修正后的定向用例确认了异步块可正常载入。
 - 最终构建：`npm run build` 通过，构建日志没有超过 500 kB 的 JavaScript 分块警告；最大块为核心 `challenge-manifest` 450.46 kB。`git diff --check` 在文档及清单修改后复查。
 - 状态：二年级上册阶段组已齐；二年级目标仍需完成下册、剩余单元组、独立教育者审核及年级放行。本地覆盖不代表正式发布。
+
+## 2026-10-27 二年级下册语文第一单元「春天来了」
+
+- 专项回归：8 个文件、109 项通过。核对 48 道原课程活动和六个学习 Task 保留、42 道原创题答案与生产评分器一致、候选总量 90 且每档 30 道、六个核心知识点逐档覆盖、选项互异、提示/解析、内容指纹和 90 行中文审校台账。
+- 内容复核修订：发现并修正三处表达——把春风比喻题明确归于《咏柳》、将另一处未有教材依据的表达改为学生自己的假设性想象、在风感比较答案中明确对照昨天相近时段的记录；同步修改知识点、台账和最终审核指纹。作者完成逐题自审；独立教育者审核尚未完成。
+- 质量门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-grade2-term2-cn-u1-quality-reviewed-20261027` 通过；全库 82 组、410 个任务，0 个阻断、1,186 条信息提示。新组状态 `ready`，三档各有 30 道有效唯一题并覆盖全部六个知识点；五个任务固定种子模拟合计 500/500 成功，本组无提示。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-grade2-term2-cn-u1-coverage-final-20261027` 统计 55/254 个正式单元组、27/108 个学期阶段组，单元任务 275/1,270、阶段任务 135/540。二年级为 24/47 个单元组、9/18 个阶段组，仍缺 23 个下册单元组和 9 个阶段组。
+- 课程素材盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-grade2-term2-cn-u1-source-final-20261027` 检查 254/254 个正式单元；本单元原课程每档有 16 道兼容素材，距 30 道素材盘点量差 14 道。该统计不表示题目通过教学审核。
+- 全量单测：`npm run test:unit -- --reporter=dot`，232 个测试文件、1,519 项通过。全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000`，232 个文件、1,519 项通过；语句 90.72%、分支 84.59%、函数 92.38%、行 93.26%。
+- 浏览器回归：完整 `npm run test:e2e -- --workers=1` 为 96/96 通过；该次运行早于上述三处题目文字修订。修订后重新运行 `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 Term 2 Chinese Unit 1' --workers=1`，1/1 通过；覆盖 390px 窄屏、深色主题、减少动态效果、键盘进入、五项挑战任务、原六个课程任务与学习进度保持，以及页面无横向溢出。
+- 生产构建：`npm run build` 通过；最大 JavaScript 分块为 `challenge-manifest` 450.46 kB，无超过 500 kB 的提示。
+- `git diff --check` 通过。当前为二年级目标中的首个下册单元；独立教育者复核、二年级整体覆盖与放行、远端 Actions 和正式发布尚未完成。

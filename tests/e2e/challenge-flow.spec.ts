@@ -868,6 +868,29 @@ test('opens the Grade 2 Chinese Unit 8 challenge from its course page without ch
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
+test('opens the Grade 2 Term 2 Chinese Unit 1 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-2/chinese/unit-01');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-2-chinese-unit-01');
+  await expect(page.getByRole('heading', { name: '二年级下册语文 · 第一单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-2-chinese-unit-01%2Fbasic-01$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
 test('opens the Grade 2 Math Unit 1 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });

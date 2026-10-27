@@ -17,6 +17,7 @@ import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02Supple
 import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
+import { grade2Term2ChineseUnit01SupplementalActivities } from './grade2Term2ChineseUnit01SupplementalActivities';
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
@@ -87,6 +88,7 @@ const manifestFragmentPaths = [
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-chinese-stages.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-stages.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-stages.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-chinese-unit01.json'),
 ];
 let reportDirectory: string;
 
@@ -129,7 +131,7 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(81);
+    expect(report.groups).toHaveLength(82);
     expect(report.groups.every(({ status }) => status === 'ready')).toBe(true);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
@@ -143,6 +145,7 @@ describe('challenge quality CLI', () => {
     expect(firstJson).not.toContain(grade1MathUnit07SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit08SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit09SupplementalActivities[0].activity.prompt);
+    expect(firstJson).not.toContain(grade2Term2ChineseUnit01SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1Term1EnglishUnit01SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1Term1EnglishUnit02SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1Term1EnglishUnit03SupplementalActivities[0].activity.prompt);

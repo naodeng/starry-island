@@ -343,4 +343,13 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
   grade2Term1StageGroup('grade-2-term-1-english-first-half', 'english', 'first-half', [1, 2, 3]),
   grade2Term1StageGroup('grade-2-term-1-english-second-half', 'english', 'second-half', [4, 5, 6]),
   grade2Term1StageGroup('grade-2-term-1-english-end-term', 'english', 'end-term', [1, 2, 3, 4, 5, 6]),
+  {
+    id: 'grade-2-term-2-chinese-unit-01',
+    kind: 'unit',
+    grade: 2,
+    semester: 2,
+    subject: 'chinese',
+    sourceUnitIds: ['grade-2/term-2/chinese/unit-01'],
+    tasks: growthTasks('grade-2-term-2-chinese-unit-01'),
+  },
 ];

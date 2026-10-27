@@ -36,6 +36,7 @@ import { grade2Term1ChineseUnit05SupplementalActivities } from './grade2Term1Chi
 import { grade2Term1ChineseUnit06SupplementalActivities } from './grade2Term1ChineseUnit06SupplementalActivities';
 import { grade2Term1ChineseUnit07SupplementalActivities } from './grade2Term1ChineseUnit07SupplementalActivities';
 import { grade2Term1ChineseUnit08SupplementalActivities } from './grade2Term1ChineseUnit08SupplementalActivities';
+import { grade2Term2ChineseUnit01SupplementalActivities } from './grade2Term2ChineseUnit01SupplementalActivities';
 import { grade2Term1MathUnit03SupplementalActivities } from './grade2Term1MathUnit03SupplementalActivities';
 import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
 import { grade2Term1MathUnit05SupplementalActivities } from './grade2Term1MathUnit05SupplementalActivities';
@@ -119,6 +120,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/chinese/unit-06',
   'grade-2/term-1/chinese/unit-07',
   'grade-2/term-1/chinese/unit-08',
+  'grade-2/term-2/chinese/unit-01',
   'grade-3/term-1/english/unit-01',
   'grade-5/term-1/chinese/unit-01',
 ]);
@@ -1263,6 +1265,57 @@ export function derivePilotQuestionKnowledgePointIds(
         'high:2:3': ['friendly-communication-repair'], 'high:2:4': ['fairy-tale-story-clues', 'friendly-communication-repair'],
         'high:2:5': ['friendly-communication-repair'], 'high:2:6': ['fairy-tale-story-clues', 'action-and-consequence'],
         'high:2:7': ['fact-inference-and-perspective'], 'high:2:8': ['fairy-tale-story-clues', 'fact-inference-and-perspective'],
+      };
+      const ids = sourceQuestionKnowledgePoints[`${match[1]}:${Number(match[2])}:${Number(match[3])}`];
+      if (!ids) throw new Error(`No knowledge-point mapping exists for Chinese learning question ${activity.id}.`);
+      return ids;
+    }
+    case 'grade-2/term-2/chinese/unit-01': {
+      const supplemental = grade2Term2ChineseUnit01SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+      const match = activity.id.match(/\/(basic|advanced|high)\/task-(\d+)\/session-\d+\/question-(\d+)$/u);
+      if (!match) throw new Error(`Could not identify the source task for Chinese learning question ${activity.id}.`);
+      const sourceQuestionKnowledgePoints: Record<string, string[]> = {
+        'basic:1:1': ['spring-sensory-observation'], 'basic:1:2': ['observation-facts-and-inference'],
+        'basic:1:3': ['spring-sensory-observation', 'plant-growth-recording'], 'basic:1:4': ['plant-growth-recording'],
+        'basic:1:5': ['observation-facts-and-inference'], 'basic:1:6': ['spring-sensory-observation'],
+        'basic:1:7': ['spring-poetry-imagery', 'spring-sensory-observation'],
+        'basic:1:8': ['spring-poetry-imagery', 'observation-facts-and-inference'],
+        'basic:2:1': ['planting-sequence-and-care'], 'basic:2:2': ['planting-sequence-and-care'],
+        'basic:2:3': ['plant-growth-recording'], 'basic:2:4': ['sharing-kindness-and-consequence'],
+        'basic:2:5': ['sharing-kindness-and-consequence'],
+        'basic:2:6': ['sharing-kindness-and-consequence', 'observation-facts-and-inference'],
+        'basic:2:7': ['planting-sequence-and-care'],
+        'basic:2:8': ['planting-sequence-and-care', 'sharing-kindness-and-consequence'],
+        'advanced:1:1': ['plant-growth-recording'], 'advanced:1:2': ['plant-growth-recording', 'observation-facts-and-inference'],
+        'advanced:1:3': ['plant-growth-recording', 'planting-sequence-and-care'],
+        'advanced:1:4': ['plant-growth-recording', 'observation-facts-and-inference'],
+        'advanced:1:5': ['plant-growth-recording'], 'advanced:1:6': ['sharing-kindness-and-consequence'],
+        'advanced:1:7': ['plant-growth-recording', 'observation-facts-and-inference'],
+        'advanced:1:8': ['observation-facts-and-inference', 'spring-sensory-observation'],
+        'advanced:2:1': ['spring-poetry-imagery', 'spring-sensory-observation'],
+        'advanced:2:2': ['spring-sensory-observation'],
+        'advanced:2:3': ['plant-growth-recording', 'spring-sensory-observation'],
+        'advanced:2:4': ['spring-poetry-imagery', 'observation-facts-and-inference'],
+        'advanced:2:5': ['observation-facts-and-inference'],
+        'advanced:2:6': ['sharing-kindness-and-consequence', 'observation-facts-and-inference'],
+        'advanced:2:7': ['planting-sequence-and-care'],
+        'advanced:2:8': ['planting-sequence-and-care', 'plant-growth-recording'],
+        'high:1:1': ['spring-sensory-observation'], 'high:1:2': ['spring-sensory-observation'],
+        'high:1:3': ['spring-poetry-imagery', 'sharing-kindness-and-consequence'],
+        'high:1:4': ['observation-facts-and-inference'],
+        'high:1:5': ['spring-sensory-observation', 'sharing-kindness-and-consequence'],
+        'high:1:6': ['observation-facts-and-inference', 'plant-growth-recording'],
+        'high:1:7': ['observation-facts-and-inference'],
+        'high:1:8': ['sharing-kindness-and-consequence', 'planting-sequence-and-care'],
+        'high:2:1': ['observation-facts-and-inference'],
+        'high:2:2': ['spring-poetry-imagery', 'observation-facts-and-inference'],
+        'high:2:3': ['observation-facts-and-inference', 'sharing-kindness-and-consequence'],
+        'high:2:4': ['spring-poetry-imagery', 'observation-facts-and-inference'],
+        'high:2:5': ['planting-sequence-and-care', 'sharing-kindness-and-consequence'],
+        'high:2:6': ['spring-sensory-observation'],
+        'high:2:7': ['spring-sensory-observation', 'spring-poetry-imagery'],
+        'high:2:8': ['planting-sequence-and-care', 'plant-growth-recording'],
       };
       const ids = sourceQuestionKnowledgePoints[`${match[1]}:${Number(match[2])}:${Number(match[3])}`];
       if (!ids) throw new Error(`No knowledge-point mapping exists for Chinese learning question ${activity.id}.`);
