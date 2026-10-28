@@ -25,6 +25,9 @@
 .activity-prompt-row { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 22px; padding-bottom: 20px; border-bottom: 1px solid rgba(81,103,126,.12); }
 .activity-symbol { display: grid; flex: 0 0 34px; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--animal-text-color); background: #f0b75b; }
 .activity-prompt-row h2 { margin: 1px 0 0; color: var(--animal-text-color); font-size: clamp(20px, 3.5vw, 27px); line-height: 1.5; }
+.activity-speech-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin: -10px 0 20px; }
+.activity-speech-controls button { min-height: 44px; }
+.activity-speech-status { margin: 0; color: var(--animal-text-color-secondary); font-size: 13px; line-height: 1.5; }
 .choice-activity, .order-activity, .categorize-activity, .match-activity { display: grid; justify-items: start; gap: 18px; width: 100%; }
 .choice-options { display: grid; width: 100%; gap: 11px; }
 .choice-option { display: flex; align-items: center; justify-content: flex-start; width: 100%; height: auto; min-height: 58px; padding: 11px 16px; text-align: left; white-space: normal; line-height: 1.45; }
@@ -98,6 +101,9 @@
   .activity-card-heading { margin-bottom: 16px; }
   .activity-prompt-row { gap: 9px; margin-bottom: 16px; padding-bottom: 14px; }
   .activity-prompt-row h2 { font-size: 20px; line-height: 1.4; }
+  .activity-speech-controls { gap: 8px; margin: -6px 0 17px; }
+  .activity-speech-controls button { flex: 1 1 100%; width: 100%; }
+  .activity-speech-status { flex-basis: 100%; }
   .choice-activity, .order-activity, .categorize-activity, .match-activity { gap: 13px; }
   .choice-option { min-height: 52px; }
   .activity-submit-action { position: sticky; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 4; min-height: 48px; box-shadow: var(--animal-shadow-lg); }
