@@ -52,6 +52,7 @@ const PILOT_UNIT_GROUPS: Readonly<Record<string, string>> = {
   'grade-2/term-1/chinese/unit-07': 'grade-2-term-1-chinese-unit-07',
   'grade-2/term-1/chinese/unit-08': 'grade-2-term-1-chinese-unit-08',
   'grade-2/term-2/chinese/unit-01': 'grade-2-term-2-chinese-unit-01',
+  'grade-2/term-2/chinese/unit-02': 'grade-2-term-2-chinese-unit-02',
   'grade-3/term-1/english/unit-01': 'grade-3-term-1-english-unit-01',
   'grade-5/term-1/chinese/unit-01': 'grade-5-term-1-chinese-unit-01',
 };

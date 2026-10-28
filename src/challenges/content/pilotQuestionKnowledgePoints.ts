@@ -37,6 +37,7 @@ import { grade2Term1ChineseUnit06SupplementalActivities } from './grade2Term1Chi
 import { grade2Term1ChineseUnit07SupplementalActivities } from './grade2Term1ChineseUnit07SupplementalActivities';
 import { grade2Term1ChineseUnit08SupplementalActivities } from './grade2Term1ChineseUnit08SupplementalActivities';
 import { grade2Term2ChineseUnit01SupplementalActivities } from './grade2Term2ChineseUnit01SupplementalActivities';
+import { grade2Term2ChineseUnit02SupplementalActivities } from './grade2Term2ChineseUnit02SupplementalActivities';
 import { grade2Term1MathUnit03SupplementalActivities } from './grade2Term1MathUnit03SupplementalActivities';
 import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
 import { grade2Term1MathUnit05SupplementalActivities } from './grade2Term1MathUnit05SupplementalActivities';
@@ -121,6 +122,7 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/chinese/unit-07',
   'grade-2/term-1/chinese/unit-08',
   'grade-2/term-2/chinese/unit-01',
+  'grade-2/term-2/chinese/unit-02',
   'grade-3/term-1/english/unit-01',
   'grade-5/term-1/chinese/unit-01',
 ]);
@@ -1316,6 +1318,42 @@ export function derivePilotQuestionKnowledgePointIds(
         'high:2:6': ['spring-sensory-observation'],
         'high:2:7': ['spring-sensory-observation', 'spring-poetry-imagery'],
         'high:2:8': ['planting-sequence-and-care', 'plant-growth-recording'],
+      };
+      const ids = sourceQuestionKnowledgePoints[`${match[1]}:${Number(match[2])}:${Number(match[3])}`];
+      if (!ids) throw new Error(`No knowledge-point mapping exists for Chinese learning question ${activity.id}.`);
+      return ids;
+    }
+    case 'grade-2/term-2/chinese/unit-02': {
+      const supplemental = grade2Term2ChineseUnit02SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+      const match = activity.id.match(/\/(basic|advanced|high)\/task-(\d+)\/session-\d+\/question-(\d+)$/u);
+      if (!match) throw new Error(`Could not identify the source task for Chinese learning question ${activity.id}.`);
+      const sourceQuestionKnowledgePoints: Record<string, string[]> = {
+        'basic:1:1': ['food-labor-chain'], 'basic:1:2': ['food-labor-chain', 'respect-for-labor'],
+        'basic:1:3': ['respect-for-labor'], 'basic:1:4': ['fair-cooperation'],
+        'basic:1:5': ['fair-cooperation'], 'basic:1:6': ['food-labor-chain', 'respect-for-labor'],
+        'basic:1:7': ['fair-cooperation', 'respect-for-labor'], 'basic:1:8': ['fair-cooperation'],
+        'basic:2:1': ['respectful-help'], 'basic:2:2': ['respectful-help'],
+        'basic:2:3': ['respectful-help', 'independent-growth'], 'basic:2:4': ['independent-growth'],
+        'basic:2:5': ['independent-growth'], 'basic:2:6': ['respectful-help'],
+        'basic:2:7': ['independent-growth'], 'basic:2:8': ['independent-growth'],
+        'advanced:1:1': ['respectful-help'], 'advanced:1:2': ['fair-cooperation'],
+        'advanced:1:3': ['respectful-help'], 'advanced:1:4': ['respectful-help'],
+        'advanced:1:5': ['fair-cooperation', 'respect-for-labor'], 'advanced:1:6': ['food-labor-chain', 'respect-for-labor'],
+        'advanced:1:7': ['independent-growth', 'respectful-help'], 'advanced:1:8': ['respectful-help', 'independent-growth'],
+        'advanced:2:1': ['respectful-help'], 'advanced:2:2': ['food-labor-chain', 'respect-for-labor'],
+        'advanced:2:3': ['respectful-help', 'fair-cooperation'], 'advanced:2:4': ['respectful-help'],
+        'advanced:2:5': ['story-action-evidence', 'independent-growth'],
+        'advanced:2:6': ['story-action-evidence', 'food-labor-chain', 'respectful-help'],
+        'advanced:2:7': ['food-labor-chain'], 'advanced:2:8': ['fair-cooperation', 'respectful-help'],
+        'high:1:1': ['fair-cooperation', 'respectful-help'], 'high:1:2': ['fair-cooperation', 'respect-for-labor'],
+        'high:1:3': ['fair-cooperation', 'respect-for-labor'], 'high:1:4': ['fair-cooperation'],
+        'high:1:5': ['respectful-help'], 'high:1:6': ['fair-cooperation', 'respect-for-labor'],
+        'high:1:7': ['fair-cooperation', 'respect-for-labor'], 'high:1:8': ['fair-cooperation', 'respect-for-labor'],
+        'high:2:1': ['story-action-evidence'], 'high:2:2': ['story-action-evidence', 'respectful-help'],
+        'high:2:3': ['story-action-evidence', 'food-labor-chain'], 'high:2:4': ['story-action-evidence', 'independent-growth'],
+        'high:2:5': ['respectful-help'], 'high:2:6': ['story-action-evidence', 'food-labor-chain'],
+        'high:2:7': ['story-action-evidence', 'independent-growth'], 'high:2:8': ['story-action-evidence', 'respectful-help'],
       };
       const ids = sourceQuestionKnowledgePoints[`${match[1]}:${Number(match[2])}:${Number(match[3])}`];
       if (!ids) throw new Error(`No knowledge-point mapping exists for Chinese learning question ${activity.id}.`);

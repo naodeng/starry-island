@@ -953,3 +953,15 @@
 - 浏览器回归：完整 `npm run test:e2e -- --workers=1` 为 96/96 通过；该次运行早于上述三处题目文字修订。修订后重新运行 `npm run test:e2e -- tests/e2e/challenge-flow.spec.ts --grep 'Grade 2 Term 2 Chinese Unit 1' --workers=1`，1/1 通过；覆盖 390px 窄屏、深色主题、减少动态效果、键盘进入、五项挑战任务、原六个课程任务与学习进度保持，以及页面无横向溢出。
 - 生产构建：`npm run build` 通过；最大 JavaScript 分块为 `challenge-manifest` 450.46 kB，无超过 500 kB 的提示。
 - `git diff --check` 通过。当前为二年级目标中的首个下册单元；独立教育者复核、二年级整体覆盖与放行、远端 Actions 和正式发布尚未完成。
+
+## 2026-10-28 二年级下册语文第二单元「关爱与劳动」
+
+- 专项回归：6 个文件、98 项通过。核对 48 道原课程活动和 6 个学习 Task 未变；42 道原创题的固定答案与生产评分器一致；90 道候选逐档数量、六项核心知识点覆盖、题目 ID、题干/选项唯一性、内容指纹及中文逐题台账一致。
+- 题目审校：按课程编写规范逐题核对题意、唯一答案、干扰项、提示、讲解、知识点、难度和年龄适配；全部原创题由作者自审。独立教育者复核尚未完成，不将自动测试或作者自审表述为独立教学审核。
+- 质量门禁：`npm run challenge:quality -- --report-dir /private/tmp/starry-grade2-term2-cn-u2-quality-final-20261028` 通过；全库 83 个题组，0 个阻断、1,186 条信息提示。U2 为 `ready`，本组无提示；三档各 30 道有效唯一候选且覆盖全部 6 项核心知识点；5 个任务固定种子模拟合计 500/500 成功。
+- 覆盖盘点：`npm run challenge:coverage -- --report-dir /private/tmp/starry-grade2-term2-cn-u2-coverage-final-20261028` 统计 56/254 个正式单元组、27/108 个学期阶段组；单元任务 280/1,270、阶段任务 135/540。二年级为 25/47 个单元组、9/18 个阶段组，仍缺 22 个单元组和 9 个阶段组。
+- 课程素材盘点：`npm run challenge:source-audit -- --report-dir /private/tmp/starry-grade2-term2-cn-u2-source-final-20261028` 扫描 254/254 个正式单元；U2 基础、进阶、高阶各有 16 道兼容原课程素材，距离每档 30 道的素材盘点量各差 14 道。原创补题不计入原课程素材统计，该统计不表示题目通过教学审核。
+- 全量单测：`npm run test:unit -- --reporter=dot` 为 233 个文件、1,524 项通过。全量覆盖率：`npm run test:coverage -- --maxWorkers=2 --reporter=dot --testTimeout=30000` 同为 233 个文件、1,524 项通过；语句 90.73%、分支 84.57%、函数 92.40%、行 93.29%。
+- 浏览器回归：顺序执行的完整 `npm run test:e2e -- --workers=1` 为 97/97 通过。U2 入口用例覆盖 390px 窄屏、深色主题、减少动态效果、键盘进入、五个挑战任务、六个原学习任务、学习进度保持和无横向溢出。
+- 生产构建：`npm run build` 通过，最大 JavaScript 分块为 `challenge-manifest` 450.46 kB，没有超过 500 kB 的提示。生产构建与 E2E 依次执行，避免构建过程中替换预览服务器正在读取的 `dist/` 资源。
+- `git diff --check` 通过。当前仍在二年级目标中，下一单元为二年级下册语文 U3。独立教育者复核、二年级剩余课程与阶段组、年级整体放行、远端 Actions 和正式发布尚未完成。

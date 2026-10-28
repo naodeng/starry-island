@@ -352,4 +352,13 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
     sourceUnitIds: ['grade-2/term-2/chinese/unit-01'],
     tasks: growthTasks('grade-2-term-2-chinese-unit-01'),
   },
+  {
+    id: 'grade-2-term-2-chinese-unit-02',
+    kind: 'unit',
+    grade: 2,
+    semester: 2,
+    subject: 'chinese',
+    sourceUnitIds: ['grade-2/term-2/chinese/unit-02'],
+    tasks: growthTasks('grade-2-term-2-chinese-unit-02'),
+  },
 ];

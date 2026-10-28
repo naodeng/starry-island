@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CourseCatalog from './CourseCatalog';
@@ -18,6 +18,31 @@ function renderCatalog(onNavigate = vi.fn()) {
 }
 
 describe('CourseCatalog', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
+  it('remembersTheLastSelectedCourseAcrossCatalogVisits', async () => {
+    const user = userEvent.setup();
+    const firstVisit = renderCatalog();
+
+    await user.click(screen.getByRole('combobox', { name: '年级' }));
+    await user.click(await screen.findByRole('option', { name: '二年级' }));
+    await user.click(screen.getByRole('combobox', { name: '学期' }));
+    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.click(screen.getByRole('button', { name: '数学' }));
+
+    firstVisit.unmount();
+    renderCatalog();
+
+    const route = screen.getByText('当前探索航线').parentElement?.parentElement;
+    expect(route).toHaveTextContent('二年级');
+    expect(route).toHaveTextContent('下学期');
+    expect(route).toHaveTextContent('数学');
+    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('二年级');
+    expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('下学期');
+  });
+
   it('highlightsTheCurrentCourseAndLetsLearnersJumpToCourseSelection', async () => {
     const user = userEvent.setup();
     renderCatalog();

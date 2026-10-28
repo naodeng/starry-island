@@ -107,6 +107,7 @@ describe('loadPilotChallengeContent', () => {
       ['grade-2-term-1-english-second-half', 'ready'],
       ['grade-2-term-1-english-end-term', 'ready'],
       ['grade-2-term-2-chinese-unit-01', 'ready'],
+      ['grade-2-term-2-chinese-unit-02', 'ready'],
     ]);
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
@@ -145,6 +146,7 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-chinese-unit-07')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-chinese-unit-08')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-01')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-02')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-07')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-08')?.candidates).toHaveLength(90);
     expect(content.groups[65]?.group.definition.id).toBe('grade-2-term-1-math-unit-07');
@@ -195,7 +197,7 @@ describe('loadPilotChallengeContent', () => {
       .map((candidate) => [candidate.questionId, candidate]));
     const candidates = [...candidatesByQuestionId.values()];
 
-    expect(candidates).toHaveLength(5665);
+    expect(candidates).toHaveLength(5755);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 
