@@ -18,6 +18,7 @@ import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03Supple
 import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
 import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
 import { grade2Term2ChineseUnit01SupplementalActivities } from './grade2Term2ChineseUnit01SupplementalActivities';
+import { grade2Term2SupplementalActivities } from './grade2Term2SupplementalActivities';
 import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
 import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
 import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
@@ -89,6 +90,22 @@ const manifestFragmentPaths = [
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-math-stages.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term1-english-stages.json'),
   resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-chinese-unit01.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-chinese-unit08.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit03.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit04.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit05.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit06.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit07.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit08.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit09.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-unit10.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-english-unit03.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-english-unit04.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-english-unit05.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-english-unit06.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-chinese-stages.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-math-stages.json'),
+  resolve(repoRoot, 'src/challenges/content/pilot-manifest-grade2-term2-english-stages.json'),
 ];
 let reportDirectory: string;
 
@@ -131,7 +148,7 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(83);
+    expect(report.groups).toHaveLength(114);
     expect(report.groups.every(({ status }) => status === 'ready')).toBe(true);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);
@@ -146,6 +163,7 @@ describe('challenge quality CLI', () => {
     expect(firstJson).not.toContain(grade1MathUnit08SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1MathUnit09SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade2Term2ChineseUnit01SupplementalActivities[0].activity.prompt);
+    expect(grade2Term2SupplementalActivities.every(({ activity }) => !firstJson.includes(activity.prompt))).toBe(true);
     expect(firstJson).not.toContain(grade1Term1EnglishUnit01SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1Term1EnglishUnit02SupplementalActivities[0].activity.prompt);
     expect(firstJson).not.toContain(grade1Term1EnglishUnit03SupplementalActivities[0].activity.prompt);
@@ -171,7 +189,7 @@ describe('challenge quality CLI', () => {
     expect(await readFile(jsonPath, 'utf8')).toBe(firstJson);
     expect(await readFile(manifestPath, 'utf8')).toBe(manifestBefore);
     expect(await Promise.all(manifestFragmentPaths.map((path) => readFile(path, 'utf8')))).toEqual(fragmentsBefore);
-  }, 30_000);
+  }, 120_000);
 
   it('rejects a quick seed count below 100 in CI with parameter exit code 2', () => {
     const result = runCli(['--seed-count', '99', '--report-dir', reportDirectory], { ci: 'true' });
@@ -249,7 +267,7 @@ describe('challenge quality CLI', () => {
     const markdown = await readFile(join(failedReportDirectory, 'challenge-quality-report.md'), 'utf8');
     expect(json).toContain('missing-question');
     expect(markdown).toContain('门禁未通过');
-  });
+  }, 30_000);
 
   it('overwrites a previous success report with a diagnostic when manifest loading fails', async () => {
     // @ts-expect-error Node ESM 命令模块通过 Vitest 动态加载；此浏览器优先配置未声明该模块类型。

@@ -1,0 +1,1516 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8b224e54ff7ff53aa0a56f567d71c6a35057e109c238cb7e3a333b01c7668f4c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a29e0aa9173b5da5b44c8c6ddf42e41bfe7edbdbac2b23607a6dab5d0d5d77c0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea0664649cd1fc1110871ff799faf36f7adbb5cc451346e0fb41d2edd7bf1756",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01af04ef0faaf8062108bb234515fe5dc462ea445b93061adb2aef88e24acae7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b48905789ad668fc0404678db7e4ac659a977e1e950b90788f4898540ec4271",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-question-and-answer"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7a5ca211062e05e0dbdf945c82f9def14cd4567f9198f3e6cf1f5bb818446ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "efe4f6d6dfea82fcea044d29d3789f878b98ad7d69aaf7e3902408c8f7fd1800",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ae4cd8a1061ef43d7a63d4f8c70960689620591fee94c3845177b5e61685fcda",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff92f9f7d76267bf7703a175c70ece5694274b1f3359f27aef6dee01c97c1176",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ea8e6abaf531d2bb243ab7c139ea6b30f900e4b3d5c19aaaebcb70d7c59d896",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bfca1c9d3b735016f298ccf479d8e68e0c366113a58631a2309125e35c99c30a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bac8f4ab8d094cdd2898dd6c9243e296f4b4c74247ea60b8014f6d52dd98de24",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "790cfd2d107aac72ade14ca7fced69348d4f1bfb2d58cf179cc9ddde931f6b19",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e10962783fd2a93b9237c663caf12615cec3a9adceffd15f28ab21ec5e605b73",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "839fee2c4a0f7bd6ef3bd70b37d257bc314178ad386da2345e6c36a31616d448",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-02/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c45b0dd2b2b50df0507734cdd81b41363134e2b7d0baf412ba5988f522e181c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11ec6185fe0c5cfaec30393ee73a8dd8a211585f74b7d495830d52bb57935cd6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "53e8d7fc7f079d0319de7d48ce4e65ce6332b8318f9e2c851b40761bf4276d3a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2d35232699c3907df60399c25d2ea866b0ba34d7d0fad920a2ccb17c1e20c56d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2317e63e3c69405c42ed4887d356db4af942a5c2db48f5e72767f8f1aae9e9f4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b96fb3723e3e4f4ce7d2f95eaaa1fd09b124eeecf36234768d394560e7db2d2e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "584bf36acdc9e1567c6414acde6ffeb390c5527c2070677c2e864ad04b9e1255",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f7a024b9dcf0f29458fd5fb81034d3b3110d0538ab22668f81ef31dc937267f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "218cba03a59d0ba5ee1c27d563ab24473b4e1c53054f4c28f6b21fc3ce5c8d1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "160d97c49e52e6b0d1d373e8edcebbad99474a867536960c77ecb771175fb896",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75405b395b726fa3a0235fdc25aceccb8082247207acba6ecc15fc881fe00af1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e85ed715e00d2e9b7af4886787e4fe00758f5b68f70a864b633dd0de0dfc6a70",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4473e11fa2cff475f600a170a92d7f7a7740a5dcba1a9e4c842ae13a2f0c95f5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0bb21a757199f98d2ca8ab6cd6b59127b6b1e9f3c3743266cf22eb3e86e83312",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8cbb38758b93aec29f12dc65fa800a850b548736eec22a826ade4fb4e7f41df4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "57d5a8f1d2554f221dfda629371c0198b2c9558f443d9b24f2a19409c13eec58",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49179d8fb85a5065e87af0d4dd34e81b45fc8f8ff335ec7a82e710c9dc6cd190",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d4cd5e6d96acb2f3869dbe2ed7d9a1b9c274333e72c61926af29ad12b530e8a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "81f3844fcaca36fb7612ab892be339337334205e4107f936bc85aa356a606bd8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "489c2e6c2dedd70f53683026d24c93123bd1171922058c3be2c66ada818d5416",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4eda6bab4753e1eef1b7039ea44a9d1560f9891235ffe8f4742e74a28c4a1109",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "373f8c9c767143b998317fe9c2866cc727f037bb44e362dde51b06363690fbf2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "761bc510c2cbabd1fae3f400d389f8b56dbc85833a99b2cc4dfd7b59cd62e1d6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "923896bc4efccd5b9c17b270bc45390a44e943bfa30e6479c6152b6cd21cf701",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "412c658449bf2628143febdeafdf22e98cab91cbd67548828c72b34c5d370a8a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cd5d552f8b706f12444486cfb922dc0f48ae25a9ded238bbf0f0e1cbe4cd5c2d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a399d23df49d72400bbc78c0b51f5048fa73d22975b5fa7e36b08913fd29f6a4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "091aa4ef356fdedfeff5d753856dfbdbca5849fc147b7c695f3f165b958a95f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3c18742df1b4acb99bfbe68ca0d6a3d58fb6f8d8f710739207b4d4fca38b31e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d95b9ca2ef6fb698aa4bd59b2ea2f33ff557838ef070d966f7c6bb3dfd87a679",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cdf25a8fe76758686958257ec8f8cef9ff2b1c6ab93f766935bbaab0e7ea94cd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7bfab8bb8b13bce7c340cc9754a984215be622758b14d9067cec2e42ea7b4c31",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-02/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "090b1d0002b4c00c6130a1779b4356840f78e142d1d737b28c99c69427380824",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac9fd6ef603af86336b289c4a6c42c83705686f8e659b2e40e69a75a3d11a104",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c59aee63dad53344f145386548925e6f86dbd1f85eaca77940043cfc498080d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2303c5bb6e09ad64b2d8426740f7ce901967a9cf71fceb835da1e3d8e6948c2c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a88566a2861d894e0d884e02d282735a7c21e834b8bd3c15264320f8586347d3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a592650911337505747b7cd7759d4cafdf630c53807e46b464d3c10857764cea",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "74fb78bd40f0e24909a9750fe93a7676afbe8075ed81b38358cc9d077632d8d5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6228e5e6403aa7cdcc6460e5837cebcc5c23af8ab29c32ded927be7cbfced85",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-question-and-answer"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8af34e2b4d0e3964a7eef6c7b4b9a3fb4c1e8b4df352c89d422c2951cbfe1fd6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0633508a8ef4a06b0f1b22896d906eb3dadf27e0159bb428faa581a04dd19ada",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c7d7de9bf670206cff5582de181a38071c822879b0a311842362ce410a3ae02",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f7c1b4318ae532f37f52e42cf6fd2803a422211211e31f6fb3a06f6c78a9ef9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da8b9558458cde051ddbfdc7077b42ac3559a62cc53c2a0f9adc07f4aa5cdca1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea2372f74ae99ac7e0aec71e427d323327f5b8789862b1fb272bcebf33557243",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f0ae1c5522d27d661d3dab615b1b7787ab73c284dd0088b80ab9972c03f96954",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc23f122fa0452606f88f72184516f5f3d344efe6ebe8ea055bbaef49c4ad72e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f0166269ef2c6a977e9040c8fef534a42a090b5def08d0d146f99fccb27c92c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dd853892bbd6e84ee187c2afb20ab1f795cdd535780c593defac15ed97d1d661",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b4ec3f7d281aefb6b13b861974b74728c8b6f8b61a507f01ab27b6e7b48fbf0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6b0bc7fbb2d785bbf9f95d5c45fee98daa1d84d6d8035ee859624cc64dcd10b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d30fe93a39c261b992adc270537e4c2e715ea877ddedce3805135722f69b13f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "43a52215bc9a6b7df13b6a649090c6517f7b1fafec18b034b14e0216b492ba5e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07952df5a33c807f65de5d7f0e3834b448ccf45df4f93d615bd494fab4e6d2ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d43c310d412cffa38dcb168f1ab3d6e92504329ab7317ec7e9dc45e6450e9a5e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-question-and-answer"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "247be982bc567b17f808b9aae87fd4622cb7d5cbea7d698bd5b47518c5150323",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec2eb1d94a8d590e9d994098a8c3b7a5dcde30f3c7ac533f2cae1dffb7f16b03",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3fc36d3b76dd94957c1028c2e68acec7d8745884685ebf1ae108c741af372aa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-report-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "450ec15f932c7196d37843702185880662624e849aca1d9ac8fc3d7646d0cd5a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05ddc704face177695dbaccc979c2b1acda67d08ba2918874baca2aaed48a329",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1748d256dfff04f8392bbf66769570af7310e762076b05b7cecd73aed0e3f979",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "664d405a84656e8dcd023362b50debb32247cef9c492ae3c475c4beac9d15edb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db116fa09f8ddce412099ffa3c36817a9012fe26714303654c368c80a167733a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-condition-vocabulary",
+        "weather-report-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac88a9579e4375a1b3a28f511aaa66da3b8d52a859f76ce50e90546c4ecc0617",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "73a48926f6b62d8d2f22e9b83c1f54bc3f6bbf1a1faadf56c209e5db1cdc2b72",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "703fcab04fda6a6b4ce8093dc22e0fcd156dc3ebe9fcc360c5a2a12f92a828ff",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b2ac34b26222bc2fa951ba390ad1c5ea30186ac6410475f59223b080d1c1f35",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "276c5c3ae0348276784d024d84243475a71fd814fff0bf053eb0b2bf3427e359",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "faaf5fcabf14decace4ca8b93067fc3762c67170473d7e36b7e5bc63a7edb329",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "454c3e3ba96a69056f814779463066ad3e3c1ce8dd3db9903f23aa99a9e34d45",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-report-sentences",
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c03b82423bb41ac4d12b68256f267d068eec0bf0e7a687701fb0b165075ef4c8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-condition-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2d67219972759e9efafa4f8c2342fa8caa93326b6e37aa7ec1f87605da7f9e46",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-condition-vocabulary",
+        "weather-report-sentences",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3132e4bb1fc87cfaf7111c23e6427ab6d493fbd9f94673df0d7dc1348652cb3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-02-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-question-and-answer",
+        "weather-report-sentences",
+        "weather-condition-vocabulary",
+        "weather-clue-and-report-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52ee702e574db594d0986ce9f7ea5e44cfb9252a16b98822a54b71d9d898671f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-2-term-2-english-unit-02",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-2/term-2/english/unit-02"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/english/unit-02"
+        ],
+        "coreKnowledgePointIds": [
+          "weather-condition-vocabulary",
+          "weather-question-and-answer",
+          "weather-report-sentences",
+          "weather-clue-and-report-reasoning"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#英语·下；docs/curriculum/grade-2-question-review.tsv；src/content/grade-2/term-2/english/unit-02/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "对应 TapXWorld 固定回退目录中的 Weather：sunny、rainy、windy、cloudy；询问天气并用简单句描述天气，包含地点与 today 的报告格式。48 道课程原活动通过精确内容指纹唯一性盘点（每档16道），全部作为兼容源题；新增42道原创选择题，每档14道。教材版本为 tapx-fallback（固定提交 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7）；新版完整学生书和目录未核实。学校开课状态未确认，不据此推断实际开课。未引入本单元之外的天气词汇或复制教材课文。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-english-unit-02/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-condition-vocabulary"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-02/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-question-and-answer",
+              "weather-report-sentences",
+              "weather-clue-and-report-reasoning"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-02/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-condition-vocabulary",
+              "weather-clue-and-report-reasoning"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-02/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-question-and-answer",
+              "weather-report-sentences",
+              "weather-clue-and-report-reasoning"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-02/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-condition-vocabulary",
+              "weather-question-and-answer",
+              "weather-report-sentences",
+              "weather-clue-and-report-reasoning"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-02/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-02/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-02/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-02-high-14"
+      ],
+      "releaseIntent": "released"
+    }
+  ]
+}

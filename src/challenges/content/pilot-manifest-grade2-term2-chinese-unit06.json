@@ -1,0 +1,1541 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "76fd38938ec860795ead3e4d3eb96c0b4e73abccdc5c6f22688a7526c9fd6f54",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "15aafe6f6fc74d11d03d377134c0927f7c1bf334ad9560067c80c6a90bf4fb84",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ccc590e38c60ffdad215459fe7b0ded251f65ecb008a3f37a2a9af475a43e3b3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4237a42cfca86957acae08d7d000c76899e71e4d9eb6bf5021b832f764a62004",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "73a1d48a302f2ade907a9492197fd6f12440e55773e1755fe954432d1fe2500e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b133db06d97dff4f869f698f1a4bf3ef13eec99c50c6d2d3f6fd06aed4de520",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85e6a57a7df04d4bfacf8f8783f987142a7008184d8b4fbd58f956e77484dbbc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc75f1eb3e7c5656ebfd583d077256c4625c241e2b9223039a55308e75953d59",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "355315febd5fcf05e89c49697d42537abed4fecba05a48dd5d83a1033dcbe329",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a696b6d27c50aa1a950b69149ad23e0f5474cba701160484a5028918be51632",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e568859d3d27d964333766ba87d9e8a67fb4e205e45ec39ae1cb8bb56fceb5ef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-vs-forecast",
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "15a72e84bea2ac4d33d1ee29c536318982c08a8fc0169427a5acc4283c5fbf7b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bd724f5ae9647b25e9ecc93260804acae84e142c3ab1decd5e9f617d0c8256da",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "safe-navigation-and-help-seeking",
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47d6de6c8249c95776c8bfa69618a3b3632eb84f7cef0076300f82b56c4dc6e5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-vs-forecast",
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79a52831e4cb43d7201389202e9de894a4a2cf41a9b20ca8671cf8967d1e34d4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d06391fe9cd9d9ee3bea269c7192c32c86767652be701fe6de40a368930becd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8ee8000f5663fd980ef0a505e4c6dfa494d2c8d7a041d9e3c0f79fafa3d22ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking",
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "690cce54089ecab9f0bdda2207028cde6e39be3f5911d472eec5c9deaa894d2e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-vs-forecast",
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6752b790b8b5d70649dd7e03ce11c9b5e1bad9a0f40a92206e0b06348ae2f86",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-vs-forecast",
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb8d503216cea331ba95ae87b6571da8f6df865c59ecd88a9877b5f7aed5d667",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c0ac7acc3ebef84c7b821bf66b55c28d1c8cb047555ddf9b9030fa1253e0f85f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "natural-direction-cues",
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18ef0b0275ca776c36c0194dc9d1572f3860d0f979a0975f444a65e05e160881",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4ea04ae00bc8fd8e212d7fca891b3d1f425213d7eb4c87f98e3966fcd225d417",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f7200e414f2a080a4467c24a0ac25dc88fcdd489d6b36916d09a36cc8641eb4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49afee693479d375c6249534d702007fe22f6bf30ebd2aea136c13f22105f0e4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cab5b0730cb2f307ba892b6414256193e40a3d339c7c7cea60c9b370eed134e7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dfab5af8065e9d3eb05e5657611696a114f245656eac5194aab3c3e0cb0a2d02",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "792d2363f40f271c4e6c9d82ab62026e5b401867ab3d8b29caf7227e6824b8e4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9137b0df94e0e35587c3f89ca0ebf959b8b39d501ed8440381b2e685e2dc61e2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "460fd66678c0b18998406882b825341328b1301ef0715ba196e4239bbc9ff6e4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3b5fbb12e63dac16f6f0ba4402f45fa6e3666a6b3faa71f61fa37c38cb96fb5c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c96d370b92cfd12227b780a1f9c0d62686b166b64d89aba80adfb9f40fa4bf3a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b2571761d533ee89f240ea40bdb7859f817270c509cd3cc235be045c764a189e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bfa2a0cb327cb8cf11a0b004939ba2db06542fd28f52cc0ffc56d7f189ac3d32",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0cf696d223b07d8282b5294b686a9193cf77dd544b9525a8b7b296a7517cf5f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8781604942640c391b54e96630fdba3727b5125b1dd843550671a64cc0c214d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "274de72a5b31731a228b05a3cb4c0bfc2fef2896ed1d41501c37a66d2ac6f9d3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58a41da43e457fb92bdc96edaf80b5e644b3c82466a382941f00b18a97970b5b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7548ad02d91a363c348ee40edf14711bee6e1e0151d17b2efa482593e6ceb005",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "97a93fecb249fe8ea0a9fe5f46c6f5b59dad8510b9d7edfb16edbc8467b8a32b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef1ce02c330326acd605c80a8357dbeb29e179095b605fc10604dba70ad91888",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "213a37312e3a549154ca8fc522d01bdda6a5977b468d5a8e6560b6144176d790",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c23a69fd06c0b3be5c3242783da914dccc7924858d73cb0332079d8fec38fd0b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "06784de43f9d06214ff1821632de1f5f63271758cd8c674fe880aa21d64dfaad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c75413d5d86f25e74bf250bfe38003c7b48de6182a83f10b5d8f6287ee186754",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47ba13964adc79976b4e72e4a3dacd2ffcc97c7dda4b7ae828ade2ec438d4525",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c1d98d62dfb1f9fb9c25020cdc76b621fd69f2ae7750ab817372e50234563678",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cabab703ae202d1dd6321ca2c31494ef2d6f26f8347f033538e05fb9c4f727c4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3195842189b80ffe74d42829acc44d50ff1a806b0c47054930a6441ac098efd4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c11b54c851c2d9f04d89720ebed61af1bf1e2077a26930a0269fccd4bdde59b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "809594f36afa7d31af3d7da4645f765051f79072595c724232ab2aa11dea1d8f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d6716b2bbd3b558671701ffd8499d3a92ab0f78db7743455a74ec114823f1142",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "89e118e0ec1ce47aaa61ac46ea9c1b0ed60df9511c835286e90ae96ded9b18fb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3b528bae718d9ffee4c4178ff5319b0a255b85b3ac2120252b5c6f77fa50c99",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weather-sequence-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "39d1d56c4b9d83a4ec7678100690c1f83782839a7cf910cc5735a825f8432ba8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e14a2b9372e0f229d2188d8751d2eb54940bfcd0b23ccef52ce08464c4d1c3f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "197937483399efb0b30f51230a50a7c83acb72ab547fdefbca8cef49c6be184f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "safe-navigation-and-help-seeking",
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5d867a13a4a8477086fecf3dd144bde7afb6ddf8effa2e5341c93c42f7e3b0c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2315fb73522e0a6f4815aef9ea80a211e9beefb345b93e3c745a9444cdc87ac1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff899c79feb018a75fe3d367d8bfba0ee5d38ce8b712fda4c475dc66683960d3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "space-environment-adaptation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a12e3d7a0bfb41a5a3ea1c2a071d7b0fb11846b5bfa0d7c3238d3aa0a7f3ef5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "777150cee0422fd3dc51b6f03e8c187f159f200878d36a535c8dd5badd5b5f87",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef3616951320cc43510b9030432f72ba3163d9c3bb319c28b250f4cbfd1e063a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "40a0c59fe79823720c00da5b9defb70cd9c8035d523af131d40d6d7fce88ae2e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e457293fe2df99a8423f551fe0a56de9143b38949df22c899a027fafa57375cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2257a36c3bc2d305a7134b15b9146506b6961c19302987abf08b41ab098af99c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35e510b569818e20340b6148fe8c69a0451bd717be11314c9f81de372f09e61c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "space-environment-adaptation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac1b11cca95ce3ab9e6ddcd30e6a284d5a5d97e03ab8aec5a4b7f1ae2f65356e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cc0bb0da0f748d3db2d14ce51fdc78837098ed9b45c7bf4a9aafdf8c5ff1a46a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6042185d6f4e727d99fd29ee244e2c8dead69b32d6424e08c33cd19fd12fe474",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "safe-navigation-and-help-seeking",
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "90496841846db93e4000955b3bae340f59bc7676f7a11a71655ffab5d73fcb00",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64042d3d45329a51d844cbfd47d0fb8f788d6b54c32462d86d4239b04c11ba34",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92241dea5f1e06ac4f64c547a32ba256d2d44fbf7df6f290e0f4d5d4c5c6bada",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "natural-direction-cues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4ed4b39bdbbd1d8274935f28ff087b4e2adce2a91615b18e071ee79b97491841",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a0ab70acb27eee7c3907a420bc118e7392cafb82ec90b7076657b3b003d5b99",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d6e73ad0d005ed563cbceca13952eb73ab3499e0de849f15694478c3590a89ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a8c2870b96993d2675e3c255a8b3c36108e1b437d2289b1cf15a67588381c20d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8207a6cf2e554dd54b3edf875325a70598ee2f96e7dda002c7c396b4ba699007",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "space-environment-adaptation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "758547f54894c0d259160ab3b6c00d0fe08819b0951d426ab1e82895435a1e91",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e4ee51a39bd4ef7ada4bdb860854f52ef51b28b53468ad4f7145d8768a56280c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "59ae19755e85da4d512a4eebeed394b5620ea62ff445e7280034ef735f9565d0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6134d92b9b71ddd86997e3e78be842acaa728f3c543b6fafdf44ec27e752ff51",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc16ed1bc1a33217313a13a96b54deae5c0a4b3bbaf7b35d204e49ef31da9d05",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b07f04e983948a15de7a46402272e0001f48fbed1ae6407478f3e81e8dba09b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "space-environment-adaptation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47fd49d6eb51b40be09045d48dd125f73db26945c4db0f0c3beb5c65f1b9522c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "space-environment-adaptation",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "efa951b542eddeaf36cfc97043b29fb829c2c8c48f8ec34e6ff26d6e5153581f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18cde5f697720d82c8b613a85e422df48152db0773af1a01622c89daa795cd9b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4bd0a9efbacd89dd2bc490d4477faa126c9c7e7e5556d644448ace10e1e1b898",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "natural-direction-cues",
+        "safe-navigation-and-help-seeking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a248fdaa1ce171a948a836bff0893e9cd6bf0978aea04617516ae864f0db372",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-06-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weather-sequence-observation",
+        "observation-vs-forecast"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f25e0aa232d8389062f6cab9524ccedca141e2c6ef99736991d0e50401e1d450",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-chinese-unit-06",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-2/chinese/unit-06"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/chinese/unit-06"
+        ],
+        "coreKnowledgePointIds": [
+          "weather-sequence-observation",
+          "observation-vs-forecast",
+          "natural-direction-cues",
+          "safe-navigation-and-help-seeking",
+          "space-environment-adaptation"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/chinese/unit-06; src/content/textbooks.ts#grade-2/term-2/chinese; src/content/grade-2/term-2/chinese/unit-06/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "按本册登记的 TapXWorld 固定快照目录和课程 sourceTopics 对应雷雨顺序观察、观察与天气推测、自然方向线索、安全求助及太空生活适应。版本边界为登记的 2017 年 12 月第 1 版（TapXWorld 提交 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7）；属于 tapx-fallback，不称为最新版，不复制课文原文。原课程 48 题已有课程台账记录为 48/48 审校，本包补 42 道原创选择题，使每档各有 30 道候选；挑战题由作者逐题自审，尚无独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-chinese-unit-06/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-sequence-observation",
+              "observation-vs-forecast"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-06/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "natural-direction-cues",
+              "safe-navigation-and-help-seeking",
+              "space-environment-adaptation"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-06/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "natural-direction-cues",
+              "safe-navigation-and-help-seeking",
+              "space-environment-adaptation"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-06/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-sequence-observation",
+              "observation-vs-forecast",
+              "safe-navigation-and-help-seeking"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-06/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weather-sequence-observation",
+              "observation-vs-forecast",
+              "natural-direction-cues",
+              "safe-navigation-and-help-seeking",
+              "space-environment-adaptation"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-06/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-06/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-06/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-06-high-14"
+      ]
+    }
+  ]
+}

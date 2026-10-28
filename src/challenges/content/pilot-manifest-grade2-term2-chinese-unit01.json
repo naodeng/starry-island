@@ -1,5 +1,5 @@
 {
-  "version": "pilot-2026-10-27.1",
+  "version": "pilot-2026-10-28.1",
   "questions": [
     {
       "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-01",
@@ -412,7 +412,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "1dcbe5fbd324caf679d9425252d17576ec7d0831a5efdf83484ac3c992a99448",
+      "approvedContentFingerprint": "c4f7489aa688eb514bac5f24307ec927cae56fd91ff3118b1dcc8e79be1ab3f4",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },

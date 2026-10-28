@@ -1,0 +1,1583 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93a7eac3ba26d29e354128dae482668f8488d474c438cc82386b8c6f0b88c113",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4ab3a4633fffe9620c8ef8f3882cdaef6c39294a28e3b9172616e3c98792106",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a523f70b224d70b2709bb93580cab6f166e5433c1b48fece299173e89a9d00b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b8fc8b3ae94bdb28772627ee1f0d26de004487f066c4644526ad71232da3d16",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bbd9663cc11be82a82abf5cc7e2904f98f3939af82e05ced756df86b74d674cf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "94e0b61bed0fdb21634add17725e3df4fb40b657b6adf83d73bd050890ced648",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef6b059ecba0a6e9476ab39c0bd7901512a9244d015f38070e64401aa0640357",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "377e32fe140585a688fa72b035055a35b079feb3665f90734f4fb2cb8183e2f5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c80d8533173b9ec9a9f52f91a24739dae5ae9c53c45458f373d515787510bfef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "96a4d1533d90cb09a8f37f78fad03547cc27d841a0602a4761b72d829fda8877",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1a65cbc8db6351b29373869bd194c3609c55faa490cc113134ff40b66ec14e02",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ee31a9929dcddf9d3f8f384c6de393f6e77e87f04ec77acbdfbbe7101c7c789",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "98ab0cf493825fb6b44374480178c4644b2ac2aea6a401918a4f10873b89cb74",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f39b112e99681300c6a1637873d4ec87c1096ce56e9064fb7980c9ac71e1268",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad99035660aa4a2c6bd526490bfe4e4679b1dbcd9d26a5392fcf290b797e58f4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-06/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11181e555d5bf45ff6db57b79bf4a96e0ff5f3bd4ea12ee1c5914d865bd3f99c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1da748d012eb6a15660876950073a82209e204282fdcf9b4e0e0cdbeef46aaa7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8ec6505c042b3b2a529177223efb653926efb3b95de9a29b5f1cc584bd81c54",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d1fe35f248ae3a25a9d6396917d3f1b3399e399ab7afad603963611f1a968e58",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c2103ad0d2ea26c55da41a877386f3f552435a4a6575b591e789aeab7dfc2f2f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fda9d2dd2d2186449b38c864b4b9b9a31f1c5ef6cfc79d1cb1265504051b906f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ee882dceab118c1fc023902a6ec951a244fde5c9dde56e183abd4bf4e4c83df8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f0bc754e2f4ddb59392f5ea8fbfd45864a6e6c28cc1659cee831f700de309ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6acc7ff15dcdede0307d859a1cc60a05db42f13dc12f064fd9df1876fb41cc06",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "046bc8c362b4cacfdf76a77a00e748b73ebbfb96e6059cec1354cfcdac459935",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f1082d1feff48b9b8d0f7c66f642358405865faee6087e1598a7c5e43a5fd30",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "952b5181f6a5b73418fe07f279432aad266a76148e5112d4e65d3de20cbf825f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "532a8888d692f65c61ea6dd701b1c4246779e8c4e183a6c14c57fbd5122ffa0a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7772dae4e5599ce959ab7b9658d2a928bfe449321ddc3f4970fc5d2fe77c96ec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09f251491986f46763701fecfc3608d93dcbed0e0805c8e0c9920e9ea010d0de",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4598c7e7b564c8588dccb868b25f5e71ab7d21dbefb61e9e488d16d559b68b9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "89d4310e8a81573a5457339a98ab75ff6e44cf47bae13de86cfac7077934dfc7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "601618f375d5b1013c32cdd42c7620c40dca5e0023d38ce0117fe0b62ab83494",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d80947ee0b253eb7293c79eb23d3796a9c77ec6447d168c3dd335e0da656195",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "743e5383faa659348c5b6162edb9083c194277cf4312d1d117d5249457b8607c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "30598e9e5e1231ac88ab07630265c496219e51356bd1a473e84ba94b12832e88",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4397ab33158ca995931e79669d663baba0940a22847708516d9a87a8cf5aae1f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0b2b4b3e4a67f4e70e5302bab5199c5526670279f84e38a5d7e89d0a71bc7c45",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "567c86b4e600e02ded640e518970931e564af35045e883c35538b64050bf226b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5ec9247c9b98cd115b5ef36e209a7f676448537e50707a1e07b3fef2e6c8dca4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "554e9e21c99076c55214402f0355f6acb14ea771a76028274886dc85eaec1378",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f0ef0ee8d5994c6d13380ba308f7833b19b49c37aa53426ce1c14eb4c51df90",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52c9a362531a8b877101eb3318fa3019ac2abc50ddcc784b514b9a31604cd915",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "937bba66c162f313779b610aa350ac004a0d669df591cff3169fb924a469629d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6bc8da76fda2500df969cf227c07e9ab46291f678ff9322027941ee5fd2c49c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a706febabe2afe616eb04b3753e6e4b7c1bcf35198b6485d005ac3d278ff97f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79d97e609a0965fd5632e96b37abd14d0025a6eac1bfc2937d2202276c41dfe6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/english/unit-06/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7cfaa91d0f90875030f00044e6e1d318f455fd27d1a2282ae968be5fcdecd6ac",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10d424aeac328ddeeb99ef5dfcde4ad3ee8b346a2288ec40e6d5b90541a08bfe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "416c8a93c8317abeeaee3cd78418a4b981f223098f0d7b1636ff47d1aad20637",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42c50640099e0cb33e9c1ed0af4d18b4bddbc201b445cb660c10db13d0cf79ca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93fd8622eb50c3a2b8958b1d1a1d6b2edcadce99e51cafc7888b1fd54c51478f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f48e7ad9d7ca77af99ea7d1777da07a7c6c3a657811279c5d1cb16dec5ca009",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2bb53f2037d6ecb526c510380bb5724289e0d6d253e4193a910a12eec990dadb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a2ac0b2ef9b97dbca5bc619e8fd6d7de41d77f10c4150e191f12d1f1f6a6a668",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d54d42b82d0d23ea651520cb701b40734fb29220ee2bd3a715444a308b45e7c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "279c087c51ef2c0067a4bc740baba4193f8162c1aa9298c7c1c33d496108daf2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d34819e15808174710b556fbb48c0c803f37b1f6f7587813ce2431641bf6f8d7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3f1f15026bb92bdd05fabbf1a1955b2f7adb9b9b0032d39146375df184c8546",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "535bf1f9db5cf88c53552e97e25622b9d8a06b01d21ca0026716a0052ef907f7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "81d7758f55fad60f2a893bde8a8aee4b63e4610c675c56fc8efc854575809f67",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "791aeb54f1bc2c666802ec8a03370b72691eb16f489e67a77b5b5a6dc0d9a647",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f1ae54500a7854e8a8667555713de5e260069e1d4dbfcb7658d76ae59fcbe42",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "04827eda79c41c2cf676ef7583e7ffede9222246f20dccd987d6456b28a51ef9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0d89e84e53f607e5b33837df65b92734996e13d6e084c07bcbdfde3ed0593c0b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ceb5b54299b70af5d4fb22694a0e00c9c30a6b9185dcc7672e7b30ab7b1f42be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0e9617341b679fc247e3aaf7234fdd4090726c2a132bf002dc07951dfe1e49ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f98a5a319c717cc1f812d7d0bb248ed680988a996b8ccd4f73e12aff9ca3da4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f01bca2c1c0bb14ec85a16f471889ea2ebadbc42c436fc6a0050bc264bb30a3d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ef2a3aa4554179aa41ae288a61c32cbff5d0b86cc3cabcc7a8e4a2cd000da1f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fcda0a7fa67241a34d075fb29777f1d97d51ba2741c0f976352f05813e898b00",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a5513228cf0e6e75900d4c9d450baa8fa709aaf76bc4401f7026985ccc0a1f6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef410b4e068cae54d841d18c21fdc0b3a3c0f266f15724d988dbdcfe3cd6102b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7fa1c97b467bfb4b71a50f63c57a794cc19888349d6b17ac31d81fe291bb2a7f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34bd1c80bd00263d8e528788c8e71f25beb76308eb85eed650eaae99774fde6b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8922d99db90f65c2216453cc9de464f2c52c4495a5674463da6c1a8e5f09fa1f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37707205f75549356a63c913ab37259e24dbcdd939f30f6d26233bebc6834906",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "273f54cee619d696451fa77c64c9ef81866c7fcfa05219729975e07cf802d702",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0fe2bf43dcdc78d9c55a2be5f447e9b814a180f9c1522866deba81f0171811d4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "day-question-and-answer",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "763bc8cc1ef7039cf3edad9ea8bada9e7b1cf4d0cb75112d33241259349cbb0d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "745c34a9232d95890d1df276691b55b8d56634b5d3512b1c94fba41188b37886",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c637bdb420e066b2af2ba5a27091124a9aad9fae584e3c27df93b58b388b965",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e703639bc4eecb525cc25934ee20bf5f5c247420f6de96ff81abd03fbabd2d68",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "54bb95418492277295652146d5cf325d08560e75a40445c9ea1ed2423537cb65",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f8793ae3cfb256653bbfb58f663bcd03cbc35a5de07685d3aaedd66b945306f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cabb9f67f4ae278fbf2127f0818460aabfe6246ecddd8394daa05d66943460e1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c2aac6884d9a6977d8eab4b42668d9458cd4a2726158288c0dc8d5705b2557b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f6291e973b9b76b7ecea9a77d59a6a49f32872a7266ac66764c49aa48d5773d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4550b5c20b725c8c6b077ec771277c4a7f9c8193db0a9ceb46ef3da70672acc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-english-unit-06-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "weekday-vocabulary-and-sequence",
+        "day-question-and-answer",
+        "weekday-activity-sentences",
+        "week-plan-clue-and-reasoning"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c98e289c2991757b21b1af7b43038e6dc6788bcbd5c5a0860fb83a6fd222c4b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-2-term-2-english-unit-06",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-2/term-2/english/unit-06"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/english/unit-06"
+        ],
+        "coreKnowledgePointIds": [
+          "weekday-vocabulary-and-sequence",
+          "day-question-and-answer",
+          "weekday-activity-sentences",
+          "week-plan-clue-and-reasoning"
+        ],
+        "mappingEvidence": {
+          "source": "src/content/grade-2/term-2/english/unit-06/index.ts; docs/curriculum/grade-2-textbook-inventory.md; docs/challenges/PRD.md",
+          "checkedAt": "2026-10-28",
+          "notes": "仅映射 My Week 源任务的一周星期词与先后顺序、What day is it today? 星期问答、Let’s play football on + 星期活动句、工作日/周末与相邻日期线索；按两个源 Task 对应关系记录映射。学期来源为 TapXWorld 固定 tapx-fallback 快照；学校开课状态未确认，不推断实际开课。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-english-unit-06/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weekday-vocabulary-and-sequence",
+              "week-plan-clue-and-reasoning"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-06/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "day-question-and-answer",
+              "weekday-activity-sentences"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-06/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weekday-vocabulary-and-sequence",
+              "week-plan-clue-and-reasoning"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-06/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "day-question-and-answer",
+              "weekday-activity-sentences"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-english-unit-06/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "weekday-vocabulary-and-sequence",
+              "day-question-and-answer",
+              "weekday-activity-sentences",
+              "week-plan-clue-and-reasoning"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-06/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-06/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/english/unit-06/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-english-unit-06-high-14"
+      ],
+      "releaseIntent": "released"
+    }
+  ]
+}

@@ -39,7 +39,7 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
     { knowledgePointIds: [growth], prompt: '发现花盆里的土摸起来干了，怎样照料并留下记录？', answer: '适量浇水，过一段时间再观察并记下变化', distractors: ['一次倒满整壶水后不再查看', '把植物拔出来检查根部'], hint: '照料后还要回来观察，看看发生了什么变化。', explanation: '依据土壤情况适量浇水，并持续观察，比过度浇水或拔出植物安全。' },
     { knowledgePointIds: [sharing], prompt: '小组种下的花开了，怎样分享这件事更合适？', answer: '邀请伙伴一起观察并轮流介绍发现', distractors: ['只允许一个人靠近花坛', '把所有花摘下来分给大家'], hint: '分享可以是共同参与和交流，不需要损坏植物。', explanation: '邀请伙伴观察、轮流表达，既分享发现也保护花朵。' },
     { knowledgePointIds: [planting], prompt: '树苗扶正、填好土后，接下来怎样做？', answer: '适量浇水并整理工具和周围地面', distractors: ['把工具留在通道中就离开', '用力拉树苗检查是否长高'], hint: '栽种后还有照料和整理工作。', explanation: '适量浇水、收好工具并整理现场，能让劳动过程完整安全。' },
-    { knowledgePointIds: [sensory, evidence], prompt: '要确认今天风比昨天凉，最有帮助的做法是什么？', answer: '在相近时间记录身体感受和天气情况，并与昨天相近时间的记录对照', distractors: ['只看一张没有日期的旧照片', '听别人说今天一定更冷'], hint: '比较需要前后有可对照的观察记录。', explanation: '记录今天和昨天相近时间的风感与天气，再进行对照，比较依据更充分。' },
+    { knowledgePointIds: [sensory, evidence], prompt: '想比较今天和昨天的风感是否更凉，怎样记录更有依据？', answer: '在同一地点、相近时段记下自己的风感和天气，再与昨天同地点、相近时段的记录对照', distractors: ['只看一张没有日期的旧照片', '听别人说今天一定更冷'], hint: '尽量让前后观察在同一地点、相近时段进行，并记下自己的感受和天气。', explanation: '同地点、相近时段的记录更适合比较；风感和天气能提供观察线索，不足以单独证明风变凉的原因。' },
     { knowledgePointIds: [planting, sharing], prompt: '小组要给树苗浇水，怎样安排更有序？', answer: '先商量分工，再轮流用水壶并收好工具', distractors: ['大家同时挤到树坑旁抢水壶', '由一个人浇很多水，其他人不观察'], hint: '合作前先商量每个人做什么。', explanation: '分工和轮流能减少拥挤，也方便大家一起照料和整理。' },
   ],
   advanced: [

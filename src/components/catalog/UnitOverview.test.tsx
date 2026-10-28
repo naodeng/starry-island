@@ -108,7 +108,7 @@ describe('UnitOverview', () => {
   });
 
   it('doesNotShowChallengeEntryForNonPilotUnits', () => {
-    const nonPilotUnitKey = 'grade-2/term-2/math/unit-09';
+    const nonPilotUnitKey = 'grade-4/term-1/math/unit-01';
     render(<UnitOverview unitKey={nonPilotUnitKey} unit={curriculum.units[nonPilotUnitKey]} completedSessionIds={[]} onNavigate={vi.fn()} />);
 
     expect(screen.queryByRole('button', { name: '进入闯关挑战' })).not.toBeInTheDocument();

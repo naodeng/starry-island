@@ -1,0 +1,1544 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa40d19e741d633c338e5bb07d00e32508ca0835a170324d0846a565225d7c99",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "811b2a0736f56058c3f4c8245549493c184927009f42194ab11fc8de069a462a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6380fbb74206bc1eb8d71c9e6a5c09f50d63be67afeb25ff507b67b1368c35e8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "638f3e3ef34c30e078c4f18003128380476765c2ce8922ce488bd0294429d524",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7072859c275bda2452f6a04df73a1eb38625ae629dbbcee6002ee4fc8db31d61",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92da95383cd97b24008b25cfdc513f68139846782862b26540a23eb58143a1e7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fcfcc9280201f560cfaa670e6f3e399bbdb08e17c6f9c8efaae5ed4ea24e4c26",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac65b974138970f3ecc28beb76260efda4dbe2d37fc004bcd7c783c59a16a8c1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d4e11c9222dcd74db2d3e3f1f6bc4e33e3df0e642f0779838c71293725077df",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3b2c9d1730c0d3d756ee34faea9162d70e252f93cff7e355eeb2f5f25c066f6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5bcfb9395f6c30692434c3342a306f5f60f4fba16a31d274a529d45d3be08b9d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aba105a51b8821aa9701258fc598355f324241312b8588aeb98cb93d410fbedb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "39906bcaef196e238516a3114bc1c8c5d74be6c750a25d4d9d3009f63df54d40",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5fd487ed1979d7872e9c6ed7a8d93328132a5978f4b7af0604cfa45e8556e188",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb3e6e13f7c74649a66114fab1bcbe92022a7d8421f54be86df8a43ff36e71d9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-04/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5e4f89a9d4848f2c8c2ca26da61ee16883df49681c838612c0054ba613ce6b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6583b5a4b5054dbb77aa08e5f53591c8186e5a5a1afa2875b5c9147a3101b2a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af48a75aaa6e35a647b7b79586d5b89bce51a4ca4674d7cb1f104f9da7c27ea5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cc624db85c6589bdf8c21f645adf5c9802808ddc43abafd1bcdba40b9d8ce73c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68032eb1956105e7fe1549e072cd83f7bfeeef05fec4f9a858a791d87d3efc5e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52ff5099d9813f40639274513dabcc8da670806ed80747739ecc384481b7b5ed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41e423834928ab12db149135dc71d699c764f9532b4b0652b503536e2312c688",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1e61e7a2fa52c55243104abea2527402229ef44fec11da9758d33d7b056941ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac91d86402df0b6a19e385c34b59ba931446b1fcef566f6f033ec9bc6cd5d00d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d6a36155f15cc17177a2d3955aee1062de9743a11f43c7d7b7d8bd0dd4ee46b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5ccf8789a1d32ddff297a8a48ac10e42b9dca290e24e39fd9ee210cbd87913ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0777250f456200993c6af18846a357423e8913cdd5979649baa1fdd6387f1554",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dbeca384a32e5601f9ef5479a0d483f817dd7af71b6eee4e00b9996bb150eff0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "129f9c5dd2715f7df7fa0a761339c319a39c31d11943af8546eff1d418bd264f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3bba98738bd0f1fc575cf51e27312c9446f2e9b73384c9beea325cf83b89b8b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1a4753974bb3f598b18ff6c4813c86660ed958eb0fc7ef19e5918a9249e3943a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d76fe370e7e556df31836e99c21a6e7c6458614c418531767e09667e7957c8e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f801842be6b8cf0975ccd8999e8108ee6eb9cd7de882a08891f3e294d65f228",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8b082ef6843206393007e6999647d6998356e99ce5d00b4958d9537430162be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "687c463945829412e214e1e204d5872b4bcff404a675e2de0991ceb18e05197d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6244d890125163f0faebdc9a16911f179c09cce2e1ced76ee1ba8a4cf68ecdfd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afa4478b130391e224610ef888405e07b5fab68512580511fd57cf582269cb1a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "438908d9cfd4ef335dd13cb7805b9457b5e7f76df35e6f59947295ce374fde50",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c365cc17e93482d8963ea7d61fc1a3bf3c3243213a6e3ba1a7962770fdd2ff0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fdd90c90500c335c50082ba0e1ba0aa6df3c4d37c57e7631af70693800c40fac",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "617621780a84d8ea0ac83a289acc4bec471b6af5e71bf7a14dae43eaa91f8011",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1546eb063fca8e4ac8744dac7be70d9093a8489945b5972c748963982b24349d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2dc426273d860d8eec5b18e906f5625e42faac78876056c802c7f050dddfd89d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b66e1a1f8a8182ea235dcd5b37e917b14ccefdcfd2e703f4dc659048cb1e4d4a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc762cdac2999b7658d97e06c203a845ef19b495147f711099cdd7a986ec467e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "496f65abdb14a88326c20c79e77e7c2aa7cafa6804930e15b7cc3ef7b7a2bc83",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0d327d0bc2202ee1167a558e76df80a136a03f7fec36568cd2c1ab8ebe65afe5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-04/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e04d145acfd92520542ed055955af6b7beec64e18951cdf5e3d02730e2784c26",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "710e8539c206d5c2d03cddec86f3a7bebe12eb5128f2d522fdd3d79d6e89209d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "267c35aa8b228124fa1259382675c0ae50af785d953cc01aed531799b763bb16",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "346f0cfb0f9576d7077af34919b612737db845f414b4811bcfb8a7be2501a5e0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a65906426304f08b0b376c6f02f59fe1a328da6c50bdcd118a9cd635c4003b44",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef6358cee136f48ccaee962b571b2b29d9737451d13b0ae5a066056e08e8870a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4beb81180eed91e3a54f55c908364483294efc0c8888bfbaf394c1f5027129b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "793fb48f207a425e67423badf2287c694fc65c916a67e08602d2b34f69295651",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1549bc64873562fb1fd8ad3c20fdf8d831cce404bed9bd4c938a43701ceefbce",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36dd2c6343d2b871e9280e47e164ad735f44fe8c9708647c43fe32c06a1a27e0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c67d6684808f6df4460c013049b804a0d8db7a40d4983528ec989e84e1f4c340",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a1b3d33032431e7df51eef641cbb9e0947e9156bec3d75a24aea6afbb574d7c5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2a355819df678fb88ded9011927af3c7ca99c84d7ad6d1e99e80e534176034e0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "21fc673a7dba221d80e5d5bba4554fe0e7729a50d9bfc0bdac1b48ac5656161a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1da4fb7ba70c24565eee76d752fde1eb2c97c106ae27ec5fe0be76bf7c34b4f2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cc07e1b27a69a6d27c21df0d01622f4adc96116c247d43c993d86bc5f9c7e40f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "be76ff6d7b19ac8b2a88ac32780efef9783f9a52c8782f52db1e1b17c358de67",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25097ee0f28787bef3edd683da66ad430c5018b079fce52069dead5f5aceb75d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "caf50eb5272d35bef80bb891899d6c3cf48b35ed79d285dc45f15281fc1737dc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf1f01ba2d0c2bbbc619d9ee531685b102a6852bbf6cc84c60e4c7c4185762da",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3674bbb78711bb777794664d604ae9fc929ca66da2ba6d93a1c4d8e872f605d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "092d7bed450e2c654811f54f0159140ce00151abcd4a73e8cc8091fd49b97405",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d895335324feb0e3672cb71d6979bd01bcd6f32e1882014791cecffcc9d0aa34",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cac177cae9a59bfa12f666714968d3a92475dab77176fe4d2355f894c60a4d37",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "311a5257d8e1ad600bcaa636669872ba387ddf078feddbbba551f5b8d9d2cdaa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a05f428deacdff3787cbfcc281edf2ef8946ca4899641e477a70d9673b92f2b6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69011fd2aabdde5f1a3054038f4f385c2806a64fb648c2a9369b22442e0e7ad9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0fa897ccd0fc0c8ca90618d92db1773fd5ed27ef269a86b7913a497369284df4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "364216acc1c03ee1c0227467d55db2a9cac3317f051008e31b0a2cd0de44c26d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3b7e150ee9e894860572f5f0f73c14fb2ec40b309d4c2ae1aea830f061469243",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db5f999d6880777d57b7b03c2594bd1696ce67ab58ceb2b8f22d7d3099d6915a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb5c74eb1f07d716b3f1c002bff87823a51b9cfe736d849f00f63bd65bbf63c5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "286506bc68fb56728799806aeea2ec186a481d2b71acd87c04dedc24e437e0fd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4e824c4950b1b7eca4be0dcfbaee7d4a16f7579b3a8632b5f5ff257319617ce0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9db2c7b063c6e8142b0a68d10ab5c0b6a459ab74b33cd96e17d8d210d8f6e559",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "058ed847c7325cc0c10f0cc9463745fadcd28ed822155cea49d4ecf7d4cc5e75",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1013c4f5d119cf97cc040c571e4adf6f087065d7e4411bb979dca4851d09bcf6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5339adbdeca0f0a565ec4682b2af0c6ea2a463a2792aff9bd41e353365777407",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9fce6dc85d946c6e0f4ed8ad799904d827a7c145bfc7abb4969456bda9cb26d9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bfdf2d2207a59170a657205d4fb6eeb2d40986b7bb378af0402436a4490dc190",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13272398be629f2569cbabb738c2fb26c5ecd04b938b53c7fcc3a049e1e3aeec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9917b4ce153b9c8187250b98b26f32f3b7c51c2cf2f628139731b4874ac1bdd4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-04-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping",
+        "meaning-and-units-of-quotients"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f38d4ad5788586b2496b00aa0ad260816d51dab353f5a1555df7d0cd4b5697d4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-math-unit-04",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-2/math/unit-04"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/math/unit-04"
+        ],
+        "coreKnowledgePointIds": [
+          "division-facts-from-multiplication",
+          "division-as-equal-sharing-and-grouping",
+          "meaning-and-units-of-quotients"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#数学下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/math/unit-04; src/content/textbooks.ts#grade-2/term-2/math; src/content/grade-2/term-2/math/unit-04/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "按固定登记的 TapXWorld 回退目录和本单元 sourceTopics“用7、8、9的乘法口诀求商”“用除法解决简单平均分问题”确定范围，覆盖口诀求商、平均分以及商表示每份数量或份数。数学下册使用 TapXWorld 固定提交 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7；人教社完整新版学生书和目录尚未核实，不将回退目录称为最新版。本单元不纳入有余数除法。48道课程源题均为兼容题，每档16道；新增42道原创题，每档14道。内容由作者逐题自审，尚无独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-math-unit-04/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "division-facts-from-multiplication"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-04/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "division-as-equal-sharing-and-grouping",
+              "meaning-and-units-of-quotients"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-04/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "division-facts-from-multiplication",
+              "division-as-equal-sharing-and-grouping"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-04/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "division-facts-from-multiplication",
+              "meaning-and-units-of-quotients"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-04/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "division-facts-from-multiplication",
+              "division-as-equal-sharing-and-grouping",
+              "meaning-and-units-of-quotients"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-04/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-04/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-04/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-04-high-14"
+      ]
+    }
+  ]
+}

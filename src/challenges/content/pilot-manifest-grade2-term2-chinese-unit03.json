@@ -1,0 +1,1531 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3528e83c37aff766cdc1cb9885787e65ea130276044b35f43675470da13167cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "417973f218c9e9462d0fe59ebc1614325516b315b7eec73d6edcc4814feed966",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3dcbfffad0a610555d1c1ea7f3da0bdb96110b78fe1999fec6b11e96233bfedb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3dbdd593656e51db4bc4bec0d480690a95f5e79656031dddea6560f5a4685d2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8c28f94da9d9ccaac54f761a52360bc999ed3c08141ba461978a656c7c2598d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fe1d883e08c51c72a56a58df098c5c369a13d30eb1969608c2e8d95c06c696e7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c433729d74dd7508f7a16a425b8f27e23e506093fe390b1260e0b68fbd07185",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "54613a2b8414e2444ed7efbc98f5502f2ab8ac95e7d12dfbe839daceb2cfabde",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "character-components"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f989fd0a57075064fc8978119cca95c0ab3392b093c1067bf939e8fc85d20d6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "character-components"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "709192678ec7ec26230e40baf82cbcda8435f700afacd1de82e16a5bbbe4b2da",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "22de8049c0997ce782f57143e556d74d09d3b7e88792266bf13f90c5f817254c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dfdf5f2521a6205be12df3ddeaad51a74f09f19cc09f3d3a121668edfa52dffe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0339f1232abf95cf00144408eede77e545ce21bd210a094824bfcf7e0fecee28",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d250455ddc9c00f5d437f95b0e72d6e96a24f41bd8fa6adf60b279861f020058",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68e0d2892d578254999d4d33413d4ec3555ae41490cac2ba9fa49c90a67b4d07",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61258582895859bca317eca4c472f4e682b83b4058537511f67c03e26b3fbcf2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b50e5bc6f7192206773095a33735fadf8783471931e0010fad95b37cf2e575f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3e7482c7aecb359d9bf38fd1e41ac83664de81593f6a6762f00b7d0433b508cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c4cd83e46305fd0548062e982907915bc8de795e5a81c2bd1ae5d20c03d808b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b85a843a7b0e2c4f4bbad23bf82c8be4571d1cf978eaaf11528ca79f9d276cf2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a1ce2e7144a8bab8914753125af9f191ccf8e431238b941497050a4fadbe408",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f617d251e7c89e4f1f228d8c199e646db621aedec0fa7aa4e8da8c38f0a4f19",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f7a31df7e48e019ab8cd81856075137572dad888ea511311fff8ac95e7605390",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1b4d2ad15771e50baaa2e114bc3c903911a71e95345eebfbb16702b3e4ca3a11",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "06fbd6eabb196b4ce0c9267a51e02bc158a3cf4c8eb56a87ae5ace9828c817e3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "14525a141b06c4ce4bdf2b1e3175ac77318e3d2e0a1661872cb75350a288c1c2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c98fd39d9e4200d62b11a15454d83f0ba86b78edfc7d4518229ab0848362734",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35dbf956bb027f29080a23127ba11c9aad63959cbf799134b92bfb1c0cc5bc28",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "cultural-respect",
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa0b2626647937799795d22e30c1668d49ca2dca039e899288efd5987fb665ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11ff8e4bf55160cedd05a76666e13ec41250d80f8c0a3da1f45bb836c334a5e8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34d85b21698865a423e5b0ef52890b1f3322dbd235d28381de5930df6d2f6c86",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a8474dc2e5e7a48e2125d320420f3d272b57bde5a39ddd0605a4136b37f67b6c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17506febcdea22da91eee530c083d30fc481afd3a72236fd8b1b609418a91666",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff08a23d9b796e727f368fc782cae553f6eefb02e103fbb71f81bdce644fb249",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c72c754beb4996d9c04d8b8978cb2194efb187f4b391f2250fd6f2e1eb5aa89",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b381f61cbbb8fffd6dc4fb74b852cb54aa65de3a8dfe112b51dac3710f9a471",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0871568dfa4c11b3c347f9840f39c4aa72ae82080f8fb6a7b0440986f8043b7d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7875abf19d815f0cb3efd02b45a83e98615e77b674e9e5e2d5ceafef6330d90d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-respect",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bdafd16341c33f06bda21c32a4b0b86427eab4f8dd02820615c0f854208a1e47",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "cultural-respect",
+        "festival-customs",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc4edcf98cedd89460ccf376c9205616d24844166ef81562586bd2367c7b0de2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1ed85b0ed3092567053bd3c3b62953bae59c17c358e1e44cfe44e6fdf44b1f93",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "970c95587ece36daa27804e7883b3a21262cb2fe3f9345f1ba009dab9139c908",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f43acdf86f5b2bfd0f072498fe253bdd5f9b6fc03163a36fd72e686e0876907a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f0333aef3719f767688e3f2d58f2bee5fbf8257fd4a28b0835e82a6ded74bda",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "cultural-respect",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4bcbf4378decad25913b28e25db1fa99df5ff2c9384b9dbd490462c6952efd5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b96422e46f7355d4026113186fcfe7611b5020ec4e931eacdeb34fb1a682cddf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f492e4bce731bcdea9fe7b7382b129d7733b0c6c8ae3a2b8405801370e61d2d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64915ecc5651a620ec38207b43041837df13405952c401660c11b376289bf6ea",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba5d762830070088b0ff56830d063988f61a4505e89e5a9714205e6b1df98c93",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac751b03f6d5e423eb237c49d9041b829decbda85e9284b6f4b4900138d83516",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "character-components"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "162387306c6bb894cec8fdfb71a21d9427de7da8a1230d155c50be14ed6d13ba",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "04915bc89bdaadc065b85e0d32c873b70087f1b326155e71277bbba1cea127f6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "cultural-respect",
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "571cf59a60939fac6fb8d093564df8221d24106962d1101419d718cce087f752",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0348fb570fd9145ceebe92cdf1e6fb4657e6d33164d3bc3c0a9600b63580b306",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1a76826d5099421767efea99a40f4c876f3752ba2dac7aa495de40ebab68e373",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d1c1fb33028314bb2eec5bca3af66fb067a82de89cb1e5369fa98c1a9894859",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aa2e8bec767e9ff4783cb8aee75166412741110cab69f588c0c2a5684c8e84e2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "festival-customs",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eb3a8a2df1a3729c0102143cdf7a1f6c42272066fd0db8ada3b08190ce4a31b9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "cultural-presentation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3b887f671bf2b6f7e5d0154a3e9333c546e9d99e6205c18ee919aa549d738329",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad94ba123294170c33f9ea6f2a2bbd094ccd2939e1409be60cf68e674ea5455a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e75450255421af9b7be0a1a2efd2ff1776ba0b52557e11296bde53547faa84f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "festival-customs",
+        "character-components",
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92de78c50cb86af8f25db85597fdecb5d7a8a633798ad07df4365d0ba74d88ca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c770dd47f9f19be7bbcfe586581cba60e921ae0dfe632a6e7b45131203f9fb25",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f516edd8260566cc37102556dca90410bd24570b5d41bc6159958bae9adee601",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0dbc421832eddaf849e10df5d422b5a8464cbe9ca9cdf4219d4857c759f8e124",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "26d5bf3e9906214d534d513e86368a21b6556066e3a0a80c98b063455c7b995b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a8884d3ad8f5faddae37e60877631fc7328168a63a91e1a8f3913a8326bc6fd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b55841f5006122c94868f93ef791553b2eeef057ccd35fd34345de830a68419",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "613f9453743590ad709b12eb86fdcf398306fcd1cba2c94ea31bfe4a3ae06e78",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8327e4661121bb473f543bfca76c95c85f4a4a0f2e7544b2e6c23ba94026ff49",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation",
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c25a6bbbf23681215dfadf7b0220cd00058903b3b13088ee85f7c1006dc37df0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a2424ae4195a014211401ec10347e54647c6ad83cfa250e73639c94062e55fd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "festival-customs",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db63b2b19772f0206c325f49f193fc06637d0341566c47f9af9bfd488892160a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "cultural-respect",
+        "festival-customs"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e4adfba4f7f2fe4b703e57d32ce183addea44f2b48872ca834b6f2ecc5a85ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-presentation",
+        "character-components",
+        "food-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a81c800cb35fb5d20406d8140622c5d7a39fa58fd1874dc3f419e02e485e6373",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "festival-customs",
+        "character-components",
+        "food-vocabulary",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c88e1ebac94c1ee11c55572184b6bb568daea83d9a5bb41155215daeb5ad7bb2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "94fed7d06e8c0739905502385cc5dd15bce9e3ae116e61d22a7001ba73f66098",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb400caec077142326d944c4d4a5bbaabb458eff3732c7d297bffe57582fe1bb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c3306378c2ce4299f89b7faa5457ee5cfaee6f56f2b5e85608469ee63ca52e6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "22522fc2291d08164123b432e285f36277adb613834756c1820fa9cde7f426b7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "festival-customs",
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea94db68d641a89504dd41ef9288bca6647917a870522e42de0fa508f82a5077",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "30833dd64307d608975ccd66efbb7fade9f27bf4ab263c00c4c545cf9a416b50",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a2957cc9524c04d0dfb21ccc8d8960651e36d605cc8cb3c5dc721759346b114",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "festival-customs",
+        "cultural-respect",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c86486c83fa9d816b112c1c91e62edfabdbd9f5da0bb0c65df1b37e904c55bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "character-components",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5fb8f8c9e01884e68d0fbe657104f1a24b9c41b120861ec30c51a61cf2ff94c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff4544c0a38dcb8068e20545d3edbf4b61cd3b7d7a299323e6cfbac8efe33c1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "festival-customs",
+        "culture-source-checking",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ce5e6b769b9055e7ef2139a414a0a6a55e08016242d5cf9e6a57b3955aca12d1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "culture-source-checking",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dd63f132c02f66572de357895ae49e6dd4118eb323e6069e490242e392942f26",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "festival-customs",
+        "character-components",
+        "food-vocabulary",
+        "culture-source-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd65839f4b0bfacfda9b40eba0eaeab9613a98e15579868b6a4b72894960994b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-03-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "cultural-presentation",
+        "cultural-respect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed3501b75375bbf2a988ca6b8512b3efbcbc09385bda3e25aeb802ecd27aec94",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-chinese-unit-03",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-2/chinese/unit-03"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/chinese/unit-03"
+        ],
+        "coreKnowledgePointIds": [
+          "cultural-presentation",
+          "festival-customs",
+          "character-components",
+          "food-vocabulary",
+          "culture-source-checking",
+          "cultural-respect"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-2/chinese/unit-03/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "对应二年级下册第三单元“传统文化”，依据已登记 sourceTopics 整理地域词语、节日习俗、汉字部件、美食词汇及文化介绍、资料核查与文化尊重。教材采用 TapXWorld 固定回退快照；不表述为人教社2025修订版。保留原48道活动和六个学习Task，另增42道原创题，不更改学习内容与进度。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-chinese-unit-03/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "festival-customs",
+              "cultural-respect",
+              "culture-source-checking"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-03/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "cultural-presentation",
+              "character-components",
+              "food-vocabulary",
+              "culture-source-checking"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-03/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "cultural-presentation",
+              "festival-customs",
+              "culture-source-checking",
+              "cultural-respect"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-03/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "character-components",
+              "food-vocabulary",
+              "culture-source-checking"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-03/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "cultural-presentation",
+              "festival-customs",
+              "character-components",
+              "food-vocabulary",
+              "culture-source-checking",
+              "cultural-respect"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-03/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-03/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-03/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-03-high-14"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1471 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d0f70d8480488c12e0343f01dc0a944828f7465f5808514f1eb2ee8c4db385c1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fdc49baec6d6bda1f6607a5225967942f4bf2138f6a01b66091260dce7aab759",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "653edc729c6f0503b028d4208dc92bfe317b660a741adfebd7541f677611ed38",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "80be32bcd06d5a526f8d9c966dac6dc653397abb7291a6447488f6ae3c5f75ef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37a17cf423ac7043e88644dde7f58dc40d2e400f573b9930777d364ca84406ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8314285f64a402c1b1ce0c7e247a2eb947e40e8dbf7b0e1528f2b51ef9ec989f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "910a20fc1f8bb6ac93bf3ecfef1f8501115bce184e4fa6e6a64c492d6514eda1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9ee00c687aa46368f945e7c0c98a1553bcb3a75b5588dfb1a62f04939ead4dd0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "044674a34294e5e5f1ac81a148e1a735c615f5e12b068d12c9dafcdc15a6df19",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c59fefb013a956d02f7cfa2e463d6a13c78553b78fef1377e80c2f9ab0f6468f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1ba0329869d31956664a5a0c8fe77865334e554cc5ad33860187035ccf265c51",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d0713cf884cfd2e19a403d37b7d1d679786535909816711c8169314c6d06cd67",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13f1c7f72bfe26c87b57eb5d14653e117a46622732bf97a5b0802eca32e22bf2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aa40cce1e99482da93a05a99d4202de2a512ffcfabbe9dce930a09973e4db48f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf6d0e07077a1eba860763bdee98cc0f92f555bf6e47b701f84ca286e4dcc233",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-05/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c0e15f38ece0996943ceb19c39e164c6fd691fe12094e6c7e35e2ebf7ed1683",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c7e53c78c3e0d7dbb6e30c297784caab6d1e69477168eead09edee4d59d49065",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "95e96b5d5cbaaa03db574c907791a9a5a70ec273389617106d07497c6e3e1c91",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "00e60a9bd59817a737fa2db967c7f3287bb3ce265e418402c9cfb609055eb278",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d1163be5e07ea77f7f2ceee24665653d3563f09923e363c2149227c904b113ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2d6d71a4096d6d8418c9e29dea9f834f368ebf66db62e21ab97c2f972b20206a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "646dea7f2d78117861ef87c06639b028c310b5270b9e0de766cd3b34e138f590",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "210ad9e0281657623c037d865a7f9bd7a1b479f792ef61884a1446562be7efca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1bb5263372d82c978f76edf2abe5b5c6357719eda346a6735e7dd2e7716ea576",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aa79afc0dcc38815b7e51dcee731d4b54bbbe6ec7e0d999835ed7da2561c40c5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "50824b9b618991506d7cdaec45293de0d92da2df6ef97fcedd46ae05b7d89842",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "742049acf3167c1cfeb8901f0c59f6d69f9518ef792f5d2a444e2312e96969af",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e89e4860652e6e399757706cb5681a6ec74a3e5d26556fbb5dc0f09a614ea83",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3712ca80397eb5c7b0799c530276e113bfdf7838a477d65f2eeacf2516dd716e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6518ecbe02898ffe935dc754798edcf0b2cfc06e9e3de1036e751b4846c6fa78",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f925e163d8850c77cde1a9894bacc3e333c0c7693778ff87de726f1095316bc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc69b27b40cbb3ed2b70b53611649f36b3c6c8f49da1b08928dac6d86ce6d134",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58d39129898fa47e01eee6fcb599ff9f406e99a89f728be75eabf77e525cc2b6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1b9098376a877912293e1f88972ed5e4a2edcc32661b16b59e406aabae272af",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "21b05d5d148a766a1b705fb682de62f0e41eac34f8f30093f07d457111a05c78",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8714873d17baa8a729c6e35eec51161d5affe1abb547dd48392599fe71bf1ebd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b85f64b7462e8a4f11f02b2aed5f68c145c458ef05a8086a7205090cddfc1119",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "118269ab98ccceec7d9ab994d67c2bdaba7345041292a8a7cdf5040bc64c10f3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "157bd6a3d7232912fddf57872e503ce0165d39030fb67ff973a18e6663d916ff",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4199588ac03a8a06ac221026b886f939f958b55788c6325932661af8ed13345f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "641ef1160232e004626d8514de6ec736d1706e55057954f05f7c1fa37f0c9ece",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b0d03038ecf553aa38974f9a0df07403e745e150aaa90f6e1feff0bafbab054f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70423d8795b2c330f58378b650cf78bcb0db2cb7b10b5301882f8b055b98efe4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e1ce6b7274527d0b2df7fe3a7107cd62953715ddbb79e7c4b0dff802ca385b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "068967e82741e06b41adb74dfebfc5638d9542cbe587dabf606e5fb25d501c97",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb50f942da17b44f59a30f7974a065140c70e65e717f1014425315f47b32bc7c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "344a69a4980d754eee25975818f4b5b2de30a306c70f81604675adae493faeca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-05/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42d869ed71cbe76413bc9fb4732f3aacde919b0443c270d53bb1d350ed2456f6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f2d0b3e667228c67c67900f000a7aca3429c8e1982b10516be641523fbb8a0e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c0b4ed4a49c5f03fb1fb48f54487c0f73ee58e7226bf325cceaee6cb0cce6c79",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b5addf3e3db6419b6a8398d87410f75aa86546244ede4195fc56c25916ec72ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35733a240be03d999cf0463f62ab982072f51fee991e4a651f2dd0a7c6d42aa5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "60f3d2e1d25e964e7df229f741c43b4c4a753f6e8de13b26bb07b514fb3654f0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "725fb86f1096e20ac1dfafa10d0396add551d75e7ed9ea8fd69d0eaa76227191",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c14fa39bee0751627fe810e1555f833ca1eef68598524c2f9e4fd89a1967cc9f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01a4594daf726ac27c7536d9b8d8d700b11641cd63cb4efaaea7b0d7f451049f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "082a06864a56cf81b9740bd525d6a2a4863ddedce682c9001a0211a21e33d2a7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47ea990657d2ac7535bdda28e9d0b06f395dd1ae6a3d2618ffd5ee1a6052da53",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4e9942c2398fe0ced856c9a91edde7c472bffeba26060270ad6a7dd85eff7f3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6e2fac400b904b4db2f3bc55a9a3748c25a55743ce0a6f433521e88c66cb7ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f57fdb8c13dc8659404f4cf9cce2cc466b29f5e2488955280b49619409a4d1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "281fee7ccae3b7751aa83702e71a71eaff95bc25c44cba88db6150b717f2fd05",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f1d15b8bede38e0d78ba8f3a535f35bd16d77f8603415e76a61a52acfb4fcef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cd1ff39f8286b7d9444ba96c74684bfcc8c89c4cfa5e8331de03087a041135bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad61751cc0826edbd5c85cf95e3637a33a5b584946aabe0b71c05bb61703a793",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed5d13bbb57a4438116229bc12da80943f03b30d13314372d1d36578821e0c25",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65cf72a3ebaf7a8388ef58751bb63f3fa56b596141c539e9d287c60f69bb951b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "339f759a3b6224c618e65f5ffb6f74d499c87c243b5870399a4ebe33371d3002",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbc2a93dd3666438ac135fb89656734b44f0e0863c37bd128a2406ee5350c89e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a1f9b9e6207e4c6652a6590730085a1e0f3dec1ed730d99c1b7b0df98b4e0249",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fffb306bc23cc193ab6ea7ed6910dcd38b71a45a1487ab837c1888158ae3896a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5174b8377a25a9f3c92bdd81782c1d1c7602120562e6dce601dcbee61d816520",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8ac62c6277dd471c3fda3eb85984d44de193845c16845de24b4b66d4242c47b1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "281858e125887e871513d6c36081abb33aa7edb10d12b6d07bd27505f2584c56",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "293bfd8793d07b3cf12b14e87849947ddd20d2ad2214c5f2434ac8333ddb96bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3df156e2927eb4e552b15bb14f524e9a287c834d30c4d09b1cdfb67bcc6f5ab4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f9018187e10d43bbe3094e1731b8d24e94bad67ec88372f3ede220b8bc643ff",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f333d3fd7835e553c7c1505fb0249ec4cf6e0aa1089dfd0dad61d0c0feb69148",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f2a5d723f1873f2893a1aad6b2766b131a34e434dd7c54d9a3571dc92d055be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "397595d6f56e367d65e5a0227a148a374767f5cb85032e2e55998dc76eafa586",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbb7ae750ecb6cd6053df4666a0befb0d803b8b3a004a9f58cf29cd76bdfc8b3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c587dfd723190cf01abdba57146cc8d9b12ac3f80bbeb06b7c7db91cdae9b914",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ebdbb5399b57d8a705139f4d1e1bcbd8a62ff401c45078d0535659e528cbe8f7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "14599d2ec84bb6a220f34a1aef99db1cd40fe2914405af3b38929bd6f2e7107a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab0118a720b0333e0ef5a14e14a5717f1b240e79e92e1a4afa3fa789d382007b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "431d8276afe9401d52257945fa02216279962f8b51b7f9bc78948fe4faf1eb3b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5afea653ba62b6821f3b2d6849a0dc2f7fe7556783e708b13dc3021fec05ec78",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "806aeb5942fb3185c1ef2eb6562e475d523562fe113bb753c0d0291af4cdf721",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "918768b93252b00bcff0cdee4c592f326251ab204ae4b8382e8c7243c089650b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-05-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b2174f8b8d31d0589a9f3804bc345dd68c8841671e17d2733080fb142a5ec5e8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-math-unit-05",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-2/math/unit-05"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/math/unit-05"
+        ],
+        "coreKnowledgePointIds": [
+          "mixed-operations-multiplication-division-before-addition-subtraction",
+          "mixed-operations-same-level-left-to-right",
+          "mixed-operations-parentheses-first"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#数学下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/math/unit-05; src/content/textbooks.ts#grade-2/term-2/math; src/content/grade-2/term-2/math/unit-05/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "按固定登记的 TapXWorld 回退目录和本单元 sourceTopics“含有加减乘除的两步运算”“认识小括号并按运算顺序计算”确定范围，覆盖乘除先于加减、同级运算从左往右和小括号优先。数学下册使用 TapXWorld 固定提交 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7；人教社完整新版学生书和目录尚未核实，不将回退目录称为最新版。题目只使用本单元课程已出现的运算与整数范围。每档16道兼容且唯一课程源题，新增14道原创题；每档候选30道，共90道。作者逐题自审，尚无独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-math-unit-05/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mixed-operations-multiplication-division-before-addition-subtraction"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-05/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mixed-operations-same-level-left-to-right",
+              "mixed-operations-parentheses-first"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-05/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mixed-operations-multiplication-division-before-addition-subtraction",
+              "mixed-operations-same-level-left-to-right"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-05/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mixed-operations-multiplication-division-before-addition-subtraction",
+              "mixed-operations-parentheses-first"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-05/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mixed-operations-multiplication-division-before-addition-subtraction",
+              "mixed-operations-same-level-left-to-right",
+              "mixed-operations-parentheses-first"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-05/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-05/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-05/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-05-high-14"
+      ]
+    }
+  ]
+}

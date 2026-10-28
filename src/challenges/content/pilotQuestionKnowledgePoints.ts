@@ -1,4 +1,5 @@
 import type { ActivityDefinition } from '../../content/types';
+import pilotManifest from './pilotManifest';
 import { grade1Term1EnglishUnit01SupplementalActivities } from './grade1Term1EnglishUnit01SupplementalActivities';
 import { grade1Term1EnglishUnit02SupplementalActivities } from './grade1Term1EnglishUnit02SupplementalActivities';
 import { grade1Term1EnglishUnit03SupplementalActivities } from './grade1Term1EnglishUnit03SupplementalActivities';
@@ -38,6 +39,7 @@ import { grade2Term1ChineseUnit07SupplementalActivities } from './grade2Term1Chi
 import { grade2Term1ChineseUnit08SupplementalActivities } from './grade2Term1ChineseUnit08SupplementalActivities';
 import { grade2Term2ChineseUnit01SupplementalActivities } from './grade2Term2ChineseUnit01SupplementalActivities';
 import { grade2Term2ChineseUnit02SupplementalActivities } from './grade2Term2ChineseUnit02SupplementalActivities';
+import { grade2Term2ChineseUnit03SupplementalActivities } from './grade2Term2ChineseUnit03SupplementalActivities';
 import { grade2Term1MathUnit03SupplementalActivities } from './grade2Term1MathUnit03SupplementalActivities';
 import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
 import { grade2Term1MathUnit05SupplementalActivities } from './grade2Term1MathUnit05SupplementalActivities';
@@ -123,6 +125,12 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/chinese/unit-08',
   'grade-2/term-2/chinese/unit-01',
   'grade-2/term-2/chinese/unit-02',
+  'grade-2/term-2/chinese/unit-03',
+  ...(['chinese', 'math', 'english'] as const).flatMap((subject) => {
+    const unitCount = subject === 'chinese' ? 8 : subject === 'math' ? 10 : 6;
+    return Array.from({ length: unitCount }, (_, index) =>
+      `grade-2/term-2/${subject}/unit-${String(index + 1).padStart(2, '0')}`);
+  }),
   'grade-3/term-1/english/unit-01',
   'grade-5/term-1/chinese/unit-01',
 ]);
@@ -1359,7 +1367,55 @@ export function derivePilotQuestionKnowledgePointIds(
       if (!ids) throw new Error(`No knowledge-point mapping exists for Chinese learning question ${activity.id}.`);
       return ids;
     }
+    case 'grade-2/term-2/chinese/unit-03': {
+      const supplemental = grade2Term2ChineseUnit03SupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+      if (supplemental) return [...supplemental.knowledgePointIds];
+      const match = activity.id.match(/\/(basic|advanced|high)\/task-(\d+)\/session-\d+\/question-(\d+)$/u);
+      if (!match) throw new Error(`Could not identify the source task for Chinese learning question ${activity.id}.`);
+      const sourceQuestionKnowledgePoints: Record<string, string[]> = {
+        'basic:1:1': ['festival-customs'], 'basic:1:2': ['culture-source-checking', 'festival-customs'],
+        'basic:1:3': ['festival-customs'], 'basic:1:4': ['festival-customs', 'cultural-respect'],
+        'basic:1:5': ['cultural-respect'], 'basic:1:6': ['festival-customs', 'cultural-respect'],
+        'basic:1:7': ['culture-source-checking', 'festival-customs'], 'basic:1:8': ['festival-customs', 'cultural-respect'],
+        'basic:2:1': ['character-components'], 'basic:2:2': ['character-components'],
+        'basic:2:3': ['food-vocabulary'], 'basic:2:4': ['food-vocabulary'],
+        'basic:2:5': ['character-components', 'culture-source-checking'], 'basic:2:6': ['food-vocabulary'],
+        'basic:2:7': ['food-vocabulary'], 'basic:2:8': ['food-vocabulary', 'culture-source-checking'],
+        'advanced:1:1': ['character-components', 'culture-source-checking'],
+        'advanced:1:2': ['culture-source-checking'], 'advanced:1:3': ['culture-source-checking'],
+        'advanced:1:4': ['culture-source-checking'], 'advanced:1:5': ['culture-source-checking', 'festival-customs'],
+        'advanced:1:6': ['culture-source-checking'], 'advanced:1:7': ['character-components', 'culture-source-checking'],
+        'advanced:1:8': ['cultural-respect'], 'advanced:2:1': ['character-components', 'culture-source-checking'],
+        'advanced:2:2': ['festival-customs'], 'advanced:2:3': ['festival-customs', 'cultural-respect'],
+        'advanced:2:4': ['food-vocabulary'], 'advanced:2:5': ['cultural-respect', 'festival-customs'],
+        'advanced:2:6': ['food-vocabulary'], 'advanced:2:7': ['character-components', 'culture-source-checking'],
+        'advanced:2:8': ['food-vocabulary', 'culture-source-checking'],
+        'high:1:1': ['culture-source-checking', 'cultural-presentation'],
+        'high:1:2': ['culture-source-checking', 'cultural-presentation'],
+        'high:1:3': ['culture-source-checking', 'cultural-presentation'],
+        'high:1:4': ['culture-source-checking', 'cultural-presentation'],
+        'high:1:5': ['culture-source-checking', 'cultural-presentation'],
+        'high:1:6': ['culture-source-checking', 'cultural-presentation'],
+        'high:1:7': ['culture-source-checking', 'cultural-respect', 'cultural-presentation'],
+        'high:1:8': ['cultural-respect', 'festival-customs', 'cultural-presentation'],
+        'high:2:1': ['food-vocabulary', 'cultural-presentation'],
+        'high:2:2': ['culture-source-checking', 'cultural-presentation'],
+        'high:2:3': ['culture-source-checking', 'cultural-presentation'],
+        'high:2:4': ['culture-source-checking', 'cultural-presentation'],
+        'high:2:5': ['cultural-respect', 'cultural-presentation'],
+        'high:2:6': ['culture-source-checking', 'cultural-presentation'],
+        'high:2:7': ['culture-source-checking', 'cultural-presentation'],
+        'high:2:8': ['culture-source-checking', 'cultural-presentation'],
+      };
+      const ids = sourceQuestionKnowledgePoints[`${match[1]}:${Number(match[2])}:${Number(match[3])}`];
+      if (!ids) throw new Error(`No knowledge-point mapping exists for Chinese learning question ${activity.id}.`);
+      return ids;
+    }
     default:
+      {
+        const manifestQuestion = pilotManifest.questions.find(({ activityId }) => activityId === activity.id);
+        if (manifestQuestion) return [...manifestQuestion.knowledgePointIds];
+      }
       throw new Error(`No pilot knowledge-point mapping exists for ${sourceUnitId}.`);
   }
 }

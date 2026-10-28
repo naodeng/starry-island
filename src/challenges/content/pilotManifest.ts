@@ -49,6 +49,35 @@ import grade2Term1MathStagesManifest from './pilot-manifest-grade2-term1-math-st
 import grade2Term1EnglishStagesManifest from './pilot-manifest-grade2-term1-english-stages.json';
 import grade2Term2ChineseUnit01Manifest from './pilot-manifest-grade2-term2-chinese-unit01.json';
 import grade2Term2ChineseUnit02Manifest from './pilot-manifest-grade2-term2-chinese-unit02.json';
+import grade2Term2ChineseUnit03Manifest from './pilot-manifest-grade2-term2-chinese-unit03.json';
+
+import grade2Term2ChineseUnit04Manifest from './pilot-manifest-grade2-term2-chinese-unit04.json';
+
+import grade2Term2ChineseUnit05Manifest from './pilot-manifest-grade2-term2-chinese-unit05.json';
+import grade2Term2ChineseUnit06Manifest from './pilot-manifest-grade2-term2-chinese-unit06.json';
+import grade2Term2ChineseUnit07Manifest from './pilot-manifest-grade2-term2-chinese-unit07.json';
+import grade2Term2ChineseUnit08Manifest from './pilot-manifest-grade2-term2-chinese-unit08.json';
+
+import grade2Term2MathUnit01Manifest from './pilot-manifest-grade2-term2-math-unit01.json';
+
+import grade2Term2EnglishUnit01Manifest from './pilot-manifest-grade2-term2-english-unit01.json';
+import grade2Term2EnglishUnit02Manifest from './pilot-manifest-grade2-term2-english-unit02.json';
+import grade2Term2MathUnit02Manifest from './pilot-manifest-grade2-term2-math-unit02.json';
+import grade2Term2MathUnit03Manifest from './pilot-manifest-grade2-term2-math-unit03.json';
+import grade2Term2MathUnit04Manifest from './pilot-manifest-grade2-term2-math-unit04.json';
+import grade2Term2MathUnit05Manifest from './pilot-manifest-grade2-term2-math-unit05.json';
+import grade2Term2MathUnit06Manifest from './pilot-manifest-grade2-term2-math-unit06.json';
+import grade2Term2MathUnit07Manifest from './pilot-manifest-grade2-term2-math-unit07.json';
+import grade2Term2MathUnit08Manifest from './pilot-manifest-grade2-term2-math-unit08.json';
+import grade2Term2MathUnit09Manifest from './pilot-manifest-grade2-term2-math-unit09.json';
+import grade2Term2MathUnit10Manifest from './pilot-manifest-grade2-term2-math-unit10.json';
+import grade2Term2EnglishUnit03Manifest from './pilot-manifest-grade2-term2-english-unit03.json';
+import grade2Term2EnglishUnit04Manifest from './pilot-manifest-grade2-term2-english-unit04.json';
+import grade2Term2EnglishUnit05Manifest from './pilot-manifest-grade2-term2-english-unit05.json';
+import grade2Term2EnglishUnit06Manifest from './pilot-manifest-grade2-term2-english-unit06.json';
+import grade2Term2ChineseStagesManifest from './pilot-manifest-grade2-term2-chinese-stages.json';
+import grade2Term2MathStagesManifest from './pilot-manifest-grade2-term2-math-stages.json';
+import grade2Term2EnglishStagesManifest from './pilot-manifest-grade2-term2-english-stages.json';
 
 export function mergeChallengeManifestFragments(fragments: readonly ChallengeManifest[]): ChallengeManifest {
   if (fragments.length === 0) throw new Error('At least one challenge manifest fragment is required.');
@@ -123,6 +152,31 @@ const pilotManifest = mergeChallengeManifestFragments([
   grade2Term1EnglishStagesManifest as unknown as ChallengeManifest,
   grade2Term2ChineseUnit01Manifest as unknown as ChallengeManifest,
   grade2Term2ChineseUnit02Manifest as unknown as ChallengeManifest,
+  grade2Term2ChineseUnit03Manifest as unknown as ChallengeManifest,
+  grade2Term2ChineseUnit04Manifest as unknown as ChallengeManifest,
+  grade2Term2ChineseUnit05Manifest as unknown as ChallengeManifest,
+  grade2Term2ChineseUnit06Manifest as unknown as ChallengeManifest,
+  grade2Term2ChineseUnit07Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit01Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit02Manifest as unknown as ChallengeManifest,
+  grade2Term2EnglishUnit01Manifest as unknown as ChallengeManifest,
+  grade2Term2EnglishUnit02Manifest as unknown as ChallengeManifest,
+  grade2Term2ChineseUnit08Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit03Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit04Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit05Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit06Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit07Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit08Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit09Manifest as unknown as ChallengeManifest,
+  grade2Term2MathUnit10Manifest as unknown as ChallengeManifest,
+  grade2Term2EnglishUnit03Manifest as unknown as ChallengeManifest,
+  grade2Term2EnglishUnit04Manifest as unknown as ChallengeManifest,
+  grade2Term2EnglishUnit05Manifest as unknown as ChallengeManifest,
+  grade2Term2EnglishUnit06Manifest as unknown as ChallengeManifest,
+  grade2Term2ChineseStagesManifest as unknown as ChallengeManifest,
+  grade2Term2MathStagesManifest as unknown as ChallengeManifest,
+  grade2Term2EnglishStagesManifest as unknown as ChallengeManifest,
 ]);
 
 export default pilotManifest;

@@ -1,0 +1,1494 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1db02790b824c1025727c5b2e618b3f95392de84dca76ef8418d34317b64845e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0448df3bde248aa7d36d818bdaf27e3fb90a2a08d54e0ec6c4bff4dc146a6a92",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ecc897e3368a7340df77574453f71fe2f8543e83a7eb753ee9d7c370982210c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf3e9301b036a28b5ef7eab1e69c5fae408f61eb0123f81650c027238ae2aeb4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01419adee2ae0b1f8d17cea7c454ca81dd9c3179784092310992348d2d718ce0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1aa394556cde5c342da7f77edc9fb77da971fee6cff0714ac31c115ad83f9318",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3c6fc1ffcdbbd865c14f18547890b6a07dd5a68d46f4fce9e4d312dc54ef5f2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "881bd65ae0305aea2ce5541f1babaadfe868f8381d703ecb58441430afe68ec1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "848194e76b4009e5683e965780baba15d8d2a6bc4b13403abac6e6cd6ef80d60",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0ddb1d9ae1590467c51f8c5bf75a56ebf8fb9b94465babef29ecc857d2db47c2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c495895369e5d18f0a5e08de2ac74ddd7beab01233015631264c2ce2b145120d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b5fcb4fba2ecac4c0f31132700329e919f8cbeb1a8e9d9dce9b5addd1e157a8b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2a5e4766facdb6becfa84070cfd56c2166fe1268a5831d182e8b61c78d2eee36",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "923ae0e5128ce703a7ab5416694c333dec73b244dc950fc12b616f84e33ecdb6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "zero-as-placeholder",
+        "reading-and-writing-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9bae477bea23cd3ecbdd6b0b7f08c222ca5186eafb773a9664301d2ef3fbde76",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-07/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "56a05ed823026f3a22866465df13ef061d9b07e1ff52c64be56e2523498fd87f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8064563e33699c85b048d6ade6c1d4b7a1bd692a10e281b49962c43f10fb6cef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "63c7da394c6844b6c3ee98493eabf13dbb9ab551a84f2cd3ff12b250c8473eb4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58a8d495538c425ba470c37aaf0657b5df17c47ce21547750ff435efee5a13f3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1c67b59e24c49f27e4601a5a3ccb9029f6a0c88674f465744c9d831ae298513c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "adba706a67e15c29d9d112f1f68cd56de7ca3e7c3164ad4921effd1efdd6b642",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "df3804eb1142bbf85ebf5cd81529798d10439a21fe5d73aea7040b77fee1cfc8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "74c40f80d3eb321970f4eca2df24b014709a09fe1a64e97a5faf8481756f6185",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4322e6b39450f742473aa3a18ade397b9302fddf2582369ff855cdc262f8c9a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8cde489df98231862dd67db3c295602f479c406fcd37eedc627e8173e970d02a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "48791734b72a183c783ecf64c2d6d5d38878cbe503558fb27a3205ca1e096aff",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "630aa3ed8ce7b47aa8e103f847b188ec983df2f0b23665e946a1fba914cfe946",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd9d4a42ca71e3a919f43a73d5db52a7cb7c428d217964e672b97a5d573039b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a31a70ab45f2c27a86390db6e463b281b06a354777a3cd19aeed705c0c3dfa8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "020a9d65789e363e8783e8031e89177aead4d1995e3bc883bb0cc0186e56de03",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ddf40467ab3cc47500c0c716fbd6419fe6597254524024592c9b37a62eebaf8d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f2061c214545da5ccf017d49ef4ea47f4fb0e8cf0b890496d75f8620875ed81",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dbd21827958a5d833d35a16af4f7bdae17a9f12a8e09bc1a265661a3bbd3324d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85b617a7e15bfe630731a525e5eed687d58656f5a924e72b010dd43c3b8e06a8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "671a608530cf9ffaeb31ea4e3c58065c3608df520f40c74e053da1622e222804",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff8cbd75413151a36c3daea996a8b271649e3d2e985235b6c6d414c2210e4e23",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5125cfe9bd498669cce0033e24eac25929b65266a4aea82e5fc4134953711437",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a516a858f10769dbbf6073c267cf27191c741df7125bec65407c495bbf46a5a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6022fd76e08ce75147d27185d1fff81c1a2fa4a5c8853fd88258e7520e0d19b5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa044b504344d69924c776804aee144a0a8ced0cd218a050a1dc49d9d0d6d54e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "473e436ecd5c348c9d7ec7b4c1c22499682201127b7e7903a923d8f9f22af52c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder",
+        "reading-and-writing-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff6da53dd18a83bf10600dc92f5862724b7973a49c1de98ab8fcd1d8a55ea853",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f569d8fc55e6606355e86cbd47b91eae1c6b82812855aff583581457ae0a3b12",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "81b5e16741ff4b7f23b8cb4c9966076d929dd64f8962b5487b3c26c3a59dc857",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5fd6ca102cd8c4fbf07700579e688b4be8511384db5e96f442466b924c99c576",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder",
+        "reading-and-writing-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7f7d5e6f0df2ad5d506612796b1d28864565f768de4902f41bf2f215fb381e0c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c70b1709454029f5add945b4e4984619115a3381fa687487b67d1d6b2f18afc6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f3cdf0c0f7a538f118bf06cd040707c94d13fb51a8e2d52706a0d5e95f7bd5d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "183219b1d300e17bed166c00429ccaf81554028b7250218daba06cdb0bb2f4f7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45af36cec62264bc65a280be04aa82bb6f5237acb5f4c7331cf86c31fe40ed26",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e57ce469a20d779995352e0016456f459765f0d481b3879e5be1ebfcd22d36fc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab9b171ea872497a59c279decf54c0b22a16026295e145de99207dd426d1adea",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e76a7cc9732014137e557601a9b7c024b89d0ca8a7be10906526186dfe53845",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4c1be048a82ae0656a9bd30f8277718fc86cdc6ebc3a8524d5f5fbf5534e535",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "88b3825f6fa0ee080c09d5ff16de090c2bfb802ceb152c7358e59f0e9ec149c8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d17787d9e042c9c827913bbd812d22085d15d62324fa44ff1f134e35bdfb9c59",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dd6226acb66c4abc79324c4752e33cdfdbd13139303679aa281e736412e5d5f0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "71cd814bae5469da6cf3e794ee0d7ce87e0f83dfbcc43b316d9bec91886a57f2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49c7a64ec41aa04f8d9a01d52bb79c68c18eeb45c2c88150fc6b943a6bd461f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5045838e0b3ac05fd1f9c4fd8572ba9cd8089eb687ff687022adaf1cd715d0a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a284c1746ad5e4d0981abc41896bcca5dcf96feabe68a8b2bddfb476bfdd5c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f06d9407d7aa340e59327074ba888eaa3ba88a8337a278b345d6b7042cade9f0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7931f06ed1d680dff057715acdfbc12863c8b56e020fb9b0a2625abc489146cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "12dc230898ba64b77c45d673a301530c1eb2de32cb6294c08a2c2eb9b57b9982",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b330b9864b8feb24c2ceeabbe6d21da9a8515dd904533e84b9c6a1608815dd9a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cd2ac71619f7d09820954373543ef313d2b9a815f563eab7870d4fb01fa667f4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c2d4cce9f300ca1159a47deae053446fd2df692b45e0555c7e1ac259e38704f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e71b4026972b2f9d966fc3b302c2eff2a8f36b9dada718ae644669704362c47f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9eaf4e4628ed629136a7d1da1a6f28b7560b4f027bb5e1f51d1c3a6e0485c0d2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f06c2fd02ae16ad9aa5d90e10660daa19b533e4dfd01ab03cca38dbe2396cbad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5381a8414d8cd6d6a466b980cad1923bc340e5321f17f08f63899918abd4d1a2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2db0433f519c2270c7e449b6e43170979e81187ae37984c3aa228759428321fb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a240dae192545076e6d48f35bc62260610f5ff4fe12de1ed97ba4d15767dae86",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cbdab435cada04c1dbc8b6f2fcb15a086267f1ed1b3f17cf7b94c6dbfb0335f9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eb89629f921135bd4df9333471e701b699da86091bc55f603d15a2f3bdf158ed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-07/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "43bd29038945e840f85daf75eafb0929a35d465eed756ca603df0227629da45f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "280f0b540f7562918ae5ac3c492494c868577a4b1acb2a20478b0bf9a7d9bcab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1dc3a46e82e9faa3ea32973eda8059e6f7f4a5b13c47afc404049d33dbb2a66c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cdf30573590a640a3719384ce57d06355ad3124cef61775faa3d085a714fc1da",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "514a130d3c24d6b15d772096e71aa9a8cdbe1bc34fa1f0abf2dcd4897dd29207",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b8a577617157f01d33deb67b9b92696c45c4ff69ff2409e11c981c5e610b135",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4b775d315d65654d389c365047b77ca37a6a8a7b6f94ccc3cde1183f59a8325",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "420eb9814e8e2651d4c447682a122a83a259da619bccb8c1c10f9944c8429634",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c95616e5c2efa4b6c5ff83099ce97f4eecee741e2624f4d4999aeefc9bf039c1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "447438485c3df49278a6cbdd0680299313fe539b30b8d25d3f45b5653f2027ce",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9610a3072fbc62a137f7916c893f1fe56b39a23037263fdfcf4461ce4b41db54",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0cae4727cea52fcffdb02d694970921a89dc25e21d667b831aaa9c2f2e355cd6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e8efe680006e2726fcf28e55cda806ce7ea04e55b6d5a373fdb383554846ad14",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "247e8c2730be7a132c9c0b48d9f1c318f994a964eeb702e8e0c5ca9a3fdc5efb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-07-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "031b0cbfac6ba879bb3e172fbd886f3a926ff99f781c8e03bc0e7ab5931e71cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-math-unit-07",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-2/math/unit-07"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/math/unit-07"
+        ],
+        "coreKnowledgePointIds": [
+          "number-composition-and-place-value",
+          "zero-as-placeholder",
+          "reading-and-writing-within-10000",
+          "comparing-and-ordering-within-10000"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#数学下册; src/content/textbooks.ts#grade-2/term-2/math; src/content/grade-2/term-2/math/unit-07/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "范围按课程 sourceTopics“认识万以内数的组成与数位”“读写万以内的数并比较大小”确定。数学下册按 docs/curriculum/grade-2-textbook-inventory.md 采用 TapXWorld 固定回退快照 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7；人教社新版完整学生书及目录尚未核实，不将回退来源称为最新版。题源盘点每档有16道兼容且唯一的原课程题，全部保留；新增42道原创题、每档14道，候选共90道。五项单元挑战任务各15题，候选池满足两倍题量。作者逐题自审，未独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-math-unit-07/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "number-composition-and-place-value",
+              "zero-as-placeholder"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-07/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "reading-and-writing-within-10000",
+              "comparing-and-ordering-within-10000"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-07/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "number-composition-and-place-value",
+              "comparing-and-ordering-within-10000"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-07/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "zero-as-placeholder",
+              "reading-and-writing-within-10000",
+              "comparing-and-ordering-within-10000"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-07/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "number-composition-and-place-value",
+              "zero-as-placeholder",
+              "reading-and-writing-within-10000",
+              "comparing-and-ordering-within-10000"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-07/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-07/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-07/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-07-high-14"
+      ]
+    }
+  ]
+}

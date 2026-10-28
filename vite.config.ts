@@ -156,6 +156,42 @@ export default defineConfig({
               test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-chinese-unit01\.json$/,
             },
             {
+              name: 'challenge-manifest-grade2-term2-chinese-units02-04',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-chinese-unit0[2-4]\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-chinese-units05-08',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-chinese-unit0[5-8]\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-chinese-stages',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-chinese-stages\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-math-units01-05',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-math-unit0[1-5]\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-math-units06-10',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-math-unit(?:0[6-9]|10)\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-math-stages',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-math-stages\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-english-units01-03',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-english-unit0[1-3]\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-english-units04-06',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-english-unit0[4-6]\.json$/,
+            },
+            {
+              name: 'challenge-manifest-grade2-term2-english-stages',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilot-manifest-grade2-term2-english-stages\.json$/,
+            },
+            {
               name: 'challenge-supplemental-grade2-term1-math',
               test: /[\\/]src[\\/]challenges[\\/]content[\\/]pilotSupplementalActivities\.ts$/,
             },
@@ -190,6 +226,18 @@ export default defineConfig({
             {
               name: 'challenge-supplemental-grade2-term1-english',
               test: /[\\/]src[\\/]challenges[\\/]content[\\/]grade2Term1EnglishUnit\d{2}SupplementalActivities\.ts$/,
+            },
+            {
+              name: 'challenge-supplemental-grade2-term2-chinese',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]grade2Term2ChineseUnit0[1-8]SupplementalActivities\.ts$/,
+            },
+            {
+              name: 'challenge-supplemental-grade2-term2-math',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]grade2Term2MathUnit(?:0[1-9]|10)SupplementalActivities\.ts$/,
+            },
+            {
+              name: 'challenge-supplemental-grade2-term2-english',
+              test: /[\\/]src[\\/]challenges[\\/]content[\\/]grade2Term2EnglishUnit0[1-6]SupplementalActivities\.ts$/,
             },
             {
               name: 'curriculum-manifest',

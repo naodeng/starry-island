@@ -66,6 +66,35 @@ const grade1Term1MathStageSpecs = [
     ],
   },
 ] as const;
+const grade2Term2ChineseStageSpecs = [
+  { id: 'grade-2-term-2-chinese-first-half', stage: 'first-half', unitNumbers: [1, 2, 3, 4] },
+  { id: 'grade-2-term-2-chinese-second-half', stage: 'second-half', unitNumbers: [5, 6, 7, 8] },
+  { id: 'grade-2-term-2-chinese-end-term', stage: 'end-term', unitNumbers: [1, 2, 3, 4, 5, 6, 7, 8] },
+] as const;
+const grade2Term2OtherSubjectStageSpecs = [
+  { subject: 'math', id: 'grade-2-term-2-math-first-half', stage: 'first-half', unitNumbers: [1, 2, 3, 4, 5] },
+  {
+    subject: 'math',
+    id: 'grade-2-term-2-math-second-half',
+    stage: 'second-half',
+    unitNumbers: [6, 7, 8, 9, 10],
+    learningTaskUnitIds: [5, 6, 7, 8, 9, 10].map((unit) => `grade-2/term-2/math/unit-${String(unit).padStart(2, '0')}`),
+  },
+  { subject: 'math', id: 'grade-2-term-2-math-end-term', stage: 'end-term', unitNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  { subject: 'english', id: 'grade-2-term-2-english-first-half', stage: 'first-half', unitNumbers: [1, 2, 3] },
+  { subject: 'english', id: 'grade-2-term-2-english-second-half', stage: 'second-half', unitNumbers: [4, 5, 6] },
+  { subject: 'english', id: 'grade-2-term-2-english-end-term', stage: 'end-term', unitNumbers: [1, 2, 3, 4, 5, 6] },
+] as const;
+const grade2Term2ChineseEndTermHighKnowledgePointsByUnit = [
+  ['spring-sensory-observation', 'planting-sequence-and-care'],
+  ['food-labor-chain', 'respectful-help'],
+  ['character-components', 'cultural-respect'],
+  ['sensory-imagery-details', 'viewpoint-observation'],
+  ['fable-action-consequence', 'reflective-revision'],
+  ['weather-sequence-observation', 'safe-navigation-and-help-seeking'],
+  ['animal-needs-and-environment-change', 'needs-based-planning-and-revision'],
+  ['myth-character-challenge-and-solution', 'original-imaginative-story-writing'],
+] as const;
 
 function readTsv(path: string): Array<Record<string, string>> {
   const lines = readFileSync(path, 'utf8').trim().split(/\r?\n/u) as string[];
@@ -79,6 +108,15 @@ function readTsv(path: string): Array<Record<string, string>> {
 
 function reviewQuestionId(row: Record<string, string>): string {
   return row['题目ID'] ?? row['题目记录 ID'] ?? '';
+}
+
+function reviewLedgerAnswer(row: Record<string, string>): string {
+  return row['正确答案/键'] ?? row['正确选项'] ?? row['正确答案'] ?? '';
+}
+
+function hasAuthorSelfReview(row: Record<string, string>): boolean {
+  const status = row['审核状态'] ?? '';
+  return status.includes('作者自审通过') || status.includes('作者逐题自审通过');
 }
 
 function expectedAnswerKey(activity: ActivityDefinition): string {
@@ -162,7 +200,10 @@ describe('semester stage mappings', () => {
         const candidates = group?.questionIds.map((id) => questionsById.get(id)).filter((question) => question?.difficulty === difficulty) ?? [];
         expect(candidates.length).toBeGreaterThanOrEqual(50);
         const candidateKnowledgePointIds = new Set(candidates.flatMap((question) => question?.knowledgePointIds ?? []));
-        expect(group?.definition.coreKnowledgePointIds.every((id) => candidateKnowledgePointIds.has(id))).toBe(true);
+        expect(
+          group?.definition.coreKnowledgePointIds.every((id) => candidateKnowledgePointIds.has(id)),
+          `${stageSpec.id} ${difficulty}: missing ${group?.definition.coreKnowledgePointIds.filter((id) => !candidateKnowledgePointIds.has(id)).join(', ')}`,
+        ).toBe(true);
       }
     }
   });
@@ -178,7 +219,7 @@ describe('semester stage mappings', () => {
       const questionIds = rows.map(({ 题目ID }) => 题目ID);
       expect(questionIds).toHaveLength(group.questionIds.length);
       expect(new Set(questionIds)).toEqual(new Set(group.questionIds));
-      expect(rows.every((row) => Boolean(row['正确答案/键']) && row['审核状态'].includes('作者自审通过'))).toBe(true);
+      expect(rows.every((row) => Boolean(reviewLedgerAnswer(row)) && hasAuthorSelfReview(row))).toBe(true);
       expect(rows.every(({ 审核状态 }) => 审核状态.includes('未独立教育者复核'))).toBe(true);
     }
   });
@@ -237,6 +278,152 @@ describe('semester stage mappings', () => {
       for (const candidate of group?.candidates ?? []) {
         expect(reviewByQuestionId.get(candidate.questionId)?.['正确答案/键']).toBe(expectedAnswerKey(candidate.activity));
       }
+    }
+  });
+
+  it('maps Grade 2 Term 2 Chinese stages to the confirmed chapter split and complete source pools', () => {
+    const challengeManifest = manifest as ChallengeManifest;
+    const questionsById = new Map(challengeManifest.questions.map((question) => [question.questionId, question]));
+
+    for (const stageSpec of grade2Term2ChineseStageSpecs) {
+      const group = challengeManifest.groups.find(({ definition }) => definition.id === stageSpec.id) as ChallengeGroupManifest | undefined;
+      const sourceUnitIds = stageSpec.unitNumbers.map((unit) => `grade-2/term-2/chinese/unit-${String(unit).padStart(2, '0')}`);
+      const sourceGroupIds = sourceUnitIds.map((unitId) => `grade-2-term-2-chinese-unit-${unitId.slice(-2)}`);
+      const sourceQuestionIds = new Set(challengeManifest.groups
+        .filter(({ definition }) => sourceGroupIds.includes(definition.id))
+        .flatMap(({ questionIds }) => questionIds));
+
+      expect(group?.definition).toMatchObject({
+        id: stageSpec.id,
+        kind: 'semester',
+        grade: 2,
+        semester: 2,
+        subject: 'chinese',
+        stage: stageSpec.stage,
+        sourceUnitIds,
+        ...('learningTaskUnitIds' in stageSpec ? { learningTaskUnitIds: stageSpec.learningTaskUnitIds } : {}),
+      });
+      expect(group?.definition.tasks.map(({ targetCount }) => targetCount)).toEqual([25, 25, 25, 25, 25]);
+      expect(new Set(group?.questionIds)).toEqual(sourceQuestionIds);
+
+      for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+        const candidates = group?.questionIds.map((id) => questionsById.get(id)).filter((question) => question?.difficulty === difficulty) ?? [];
+        expect(candidates.length).toBeGreaterThanOrEqual(50);
+        const candidateKnowledgePointIds = new Set(candidates.flatMap((question) => question?.knowledgePointIds ?? []));
+        expect(
+          group?.definition.coreKnowledgePointIds.every((id) => candidateKnowledgePointIds.has(id)),
+          `${stageSpec.id} ${difficulty}: missing ${group?.definition.coreKnowledgePointIds.filter((id) => !candidateKnowledgePointIds.has(id)).join(', ')}`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it('keeps a Chinese review-ledger row for every Grade 2 Term 2 stage candidate', () => {
+    const challengeManifest = manifest as ChallengeManifest;
+    for (const stageSpec of grade2Term2ChineseStageSpecs) {
+      const group = challengeManifest.groups.find(({ definition }) => definition.id === stageSpec.id)!;
+      const ledgerPath = resolve(process.cwd(), `docs/challenges/${stageSpec.id}-question-review.tsv`);
+
+      expect(existsSync(ledgerPath)).toBe(true);
+      const rows = readTsv(ledgerPath);
+      expect(rows.map(reviewQuestionId)).toHaveLength(group.questionIds.length);
+      expect(new Set(rows.map(reviewQuestionId))).toEqual(new Set(group.questionIds));
+      expect(rows.every((row) => Boolean(reviewLedgerAnswer(row)) && hasAuthorSelfReview(row))).toBe(true);
+      expect(rows.every(({ 审核状态 }) => 审核状态.includes('未独立教育者复核'))).toBe(true);
+    }
+  });
+
+  it('uses two representative high-level knowledge points from each of the eight Chinese chapters', () => {
+    const challengeManifest = manifest as ChallengeManifest;
+    const endTerm = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-2-chinese-end-term');
+    const highTask = endTerm?.definition.tasks.find(({ difficulty }) => difficulty === 'high');
+    const expectedKnowledgePointIds = grade2Term2ChineseEndTermHighKnowledgePointsByUnit.flat();
+
+    expect(highTask?.requiredKnowledgePointIds).toEqual(expectedKnowledgePointIds);
+    for (let unitNumber = 1; unitNumber <= 8; unitNumber += 1) {
+      const unitGroupId = `grade-2-term-2-chinese-unit-${String(unitNumber).padStart(2, '0')}`;
+      const unitGroup = challengeManifest.groups.find(({ definition }) => definition.id === unitGroupId);
+      const expectedUnitKnowledgePointIds = grade2Term2ChineseEndTermHighKnowledgePointsByUnit[unitNumber - 1];
+
+      expect(expectedUnitKnowledgePointIds?.every((id) => unitGroup?.definition.coreKnowledgePointIds.includes(id))).toBe(true);
+    }
+  });
+
+  it('maps Grade 2 Term 2 Math and English stages to the chapter-order split and full source pools', () => {
+    const challengeManifest = manifest as ChallengeManifest;
+    const questionsById = new Map(challengeManifest.questions.map((question) => [question.questionId, question]));
+
+    for (const stageSpec of grade2Term2OtherSubjectStageSpecs) {
+      const group = challengeManifest.groups.find(({ definition }) => definition.id === stageSpec.id) as ChallengeGroupManifest | undefined;
+      const sourceUnitIds = stageSpec.unitNumbers.map((unit) =>
+        `grade-2/term-2/${stageSpec.subject}/unit-${String(unit).padStart(2, '0')}`);
+      const sourceGroupIds = sourceUnitIds.map((_unitId, index) =>
+        `grade-2-term-2-${stageSpec.subject}-unit-${String(stageSpec.unitNumbers[index]).padStart(2, '0')}`);
+      const sourceGroups = challengeManifest.groups.filter(({ definition }) => sourceGroupIds.includes(definition.id));
+      const sourceQuestionIds = new Set(sourceGroups.flatMap(({ questionIds }) => questionIds));
+      const highTask = group?.definition.tasks.find(({ difficulty }) => difficulty === 'high');
+
+      expect(group?.definition).toMatchObject({
+        id: stageSpec.id,
+        kind: 'semester',
+        grade: 2,
+        semester: 2,
+        subject: stageSpec.subject,
+        stage: stageSpec.stage,
+        sourceUnitIds,
+      });
+      expect(group?.definition.tasks.map(({ targetCount }) => targetCount)).toEqual([25, 25, 25, 25, 25]);
+      expect(new Set(group?.questionIds)).toEqual(sourceQuestionIds);
+      expect(sourceGroups).toHaveLength(stageSpec.unitNumbers.length);
+      const allCandidateKnowledgePointIds = new Set(group?.questionIds
+        .flatMap((id) => questionsById.get(id)?.knowledgePointIds ?? []));
+      expect(group?.definition.coreKnowledgePointIds.every((id) => allCandidateKnowledgePointIds.has(id))).toBe(true);
+
+      for (const difficulty of ['basic', 'advanced', 'high'] as const) {
+        const candidates = group?.questionIds
+          .map((id) => questionsById.get(id))
+          .filter((question) => question?.difficulty === difficulty) ?? [];
+        const candidateKnowledgePointIds = new Set(candidates.flatMap((question) => question?.knowledgePointIds ?? []));
+        const taskKnowledgePointIds = new Set(group?.definition.tasks
+          .filter((task) => task.difficulty === difficulty)
+          .flatMap(({ requiredKnowledgePointIds }) => requiredKnowledgePointIds));
+
+        expect(candidates.length).toBeGreaterThanOrEqual(50);
+        expect([...taskKnowledgePointIds].every((id) => candidateKnowledgePointIds.has(id))).toBe(true);
+        if (difficulty !== 'high') {
+          const availableCoreKnowledgePointIds = [...candidateKnowledgePointIds]
+            .filter((id) => group?.definition.coreKnowledgePointIds.includes(id));
+          expect(
+            availableCoreKnowledgePointIds.every((id) => taskKnowledgePointIds.has(id)),
+            `${stageSpec.id} ${difficulty}: task coverage missing ${availableCoreKnowledgePointIds.filter((id) => !taskKnowledgePointIds.has(id)).join(', ')}`,
+          ).toBe(true);
+        }
+      }
+
+      for (const sourceGroup of sourceGroups) {
+        const sourceHighQuestionIds = sourceGroup.questionIds.filter((id) => questionsById.get(id)?.difficulty === 'high');
+        const sourceHighKnowledgePoints = new Set(sourceHighQuestionIds
+          .flatMap((id) => questionsById.get(id)?.knowledgePointIds ?? []));
+        expect(sourceGroup.definition.coreKnowledgePointIds
+          .filter((id) => sourceHighKnowledgePoints.has(id) && highTask?.requiredKnowledgePointIds.includes(id)).length).toBeGreaterThanOrEqual(2);
+      }
+    }
+  });
+
+  it('keeps an author-reviewed ledger row for every Grade 2 Term 2 Math and English stage candidate', () => {
+    const challengeManifest = manifest as ChallengeManifest;
+    for (const stageSpec of grade2Term2OtherSubjectStageSpecs) {
+      const group = challengeManifest.groups.find(({ definition }) => definition.id === stageSpec.id);
+      const ledgerPath = resolve(process.cwd(), `docs/challenges/${stageSpec.id}-question-review.tsv`);
+
+      expect(group).toBeDefined();
+      expect(existsSync(ledgerPath)).toBe(true);
+      const rows = readTsv(ledgerPath);
+      const questionIds = group?.questionIds ?? [];
+      expect(rows.map(reviewQuestionId)).toHaveLength(questionIds.length);
+      expect(new Set(rows.map(reviewQuestionId))).toEqual(new Set(questionIds));
+      expect(rows.every((row) => Boolean(reviewLedgerAnswer(row)) && hasAuthorSelfReview(row))).toBe(true);
+      expect(rows.every(({ 审核状态 }) => 审核状态.includes('未独立教育者复核'))).toBe(true);
     }
   });
 });

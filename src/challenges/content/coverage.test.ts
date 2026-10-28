@@ -119,15 +119,15 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(report.expected).toEqual({ unitGroups: 254, unitTasks: 1270, semesterGroups: 108, semesterTasks: 540 });
     expect(report.registered).toEqual({
-      unitGroups: 56,
-      releasedUnitGroups: 56,
-      unitTasks: 280,
-      semesterGroups: 27,
-      releasedSemesterGroups: 27,
-      semesterTasks: 135,
+      unitGroups: 78,
+      releasedUnitGroups: 78,
+      unitTasks: 390,
+      semesterGroups: 36,
+      releasedSemesterGroups: 36,
+      semesterTasks: 180,
     });
-    expect(report.missing.unitGroupIds).toHaveLength(198);
-    expect(report.missing.semesterGroupIds).toHaveLength(81);
+    expect(report.missing.unitGroupIds).toHaveLength(176);
+    expect(report.missing.semesterGroupIds).toHaveLength(72);
     expect(report.unreleasedGroupIds).toEqual([]);
     expect(report.taskIssues).toEqual([]);
     expect(report.mappingIssues).toEqual([]);
@@ -154,10 +154,10 @@ describe('analyzeCurriculumCoverage', () => {
     const grade2ReleasedGroups = challengeManifest.groups.filter(({ definition, releaseIntent }) =>
       definition.grade === 2 && releaseIntent === 'released');
 
-    expect(grade2ReleasedGroups.filter(({ definition }) => definition.kind === 'unit')).toHaveLength(25);
-    expect(grade2ReleasedGroups.filter(({ definition }) => definition.kind === 'semester')).toHaveLength(9);
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(grade2ReleasedGroups.filter(({ definition }) => definition.kind === 'unit')).toHaveLength(47);
+    expect(grade2ReleasedGroups.filter(({ definition }) => definition.kind === 'semester')).toHaveLength(18);
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
     expect(report.unreleasedGroupIds.filter((id) => id.startsWith('grade-2-'))).toEqual([]);
   });
 
@@ -167,8 +167,8 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(360);
-    expect(report.registered).toMatchObject({ semesterGroups: 27, releasedSemesterGroups: 27, semesterTasks: 135 });
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ semesterGroups: 36, releasedSemesterGroups: 36, semesterTasks: 180 });
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 1 English Unit 4 in the current coverage snapshot', () => {
@@ -177,9 +177,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 1 English Unit 6 in the current coverage snapshot', () => {
@@ -188,9 +188,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 1 Math Unit 1 in the current coverage snapshot', () => {
@@ -199,9 +199,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 1 Math Unit 3 in the current coverage snapshot', () => {
@@ -210,9 +210,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 1 Math Unit 4 in the current coverage snapshot', () => {
@@ -221,9 +221,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 1 Math Unit 5 in the current coverage snapshot', () => {
@@ -232,9 +232,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 1 Math Unit 6 in the current coverage snapshot', () => {
@@ -243,9 +243,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Chinese Unit 4 in the current coverage snapshot', () => {
@@ -254,9 +254,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Chinese Unit 5 in the current coverage snapshot', () => {
@@ -265,9 +265,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Chinese Unit 6 in the current coverage snapshot', () => {
@@ -276,9 +276,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Chinese Unit 7 in the current coverage snapshot', () => {
@@ -287,9 +287,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Chinese Unit 8 in the current coverage snapshot', () => {
@@ -298,9 +298,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 2 Chinese Unit 1 in the current coverage snapshot', () => {
@@ -309,9 +309,9 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds).not.toContain('grade-2-term-2-chinese-unit-01');
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes Grade 2 Term 2 Chinese Unit 2 in the current coverage snapshot', () => {
@@ -320,10 +320,29 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds).not.toContain('grade-2-term-2-chinese-unit-02');
-    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(22);
-    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(9);
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+  });
+
+  it('includes Grade 2 Term 2 Chinese Unit 8, Math Unit 3, and English Unit 3 in the current coverage snapshot', () => {
+    const report = analyzeCurriculumCoverage(curriculumManifest as unknown as CoverageCurriculumCatalog, challengeManifest as ChallengeManifest);
+    const groupIds = [
+      'grade-2-term-2-chinese-unit-08',
+      'grade-2-term-2-math-unit-03',
+      'grade-2-term-2-english-unit-03',
+    ];
+
+    for (const id of groupIds) {
+      const group = challengeManifest.groups.find(({ definition }) => definition.id === id);
+      expect(group?.releaseIntent, id).toBe('released');
+      expect(group?.questionIds, id).toHaveLength(90);
+      expect(report.missing.unitGroupIds, id).not.toContain(id);
+    }
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
+    expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
+    expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-2-'))).toHaveLength(0);
   });
 
   it('includes the Grade 1 English Unit 3 expansion in the current coverage snapshot', () => {
@@ -332,7 +351,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280, semesterGroups: 27, releasedSemesterGroups: 27, semesterTasks: 135 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390, semesterGroups: 36, releasedSemesterGroups: 36, semesterTasks: 180 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -343,7 +362,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280, semesterGroups: 27, releasedSemesterGroups: 27, semesterTasks: 135 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390, semesterGroups: 36, releasedSemesterGroups: 36, semesterTasks: 180 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -354,7 +373,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280, semesterGroups: 27, releasedSemesterGroups: 27, semesterTasks: 135 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390, semesterGroups: 36, releasedSemesterGroups: 36, semesterTasks: 180 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -365,7 +384,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280, semesterGroups: 27, releasedSemesterGroups: 27, semesterTasks: 135 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390, semesterGroups: 36, releasedSemesterGroups: 36, semesterTasks: 180 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -376,7 +395,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280, semesterGroups: 27, releasedSemesterGroups: 27, semesterTasks: 135 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390, semesterGroups: 36, releasedSemesterGroups: 36, semesterTasks: 180 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -387,7 +406,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280, semesterGroups: 27, releasedSemesterGroups: 27, semesterTasks: 135 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390, semesterGroups: 36, releasedSemesterGroups: 36, semesterTasks: 180 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -398,7 +417,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -409,7 +428,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -420,7 +439,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -431,7 +450,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -442,7 +461,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -453,7 +472,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -464,7 +483,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -475,7 +494,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
 
@@ -485,7 +504,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -496,7 +515,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });
@@ -507,7 +526,7 @@ describe('analyzeCurriculumCoverage', () => {
 
     expect(group?.releaseIntent).toBe('released');
     expect(group?.questionIds).toHaveLength(90);
-    expect(report.registered).toMatchObject({ unitGroups: 56, releasedUnitGroups: 56, unitTasks: 280 });
+    expect(report.registered).toMatchObject({ unitGroups: 78, releasedUnitGroups: 78, unitTasks: 390 });
     expect(report.missing.unitGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
     expect(report.missing.semesterGroupIds.filter((id) => id.startsWith('grade-1-'))).toHaveLength(0);
   });

@@ -108,7 +108,52 @@ describe('loadPilotChallengeContent', () => {
       ['grade-2-term-1-english-end-term', 'ready'],
       ['grade-2-term-2-chinese-unit-01', 'ready'],
       ['grade-2-term-2-chinese-unit-02', 'ready'],
+      ['grade-2-term-2-chinese-unit-03', 'ready'],
+      ['grade-2-term-2-chinese-unit-04', 'ready'],
+      ['grade-2-term-2-chinese-unit-05', 'ready'],
+      ['grade-2-term-2-chinese-unit-06', 'ready'],
+      ['grade-2-term-2-chinese-unit-07', 'ready'],
+      ['grade-2-term-2-math-unit-01', 'ready'],
+      ['grade-2-term-2-math-unit-02', 'ready'],
+      ['grade-2-term-2-english-unit-01', 'ready'],
+      ['grade-2-term-2-english-unit-02', 'ready'],
+      ['grade-2-term-2-chinese-unit-08', 'ready'],
+      ['grade-2-term-2-math-unit-03', 'ready'],
+      ['grade-2-term-2-math-unit-04', 'ready'],
+      ['grade-2-term-2-math-unit-05', 'ready'],
+      ['grade-2-term-2-math-unit-06', 'ready'],
+      ['grade-2-term-2-math-unit-07', 'ready'],
+      ['grade-2-term-2-math-unit-08', 'ready'],
+      ['grade-2-term-2-math-unit-09', 'ready'],
+      ['grade-2-term-2-math-unit-10', 'ready'],
+      ['grade-2-term-2-english-unit-03', 'ready'],
+      ['grade-2-term-2-english-unit-04', 'ready'],
+      ['grade-2-term-2-english-unit-05', 'ready'],
+      ['grade-2-term-2-english-unit-06', 'ready'],
+      ['grade-2-term-2-chinese-first-half', 'ready'],
+      ['grade-2-term-2-chinese-second-half', 'ready'],
+      ['grade-2-term-2-chinese-end-term', 'ready'],
+      ['grade-2-term-2-math-first-half', 'ready'],
+      ['grade-2-term-2-math-second-half', 'ready'],
+      ['grade-2-term-2-math-end-term', 'ready'],
+      ['grade-2-term-2-english-first-half', 'ready'],
+      ['grade-2-term-2-english-second-half', 'ready'],
+      ['grade-2-term-2-english-end-term', 'ready'],
     ]);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-04')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-05')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-06')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-07')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-unit-01')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-unit-02')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-unit-01')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-unit-02')?.candidates).toHaveLength(90);
+    for (let unit = 4; unit <= 10; unit += 1) {
+      expect(content.groups.find(({ group }) => group.definition.id === `grade-2-term-2-math-unit-${String(unit).padStart(2, '0')}`)?.candidates).toHaveLength(90);
+    }
+    for (let unit = 4; unit <= 6; unit += 1) {
+      expect(content.groups.find(({ group }) => group.definition.id === `grade-2-term-2-english-unit-${String(unit).padStart(2, '0')}`)?.candidates).toHaveLength(90);
+    }
     expect(content.groups[0]?.candidates).toHaveLength(90);
     expect(content.groups[1]?.candidates).toHaveLength(226);
     expect(content.groups[2]?.candidates).toHaveLength(90);
@@ -147,6 +192,18 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-chinese-unit-08')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-01')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-02')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-08')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-unit-03')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-unit-03')?.candidates).toHaveLength(90);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-first-half')?.candidates).toHaveLength(360);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-second-half')?.candidates).toHaveLength(360);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-end-term')?.candidates).toHaveLength(720);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-first-half')?.candidates).toHaveLength(450);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-second-half')?.candidates).toHaveLength(450);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-end-term')?.candidates).toHaveLength(900);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-first-half')?.candidates).toHaveLength(270);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-second-half')?.candidates).toHaveLength(270);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-end-term')?.candidates).toHaveLength(540);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-07')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-08')?.candidates).toHaveLength(90);
     expect(content.groups[65]?.group.definition.id).toBe('grade-2-term-1-math-unit-07');
@@ -197,7 +254,7 @@ describe('loadPilotChallengeContent', () => {
       .map((candidate) => [candidate.questionId, candidate]));
     const candidates = [...candidatesByQuestionId.values()];
 
-    expect(candidates).toHaveLength(5755);
+    expect(candidates).toHaveLength(7735);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 
