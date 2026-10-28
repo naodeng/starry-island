@@ -16,7 +16,7 @@ const recoveryPoint: ChallengeRecoveryPointSummary = {
 };
 
 const clearResult: ChallengeDataClearResult = {
-  counts: { attempts: 2, taskProgress: 3, recentQuestionAttempts: 1, wrongQuestions: 4 },
+  counts: { attempts: 2, taskProgress: 3, recentQuestionAttempts: 1, wrongQuestions: 4, quarantinedRecords: 0 },
   recoveryPoint,
 };
 
@@ -111,10 +111,48 @@ describe('ChallengeDataManagement', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('已创建 24 小时恢复点');
   });
 
+  it('warns that full clear permanently deletes quarantined originals outside the recovery point', () => {
+    render(<ChallengeDataManagement initialRecoveryPoint={null} quarantinedRecordCount={2} onClear={vi.fn()} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} {...quarantineRecoveryProps()} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '清除全部闯关数据' }));
+
+    expect(screen.getByRole('group', { name: '清除确认' })).toHaveTextContent('隔离区原始记录，也会永久删除且不会纳入恢复点');
+  });
+
+  it('explains that quarantined-only data is permanently deleted without creating a recovery point', async () => {
+    const onClear = vi.fn().mockResolvedValue({
+      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0, quarantinedRecords: 2 },
+      recoveryPoint: null,
+    } satisfies ChallengeDataClearResult);
+    render(<ChallengeDataManagement initialRecoveryPoint={null} quarantinedRecordCount={2} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} {...quarantineRecoveryProps()} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '清除全部闯关数据' }));
+    fireEvent.change(screen.getByRole('textbox', { name: '输入“清空闯关数据”以确认' }), { target: { value: '清空闯关数据' } });
+    fireEvent.click(screen.getByRole('button', { name: '确认清除全部闯关数据' }));
+
+    expect(await screen.findByRole('status')).toHaveTextContent('2 条隔离区原始记录（永久删除）');
+    expect(screen.getByRole('status')).toHaveTextContent('没有纳入恢复点');
+  });
+
+  it('keeps an earlier recovery point available when only quarantined records are cleared', async () => {
+    const onClear = vi.fn().mockResolvedValue({
+      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0, quarantinedRecords: 2 },
+      recoveryPoint: null,
+    } satisfies ChallengeDataClearResult);
+    render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} quarantinedRecordCount={2} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} {...quarantineRecoveryProps()} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '清除全部闯关数据' }));
+    fireEvent.change(screen.getByRole('textbox', { name: '输入“清空闯关数据”以确认' }), { target: { value: '清空闯关数据' } });
+    fireEvent.click(screen.getByRole('button', { name: '确认清除全部闯关数据' }));
+
+    expect(await screen.findByRole('status')).toHaveTextContent('隔离区原始记录已永久删除');
+    expect(screen.getByRole('button', { name: '恢复已清除的闯关记录' })).toBeInTheDocument();
+  });
+
   it('lets a user clear one category and preserves the returned recovery point', async () => {
     const onClear = vi.fn().mockResolvedValue({
       ...clearResult,
-      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 4 },
+      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 4, quarantinedRecords: 0 },
     });
     render(<ChallengeDataManagement initialRecoveryPoint={null} quarantinedRecordCount={0} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} {...quarantineRecoveryProps()} />);
 
@@ -128,7 +166,7 @@ describe('ChallengeDataManagement', () => {
 
   it('keeps the existing recovery point when there is nothing left to clear', async () => {
     const onClear = vi.fn().mockResolvedValue({
-      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0 },
+      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0, quarantinedRecords: 0 },
       recoveryPoint: null,
     });
     render(<ChallengeDataManagement initialRecoveryPoint={recoveryPoint} quarantinedRecordCount={0} onClear={onClear} onRestore={vi.fn()} onExportQuarantinedRecords={vi.fn()} {...quarantineRecoveryProps()} />);

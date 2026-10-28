@@ -57,6 +57,7 @@ describe('challenge recovery points', () => {
       expect(counts.taskProgress).toBe(scope === 'all' ? 1 : 0);
       expect(counts.recentQuestionAttempts).toBe(scope === 'all' ? 1 : 0);
       expect(counts.wrongQuestions).toBe(scope === 'wrong-questions' || scope === 'all' ? 1 : 0);
+      expect(counts.quarantinedRecords).toBe(0);
     },
   );
 });

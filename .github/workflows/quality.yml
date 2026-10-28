@@ -77,8 +77,15 @@ jobs:
         if: always()
         run: |
           echo '### 闯关题库质量报告' >> "$GITHUB_STEP_SUMMARY"
-          if [ -f .quality-reports/challenge-quality-report.md ]; then
-            cat .quality-reports/challenge-quality-report.md >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .quality-reports/challenge-quality-report.json ]; then
+            node --input-type=module >> "$GITHUB_STEP_SUMMARY" <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('.quality-reports/challenge-quality-report.json', 'utf8'));
+          console.log('- 质量门禁：' + (report.overall.passed ? '通过' : '未通过'));
+          console.log('- 已发布分组：' + report.overall.readyReleasedGroupCount + '/' + report.overall.releasedGroupCount);
+          console.log('- 阻断：' + report.overall.blockingIssueCount + '；提示：' + report.overall.warningCount);
+          console.log('- 完整明细见工作流工件 `challenge-quality-reports`。');
+          NODE
           else
             echo '质量命令未生成报告，请查看前序步骤的错误信息。' >> "$GITHUB_STEP_SUMMARY"
           fi

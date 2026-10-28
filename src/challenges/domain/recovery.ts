@@ -19,6 +19,7 @@ export interface ChallengeClearCounts {
   taskProgress: number;
   recentQuestionAttempts: number;
   wrongQuestions: number;
+  quarantinedRecords: number;
 }
 
 export interface ChallengeRecoveryPointSummary {
@@ -84,6 +85,7 @@ export function getChallengeDataClearCounts(
     taskProgress: scope === 'all' ? data.taskProgress.length : 0,
     recentQuestionAttempts: scope === 'all' ? data.recentQuestionAttempts.length : 0,
     wrongQuestions: scope === 'wrong-questions' || scope === 'all' ? data.wrongQuestions.length : 0,
+    quarantinedRecords: 0,
   };
 }
 

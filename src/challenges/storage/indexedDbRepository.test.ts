@@ -54,6 +54,24 @@ async function openTestDatabase(factory: IDBFactory, databaseName: string): Prom
   });
 }
 
+async function readRawRecoveryPoint(factory: IDBFactory, databaseName: string): Promise<unknown> {
+  const database = await openTestDatabase(factory, databaseName);
+  try {
+    return await new Promise((resolve, reject) => {
+      const transaction = database.transaction('challengeMeta', 'readonly');
+      const request = transaction.objectStore('challengeMeta').get('recovery-point');
+      let record: unknown;
+      request.onsuccess = () => { record = request.result; };
+      request.onerror = () => reject(request.error);
+      transaction.oncomplete = () => resolve(record);
+      transaction.onerror = () => reject(transaction.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error('Could not read the recovery point.'));
+    });
+  } finally {
+    database.close();
+  }
+}
+
 async function addQuarantinedRow(
   factory: IDBFactory,
   databaseName: string,
@@ -286,23 +304,25 @@ describe('IndexedDB challenge repository', () => {
   });
 
   it('clears all challenge records behind a 24-hour recovery point and consumes it after one successful restore', async () => {
-    const repository = createRepository();
+    const { repository, factory, databaseName } = await createSeedableRepository();
     const active = makeAttempt('task-active', 'attempt-active', ['question-active']);
     const completed = makeAttempt('task-completed', 'attempt-completed', ['question-wrong', 'question-right']);
     await repository.beginAttempt(active);
     await repository.beginAttempt(completed);
     await completeWithWrongAnswer(repository, completed);
+    await addQuarantinedRow(factory, databaseName, makeQuarantinedRow({ prompt: 'raw prompt', answer: 'raw answer' }));
     const before = await repository.getBackupSnapshot();
 
     const clearResult = await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
 
     expect(clearResult).toMatchObject({
-      counts: { attempts: 1, taskProgress: 1, recentQuestionAttempts: 1, wrongQuestions: 1 },
+      counts: { attempts: 1, taskProgress: 1, recentQuestionAttempts: 1, wrongQuestions: 1, quarantinedRecords: 1 },
       recoveryPoint: { createdAt: '2026-10-22T00:00:00.000Z', expiresAt: '2026-10-23T00:00:00.000Z' },
     });
     expect(await repository.getBackupSnapshot()).toEqual({
       attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
     });
+    expect(await repository.getQuarantinedRecordCount()).toBe(0);
     expect(await repository.getRecoveryPoint('2026-10-22T23:59:59.999Z')).toMatchObject({ data: before });
 
     const restored = await repository.restoreRecoveryPoint('2026-10-22T12:00:00.000Z');
@@ -324,7 +344,7 @@ describe('IndexedDB challenge repository', () => {
 
     const result = await repository.clearChallengeData('in-progress', '2026-10-22T00:00:00.000Z');
 
-    expect(result.counts).toEqual({ attempts: 1, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0 });
+    expect(result.counts).toEqual({ attempts: 1, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0, quarantinedRecords: 0 });
     expect(await repository.getActiveAttempt('task-active')).toBeNull();
     expect(await repository.getTaskProgress('task-completed')).not.toBeNull();
     expect(await repository.getWrongQuestions()).toHaveLength(1);
@@ -341,7 +361,7 @@ describe('IndexedDB challenge repository', () => {
 
     const result = await repository.clearChallengeData('wrong-questions', '2026-10-22T00:00:00.000Z');
 
-    expect(result.counts).toEqual({ attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 1 });
+    expect(result.counts).toEqual({ attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 1, quarantinedRecords: 0 });
     expect(await repository.getActiveAttempt('task-active')).toEqual(active);
     expect(await repository.getTaskProgress('task-completed')).not.toBeNull();
     expect(await repository.getWrongQuestions()).toEqual([]);
@@ -374,7 +394,7 @@ describe('IndexedDB challenge repository', () => {
     const noOp = await repository.clearChallengeData('all', '2026-10-22T12:00:00.000Z');
 
     expect(noOp).toEqual({
-      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0 },
+      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0, quarantinedRecords: 0 },
       recoveryPoint: null,
     });
     expect(await repository.getRecoveryPoint('2026-10-22T12:01:00.000Z')).toMatchObject({
@@ -419,6 +439,38 @@ describe('IndexedDB challenge repository', () => {
       attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [],
     });
     expect(await repository.getRecoveryPoint('2026-10-23T00:00:00.000Z')).toBeNull();
+  });
+
+  it('deletes an expired recovery point when availability is checked', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    await repository.beginAttempt(makeAttempt('task-expired-read', 'attempt-expired-read', ['question-expired-read']));
+    await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    expect(await repository.getRecoveryPoint('2026-10-23T00:00:00.000Z')).toBeNull();
+    expect(await readRawRecoveryPoint(factory, databaseName)).toBeUndefined();
+  });
+
+  it('deletes an expired recovery point when restoration is requested', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    await repository.beginAttempt(makeAttempt('task-expired-restore', 'attempt-expired-restore', ['question-expired-restore']));
+    await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    expect(await repository.restoreRecoveryPoint('2026-10-23T00:00:00.000Z')).toBeNull();
+    expect(await readRawRecoveryPoint(factory, databaseName)).toBeUndefined();
+  });
+
+  it('permanently clears quarantined originals even when no recoverable challenge records remain', async () => {
+    const { repository, factory, databaseName } = await createSeedableRepository();
+    await addQuarantinedRow(factory, databaseName, makeQuarantinedRow({ prompt: 'private prompt', answer: 'private answer' }));
+
+    const result = await repository.clearChallengeData('all', '2026-10-22T00:00:00.000Z');
+
+    expect(result).toEqual({
+      counts: { attempts: 0, taskProgress: 0, recentQuestionAttempts: 0, wrongQuestions: 0, quarantinedRecords: 1 },
+      recoveryPoint: null,
+    });
+    expect(await repository.getQuarantinedRecordCount()).toBe(0);
+    expect(await readRawRecoveryPoint(factory, databaseName)).toBeUndefined();
   });
 
   it('leaves all challenge data unchanged when recovery-point creation cannot be validated', async () => {

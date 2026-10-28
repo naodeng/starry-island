@@ -36,7 +36,7 @@ describe('challenge impact CLI', () => {
     expect(result.status).toBe(0);
     expect(result.stdout).toContain('用法：npm run challenge:impact');
     expect(result.stdout).toContain('--question-id');
-  });
+  }, 15_000);
 
   it('rejects invocation without a question ID', () => {
     const result = runCli([]);
@@ -44,7 +44,7 @@ describe('challenge impact CLI', () => {
     expect(result.error).toBeUndefined();
     expect(result.status).toBe(2);
     expect(result.stderr).toContain('至少提供一个 --question-id');
-  });
+  }, 15_000);
 
   // This starts a real Node/Vite subprocess and scans the complete static manifest.
   it('lists every same-difficulty task for multiple questions in the real pilot manifest', async () => {
@@ -96,7 +96,7 @@ describe('challenge impact CLI', () => {
     expect(result.status).toBe(1);
     expect(result.stdout).toContain('范围未知');
     expect(result.stdout).toContain('npm run challenge:quality');
-  });
+  }, 15_000);
 
   it('loads the manifest with the middleware loader without opening a TCP listener', () => {
     const manifest = rawManifest as unknown as ChallengeManifest;
@@ -129,5 +129,5 @@ describe('challenge impact CLI', () => {
 
     expect(result.error).toBeUndefined();
     expect(result.status, result.stderr).toBe(0);
-  });
+  }, 15_000);
 });

@@ -92,7 +92,15 @@ function describeClearedData(result: ChallengeDataClearResult): string {
   if (result.counts.taskProgress) parts.push(`${result.counts.taskProgress} 条成绩记录`);
   if (result.counts.recentQuestionAttempts) parts.push(`${result.counts.recentQuestionAttempts} 组最近题目记录`);
   if (result.counts.wrongQuestions) parts.push(`${result.counts.wrongQuestions} 条错题记录`);
+  if (result.counts.quarantinedRecords) parts.push(`${result.counts.quarantinedRecords} 条隔离区原始记录（永久删除）`);
   return parts.join('、');
+}
+
+function hasRecoverableDataToClear(counts: ChallengeDataClearResult['counts']): boolean {
+  return counts.attempts > 0
+    || counts.taskProgress > 0
+    || counts.recentQuestionAttempts > 0
+    || counts.wrongQuestions > 0;
 }
 
 function describeRestore(summary: ChallengeBackupMergeSummary): string {
@@ -146,9 +154,15 @@ export default function ChallengeDataManagement({
       if (!hasChallengeDataToClear(result.counts)) {
         setStatus('没有找到可清除的闯关记录；现有恢复点没有被替换。');
       } else {
-        setRecoveryPoint(result.recoveryPoint);
+        const onlyQuarantinedRecords = result.counts.quarantinedRecords > 0 && !hasRecoverableDataToClear(result.counts);
+        setRecoveryPoint(result.recoveryPoint ?? (onlyQuarantinedRecords ? recoveryPoint : null));
         const removed = describeClearedData(result);
-        setStatus(`已清除${removed ? ` ${removed}` : ''}；${result.recoveryPoint ? `已创建 24 小时恢复点，恢复点有效至 ${formatLocalTime(result.recoveryPoint.expiresAt)}。` : '未创建恢复点，请检查本机存储状态。'}`);
+        const recoveryNotice = result.recoveryPoint
+          ? `已创建 24 小时恢复点，恢复点有效至 ${formatLocalTime(result.recoveryPoint.expiresAt)}。`
+          : result.counts.quarantinedRecords > 0 && !hasRecoverableDataToClear(result.counts)
+            ? '隔离区原始记录已永久删除，且没有纳入恢复点。'
+            : '未创建恢复点，请检查本机存储状态。';
+        setStatus(`已清除${removed ? ` ${removed}` : ''}；${recoveryNotice}`);
       }
     } catch (caughtError) {
       setError(getChallengeErrorMessage(caughtError, '清除没有完成；本机记录和原恢复点都保持不变，可以稍后重试。'));
@@ -291,7 +305,7 @@ export default function ChallengeDataManagement({
   return (
     <section className="challenge-data-management" aria-labelledby="challenge-data-management-heading">
       <h2 id="challenge-data-management-heading">数据管理与恢复</h2>
-      <p>可以按类别清除闯关数据。清除前请先导出本机备份；24 小时恢复点不能替代长期备份，也不能防止浏览器清理或设备损坏。每次实际清除前都会在同一事务中创建或替换恢复点；课程进度和个人设置不受影响。</p>
+      <p>可以按类别清除闯关数据。清除前请先导出本机备份；24 小时恢复点不能替代长期备份，也不能防止浏览器清理或设备损坏。可恢复的闯关记录会在同一事务中保存到恢复点；隔离区原始记录不进入恢复点。课程进度和个人设置不受影响。</p>
       <div className="challenge-data-management-actions">
         <Button type="default" disabled={busy} onClick={() => requestClear('in-progress')}>清除未完成答题</Button>
         <Button type="default" disabled={busy} onClick={() => requestClear('wrong-questions')}>清除错题本</Button>
@@ -388,8 +402,9 @@ export default function ChallengeDataManagement({
           <p>
             {clearingScope === 'in-progress' && '将清除本机所有未完成答题，并保留成绩和错题本。'}
             {clearingScope === 'wrong-questions' && '将清除本机错题本，并保留未完成答题和成绩。'}
-            {clearingScope === 'all' && '将清除本机未完成答题、闯关成绩、最近题目记录和错题本。课程进度与个人设置不会改变。'}
-            {' '}实际清除前会保存恢复点；新恢复点成功写入前，旧恢复点和现有数据不会被删除。
+            {clearingScope === 'all' && '将清除本机未完成答题、闯关成绩、最近题目记录和错题本；如有隔离区原始记录，也会永久删除且不会纳入恢复点。课程进度与个人设置不会改变。'}
+            {clearingScope !== 'all' && '实际清除前会保存恢复点；新恢复点成功写入前，旧恢复点和现有数据不会被删除。'}
+            {clearingScope === 'all' && '可恢复记录与恢复点会在同一事务中处理；新恢复点成功写入前，旧恢复点和现有记录不会被删除。'}
           </p>
           {clearingScope === 'all' && (
             <label className="challenge-data-confirmation-phrase">

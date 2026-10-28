@@ -632,9 +632,18 @@ function readBackupSnapshot(
     },
 
     getRecoveryPoint(now = new Date().toISOString()) {
-      return transaction<ChallengeRecoveryPoint | null>(META_STORE, 'readonly', (tx, setResult, fail) => {
-        onRequest(tx.objectStore(META_STORE).get(RECOVERY_POINT_KEY), fail, (record) => {
-          setResult(isChallengeRecoveryPointActive(record, now) ? record : null);
+      return transaction<ChallengeRecoveryPoint | null>(META_STORE, 'readwrite', (tx, setResult, fail) => {
+        const meta = tx.objectStore(META_STORE);
+        onRequest(meta.get(RECOVERY_POINT_KEY), fail, (record) => {
+          if (isChallengeRecoveryPointActive(record, now)) {
+            setResult(record);
+            return;
+          }
+          const nowMs = Date.parse(now);
+          if (isChallengeRecoveryPoint(record) && Number.isFinite(nowMs) && nowMs >= Date.parse(record.expiresAt)) {
+            meta.delete(RECOVERY_POINT_KEY);
+          }
+          setResult(null);
         });
       });
     },
@@ -649,43 +658,76 @@ function readBackupSnapshot(
         return Promise.reject(error);
       }
 
+      const stores = [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE];
+      if (scope === 'all') stores.push(QUARANTINED_RECORDS_STORE);
+
       return transaction<ChallengeDataClearResult>(
-        [ATTEMPTS_STORE, PROGRESS_STORE, META_STORE, WRONG_QUESTIONS_STORE],
+        stores,
         'readwrite',
         (tx, setResult, fail) => {
-          readBackupSnapshot(tx, fail, (data) => {
+          let data: ChallengeBackupData | undefined;
+          let quarantinedRecordCount = 0;
+          let dataReady = false;
+          let quarantineCountReady = scope !== 'all';
+          let clearScheduled = false;
+
+          const clearWhenReady = () => {
+            if (!dataReady || !quarantineCountReady || clearScheduled) return;
+            clearScheduled = true;
             if (!isChallengeBackupData(data)) {
               fail(new ChallengeRepositoryError('本机闯关记录结构异常，不能安全创建恢复点；数据没有更改。'));
               return;
             }
-            const counts = getChallengeDataClearCounts(data, scope);
+            const counts = {
+              ...getChallengeDataClearCounts(data, scope),
+              quarantinedRecords: scope === 'all' ? quarantinedRecordCount : 0,
+            };
             if (!hasChallengeDataToClear(counts)) {
               setResult({ counts, recoveryPoint: null });
               return;
             }
 
-            let recoveryPoint;
-            try {
-              recoveryPoint = createChallengeRecoveryPoint(data, normalizedCreatedAt);
-            } catch (error) {
-              fail(error instanceof Error ? error : new ChallengeRepositoryError('不能创建闯关恢复点；数据没有更改。', { cause: error }));
-              return;
+            const hasRecoverableData = counts.attempts > 0
+              || counts.taskProgress > 0
+              || counts.recentQuestionAttempts > 0
+              || counts.wrongQuestions > 0;
+            let recoveryPoint: ChallengeRecoveryPoint | undefined;
+            if (hasRecoverableData) {
+              try {
+                recoveryPoint = createChallengeRecoveryPoint(data, normalizedCreatedAt);
+              } catch (error) {
+                fail(error instanceof Error ? error : new ChallengeRepositoryError('不能创建闯关恢复点；数据没有更改。', { cause: error }));
+                return;
+              }
+              tx.objectStore(META_STORE).put(recoveryPoint);
             }
 
-            const meta = tx.objectStore(META_STORE);
-            meta.put(recoveryPoint);
             if (scope === 'in-progress' || scope === 'all') tx.objectStore(ATTEMPTS_STORE).clear();
             if (scope === 'wrong-questions' || scope === 'all') tx.objectStore(WRONG_QUESTIONS_STORE).clear();
             if (scope === 'all') {
               tx.objectStore(PROGRESS_STORE).clear();
-              meta.delete(RECENT_QUESTION_IDS_KEY);
+              tx.objectStore(QUARANTINED_RECORDS_STORE).clear();
+              tx.objectStore(META_STORE).delete(RECENT_QUESTION_IDS_KEY);
             }
-            const summary: ChallengeRecoveryPointSummary = {
+            const summary: ChallengeRecoveryPointSummary | null = recoveryPoint ? {
               createdAt: recoveryPoint.createdAt,
               expiresAt: recoveryPoint.expiresAt,
-            };
+            } : null;
             setResult({ counts, recoveryPoint: summary });
+          };
+
+          readBackupSnapshot(tx, fail, (snapshot) => {
+            data = snapshot;
+            dataReady = true;
+            clearWhenReady();
           });
+          if (scope === 'all') {
+            onRequest(tx.objectStore(QUARANTINED_RECORDS_STORE).count(), fail, (count) => {
+              quarantinedRecordCount = count;
+              quarantineCountReady = true;
+              clearWhenReady();
+            });
+          }
         },
       );
     },
@@ -706,6 +748,10 @@ function readBackupSnapshot(
             if (!localReady || !pointReady || scheduled) return;
             scheduled = true;
             if (!isChallengeRecoveryPoint(point) || !isChallengeRecoveryPointActive(point, now)) {
+              const nowMs = Date.parse(now);
+              if (isChallengeRecoveryPoint(point) && Number.isFinite(nowMs) && nowMs >= Date.parse(point.expiresAt)) {
+                meta.delete(RECOVERY_POINT_KEY);
+              }
               setResult(null);
               return;
             }

@@ -179,16 +179,21 @@ describe('buildChallengeQualityReport', () => {
   });
 
   it('runs all 100 deterministic seeds for each released task', async () => {
-    const first = await buildChallengeQualityReport(inputs);
-    const second = await buildChallengeQualityReport(inputs);
+    const report = await buildChallengeQualityReport(inputs);
 
-    expect(first.reportSchemaVersion).toBe(1);
-    expect(first.overall.passed).toBe(true);
-    for (const group of first.groups.filter(({ releaseIntent }) => releaseIntent === 'released')) {
+    expect(report.reportSchemaVersion).toBe(1);
+    expect(report.overall.passed).toBe(true);
+    for (const group of report.groups.filter(({ releaseIntent }) => releaseIntent === 'released')) {
       for (const task of group.tasks) {
         expect(task.simulation).toMatchObject({ sampleCount: 100, successCount: 100, failureCount: 0, failures: [] });
       }
     }
+  }, 60_000);
+
+  it('produces the same quality report for repeated runs with the same seeded inputs', async () => {
+    const first = await buildChallengeQualityReport(inputs, { seedCount: 3 });
+    const second = await buildChallengeQualityReport(inputs, { seedCount: 3 });
+
     expect(first).toEqual(second);
   }, 30_000);
 

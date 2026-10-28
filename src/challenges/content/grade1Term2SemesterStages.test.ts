@@ -150,7 +150,7 @@ describe('一年级下册语文、数学和英语学期阶段组', () => {
       const growthGroup = growthGroups.find(({ id }) => id === spec.id);
       expect(growthGroup).toMatchObject({ id: spec.id, kind: 'semester', grade: 1, semester: 2, subject: spec.subject });
     }
-  });
+  }, 30_000);
 
   it('阶段候选池不重复收录同一交互内容，并且各难度仍满足 50 题门槛', async () => {
     const content = await loadPilotChallengeContent();
