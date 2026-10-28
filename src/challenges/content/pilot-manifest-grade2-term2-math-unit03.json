@@ -447,7 +447,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "7a10828b3910db429e216b97567845af5af5df663505c49953608c9353af80a0",
+      "approvedContentFingerprint": "20331c1fb99a6707aa22f92c2a81657ebff075955ffbfa157ca03d31b38a0703",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-28T00:00:00.000Z"
     },
@@ -741,7 +741,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "54683255195d0aa449f0961b2224d2138886e27fe2bb00336e6117183ea0d870",
+      "approvedContentFingerprint": "f83b3871e052a8de6592c9a23920e60f37b1ef995675842259e18e0165aeb5ad",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-28T00:00:00.000Z"
     },
@@ -750,12 +750,12 @@
       "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-04",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "translation-direction-and-orientation"
+        "rotation-around-fixed-center"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "d846b544944953656b64cb3deadc775e254303a6c9a23fdb4d4aa7aa7bac7c24",
+      "approvedContentFingerprint": "77f812a6691e7e297d0be2288431f53483f56419b2961510ae19f113ff818184",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-28T00:00:00.000Z"
     },
@@ -881,7 +881,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "0e999853d7c021392d1f5b57544c09ce8622200f049f3edf28c17a9afabd5583",
+      "approvedContentFingerprint": "d2553654dfd4ead38265743ed9f2024b601f7c1a6840438ac6160c3d3335c6c8",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-28T00:00:00.000Z"
     },

@@ -10,6 +10,7 @@ import CompanionAvatar from '../mascots/CompanionAvatar';
 import HeroGuide from '../mascots/HeroGuide';
 import AchievementSummary from '../achievements/AchievementSummary';
 import CourseBreadcrumbs from './CourseBreadcrumbs';
+import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
 
 interface CourseCatalogProps {
   progress: ProgressState;
@@ -17,9 +18,14 @@ interface CourseCatalogProps {
 }
 
 export default function CourseCatalog({ progress, onNavigate }: CourseCatalogProps) {
-  const initialGrade = curriculumManifest.grades.find((entry) => entry.id === `grade-${progress.learningStart?.grade}`) ?? curriculumManifest.grades[0];
-  const initialTerm = initialGrade?.terms.find((entry) => entry.id === `term-${progress.learningStart?.term}`) ?? initialGrade?.terms[0];
-  const [subjectId, setSubjectId] = useState<SubjectId>('chinese');
+  const savedSelection = loadCourseSelection();
+  const initialGrade = curriculumManifest.grades.find((entry) => entry.id === savedSelection?.gradeId)
+    ?? curriculumManifest.grades.find((entry) => entry.id === `grade-${progress.learningStart?.grade}`)
+    ?? curriculumManifest.grades[0];
+  const initialTerm = initialGrade?.terms.find((entry) => entry.id === savedSelection?.termId)
+    ?? initialGrade?.terms.find((entry) => entry.id === `term-${progress.learningStart?.term}`)
+    ?? initialGrade?.terms[0];
+  const [subjectId, setSubjectId] = useState<SubjectId>(savedSelection?.subjectId ?? 'chinese');
   const [gradeId, setGradeId] = useState(initialGrade?.id ?? 'grade-2');
   const [termId, setTermId] = useState(initialTerm?.id ?? 'term-1');
   const courseSelectionRef = useRef<HTMLDivElement>(null);
@@ -151,7 +157,10 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
                   key={entry.id}
                   type={subject.id === entry.id ? 'primary' : 'default'}
                   aria-pressed={subject.id === entry.id}
-                  onClick={() => setSubjectId(entry.id)}
+                  onClick={() => {
+                    setSubjectId(entry.id);
+                    saveCourseSelection({ gradeId: grade.id, termId: term.id, subjectId: entry.id });
+                  }}
                 >
                   {entry.title}
                 </Button>
@@ -175,9 +184,14 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
                 onChange={(value) => {
                   const nextGrade = curriculumManifest.grades.find((entry) => entry.id === value);
                   if (!nextGrade) return;
+                  const nextTerm = nextGrade.terms[0];
+                  const nextSubject = nextTerm?.subjects[0];
+                  const nextTermId = nextTerm?.id ?? 'term-1';
+                  const nextSubjectId = nextSubject?.id ?? 'chinese';
                   setGradeId(nextGrade.id);
-                  setTermId(nextGrade.terms[0]?.id ?? 'term-1');
-                  setSubjectId(nextGrade.terms[0]?.subjects[0]?.id ?? 'chinese');
+                  setTermId(nextTermId);
+                  setSubjectId(nextSubjectId);
+                  saveCourseSelection({ gradeId: nextGrade.id, termId: nextTermId, subjectId: nextSubjectId });
                 }}
               />
             </label>
@@ -191,7 +205,9 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
                   const nextTerm = grade.terms.find((entry) => entry.id === value);
                   if (!nextTerm) return;
                   setTermId(nextTerm.id);
-                  setSubjectId(nextTerm.subjects[0]?.id ?? 'chinese');
+                  const nextSubjectId = nextTerm.subjects[0]?.id ?? 'chinese';
+                  setSubjectId(nextSubjectId);
+                  saveCourseSelection({ gradeId: grade.id, termId: nextTerm.id, subjectId: nextSubjectId });
                 }}
               />
             </label>

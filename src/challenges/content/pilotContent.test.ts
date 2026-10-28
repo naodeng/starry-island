@@ -155,7 +155,7 @@ describe('loadPilotChallengeContent', () => {
       expect(content.groups.find(({ group }) => group.definition.id === `grade-2-term-2-english-unit-${String(unit).padStart(2, '0')}`)?.candidates).toHaveLength(90);
     }
     expect(content.groups[0]?.candidates).toHaveLength(90);
-    expect(content.groups[1]?.candidates).toHaveLength(226);
+    expect(content.groups[1]?.candidates).toHaveLength(207);
     expect(content.groups[2]?.candidates).toHaveLength(90);
     expect(content.groups[3]?.candidates).toHaveLength(90);
     expect(content.groups[4]?.candidates).toHaveLength(90);
@@ -254,7 +254,7 @@ describe('loadPilotChallengeContent', () => {
       .map((candidate) => [candidate.questionId, candidate]));
     const candidates = [...candidatesByQuestionId.values()];
 
-    expect(candidates).toHaveLength(7735);
+    expect(candidates).toHaveLength(7716);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 

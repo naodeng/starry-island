@@ -863,10 +863,10 @@ describe('pilot manifest against the real curriculum', () => {
       'grade-2-term-1-english-end-term': 'ready',
     });
     expect(manifest.groups[0].questionIds).toHaveLength(90);
-    expect(manifest.groups[1].questionIds).toHaveLength(226);
+    expect(manifest.groups[1].questionIds).toHaveLength(207);
     expect(manifest.groups[2]?.questionIds).toHaveLength(90);
     expect(manifest.groups[4]?.questionIds).toHaveLength(90);
-    expect(manifest.questions).toHaveLength(7735);
+    expect(manifest.questions).toHaveLength(7716);
     expect(manifest.groups).toHaveLength(114);
   });
 

@@ -426,4 +426,23 @@ describe('semester stage mappings', () => {
       expect(rows.every(({ 审核状态 }) => 审核状态.includes('未独立教育者复核'))).toBe(true);
     }
   });
+
+  it('excludes first-half candidates without a Grade 2 Term 1 Math challenge review row', () => {
+    const challengeManifest = manifest as ChallengeManifest;
+    const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-first-half');
+    const exclusionsPath = resolve(process.cwd(), 'docs/challenges/grade-2-term-1-math-first-half-exclusions.tsv');
+    expect(existsSync(exclusionsPath)).toBe(true);
+    if (!existsSync(exclusionsPath)) return;
+    const excludedIds = new Set(readTsv(exclusionsPath).map(({ 题目ID }) => 题目ID));
+    const unitLedgerIds = new Set([1, 2, 3, 4].flatMap((unit) => {
+      const path = resolve(process.cwd(), `docs/challenges/grade-2-term-1-math-unit-${String(unit).padStart(2, '0')}-question-review.tsv`);
+      expect(existsSync(path)).toBe(true);
+      return existsSync(path) ? readTsv(path).map((row) => row['题目ID'] ?? row['题目记录 ID']) : [];
+    }));
+
+    expect(excludedIds.size).toBe(19);
+    expect(group).toBeDefined();
+    expect(group?.questionIds.some((id) => excludedIds.has(id))).toBe(false);
+    expect(group?.questionIds.filter((id) => !unitLedgerIds.has(id))).toEqual([]);
+  });
 });

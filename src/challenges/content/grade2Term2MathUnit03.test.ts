@@ -5,6 +5,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { ActivityDefinition, Difficulty } from '../../content/types';
 import { loadUnit } from '../../content/unitLoader';
+import { submitAnswer } from '../../learning/answers';
 import { fingerprintActivity } from './fingerprint';
 import { grade2Term2MathUnit03SupplementalActivities } from './grade2Term2MathUnit03SupplementalActivities';
 
@@ -21,8 +22,8 @@ const knowledgePointIds = [
 
 const expectedSupplementAnswers: Record<Difficulty, readonly string[]> = {
   basic: [
-    '平移', '旋转', '对称轴', '平移', '旋转', '沿可能的折痕对折，看两边能否完全重合', '完全重合',
-    '固定的中心点', '不能', '位置改变，朝向保持不变', '保持原来的朝向', '对称轴', '平移', '转动中心仍在原处',
+    '平移', '旋转', '两侧对应点到对称轴的距离相等', '旋转中心仍在原处', '旋转', '沿可能的折痕对折，看两边能否完全重合', '完全重合',
+    '固定的中心点', '不能', '位置改变，朝向保持不变', '保持原来的朝向', '对称轴', '大小和形状不变，只改变位置', '转动中心仍在原处',
   ],
   advanced: [
     '前两种是平移，后一种是旋转', '物体绕固定中心转动', '沿对称轴折叠，让另一边与已知一边重合',
@@ -46,7 +47,7 @@ const expectedSupplementAnswers: Record<Difficulty, readonly string[]> = {
 
 const expectedSupplementKnowledgePoints: Record<Difficulty, readonly (readonly string[])[]> = {
   basic: [
-    [knowledgePointIds[1]], [knowledgePointIds[2]], [knowledgePointIds[0]], [knowledgePointIds[1]],
+    [knowledgePointIds[1]], [knowledgePointIds[2]], [knowledgePointIds[0]], [knowledgePointIds[2]],
     [knowledgePointIds[2]], [knowledgePointIds[0]], [knowledgePointIds[0]], [knowledgePointIds[2]],
     [knowledgePointIds[0]], [knowledgePointIds[1]], [knowledgePointIds[1]], [knowledgePointIds[0]],
     [knowledgePointIds[1]], [knowledgePointIds[2]],
@@ -126,6 +127,23 @@ function readTsv(path: string): Array<Record<string, string>> {
 }
 
 describe('Grade 2 Term 2 Math Unit 3 motion and symmetry', () => {
+  it('accepts either order for the two independent movement observations', async () => {
+    const unit = await loadUnit(sourceUnitId);
+    const activity = Object.values(unit?.difficultyTracks ?? {})
+      .flatMap(({ tasks }) => tasks)
+      .flatMap(({ sessions }) => sessions.flatMap(({ activities }) => activities))
+      .find(({ id }) => id === 'grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-07');
+
+    expect(activity?.kind).toBe('order');
+    if (activity?.kind !== 'order') return;
+    expect(activity.acceptedOrders).toHaveLength(1);
+    expect(submitAnswer(activity, activity.correctOrder)).toBe(true);
+    expect(submitAnswer(activity, activity.acceptedOrders?.[0])).toBe(true);
+    expect(submitAnswer(activity, [
+      activity.correctOrder[0], activity.correctOrder[3], activity.correctOrder[1], activity.correctOrder[2],
+    ])).toBe(false);
+  });
+
   it('audits the source-topic scope and adds 14 original candidates per difficulty', async () => {
     const unit = await loadUnit(sourceUnitId);
     expect(unit?.sourceTopics).toEqual(sourceTopics);
@@ -138,6 +156,18 @@ describe('Grade 2 Term 2 Math Unit 3 motion and symmetry', () => {
       expect(supplemental).toHaveLength(14);
       expect(source.length + supplemental.length).toBe(30);
     }
+  });
+
+  it('varies the basic questions instead of repeating the same movement template', () => {
+    const activityById = new Map(grade2Term2MathUnit03SupplementalActivities
+      .map(({ activity }) => [activity.id, activity]));
+    const symmetryApplication = activityById.get('challenge-supplement-grade-2-term-2-math-unit-03-basic-03');
+    const rotationApplication = activityById.get('challenge-supplement-grade-2-term-2-math-unit-03-basic-04');
+    const translationProperty = activityById.get('challenge-supplement-grade-2-term-2-math-unit-03-basic-13');
+
+    expect(symmetryApplication?.prompt).toContain('距离有什么关系');
+    expect(rotationApplication?.prompt).toContain('旋转');
+    expect(translationProperty?.prompt).toContain('大小和形状');
   });
 
   it('checks every original answer, KP plan, option, and taught-content boundary', () => {

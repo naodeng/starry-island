@@ -413,7 +413,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "389bbac2ea0946dc626631d4e0e5658f25f443a91fa720dce771b43a49af48e8",
+      "approvedContentFingerprint": "d6a71ab651a63eb82a30f5107f1ee33a9bfb74ff6cba463c3d71fee11af063e3",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
@@ -2647,7 +2647,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "0b7790b13cabfce4c0e33abdd641a8ef506e7f06fa596b56ee7bbeac5b28c865",
+      "approvedContentFingerprint": "207ab3271a03021d02cecf8f56807bf8febab01df52be11ccca79254988eb573",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
@@ -3809,66 +3809,6 @@
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
     {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-01",
-      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-01",
-      "difficulty": "advanced",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "bf5da84c2c00c35b5ee78ac4ae8512490b461a58845a7d0d476ea4a1a4a97ca6",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-02",
-      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-02",
-      "difficulty": "advanced",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "eb7148096edd06d62fb60a2bb58881ca11bdf89bb69d1ab0c94bbc0cbfbdc06c",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-03",
-      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-03",
-      "difficulty": "advanced",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "5de87988e1aa3507c7003ca00cc355c95da61c916ef54ecfbdaf4701c7f9bb94",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-04",
-      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-04",
-      "difficulty": "advanced",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "a63826a2cddeeaec028df04f20fbf1e1c7d1f47a9c1ab3eaa042562d00080618",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
       "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-05",
       "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-05",
       "difficulty": "advanced",
@@ -3941,21 +3881,6 @@
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
     {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-04",
-      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-04",
-      "difficulty": "advanced",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "dba059c278763271393266a3b2f3b1a55d5510ee0b4e1538aa88f340959fb281",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
       "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-05",
       "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-05",
       "difficulty": "advanced",
@@ -4014,81 +3939,6 @@
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
     {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-01",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-01",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "3d354df44456b5fbffdc343049398df41add5b87d39d0f6d72b738fa5c625f50",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-02",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-02",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "f1d027cf5cfe347cea7bb62e27cf9b9553aabd17c3aaa1e2440e59806a2cda52",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-03",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-03",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "63f98c9208191cc830b6563a260bef170eb19752dfcbfd09d6a49d4319feca86",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-04",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-04",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "a84fed276e39d1b64fe8da484690bc8f40bdeedf315ca6fd3f2a2f6f2d0f5033",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-05",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-05",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "e9cfe1d354a725d81a4ad103ce330d038f39675fd055be6b982d5c9201b05948",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
       "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-06",
       "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-06",
       "difficulty": "basic",
@@ -4103,21 +3953,6 @@
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
     {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-07",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-07",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "cbb5a15025ae9b12396c8c0bda755ef73df2d46331d08a07b855f9b5b9cdb62e",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
       "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-08",
       "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-08",
       "difficulty": "basic",
@@ -4128,96 +3963,6 @@
       "approved": true,
       "answerLeakageReviewed": true,
       "approvedContentFingerprint": "4a3b2a81edb3d373810d58269a6e2d6cc48892b5444e221fc94bb1f744cd52d9",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-01",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-01",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "47e42f5790c21e8e96b34adc16cbccb938a171d6065889a93e0ea6643c2dacfe",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-02",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-02",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "4e8553430223401a09cadaee8d3871cc582272673b5b66afe01a35a36e5684ff",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-03",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-03",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "6cf1b71272ff38da165af09597f19ea07b6887e7bbed7381061c23a238a3d30b",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-04",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-04",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "b207f11d9f0770029291ddb139f32d8e26351f35439955301c3125a609bcd3b2",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-05",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-05",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "a584c57002b382e92be54fae25bb2d63bac421433d8489ee8f71aed4aee58166",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-06",
-      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-06",
-      "difficulty": "basic",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "18e4c74711bb45df5f250f26f53c55e3c8fdd546be6c4baedc1cb5591a37b531",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
@@ -4275,36 +4020,6 @@
       "approved": true,
       "answerLeakageReviewed": true,
       "approvedContentFingerprint": "1e6476a9bb674cf6ab739b50d887e9b659d49c1a5d2d738531e34c7e704696e8",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-03",
-      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-03",
-      "difficulty": "high",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "0a7e2a3dd7744074dadeba8d401e7ff8130ff7703baf535e8ac3c0ceebeac2a7",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-21T08:51:29.300Z"
-    },
-    {
-      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-04",
-      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-04",
-      "difficulty": "high",
-      "knowledgePointIds": [
-        "equal-groups-multiplication",
-        "multiplication-facts"
-      ],
-      "lifecycle": "active",
-      "approved": true,
-      "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "558b618574be0a558c822bf8bd5a344f04260964dcb15b7e5f453ea3b9702303",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-21T08:51:29.300Z"
     },
@@ -11621,40 +11336,21 @@
         "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-08",
-        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-01",
-        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-02",
-        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-03",
-        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-04",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-05",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-08",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-03",
-        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-04",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-05",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-08",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-01",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-02",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-03",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-04",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-05",
         "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-06",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-08",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-01",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-02",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-03",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-04",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-05",
-        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-08",
         "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-01",
         "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-02",
-        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-03",
-        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-04",
         "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-05",
         "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-07",

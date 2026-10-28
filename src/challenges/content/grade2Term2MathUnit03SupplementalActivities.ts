@@ -26,8 +26,8 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
   basic: [
     { knowledgePointIds: [translation], prompt: '一枚箭头贴纸沿直线向右滑动，尖端始终朝着原方向。它做什么运动？', answer: '平移', distractors: ['旋转', '轴对称'], hint: '它的位置变了，但朝向没有变。', explanation: '物体沿直线移动、朝向不变，属于平移。' },
     { knowledgePointIds: [rotation], prompt: '纸风车的叶片绕着中间的点转动。它做什么运动？', answer: '旋转', distractors: ['平移', '对称'], hint: '留意叶片是否围着一个固定位置转。', explanation: '物体绕固定点转动，是旋转现象。' },
-    { knowledgePointIds: [symmetry], prompt: '纸张沿一道折痕合起来，两侧能完全盖住彼此。这条折痕叫什么？', answer: '对称轴', distractors: ['移动路线', '转动中心'], hint: '它是让图案两侧折叠后重合的那条线。', explanation: '轴对称图形沿对称轴折叠，两边能够完全重合。' },
-    { knowledgePointIds: [translation], prompt: '推拉窗沿轨道向左移动，窗框方向没有改变。这是什么运动？', answer: '平移', distractors: ['旋转', '轴对称'], hint: '看窗户是否绕着某个点转动。', explanation: '窗户沿直线移动且方向不变，是平移。' },
+    { knowledgePointIds: [symmetry], prompt: '图案沿一条直线对折后，两侧对应部分完全重合。对应点到这条线的距离有什么关系？', answer: '两侧对应点到对称轴的距离相等', distractors: ['两侧对应点到对称轴的距离不同', '只有一侧的点到对称轴有距离'], hint: '回想对称图形沿对称轴折叠后两边的对应情况。', explanation: '对称轴两侧的对应点到轴的距离相等，折叠后才能重合。' },
+    { knowledgePointIds: [rotation], prompt: '风车绕中心旋转时，哪个位置保持不动？', answer: '旋转中心仍在原处', distractors: ['叶片尖端沿直线移动', '风车的朝向始终不变'], hint: '观察风车围着哪个固定位置转动。', explanation: '风车旋转时围绕固定的中心转动，旋转中心仍在原处。' },
     { knowledgePointIds: [rotation], prompt: '门打开时绕着合页转动。这是什么运动？', answer: '旋转', distractors: ['平移', '轴对称'], hint: '合页位置不动，门围着它转。', explanation: '门绕合页转动，属于旋转现象。' },
     { knowledgePointIds: [symmetry], prompt: '要判断图案是否关于一条线对称，下面哪一步最能直接检查？', answer: '沿可能的折痕对折，看两边能否完全重合', distractors: ['只比较两边颜色是否一样', '数一数图案里有几种形状'], hint: '观察图案两侧的对应部分。', explanation: '对折后两侧能完全重合，才说明图案关于这条线轴对称。' },
     { knowledgePointIds: [symmetry], prompt: '沿着已经找到的对称轴对折后，两边的图案应怎样？', answer: '完全重合', distractors: ['只在颜色上相同', '一边要比另一边长'], hint: '想象把折起的一边盖在另一边上。', explanation: '轴对称的两侧对应，折叠后能够完全重合。' },
@@ -36,7 +36,7 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
     { knowledgePointIds: [translation], prompt: '棋子沿直线向前滑动，中途没有转向。运动中什么发生变化、什么保持不变？', answer: '位置改变，朝向保持不变', distractors: ['位置和朝向都不变', '位置不变，朝向改变'], hint: '分别观察棋子所在处和它面向的方向。', explanation: '平移改变物体的位置，物体的朝向保持不变。' },
     { knowledgePointIds: [translation], prompt: '把纸星形往旁边平移，图形的朝向会怎样？', answer: '保持原来的朝向', distractors: ['自动转向另一边', '变成另一种形状'], hint: '平移只改变图形所在的位置。', explanation: '平移时图形不转动，所以朝向保持原样。' },
     { knowledgePointIds: [symmetry], prompt: '画纸上先画出图案一半，想沿一条线补出另一半，先标出哪条线？', answer: '对称轴', distractors: ['小车行驶路线', '风车的转动方向'], hint: '沿这条线折叠时，两边应当能够重合。', explanation: '先确定对称轴，才能按两侧对应关系补出另一半。' },
-    { knowledgePointIds: [translation], prompt: '小车在直轨道上向前走，车头方向始终不变。这属于哪种运动？', answer: '平移', distractors: ['旋转', '轴对称'], hint: '车子换了位置，但没有绕点转向。', explanation: '沿直线移动且朝向不变，属于平移。' },
+    { knowledgePointIds: [translation], prompt: '一个三角形沿直线向右平移两格后，大小和形状有什么变化？', answer: '大小和形状不变，只改变位置', distractors: ['大小不变，形状改变', '形状不变，大小改变'], hint: '平移会改变图形的位置，但不会把它拉伸或压扁。', explanation: '平移只改变图形的位置，图形的大小和形状都保持不变。' },
     { knowledgePointIds: [rotation], prompt: '书签绕着一个固定的小圆点转动，小圆点的位置会怎样？', answer: '转动中心仍在原处', distractors: ['沿直线移动到旁边', '和书签一起转动'], hint: '观察书签围着哪个位置转。', explanation: '旋转围绕固定中心进行，中心位置保持不变。' },
   ],
   advanced: [

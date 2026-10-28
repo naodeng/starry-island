@@ -41,6 +41,9 @@ function createActivity(question: MathQuestionSpec, id: string): ActivityDefinit
       kind: 'order',
       items: question.items.map((label, index) => ({ id: `${id}/item-${formatCurriculumSequence(index + 1)}`, label })),
       correctOrder: question.correctOrderIndices.map((index) => `${id}/item-${formatCurriculumSequence(index + 1)}`),
+      acceptedOrders: question.acceptedOrderIndices?.map((order) => (
+        order.map((index) => `${id}/item-${formatCurriculumSequence(index + 1)}`)
+      )),
     };
   }
   return {

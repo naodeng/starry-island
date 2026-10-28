@@ -1,9 +1,9 @@
-import type { ArithmeticActivityDefinition, Difficulty } from '../../content/types';
+import type { ActivityDefinition, ArithmeticActivityDefinition, ChoiceActivityDefinition, Difficulty } from '../../content/types';
 
 export interface SupplementalChallengeActivity {
   difficulty: Difficulty;
   sourceUnitId: string;
-  activity: ArithmeticActivityDefinition;
+  activity: ActivityDefinition;
 }
 
 const sourceUnitId = 'grade-2/term-1/math/unit-02';
@@ -44,7 +44,6 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
     ['有100张积分卡，先用掉37张，又用掉28张，还剩多少张？', '100 - 37 - 28', 35, '依次减去两次用掉的数量。', '100减37等于63，63减28等于35张。'],
   ],
   high: [
-    ['基地原有38份补给，收到27份后送给伙伴19份。补给箱现在有多少份？', '38 + 27 - 19', 46, '先计算收到补给后的总数，再减去送出的部分。', '38加27等于65，65减19等于46份。'],
     ['维修队有82个零件，用去36个后又收到18个。现在有多少个零件？', '82 - 36 + 18', 64, '按先使用、后收到的顺序列式。', '82减36等于46，46加18等于64个。'],
     ['一组收集27颗蓝石和35颗金石，整理时发现18颗需要归还。留下多少颗？', '27 + 35 - 18', 44, '先求两种星石总数，再减去要归还的数量。', '27加35等于62，62减18等于44颗。'],
     ['航站准备91张通行卡，上午发出47张，下午又发出16张。还剩多少张？', '91 - 47 - 16', 28, '把两次发出的卡片数量依次从总数里减去。', '91减47等于44，44减16等于28张。'],
@@ -61,10 +60,14 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
   ],
 };
 
-export const pilotSupplementalActivities: SupplementalChallengeActivity[] = Object.entries(drafts).flatMap(([difficulty, items]) => (
-  items.map(([prompt, expression, correctAnswer, hint, explanation], index) => {
+function createArithmeticActivities(
+  difficulty: Difficulty,
+  items: ActivityDraft[],
+  firstNumber = 1,
+): SupplementalChallengeActivity[] {
+  return items.map(([prompt, expression, correctAnswer, hint, explanation], index) => {
     const activity: ArithmeticActivityDefinition = {
-      id: `challenge-supplement-grade-2-term-1-math-unit-02-${difficulty}-${String(index + 1).padStart(2, '0')}`,
+      id: `challenge-supplement-grade-2-term-1-math-unit-02-${difficulty}-${String(index + firstNumber).padStart(2, '0')}`,
       kind: 'arithmetic',
       prompt,
       hint,
@@ -72,10 +75,27 @@ export const pilotSupplementalActivities: SupplementalChallengeActivity[] = Obje
       expression,
       correctAnswer,
     };
-    return {
-      difficulty: difficulty as Difficulty,
-      sourceUnitId,
-      activity,
-    };
-  })
-));
+    return { difficulty, sourceUnitId, activity };
+  });
+}
+
+const strategyComparisonActivity: ChoiceActivityDefinition = {
+  id: 'challenge-supplement-grade-2-term-1-math-unit-02-high-01',
+  kind: 'choice',
+  prompt: '基地原有38份补给，收到27份后送出19份。哪项把两种计算方法和结果都说对了？',
+  options: [
+    { id: 'option-01', label: '先算38＋27，再减19，得46份；也可先算27－19，再加38，得46份。' },
+    { id: 'option-02', label: '先算38＋27，再减19，得46份；先算27－19，再加38，得65份。' },
+    { id: 'option-03', label: '先算38＋27，再减19，得46份；也可先算27＋19，再加38，得84份。' },
+  ],
+  correctOptionId: 'option-01',
+  hint: '两种算法都要表示“原有数量加上收到的，再减去送出的”。',
+  explanation: '先算38加27等于65，再减19得46；也可以先算27减19等于8，再加38，同样得46。',
+};
+
+export const pilotSupplementalActivities: SupplementalChallengeActivity[] = [
+  ...createArithmeticActivities('basic', drafts.basic),
+  ...createArithmeticActivities('advanced', drafts.advanced),
+  { difficulty: 'high', sourceUnitId, activity: strategyComparisonActivity },
+  ...createArithmeticActivities('high', drafts.high, 2),
+];

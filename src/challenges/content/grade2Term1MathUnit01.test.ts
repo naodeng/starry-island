@@ -28,7 +28,7 @@ const expectedSupplementAnswers = {
   ],
   advanced: [
     '估测约1米，测量结果98厘米', '彩纸更长', '83厘米', '65厘米', '9格',
-    '两种结果接近，估测不必和读数完全相同', '2×100＋35', '铅笔是否从尺子的同一刻度起量',
+    '两种结果接近，估测不必和读数完全相同', '1米长的彩带更长，长5厘米', '铅笔是否从尺子的同一刻度起量',
     '合适的长度单位', '用8减2', '12厘米', '估测和尺子读数接近，可同时保留并注明各自方法',
     '再读起点，并用终点减去起点', '140厘米长的彩带', '10厘米',
   ],
@@ -156,6 +156,12 @@ describe('二年级上册数学第一单元闯关', () => {
         expect(activity.hint).not.toContain(expectedAnswerSummary(activity));
       });
     }
+
+    const advancedLengthComparison = grade2Term1MathUnit01SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('advanced-07'))?.activity;
+    expect(advancedLengthComparison?.prompt).toContain('1米');
+    expect(advancedLengthComparison?.prompt).toContain('95厘米');
+    expect(advancedLengthComparison?.prompt).not.toMatch(/[×*]/u);
   });
 
   it('为原课程的全部 48 道活动提供本单元范围内的知识点映射', async () => {

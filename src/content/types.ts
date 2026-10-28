@@ -67,6 +67,7 @@ export interface OrderActivityDefinition extends ActivityBase {
   kind: 'order';
   items: OrderItem[];
   correctOrder: string[];
+  acceptedOrders?: string[][];
 }
 
 export interface CategorizeCategory {

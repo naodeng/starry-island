@@ -48,7 +48,7 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
     { knowledgePointIds: [units], prompt: '一根1米长的绳子剪去35厘米，剩下多少厘米？', answer: '65厘米', distractors: ['75厘米', '135厘米'], hint: '先把1米换成厘米，再减去剪掉的长度。', explanation: '1米是100厘米，100减35等于65厘米。' },
     { knowledgePointIds: [measurement], prompt: '尺子从刻度5开始对准物体一端，另一端在刻度14。物体跨过多少格？', answer: '9格', distractors: ['14格', '19格'], hint: '不能把终点刻度直接当作长度。', explanation: '14减5等于9，物体跨过9格。' },
     { knowledgePointIds: [units, measurement], prompt: '同一段木条的估测是约80厘米，尺子从0量到76厘米。哪项判断合适？', answer: '两种结果接近，估测不必和读数完全相同', distractors: ['估测不等于读数，所以一定量错了', '木条长度应写成80米'], hint: '估测是大致判断，尺子读数更具体。', explanation: '约80厘米与76厘米相近，估测和精确读数可以有少量差别。' },
-    { knowledgePointIds: [units], prompt: '把2米35厘米换成厘米，正确的算式是哪一个？', answer: '2×100＋35', distractors: ['2＋35', '2×10＋35'], hint: '每米有100厘米。', explanation: '2米是200厘米，再加35厘米，算式是2×100＋35。' },
+    { knowledgePointIds: [units], prompt: '一条彩带长1米，另一条长95厘米。哪条更长？相差多少厘米？', answer: '1米长的彩带更长，长5厘米', distractors: ['95厘米长的彩带更长，长5厘米', '1米长的彩带更长，长15厘米'], hint: '先把1米换成100厘米，再比较两条彩带。', explanation: '1米是100厘米，100减95等于5厘米，所以1米长的彩带更长，长5厘米。' },
     { knowledgePointIds: [measurement], prompt: '同一根铅笔两次读数不同，复测前先检查哪一项？', answer: '铅笔是否从尺子的同一刻度起量', distractors: ['铅笔的颜色是否相同', '记录纸是不是更换了'], hint: '先核对两次测量的方法是否一致。', explanation: '起点不一致会让读数无法直接比较，应先对齐测量起点。' },
     { knowledgePointIds: [units, measurement], prompt: '小组的长度记录只写操场边长“约20”，这条记录还缺什么信息？', answer: '合适的长度单位', distractors: ['再写一个不同的数字', '把“约”字删掉'], hint: '数字本身不能说明表示厘米还是米。', explanation: '补上米等合适单位，读者才知道估测长度的大小。' },
     { knowledgePointIds: [measurement], prompt: '一条线段在直尺上从刻度2到刻度8，怎样算它的长度格数？', answer: '用8减2', distractors: ['用8加2', '只读终点8'], hint: '长度是两端刻度的差。', explanation: '线段跨过的格数等于终点刻度减去起点刻度。' },
