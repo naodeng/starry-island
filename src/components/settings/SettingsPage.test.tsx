@@ -39,6 +39,9 @@ describe('SettingsPage', () => {
     expect(screen.getByRole('radio', { name: '跟随系统' })).toBeInTheDocument();
     expect(screen.getByRole('radio', { name: '浅色' })).toBeInTheDocument();
     expect(screen.getByRole('radio', { name: '深色' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '显示主题' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '语音与提示音' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '学习进度设置' })).toBeInTheDocument();
 
     const speechSwitch = screen.getByRole('switch', { name: '语音提示与交互音效' });
     expect(speechSwitch).toBeChecked();
@@ -76,6 +79,7 @@ describe('SettingsPage', () => {
 
     await user.click(screen.getByRole('button', { name: '打开备份与恢复' }));
     expect(onNavigate).toHaveBeenCalledWith('/settings/backup');
+    expect(screen.getByText(/课程进度单独保存在本机/)).toBeInTheDocument();
   });
 
   it('keeps an unregistered saved start visible and unavailable for selection', () => {

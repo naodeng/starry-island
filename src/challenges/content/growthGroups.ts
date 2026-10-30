@@ -1,12 +1,13 @@
 import type { ChallengeGrowthDefinition } from '../domain/growth';
 
 function growthTasks(groupId: string) {
+  const taskRevision = groupId.startsWith('grade-2-term-1-math-') ? '-v2' : '';
   return [
-    { id: `${groupId}/basic-01` },
-    { id: `${groupId}/basic-02` },
-    { id: `${groupId}/advanced-01` },
-    { id: `${groupId}/advanced-02` },
-    { id: `${groupId}/high-01` },
+    { id: `${groupId}/basic-01${taskRevision}` },
+    { id: `${groupId}/basic-02${taskRevision}` },
+    { id: `${groupId}/advanced-01${taskRevision}` },
+    { id: `${groupId}/advanced-02${taskRevision}` },
+    { id: `${groupId}/high-01${taskRevision}` },
   ] as const;
 }
 
@@ -47,6 +48,7 @@ function grade2Term2StageGroup(
   subject: 'chinese' | 'math' | 'english',
   stage: NonNullable<ChallengeGrowthDefinition['stage']>,
   unitNumbers: readonly number[],
+  additionalSourceUnitIds: readonly string[] = [],
 ): ChallengeGrowthDefinition {
   return {
     id,
@@ -54,8 +56,10 @@ function grade2Term2StageGroup(
     grade: 2,
     semester: 2,
     subject,
-    sourceUnitIds: unitNumbers.map((unitNumber) =>
-      `grade-2/term-2/${subject}/unit-${String(unitNumber).padStart(2, '0')}`),
+    sourceUnitIds: unitNumbers.flatMap((unitNumber) => [
+      `grade-2/term-2/${subject}/unit-${String(unitNumber).padStart(2, '0')}`,
+      ...(unitNumber === 6 ? additionalSourceUnitIds : []),
+    ]),
     stage,
     tasks: growthTasks(id),
   };
@@ -78,7 +82,6 @@ function grade2Term2UnitGroup(
 }
 
 export const growthGroups: readonly ChallengeGrowthDefinition[] = [
-  unitGroup('grade-2-term-1-math-unit-02', 2, 'math', 2),
   {
     id: 'grade-2-term-1-math-first-half',
     kind: 'semester',
@@ -89,7 +92,7 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
       'grade-2/term-1/math/unit-01',
       'grade-2/term-1/math/unit-02',
       'grade-2/term-1/math/unit-03',
-      'grade-2/term-1/math/unit-04',
+      'grade-2/term-1/math/integrated-practice-01',
     ],
     stage: 'first-half',
     tasks: growthTasks('grade-2-term-1-math-first-half'),
@@ -358,13 +361,11 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
     tasks: growthTasks('grade-2-term-1-chinese-first-half'),
   },
   unitGroup('grade-2-term-1-math-unit-01', 2, 'math', 1),
+  unitGroup('grade-2-term-1-math-unit-02', 2, 'math', 2),
   unitGroup('grade-2-term-1-math-unit-03', 2, 'math', 3),
   unitGroup('grade-2-term-1-math-unit-04', 2, 'math', 4),
   unitGroup('grade-2-term-1-math-unit-05', 2, 'math', 5),
   unitGroup('grade-2-term-1-math-unit-06', 2, 'math', 6),
-  unitGroup('grade-2-term-1-math-unit-07', 2, 'math', 7),
-  unitGroup('grade-2-term-1-math-unit-08', 2, 'math', 8),
-  unitGroup('grade-2-term-1-math-unit-09', 2, 'math', 9),
   unitGroup('grade-2-term-1-english-unit-01', 2, 'english', 1),
   unitGroup('grade-2-term-1-english-unit-02', 2, 'english', 2),
   unitGroup('grade-2-term-1-english-unit-03', 2, 'english', 3),
@@ -373,8 +374,40 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
   unitGroup('grade-2-term-1-english-unit-06', 2, 'english', 6),
   grade2Term1StageGroup('grade-2-term-1-chinese-second-half', 'chinese', 'second-half', [5, 6, 7, 8]),
   grade2Term1StageGroup('grade-2-term-1-chinese-end-term', 'chinese', 'end-term', [1, 2, 3, 4, 5, 6, 7, 8]),
-  grade2Term1StageGroup('grade-2-term-1-math-second-half', 'math', 'second-half', [5, 6, 7, 8, 9]),
-  grade2Term1StageGroup('grade-2-term-1-math-end-term', 'math', 'end-term', [1, 2, 3, 4, 5, 6, 7, 8, 9]),
+  {
+    id: 'grade-2-term-1-math-second-half',
+    kind: 'semester',
+    grade: 2,
+    semester: 1,
+    subject: 'math',
+    sourceUnitIds: [
+      'grade-2/term-1/math/unit-04',
+      'grade-2/term-1/math/unit-05',
+      'grade-2/term-1/math/unit-06',
+      'grade-2/term-1/math/integrated-practice-02',
+    ],
+    stage: 'second-half',
+    tasks: growthTasks('grade-2-term-1-math-second-half'),
+  },
+  {
+    id: 'grade-2-term-1-math-end-term',
+    kind: 'semester',
+    grade: 2,
+    semester: 1,
+    subject: 'math',
+    sourceUnitIds: [
+      'grade-2/term-1/math/unit-01',
+      'grade-2/term-1/math/unit-02',
+      'grade-2/term-1/math/unit-03',
+      'grade-2/term-1/math/unit-04',
+      'grade-2/term-1/math/unit-05',
+      'grade-2/term-1/math/unit-06',
+      'grade-2/term-1/math/integrated-practice-01',
+      'grade-2/term-1/math/integrated-practice-02',
+    ],
+    stage: 'end-term',
+    tasks: growthTasks('grade-2-term-1-math-end-term'),
+  },
   grade2Term1StageGroup('grade-2-term-1-english-first-half', 'english', 'first-half', [1, 2, 3]),
   grade2Term1StageGroup('grade-2-term-1-english-second-half', 'english', 'second-half', [4, 5, 6]),
   grade2Term1StageGroup('grade-2-term-1-english-end-term', 'english', 'end-term', [1, 2, 3, 4, 5, 6]),
@@ -518,8 +551,12 @@ export const growthGroups: readonly ChallengeGrowthDefinition[] = [
   grade2Term2StageGroup('grade-2-term-2-chinese-second-half', 'chinese', 'second-half', [5, 6, 7, 8]),
   grade2Term2StageGroup('grade-2-term-2-chinese-end-term', 'chinese', 'end-term', [1, 2, 3, 4, 5, 6, 7, 8]),
   grade2Term2StageGroup('grade-2-term-2-math-first-half', 'math', 'first-half', [1, 2, 3, 4, 5]),
-  grade2Term2StageGroup('grade-2-term-2-math-second-half', 'math', 'second-half', [6, 7, 8, 9, 10]),
-  grade2Term2StageGroup('grade-2-term-2-math-end-term', 'math', 'end-term', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+  grade2Term2StageGroup('grade-2-term-2-math-second-half', 'math', 'second-half', [6, 7, 8, 9, 10], [
+    'grade-2/term-2/math/integrated-practice-01',
+  ]),
+  grade2Term2StageGroup('grade-2-term-2-math-end-term', 'math', 'end-term', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [
+    'grade-2/term-2/math/integrated-practice-01',
+  ]),
   grade2Term2StageGroup('grade-2-term-2-english-first-half', 'english', 'first-half', [1, 2, 3]),
   grade2Term2StageGroup('grade-2-term-2-english-second-half', 'english', 'second-half', [4, 5, 6]),
   grade2Term2StageGroup('grade-2-term-2-english-end-term', 'english', 'end-term', [1, 2, 3, 4, 5, 6]),

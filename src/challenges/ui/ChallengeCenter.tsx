@@ -1,6 +1,7 @@
 import { Button, Card } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath } from '../../app/router';
+import EmptyState from '../../components/shared/EmptyState';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { TaskProgress } from '../domain/types';
 
@@ -106,11 +107,12 @@ export function getChallengeGroupDescription(group: LoadedPilotGroup['group']): 
 interface ChallengeCenterProps {
   groups: LoadedPilotGroup[];
   progressByTaskId: Readonly<Record<string, TaskProgress>>;
-  progressAvailable: boolean;
+  progressReadState: 'loading' | 'ready' | 'error';
+  onRetryProgress: () => void;
   onNavigate: (path: string) => void;
 }
 
-export default function ChallengeCenter({ groups, progressByTaskId, progressAvailable, onNavigate }: ChallengeCenterProps) {
+export default function ChallengeCenter({ groups, progressByTaskId, progressReadState, onRetryProgress, onNavigate }: ChallengeCenterProps) {
   return (
     <main className="challenge-page">
       <div className="challenge-shell">
@@ -125,7 +127,12 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressAvai
             <Button type="primary" onClick={() => onNavigate(getChallengeWrongQuestionsPath())}>打开错题本</Button>
           </div>
         </header>
-        {!progressAvailable && <p className="challenge-inline-note" role="status">本机进度暂时没有读出；可以继续挑战，稍后再查看进度。</p>}
+        {progressReadState === 'error' && (
+          <div className="challenge-progress-read-error" role="status">
+            <p>本机进度暂时没有读出；可以继续挑战，成绩没有被更改。</p>
+            <Button type="default" onClick={onRetryProgress}>重新读取进度</Button>
+          </div>
+        )}
         <section className="challenge-section" aria-labelledby="challenge-groups-heading">
           <div className="challenge-section-heading">
             <div>
@@ -133,36 +140,49 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressAvai
               <h2 id="challenge-groups-heading">选择一条挑战航线</h2>
             </div>
           </div>
-          <div className="challenge-card-grid">
-            {sortChallengeGroupsForDisplay(groups).map(({ group, status, issues }) => {
-              const taskProgress = group.definition.tasks.map(({ id }) => progressByTaskId[id]).filter(Boolean);
-              const passedCount = taskProgress.filter(({ everPassed }) => everPassed).length;
-              const progressLabel = status === 'ready'
-                ? `${passedCount}/5 个任务已通过`
-                : status === 'planned' ? '即将开放' : '暂不可用';
-              return (
-                <Card className="challenge-group-card" color="default" key={group.definition.id}>
-                  <p className="eyebrow">{group.definition.kind === 'unit' ? '单元闯关' : '学期阶段闯关'}</p>
-                  <h3>{getChallengeGroupTitle(group)}</h3>
-                  <p className="challenge-card-description">{getChallengeGroupDescription(group)}</p>
-                  <div className="challenge-card-progress">
-                    <span>{progressLabel}</span>
-                    {passedCount === 5 && <strong>徽章已点亮</strong>}
-                  </div>
-                  {status === 'ready' ? (
-                    <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate(getChallengeGroupPath(group.definition.id))}>
-                      查看挑战任务
-                    </Button>
-                  ) : (
-                    <div className="challenge-unavailable-note" role="note">
-                      <strong>{status === 'planned' ? '这条路线正在准备中。' : '这条路线暂时不能开始。'}</strong>
-                      {issues[0] && <span>内容质量门禁尚未通过。</span>}
+          {groups.length === 0 ? (
+            <EmptyState
+              className="challenge-route-empty"
+              headingLevel={3}
+              title="暂无可用挑战路线"
+              description="课程路线通过内容质量检查后，会显示在这里。"
+            />
+          ) : (
+            <div className="challenge-card-grid">
+              {sortChallengeGroupsForDisplay(groups).map(({ group, status, issues }) => {
+                const taskProgress = group.definition.tasks.map(({ id }) => progressByTaskId[id]).filter(Boolean);
+                const passedCount = taskProgress.filter(({ everPassed }) => everPassed).length;
+                const progressLabel = status === 'ready'
+                  ? progressReadState === 'loading'
+                    ? '正在读取进度…'
+                    : progressReadState === 'error'
+                      ? '进度暂时不可用'
+                      : `${passedCount}/5 个任务已通过`
+                  : status === 'planned' ? '即将开放' : '暂不可用';
+                return (
+                  <Card className="challenge-group-card" color="default" key={group.definition.id}>
+                    <p className="eyebrow">{group.definition.kind === 'unit' ? '单元闯关' : '学期阶段闯关'}</p>
+                    <h3>{getChallengeGroupTitle(group)}</h3>
+                    <p className="challenge-card-description">{getChallengeGroupDescription(group)}</p>
+                    <div className="challenge-card-progress">
+                      <span>{progressLabel}</span>
+                      {passedCount === 5 && <strong>徽章已点亮</strong>}
                     </div>
-                  )}
-                </Card>
-              );
-            })}
-          </div>
+                    {status === 'ready' ? (
+                      <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate(getChallengeGroupPath(group.definition.id))}>
+                        查看挑战任务
+                      </Button>
+                    ) : (
+                      <div className="challenge-unavailable-note" role="note">
+                        <strong>{status === 'planned' ? '这条路线正在准备中。' : '这条路线暂时不能开始。'}</strong>
+                        {issues[0] && <span>内容质量门禁尚未通过。</span>}
+                      </div>
+                    )}
+                  </Card>
+                );
+              })}
+            </div>
+          )}
         </section>
       </div>
     </main>

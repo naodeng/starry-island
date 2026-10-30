@@ -5,6 +5,9 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { ChallengeGroupManifest, ChallengeManifest } from '../domain/types';
 import type { ActivityDefinition } from '../../content/types';
+import { loadUnit } from '../../content/unitLoader';
+import { derivePilotQuestionKnowledgePointIds } from './pilotQuestionKnowledgePoints';
+import { fingerprintActivity } from './fingerprint';
 import manifest from './pilotManifest';
 import { loadPilotChallengeContent } from './pilotContent';
 
@@ -78,9 +81,18 @@ const grade2Term2OtherSubjectStageSpecs = [
     id: 'grade-2-term-2-math-second-half',
     stage: 'second-half',
     unitNumbers: [6, 7, 8, 9, 10],
-    learningTaskUnitIds: [5, 6, 7, 8, 9, 10].map((unit) => `grade-2/term-2/math/unit-${String(unit).padStart(2, '0')}`),
+    practiceUnitIds: ['grade-2/term-2/math/integrated-practice-01'],
+    learningTaskUnitIds: [
+      ...[2, 5, 6, 7, 8, 9, 10].map((unit) => `grade-2/term-2/math/unit-${String(unit).padStart(2, '0')}`),
+    ],
   },
-  { subject: 'math', id: 'grade-2-term-2-math-end-term', stage: 'end-term', unitNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  {
+    subject: 'math',
+    id: 'grade-2-term-2-math-end-term',
+    stage: 'end-term',
+    unitNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    practiceUnitIds: ['grade-2/term-2/math/integrated-practice-01'],
+  },
   { subject: 'english', id: 'grade-2-term-2-english-first-half', stage: 'first-half', unitNumbers: [1, 2, 3] },
   { subject: 'english', id: 'grade-2-term-2-english-second-half', stage: 'second-half', unitNumbers: [4, 5, 6] },
   { subject: 'english', id: 'grade-2-term-2-english-end-term', stage: 'end-term', unitNumbers: [1, 2, 3, 4, 5, 6] },
@@ -219,8 +231,15 @@ describe('semester stage mappings', () => {
       const questionIds = rows.map(({ 题目ID }) => 题目ID);
       expect(questionIds).toHaveLength(group.questionIds.length);
       expect(new Set(questionIds)).toEqual(new Set(group.questionIds));
-      expect(rows.every((row) => Boolean(reviewLedgerAnswer(row)) && hasAuthorSelfReview(row))).toBe(true);
-      expect(rows.every(({ 审核状态 }) => 审核状态.includes('未独立教育者复核'))).toBe(true);
+      expect(rows.every((row) => {
+        const status = row['审核状态'] ?? '';
+        const aiMathReview = status.includes('AI 主审已复核') && status.includes('独立教育者复核数 0');
+        return Boolean(reviewLedgerAnswer(row)) && (hasAuthorSelfReview(row) || aiMathReview);
+      })).toBe(true);
+      expect(rows.every(({ 审核状态 }) => (
+        审核状态.includes('未独立教育者复核')
+        || (审核状态.includes('AI 主审已复核') && 审核状态.includes('独立教育者复核数 0'))
+      ))).toBe(true);
     }
   });
 
@@ -333,6 +352,32 @@ describe('semester stage mappings', () => {
     }
   });
 
+  it('keeps AI review evidence for all 48 Grade 2 Term 2 Math textbook practice candidates', async () => {
+    const unitId = 'grade-2/term-2/math/integrated-practice-01';
+    const unit = await loadUnit(unitId);
+    const activities = Object.entries(unit!.difficultyTracks).flatMap(([difficulty, track]) =>
+      track.tasks.flatMap((task) => task.sessions.flatMap((session) => session.activities.map((activity) => ({ difficulty, activity })))));
+    const ledgerPath = resolve(process.cwd(), 'docs/challenges/grade-2-term-2-math-integrated-practice-01-question-review.tsv');
+
+    expect(activities).toHaveLength(48);
+    expect(existsSync(ledgerPath)).toBe(true);
+    const rows = readTsv(ledgerPath);
+    const rowsById = new Map(rows.map((row) => [reviewQuestionId(row), row]));
+    expect(rows).toHaveLength(48);
+
+    for (const { difficulty, activity } of activities) {
+      const questionId = `challenge-question:${activity.id}`;
+      const row = rowsById.get(questionId);
+      expect(row, questionId).toBeDefined();
+      expect(row?.['难度']).toBe(difficulty);
+      expect(row?.['知识点']).toBe(derivePilotQuestionKnowledgePointIds(unitId, activity).join('；'));
+      expect(reviewLedgerAnswer(row ?? {})).toBe(expectedAnswerKey(activity));
+      expect(row?.['内容指纹']).toBe(await fingerprintActivity(activity));
+      expect(row?.['审核状态']).toContain('AI 主审已复核');
+      expect(row?.['审核状态']).toContain('独立教育者复核数 0');
+    }
+  });
+
   it('uses two representative high-level knowledge points from each of the eight Chinese chapters', () => {
     const challengeManifest = manifest as ChallengeManifest;
     const endTerm = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-2-chinese-end-term');
@@ -349,18 +394,30 @@ describe('semester stage mappings', () => {
     }
   });
 
-  it('maps Grade 2 Term 2 Math and English stages to the chapter-order split and full source pools', () => {
+  it('maps Grade 2 Term 2 Math and English stages to the chapter-order split and full source pools', async () => {
     const challengeManifest = manifest as ChallengeManifest;
     const questionsById = new Map(challengeManifest.questions.map((question) => [question.questionId, question]));
+    const loadedContent = await loadPilotChallengeContent();
 
     for (const stageSpec of grade2Term2OtherSubjectStageSpecs) {
       const group = challengeManifest.groups.find(({ definition }) => definition.id === stageSpec.id) as ChallengeGroupManifest | undefined;
-      const sourceUnitIds = stageSpec.unitNumbers.map((unit) =>
+      const formalSourceUnitIds = stageSpec.unitNumbers.map((unit) =>
         `grade-2/term-2/${stageSpec.subject}/unit-${String(unit).padStart(2, '0')}`);
-      const sourceGroupIds = sourceUnitIds.map((_unitId, index) =>
+      const practiceUnitIds = 'practiceUnitIds' in stageSpec ? stageSpec.practiceUnitIds : [];
+      const sourceUnitIds = formalSourceUnitIds.flatMap((unitId, index) => [
+        unitId,
+        ...(stageSpec.subject === 'math' && stageSpec.unitNumbers[index] === 6 ? practiceUnitIds : []),
+      ]);
+      const sourceGroupIds = formalSourceUnitIds.map((_unitId, index) =>
         `grade-2-term-2-${stageSpec.subject}-unit-${String(stageSpec.unitNumbers[index]).padStart(2, '0')}`);
       const sourceGroups = challengeManifest.groups.filter(({ definition }) => sourceGroupIds.includes(definition.id));
-      const sourceQuestionIds = new Set(sourceGroups.flatMap(({ questionIds }) => questionIds));
+      const practiceActivities = await Promise.all(practiceUnitIds.map((unitId) => loadUnit(unitId)));
+      const practiceActivityIds = new Set(practiceActivities.flatMap((unit) => Object.values(unit!.difficultyTracks)
+        .flatMap(({ tasks }) => tasks.flatMap(({ sessions }) => sessions.flatMap(({ activities }) => activities.map(({ id }) => id))))));
+      const practiceQuestionIds = challengeManifest.questions
+        .filter(({ activityId }) => practiceActivityIds.has(activityId))
+        .map(({ questionId }) => questionId);
+      const sourceQuestionIds = new Set([...sourceGroups.flatMap(({ questionIds }) => questionIds), ...practiceQuestionIds]);
       const highTask = group?.definition.tasks.find(({ difficulty }) => difficulty === 'high');
 
       expect(group?.definition).toMatchObject({
@@ -375,6 +432,19 @@ describe('semester stage mappings', () => {
       expect(group?.definition.tasks.map(({ targetCount }) => targetCount)).toEqual([25, 25, 25, 25, 25]);
       expect(new Set(group?.questionIds)).toEqual(sourceQuestionIds);
       expect(sourceGroups).toHaveLength(stageSpec.unitNumbers.length);
+      if (practiceUnitIds.length > 0) {
+        expect(practiceQuestionIds).toHaveLength(48);
+        const practiceActivityIds = new Set(practiceActivities.flatMap((unit) => Object.values(unit!.difficultyTracks)
+          .flatMap(({ tasks }) => tasks.flatMap(({ sessions }) => sessions.flatMap(({ activities }) => activities.map(({ id }) => id))))));
+        const loadedGroup = loadedContent.groups.find(({ group: candidate }) => candidate.definition.id === stageSpec.id);
+        const practiceCandidates = (loadedGroup?.candidates ?? []).filter(({ activity }) => practiceActivityIds.has(activity.id));
+        expect(practiceCandidates).toHaveLength(48);
+        for (const candidate of practiceCandidates) {
+          expect(candidate.knowledgePointIds, candidate.questionId)
+            .toEqual(derivePilotQuestionKnowledgePointIds(practiceUnitIds[0]!, candidate.activity));
+        }
+        expect(group?.definition.tasks.every(({ id }) => !id.endsWith('-v2'))).toBe(true);
+      }
       const allCandidateKnowledgePointIds = new Set(group?.questionIds
         .flatMap((id) => questionsById.get(id)?.knowledgePointIds ?? []));
       expect(group?.definition.coreKnowledgePointIds.every((id) => allCandidateKnowledgePointIds.has(id))).toBe(true);
@@ -422,27 +492,40 @@ describe('semester stage mappings', () => {
       const questionIds = group?.questionIds ?? [];
       expect(rows.map(reviewQuestionId)).toHaveLength(questionIds.length);
       expect(new Set(rows.map(reviewQuestionId))).toEqual(new Set(questionIds));
-      expect(rows.every((row) => Boolean(reviewLedgerAnswer(row)) && hasAuthorSelfReview(row))).toBe(true);
-      expect(rows.every(({ 审核状态 }) => 审核状态.includes('未独立教育者复核'))).toBe(true);
+      expect(rows.every((row) => {
+        const status = row['审核状态'] ?? '';
+        const aiMathReview = stageSpec.subject === 'math' && status.includes('AI 主审已复核');
+        return Boolean(reviewLedgerAnswer(row)) && (hasAuthorSelfReview(row) || aiMathReview);
+      })).toBe(true);
+      expect(rows.every(({ 审核状态 }) => (
+        审核状态.includes('未独立教育者复核')
+        || (stageSpec.subject === 'math' && 审核状态.includes('AI 主审已复核') && 审核状态.includes('独立教育者复核数 0'))
+      ))).toBe(true);
     }
   });
 
-  it('excludes first-half candidates without a Grade 2 Term 1 Math challenge review row', () => {
+  it('maps Grade 2 Term 1 Math semester candidates only to reviewed first-half curriculum and practice ledgers', () => {
     const challengeManifest = manifest as ChallengeManifest;
     const group = challengeManifest.groups.find(({ definition }) => definition.id === 'grade-2-term-1-math-first-half');
-    const exclusionsPath = resolve(process.cwd(), 'docs/challenges/grade-2-term-1-math-first-half-exclusions.tsv');
-    expect(existsSync(exclusionsPath)).toBe(true);
-    if (!existsSync(exclusionsPath)) return;
-    const excludedIds = new Set(readTsv(exclusionsPath).map(({ 题目ID }) => 题目ID));
-    const unitLedgerIds = new Set([1, 2, 3, 4].flatMap((unit) => {
-      const path = resolve(process.cwd(), `docs/challenges/grade-2-term-1-math-unit-${String(unit).padStart(2, '0')}-question-review.tsv`);
+    const firstHalfSources = [
+      'grade-2/term-1/math/unit-01',
+      'grade-2/term-1/math/unit-02',
+      'grade-2/term-1/math/unit-03',
+      'grade-2/term-1/math/integrated-practice-01',
+    ];
+    const reviewPaths = firstHalfSources.map((sourceUnitId) => {
+      const suffix = sourceUnitId.split('/').at(-1)!;
+      const path = resolve(process.cwd(), `docs/challenges/grade-2-term-1-math-${suffix}-question-review.tsv`);
       expect(existsSync(path)).toBe(true);
-      return existsSync(path) ? readTsv(path).map((row) => row['题目ID'] ?? row['题目记录 ID']) : [];
-    }));
+      return path;
+    });
+    const reviewIds = new Set(reviewPaths.flatMap((path) => existsSync(path)
+      ? readTsv(path).map((row) => row['题目ID'] ?? row['题目记录 ID'])
+      : []));
 
-    expect(excludedIds.size).toBe(19);
     expect(group).toBeDefined();
-    expect(group?.questionIds.some((id) => excludedIds.has(id))).toBe(false);
-    expect(group?.questionIds.filter((id) => !unitLedgerIds.has(id))).toEqual([]);
+    expect(group?.definition.sourceUnitIds).toEqual(firstHalfSources);
+    expect(group?.questionIds.length).toBe(318);
+    expect(group?.questionIds.every((id) => reviewIds.has(id))).toBe(true);
   });
 });

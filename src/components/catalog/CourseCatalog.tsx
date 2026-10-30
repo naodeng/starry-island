@@ -11,6 +11,7 @@ import HeroGuide from '../mascots/HeroGuide';
 import AchievementSummary from '../achievements/AchievementSummary';
 import CourseBreadcrumbs from './CourseBreadcrumbs';
 import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
+import EmptyState from '../shared/EmptyState';
 
 interface CourseCatalogProps {
   progress: ProgressState;
@@ -217,39 +218,47 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
               英语预备级是否属于学校本学期实际开设课程，请以学校安排为准。
             </p>
           ) : null}
-          <div className="unit-grid">
-            {subject.units.map((unit) => {
-              const active = unit.status === 'active'
-                && curriculumManifest.textbooks[unit.textbookEditionId]?.verificationStatus === 'verified';
-              return (
-                <Card
-                  key={unit.id}
-                  className={`unit-card ${active ? 'unit-card-active' : 'unit-card-soon'}`}
-                  color="default"
-                  aria-label={`${unit.title}${active ? '' : '，筹备中'}`}
-                >
-                  <div className="unit-card-topline">
-                    <span className="unit-number">
-                      {unit.formalUnitNumber !== null
-                        ? `UNIT ${String(unit.formalUnitNumber).padStart(2, '0')}`
-                        : unit.type === 'review' ? '复习站' : unit.type === 'theme' ? '主题组' : '实践站'}
-                    </span>
-                    <span className={`unit-status ${active ? 'is-active' : 'is-soon'}`}>{active ? '可以出发' : '筹备中'}</span>
-                  </div>
-                  <h3>{unit.title}</h3>
-                  {active ? (
-                    <>
-                      <p>{subject.id === 'chinese' ? '识字、阅读与表达小游戏' : subject.id === 'math' ? '测量、运算与思维小游戏' : '单词、表达与语言小游戏'}</p>
-                      <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => openUnit(unit)}>进入单元</Button>
-                    </>
-                  ) : (
-                    <p className="coming-soon-copy">这座学习小岛正在准备中，过一段时间再来看看吧。</p>
-                  )}
-                </Card>
-              );
-            })}
-          </div>
-          {!subject.units.length ? <p className="catalog-empty-note">这个学期的{subject.title}课程正在核对教材版本，准备好后就会开放。</p> : null}
+          {subject.units.length ? (
+            <div className="unit-grid">
+              {subject.units.map((unit) => {
+                const active = unit.status === 'active'
+                  && curriculumManifest.textbooks[unit.textbookEditionId]?.verificationStatus === 'verified';
+                return (
+                  <Card
+                    key={unit.id}
+                    className={`unit-card ${active ? 'unit-card-active' : 'unit-card-soon'}`}
+                    color="default"
+                    aria-label={`${unit.title}${active ? '' : '，筹备中'}`}
+                  >
+                    <div className="unit-card-topline">
+                      <span className="unit-number">
+                        {unit.formalUnitNumber !== null
+                          ? `UNIT ${String(unit.formalUnitNumber).padStart(2, '0')}`
+                          : unit.type === 'review' ? '复习站' : unit.type === 'theme' ? '主题组' : '实践站'}
+                      </span>
+                      <span className={`unit-status ${active ? 'is-active' : 'is-soon'}`}>{active ? '可以出发' : '筹备中'}</span>
+                    </div>
+                    <h3>{unit.title}</h3>
+                    {active ? (
+                      <>
+                        <p>{subject.id === 'chinese' ? '识字、阅读与表达小游戏' : subject.id === 'math' ? '测量、运算与思维小游戏' : '单词、表达与语言小游戏'}</p>
+                        <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => openUnit(unit)}>进入单元</Button>
+                      </>
+                    ) : (
+                      <p className="coming-soon-copy">这座学习小岛正在准备中，过一段时间再来看看吧。</p>
+                    )}
+                  </Card>
+                );
+              })}
+            </div>
+          ) : (
+            <EmptyState
+              className="catalog-empty-state"
+              title={`正在准备${subject.title}课程`}
+              description="这个学期的课程内容正在核对教材版本，准备好后就会开放。"
+              headingLevel={3}
+            />
+          )}
         </section>
         <footer className="catalog-footer">
           <span>学习靠好奇心，每次完成一点点就很棒。</span>

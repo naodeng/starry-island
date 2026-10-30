@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { ActivityDefinition } from '../../content/types';
 import type { ChallengeBackupData } from './backup';
-import { mergeChallengeBackupData } from './backupMerge';
+import { filterRetiredGrade2Term1MathData, mergeChallengeBackupData } from './backupMerge';
 import type { ChallengeAttempt, ChallengeQuestionSnapshot, TaskProgress, WrongQuestionRecord } from './types';
 
 function question(questionId: string, explanation = '解题说明'): ChallengeQuestionSnapshot {
@@ -81,6 +81,36 @@ const emptyData: ChallengeBackupData = {
 };
 
 describe('safe challenge backup merge', () => {
+  it('filters retired Grade 2 Term 1 Math records from a local recovery snapshot while retaining all other data', () => {
+    const obsoleteQuestionId = 'challenge-question:grade-2/term-1/math/unit-02/basic/task-01/session-01/question-01';
+    const retainedQuestionId = 'question-grade-2-term-2-math';
+    const obsolete = question(obsoleteQuestionId);
+    const retained = question(retainedQuestionId);
+    const obsoleteAttempt = attempt('grade-2-term-1-math-unit-02/basic-01', 'old-math');
+    const currentAttempt = attempt('grade-2-term-1-math-unit-02/basic-01-v2', 'new-math');
+    const retainedAttempt = attempt('grade-2-term-2-math-unit-01-basic-01', 'term-2');
+    const obsoleteProgress = progress({ taskId: obsoleteAttempt.taskId });
+    const currentProgress = progress({ taskId: currentAttempt.taskId });
+    const retainedProgress = progress({ taskId: retainedAttempt.taskId });
+    const obsoleteWrong = wrongQuestion({ questionId: obsoleteQuestionId, question: obsolete });
+    const retainedWrong = wrongQuestion({ questionId: retainedQuestionId, question: retained });
+
+    const filtered = filterRetiredGrade2Term1MathData({
+      attempts: [obsoleteAttempt, currentAttempt, retainedAttempt],
+      taskProgress: [obsoleteProgress, currentProgress, retainedProgress],
+      recentQuestionAttempts: [[obsoleteQuestionId], [obsoleteQuestionId, retainedQuestionId], [retainedQuestionId]],
+      wrongQuestions: [obsoleteWrong, retainedWrong],
+    });
+
+    expect(filtered.data).toEqual({
+      attempts: [currentAttempt, retainedAttempt],
+      taskProgress: [currentProgress, retainedProgress],
+      recentQuestionAttempts: [[retainedQuestionId], [retainedQuestionId]],
+      wrongQuestions: [retainedWrong],
+    });
+    expect(filtered.excluded).toEqual({ attempts: 1, taskProgress: 1, recentQuestionIds: 2, wrongQuestions: 1 });
+  });
+
   it('preserves local active attempts and merges task progress without adding duplicate counts', () => {
     const localActive = attempt('task-active', 'local-active');
     const incomingActive = attempt('task-active', 'backup-active');

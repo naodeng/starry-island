@@ -97,7 +97,7 @@ describe('achievement progress', () => {
       'grade-2/term-1/chinese/unit-01',
     ]);
     expect(getRegisteredLearningPositions(source)).toEqual([
-      ...Array.from({ length: 9 }, (_, index) => ({ grade: 2, term: 1 as const, unit: index + 1 })),
+      ...Array.from({ length: 6 }, (_, index) => ({ grade: 2, term: 1 as const, unit: index + 1 })),
     ]);
     const verifiedKeys = getKnownCurriculumPositions().map((position) => position.curriculumUnitKey);
     const expectedVerifiedKeys = curriculum.grades.flatMap((grade) => grade.terms.flatMap((term) => term.subjects.flatMap((subject) => (
@@ -143,7 +143,7 @@ describe('achievement progress', () => {
     const source = createVerifiedCurriculum(1);
     const assumedProgress = getLearningUnitProgress([], { grade: 2, term: 1, unit: 2 }, source);
 
-    expect(assumedProgress).toHaveLength(16);
+    expect(assumedProgress).toHaveLength(13);
     expect(assumedProgress[0].completed).toBe(true);
     expect(getCompletedUnitCount([], { grade: 2, term: 1, unit: 2 }, source)).toBe(3);
   });

@@ -54,6 +54,64 @@ async function openTestDatabase(factory: IDBFactory, databaseName: string): Prom
   });
 }
 
+async function createVersionFourChallengeDatabase(factory: IDBFactory, databaseName: string, data: ChallengeBackupData) {
+  const database = await new Promise<IDBDatabase>((resolve, reject) => {
+    const request = factory.open(databaseName, 4);
+    request.onupgradeneeded = () => {
+      request.result.createObjectStore('attempts', { keyPath: 'taskId' });
+      request.result.createObjectStore('taskProgress', { keyPath: 'taskId' });
+      request.result.createObjectStore('challengeMeta', { keyPath: 'key' });
+      request.result.createObjectStore('wrongQuestions', { keyPath: 'questionId' });
+      request.result.createObjectStore('quarantinedRecords', { autoIncrement: true });
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const transaction = database.transaction(['attempts', 'taskProgress', 'challengeMeta', 'wrongQuestions', 'quarantinedRecords'], 'readwrite');
+      const attempts = transaction.objectStore('attempts');
+      const taskProgress = transaction.objectStore('taskProgress');
+      const wrongQuestions = transaction.objectStore('wrongQuestions');
+      data.attempts.forEach((record) => attempts.put(record));
+      data.taskProgress.forEach((record) => taskProgress.put(record));
+      data.wrongQuestions.forEach((record) => wrongQuestions.put(record));
+      transaction.objectStore('challengeMeta').put({ key: 'recent-question-ids', attemptQuestionIds: data.recentQuestionAttempts });
+      transaction.objectStore('challengeMeta').put(activeRecoveryPoint(data, '2026-10-29T10:00:00.000Z'));
+      transaction.objectStore('quarantinedRecords').add(makeQuarantinedRow({ raw: 'keep quarantine source' }));
+      transaction.oncomplete = () => resolve();
+      transaction.onerror = () => reject(transaction.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error('Could not seed version 4 challenge data.'));
+    });
+  } finally {
+    database.close();
+  }
+}
+
+function makeProgressRecord(taskId: string): TaskProgress {
+  return {
+    taskId,
+    bestCorrect: 1,
+    bestTotal: 2,
+    latestCorrect: 1,
+    latestTotal: 2,
+    completedCount: 1,
+    everPassed: false,
+    updatedAt: '2026-10-29T10:00:00.000Z',
+    revision: 1,
+  };
+}
+
+function makeWrongQuestionRecord(questionId: string) {
+  return {
+    questionId,
+    question: question(questionId),
+    wrongCount: 1,
+    lastWrongAt: '2026-10-29T10:00:00.000Z',
+    correctAttemptStreak: 0 as const,
+  };
+}
+
 async function readRawRecoveryPoint(factory: IDBFactory, databaseName: string): Promise<unknown> {
   const database = await openTestDatabase(factory, databaseName);
   try {
@@ -251,6 +309,60 @@ afterEach(() => {
 });
 
 describe('IndexedDB challenge repository', () => {
+  it('atomically removes retired Grade 2 Term 1 Math records while retaining other courses and quarantine data', async () => {
+    const factory = new IDBFactory();
+    const databaseName = `challenge-grade2-math-migration-${crypto.randomUUID()}`;
+    const oldTaskId = 'grade-2-term-1-math-unit-02/basic-01';
+    const otherTaskId = 'grade-2-term-2-math-unit-01-basic-01';
+    const oldQuestionId = 'challenge-question:grade-2/term-1/math/unit-02/basic/task-01/session-01/question-01';
+    const otherQuestionId = 'question-grade-2-term-2-math-unit-01';
+    const oldAttempt = makeAttempt(oldTaskId, 'old-grade-2-math-attempt', [oldQuestionId]);
+    const otherAttempt = makeAttempt(otherTaskId, 'other-term-math-attempt', [otherQuestionId]);
+    const data: ChallengeBackupData = {
+      attempts: [oldAttempt, otherAttempt],
+      taskProgress: [makeProgressRecord(oldTaskId), makeProgressRecord(otherTaskId)],
+      recentQuestionAttempts: [[oldQuestionId], [oldQuestionId, otherQuestionId], [otherQuestionId]],
+      wrongQuestions: [makeWrongQuestionRecord(oldQuestionId), makeWrongQuestionRecord(otherQuestionId)],
+    };
+    await createVersionFourChallengeDatabase(factory, databaseName, data);
+
+    const repository = createChallengeRepository({ factory, databaseName });
+    repositories.push(repository);
+    expect(await repository.getBackupSnapshot()).toEqual({
+      attempts: [otherAttempt],
+      taskProgress: [makeProgressRecord(otherTaskId)],
+      recentQuestionAttempts: [[otherQuestionId], [otherQuestionId]],
+      wrongQuestions: [makeWrongQuestionRecord(otherQuestionId)],
+    });
+    expect(await repository.getQuarantinedRecordCount()).toBe(1);
+    expect(await repository.getRecoveryPoint('2026-10-29T11:00:00.000Z')).toMatchObject({
+      data: {
+        attempts: [otherAttempt],
+        taskProgress: [makeProgressRecord(otherTaskId)],
+        recentQuestionAttempts: [[otherQuestionId], [otherQuestionId]],
+        wrongQuestions: [makeWrongQuestionRecord(otherQuestionId)],
+      },
+    });
+
+    await repository.close();
+    const restoredAttempt = makeAttempt(oldTaskId, 'post-migration-attempt', [oldQuestionId]);
+    const database = await openTestDatabase(factory, databaseName);
+    try {
+      await new Promise<void>((resolve, reject) => {
+        const transaction = database.transaction('attempts', 'readwrite');
+        transaction.objectStore('attempts').put(restoredAttempt);
+        transaction.oncomplete = () => resolve();
+        transaction.onerror = () => reject(transaction.error);
+        transaction.onabort = () => reject(transaction.error ?? new Error('Could not seed post-migration record.'));
+      });
+    } finally {
+      database.close();
+    }
+    const secondRepository = createChallengeRepository({ factory, databaseName });
+    repositories.push(secondRepository);
+    expect(await secondRepository.getActiveAttempt(oldTaskId)).toEqual(restoredAttempt);
+  });
+
   it('creates the schema and starts with no active attempt, progress, or recent IDs', async () => {
     const repository = createRepository();
     expect(await repository.getActiveAttempt('task-1')).toBeNull();
@@ -718,7 +830,7 @@ describe('IndexedDB challenge repository', () => {
 
     const repository = createChallengeRepository({ factory, databaseName });
     repositories.push(repository);
-    expect(CHALLENGE_DATABASE_VERSION).toBe(4);
+    expect(CHALLENGE_DATABASE_VERSION).toBe(5);
     expect(await repository.getActiveAttempt('task-v3')).toEqual({ ...legacyAttempt, snapshotSchemaVersion: 1 });
     expect(await repository.getTaskProgress('task-v3')).toEqual(progress);
     expect(await repository.getRecentQuestionIds()).toEqual(['question-v3-a']);

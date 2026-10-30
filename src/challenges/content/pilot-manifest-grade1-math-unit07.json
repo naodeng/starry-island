@@ -7,7 +7,6 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -22,8 +21,6 @@
       "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-02",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -39,7 +36,6 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -70,7 +66,7 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -84,6 +80,7 @@
       "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-06",
       "difficulty": "basic",
       "knowledgePointIds": [
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -98,7 +95,7 @@
       "activityId": "grade-1/term-1/math/unit-07/basic/task-01/session-01/question-07",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -114,7 +111,6 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -130,7 +126,6 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -145,8 +140,6 @@
       "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-02",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -162,7 +155,6 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -178,7 +170,7 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -192,7 +184,7 @@
       "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-06",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -207,7 +199,7 @@
       "activityId": "grade-1/term-1/math/unit-07/basic/task-02/session-01/question-07",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -252,7 +244,6 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-02",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -267,6 +258,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-03",
       "difficulty": "basic",
       "knowledgePointIds": [
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -296,7 +288,6 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-05",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -326,7 +317,6 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-07",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -370,7 +360,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-10",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -415,7 +405,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-basic-13",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -431,7 +421,6 @@
       "difficulty": "basic",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -462,7 +451,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -478,7 +466,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -493,8 +480,6 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-03",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -524,8 +509,7 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-05",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -539,6 +523,7 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-06",
       "difficulty": "advanced",
       "knowledgePointIds": [
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -553,7 +538,7 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-07",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -568,7 +553,7 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-01/session-01/question-08",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -584,7 +569,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -600,7 +584,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -616,7 +599,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -631,8 +613,7 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-05",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -646,7 +627,7 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-06",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -662,7 +643,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -677,7 +657,7 @@
       "activityId": "grade-1/term-1/math/unit-07/advanced/task-02/session-01/question-08",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -692,7 +672,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-01",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -708,7 +688,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -738,7 +717,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-04",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -753,8 +732,6 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-05",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -770,7 +747,7 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -784,6 +761,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-07",
       "difficulty": "advanced",
       "knowledgePointIds": [
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -798,9 +776,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-08",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading",
-        "clock-hand-roles"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -814,7 +790,6 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-09",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -830,7 +805,7 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -845,7 +820,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -875,7 +849,6 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-advanced-13",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -891,7 +864,6 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -907,7 +879,7 @@
       "difficulty": "advanced",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -922,7 +894,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -938,7 +909,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -953,8 +923,6 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-03",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -984,8 +952,7 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-05",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -999,7 +966,7 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-06",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-hand-roles"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1013,7 +980,7 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-07",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1028,7 +995,7 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-01/session-01/question-08",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1044,7 +1011,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1060,7 +1026,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1076,7 +1041,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1091,8 +1055,7 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-05",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1106,8 +1069,7 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-06",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
-        "clock-hand-roles"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1121,7 +1083,7 @@
       "activityId": "grade-1/term-1/math/unit-07/high/task-02/session-01/question-07",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1137,7 +1099,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1153,7 +1114,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1169,7 +1129,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1185,7 +1144,7 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1199,7 +1158,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-07-high-04",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-half-hour-reading",
+        "clock-whole-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1215,7 +1174,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1231,7 +1189,7 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1246,7 +1204,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1262,7 +1219,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1278,7 +1234,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1294,7 +1249,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1310,7 +1264,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1326,7 +1279,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1342,7 +1294,7 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading"
+        "clock-hand-roles"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1357,7 +1309,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1373,7 +1324,6 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "clock-whole-hour-reading",
-        "clock-half-hour-reading",
         "clock-hand-roles"
       ],
       "lifecycle": "active",
@@ -1397,13 +1347,12 @@
         ],
         "coreKnowledgePointIds": [
           "clock-whole-hour-reading",
-          "clock-half-hour-reading",
           "clock-hand-roles"
         ],
         "mappingEvidence": {
           "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上册数学; src/content/grade-1-and-3/catalog.ts",
-          "checkedAt": "2026-10-23",
-          "notes": "正式编号第七单元“认识钟表”，范围为整时、半时与指针辨认；每档排除一条引入分钟概念的课程活动，不修改原学习 Task。"
+          "checkedAt": "2026-10-28",
+          "notes": "正式编号第七单元“认识钟表”，依据固定教材第84–87页，范围为整时读数及时针、分针作用；不包含半时、分钟换算或经过时间计算。课程活动和闯关题均按此范围复核。"
         },
         "tasks": [
           {
@@ -1420,7 +1369,7 @@
             "difficulty": "basic",
             "targetCount": 15,
             "requiredKnowledgePointIds": [
-              "clock-half-hour-reading",
+              "clock-whole-hour-reading",
               "clock-hand-roles"
             ]
           },
@@ -1430,7 +1379,7 @@
             "targetCount": 15,
             "requiredKnowledgePointIds": [
               "clock-whole-hour-reading",
-              "clock-half-hour-reading"
+              "clock-hand-roles"
             ]
           },
           {
@@ -1438,7 +1387,7 @@
             "difficulty": "advanced",
             "targetCount": 15,
             "requiredKnowledgePointIds": [
-              "clock-half-hour-reading",
+              "clock-whole-hour-reading",
               "clock-hand-roles"
             ]
           },
@@ -1448,7 +1397,6 @@
             "targetCount": 15,
             "requiredKnowledgePointIds": [
               "clock-whole-hour-reading",
-              "clock-half-hour-reading",
               "clock-hand-roles"
             ]
           }

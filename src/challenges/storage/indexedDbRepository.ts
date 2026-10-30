@@ -1,11 +1,11 @@
 import { submitAnswer } from '../../learning/answers';
-import { isChallengeBackupData, normalizeImportedChallengeBackupData } from '../domain/backup';
-import type { ChallengeBackupData, ChallengeBackupImportData } from '../domain/backup';
+import { isChallengeBackupData, normalizeRecoverySnapshotData } from '../domain/backup';
+import type { ChallengeBackupData, ChallengeRecoverySnapshotImportData } from '../domain/backup';
 import { prepareQuarantinedRecordForRestore, serializeQuarantineComparableValue } from '../domain/quarantineRecovery';
 import type {
   QuarantineRecoveryPreparation,
 } from '../domain/quarantineRecovery';
-import { mergeChallengeBackupData } from '../domain/backupMerge';
+import { filterRetiredGrade2Term1MathData, mergeChallengeBackupData } from '../domain/backupMerge';
 import { gradeAttempt } from '../domain/grading';
 import type { ChallengeAnswer, ChallengeAttempt, TaskProgress, WrongQuestionRecord } from '../domain/types';
 import { CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } from '../domain/snapshotSchema';
@@ -40,7 +40,7 @@ import type {
 } from './repository';
 import { transitionWrongQuestion } from '../domain/wrongQuestions';
 
-export const CHALLENGE_DATABASE_VERSION = 4;
+export const CHALLENGE_DATABASE_VERSION = 5;
 const DEFAULT_DATABASE_NAME = 'starry-island-challenges';
 const ATTEMPTS_STORE = 'attempts';
 const PROGRESS_STORE = 'taskProgress';
@@ -125,6 +125,67 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
+function isRetiredGrade2Term1MathTaskId(value: unknown): value is string {
+  return typeof value === 'string'
+    && /^grade-2-term-1-math-(?:unit-\d+|first-half|second-half|end-term)(?:\/|-|$)/.test(value);
+}
+
+function isRetiredGrade2Term1MathQuestionId(value: unknown): value is string {
+  return typeof value === 'string' && (
+    value.startsWith('grade-2/term-1/math/')
+    || value.startsWith('challenge-question:grade-2/term-1/math/')
+    || value.startsWith('challenge-question:challenge-supplement-grade-2-term-1-math-')
+    || value.startsWith('challenge-question:grade-2-term-1-math-')
+  );
+}
+
+function migrateRetiredGrade2Term1MathData(transaction: IDBTransaction): void {
+  for (const storeName of [ATTEMPTS_STORE, PROGRESS_STORE] as const) {
+    const cursorRequest = transaction.objectStore(storeName).openCursor();
+    cursorRequest.onsuccess = () => {
+      const cursor = cursorRequest.result;
+      if (!cursor) return;
+      if (isRetiredGrade2Term1MathTaskId((cursor.value as Record<string, unknown>)?.taskId)) cursor.delete();
+      cursor.continue();
+    };
+  }
+
+  const wrongQuestionRequest = transaction.objectStore(WRONG_QUESTIONS_STORE).openCursor();
+  wrongQuestionRequest.onsuccess = () => {
+    const cursor = wrongQuestionRequest.result;
+    if (!cursor) return;
+    if (isRetiredGrade2Term1MathQuestionId((cursor.value as Record<string, unknown>)?.questionId)) cursor.delete();
+    cursor.continue();
+  };
+
+  const metaStore = transaction.objectStore(META_STORE);
+  const recentRequest = metaStore.get(RECENT_QUESTION_IDS_KEY);
+  recentRequest.onsuccess = () => {
+    const recent = recentRequest.result;
+    if (!isValidRecentQuestionRecord(recent)) return;
+    let removedAny = false;
+    const attemptQuestionIds = recent.attemptQuestionIds.flatMap((attempt) => {
+      const retained = attempt.filter((questionId) => {
+        const keep = !isRetiredGrade2Term1MathQuestionId(questionId);
+        if (!keep) removedAny = true;
+        return keep;
+      });
+      return retained.length > 0 || attempt.length === 0 ? [retained] : [];
+    });
+    if (removedAny) metaStore.put({ ...recent, attemptQuestionIds });
+  };
+
+  const recoveryPointRequest = metaStore.get(RECOVERY_POINT_KEY);
+  recoveryPointRequest.onsuccess = () => {
+    const recoveryPoint = recoveryPointRequest.result;
+    if (!isChallengeRecoveryPoint(recoveryPoint)) return;
+    const filtered = filterRetiredGrade2Term1MathData(recoveryPoint.data);
+    if (Object.values(filtered.excluded).some((count) => count > 0)) {
+      metaStore.put({ ...recoveryPoint, data: filtered.data });
+    }
+  };
+}
+
 const DATABASE_MIGRATIONS: Array<(database: IDBDatabase, transaction: IDBTransaction) => void> = [
   (database) => {
     ensureObjectStore(database, ATTEMPTS_STORE, { keyPath: 'taskId' });
@@ -151,7 +212,7 @@ const DATABASE_MIGRATIONS: Array<(database: IDBDatabase, transaction: IDBTransac
       const recoveryPoint = recoveryPointRequest.result;
       if (isChallengeRecoveryPoint(recoveryPoint) || !isRecord(recoveryPoint)) return;
       try {
-        const data = normalizeImportedChallengeBackupData(recoveryPoint.data as ChallengeBackupImportData);
+        const data = normalizeRecoverySnapshotData(recoveryPoint.data as ChallengeRecoverySnapshotImportData);
         const migrated = { ...recoveryPoint, data };
         if (isChallengeRecoveryPoint(migrated)) metaStore.put(migrated);
       } catch {
@@ -159,6 +220,7 @@ const DATABASE_MIGRATIONS: Array<(database: IDBDatabase, transaction: IDBTransac
       }
     };
   },
+  (_database, transaction) => migrateRetiredGrade2Term1MathData(transaction),
 ];
 
 function applyDatabaseMigrations(database: IDBDatabase, transaction: IDBTransaction, oldVersion: number): void {

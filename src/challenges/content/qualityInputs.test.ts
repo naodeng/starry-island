@@ -25,8 +25,7 @@ import { grade2Term1ChineseUnit06SupplementalActivities } from './grade2Term1Chi
 import { grade2Term1ChineseUnit07SupplementalActivities } from './grade2Term1ChineseUnit07SupplementalActivities';
 import { grade2Term1ChineseUnit08SupplementalActivities } from './grade2Term1ChineseUnit08SupplementalActivities';
 import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
-import { grade2Term1MathUnit08SupplementalActivities } from './grade2Term1MathUnit08SupplementalActivities';
-import { grade2Term1MathUnit09SupplementalActivities } from './grade2Term1MathUnit09SupplementalActivities';
+import { grade2Term1MathTextbookSupplementalActivities } from './grade2Term1MathTextbookSupplementalActivities';
 import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1EnglishUnit01SupplementalActivities';
 import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
 import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
@@ -276,26 +275,26 @@ describe('loadChallengeQualityInputs', () => {
     expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-04');
   });
 
-  it('loads Grade 2 Math Unit 8 supplemental activities from their declared unit', async () => {
+  it('loads Grade 2 Math Unit 5 supplemental activities from their declared unit', async () => {
     const manifest = clonePilotManifest();
-    const activityId = grade2Term1MathUnit08SupplementalActivities[0]!.activity.id;
+    const activityId = grade2Term1MathTextbookSupplementalActivities.find(({ sourceUnitId }) => sourceUnitId.endsWith('unit-05'))!.activity.id;
     const question = manifest.questions.find(({ activityId: id }) => id === activityId);
     const input = await loadChallengeQualityInputs(manifest);
 
     expect(question).toBeDefined();
     expect(input.activitiesById.has(activityId)).toBe(true);
-    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-08');
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-05');
   });
 
-  it('loads Grade 2 Math Unit 9 supplemental activities from their declared unit', async () => {
+  it('loads Grade 2 Math Unit 6 supplemental activities from their declared unit', async () => {
     const manifest = clonePilotManifest();
-    const activityId = grade2Term1MathUnit09SupplementalActivities[0]!.activity.id;
+    const activityId = grade2Term1MathTextbookSupplementalActivities.find(({ sourceUnitId }) => sourceUnitId.endsWith('unit-06'))!.activity.id;
     const question = manifest.questions.find(({ activityId: id }) => id === activityId);
     const input = await loadChallengeQualityInputs(manifest);
 
     expect(question).toBeDefined();
     expect(input.activitiesById.has(activityId)).toBe(true);
-    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-09');
+    expect(input.sourceUnitByActivityId.get(activityId)).toBe('grade-2/term-1/math/unit-06');
   });
 
   it('loads Grade 2 English Unit 1 supplemental activities from their declared unit', async () => {

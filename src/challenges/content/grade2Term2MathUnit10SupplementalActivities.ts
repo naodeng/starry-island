@@ -45,7 +45,7 @@ const integratedReview = 'integrated-review-and-answer-checking';
 
 const drafts: Record<Difficulty, ActivityDraft[]> = {
   basic: [
-    { knowledgePointIds: [multiplication], prompt: '8×6等于多少？', answer: '48', distractors: ['42', '54'], hint: '想一想八六的乘法口诀。', explanation: '八六四十八，所以8×6=48。' },
+    { knowledgePointIds: [multiplication], prompt: '6盒彩笔每盒8支，一共有多少支？', answer: '48', distractors: ['42', '54'], hint: '求6个8是多少。', explanation: '6盒，每盒8支，用6乘8，得到48支。' },
     { knowledgePointIds: [division], prompt: '45÷5等于多少？', answer: '9', distractors: ['8', '10'], hint: '想哪个数乘5等于45。', explanation: '5乘9等于45，所以45÷5=9。' },
     { knowledgePointIds: [reading, zero], prompt: '“五千零七十二”写成数字是多少？', answer: '5,072', distractors: ['5,720', '5,702'], hint: '按千、百、十、个的顺序写出数字，空着的数位用0占位。', explanation: '五千零七十二由5个千、0个百、7个十和2个一组成，写作5,072。' },
     { knowledgePointIds: [number, zero], prompt: '5,072中的0占在哪个数位？', answer: '百位', distractors: ['十位', '个位'], hint: '从右往左依次看各个数位，找到0所在的位置。', explanation: '5,072从右往左是个位2、十位7、百位0、千位5，因此0占百位。' },

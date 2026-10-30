@@ -31,16 +31,14 @@ const term2ChineseUnits = [
 ] as const;
 
 const term1MathEntries = [
-  ['grade-2/term-1/math/unit-01', '第一单元 · 长度单位', 'unit', 1, true],
-  ['grade-2/term-1/math/unit-02', '第二单元 · 100以内的加法和减法（二）', 'unit', 2, true],
-  ['grade-2/term-1/math/unit-03', '第三单元 · 角的初步认识', 'unit', 3, true],
-  ['grade-2/term-1/math/unit-04', '第四单元 · 表内乘法（一）', 'unit', 4, true],
-  ['grade-2/term-1/math/unit-05', '第五单元 · 观察物体（一）', 'unit', 5, true],
-  ['grade-2/term-1/math/unit-06', '第六单元 · 表内乘法（二）', 'unit', 6, true],
-  ['grade-2/term-1/math/unit-07', '第七单元 · 认识时间', 'unit', 7, true],
-  ['grade-2/term-1/math/unit-08', '第八单元 · 数学广角——搭配（一）', 'unit', 8, true],
-  ['grade-2/term-1/math/unit-09', '第九单元 · 总复习', 'unit', 9, true],
-  ['grade-2/term-1/math/integrated-practice-01', '综合实践 · 量一量，比一比', 'integrated-practice', null, false],
+  ['grade-2/term-1/math/unit-01', '第一单元 · 分类与整理', 'unit', 1, true],
+  ['grade-2/term-1/math/unit-02', '第二单元 · 1～6 的表内乘法', 'unit', 2, true],
+  ['grade-2/term-1/math/unit-03', '第三单元 · 1～6 的表内除法', 'unit', 3, true],
+  ['grade-2/term-1/math/integrated-practice-01', '综合实践 · 校园小导游', 'integrated-practice', null, false],
+  ['grade-2/term-1/math/unit-04', '第四单元 · 厘米和米', 'unit', 4, true],
+  ['grade-2/term-1/math/integrated-practice-02', '综合实践 · 身体上的尺子', 'integrated-practice', null, false],
+  ['grade-2/term-1/math/unit-05', '第五单元 · 7～9 的表内乘、除法', 'unit', 5, true],
+  ['grade-2/term-1/math/unit-06', '第六单元 · 复习与关联', 'unit', 6, true],
 ] as const;
 
 const term2MathEntries = [
@@ -313,6 +311,23 @@ describe('curriculum registry', () => {
     });
   });
 
+  it('alignsEachGrade2Term1MathEntryToTheUserProvidedBookTopics', () => {
+    const expectedTopics = [
+      ['分类', '整理', '标准'],
+      ['乘法', '相同加数', '1～6'],
+      ['除法', '平均分', '1～6'],
+      ['校园', '东', '南', '西', '北'],
+      ['厘米', '米', '测量'],
+      ['身体尺', '拃', '庹', '步'],
+      ['乘法', '除法', '7～9'],
+      ['复习', '关联', '乘法', '除法', '方向', '长度'],
+    ];
+    term1MathEntries.forEach(([unitKey], index) => {
+      const topics = curriculum.units[unitKey]?.sourceTopics.join(' ');
+      expectedTopics[index]?.forEach((topic) => expect(topics, `${unitKey} should cover ${topic}`).toContain(topic));
+    });
+  });
+
   it('listsAllVerifiedTerm2MathEntries', () => {
     const subject = curriculum.grades.find(({ id }) => id === 'grade-2')?.terms.find(({ id }) => id === 'term-2')?.subjects.find(({ id }) => id === 'math');
     expect(subject?.units.map(({ id }) => id)).toEqual(term2MathEntries.map(([key]) => key.split('/').at(-1)));
@@ -456,14 +471,6 @@ describe('curriculum registry', () => {
         path: '小学/语文/统编版/义务教育教科书·语文二年级下册.pdf',
         pep: 'https://www.pep.com.cn/bks/xxyw/jzjd/202507/W020250716532280620290.pdf',
       },
-      'grade-2/term-1/math': {
-        path: '小学/数学/人教版/义务教育教科书 · 数学二年级上册.pdf',
-        pep: 'https://www.pep.com.cn/rjyx/qnbjsjc/sytj/202605/t20260514_2006676.shtml',
-      },
-      'grade-2/term-2/math': {
-        path: '小学/数学/人教版/义务教育教科书·数学二年级下册.pdf',
-        pep: 'https://www.pep.com.cn/rjyx/qnbjsjc/sytj/202605/t20260514_2006676.shtml',
-      },
       'grade-2/term-1/english': {
         path: '小学/英语/人教版（一年级起点）（主编：吴欣）/义务教育教科书·英语（一年级起点）二年级上册.pdf',
         pep: 'https://www.pep.com.cn/xw/zt/hd/12/xjcjs/xx/202409/t20240920_1995564.html',
@@ -483,17 +490,36 @@ describe('curriculum registry', () => {
       expect(book?.fallbackReason?.trim().length).toBeGreaterThan(0);
       expect(book?.tapxCommit).toBe(TAPX_TEXTBOOK_COMMIT);
       expect(book?.verificationStatus).toBe(
-          editionId === 'grade-2/term-1/chinese' || editionId === 'grade-2/term-2/chinese' || editionId === 'grade-2/term-1/math' || editionId === 'grade-2/term-2/math' || editionId === 'grade-2/term-1/english' || editionId === 'grade-2/term-2/english'
+          editionId === 'grade-2/term-1/chinese' || editionId === 'grade-2/term-2/chinese' || editionId === 'grade-2/term-1/english' || editionId === 'grade-2/term-2/english'
           ? 'verified'
           : 'pending',
       );
     }
 
     expect(curriculum.textbooks['grade-2/term-2/chinese']?.isbn).toBe('978-7-107-32383-6');
-    expect(curriculum.textbooks['grade-2/term-1/math']?.isbn).toBe('978-7-107-36923-0');
+    expect(curriculum.textbooks['grade-2/term-1/math']?.isbn).toBe('978-7-107-38912-2');
     expect(curriculum.textbooks['grade-2/term-2/english']?.isbn).toBe('978-7-107-27396-4');
     expect(curriculum.textbooks['grade-2/term-1/chinese']?.isbn).toBeNull();
     expect(curriculum.textbooks['grade-2/term-2/math']?.edition).toBeNull();
+    expect(curriculum.textbooks['grade-2/term-2/math']?.isbn).toBe('978-7-107-37176-9');
+  });
+
+  it('records user-provided textbooks as ISBN URNs without TapX fallback metadata', () => {
+    for (const [editionId, isbn] of [
+      ['grade-2/term-1/math', '978-7-107-38912-2'],
+      ['grade-2/term-2/math', '978-7-107-37176-9'],
+    ]) {
+      expect(curriculum.textbooks[editionId]).toMatchObject({
+        sourceKind: 'user-provided',
+        sourceUrl: `urn:starry-island:textbook:isbn:${isbn}`,
+        isbn,
+        edition: null,
+        printing: null,
+        fallbackReason: null,
+        tapxCommit: null,
+        verificationStatus: 'verified',
+      });
+    }
   });
 
   it('marks only the fully checked fallback books as verified', () => {
@@ -832,22 +858,22 @@ describe('curriculum registry', () => {
 
   it('orders the term-one length comparison by ascending length', () => {
     expect(getOrderedLabelsForActivity(
-      'grade-2/term-1/math/unit-01',
+      'grade-2/term-1/math/unit-04',
       'advanced',
       '按从短到长排列长度',
     )).toEqual(['90厘米', '1米', '105厘米', '130厘米']);
   });
 
-  it('measures before writing down and comparing the length', () => {
+  it('orients the campus map before placing landmarks', () => {
     expect(getOrderedLabelsForActivity(
       'grade-2/term-1/math/integrated-practice-01',
       'advanced',
-      '完成一张长度调查记录卡',
+      '绘制操场周边的简易方位图',
     )).toEqual([
-      '选一个身边物体并估计长度',
-      '用尺子测量并检查起点',
-      '写下测量值和单位',
-      '和伙伴比较并说明方法',
+      '确认地图上方是北',
+      '先把操场放在中心',
+      '在北侧放旗台',
+      '在东侧放教学楼',
     ]);
   });
 
@@ -896,7 +922,7 @@ describe('curriculum registry', () => {
 
   it('asks the length conversion question in the same unit as its numeric choices', () => {
     const question = getSessionsForDifficulty(
-      curriculum.units['grade-2/term-1/math/unit-01'],
+      curriculum.units['grade-2/term-1/math/unit-04'],
       'advanced',
     ).flatMap(({ activities }) => activities)
       .find((activity) => activity.prompt.includes('1米20厘米'));

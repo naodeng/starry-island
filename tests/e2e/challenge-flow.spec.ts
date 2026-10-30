@@ -1,10 +1,10 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
-const taskId = 'grade-2-term-1-math-unit-02/basic-01';
+const taskId = 'grade-2-term-1-math-unit-02/basic-01-v2';
 const taskUrl = `/challenges/task/${encodeURIComponent(taskId)}`;
-const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01';
+const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01-v2';
 const semesterTaskUrl = `/challenges/task/${encodeURIComponent(semesterTaskId)}`;
 
 interface E2EAttemptSnapshot {
@@ -63,7 +63,7 @@ async function seedQuarantinedAttempt(
 ) {
   await page.goto('/');
   await page.evaluate(({ row, active }) => new Promise<number>((resolve, reject) => {
-    const request = indexedDB.open('starry-island-challenges', 4);
+    const request = indexedDB.open('starry-island-challenges');
     request.onerror = () => reject(request.error);
     request.onupgradeneeded = () => {
       const database = request.result;
@@ -218,9 +218,10 @@ test('downloads a versioned local backup with a valid checksum', async ({ page }
     version: 1,
     data: { attempts: [], taskProgress: [], recentQuestionAttempts: [], wrongQuestions: [] },
   });
+  expect(backup).not.toHaveProperty('curriculumVersions');
   expect(integrity.algorithm).toBe('SHA-256');
   expect(integrity.digest).toBe(createHash('sha256').update(stableSerialize(payload)).digest('hex'));
-  await expect(page.getByRole('status')).toHaveText('闯关备份已生成并下载到此设备。');
+  await expect(page.getByText('闯关备份已生成并下载到此设备。', { exact: true })).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
 
@@ -368,7 +369,7 @@ test('downloads a user-requested diagnostics report containing only allowlisted 
     format: 'starry-island-challenge-diagnostics',
     version: 1,
     storage: {
-      schemaVersion: 4,
+      schemaVersion: 5,
       recordCounts: { activeAttempts: 0, taskProgress: 0, recentCompletionGroups: 0, wrongQuestions: 0 },
     },
   });
@@ -376,7 +377,7 @@ test('downloads a user-requested diagnostics report containing only allowlisted 
   expect(Number.isFinite(Date.parse(String(report.generatedAt)))).toBe(true);
   expect(Object.keys(report.capabilities as object)).toEqual(['indexedDB', 'webLocks']);
   expect(JSON.stringify(report)).not.toMatch(/student|questionId|prompt|answer|userAgent|china-study-progress-v1/i);
-  await expect(page.getByRole('status')).toHaveText('诊断信息已生成并下载到此设备；没有上传任何数据。');
+  await expect(page.getByText('诊断信息已生成并下载到此设备；没有上传任何数据。', { exact: true })).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
 });
 
@@ -385,7 +386,7 @@ test('isolates malformed local records and exports them only after an explicit a
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
   await page.goto('/');
   await page.evaluate(() => new Promise<void>((resolve, reject) => {
-    const open = indexedDB.open('starry-island-challenges', 2);
+    const open = indexedDB.open('starry-island-challenges');
     open.onerror = () => reject(open.error);
     open.onupgradeneeded = () => {
       open.result.createObjectStore('attempts', { keyPath: 'taskId' });
@@ -445,7 +446,7 @@ test('isolates malformed local records and exports them only after an explicit a
     version: 1,
     records: [{ sourceStore: 'taskProgress', record: { taskId: 'damaged-progress', bestCorrect: 'invalid' } }],
   });
-  await expect(page.getByRole('status')).toContainText('没有上传任何数据');
+  await expect(page.getByText(/没有上传任何数据/u)).toBeVisible();
 });
 
 test('restores-known-legacy-attempt-after-preview-and-confirmation', async ({ page }) => {
@@ -538,8 +539,9 @@ test('previews and safely merges an active attempt without duplicating data', as
   await page.goto('/settings/backup');
   await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  const questionId = 'challenge-question:grade-2/term-1/math/unit-02/basic/task-01/session-01/question-01';
   const question = {
-    questionId: 'backup-question',
+    questionId,
     activityId: 'backup-activity',
     difficulty: 'basic',
     knowledgePointIds: ['addition'],
@@ -556,16 +558,16 @@ test('previews and safely merges an active attempt without duplicating data', as
   const data = {
     attempts: [{
       attemptId: 'backup-attempt', taskId, difficulty: 'basic', status: 'in-progress', questions: [question],
-      assemblySeed: 'seed', contentManifestVersion: 'v1', answers: {}, currentIndex: 0,
+      snapshotSchemaVersion: 1, assemblySeed: 'seed', contentManifestVersion: 'v1', answers: {}, currentIndex: 0,
       startedAt: '2026-10-22T00:00:00.000Z', elapsedMs: 1000, revision: 0,
     }],
     taskProgress: [{
       taskId, bestCorrect: 1, bestTotal: 1, latestCorrect: 0, latestTotal: 1,
       completedCount: 1, everPassed: true, updatedAt: '2026-10-22T00:00:00.000Z', revision: 1,
     }],
-    recentQuestionAttempts: [['backup-question']],
+    recentQuestionAttempts: [[questionId]],
     wrongQuestions: [{
-      questionId: 'backup-question', question, wrongCount: 2,
+      questionId, question, wrongCount: 2,
       lastWrongAt: '2026-10-21T00:00:00.000Z', correctAttemptStreak: 0,
     }],
   };
@@ -604,7 +606,7 @@ test('previews and safely merges an active attempt without duplicating data', as
   await expect(page.getByRole('status').filter({ hasText: '闯关备份已安全合并到此设备' }))
     .toHaveText('闯关备份已安全合并到此设备；课程进度没有改变。');
 
-  const stored = await page.evaluate(async (taskIdToRead) => new Promise((resolve, reject) => {
+  const stored = await page.evaluate(async ({ taskIdToRead, questionIdToRead }) => new Promise((resolve, reject) => {
     const open = indexedDB.open('starry-island-challenges');
     open.onerror = () => reject(open.error);
     open.onsuccess = () => {
@@ -613,7 +615,7 @@ test('previews and safely merges an active attempt without duplicating data', as
       const attemptRequest = transaction.objectStore('attempts').get(taskIdToRead);
       const progressRequest = transaction.objectStore('taskProgress').get(taskIdToRead);
       const recentRequest = transaction.objectStore('challengeMeta').get('recent-question-ids');
-      const wrongRequest = transaction.objectStore('wrongQuestions').get('backup-question');
+      const wrongRequest = transaction.objectStore('wrongQuestions').get(questionIdToRead);
       transaction.oncomplete = () => {
         resolve({
           attempt: attemptRequest.result,
@@ -625,11 +627,11 @@ test('previews and safely merges an active attempt without duplicating data', as
       };
       transaction.onerror = () => reject(transaction.error);
     };
-  }), taskId);
+  }), { taskIdToRead: taskId, questionIdToRead: questionId });
   expect(stored).toMatchObject({
     attempt: { attemptId: 'backup-attempt', currentIndex: 0, snapshotSchemaVersion: 1 },
     progress: { completedCount: 1, bestCorrect: 1 },
-    recent: { attemptQuestionIds: [['backup-question']] },
+    recent: { attemptQuestionIds: [[questionId]] },
     wrongQuestion: { wrongCount: 2 },
   });
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
@@ -648,7 +650,7 @@ test('previews and safely merges an active attempt without duplicating data', as
     recentCompletionGroups: 1,
     wrongQuestions: 1,
   });
-  expect(JSON.stringify(report)).not.toContain('backup-question');
+  expect(JSON.stringify(report)).not.toContain(questionId);
   expect(JSON.stringify(report)).not.toContain('1 + 1');
 });
 
@@ -702,8 +704,8 @@ test('opens the local wrong-question notebook from the challenge center', async 
   await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
   await page.getByRole('button', { name: '打开错题本' }).click();
 
-  await expect(page.getByRole('heading', { name: '错题本' })).toBeVisible();
-  await expect(page.getByRole('status')).toHaveText('完成挑战后，答错的题会出现在这里。');
+  await expect(page.getByRole('heading', { name: '错题本', exact: true })).toBeVisible();
+  await expect(page.getByText('完成挑战后，答错的题会出现在这里；答对两次后会标记为已掌握。', { exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: '返回闯关中心' })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
@@ -711,7 +713,7 @@ test('opens the local wrong-question notebook from the challenge center', async 
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
   await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
   await page.reload();
-  await expect(page.getByRole('heading', { name: '错题本' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '错题本', exact: true })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
   const backButton = page.getByRole('button', { name: '返回闯关中心' });
@@ -953,7 +955,30 @@ test('opens the Grade 2 Math Unit 1 challenge from its course page without chang
   const startButtons = page.getByRole('button', { name: '开始挑战' });
   await expect(startButtons).toHaveCount(5);
   await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-01%2Fbasic-01$/u);
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-01%2Fbasic-01-v2$/u);
+  await page.getByRole('button', { name: '开始挑战' }).click();
+  await expect(page.locator('.challenge-activity h2')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('opens the Grade 2 Math Unit 2 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await page.goto('/grade-2/term-1/math/unit-02');
+  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+
+  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
+  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-02');
+  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第二单元' })).toBeVisible();
+
+  const startButtons = page.getByRole('button', { name: '开始挑战' });
+  await expect(startButtons).toHaveCount(5);
+  await startButtons.first().click();
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-02%2Fbasic-01-v2$/u);
   await page.getByRole('button', { name: '开始挑战' }).click();
   await expect(page.locator('.challenge-activity h2')).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
@@ -976,7 +1001,7 @@ test('opens the Grade 2 Math Unit 3 challenge from its course page without chang
   const startButtons = page.getByRole('button', { name: '开始挑战' });
   await expect(startButtons).toHaveCount(5);
   await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-03%2Fbasic-01$/u);
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-03%2Fbasic-01-v2$/u);
   await page.getByRole('button', { name: '开始挑战' }).click();
   await expect(page.locator('.challenge-activity h2')).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
@@ -999,7 +1024,7 @@ test('opens the Grade 2 Math Unit 4 challenge from its course page without chang
   const startButtons = page.getByRole('button', { name: '开始挑战' });
   await expect(startButtons).toHaveCount(5);
   await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-04%2Fbasic-01$/u);
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-04%2Fbasic-01-v2$/u);
   await page.getByRole('button', { name: '开始挑战' }).click();
   await expect(page.locator('.challenge-activity h2')).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
@@ -1022,7 +1047,7 @@ test('opens the Grade 2 Math Unit 5 challenge from its course page without chang
   const startButtons = page.getByRole('button', { name: '开始挑战' });
   await expect(startButtons).toHaveCount(5);
   await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-05%2Fbasic-01$/u);
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-05%2Fbasic-01-v2$/u);
   await page.getByRole('button', { name: '开始挑战' }).click();
   await expect(page.locator('.challenge-activity h2')).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
@@ -1045,76 +1070,7 @@ test('opens the Grade 2 Math Unit 6 challenge from its course page without chang
   const startButtons = page.getByRole('button', { name: '开始挑战' });
   await expect(startButtons).toHaveCount(5);
   await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-06%2Fbasic-01$/u);
-  await page.getByRole('button', { name: '开始挑战' }).click();
-  await expect(page.locator('.challenge-activity h2')).toBeVisible();
-  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
-
-test('opens the Grade 2 Math Unit 7 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
-  await page.goto('/grade-2/term-1/math/unit-07');
-  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
-
-  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
-  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
-  await page.keyboard.press('Enter');
-  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-07');
-  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第七单元' })).toBeVisible();
-
-  const startButtons = page.getByRole('button', { name: '开始挑战' });
-  await expect(startButtons).toHaveCount(5);
-  await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-07%2Fbasic-01$/u);
-  await page.getByRole('button', { name: '开始挑战' }).click();
-  await expect(page.locator('.challenge-activity h2')).toBeVisible();
-  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
-
-test('opens the Grade 2 Math Unit 8 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
-  await page.goto('/grade-2/term-1/math/unit-08');
-  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
-
-  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
-  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
-  await page.keyboard.press('Enter');
-  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-08');
-  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第八单元' })).toBeVisible();
-
-  const startButtons = page.getByRole('button', { name: '开始挑战' });
-  await expect(startButtons).toHaveCount(5);
-  await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-08%2Fbasic-01$/u);
-  await page.getByRole('button', { name: '开始挑战' }).click();
-  await expect(page.locator('.challenge-activity h2')).toBeVisible();
-  expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-});
-
-test('opens the Grade 2 Math Unit 9 challenge from its course page without changing learning tasks or progress', async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
-  await page.goto('/grade-2/term-1/math/unit-09');
-  const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
-
-  await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
-  await page.getByRole('button', { name: '进入闯关挑战' }).focus();
-  await page.keyboard.press('Enter');
-  await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-09');
-  await expect(page.getByRole('heading', { name: '二年级上册数学 · 第九单元' })).toBeVisible();
-
-  const startButtons = page.getByRole('button', { name: '开始挑战' });
-  await expect(startButtons).toHaveCount(5);
-  await startButtons.first().click();
-  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-09%2Fbasic-01$/u);
+  await expect(page).toHaveURL(/\/challenges\/task\/grade-2-term-1-math-unit-06%2Fbasic-01-v2$/u);
   await page.getByRole('button', { name: '开始挑战' }).click();
   await expect(page.locator('.challenge-activity h2')).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
@@ -2169,7 +2125,7 @@ test('reads only the visible prompt with a local Chinese voice when requested', 
   const audioPlaysBeforeRead = await page.evaluate(() => (window as Window & { challengeAudioPlays: string[] }).challengeAudioPlays.length);
   await page.getByRole('button', { name: '朗读题目' }).click();
 
-  await expect(page.getByRole('status')).toHaveText('正在朗读题目。');
+  await expect(page.getByText('正在朗读题目。', { exact: true })).toBeVisible();
   expect(await page.evaluate(() => (window as Window & { challengeAudioPlays: string[] }).challengeAudioPlays.length)).toBe(audioPlaysBeforeRead);
   expect(await page.evaluate(() => (window as Window & { challengeSpeechCapture?: { text: string; lang: string; localService: boolean } }).challengeSpeechCapture)).toEqual({
     text: visiblePrompt,

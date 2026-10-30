@@ -15,7 +15,6 @@ const coreKnowledgePointIds = [
   'solid-shape-features',
   'solid-shape-use',
   'clock-whole-hour-reading',
-  'clock-half-hour-reading',
 ];
 
 function normalizePrompt(prompt: string): string {
@@ -57,12 +56,61 @@ describe('一年级上册数学第九单元闯关补充题', () => {
       const content = [activity.prompt, activity.hint, activity.explanation, ...activity.options.map(({ label }) => label)].join(' ');
       const numerals = content.match(/\d+/gu) ?? [];
       expect(numerals.every((numeral) => Number(numeral) <= 20), activity.id).toBe(true);
-      expect(activity.prompt).not.toMatch(/(?:1[1-9]|20)\s*[-−]\s*\d+/u);
+      expect(content).not.toMatch(/(?:1[1-9]|20)\s*[-−]\s*\d+/u);
       const correctLabel = activity.options.find(({ id }) => id === activity.correctOptionId)!.label;
       const escapedLabel = correctLabel.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&');
       const directAnswerDisclosure = new RegExp(`(?:答案(?:是|为)|正确答案|应选|应该选择)\\s*${escapedLabel}`, 'u');
       expect(activity.prompt).not.toMatch(directAnswerDisclosure);
       expect(activity.hint).not.toMatch(directAnswerDisclosure);
+    }
+  });
+
+  it('把叠放行为题改成条件明确的图形特征判断', () => {
+    const activity = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-advanced-08'))!.activity;
+
+    expect(activity.prompt).toContain('正方体、球体和圆柱体');
+    expect(activity.prompt).toContain('弯曲表面');
+    expect(activity.options.find(({ id }) => id === activity.correctOptionId)?.label).toBe('正方体');
+  });
+
+  it('高阶图形题比较三种立体图形的滚动表现，不重复基础题', () => {
+    const basic = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-basic-08'))!.activity;
+    const high = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-high-06'))!.activity;
+
+    expect(high.prompt).toContain('观察记录');
+    expect(high.prompt).toContain('正方体、球体和圆柱体');
+    expect(normalizePrompt(high.prompt)).not.toBe(normalizePrompt(basic.prompt));
+    expect(high.options.find(({ id }) => id === high.correctOptionId)?.label).toContain('球体');
+    expect(high.options.find(({ id }) => id === high.correctOptionId)?.label).toContain('圆柱体');
+    expect(high.options.find(({ id }) => id === high.correctOptionId)?.label).toContain('正方体');
+  });
+
+  it('总复习钟表题只覆盖固定教材已学的整时，并避免同难度直接重复', () => {
+    const basicWholeHour = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-basic-09'))!.activity;
+    const basicHourRule = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-basic-10'))!.activity;
+    const advancedHourOrder = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-advanced-10'))!.activity;
+    const highWholeHour = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-high-09'))!.activity;
+    const highHourOrder = grade1MathUnit09SupplementalActivities
+      .find(({ activity }) => activity.id.endsWith('-high-10'))!.activity;
+
+    expect(highWholeHour.prompt).toContain('订正');
+    expect(normalizePrompt(highWholeHour.prompt)).not.toBe(normalizePrompt(basicWholeHour.prompt));
+    expect(basicHourRule.prompt).toContain('整时');
+    expect(normalizePrompt(basicHourRule.prompt)).not.toBe(normalizePrompt(basicWholeHour.prompt));
+    expect(advancedHourOrder.prompt).toContain('从小到大');
+    expect(highHourOrder.prompt).toContain('三个钟面');
+    expect(normalizePrompt(highHourOrder.prompt)).not.toBe(normalizePrompt(advancedHourOrder.prompt));
+
+    for (const { activity } of grade1MathUnit09SupplementalActivities) {
+      const content = [activity.prompt, activity.hint, activity.explanation, ...activity.options.map(({ label }) => label)].join(' ');
+      expect(content, activity.id).not.toMatch(/半时|时半/u);
     }
   });
 

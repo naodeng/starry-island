@@ -7,6 +7,7 @@ import { getTaskPath, resolveAppRoute, resolveRoute } from './app/router';
 import type { AppRoute } from './app/router';
 import ProjectLegalFooter from './components/layout/ProjectLegalFooter';
 import AppHeader from './components/layout/AppHeader';
+import LoadingState from './components/shared/LoadingState';
 const CourseBreadcrumbs = lazy(() => import('./components/catalog/CourseBreadcrumbs'));
 const CourseCatalog = lazy(() => import('./components/catalog/CourseCatalog'));
 const HomeDashboard = lazy(() => import('./components/home/HomeDashboard'));
@@ -19,7 +20,7 @@ const ChallengePage = lazy(() => import('./challenges/ui/ChallengePage'));
 import './styles/catalog.css';
 import './styles/game.css';
 import './styles/app-shell.css';
-import { completeSession, loadProgress, setLearningStart } from './storage/progress';
+import { acknowledgeGrade2Term1MathMigrationNotice, completeSession, loadProgress, setLearningStart } from './storage/progress';
 import ThemeProvider from './theme/ThemeProvider';
 import { SoundProvider, useSound } from './sound/SoundProvider';
 import type { LearningPosition } from './achievements/position';
@@ -50,7 +51,7 @@ function PageRouteEffects({ navigationRevision }: { navigationRevision: number }
   return null;
 }
 
-function AppFrame({ page, navigationRevision, onNavigate }: { page: ReactNode; navigationRevision: number; onNavigate: (path: string) => void }) {
+function AppFrame({ page, navigationRevision, onNavigate, textbookNotice }: { page: ReactNode; navigationRevision: number; onNavigate: (path: string) => void; textbookNotice?: ReactNode }) {
   const { playCue } = useSound();
 
   function playInteractionCue(event: MouseEvent<HTMLDivElement>) {
@@ -66,6 +67,7 @@ function AppFrame({ page, navigationRevision, onNavigate }: { page: ReactNode; n
   return (
     <div className="app-frame" onClick={playInteractionCue}>
       <AppHeader onNavigate={onNavigate} />
+      {textbookNotice}
       <Suspense fallback={<RouteLoading message="正在准备这段学习旅程…" />}>
         <>{page}<PageRouteEffects key={navigationRevision} navigationRevision={navigationRevision} /></>
       </Suspense>
@@ -78,24 +80,37 @@ function RouteLoading({ message }: { message: string }) {
   return (
     <main className="route-message-page" aria-live="polite" aria-busy="true">
       <div className="catalog-shell">
-        <section className="route-message-card">
+        <Card className="route-message-card" color="default">
           <p className="eyebrow">星岛航线连接中</p>
-          <h1>{message}</h1>
-          <p>马上就好，正在为你打开课程内容。</p>
-        </section>
+          <LoadingState title={message} description="马上就好，正在为你打开课程内容。" headingLevel={1} />
+        </Card>
       </div>
     </main>
   );
 }
 
-export default function App() {
+interface AppProps {
+  showTextbookMigrationNotice?: boolean;
+}
+
+export default function App({ showTextbookMigrationNotice = false }: AppProps = {}) {
   const [route, setRoute] = useState<AppRoute>(() => resolveRoute(window.location.pathname));
   const [navigationRevision, setNavigationRevision] = useState(0);
   const [progress, setProgress] = useState(() => loadProgress());
+  const [showMigrationNotice, setShowMigrationNotice] = useState(showTextbookMigrationNotice);
   const [newlyUnlockedRank, setNewlyUnlockedRank] = useState<CosmicRank | null>(null);
   const routeRequestId = useRef(0);
   const currentPathRef = useRef(window.location.pathname);
   const previousPathRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!showMigrationNotice) return;
+    try {
+      acknowledgeGrade2Term1MathMigrationNotice();
+    } catch {
+      // Keep the notice visible this session; a later launch can retry its acknowledgement.
+    }
+  }, [showMigrationNotice]);
 
   const applyRoute = useCallback((path: string) => {
     const requestId = ++routeRequestId.current;
@@ -233,10 +248,17 @@ export default function App() {
     );
   }
 
+  const textbookNotice = showMigrationNotice ? (
+    <aside className="textbook-migration-notice" role="status" aria-live="polite">
+      <p>二年级上册数学教材已更新，该科旧进度已重置；其他课程记录保留。</p>
+      <Button type="default" onClick={() => setShowMigrationNotice(false)}>知道了</Button>
+    </aside>
+  ) : null;
+
   return (
     <SoundProvider>
       <ThemeProvider>
-      <AppFrame page={page} navigationRevision={navigationRevision} onNavigate={navigate} />
+      <AppFrame page={page} navigationRevision={navigationRevision} onNavigate={navigate} textbookNotice={textbookNotice} />
       </ThemeProvider>
     </SoundProvider>
   );

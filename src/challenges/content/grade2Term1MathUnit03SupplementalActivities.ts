@@ -51,7 +51,7 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
     { knowledgePointIds: [comparison], prompt: '小组把一个角的边延长，但没有改变边的方向。延长后角的大小怎样？', answer: '大小相同', distractors: ['边越长，角就越大', '边越长，角就越小'], hint: '两条边之间的开口保持不变。', explanation: '延长角边没有改变张开程度，所以角的大小相同。' },
     { knowledgePointIds: [comparison], prompt: '对齐顶点和一条边后，待比较角的另一条边落在方形角以内。它与直角相比？', answer: '小于方形角', distractors: ['等于方形角', '大于方形角'], hint: '另一条边没有张到参照边的位置。', explanation: '另一条边在直角范围内，说明这个角小于直角。' },
     { knowledgePointIds: [parts], prompt: '一个角转到朝左的位置后，仍能指出它的顶点。顶点在哪里？', answer: '两条边相遇的地方', distractors: ['两条边最远的端点', '角旁边的纸张中心'], hint: '无论朝向如何，都找两条边相交的位置。', explanation: '角的顶点始终是两条边相遇的位置，旋转不会改变它的定义。' },
-    { knowledgePointIds: [parts], prompt: '想从圆盘边缘找出角，哪项判断更合适？', answer: '圆盘的弯曲边缘', distractors: ['两条直边相遇的位置', '方形拐角'], hint: '圆盘边缘没有两条直边在一点相遇。', explanation: '圆盘的弯曲边缘本身不是由两条直边相遇形成的角。' },
+    { knowledgePointIds: [parts], prompt: '下面哪一项本身不是由两条直边在同一点相遇形成的角？', answer: '圆盘的弯曲边缘', distractors: ['两条直边相遇的位置', '方形拐角'], hint: '判断角时，要看有没有两条直边从同一点伸出。', explanation: '圆盘的弯曲边缘不是两条直边在同一点相遇形成的角。' },
     { knowledgePointIds: [parts, comparison], prompt: '怎样用三角尺帮助比较两个角的张开程度？', answer: '使用同一个方形角作参照并先对齐', distractors: ['用三角尺量角边长度', '只看哪个角画得离纸边更近'], hint: '共同参照能让两次观察更公平。', explanation: '用同一个方形角作参照，再对齐顶点和一条边，可以比较另一条边的位置。' },
   ],
   high: [

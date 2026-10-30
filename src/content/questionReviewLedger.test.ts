@@ -32,6 +32,13 @@ function questionCount(unitKey: string): number {
     .reduce((total, session) => total + session.activities.length, 0);
 }
 
+function textbookSourceEvidence(textbook: (typeof textbooks)[string] | undefined): string {
+  if (textbook?.sourceKind === 'user-provided') {
+    return `${textbook.series}；${textbook.sourceKind}；ISBN ${textbook.isbn}；${textbook.sourceUrl}`;
+  }
+  return `${textbook?.series}；${textbook?.sourceKind}；固定提交 ${textbook?.tapxCommit}；${textbook?.sourceUrl}`;
+}
+
 describe('curriculum question review ledger', () => {
   it('requires source, topic, and repair evidence in every consistent ledger row', () => {
     const ledgers = [grade2LedgerText, addedLedgerText, grade4To6LedgerText];
@@ -49,7 +56,7 @@ describe('curriculum question review ledger', () => {
         const textbook = textbooks[courseId.split('/').slice(0, 3).join('/')];
         const unit = curriculum.units[courseId];
         expect(row['教材版本/来源']?.trim(), `source for ${courseId}`).toBe(
-          `${textbook?.series}；${textbook?.sourceKind}；固定提交 ${textbook?.tapxCommit}；${textbook?.sourceUrl}`,
+          textbookSourceEvidence(textbook),
         );
         expect(row['单元或主题依据']?.trim(), `topic basis for ${courseId}`).toBe(unit?.sourceTopics.join('；'));
         expect(row['修复记录']?.trim(), `repair record for ${courseId}`).toBeTruthy();
@@ -82,6 +89,16 @@ describe('curriculum question review ledger', () => {
       const unitId = row['课程ID'];
       const questionTotal = row['题目总数'];
       const evidence = row['复核证据']?.trim();
+
+      if (unitId.startsWith('grade-2/term-1/math/')) {
+        expect(evidence, `${unitId} AI review date`).toContain('AI 主审复核：2026-10-29');
+        expect(evidence, `${unitId} AI review count`).toContain(`已审：${questionTotal}/${questionTotal}`);
+        expect(evidence, `${unitId} AI review boundary`).toContain('独立教育者复核未完成（复核人数 0）');
+        expect(evidence, `${unitId} automated review boundary`).toContain('自动测试仅验证结构与评分，不替代语义审校');
+        expect(evidence, `${unitId} review rules`).toContain('course-content-review-rules.md');
+        return;
+      }
+
       expect(evidence, `${unitId} current full review`).toContain('本轮全量复核：2026-10-20至2026-10-21');
       expect(evidence, `${unitId} current question count`).toContain(`逐题复核：${questionTotal}/${questionTotal}`);
       expect(evidence, `${unitId} current answer and prompt recheck`).toContain('并复核本轮修复后的所有受影响题目');
@@ -118,12 +135,21 @@ describe('curriculum question review ledger', () => {
   it('records a dated question ID range and source evidence for each grade 2 audit', () => {
     const grade2Rows = readRows().filter(({ '课程ID': id }) => id.startsWith('grade-2/'));
 
-    expect(grade2Rows).toHaveLength(53);
+    expect(grade2Rows).toHaveLength(Object.keys(curriculum.units).filter((id) => id.startsWith('grade-2/')).length);
     grade2Rows.forEach((row) => {
       const unitId = row['课程ID'];
       const questionTotal = row['题目总数'];
       const evidence = row['复核证据']?.trim();
       expect(evidence, `${unitId} review evidence`).toBeTruthy();
+
+      if (unitId.startsWith('grade-2/term-1/math/')) {
+        expect(evidence, `${unitId} AI audit date`).toContain('2026-10-29');
+        expect(evidence, `${unitId} question total`).toContain(`已审：${questionTotal}/${questionTotal}`);
+        expect(evidence, `${unitId} source`).toContain('ISBN 978-7-107-38912-2');
+        expect(evidence, `${unitId} independent educator boundary`).toContain('独立教育者复核未完成（复核人数 0）');
+        return;
+      }
+
       expect(evidence, `${unitId} original audit date`).toContain('2026-10-15');
       expect(evidence, `${unitId} question total`).toContain(`已审：${questionTotal}/${questionTotal}`);
       expect(evidence, `${unitId} textbook source`).toContain('grade-2-textbook-inventory.md');
@@ -165,12 +191,19 @@ describe('curriculum question review ledger', () => {
 
   it('requiresAllEditorialDimensionsComplete', () => {
     readRows().forEach((row) => {
-      expect(row['答案正确性'], row['课程ID']).toBe('完成');
-      expect(row['题目清晰度'], row['课程ID']).toBe('完成');
-      expect(row['年龄适配'], row['课程ID']).toBe('完成');
-      expect(row['教材主题对齐'], row['课程ID']).toBe('完成');
-      expect(row['难度归属'], row['课程ID']).toBe('完成');
-      expect(row['状态'], row['课程ID']).toBe('完成');
+      const isGrade2Term1Math = row['课程ID']?.startsWith('grade-2/term-1/math/');
+      const reviewValue = isGrade2Term1Math ? 'AI主审完成' : '完成';
+      expect(row['答案正确性'], row['课程ID']).toBe(reviewValue);
+      expect(row['题目清晰度'], row['课程ID']).toBe(reviewValue);
+      expect(row['年龄适配'], row['课程ID']).toBe(reviewValue);
+      expect(row['教材主题对齐'], row['课程ID']).toBe(reviewValue);
+      expect(row['难度归属'], row['课程ID']).toBe(reviewValue);
+      if (isGrade2Term1Math) {
+        expect(row['状态'], row['课程ID']).toContain('AI 主审完成');
+        expect(row['状态'], row['课程ID']).toContain('独立教育者复核未完成（0）');
+      } else {
+        expect(row['状态'], row['课程ID']).toBe('完成');
+      }
     });
   });
 

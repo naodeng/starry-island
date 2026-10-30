@@ -9,7 +9,7 @@ describe('curriculum positions', () => {
     expect(getRegisteredLearningPositions()).toEqual([
       ...Array.from({ length: 9 }, (_, index) => ({ grade: 1, term: 1 as const, unit: index + 1 })),
       ...Array.from({ length: 8 }, (_, index) => ({ grade: 1, term: 2 as const, unit: index + 1 })),
-      ...Array.from({ length: 9 }, (_, index) => ({ grade: 2, term: 1 as const, unit: index + 1 })),
+      ...Array.from({ length: 8 }, (_, index) => ({ grade: 2, term: 1 as const, unit: index + 1 })),
       ...Array.from({ length: 10 }, (_, index) => ({ grade: 2, term: 2 as const, unit: index + 1 })),
       ...Array.from({ length: 10 }, (_, index) => ({ grade: 3, term: 1 as const, unit: index + 1 })),
       ...Array.from({ length: 9 }, (_, index) => ({ grade: 3, term: 2 as const, unit: index + 1 })),
@@ -39,7 +39,7 @@ describe('curriculum positions', () => {
 
     expect(getRegisteredCurriculumPositions(source).filter((position) => position.grade === 2 && position.term === 2).map((position) => position.unit)).toEqual([
       1, 2, 3, 4, 5, 6, 7, 8,
-      1, 2, 3, 4, 5, 6, 7, 8, 9,
+      1, 2, 3, 4, 5, 6,
       1, 2, 3, 4, 5, 6,
     ]);
     expect(getRegisteredLearningPositions(source)).toContainEqual({ grade: 2, term: 2, unit: 1 });

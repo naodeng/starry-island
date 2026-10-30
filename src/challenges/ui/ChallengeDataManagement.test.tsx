@@ -279,6 +279,25 @@ describe('ChallengeDataManagement', () => {
     expect(recovery.onPreviewQuarantinedRecord).toHaveBeenCalledWith(12);
   });
 
+  it('showsAnEmptyStateWhenTheQuarantinePageHasNoRecords', async () => {
+    const recovery = quarantineRecoveryProps({
+      onLoadQuarantinedRecordPage: vi.fn().mockResolvedValue({ items: [], nextCursor: null }),
+    });
+    render(<ChallengeDataManagement
+      initialRecoveryPoint={null}
+      quarantinedRecordCount={2}
+      onClear={vi.fn()}
+      onRestore={vi.fn()}
+      onExportQuarantinedRecords={vi.fn()}
+      {...recovery}
+    />);
+
+    fireEvent.click(screen.getByRole('button', { name: '检查可恢复记录' }));
+
+    expect(await screen.findByRole('status')).toHaveTextContent('当前没有隔离记录');
+    expect(screen.getByRole('status')).toHaveTextContent('本机目前没有可显示的隔离记录。');
+  });
+
   it('cancels-preview-without-calling-restore', async () => {
     const recovery = quarantineRecoveryProps();
     render(<ChallengeDataManagement

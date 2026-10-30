@@ -57,6 +57,49 @@ describe('GrowthPage', () => {
     expect(screen.queryByText(/总分|综合进度|合计/)).not.toBeInTheDocument();
   });
 
+  it('showsSeparateEmptySummariesBeforeAnyProgress', async () => {
+    const onNavigate = vi.fn();
+    vi.mocked(loadChallengeGrowthSummary).mockResolvedValueOnce({
+      completedAttempts: 0,
+      passedTaskCount: 0,
+      earnedBadgeCount: 0,
+      groups: [],
+    });
+    render(<GrowthPage progress={emptyProgress} initialView="overview" onNavigate={onNavigate} />);
+
+    expect(screen.getByRole('heading', { name: '还没有课程进度' })).toBeInTheDocument();
+    const learningSummary = screen.getByRole('region', { name: '课程学习成长摘要' });
+    expect(learningSummary).toHaveTextContent('已点亮 0 座知识岛');
+    expect(await screen.findByRole('heading', { name: '还没有闯关成果' })).toBeInTheDocument();
+    const challengeSummary = screen.getByRole('region', { name: '闯关成长摘要' });
+    expect(challengeSummary).toHaveTextContent('0 次挑战');
+    expect(challengeSummary).toHaveTextContent('0 个任务');
+    expect(challengeSummary).toHaveTextContent('0 枚徽章');
+    expect(screen.getByRole('button', { name: '查看学习星图' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '查看闯关课程' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '查看闯关课程' }));
+    expect(onNavigate).toHaveBeenCalledWith('/challenges');
+    fireEvent.click(screen.getByRole('button', { name: '查看学习星图' }));
+    expect(screen.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('heading', { name: '每完成一点，星岛就亮一点' })).toBeInTheDocument();
+  });
+
+  it('showsAnEmptyRecentGrowthState', () => {
+    render(<GrowthPage progress={emptyProgress} initialView="overview" onNavigate={vi.fn()} />);
+
+    const recent = screen.getByRole('region', { name: '最近课程学习' });
+    expect(within(recent).getByRole('heading', { name: '暂时没有课程学习记录' })).toBeInTheDocument();
+    expect(within(recent).getByText('完成一场课程学习后，完成时间和课程链接会显示在这里。')).toBeInTheDocument();
+  });
+
+  it('keepsChallengeReadErrorsDistinctFromNoRecords', async () => {
+    vi.mocked(loadChallengeGrowthSummary).mockRejectedValueOnce(new Error('IndexedDB unavailable'));
+    render(<GrowthPage progress={emptyProgress} initialView="overview" onNavigate={vi.fn()} />);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('闯关成长数据暂时无法读取');
+    expect(screen.queryByRole('heading', { name: '还没有闯关成果' })).not.toBeInTheDocument();
+  });
+
   it('showsOnlyTimestampedCourseCompletionEventsWithRegisteredLinks', async () => {
     const progress: ProgressState = {
       ...emptyProgress,

@@ -1382,9 +1382,9 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "4f38e9c8deba493b73117a76278edd574398df94fd14a99073317958495df7da",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T00:00:00.000Z"
+      "approvedContentFingerprint": "e6347bd5483c879e039c45bdfdd729b9f31ea25b3b913b1eb634745860dfb58c",
+      "approvedBy": "AI primary review (not educator signoff)",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-09-high-09",

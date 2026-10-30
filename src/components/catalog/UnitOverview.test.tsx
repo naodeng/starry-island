@@ -34,6 +34,33 @@ describe('UnitOverview', () => {
     expect(screen.getByRole('button', { name: /开始基础任务/ })).toBeInTheDocument();
   });
 
+  it('distinguishesAPlannedDifficultyTrackFromMissingCourseContent', () => {
+    const unitWithPlannedHighTrack = {
+      ...unit,
+      difficultyTracks: {
+        ...unit.difficultyTracks,
+        high: { ...unit.difficultyTracks.high, tasks: [] },
+      },
+    };
+    render(<UnitOverview unitKey={unitKey} unit={unitWithPlannedHighTrack} completedSessionIds={[]} onNavigate={vi.fn()} />);
+
+    expect(screen.getByRole('heading', { level: 2, name: '高阶版任务' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: '这档任务正在准备中' })).toBeInTheDocument();
+    expect(screen.getByText('核对好教材内容后就会开放，你可以先选择已开放的任务。')).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: '查看任务' }).length).toBeGreaterThan(0);
+  });
+
+  it('disclosesTheUserProvidedTextbookIsbn', async () => {
+    const user = userEvent.setup();
+    const mathUnitKey = 'grade-2/term-1/math/unit-01';
+    render(<UnitOverview unitKey={mathUnitKey} unit={curriculum.units[mathUnitKey]} completedSessionIds={[]} onNavigate={vi.fn()} />);
+
+    await user.click(screen.getByRole('button', { name: /教材来源说明/ }));
+
+    expect(screen.getByText(/本课程依据你提供的人教版教材/)).toBeInTheDocument();
+    expect(screen.getByText(/ISBN 978-7-107-38912-2/)).toBeInTheDocument();
+  });
+
   it('showsASeparateChallengeEntryOnlyForThePilotUnit', async () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();

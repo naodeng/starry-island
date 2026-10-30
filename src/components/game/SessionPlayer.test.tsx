@@ -82,6 +82,7 @@ describe('SessionPlayer', () => {
     await user.click(screen.getByRole('button', { name: '提交答案' }));
     expect(progressBar).toHaveAttribute('aria-valuenow', '13');
     await user.click(nextButton);
+    expect(screen.getByRole('heading', { level: 2, name: session.activities[1]!.prompt })).toHaveFocus();
 
     for (let index = 1; index < session.activities.length - 1; index += 1) {
       expect(screen.getByText(`挑战 ${index + 1} / 8`)).toBeInTheDocument();
@@ -101,7 +102,7 @@ describe('SessionPlayer', () => {
 
     expect(onComplete).toHaveBeenCalledTimes(1);
     expect(onComplete).toHaveBeenCalledWith(session.id);
-    expect(screen.getByRole('heading', { name: '太棒了，能量收集完成！' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '太棒了，能量收集完成！' })).toHaveFocus();
     expect(screen.getByText(/里的 8 个小挑战/)).toBeInTheDocument();
     expect(playedSources).toEqual([
       SOUND_CUE_ASSETS['answer-incorrect'],

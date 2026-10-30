@@ -12,9 +12,11 @@ describe('AppHeader', () => {
     const menuButton = screen.getByRole('button', { name: '打开导航菜单' });
 
     expect(menuButton).toHaveAttribute('aria-expanded', 'false');
+    expect(menuButton).not.toHaveAttribute('aria-controls');
     await user.click(menuButton);
 
     expect(menuButton).toHaveAttribute('aria-expanded', 'true');
+    expect(menuButton).toHaveAttribute('aria-controls', 'app-navigation-drawer');
     expect(screen.getByRole('dialog', { name: '全局导航' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '首页' })).toHaveFocus();
 

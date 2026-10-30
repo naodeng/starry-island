@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('keeps course growth and challenge growth in separate views', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });

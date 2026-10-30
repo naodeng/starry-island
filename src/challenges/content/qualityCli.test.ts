@@ -11,6 +11,7 @@ import { pathToFileURL } from 'node:url';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import type { ChallengeQualityReport } from '../domain/types';
 import { pilotSupplementalActivities } from './pilotSupplementalActivities';
+import pilotManifest from './pilotManifest';
 import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
 import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
 import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
@@ -148,7 +149,7 @@ describe('challenge quality CLI', () => {
     };
 
     expect(report.overall.passed).toBe(true);
-    expect(report.groups).toHaveLength(114);
+    expect(report.groups).toHaveLength(pilotManifest.groups.length);
     expect(report.groups.every(({ status }) => status === 'ready')).toBe(true);
     expect(markdown).toContain('# 闯关题库质量报告');
     expect(firstJson).not.toContain(pilotSupplementalActivities[0].activity.prompt);

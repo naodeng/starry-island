@@ -68,7 +68,8 @@ const drafts: Record<Difficulty, ActivityDraft[]> = {
 export const grade2Term1ChineseUnit01SupplementalActivities: Grade2Term1ChineseUnit01SupplementalActivity[] = Object.entries(drafts).flatMap(([difficulty, items]) => (
   items.map((draft, index) => {
     const correctOptionIndex = (index % 3) as 0 | 1 | 2;
-    const options = [...draft.options.slice(correctOptionIndex), ...draft.options.slice(0, correctOptionIndex)];
+    const options = [...draft.options.slice(1)];
+    options.splice(correctOptionIndex, 0, draft.options[0]);
     return {
       difficulty: difficulty as Difficulty,
       sourceUnitId,

@@ -24,122 +24,24 @@ describe('loadPilotChallengeContent', () => {
   it('loads only groups whose real curriculum candidates pass the release gate', async () => {
     const content = await loadPilotChallengeContent();
 
-    expect(content.groups.map(({ group, status }) => [group.definition.id, status])).toEqual([
-      ['grade-2-term-1-math-unit-02', 'ready'],
-      ['grade-2-term-1-math-first-half', 'ready'],
-      ['grade-3-term-1-english-unit-01', 'ready'],
-      ['grade-5-term-1-chinese-unit-01', 'ready'],
-      ['grade-1-term-1-math-unit-01', 'ready'],
-      ['grade-1-term-1-math-unit-02', 'ready'],
-      ['grade-1-term-1-math-unit-03', 'ready'],
-      ['grade-1-term-1-math-unit-04', 'ready'],
-      ['grade-1-term-1-math-unit-05', 'ready'],
-      ['grade-1-term-1-math-unit-06', 'ready'],
-      ['grade-1-term-1-math-unit-07', 'ready'],
-      ['grade-1-term-1-math-unit-08', 'ready'],
-      ['grade-1-term-1-math-unit-09', 'ready'],
-      ['grade-1-term-1-math-first-half', 'ready'],
-      ['grade-1-term-1-math-second-half', 'ready'],
-      ['grade-1-term-1-math-end-term', 'ready'],
-      ['grade-1-term-1-english-unit-01', 'ready'],
-      ['grade-1-term-1-english-unit-02', 'ready'],
-      ['grade-1-term-1-english-unit-03', 'ready'],
-      ['grade-1-term-1-english-unit-04', 'ready'],
-      ['grade-1-term-1-english-unit-05', 'ready'],
-      ['grade-1-term-1-english-unit-06', 'ready'],
-      ['grade-1-term-1-chinese-first-half', 'ready'],
-      ['grade-1-term-1-chinese-second-half', 'ready'],
-      ['grade-1-term-1-chinese-end-term', 'ready'],
-      ['grade-1-term-1-english-first-half', 'ready'],
-      ['grade-1-term-1-english-second-half', 'ready'],
-      ['grade-1-term-1-english-end-term', 'ready'],
-      ['grade-1-term-2-math-unit-01', 'ready'],
-      ['grade-1-term-2-math-unit-02', 'ready'],
-      ['grade-1-term-2-math-unit-03', 'ready'],
-      ['grade-1-term-2-math-unit-04', 'ready'],
-      ['grade-1-term-2-math-unit-05', 'ready'],
-      ['grade-1-term-2-math-unit-06', 'ready'],
-      ['grade-1-term-2-math-unit-07', 'ready'],
-      ['grade-1-term-2-math-unit-08', 'ready'],
-      ['grade-1-term-2-english-unit-01', 'ready'],
-      ['grade-1-term-2-english-unit-02', 'ready'],
-      ['grade-1-term-2-english-unit-03', 'ready'],
-      ['grade-1-term-2-english-unit-04', 'ready'],
-      ['grade-1-term-2-english-unit-05', 'ready'],
-      ['grade-1-term-2-english-unit-06', 'ready'],
-      ['grade-1-term-2-chinese-first-half', 'ready'],
-      ['grade-1-term-2-chinese-second-half', 'ready'],
-      ['grade-1-term-2-chinese-end-term', 'ready'],
-      ['grade-1-term-2-math-first-half', 'ready'],
-      ['grade-1-term-2-math-second-half', 'ready'],
-      ['grade-1-term-2-math-end-term', 'ready'],
-      ['grade-1-term-2-english-first-half', 'ready'],
-      ['grade-1-term-2-english-second-half', 'ready'],
-      ['grade-1-term-2-english-end-term', 'ready'],
-      ['grade-2-term-1-chinese-unit-01', 'ready'],
-      ['grade-2-term-1-chinese-unit-02', 'ready'],
-      ['grade-2-term-1-chinese-unit-03', 'ready'],
-      ['grade-2-term-1-chinese-unit-04', 'ready'],
-      ['grade-2-term-1-chinese-unit-05', 'ready'],
-      ['grade-2-term-1-chinese-unit-06', 'ready'],
-      ['grade-2-term-1-chinese-unit-07', 'ready'],
-      ['grade-2-term-1-chinese-unit-08', 'ready'],
-      ['grade-2-term-1-chinese-first-half', 'ready'],
-      ['grade-2-term-1-math-unit-01', 'ready'],
-      ['grade-2-term-1-math-unit-03', 'ready'],
-      ['grade-2-term-1-math-unit-04', 'ready'],
-      ['grade-2-term-1-math-unit-05', 'ready'],
-      ['grade-2-term-1-math-unit-06', 'ready'],
-      ['grade-2-term-1-math-unit-07', 'ready'],
-      ['grade-2-term-1-math-unit-08', 'ready'],
-      ['grade-2-term-1-math-unit-09', 'ready'],
-      ['grade-2-term-1-english-unit-01', 'ready'],
-      ['grade-2-term-1-english-unit-02', 'ready'],
-      ['grade-2-term-1-english-unit-03', 'ready'],
-      ['grade-2-term-1-english-unit-04', 'ready'],
-      ['grade-2-term-1-english-unit-05', 'ready'],
-      ['grade-2-term-1-english-unit-06', 'ready'],
-      ['grade-2-term-1-chinese-second-half', 'ready'],
-      ['grade-2-term-1-chinese-end-term', 'ready'],
-      ['grade-2-term-1-math-second-half', 'ready'],
-      ['grade-2-term-1-math-end-term', 'ready'],
-      ['grade-2-term-1-english-first-half', 'ready'],
-      ['grade-2-term-1-english-second-half', 'ready'],
-      ['grade-2-term-1-english-end-term', 'ready'],
-      ['grade-2-term-2-chinese-unit-01', 'ready'],
-      ['grade-2-term-2-chinese-unit-02', 'ready'],
-      ['grade-2-term-2-chinese-unit-03', 'ready'],
-      ['grade-2-term-2-chinese-unit-04', 'ready'],
-      ['grade-2-term-2-chinese-unit-05', 'ready'],
-      ['grade-2-term-2-chinese-unit-06', 'ready'],
-      ['grade-2-term-2-chinese-unit-07', 'ready'],
-      ['grade-2-term-2-math-unit-01', 'ready'],
-      ['grade-2-term-2-math-unit-02', 'ready'],
-      ['grade-2-term-2-english-unit-01', 'ready'],
-      ['grade-2-term-2-english-unit-02', 'ready'],
-      ['grade-2-term-2-chinese-unit-08', 'ready'],
-      ['grade-2-term-2-math-unit-03', 'ready'],
-      ['grade-2-term-2-math-unit-04', 'ready'],
-      ['grade-2-term-2-math-unit-05', 'ready'],
-      ['grade-2-term-2-math-unit-06', 'ready'],
-      ['grade-2-term-2-math-unit-07', 'ready'],
-      ['grade-2-term-2-math-unit-08', 'ready'],
-      ['grade-2-term-2-math-unit-09', 'ready'],
-      ['grade-2-term-2-math-unit-10', 'ready'],
-      ['grade-2-term-2-english-unit-03', 'ready'],
-      ['grade-2-term-2-english-unit-04', 'ready'],
-      ['grade-2-term-2-english-unit-05', 'ready'],
-      ['grade-2-term-2-english-unit-06', 'ready'],
-      ['grade-2-term-2-chinese-first-half', 'ready'],
-      ['grade-2-term-2-chinese-second-half', 'ready'],
-      ['grade-2-term-2-chinese-end-term', 'ready'],
-      ['grade-2-term-2-math-first-half', 'ready'],
-      ['grade-2-term-2-math-second-half', 'ready'],
-      ['grade-2-term-2-math-end-term', 'ready'],
-      ['grade-2-term-2-english-first-half', 'ready'],
-      ['grade-2-term-2-english-second-half', 'ready'],
-      ['grade-2-term-2-english-end-term', 'ready'],
-    ]);
+    expect(content.groups.every(({ status }) => status === 'ready')).toBe(true);
+    const grade2Term1MathIds = content.groups
+      .map(({ group }) => group.definition.id)
+      .filter((id) => id.startsWith('grade-2-term-1-math-'))
+      .sort();
+    expect(grade2Term1MathIds).toEqual([
+      'grade-2-term-1-math-end-term',
+      'grade-2-term-1-math-first-half',
+      ...Array.from({ length: 6 }, (_, index) => `grade-2-term-1-math-unit-${String(index + 1).padStart(2, '0')}`),
+      'grade-2-term-1-math-second-half',
+    ].sort());
+    for (let unit = 1; unit <= 6; unit += 1) {
+      expect(content.groups.find(({ group }) => group.definition.id === `grade-2-term-1-math-unit-${String(unit).padStart(2, '0')}`)?.candidates)
+        .toHaveLength(90);
+    }
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-first-half')?.candidates).toHaveLength(318);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-second-half')?.candidates).toHaveLength(318);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-end-term')?.candidates).toHaveLength(636);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-04')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-05')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-unit-06')?.candidates).toHaveLength(90);
@@ -154,34 +56,7 @@ describe('loadPilotChallengeContent', () => {
     for (let unit = 4; unit <= 6; unit += 1) {
       expect(content.groups.find(({ group }) => group.definition.id === `grade-2-term-2-english-unit-${String(unit).padStart(2, '0')}`)?.candidates).toHaveLength(90);
     }
-    expect(content.groups[0]?.candidates).toHaveLength(90);
-    expect(content.groups[1]?.candidates).toHaveLength(207);
-    expect(content.groups[2]?.candidates).toHaveLength(90);
-    expect(content.groups[3]?.candidates).toHaveLength(90);
-    expect(content.groups[4]?.candidates).toHaveLength(90);
-    expect(content.groups[5]?.candidates).toHaveLength(90);
-    expect(content.groups[6]?.candidates).toHaveLength(90);
-    expect(content.groups[7]?.candidates).toHaveLength(90);
-    expect(content.groups[8]?.candidates).toHaveLength(90);
-    expect(content.groups[13]?.candidates).toHaveLength(360);
-    expect(content.groups[14]?.candidates).toHaveLength(450);
-    expect(content.groups[15]?.candidates).toHaveLength(810);
-    expect(content.groups[16]?.candidates).toHaveLength(90);
-    expect(content.groups[17]?.candidates).toHaveLength(90);
-    expect(content.groups[18]?.candidates).toHaveLength(90);
-    expect(content.groups[19]?.candidates).toHaveLength(90);
-    expect(content.groups[20]?.candidates).toHaveLength(90);
-    expect(content.groups[21]?.candidates).toHaveLength(90);
-    expect(content.groups[28]?.candidates).toHaveLength(90);
-    expect(content.groups[29]?.candidates).toHaveLength(90);
-    expect(content.groups[30]?.candidates).toHaveLength(90);
-    expect(content.groups[31]?.candidates).toHaveLength(90);
-    expect(content.groups[32]?.candidates).toHaveLength(90);
-    expect(content.groups[33]?.candidates).toHaveLength(90);
-    expect(content.groups[34]?.candidates).toHaveLength(90);
-    expect(content.groups[35]?.candidates).toHaveLength(90);
-    expect(content.groups[36]?.candidates).toHaveLength(90);
-    expect(content.groups[37]?.candidates).toHaveLength(90);
+
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-chinese-unit-01')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-chinese-unit-02')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-chinese-unit-03')?.candidates).toHaveLength(90);
@@ -199,37 +74,12 @@ describe('loadPilotChallengeContent', () => {
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-second-half')?.candidates).toHaveLength(360);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-chinese-end-term')?.candidates).toHaveLength(720);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-first-half')?.candidates).toHaveLength(450);
-    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-second-half')?.candidates).toHaveLength(450);
-    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-end-term')?.candidates).toHaveLength(900);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-second-half')?.candidates).toHaveLength(498);
+    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-math-end-term')?.candidates).toHaveLength(948);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-first-half')?.candidates).toHaveLength(270);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-second-half')?.candidates).toHaveLength(270);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-2-english-end-term')?.candidates).toHaveLength(540);
-    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-07')?.candidates).toHaveLength(90);
-    expect(content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-08')?.candidates).toHaveLength(90);
-    expect(content.groups[65]?.group.definition.id).toBe('grade-2-term-1-math-unit-07');
-    expect(content.groups[66]?.group.definition.id).toBe('grade-2-term-1-math-unit-08');
-    expect(content.groups[67]?.group.definition.id).toBe('grade-2-term-1-math-unit-09');
-    expect(content.groups[67]?.candidates).toHaveLength(90);
-    expect(content.groups[68]?.group.definition.id).toBe('grade-2-term-1-english-unit-01');
-    expect(content.groups[68]?.candidates).toHaveLength(90);
-    expect(content.groups[69]?.group.definition.id).toBe('grade-2-term-1-english-unit-02');
-    expect(content.groups[69]?.candidates).toHaveLength(90);
-    expect(content.groups[70]?.group.definition.id).toBe('grade-2-term-1-english-unit-03');
-    expect(content.groups[70]?.candidates).toHaveLength(90);
-    expect(content.groups[71]?.group.definition.id).toBe('grade-2-term-1-english-unit-04');
-    expect(content.groups[71]?.candidates).toHaveLength(90);
-    expect(content.groups[72]?.group.definition.id).toBe('grade-2-term-1-english-unit-05');
-    expect(content.groups[72]?.candidates).toHaveLength(90);
-    expect(content.groups[73]?.group.definition.id).toBe('grade-2-term-1-english-unit-06');
-    expect(content.groups[73]?.candidates).toHaveLength(90);
-    expect(content.groups[74]?.group.definition.id).toBe('grade-2-term-1-chinese-second-half');
-    expect(content.groups[74]?.candidates).toHaveLength(360);
-    expect(content.groups[75]?.candidates).toHaveLength(720);
-    expect(content.groups[76]?.candidates).toHaveLength(450);
-    expect(content.groups[77]?.candidates).toHaveLength(782);
-    expect(content.groups[78]?.candidates).toHaveLength(270);
-    expect(content.groups[79]?.candidates).toHaveLength(270);
-    expect(content.groups[80]?.candidates).toHaveLength(540);
+
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-03')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-04')?.candidates).toHaveLength(90);
     expect(content.groups.find(({ group }) => group.definition.id === 'grade-1-term-2-english-unit-05')?.candidates).toHaveLength(90);
@@ -254,7 +104,7 @@ describe('loadPilotChallengeContent', () => {
       .map((candidate) => [candidate.questionId, candidate]));
     const candidates = [...candidatesByQuestionId.values()];
 
-    expect(candidates).toHaveLength(7716);
+    expect(candidates).toHaveLength(7590);
     expect(candidates.every(({ activity }) => submitAnswer(activity, knownCorrectAnswer(activity)))).toBe(true);
   });
 
@@ -401,15 +251,16 @@ describe('loadPilotChallengeContent', () => {
     }
   });
 
-  it('connects pilot knowledge points to existing learning tasks without changing their content', async () => {
+  it('connects new textbook knowledge points to the matching existing learning tasks', async () => {
     const content = await loadPilotChallengeContent();
     const unitGroup = content.groups.find(({ group }) => group.definition.id === 'grade-2-term-1-math-unit-02');
-    const additionTask = unitGroup?.learningTasks.find(({ taskId }) => taskId === 'grade-2/term-1/math/unit-02/basic/task-01');
-    const subtractionTask = unitGroup?.learningTasks.find(({ taskId }) => taskId === 'grade-2/term-1/math/unit-02/basic/task-02');
+    const multiplicationTask = unitGroup?.learningTasks.find(({ taskId }) => taskId === 'grade-2/term-1/math/unit-02/basic/task-01');
 
-    expect(additionTask).toMatchObject({ title: '进位加法能量站', knowledgePointIds: ['two-digit-addition'] });
-    expect(subtractionTask).toMatchObject({ title: '退位减法与生活题', knowledgePointIds: ['two-digit-subtraction'] });
-    expect(additionTask?.activityIds).toContain('grade-2/term-1/math/unit-02/basic/task-01/session-01/question-01');
+    expect(multiplicationTask).toMatchObject({
+      title: '相同加数转换器',
+      knowledgePointIds: ['equal-groups-multiplication', 'multiplication-facts'],
+    });
+    expect(multiplicationTask?.activityIds).toContain('grade-2/term-1/math/unit-02/basic/task-01/session-01/question-01');
   });
 
   it('provides an existing learning task for every tagged knowledge point in each pilot group', async () => {

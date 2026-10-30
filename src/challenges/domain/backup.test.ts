@@ -3,7 +3,7 @@ import type { ChallengeBackupData } from './backup';
 import {
   createChallengeBackup,
   isChallengeBackupData,
-  normalizeImportedChallengeBackupData,
+  normalizeRecoverySnapshotData,
   parseChallengeBackup,
   verifyChallengeBackup,
 } from './backup';
@@ -68,13 +68,13 @@ describe('challenge backup checksum', () => {
     expect(backup.data.attempts[0]?.snapshotSchemaVersion).toBe(1);
   });
 
-  it('verifies a legacy in-progress snapshot before normalizing it to schema version 1', async () => {
+  it('normalizes local legacy snapshots but does not accept them as external backups', async () => {
     const { snapshotSchemaVersion: _version, ...legacyAttempt } = makeAttempt();
     const backup = await signedBackup({ ...emptyData, attempts: [legacyAttempt] });
     expect(isChallengeBackupData({ ...emptyData, attempts: [legacyAttempt] })).toBe(false);
 
-    const parsed = await parseChallengeBackup(backup);
-    const normalized = normalizeImportedChallengeBackupData(parsed.data);
+    await expect(parseChallengeBackup(backup)).rejects.toThrow('备份文件格式或数据结构无效');
+    const normalized = normalizeRecoverySnapshotData({ ...emptyData, attempts: [legacyAttempt] });
     expect(normalized.attempts[0]).toMatchObject({
       snapshotSchemaVersion: 1,
       answers: makeAttempt().answers,
@@ -85,13 +85,13 @@ describe('challenge backup checksum', () => {
     expect(isChallengeBackupData(normalized)).toBe(true);
   });
 
-  it('rejects tampered legacy payloads and unknown snapshot schema versions', async () => {
+  it('rejects legacy snapshots, tampered backups and unknown snapshot schema versions', async () => {
     const { snapshotSchemaVersion: _version, ...legacyAttempt } = makeAttempt();
     const legacy = await signedBackup({ ...emptyData, attempts: [legacyAttempt] });
-    const tampered = {
-      ...legacy,
-      data: { ...legacy.data, attempts: [{ ...legacyAttempt, answers: { 'question-legacy': 3 } }] },
-    };
+    await expect(parseChallengeBackup(legacy)).rejects.toThrow('备份文件格式或数据结构无效');
+
+    const current = await createChallengeBackup({ ...emptyData, attempts: [makeAttempt()] }, { createdAt: '2026-10-22T00:00:00.000Z' });
+    const tampered = { ...current, data: { ...current.data, recentQuestionAttempts: [['new-question']] } };
     await expect(parseChallengeBackup(tampered)).rejects.toThrow('完整性校验失败');
 
     const future = await signedBackup({
@@ -144,7 +144,7 @@ describe('challenge backup checksum', () => {
     await expect(verifyChallengeBackup({ ...backup, data: { ...emptyData, attempts: null } })).resolves.toBe(false);
   });
 
-  it('optionally includes portable preferences in the checksum while keeping old backups valid', async () => {
+  it('optionally includes portable preferences in the checksum', async () => {
     const preferences = { theme: 'dark', soundEnabled: false } as const;
     const backup = await createChallengeBackup(emptyData, {
       createdAt: '2026-10-22T00:00:00.000Z',
@@ -155,9 +155,9 @@ describe('challenge backup checksum', () => {
     await expect(verifyChallengeBackup(backup)).resolves.toBe(true);
     await expect(parseChallengeBackup(backup)).resolves.toMatchObject({ preferences });
 
-    const legacyBackup = await createChallengeBackup(emptyData, { createdAt: '2026-10-22T00:00:00.000Z' });
-    expect(legacyBackup).not.toHaveProperty('preferences');
-    await expect(parseChallengeBackup(legacyBackup)).resolves.toMatchObject({ data: emptyData });
+    const withoutPreferences = await createChallengeBackup(emptyData, { createdAt: '2026-10-22T00:00:00.000Z' });
+    expect(withoutPreferences).not.toHaveProperty('preferences');
+    await expect(parseChallengeBackup(withoutPreferences)).resolves.toMatchObject({ data: emptyData });
   });
 
   it('rejects malformed optional preferences before importing a backup', async () => {

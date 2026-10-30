@@ -24,7 +24,8 @@
 .activity-renderer { width: 100%; max-width: 940px; margin-inline: auto; }
 .activity-prompt-row { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 22px; padding-bottom: 20px; border-bottom: 1px solid rgba(81,103,126,.12); }
 .activity-symbol { display: grid; flex: 0 0 34px; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--animal-text-color); background: #f0b75b; }
-.activity-prompt-row h2 { margin: 1px 0 0; color: var(--animal-text-color); font-size: clamp(20px, 3.5vw, 27px); line-height: 1.5; }
+.activity-prompt-row h2 { min-width: 0; margin: 1px 0 0; color: var(--animal-text-color); font-size: clamp(20px, 3.5vw, 27px); line-height: 1.5; overflow-wrap: anywhere; }
+.activity-prompt-row h2:focus-visible { outline: 3px solid var(--animal-primary-color); outline-offset: 5px; border-radius: 6px; }
 .activity-speech-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin: -10px 0 20px; }
 .activity-speech-controls button { min-height: 44px; }
 .activity-speech-status { margin: 0; color: var(--animal-text-color-secondary); font-size: 13px; line-height: 1.5; }

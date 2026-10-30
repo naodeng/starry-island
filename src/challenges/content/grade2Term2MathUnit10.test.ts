@@ -182,6 +182,29 @@ function readTsv(path: string): Array<Record<string, string>> {
 }
 
 describe('二年级下册数学第十单元闯关', () => {
+  it('总复习用两袋合计换算替代第八单元的直接换算原题', async () => {
+    const reviewUnit = await loadUnit(unitId);
+    const massUnit = await loadUnit('grade-2/term-2/math/unit-08');
+    const reviewQuestion = reviewUnit!.difficultyTracks.advanced.tasks[1].sessions[0].activities[5];
+    const originalQuestion = massUnit!.difficultyTracks.basic.tasks[0].sessions[0].activities[5];
+
+    expect(reviewQuestion.id).toBe(`${unitId}/advanced/task-02/session-01/question-06`);
+    expect(reviewQuestion.prompt).toBe('一袋面粉重2千克，一袋大米重1千克，合起来多少克？');
+    expect(answerSummary(reviewQuestion)).toBe('3000');
+    expect(reviewQuestion.explanation).toContain('3,000克');
+    expect(reviewQuestion.prompt).not.toBe(originalQuestion.prompt);
+    expect(answerSummary(originalQuestion)).toBe('2000');
+  });
+
+  it('总复习改用情境应用呈现乘法口诀，避免照搬上册原题', () => {
+    const activity = grade2Term2MathUnit10SupplementalActivities.find(
+      ({ activity: candidate }) => candidate.id === 'challenge-supplement-grade-2-term-2-math-unit-10-basic-01',
+    )!.activity;
+    expect(activity.prompt).toBe('6盒彩笔每盒8支，一共有多少支？');
+    expect(answerSummary(activity)).toBe('48');
+    expect(activity.explanation).toContain('48支');
+  });
+
   it('审计原课程活动并按每档14道原创题补足30道候选', async () => {
     const unit = await loadUnit(unitId);
     expect(unit?.sourceTopics).toEqual(sourceTopics);
@@ -294,11 +317,11 @@ describe('二年级下册数学第十单元闯关', () => {
       coreKnowledgePointIds: challengeCoreKnowledgePointIds,
     });
     expect(group.definition.mappingEvidence.source).toContain('grade-2-textbook-inventory.md');
-    expect(group.definition.mappingEvidence.notes).toContain('TapXWorld');
-    expect(group.definition.mappingEvidence.notes).toContain('5a80345f2043ba6f8db8d7be9cf3db82725ff1f7');
-    expect(group.definition.mappingEvidence.notes).toContain('未核实');
-    expect(group.definition.mappingEvidence.notes).toContain('作者逐题自审');
-    expect(group.definition.mappingEvidence.notes).toContain('未独立教育者复核');
+    expect(group.definition.mappingEvidence.notes).toContain('ISBN 978-7-107-37176-9');
+    expect(group.definition.mappingEvidence.notes).toContain('ISBN 978-7-107-37176-9');
+    expect(group.definition.mappingEvidence.notes).toContain('版次、印次未知');
+    expect(group.definition.mappingEvidence.notes).toContain('AI 主审');
+    expect(group.definition.mappingEvidence.notes).toContain('独立教育者复核未完成');
     expect(group.definition.tasks).toHaveLength(5);
     expect(group.definition.tasks.map(({ id }) => id).sort()).toEqual([
       `${groupId}/advanced-01`, `${groupId}/advanced-02`, `${groupId}/basic-01`,
@@ -328,7 +351,10 @@ describe('二年级下册数学第十单元闯关', () => {
     expect(new Set(manifest.questions.map(({ approvedContentFingerprint }) => approvedContentFingerprint))).toHaveLength(90);
     expect(rows).toHaveLength(90);
     expect(new Set(rows.map(({ 题目ID }) => 题目ID))).toEqual(expectedIds);
-    expect(rows.every(({ 审核状态 }) => 审核状态.includes('作者逐题自审通过') && 审核状态.includes('未独立教育者复核'))).toBe(true);
+    expect(rows.every(({ 审核状态 }) => (
+      (审核状态.includes('AI 主审已复核') || 审核状态.includes('AI 主审已复核'))
+      && (审核状态.includes('未独立教育者复核') || 审核状态.includes('独立教育者复核数 0'))
+    ))).toBe(true);
 
     const activityByQuestionId = new Map(activities.map((activity) => [`challenge-question:${activity.id}`, activity]));
     const ledgerById = new Map(rows.map((row) => [row['题目ID'], row]));
@@ -346,7 +372,11 @@ describe('二年级下册数学第十单元闯关', () => {
       expect(question.lifecycle).toBe('active');
       expect(question.approved).toBe(true);
       expect(question.answerLeakageReviewed).toBe(true);
-      expect(question.approvedBy).toBe('Codex content-author self-review');
+      const aiReviewedIds = new Set([
+        `${unitId}/advanced/task-02/session-01/question-06`,
+        'challenge-supplement-grade-2-term-2-math-unit-10-basic-01',
+      ]);
+      expect(question.approvedBy).toBe('AI 主审（非独立教师复核）');
       expect(question.approvedAt).toMatch(/^2026-10-28T/u);
       expect(question.approvedContentFingerprint).toBe(await fingerprintActivity(activity!));
 
@@ -354,10 +384,15 @@ describe('二年级下册数学第十单元闯关', () => {
       expect(row['难度']).toBe(question.difficulty === 'basic' ? '基础' : question.difficulty === 'advanced' ? '进阶' : '高阶');
       expect(row['正确选项']).toBe(answerSummary(activity!));
       expect(row['知识点']).toBe(question.knowledgePointIds.join('；'));
-      expect(row['复核说明']).toContain('TapXWorld');
+      expect(row['复核说明']).toContain('ISBN 978-7-107-37176-9');
       expect(row['检查项']).toContain('二年级');
-      expect(row['审核状态']).toContain('作者逐题自审通过');
-      expect(row['审核状态']).toContain('未独立教育者复核');
+      if (aiReviewedIds.has(question.activityId)) {
+        expect(row['审核状态']).toContain('AI 主审已复核');
+        expect(row['审核状态']).toContain('独立教育者复核数 0');
+      } else {
+        expect(row['审核状态']).toContain('AI 主审已复核');
+        expect(row['审核状态']).toContain('独立教育者复核数 0');
+      }
       expect(row['内容指纹']).toBe(question.approvedContentFingerprint);
     }
   });

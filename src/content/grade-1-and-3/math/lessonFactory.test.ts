@@ -83,6 +83,35 @@ function choiceAnswerSignature(unitId: string, difficulty: 'basic' | 'advanced' 
 }
 
 describe('added math question quality', () => {
+  it('keeps Grade 1 Term 1 Unit 7 within the textbook-supported whole-hour scope', () => {
+    const unitId = 'grade-1/term-1/math/unit-07';
+    const unit = curriculum.units[unitId];
+    const catalogEntry = addedCourseCatalog.find(({ id }) => id === unitId);
+    expect(unit, `Missing generated math unit ${unitId}`).toBeDefined();
+    expect(catalogEntry?.sourceTopics).toEqual(['整时读数和时针、分针的作用']);
+    if (!unit) return;
+
+    const activities = Object.values(unit.difficultyTracks)
+      .flatMap((track) => track.tasks)
+      .flatMap((task) => task.sessions)
+      .flatMap((session) => session.activities);
+    expect(activities).toHaveLength(48);
+
+    for (const activity of activities) {
+      const content = [activity.prompt, activity.hint, activity.explanation,
+        ...(activity.kind === 'choice' ? activity.options.map(({ label }) => label) : []),
+        ...(activity.kind === 'match' ? activity.pairs.flatMap(({ left, right }) => [left, right]) : []),
+        ...(activity.kind === 'categorize' ? [
+          ...activity.categories.map(({ label }) => label),
+          ...activity.items.map(({ label }) => label),
+        ] : []),
+        ...(activity.kind === 'order' ? activity.items.map(({ label }) => label) : []),
+      ].join(' ');
+      expect(content, activity.id).not.toMatch(/半时|时半/u);
+      expect(content, activity.id).not.toMatch(/clock-half-hour-reading/u);
+    }
+  });
+
   it('keeps Grade 1 Term 2 Unit 1 generated questions within visual recognition and simple composing', () => {
     const unitId = 'grade-1/term-2/math/unit-01';
     const unit = curriculum.units[unitId];

@@ -31,18 +31,18 @@ export interface ChallengeBackup {
   };
 }
 
-export type ChallengeAttemptBackupImport = ChallengeAttempt
+export type ChallengeAttemptRecoveryImport = ChallengeAttempt
   | (Omit<ChallengeAttempt, 'snapshotSchemaVersion'> & { snapshotSchemaVersion?: undefined });
 
-export interface ChallengeBackupImportData {
-  attempts: ChallengeAttemptBackupImport[];
+export interface ChallengeRecoverySnapshotImportData {
+  attempts: ChallengeAttemptRecoveryImport[];
   taskProgress: TaskProgress[];
   recentQuestionAttempts: string[][];
   wrongQuestions: WrongQuestionRecord[];
 }
 
 export interface ChallengeBackupImport extends Omit<ChallengeBackup, 'data'> {
-  data: ChallengeBackupImportData;
+  data: ChallengeBackupData;
 }
 
 type CryptoProvider = Pick<Crypto, 'subtle'> | undefined;
@@ -189,7 +189,7 @@ function isAttempt(value: unknown): value is ChallengeAttempt {
     && hasValidAttemptFields(value);
 }
 
-function isAttemptImport(value: unknown): value is ChallengeAttemptBackupImport {
+function isAttemptRecoveryImport(value: unknown): value is ChallengeAttemptRecoveryImport {
   return isRecord(value)
     && (value.snapshotSchemaVersion === undefined || value.snapshotSchemaVersion === CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION)
     && hasValidAttemptFields(value);
@@ -260,16 +260,16 @@ function isBackupData(value: unknown): value is ChallengeBackupData {
   return hasValidBackupData(value, isAttempt);
 }
 
-function isBackupImportData(value: unknown): value is ChallengeBackupImportData {
-  return hasValidBackupData(value, isAttemptImport);
+function isRecoverySnapshotImportData(value: unknown): value is ChallengeRecoverySnapshotImportData {
+  return hasValidBackupData(value, isAttemptRecoveryImport);
 }
 
 export function isChallengeBackupData(value: unknown): value is ChallengeBackupData {
   return isBackupData(value);
 }
 
-export function normalizeImportedChallengeBackupData(data: ChallengeBackupImportData): ChallengeBackupData {
-  if (!isBackupImportData(data)) throw new Error('备份文件格式或数据结构无效。');
+export function normalizeRecoverySnapshotData(data: ChallengeRecoverySnapshotImportData): ChallengeBackupData {
+  if (!isRecoverySnapshotImportData(data)) throw new Error('恢复点结构无效。');
   const attempts = data.attempts.map((attempt): ChallengeAttempt => {
     if (attempt.snapshotSchemaVersion === undefined) {
       return { ...attempt, snapshotSchemaVersion: CURRENT_ATTEMPT_SNAPSHOT_SCHEMA_VERSION } as ChallengeAttempt;
@@ -280,7 +280,7 @@ export function normalizeImportedChallengeBackupData(data: ChallengeBackupImport
     return attempt as ChallengeAttempt;
   });
   const normalized = { ...data, attempts };
-  if (!isBackupData(normalized)) throw new Error('备份文件格式或数据结构无效。');
+  if (!isBackupData(normalized)) throw new Error('恢复点结构无效。');
   return normalized;
 }
 
@@ -309,7 +309,7 @@ function isChallengeBackup(value: unknown): value is ChallengeBackupImport {
     && value.format === 'starry-island-challenge-backup'
     && value.version === 1
     && isTimestamp(value.createdAt)
-    && isBackupImportData(value.data)
+    && isBackupData(value.data)
     && (value.preferences === undefined || isChallengeBackupPreferences(value.preferences))
     && isRecord(value.integrity)
     && value.integrity.algorithm === 'SHA-256'

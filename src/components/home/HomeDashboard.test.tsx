@@ -39,6 +39,14 @@ describe('HomeDashboard', () => {
     expect(sections.slice(0, 4)).toEqual(['继续学习', '当前进度', '最近学习记录', '闯关入口']);
   });
 
+  it('showsRecentLearningEmptyStateWithTitleAndDescription', () => {
+    render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} />);
+
+    const recentSection = screen.getByRole('region', { name: '最近学习记录' });
+    expect(within(recentSection).getByRole('heading', { level: 3, name: '还没有学习记录' })).toBeInTheDocument();
+    expect(within(recentSection).getByText('完成一场学习后，最近记录会显示在这里。')).toBeInTheDocument();
+  });
+
   it('showsContinueLearningForTheResolvedBasicSession', async () => {
     const onNavigate = vi.fn();
     render(<HomeDashboard progress={emptyProgress} onNavigate={onNavigate} />);
@@ -57,6 +65,21 @@ describe('HomeDashboard', () => {
     expect(await screen.findByRole('list', { name: '闯关成长摘要' })).toHaveTextContent('已完成 8 次挑战');
     expect(screen.getByRole('list', { name: '闯关成长摘要' })).toHaveTextContent('通过 3 个任务');
     expect(screen.getByRole('list', { name: '闯关成长摘要' })).toHaveTextContent('点亮 1 枚徽章');
+  });
+
+  it('showsAChallengeEmptyStateWhenThereAreNoChallengeRecords', async () => {
+    vi.mocked(loadChallengeGrowthSummary).mockResolvedValueOnce({
+      completedAttempts: 0,
+      passedTaskCount: 0,
+      earnedBadgeCount: 0,
+      groups: [],
+    });
+    render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} />);
+
+    expect(await screen.findByRole('heading', { level: 3, name: '还没有闯关成果' })).toBeInTheDocument();
+    expect(screen.getByText('完成并提交一次挑战后，成绩和徽章会显示在这里。')).toBeInTheDocument();
+    expect(screen.queryByRole('list', { name: '闯关成长摘要' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '进入闯关中心' })).toBeInTheDocument();
   });
 
   it('showsThreeLatestRealLearningEventsWithRegisteredCourseLinks', async () => {

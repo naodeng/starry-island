@@ -49,6 +49,27 @@ function attempt(): ChallengeAttempt {
 }
 
 describe('ChallengeResult', () => {
+  it('showsACompleteAllCorrectStateWithoutEmptyRecommendationOrReviewSections', () => {
+    const completedAttempt = attempt();
+    completedAttempt.answers[missedQuestion().questionId] = 65;
+
+    render(
+      <ChallengeResult
+        attempt={completedAttempt}
+        result={{ correctCount: 1, totalCount: 1, scorePercent: 100, passed: true, stars: 3, elapsedMs: 12000 }}
+        progress={{ taskId: 'task-1', bestCorrect: 1, bestTotal: 1, latestCorrect: 1, latestTotal: 1, completedCount: 1, everPassed: true, updatedAt: '2026-10-21T00:00:12.000Z', revision: 1 }}
+        taskTitle="基础闯关"
+        learningTasks={[]}
+        onNavigate={vi.fn()}
+        onBack={vi.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('heading', { name: '这次答得很棒' })).toBeInTheDocument();
+    expect(screen.getByText('本次答题全部正确。继续保持好奇心！')).toBeInTheDocument();
+    expect(screen.getByText('你认真完成了每一道题，继续保持好奇心！')).toBeInTheDocument();
+  });
+
   it('shows weak knowledge points and opens the associated existing learning task', () => {
     const onNavigate = vi.fn();
     const learningTask: LearningTaskReference = {

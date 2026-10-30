@@ -101,7 +101,7 @@ export default function ActivityRenderer({ activity, onSolved, onAnswerResult, r
     <section className="activity-renderer" aria-labelledby={`activity-${activity.id}`}>
       <div className="activity-prompt-row">
         <span className="activity-symbol" aria-hidden="true"><StarIcon size={18} /></span>
-        <h2 id={`activity-${activity.id}`}>{activity.prompt}</h2>
+        <h2 id={`activity-${activity.id}`} tabIndex={-1}>{activity.prompt}</h2>
       </div>
       <div className="activity-speech-controls">
         <Button type="default" disabled={!soundEnabled} onClick={() => readText(getActivityQuestionSpeechText(activity), '题目')}>

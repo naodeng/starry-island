@@ -53,6 +53,7 @@ import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1Eng
 import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1EnglishUnit04SupplementalActivities';
 import { grade2Term1EnglishUnit05SupplementalActivities } from './grade2Term1EnglishUnit05SupplementalActivities';
 import { grade2Term1EnglishUnit06SupplementalActivities } from './grade2Term1EnglishUnit06SupplementalActivities';
+import { grade2Term1MathTextbookSupplementalActivities } from './grade2Term1MathTextbookSupplementalActivities';
 
 const PILOT_UNIT_IDS = new Set([
   'grade-1/term-2/chinese/unit-01',
@@ -106,9 +107,9 @@ const PILOT_UNIT_IDS = new Set([
   'grade-2/term-1/math/unit-04',
   'grade-2/term-1/math/unit-05',
   'grade-2/term-1/math/unit-06',
-  'grade-2/term-1/math/unit-07',
-  'grade-2/term-1/math/unit-08',
-  'grade-2/term-1/math/unit-09',
+  'grade-2/term-1/math/integrated-practice-01',
+  'grade-2/term-1/math/integrated-practice-02',
+  'grade-2/term-2/math/integrated-practice-01',
   'grade-2/term-1/english/unit-01',
   'grade-2/term-1/english/unit-02',
   'grade-2/term-1/english/unit-03',
@@ -134,6 +135,75 @@ const PILOT_UNIT_IDS = new Set([
   'grade-3/term-1/english/unit-01',
   'grade-5/term-1/chinese/unit-01',
 ]);
+
+const GRADE_2_TERM_2_MATH_PRACTICE_KNOWLEDGE_POINTS = {
+  basic: [
+    [
+      ['translation-direction-and-orientation'],
+      ['axis-symmetry-and-symmetry-axis'],
+      ['two-digit-addition-and-subtraction'],
+      ['survey-design-and-data-collection', 'length-units', 'mass-unit-conversion'],
+      ['length-units'],
+      ['translation-direction-and-orientation', 'rotation-around-fixed-center'],
+      ['reading-and-reasoning-with-statistical-tables'],
+      ['integrated-review-and-answer-checking'],
+    ],
+    [
+      ['length-units'],
+      ['two-digit-addition-and-subtraction'],
+      ['mass-unit-conversion'],
+      ['length-units', 'survey-design-and-data-collection', 'mass-unit-conversion'],
+      ['multiplication-facts'],
+      ['organizing-survey-data'],
+      ['reading-and-reasoning-with-statistical-tables'],
+      ['integrated-review-and-answer-checking'],
+    ],
+  ],
+  advanced: [
+    [
+      ['translation-direction-and-orientation'],
+      ['length-units'],
+      ['multiplication-facts'],
+      ['length-units', 'translation-direction-and-orientation', 'multiplication-facts'],
+      ['organizing-survey-data', 'length-units', 'translation-direction-and-orientation'],
+      ['length-units'],
+      ['reading-and-reasoning-with-statistical-tables'],
+      ['integrated-review-and-answer-checking'],
+    ],
+    [
+      ['length-units'],
+      ['translation-direction-and-orientation'],
+      ['two-digit-addition-and-subtraction'],
+      ['length-units', 'organizing-survey-data', 'axis-symmetry-and-symmetry-axis'],
+      ['organizing-survey-data', 'axis-symmetry-and-symmetry-axis'],
+      ['length-units'],
+      ['reading-and-reasoning-with-statistical-tables'],
+      ['integrated-review-and-answer-checking'],
+    ],
+  ],
+  high: [
+    [
+      ['mass-comparison-and-estimation', 'mass-unit-conversion'],
+      ['length-units'],
+      ['multiplication-facts', 'two-digit-addition-and-subtraction'],
+      ['axis-symmetry-and-symmetry-axis', 'length-units', 'mass-unit-conversion'],
+      ['organizing-survey-data'],
+      ['axis-symmetry-and-symmetry-axis'],
+      ['mass-unit-conversion'],
+      ['integrated-review-and-answer-checking', 'survey-design-and-data-collection'],
+    ],
+    [
+      ['length-units'],
+      ['mass-unit-conversion'],
+      ['axis-symmetry-and-symmetry-axis'],
+      ['length-units', 'organizing-survey-data', 'mass-unit-conversion'],
+      ['organizing-survey-data', 'integrated-review-and-answer-checking'],
+      ['two-digit-addition-and-subtraction'],
+      ['mass-comparison-and-estimation', 'mass-unit-conversion'],
+      ['integrated-review-and-answer-checking', 'survey-design-and-data-collection'],
+    ],
+  ],
+} as const;
 
 function activityText(activity: ActivityDefinition): string {
   const fields: string[] = [activity.prompt];
@@ -168,6 +238,35 @@ export function derivePilotQuestionKnowledgePointIds(
   activity: ActivityDefinition,
 ): string[] {
   if (!PILOT_UNIT_IDS.has(sourceUnitId)) throw new Error(`No pilot knowledge-point mapping exists for ${sourceUnitId}.`);
+
+  if (sourceUnitId === 'grade-2/term-2/math/integrated-practice-01') {
+    const match = activity.id.match(/\/(basic|advanced|high)\/task-(\d{2})\/session-01\/question-(\d{2})$/u);
+    if (!match) throw new Error(`No Grade 2 Term 2 Math practice mapping exists for ${activity.id}.`);
+    const difficulty = match[1] as keyof typeof GRADE_2_TERM_2_MATH_PRACTICE_KNOWLEDGE_POINTS;
+    const taskIndex = Number(match[2]) - 1;
+    const questionIndex = Number(match[3]) - 1;
+    const points = GRADE_2_TERM_2_MATH_PRACTICE_KNOWLEDGE_POINTS[difficulty][taskIndex]?.[questionIndex];
+    if (!points) throw new Error(`No Grade 2 Term 2 Math practice knowledge-point mapping exists for ${activity.id}.`);
+    return [...points];
+  }
+
+  if (sourceUnitId.startsWith('grade-2/term-1/math/')) {
+    const supplemental = grade2Term1MathTextbookSupplementalActivities.find(({ activity: candidate }) => candidate.id === activity.id);
+    if (supplemental) return [...supplemental.knowledgePointIds];
+    const pointsByUnit: Record<string, string[]> = {
+      'grade-2/term-1/math/unit-01': ['classification-standards', 'classification-counts-and-comparison', 'complete-and-nonduplicated-records'],
+      'grade-2/term-1/math/unit-02': ['equal-groups-multiplication', 'multiplication-facts'],
+      'grade-2/term-1/math/unit-03': ['equal-sharing-and-grouping', 'division-facts-and-multiplication-check'],
+      'grade-2/term-1/math/unit-04': ['length-units', 'measurement-and-estimation'],
+      'grade-2/term-1/math/unit-05': ['multiplication-facts-7-9', 'division-facts-7-9'],
+      'grade-2/term-1/math/unit-06': ['term-review-method-selection', 'term-review-result-checking'],
+      'grade-2/term-1/math/integrated-practice-01': ['direction-and-reference-points'],
+      'grade-2/term-1/math/integrated-practice-02': ['body-based-measurement-and-estimation'],
+    };
+    const points = pointsByUnit[sourceUnitId];
+    if (!points) throw new Error(`No new textbook knowledge-point mapping exists for ${sourceUnitId}.`);
+    return [...points];
+  }
 
   const text = activityText(activity);
   switch (sourceUnitId) {
@@ -403,8 +502,7 @@ export function derivePilotQuestionKnowledgePointIds(
       if (supplemental) return [...supplemental.knowledgePointIds];
 
       const ids: string[] = [];
-      if (/整时|几时|指向\s*12|表示.*时刻/u.test(text)) ids.push('clock-whole-hour-reading');
-      if (/半时|时半|指向\s*6|两个数字之间|和.*之间/u.test(text)) ids.push('clock-half-hour-reading');
+      if (/整时|时整|几时|指向\s*12|表示.*时刻/u.test(text)) ids.push('clock-whole-hour-reading');
       if (/时针|分针|短针|长针|指针/u.test(text)) ids.push('clock-hand-roles');
       if (ids.length === 0) throw new Error(`Could not classify Grade 1 clock question ${activity.id}.`);
       return [...new Set(ids)];

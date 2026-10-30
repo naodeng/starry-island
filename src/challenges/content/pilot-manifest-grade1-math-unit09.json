@@ -709,7 +709,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-09-basic-10",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "clock-half-hour-reading"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -935,7 +935,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-09-advanced-10",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "clock-half-hour-reading"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1123,6 +1123,7 @@
       "difficulty": "high",
       "knowledgePointIds": [
         "solid-shape-recognition",
+        "solid-shape-features",
         "solid-shape-use"
       ],
       "lifecycle": "active",
@@ -1180,7 +1181,7 @@
       "activityId": "challenge-supplement-grade-1-term-1-math-unit-09-high-10",
       "difficulty": "high",
       "knowledgePointIds": [
-        "clock-half-hour-reading"
+        "clock-whole-hour-reading"
       ],
       "lifecycle": "active",
       "approved": true,
@@ -1323,8 +1324,7 @@
           "solid-shape-recognition",
           "solid-shape-features",
           "solid-shape-use",
-          "clock-whole-hour-reading",
-          "clock-half-hour-reading"
+          "clock-whole-hour-reading"
         ],
         "mappingEvidence": {
           "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上册数学; src/content/grade-1-and-3/catalog.ts",
@@ -1353,8 +1353,7 @@
               "solid-shape-recognition",
               "solid-shape-features",
               "solid-shape-use",
-              "clock-whole-hour-reading",
-              "clock-half-hour-reading"
+              "clock-whole-hour-reading"
             ]
           },
           {
@@ -1378,8 +1377,7 @@
               "solid-shape-recognition",
               "solid-shape-features",
               "solid-shape-use",
-              "clock-whole-hour-reading",
-              "clock-half-hour-reading"
+              "clock-whole-hour-reading"
             ]
           },
           {
@@ -1389,7 +1387,7 @@
             "requiredKnowledgePointIds": [
               "addition-within-twenty",
               "solid-shape-recognition",
-              "clock-half-hour-reading"
+              "clock-whole-hour-reading"
             ]
           }
         ]

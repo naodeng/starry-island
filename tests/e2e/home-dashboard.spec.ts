@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { installAudioSpy } from './audioSpy';
 
 test('showsTheFourHomeSectionsAndReturnsFocusAfterEscape', async ({ page }) => {
@@ -36,7 +36,7 @@ test('continuesIntoARegisteredBasicSessionAndKeepsCourseRoutesAvailable', async 
   await expect(page.getByRole('heading', { name: '第一单元 · 大自然的秘密' })).toBeVisible();
 });
 
-test('keepsCourseEntryAvailableWhenChallengeStorageFails', async ({ page }) => {
+test('keepsTheAppGatedWhenTheLocalChallengeMigrationFails', async ({ page }) => {
   await page.addInitScript(() => {
     const originalOpen = IDBFactory.prototype.open;
     IDBFactory.prototype.open = function open(name: string, version?: number) {
@@ -47,11 +47,10 @@ test('keepsCourseEntryAvailableWhenChallengeStorageFails', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/');
 
-  await expect(page.getByRole('alert')).toContainText('闯关进度暂时无法读取');
-  const continueButton = page.getByRole('button', { name: '继续学习' });
-  await expect(continueButton).toBeEnabled();
-  await continueButton.click();
-  await expect(page).toHaveURL(/\/grade-\d+\/term-[12]\/(chinese|math|english)\/unit-\d{2}\/basic\/task-\d{2}\/session-\d{2}$/);
+  await expect(page.getByRole('alert')).toContainText('课程更新暂时没有完成');
+  await expect(page.getByRole('alert')).toContainText('本机现有记录没有被整体清除');
+  await expect(page.getByRole('button', { name: '重试更新' })).toBeEnabled();
+  await expect(page.getByRole('button', { name: '继续学习' })).toHaveCount(0);
 });
 
 test('rendersTheHomeDashboardOnPhoneAndDesktopInBothThemesWithReducedMotion', async ({ page }) => {

@@ -2,6 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
+import * as unitLoader from './content/unitLoader';
+import { curriculumManifest } from './content/curriculumManifest';
 
 const playedSources: string[] = [];
 
@@ -104,6 +106,76 @@ describe('App', () => {
     expect(await screen.findByRole('heading', { name: '备份与恢复暂时无法打开' })).toBeInTheDocument();
     expect(screen.getByText(/现有闯关记录没有被更改/)).toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: '闯关中心' })).not.toBeInTheDocument();
+  });
+
+  it('showsARecoverableLoadingStateWhileOpeningAnActiveCourse', () => {
+    vi.spyOn(unitLoader, 'loadUnit').mockImplementation(() => new Promise(() => {}));
+    window.history.replaceState({}, '', '/grade-1/term-1/chinese/unit-01');
+    render(<App />);
+
+    expect(screen.getByRole('heading', { name: '正在打开课程' })).toBeInTheDocument();
+    expect(screen.getByText('马上就好，正在为你打开课程内容。')).toBeInTheDocument();
+    expect(screen.getByRole('main')).toHaveAttribute('aria-busy', 'true');
+    expect(screen.getByRole('main').querySelector('.route-message-card')?.className).toMatch(/animal-card-/);
+  });
+
+  it('showsALoadErrorAndRetriesTheSameCourseRoute', async () => {
+    const user = userEvent.setup();
+    const loadUnit = unitLoader.loadUnit;
+    vi.spyOn(unitLoader, 'loadUnit')
+      .mockRejectedValueOnce(new Error('module unavailable'))
+      .mockImplementationOnce(loadUnit);
+    const course = curriculumManifest.grades[0]!.terms[0]!.subjects[0]!.units[0]!;
+    window.history.replaceState({}, '', '/grade-1/term-1/chinese/unit-01');
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { name: '课程暂时没有打开' })).toBeInTheDocument();
+    expect(screen.getByText('你的学习进度还在本机保存，可以再试一次。')).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: '重新加载' }));
+
+    expect(await screen.findByRole('heading', { name: course.title })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/grade-1/term-1/chinese/unit-01');
+  });
+
+  it('showsComingSoonWithACourseCatalogRecoveryAction', async () => {
+    const user = userEvent.setup();
+    const course = curriculumManifest.grades[0]!.terms[0]!.subjects[0]!.units[0]!;
+    const originalStatus = course.status;
+    course.status = 'comingSoon';
+    window.history.replaceState({}, '', '/grade-1/term-1/chinese/unit-01');
+
+    try {
+      render(<App />);
+      expect(await screen.findByRole('heading', { name: course.title })).toBeInTheDocument();
+      expect(screen.getByText('我们正在核对教材版本、设计合适的小游戏，准备好后就会开放。')).toBeInTheDocument();
+      await user.click(screen.getByRole('button', { name: '回到课程目录' }));
+      expect(window.location.pathname).toBe('/courses');
+      expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
+    } finally {
+      course.status = originalStatus;
+    }
+  });
+
+  it('showsNotFoundWithACourseCatalogRecoveryAction', async () => {
+    const user = userEvent.setup();
+    window.history.replaceState({}, '', '/not-a-course');
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { name: '没有找到这门课程' })).toBeInTheDocument();
+    expect(screen.getByText('别担心，从课程目录重新选择一座已经开放的学习岛吧。')).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: '回到课程目录' }));
+    expect(window.location.pathname).toBe('/courses');
+    expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
+  });
+
+  it('showsAndDismissesTheTextbookMigrationNotice', async () => {
+    const user = userEvent.setup();
+    render(<App showTextbookMigrationNotice />);
+
+    const notice = screen.getByText('二年级上册数学教材已更新，该科旧进度已重置；其他课程记录保留。');
+    expect(notice).toBeVisible();
+    await user.click(screen.getByRole('button', { name: '知道了' }));
+    expect(screen.queryByText('二年级上册数学教材已更新，该科旧进度已重置；其他课程记录保留。')).not.toBeInTheDocument();
   });
 
   it('returnsFromASessionThroughHistoryAndMovesFocusToEachRouteHeading', async () => {

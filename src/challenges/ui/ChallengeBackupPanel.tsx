@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, Checkbox, Upload } from 'animal-island-ui';
 import type { UploadCustomRequestOptions } from 'animal-island-ui';
+import EmptyState from '../../components/shared/EmptyState';
 import type { ChallengeBackupPreferences } from '../domain/backup';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import './challenge.css';
@@ -119,6 +120,14 @@ export default function ChallengeBackupPanel({
           {backupImportState.status === 'reading' ? '正在检查备份…' : '选择闯关备份文件'}
         </Upload>
       </div>
+      {backupImportState.status === 'idle' && (
+        <EmptyState
+          className="challenge-backup-empty"
+          headingLevel={3}
+          title="尚未选择备份文件"
+          description="选择本机备份文件后，会先检查内容并展示安全合并预览。"
+        />
+      )}
       {backupExportState === 'success' && <p className="challenge-backup-status" role="status">闯关备份已生成并下载到此设备。</p>}
       {backupExportState === 'error' && <p className="challenge-backup-status" role="status">闯关备份没有生成；本机记录没有更改，可以稍后重试。</p>}
       <section className="challenge-diagnostics-panel" aria-labelledby="challenge-diagnostics-heading">

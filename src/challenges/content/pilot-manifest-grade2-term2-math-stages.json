@@ -1,6 +1,701 @@
 {
   "version": "pilot-2026-10-28.1",
-  "questions": [],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85d4101a5853b881fb0623210ca48dc3f1e6b337ab1c2e36ef2d71149975e3e8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1797dc498241829170dd57cbd300322217408e4a1ad6ea9f652e8b28162eaa35",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02eb5d142ece657fdd9a57bb6e61a4115ea9b671785f1b22c0910e30966cbf86",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "length-units",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "224d4eeef0fee7a663ac43cd3fdcd5702ada136033e3dd867408ddfc2e55c2ab",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "914c2b653e461d405adcda59dbfb2c2b1760767f20af6ebf82bad420de3fc2c9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5001bbe8a714ea19116d4d796f832f38481ddffee55334c45d193fd348d7dd16",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4821638af8e65394f8dd129e373aea18a34a3d8e39fd9e8709dfa9d8423d661b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb5122dc4160609ebd8bd414fac609cd1dd69b5037fbae0abf88d57ff41cefde",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "009825551ec79d98afe871d66035318f8f22752f8ac42f97aa7168585fd7f097",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bc30a79079a42832c5287f6b10bee6b27b16bead13c9c4ed435b60532d8e0b1b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37805a57c347e7fabc983f927033839a1b783fdc354ce583086009488dedda65",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "survey-design-and-data-collection",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "235e1253c9ef411b4ca11f537b8b9ee3285f5fa44d30f49028eb97f5fc9bff31",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "multiplication-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10f529340497e5600d4be2610ac677d326aac45b997fc128a712286a79f04627",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5633c0aa536980548e6b8fdc0aaecf1fa3be49f9e52384e7b031dea6c3911b31",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e02c66eb863ce6f5de64ea2265016fc778d54ce8c5b8e2985cc76d039d66153d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bbd5eaa291ee70e94c82f1f68d3f53c3ab7549bdbc6b9920b01086cd0915f4d0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d01559ca992201fa493157242e5957beaeda7654d6540727c2e0aec32de127f2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "789f43a195e4504240e0c7af711df34216ed30b99ae50d183af309ecf69fd7dd",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "multiplication-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f954d58254b4eea5cdebf574cd68b0b1f72834521e737c962244529745108ee",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "translation-direction-and-orientation",
+        "multiplication-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f0c012e232a7ff28c1fa448eff57fe566cc36b468281d9186f8552d3b468ac7a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "length-units",
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "15e3e08c9c680e30ae173f2b34cc112d229c11d78249b63b9d22266b9810aa79",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "96dfb85de0c62e2e1049f87733b80369a2f8112921898c0dbf0e74ea9615856e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "edc6790c9332716c6b052cd4e2faa62e57c3beee3bc4b166e7d2283cae510e80",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "850e417b736c7cc8de3510e952fb4a78bac5ee9499ddd82974ebf2458af2a740",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1e8b744d52eb900178b8f797c51422c3d9a42bc6545a36866c7106b00fa830de",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "464447d72e9e8efbd40ea41791563ef0aed6d7ef28bb5c6768c5613dfbc57225",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05095a37a58e868957c15c8bc4362d87a3217d7b219797e2218abc65caafd574",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "organizing-survey-data",
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29e9aa4805ba84f6561f2551de52d81272baf7ab5483b724963a20b020313a56",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1cb287a68507c6cae58c2141bfd345e33ab409e5f776efead9152710fb25714b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36a8887fce4c0fbaa22beb8bf33c7b819dc5dfd149b0ef9646e71d7833904c3e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3105b483b4574f1205aee4188ea7b0c71f3114a26ad895e630f6e8f52a7d168",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ff2dac6b2d83b8b683b6f10293ca935c157effd01312c1bd738fcc57a6b8e06",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-comparison-and-estimation",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a51f74eb6948f3551d635c2145e081a57096d8c14f75b2a43f88eb5f154f5812",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "01ac3dc243ec7961d88f74478f1ff43229f404b67fccc961fe57c794920aae05",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b77e43f38d3b0875455864e5b9a9693e873ed0fb00391c612fe0f449f5d110db",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "length-units",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "99d0e406aa961e24184da1b4b2f2180833a1abaee7b2ff196bb483184c4ff449",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1fc93fee916ded514bd6e41fb39979d19eaea6b5104fbe3548fa072a66b12c70",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "27c5568ad1d44b1397d06f231112d288a19bc3c723760eaf680ef172ce5129cb",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b8267f6e77923885f11e434337bace78da809acf048e496f0a4e7ed7f8d9565",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking",
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "08869f7c7f06e87c910ebf4f2056cf89aaf345e320615a1972eacc77fc57ff6f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "31127dd6ac4386466d7cc95eb8bb7fa9843276dd6bb45ed99db28a001e145434",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18f54cd7bc3a5c3b281038c35ab9ef86ac7b35c080d2e6ff9b08898e5769884f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c9d49902b559e31e0d254a49f0c724f6526792ad8077a5234754bc0210ef3db",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "organizing-survey-data",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "50c90c3f64b4204ef79ae1b0957ee2543b3a15e966b56fc4638afe9eef00a39d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4751ed74f12126efa07e3feff4e1d07566635fef28a9b74f2f3163a315744b92",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "563660d683e398e266fb1cb091a1b8c49a4c6febd34252fa526b2fccb1690ed2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-comparison-and-estimation",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f94d2df9991cc613f4c648cc154a3c7717c74e45764dda088267e6a636a88c78",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking",
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a29643bbe6354ed8e7ba704cf94a71642de4b1d60a008216eaf6e4f5b7e7a44d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z"
+    }
+  ],
   "groups": [
     {
       "definition": {
@@ -31,9 +726,9 @@
           "translation-direction-and-orientation"
         ],
         "mappingEvidence": {
-          "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射; docs/challenges/grade-2-term-2-math-unit-01-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-02-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-03-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-04-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-05-question-review.tsv",
-          "checkedAt": "2026-10-28",
-          "notes": "按二年级下册数学教材正式章节顺序划分；用户确认按教材章节顺序等分。阶段划分不代表学校授课日历。"
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#用户提供教材目录映射 ISBN 978-7-107-37176-9; docs/challenges/grade-2-term-2-math-unit-01-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-02-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-03-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-04-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-05-question-review.tsv",
+          "checkedAt": "2026-10-29",
+          "notes": "按二年级下册数学教材正式章节顺序划分；用户确认按教材章节顺序等分。阶段划分不代表学校授课日历。 教材来源为用户提供的二年级下册数学（ISBN 978-7-107-37176-9），版次、印次未知；阶段题目 AI 主审已完成，独立教育者复核未完成（0人）。"
         },
         "tasks": [
           {
@@ -569,12 +1264,14 @@
         "subject": "math",
         "sourceUnitIds": [
           "grade-2/term-2/math/unit-06",
+          "grade-2/term-2/math/integrated-practice-01",
           "grade-2/term-2/math/unit-07",
           "grade-2/term-2/math/unit-08",
           "grade-2/term-2/math/unit-09",
           "grade-2/term-2/math/unit-10"
         ],
         "learningTaskUnitIds": [
+          "grade-2/term-2/math/unit-02",
           "grade-2/term-2/math/unit-05",
           "grade-2/term-2/math/unit-06",
           "grade-2/term-2/math/unit-07",
@@ -602,9 +1299,9 @@
           "zero-as-placeholder"
         ],
         "mappingEvidence": {
-          "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射; docs/challenges/grade-2-term-2-math-unit-06-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-07-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-08-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-09-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-10-question-review.tsv",
-          "checkedAt": "2026-10-28",
-          "notes": "按二年级下册数学教材正式章节顺序划分；用户确认按教材章节顺序等分。阶段划分不代表学校授课日历。"
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#用户提供教材目录映射 ISBN 978-7-107-37176-9; docs/challenges/grade-2-term-2-math-unit-06-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-07-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-08-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-09-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-10-question-review.tsv; docs/challenges/grade-2-term-2-math-integrated-practice-01-question-review.tsv",
+          "checkedAt": "2026-10-29",
+          "notes": "按二年级下册数学教材正式章节顺序划分；用户确认按教材章节顺序等分。阶段划分不代表学校授课日历。 依据用户提供教材目录，小小设计师综合实践位于第6单元与第7单元之间，因此纳入第二阶段和期末候选题池。 教材来源为用户提供的二年级下册数学（ISBN 978-7-107-37176-9），版次、印次未知；阶段题目 AI 主审已完成，独立教育者复核未完成（0人）。"
         },
         "tasks": [
           {
@@ -779,6 +1476,54 @@
         "challenge-question:challenge-supplement-grade-2-term-2-math-unit-06-high-12",
         "challenge-question:challenge-supplement-grade-2-term-2-math-unit-06-high-13",
         "challenge-question:challenge-supplement-grade-2-term-2-math-unit-06-high-14",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-08",
         "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-01",
         "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-02",
         "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-03",
@@ -1156,6 +1901,7 @@
           "grade-2/term-2/math/unit-04",
           "grade-2/term-2/math/unit-05",
           "grade-2/term-2/math/unit-06",
+          "grade-2/term-2/math/integrated-practice-01",
           "grade-2/term-2/math/unit-07",
           "grade-2/term-2/math/unit-08",
           "grade-2/term-2/math/unit-09",
@@ -1190,9 +1936,9 @@
           "zero-as-placeholder"
         ],
         "mappingEvidence": {
-          "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射; docs/challenges/grade-2-term-2-math-unit-01-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-02-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-03-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-04-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-05-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-06-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-07-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-08-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-09-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-10-question-review.tsv",
-          "checkedAt": "2026-10-28",
-          "notes": "按二年级下册数学教材正式章节顺序划分；用户确认按教材章节顺序等分。阶段划分不代表学校授课日历。"
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#用户提供教材目录映射 ISBN 978-7-107-37176-9; docs/challenges/grade-2-term-2-math-unit-01-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-02-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-03-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-04-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-05-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-06-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-07-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-08-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-09-question-review.tsv; docs/challenges/grade-2-term-2-math-unit-10-question-review.tsv; docs/challenges/grade-2-term-2-math-integrated-practice-01-question-review.tsv",
+          "checkedAt": "2026-10-29",
+          "notes": "按二年级下册数学教材正式章节顺序划分；用户确认按教材章节顺序等分。阶段划分不代表学校授课日历。 依据用户提供教材目录，小小设计师综合实践位于第6单元与第7单元之间，因此纳入第二阶段和期末候选题池。 教材来源为用户提供的二年级下册数学（ISBN 978-7-107-37176-9），版次、印次未知；阶段题目 AI 主审已完成，独立教育者复核未完成（0人）。"
         },
         "tasks": [
           {
@@ -1842,6 +2588,54 @@
         "challenge-question:challenge-supplement-grade-2-term-2-math-unit-06-high-12",
         "challenge-question:challenge-supplement-grade-2-term-2-math-unit-06-high-13",
         "challenge-question:challenge-supplement-grade-2-term-2-math-unit-06-high-14",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/integrated-practice-01/high/task-02/session-01/question-08",
         "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-01",
         "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-02",
         "challenge-question:grade-2/term-2/math/unit-07/basic/task-01/session-01/question-03",

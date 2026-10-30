@@ -71,8 +71,8 @@ export default function ChallengeResult({ attempt, result, progress, taskTitle, 
         <section className="challenge-section" aria-labelledby="challenge-study-heading">
           <div className="challenge-section-heading">
             <div>
-              <p className="eyebrow">学习建议</p>
-              <h2 id="challenge-study-heading">{studyRecommendations.length ? '可以再练一练' : '薄弱知识点建议'}</h2>
+              <p className="eyebrow">{studyRecommendations.length ? '学习建议' : '学习反馈'}</p>
+              <h2 id="challenge-study-heading">{studyRecommendations.length ? '可以再练一练' : '这次答得很棒'}</h2>
             </div>
           </div>
           {studyRecommendations.length ? (
@@ -97,7 +97,7 @@ export default function ChallengeResult({ attempt, result, progress, taskTitle, 
               ))}
             </ul>
           ) : (
-            <p className="challenge-inline-note">本次答题全部正确，继续保持好奇心！</p>
+            <p className="challenge-inline-note">本次答题全部正确。继续保持好奇心！</p>
           )}
         </section>
         <section className="challenge-section" aria-labelledby="challenge-review-heading">

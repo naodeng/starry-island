@@ -7,6 +7,13 @@ import { getChallengeGroupDescription, getChallengeGroupTitle } from './Challeng
 import pilotManifest from '../content/pilotManifest';
 
 describe('ChallengeCenter', () => {
+  it('showsAnEmptyStateWhenNoChallengeGroupsAreRegistered', () => {
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
+
+    expect(screen.getByRole('heading', { name: '暂无可用挑战路线' })).toBeInTheDocument();
+    expect(screen.getByText('课程路线通过内容质量检查后，会显示在这里。')).toBeInTheDocument();
+  });
+
   it('orders routes by grade, semester, subject, chapters, then semester stages', () => {
     const groupIds = [
       'grade-2-term-1-math-unit-02',
@@ -26,7 +33,7 @@ describe('ChallengeCenter', () => {
       learningTasks: [],
       issues: [],
     }));
-    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressAvailable onNavigate={vi.fn()} />);
+    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
 
     expect(screen.getAllByRole('heading', { level: 3 }).map(({ textContent }) => textContent)).toEqual([
       '一年级上册语文 · 前半学期',
@@ -152,7 +159,7 @@ describe('ChallengeCenter', () => {
   it('links to local growth, settings data management, and the course catalog', () => {
     const onNavigate = vi.fn();
     const groups: LoadedPilotGroup[] = [];
-    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressAvailable onNavigate={onNavigate} />);
+    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={onNavigate} />);
 
     fireEvent.click(screen.getByRole('button', { name: '查看成长记录' }));
     expect(onNavigate).toHaveBeenLastCalledWith('/challenges/growth');
@@ -162,5 +169,14 @@ describe('ChallengeCenter', () => {
     expect(onNavigate).toHaveBeenLastCalledWith('/courses');
     expect(screen.queryByRole('heading', { name: '闯关备份' })).not.toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: '恢复点与隔离记录' })).not.toBeInTheDocument();
+  });
+
+  it('shows a recoverable notice when local progress cannot be read', () => {
+    const onRetryProgress = vi.fn();
+    render(<ChallengeCenter groups={[]} progressByTaskId={{}} progressReadState="error" onRetryProgress={onRetryProgress} onNavigate={vi.fn()} />);
+
+    expect(screen.getByText('本机进度暂时没有读出；可以继续挑战，成绩没有被更改。')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '重新读取进度' }));
+    expect(onRetryProgress).toHaveBeenCalledOnce();
   });
 });

@@ -108,8 +108,13 @@ describe('二年级上册英语第三单元闯关', () => {
     const loaded = content.groups.find(({ group: candidate }) => candidate.definition.id === groupId);
     expect(loaded?.status, JSON.stringify(loaded?.issues, null, 2)).toBe('ready');
     expect(loaded?.candidates).toHaveLength(90);
-    expect(Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks)
-      .flatMap((task) => task.sessions.flatMap((session) => session.activities))).toHaveLength(48);
+    const courseActivities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks)
+      .flatMap((task) => task.sessions.flatMap((session) => session.activities));
+    expect(courseActivities).toHaveLength(48);
+    const activityById = new Map(courseActivities.map((activity) => [activity.id, activity]));
+    expect(answerSummary(activityById.get(`${sourceUnitId}/basic/task-01/session-01/question-04`)!)).toBe('瘦的');
+    expect(answerSummary(activityById.get(`${sourceUnitId}/basic/task-02/session-01/question-03`)!)).toBe('tall — 高的');
+    expect(answerSummary(activityById.get(`${sourceUnitId}/basic/task-02/session-01/question-04`)!)).toBe('身材较矮的或短的');
     expect(loaded?.learningTasks).toHaveLength(6);
   });
 

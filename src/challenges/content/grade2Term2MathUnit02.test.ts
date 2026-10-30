@@ -18,6 +18,7 @@ const knowledgePointIds = [
   'division-facts-from-multiplication',
   'meaning-and-units-of-quotients',
 ] as const;
+const supportedKnowledgePointIds = [...knowledgePointIds, 'length-units'] as const;
 
 const expectedSupplementAnswers: Record<Difficulty, readonly string[]> = {
   basic: [
@@ -110,7 +111,7 @@ const expectedSourceKnowledgePoints: Record<Difficulty, readonly (readonly strin
   advanced: [
     [knowledgePointIds[0], knowledgePointIds[2]], [knowledgePointIds[0], knowledgePointIds[2]],
     [knowledgePointIds[0], knowledgePointIds[2]], [knowledgePointIds[0], knowledgePointIds[2]],
-    [knowledgePointIds[1]], [knowledgePointIds[0], knowledgePointIds[2]],
+    [knowledgePointIds[1]], [knowledgePointIds[0], knowledgePointIds[2], 'length-units'],
     [knowledgePointIds[1]], [knowledgePointIds[0], knowledgePointIds[1], knowledgePointIds[2]],
     [knowledgePointIds[1]], [knowledgePointIds[0], knowledgePointIds[2]],
     [knowledgePointIds[0], knowledgePointIds[2]], [knowledgePointIds[0], knowledgePointIds[2]],
@@ -263,16 +264,16 @@ describe('二年级下册数学第二单元闯关题目草案', () => {
       coreKnowledgePointIds: knowledgePointIds,
     });
     expect(group.definition.mappingEvidence.source).toContain('grade-2-textbook-inventory.md');
-    expect(group.definition.mappingEvidence.notes).toContain('不称为最新版');
+    expect(group.definition.mappingEvidence.notes).toContain('用户提供的人教版');
     expect(group.definition.mappingEvidence.notes).toContain('不纳入有余数除法');
-    expect(group.definition.mappingEvidence.notes).toContain('尚无独立教育者复核');
+    expect(group.definition.mappingEvidence.notes).toContain('独立教育者复核未完成');
     expect(group.definition.tasks).toHaveLength(5);
     expect(new Set(group.questionIds)).toEqual(expectedIds);
     expect(new Set(manifest.questions.map(({ questionId }) => questionId))).toEqual(expectedIds);
     expect(new Set(manifest.questions.map(({ approvedContentFingerprint }) => approvedContentFingerprint))).toHaveLength(90);
     expect(rows).toHaveLength(90);
     expect(new Set(rows.map(({ 题目ID }) => 题目ID))).toEqual(expectedIds);
-    expect(rows.every(({ 审核状态 }) => 审核状态.includes('作者逐题自审通过') && 审核状态.includes('未独立教育者复核'))).toBe(true);
+    expect(rows.every(({ 审核状态 }) => 审核状态.includes('AI 主审已复核') && 审核状态.includes('独立教育者复核数 0'))).toBe(true);
 
     const activityByQuestionId = new Map(activities.map((activity) => [`challenge-question:${activity.id}`, activity]));
     const ledgerById = new Map(rows.map((row) => [row['题目ID'], row]));
@@ -285,12 +286,12 @@ describe('二年级下册数学第二单元闯关题目草案', () => {
       expect(question.activityId).toBe(activity!.id);
       expect(question.difficulty).toBe(supplemental?.difficulty ?? sourceDifficulty);
       expect(question.knowledgePointIds.length).toBeGreaterThan(0);
-      expect(question.knowledgePointIds.every((id) => knowledgePointIds.includes(id as (typeof knowledgePointIds)[number]))).toBe(true);
+        expect(question.knowledgePointIds.every((id) => supportedKnowledgePointIds.includes(id as (typeof supportedKnowledgePointIds)[number]))).toBe(true);
       expect(question.knowledgePointIds, question.questionId).toEqual(supplemental?.knowledgePointIds ?? sourceKnowledgePoints.get(activity!.id));
       expect(question.lifecycle).toBe('active');
       expect(question.approved).toBe(true);
       expect(question.answerLeakageReviewed).toBe(true);
-      expect(question.approvedBy).toBe('Codex content-author self-review');
+      expect(question.approvedBy).toBe('AI 主审（非独立教师复核）');
       expect(question.approvedAt).toMatch(/^2026-10-28T/u);
       expect(question.approvedContentFingerprint).toBe(await fingerprintActivity(activity!));
 
@@ -298,7 +299,7 @@ describe('二年级下册数学第二单元闯关题目草案', () => {
       expect(row['难度']).toBe(question.difficulty === 'basic' ? '基础' : question.difficulty === 'advanced' ? '进阶' : '高阶');
       expect(row['正确选项']).toBe(answerSummary(activity!));
       expect(row['知识点']).toBe(question.knowledgePointIds.join('；'));
-      expect(row['复核说明']).toContain('TapXWorld');
+      expect(row['复核说明']).toContain('ISBN 978-7-107-37176-9');
       expect(row['检查项']).toContain('乘法验算');
       expect(row['内容指纹']).toBe(question.approvedContentFingerprint);
     }

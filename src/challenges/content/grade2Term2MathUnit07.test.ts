@@ -262,11 +262,11 @@ describe('二年级下册数学第七单元闯关', () => {
       coreKnowledgePointIds: knowledgePointIds,
     });
     expect(group.definition.mappingEvidence.source).toContain('grade-2-textbook-inventory.md');
-    expect(group.definition.mappingEvidence.notes).toContain('TapXWorld');
-    expect(group.definition.mappingEvidence.notes).toContain('5a80345f2043ba6f8db8d7be9cf3db82725ff1f7');
-    expect(group.definition.mappingEvidence.notes).toContain('未核实');
-    expect(group.definition.mappingEvidence.notes).toContain('作者逐题自审');
-    expect(group.definition.mappingEvidence.notes).toContain('未独立教育者复核');
+    expect(group.definition.mappingEvidence.notes).toContain('ISBN 978-7-107-37176-9');
+    expect(group.definition.mappingEvidence.notes).toContain('ISBN 978-7-107-37176-9');
+    expect(group.definition.mappingEvidence.notes).toContain('版次、印次未知');
+    expect(group.definition.mappingEvidence.notes).toContain('AI 主审');
+    expect(group.definition.mappingEvidence.notes).toContain('独立教育者复核未完成');
     expect(group.definition.tasks).toHaveLength(5);
     expect(group.definition.tasks.every(({ targetCount }) => targetCount === 15)).toBe(true);
     for (const difficulty of ['basic', 'advanced', 'high'] as const) {
@@ -282,7 +282,7 @@ describe('二年级下册数学第七单元闯关', () => {
     expect(new Set(manifest.questions.map(({ approvedContentFingerprint }) => approvedContentFingerprint))).toHaveLength(90);
     expect(rows).toHaveLength(90);
     expect(new Set(rows.map(({ 题目ID }) => 题目ID))).toEqual(expectedIds);
-    expect(rows.every(({ 审核状态 }) => 审核状态.includes('作者逐题自审通过') && 审核状态.includes('未独立教育者复核'))).toBe(true);
+    expect(rows.every(({ 审核状态 }) => 审核状态.includes('AI 主审已复核') && 审核状态.includes('独立教育者复核数 0'))).toBe(true);
 
     const activityByQuestionId = new Map(activities.map((activity) => [`challenge-question:${activity.id}`, activity]));
     const ledgerById = new Map(rows.map((row) => [row['题目ID'], row]));
@@ -300,7 +300,7 @@ describe('二年级下册数学第七单元闯关', () => {
       expect(question.lifecycle).toBe('active');
       expect(question.approved).toBe(true);
       expect(question.answerLeakageReviewed).toBe(true);
-      expect(question.approvedBy).toBe('Codex content-author self-review');
+      expect(question.approvedBy).toBe('AI 主审（非独立教师复核）');
       expect(question.approvedAt).toMatch(/^2026-10-28T/u);
       expect(question.approvedContentFingerprint).toBe(await fingerprintActivity(activity!));
 
@@ -308,10 +308,10 @@ describe('二年级下册数学第七单元闯关', () => {
       expect(row['难度']).toBe(question.difficulty === 'basic' ? '基础' : question.difficulty === 'advanced' ? '进阶' : '高阶');
       expect(row['正确选项']).toBe(answerSummary(activity!));
       expect(row['知识点']).toBe(question.knowledgePointIds.join('；'));
-      expect(row['复核说明']).toContain('TapXWorld');
+      expect(row['复核说明']).toContain('ISBN 978-7-107-37176-9');
       expect(row['检查项']).toContain('万以内');
-      expect(row['审核状态']).toContain('作者逐题自审通过');
-      expect(row['审核状态']).toContain('未独立教育者复核');
+      expect(row['审核状态']).toContain('AI 主审已复核');
+      expect(row['审核状态']).toContain('独立教育者复核数 0');
       expect(row['内容指纹']).toBe(question.approvedContentFingerprint);
     }
   });

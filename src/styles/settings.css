@@ -16,6 +16,7 @@
 .settings-page .learning-start-confirmation { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 10px; width: 100%; padding: 14px; border: 1px solid var(--animal-primary-color); border-radius: 16px; background: var(--animal-bg-color-secondary); }
 .settings-page .learning-start-confirmation p { grid-column: 1 / -1; margin: 0; color: var(--animal-text-color); font-size: 13px; line-height: 1.6; }
 .settings-page .learning-start-actions { align-items: flex-start; }
+.settings-page .settings-start-empty { max-width: 640px; }
 .settings-page :is(button, [role='combobox']):focus-visible,
 .settings-page a:focus-visible { outline: 3px solid var(--animal-primary-color); outline-offset: 3px; }
 

@@ -1,6 +1,55 @@
 import type { ChallengeBackupData } from './backup';
 import type { TaskProgress, WrongQuestionRecord } from './types';
 
+export interface RetiredGrade2Term1MathDataCounts {
+  attempts: number;
+  taskProgress: number;
+  recentQuestionIds: number;
+  wrongQuestions: number;
+}
+
+export interface RetiredGrade2Term1MathDataFilterResult {
+  data: ChallengeBackupData;
+  excluded: RetiredGrade2Term1MathDataCounts;
+}
+
+function isRetiredGrade2Term1MathTaskId(taskId: string): boolean {
+  if (taskId.endsWith('-v2')) return false;
+  return /^grade-2-term-1-math-(?:unit-\d+|first-half|second-half|end-term)(?:\/|-|$)/.test(taskId);
+}
+
+function isRetiredGrade2Term1MathQuestionId(questionId: string): boolean {
+  return questionId.startsWith('grade-2/term-1/math/')
+    || questionId.startsWith('challenge-question:grade-2/term-1/math/')
+    || questionId.startsWith('challenge-question:challenge-supplement-grade-2-term-1-math-')
+    || questionId.startsWith('challenge-question:grade-2-term-1-math-');
+}
+
+/** Removes retired course data from local recovery snapshots during the textbook reset migration. */
+export function filterRetiredGrade2Term1MathData(
+  data: ChallengeBackupData,
+): RetiredGrade2Term1MathDataFilterResult {
+  const attempts = data.attempts.filter(({ taskId }) => !isRetiredGrade2Term1MathTaskId(taskId));
+  const taskProgress = data.taskProgress.filter(({ taskId }) => !isRetiredGrade2Term1MathTaskId(taskId));
+  let recentQuestionIds = 0;
+  const recentQuestionAttempts = data.recentQuestionAttempts.flatMap((attempt) => {
+    const retained = attempt.filter((questionId) => !isRetiredGrade2Term1MathQuestionId(questionId));
+    recentQuestionIds += attempt.length - retained.length;
+    return retained.length > 0 || attempt.length === 0 ? [retained] : [];
+  });
+  const wrongQuestions = data.wrongQuestions.filter(({ questionId }) => !isRetiredGrade2Term1MathQuestionId(questionId));
+
+  return {
+    data: { attempts, taskProgress, recentQuestionAttempts, wrongQuestions },
+    excluded: {
+      attempts: data.attempts.length - attempts.length,
+      taskProgress: data.taskProgress.length - taskProgress.length,
+      recentQuestionIds,
+      wrongQuestions: data.wrongQuestions.length - wrongQuestions.length,
+    },
+  };
+}
+
 export interface ChallengeBackupMergeSummary {
   addedActiveAttempts: number;
   preservedLocalActiveAttempts: number;

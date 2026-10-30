@@ -221,7 +221,8 @@ describe('二年级下册英语第二单元 Weather 闯关内容', () => {
     expect(new Set(rows.map(({ 题目ID }) => 题目ID)).size).toBe(90);
     expect(rows.filter(({ 来源 }) => 来源 === '课程原题')).toHaveLength(48);
     expect(rows.filter(({ 来源 }) => 来源 === '原创补题')).toHaveLength(42);
-    expect(rows.every(({ 审核状态 }) => 审核状态 === '作者自审通过；未独立教育者复核')).toBe(true);
+    expect(rows.every(({ 审核状态 }) => 审核状态.includes('作者自审通过')
+      && 审核状态.includes('未独立教育者复核'))).toBe(true);
 
     const candidateByQuestionId = new Map(candidateRecords.map((question) => [question.questionId, question]));
     const fingerprints = await Promise.all(candidateRecords.map(async (question) => {

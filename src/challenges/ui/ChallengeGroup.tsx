@@ -19,7 +19,7 @@ export default function ChallengeGroup({ loadedGroup, progressByTaskId, onNaviga
       <main className="challenge-page">
         <div className="challenge-shell">
           <Card className="challenge-message-card" color="default">
-            <p className="eyebrow">内容审核中</p>
+            <p className="eyebrow">路线暂不可用</p>
             <h1>{getChallengeGroupTitle(group)}</h1>
             <p>这条挑战路线还没有通过内容质量检查，暂时不能开始。</p>
             <Button type="primary" onClick={() => onNavigate(getChallengeCenterPath())}>返回闯关中心</Button>

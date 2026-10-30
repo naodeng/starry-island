@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import type { AppRoute } from '../../app/router';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import type { ChallengeRepository } from '../storage/repository';
-import { createChallengeRepository } from '../storage/indexedDbRepository';
 import { loadPilotChallengeContent } from '../content/pilotContent';
 import type { LoadedPilotContent } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
@@ -11,6 +10,9 @@ import ChallengeGroup from './ChallengeGroup';
 import ChallengeRunner from './ChallengeRunner';
 import ChallengeWrongQuestions from './ChallengeWrongQuestions';
 import { getChallengeTaskTitle } from './challengeLabels';
+import useChallengeRepository from './useChallengeRepository';
+import readWithTimeout from './readWithTimeout';
+import LoadingState from '../../components/shared/LoadingState';
 import './challenge.css';
 
 type ChallengeRoute = Extract<AppRoute, { kind: 'challengeCenter' | 'challengeWrongQuestions' | 'challengeGroup' | 'challengeTask' }>;
@@ -27,13 +29,15 @@ interface ChallengePageProps {
 }
 
 export default function ChallengePage({ route, onNavigate, repository: providedRepository }: ChallengePageProps) {
-  const repository = useMemo(() => providedRepository ?? createChallengeRepository(), [providedRepository]);
+  const repository = useChallengeRepository(providedRepository);
   const [content, setContent] = useState<LoadedPilotContent | null>(null);
   const [loading, setLoading] = useState(true);
   const [contentError, setContentError] = useState<string | null>(null);
   const [progressByTaskId, setProgressByTaskId] = useState<Record<string, TaskProgress>>({});
-  const [progressAvailable, setProgressAvailable] = useState(true);
+  const [progressReadState, setProgressReadState] = useState<'loading' | 'ready' | 'error'>('loading');
+  const [progressReadAttempt, setProgressReadAttempt] = useState(0);
   const [wrongQuestionState, setWrongQuestionState] = useState<WrongQuestionState>({ status: 'loading' });
+  const [wrongQuestionReadAttempt, setWrongQuestionReadAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -61,37 +65,42 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
     if (route.kind !== 'challengeWrongQuestions') return;
     let cancelled = false;
     setWrongQuestionState({ status: 'loading' });
-    repository.getWrongQuestions().then((records) => {
+    readWithTimeout(repository.getWrongQuestions()).then((records) => {
       if (!cancelled) setWrongQuestionState({ status: 'ready', records });
     }).catch(() => {
       if (!cancelled) setWrongQuestionState({ status: 'error' });
     });
     return () => { cancelled = true; };
-  }, [repository, route.kind]);
+  }, [repository, route.kind, wrongQuestionReadAttempt]);
 
   useEffect(() => {
     if (!content) return;
     let cancelled = false;
-    repository.getAllTaskProgress().then((entries) => {
+    setProgressReadState('loading');
+    readWithTimeout(repository.getAllTaskProgress()).then((entries) => {
       if (cancelled) return;
       const progress: Record<string, TaskProgress> = {};
       for (const item of entries) progress[item.taskId] = item;
       setProgressByTaskId(progress);
-      setProgressAvailable(true);
+      setProgressReadState('ready');
     }).catch(() => {
       if (cancelled) return;
-      setProgressAvailable(false);
+      setProgressReadState('error');
     });
     return () => { cancelled = true; };
-  }, [content, repository, route]);
-
-  useEffect(() => () => {
-    if (!providedRepository) repository.close();
-  }, [providedRepository, repository]);
+  }, [content, progressReadAttempt, repository, route]);
 
   if (route.kind === 'challengeWrongQuestions') {
     if (wrongQuestionState.status === 'loading') {
-      return <main className="challenge-page" aria-live="polite" aria-busy="true"><div className="challenge-shell"><h1>正在打开错题本…</h1></div></main>;
+      return (
+        <main className="challenge-page" aria-live="polite" aria-busy="true">
+          <div className="challenge-shell">
+            <Card className="challenge-message-card challenge-loading-card" color="default">
+              <LoadingState title="正在打开错题本…" description="正在读取保存在这台设备上的错题记录。" headingLevel={1} />
+            </Card>
+          </div>
+        </main>
+      );
     }
     if (wrongQuestionState.status === 'error') {
       return (
@@ -100,8 +109,11 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
             <Card className="challenge-message-card" color="default">
               <p className="eyebrow">本机数据暂时没有读出</p>
               <h1>错题本暂时无法打开</h1>
-              <p>现有闯关记录没有被更改。可以返回闯关中心后再试一次。</p>
-              <Button type="primary" onClick={() => onNavigate('/challenges')}>返回闯关中心</Button>
+            <p>现有闯关记录没有被更改，可以重新读取或返回闯关中心；不要清除此网站数据。</p>
+            <div className="challenge-hero-actions">
+              <Button type="primary" onClick={() => setWrongQuestionReadAttempt((attempt) => attempt + 1)}>重新读取</Button>
+              <Button type="default" onClick={() => onNavigate('/challenges')}>返回闯关中心</Button>
+            </div>
             </Card>
           </div>
         </main>
@@ -111,7 +123,15 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
   }
 
   if (loading) {
-    return <main className="challenge-page" aria-live="polite" aria-busy="true"><div className="challenge-shell"><h1>正在准备闯关航线…</h1></div></main>;
+    return (
+      <main className="challenge-page" aria-live="polite" aria-busy="true">
+        <div className="challenge-shell">
+          <Card className="challenge-message-card challenge-loading-card" color="default">
+            <LoadingState title="正在准备闯关航线…" description="正在核对题目和已保存进度，马上就好。" headingLevel={1} />
+          </Card>
+        </div>
+      </main>
+    );
   }
   if (!content || contentError) {
     return (
@@ -133,7 +153,8 @@ export default function ChallengePage({ route, onNavigate, repository: providedR
       <ChallengeCenter
         groups={content.groups}
         progressByTaskId={progressByTaskId}
-        progressAvailable={progressAvailable}
+        progressReadState={progressReadState}
+        onRetryProgress={() => setProgressReadAttempt((attempt) => attempt + 1)}
         onNavigate={onNavigate}
       />
     );

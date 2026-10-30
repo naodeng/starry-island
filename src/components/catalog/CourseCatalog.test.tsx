@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import CourseCatalog from './CourseCatalog';
 import ThemeProvider from '../../theme/ThemeProvider';
 import { SoundProvider } from '../../sound/SoundProvider';
+import { curriculumManifest } from '../../content/curriculumManifest';
 
 const progress = { schemaVersion: 4 as const, completedSessionIds: [], recentCompletions: [], learningStart: null };
 
@@ -69,6 +70,24 @@ describe('CourseCatalog', () => {
     expect(screen.getByRole('button', { name: '语文' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '数学' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '英语' })).toBeInTheDocument();
+  });
+
+  it('explainsWhenTheSelectedSubjectHasNoRegisteredUnitsAndKeepsSelectionAvailable', () => {
+    const selectedSubject = curriculumManifest.grades[0]!.terms[0]!.subjects[0]!;
+    const registeredUnits = selectedSubject.units;
+    selectedSubject.units = [];
+
+    try {
+      renderCatalog();
+
+      expect(screen.getByRole('heading', { level: 3, name: '正在准备语文课程' })).toBeInTheDocument();
+      expect(screen.getByText('这个学期的课程内容正在核对教材版本，准备好后就会开放。')).toBeInTheDocument();
+      expect(screen.getByRole('combobox', { name: '年级' })).toBeInTheDocument();
+      expect(screen.getByRole('combobox', { name: '学期' })).toBeInTheDocument();
+      expect(screen.getByRole('group', { name: '选择学科' })).toBeInTheDocument();
+    } finally {
+      selectedSubject.units = registeredUnits;
+    }
   });
 
   it('offersAnIndependentChallengeCenterEntry', async () => {

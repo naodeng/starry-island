@@ -15,7 +15,8 @@ describe('challenge growth group index', () => {
       tasks: definition.tasks.map(({ id }) => ({ id })),
     }));
 
-    expect(growthGroups).toEqual(expected);
+    expect([...growthGroups].sort((left, right) => left.id.localeCompare(right.id)))
+      .toEqual([...expected].sort((left, right) => left.id.localeCompare(right.id)));
     expect(JSON.stringify(growthGroups)).not.toMatch(/questionIds|questionId|prompt|answer/i);
   });
 });

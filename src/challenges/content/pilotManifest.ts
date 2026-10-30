@@ -31,13 +31,11 @@ import grade2Term1ChineseUnit07Manifest from './pilot-manifest-grade2-term1-chin
 import grade2Term1ChineseUnit08Manifest from './pilot-manifest-grade2-term1-chinese-unit08.json';
 import grade2Term1ChineseFirstHalfManifest from './pilot-manifest-grade2-term1-chinese-first-half.json';
 import grade2Term1MathUnit01Manifest from './pilot-manifest-grade2-term1-math-unit01.json';
+import grade2Term1MathUnit02Manifest from './pilot-manifest-grade2-term1-math-unit02.json';
 import grade2Term1MathUnit03Manifest from './pilot-manifest-grade2-term1-math-unit03.json';
 import grade2Term1MathUnit04Manifest from './pilot-manifest-grade2-term1-math-unit04.json';
 import grade2Term1MathUnit05Manifest from './pilot-manifest-grade2-term1-math-unit05.json';
 import grade2Term1MathUnit06Manifest from './pilot-manifest-grade2-term1-math-unit06.json';
-import grade2Term1MathUnit07Manifest from './pilot-manifest-grade2-term1-math-unit07.json';
-import grade2Term1MathUnit08Manifest from './pilot-manifest-grade2-term1-math-unit08.json';
-import grade2Term1MathUnit09Manifest from './pilot-manifest-grade2-term1-math-unit09.json';
 import grade2Term1EnglishUnit01Manifest from './pilot-manifest-grade2-term1-english-unit01.json';
 import grade2Term1EnglishUnit02Manifest from './pilot-manifest-grade2-term1-english-unit02.json';
 import grade2Term1EnglishUnit03Manifest from './pilot-manifest-grade2-term1-english-unit03.json';
@@ -134,13 +132,11 @@ const pilotManifest = mergeChallengeManifestFragments([
   grade2Term1ChineseUnit08Manifest as unknown as ChallengeManifest,
   grade2Term1ChineseFirstHalfManifest as unknown as ChallengeManifest,
   grade2Term1MathUnit01Manifest as unknown as ChallengeManifest,
+  grade2Term1MathUnit02Manifest as unknown as ChallengeManifest,
   grade2Term1MathUnit03Manifest as unknown as ChallengeManifest,
   grade2Term1MathUnit04Manifest as unknown as ChallengeManifest,
   grade2Term1MathUnit05Manifest as unknown as ChallengeManifest,
   grade2Term1MathUnit06Manifest as unknown as ChallengeManifest,
-  grade2Term1MathUnit07Manifest as unknown as ChallengeManifest,
-  grade2Term1MathUnit08Manifest as unknown as ChallengeManifest,
-  grade2Term1MathUnit09Manifest as unknown as ChallengeManifest,
   grade2Term1EnglishUnit01Manifest as unknown as ChallengeManifest,
   grade2Term1EnglishUnit02Manifest as unknown as ChallengeManifest,
   grade2Term1EnglishUnit03Manifest as unknown as ChallengeManifest,

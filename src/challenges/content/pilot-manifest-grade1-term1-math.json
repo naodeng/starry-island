@@ -457,13 +457,14 @@
         "coreKnowledgePointIds": [
           "addition-within-ten",
           "number-sequence-within-ten",
-          "clock-half-hour-reading",
-          "solid-shape-recognition"
+          "solid-shape-recognition",
+          "clock-whole-hour-reading",
+          "clock-hand-roles"
         ],
         "mappingEvidence": {
           "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上学期；已确认按教材正式章节顺序等分",
-          "checkedAt": "2026-10-26",
-          "notes": "second-half题池来源为正式章节05–09，其中第09章总复习题可回顾本册前序知识；该组学习建议入口覆盖上册正式章节01–09，不改变候选题的章节边界。前半01–04与后半05–09不重叠并合计覆盖全部正式章节。数学乐园作为综合实践不改变分界，未纳入本组来源；该阶段不代表学校授课日历。"
+          "checkedAt": "2026-10-28",
+          "notes": "second-half题池来源为正式章节05–09，其中第09章总复习题可回顾本册前序知识；该组学习建议入口覆盖上册正式章节01–09，不改变候选题的章节边界。前半01–04与后半05–09不重叠并合计覆盖全部正式章节。数学乐园作为综合实践不改变分界，未纳入本组来源；该阶段不代表学校授课日历。 单元7本轮题目范围按固定教材调整为整时读数与指针作用；已移除半时知识点。"
         },
         "tasks": [
           {
@@ -480,8 +481,9 @@
             "difficulty": "basic",
             "targetCount": 25,
             "requiredKnowledgePointIds": [
-              "clock-half-hour-reading",
-              "solid-shape-recognition"
+              "solid-shape-recognition",
+              "clock-whole-hour-reading",
+              "clock-hand-roles"
             ]
           },
           {
@@ -498,8 +500,9 @@
             "difficulty": "advanced",
             "targetCount": 25,
             "requiredKnowledgePointIds": [
-              "clock-half-hour-reading",
-              "solid-shape-recognition"
+              "solid-shape-recognition",
+              "clock-whole-hour-reading",
+              "clock-hand-roles"
             ]
           },
           {
@@ -509,8 +512,9 @@
             "requiredKnowledgePointIds": [
               "addition-within-ten",
               "number-sequence-within-ten",
-              "clock-half-hour-reading",
-              "solid-shape-recognition"
+              "solid-shape-recognition",
+              "clock-whole-hour-reading",
+              "clock-hand-roles"
             ]
           }
         ],
@@ -1002,13 +1006,14 @@
         "coreKnowledgePointIds": [
           "addition-within-twenty",
           "number-comparison-eleven-to-twenty",
-          "clock-half-hour-reading",
-          "solid-shape-recognition"
+          "solid-shape-recognition",
+          "clock-whole-hour-reading",
+          "clock-hand-roles"
         ],
         "mappingEvidence": {
           "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#一年级上学期；已确认按教材正式章节顺序等分",
-          "checkedAt": "2026-10-26",
-          "notes": "期末综合仅覆盖一年级上册已登记的正式数学章节01–09；数学乐园作为综合实践未纳入本组来源。阶段按教材内容界定，不代表学校授课日历。"
+          "checkedAt": "2026-10-28",
+          "notes": "期末综合仅覆盖一年级上册已登记的正式数学章节01–09；数学乐园作为综合实践未纳入本组来源。阶段按教材内容界定，不代表学校授课日历。 单元7本轮题目范围按固定教材调整为整时读数与指针作用；已移除半时知识点。"
         },
         "tasks": [
           {
@@ -1025,8 +1030,9 @@
             "difficulty": "basic",
             "targetCount": 25,
             "requiredKnowledgePointIds": [
-              "clock-half-hour-reading",
-              "solid-shape-recognition"
+              "solid-shape-recognition",
+              "clock-whole-hour-reading",
+              "clock-hand-roles"
             ]
           },
           {
@@ -1043,8 +1049,9 @@
             "difficulty": "advanced",
             "targetCount": 25,
             "requiredKnowledgePointIds": [
-              "clock-half-hour-reading",
-              "solid-shape-recognition"
+              "solid-shape-recognition",
+              "clock-whole-hour-reading",
+              "clock-hand-roles"
             ]
           },
           {
@@ -1054,8 +1061,9 @@
             "requiredKnowledgePointIds": [
               "addition-within-twenty",
               "number-comparison-eleven-to-twenty",
-              "clock-half-hour-reading",
-              "solid-shape-recognition"
+              "solid-shape-recognition",
+              "clock-whole-hour-reading",
+              "clock-hand-roles"
             ]
           }
         ]

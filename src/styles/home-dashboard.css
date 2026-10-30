@@ -166,14 +166,6 @@
   font-size: 12px;
 }
 
-.home-recent-empty {
-  margin: 0;
-  padding: 19px 0;
-  border-top: 1px solid var(--animal-border-color-light);
-  color: var(--animal-text-color-secondary);
-  line-height: 1.6;
-}
-
 .home-recent-list {
   margin: 0;
   padding: 0;

@@ -16,54 +16,58 @@
           "grade-2/term-1/math/unit-03"
         ],
         "coreKnowledgePointIds": [
-          "angle-parts",
-          "angle-comparison"
+          "equal-sharing-and-grouping",
+          "division-facts-and-multiplication-check"
         ],
         "mappingEvidence": {
-          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级上册数学；docs/curriculum/grade-2-question-review.tsv；src/content/grade-2/term-1/math/unit-03/index.ts",
-          "checkedAt": "2026-10-27",
-          "notes": "对应固定教材清单中的角的组成、顶点与两条边、用直角作参照比较角的大小。教材目录使用项目裁定的 TapXWorld 固定回退快照（tapx-fallback），不表示采用人教社修订版。复用本单元48道兼容课程活动，保留六个原学习Task；新增42道原创选择题（每档14道），使每档各有30道挑战候选。题目不引入度数或量角器内容。"
+          "source": "用户提供的人教版数学教材 ISBN 978-7-107-38912-2；docs/curriculum/grade-2-textbook-inventory.md；src/content/grade-2/term-1/math/",
+          "checkedAt": "2026-10-29",
+          "notes": "按本册目录顺序迁移到 6 个正式单元和 2 项综合实践；候选题由 AI 主审，独立教育者复核未完成。阶段分组按正式章节 1–3 / 4–6 划分，实践活动进入对应阶段及期末题池。"
         },
         "tasks": [
           {
+            "id": "grade-2-term-1-math-unit-03/basic-01-v2",
             "difficulty": "basic",
-            "id": "grade-2-term-1-math-unit-03/basic-01",
             "targetCount": 15,
             "requiredKnowledgePointIds": [
-              "angle-parts"
+              "equal-sharing-and-grouping",
+              "division-facts-and-multiplication-check"
             ]
           },
           {
+            "id": "grade-2-term-1-math-unit-03/basic-02-v2",
             "difficulty": "basic",
-            "id": "grade-2-term-1-math-unit-03/basic-02",
             "targetCount": 15,
             "requiredKnowledgePointIds": [
-              "angle-comparison"
+              "equal-sharing-and-grouping",
+              "division-facts-and-multiplication-check"
             ]
           },
           {
+            "id": "grade-2-term-1-math-unit-03/advanced-01-v2",
             "difficulty": "advanced",
-            "id": "grade-2-term-1-math-unit-03/advanced-01",
             "targetCount": 15,
             "requiredKnowledgePointIds": [
-              "angle-parts"
+              "equal-sharing-and-grouping",
+              "division-facts-and-multiplication-check"
             ]
           },
           {
+            "id": "grade-2-term-1-math-unit-03/advanced-02-v2",
             "difficulty": "advanced",
-            "id": "grade-2-term-1-math-unit-03/advanced-02",
             "targetCount": 15,
             "requiredKnowledgePointIds": [
-              "angle-comparison"
+              "equal-sharing-and-grouping",
+              "division-facts-and-multiplication-check"
             ]
           },
           {
+            "id": "grade-2-term-1-math-unit-03/high-01-v2",
             "difficulty": "high",
-            "id": "grade-2-term-1-math-unit-03/high-01",
             "targetCount": 15,
             "requiredKnowledgePointIds": [
-              "angle-parts",
-              "angle-comparison"
+              "equal-sharing-and-grouping",
+              "division-facts-and-multiplication-check"
             ]
           }
         ]
@@ -85,20 +89,6 @@
         "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-08",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-02",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-03",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-04",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-05",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-06",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-07",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-08",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-09",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-10",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-11",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-12",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-13",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-14",
         "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-01",
         "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-02",
         "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-03",
@@ -115,20 +105,6 @@
         "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-08",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-01",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-02",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-03",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-04",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-05",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-06",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-07",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-08",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-09",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-10",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-11",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-12",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-13",
-        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-14",
         "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-01",
         "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-02",
         "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-03",
@@ -145,6 +121,34 @@
         "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-06",
         "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-07",
         "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-14",
         "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-01",
         "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-02",
         "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-03",
@@ -164,610 +168,1354 @@
   ],
   "questions": [
     {
-      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
-      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-01",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "534f06124854dd00c2f292c814f56551477cdea57046ed85a5150578a2aa87ed",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.800Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "12391fa43d602a76936eb06c3cb776ceae76bc9e8220d8322fecff1c2f86d761"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "76df0e6b685eed575ddcff96daac098374d7e4bd2f7e181d219bbc0e1d097f00"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "fad8f4e9c24929e00706152b5f6ac6b55c897e2c532abcf7cb362ad919ed764d"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "169b9da0742db65b2cb34ada5896be62bc258f55ee9fe4b9725345fd30109c2f"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "61a7661de652684b64bb54390daeadcb0055e92c880ac9110bceb1a5b25c1619"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "c9b38964961c2cb930f43e78716180b76eed4bcb2247654e1027c5d7e6b01b80"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "47fff656446c378ae235fba8ed9463285305664975e85f205ea37626f0e538a5"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "a296342acf28822cea53960b12fffa4ee6c883078efa22843b25859aefde5218"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "c2035bbb673cc5c7e75f18a9dca0b89432f85fa3be01b3ac6b298332e332c67a"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "77e06868256bde303e3fa81437acefd451419375a6a6210e4c9c6639e47b375e"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "c280d8c0558df42831a2c150464479a5726ef503aac7bbb8f7bbb13e28c706de"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "a35d8f544b8632cb7add0dc1462f17bf789507c34e5962f9442551433c2e1c78"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "4ad7a1713596f9db23f3638eaeeef6fc3fb0f17bd66c7eb41291f026e527cb95"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "dab27a924bfc8d6eb26f64936070d84b5e9afb8795b9ccfb1e47e32b767a0989"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "19b0de4f4e63c993dd3a93774039bb41e39b58e45db68ca43fb41a7737ecba18"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-03/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "b3ddf60ddace8213f43ead68351705b3ed93485979d80633c51197acd3c551bd"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "44b45dc863e3f6b86a2706ea41c94597721737015d90676b6eff3626b194dfd7"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "dc15b961ad28ad548adc38ac0e3406d28c19fba71298f673ba072c4e87f15613"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "34bcb481dd8794c79856b4a5847eed1076f557ee1844859d83ab6c591d160a99"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "ee666face08213c46060a3ddc161ca4b81c2c8f555d739b06b7fb5fd19f1ff99"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "86123880b00ef3400e0fb7c9d170b1a776aba0270fe0257578d894396f1947d2"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "dd8be093f06eb86e584cf1258a099dc08a99a9ff2e404a7b0aee3373f9448ded"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9acf0f80c0a200a84278ab9aeae603e880c0782fb40e5d337971e318d4101ef8"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d472f1790f328fde1187a0373cc6c3c0ef3552d4651c89948b7e9df917910970"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "71b25867e1be2609d51631b984b270b4384fc10d799d3b34e8e39dfea6718a9f"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "b43bb88fa63f587f737db2e06796acf2dcafa7785bcf1b0e20921163663c8339"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "5f7e7670879983c07180a653bd527b81c29aed6a2f8232a37b90e5cb118c84ce"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "870b30a84cbc05990db3d71603c90949b579e2f572601a14e312e96704a724cf"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "249166c5cab8be385f7f8317381725384dae286d05ef0846c25faa72964610b6"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "2c2c175f47544e39eaff37b7ff8e075c2c73f934255907f2a2bac94825b74031"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "f0bba06a01a9c458769bf4a6dbb895fb768c73e5313c46f4e85879b7870feccb"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-03/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "6504444531161a47bef997917953bb352be7e31cbc0c2967953182c60438a0bd"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d7dc6070e67fdf9548e9bfa2ef91a09c981598df079880af30ac46154dc67744"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e7af02b209f90ab83702fb03f4846d44548b559cb9c6b34a8079608db2d56e54"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1c896bf239d58bab54f09bada64ee6f711eac1961440f03ceaa6627d5d4f5623"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "b9943a759548cff1e66b85ce071228f32451712793a066a46b54674be8f9b10a"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e2df30e8f0dc29bf11d8ccdbb6f68c350b5150c5b546cbb4fb56678f055800f6"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e7bff2670d2b415732de26183ba883153bf565a5c8ebb961cfc665b196e88df3"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e5e6421bac97b6a449efc6119094923da178f8f26400bedcf90e47aa50c9bef7"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "2382ac6e7066cebea7ee0cee04ded29f8ed350068c3c96ec0c467021885f2b1b"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "11ab596fa7220b50ac3be41c7d017c4162ab96e7c58ba4d8c930688f97433dce"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e4c1faf2d4438d3d5690c21e22f0a5b37727525972a69479b04a52c400ebf15e"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d2f666df4a99d3dcd7c82896ccc9487d6cab564c66f20dee616568f7691824d6"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "fedb4e808ddaf351ca63af2e8d225cbc9f21c08f00b594bcc2395a3188883581"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "39255edd0e5e9fe1ca50da35b941f14990900551b992ed38ea09a45410156b81"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d7d788acfecf6fc56e601bd789e3147b9eadf523077dff1307b70a0f8ce21d8b"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "54c42998430af2502937d835dd0801f954939123c1b1063f510172320701d098"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-03/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-03/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1b96aa7226a0239dce036a24489d262f3743cd3df48dd9b68c7840e35f11e681"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "c63fc5b17f11f80c031d116c68f6db375b075a66dad0c936d94d870be9846d45"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-02",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-02",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "a4f33cc49fb9aad1a94964a7e0601109d46076544132539b23d0ba1198abe704",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "0544019b863954f69dabb52ca4ca05ab337a118125c1837f85e2a9739a2cb64f"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-03",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-03",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "65a4d3c48f75bff5a56744923cd3e70982eae69ba67f0304929b86e740f1468c",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "3ae24a9d267f65d0bd9ee15b9169ad183c8241e60d167b3f723e07951a6b1ecc"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-04",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-04",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "f80ac5bbfd298664d741187bb17c9281be839a4b23f478d5b6f2710c16af3048",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "cb00d407df2abce814dfee807dc47eb62abb21ad63d6c2fe1d93ca13525ae4c7"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-05",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-05",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "9fe3a3672e5bd15dd14a6bf7af3e273ffe03480b8ab8fdcf91b49d7179fd45a9",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "56c17853f27a7b50b046e567aa124e72996ed9a009911844d88ddbb66dc60f09"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-06",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-06",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "a7dc3b5b87ff43394c9cb4e9d2080a5fe8be3f6d5363ad08b5f6ac5af8d8db5f",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "44da1b105c3b4a72c6e9cea105c22b485bdc3acff503df4c579f3083a0ca7807"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-07",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-07",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "09118b4e5a73fe7b972ad02de536e293a29437420ed6130d1355fe5f15fa7e50",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "29e31c126be5e611f7c1b1d336db3afef221c0069e94c71180be9e4e3bbab1c6"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-08",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-08",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "967a8c90660632e95494125b95e85552842fbec64d1ffd4f9b08072a9239fee9",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "382a8699ce79eac50018267efb44691a3f0a5126d03c4744b95d5a66ffdd552d"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-09",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-09",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "67d2abccaacd2311b8b7929bd48a1b338aad0b46d021e649fe4e7ec48944581f",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d1bbbe86f4149b0a3ef2ee6dddd25edfbba902ae3fd1d198974ac00311f5affe"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-10",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-10",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "f59e00a10c71dc0d442d179b30c68dda3f9f0f699f10089d47fa77108ba469eb",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9b3b177863c08fd492c61510713d01a52f2374d4e80afe2b5179e8fc66a17cb9"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-11",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-11",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "4847b314df3ec31ff2d2895172e5697c6537ceb0db4833b44329067407533d8c",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "24e965fdb337990fcd1c1648a7f5464f20cb301cbf83f5bf0730e371c5c6d2f8"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-12",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-12",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "bc0ad4b20a9259c474869796ea36aa0590268014700d47ef05bb6757e58a4dd1",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "0b4482a6a6b991fbf21434b253737477f7d64d7e73c6be2b98145c962b24bd20"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-13",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-13",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "e6c15876b1c95e1295b1807a8842b75d1fd73a7da287e2f4e22fecf746ddef00",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "a59570bb880efa63b72bd51b6ed8875d89f1d065931823a954b09b23a71ac9f1"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-basic-14",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-basic-14",
       "difficulty": "basic",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "3cd587406ca8f16499ae50a0ed69daf80bc3fa5227f9eadfed89c45720bb31c4",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1abd15a869780b2cea06ed264f3575770bb9b5865cddb6b4a83ab8d0252ec504"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-01",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-01",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "5da14181ededcb450c8a2e23f2c871a65c60dacb681efdac23a12b39991651b3",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "7aa8f4d263baf3cbe261ad9fe87fcee3c6777d658a1fcebabf8f09900570c393"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-02",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-02",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "2053fea907eccd4f5a86052ff044b57d1755bb4955db60e9e0316e17df4329f8",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "416f2d3a9bcbb31ea165efac94972ab2c0439b207d50c3c1f9db9445a7bbcd7e"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-03",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-03",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "debea47b18bda2db54c8b94d9f09413da59ae259a96594b110bacd3f638543d6",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "7b0719bb690c30089853e86feffcd77e74204da542f62e0877a30547b3c64dd0"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-04",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-04",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "91eb135fa5865bdd6d2bed8bff39b699d92e9f9ce2d0806cd4c4a46bd9849ac8",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "44dba7674fe40fff7c8b507b5b745613cbd08d20412b04db2d17d3f8b36bb35d"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-05",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-05",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "93d3ee9357ce17f97b1c291d7827f786fdef10be7aacf3776acd77296c1df9f5",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "083f5f7e21ac28e165ef2f759b7c69996f497fcac263205f56a7d4be2ec82c6e"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-06",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-06",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "92404069cfd37a9c2ae1031e34064941de8614ecbc0703ae4ada0f1992c4df49",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "373dfe505f316914b117b0fd1a7a73f44ce8755a5da57c9e38eb377b06c5f147"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-07",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-07",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "87af27f9a52bd5b2d0c2a5aed7d1ac5a07e98a5b58347cd8328b43464b4140bf",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "f5b93ded28ab0cda327a758013a32c87ea84130d3c8bf4f4d8a79198c6f260d5"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-08",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-08",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "ca031126e195baeb3aabbc25fe1e64cf054a83d392a26309ec293ae31de64842",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "a0f8b5ef2067383c899a631f68db6ce2faab6462881395ce5d659b6886bc04fe"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-09",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-09",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "57b8cd02112f32be1c2f9209818a300a009fa48f2bfba9e8c495c83d97b78446",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "109859d5ce6b65bafac29ac8dba4717359540c4b5e962ee2a4ad8ba20fe96a04"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-10",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-10",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "34e38689a5b9dce51f4648913fbdc80b2e7539d6998396858d2afc3c6aeacd6f",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "93a753d7bcedb02dbe572b869253a1bffb1366cc3e3dba40c4b3be2ad1bb263d"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-11",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-11",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "4422ca753b3e95db680cc67fa150192f6089e9b010cdc8bde51671d2e97973ce",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9ed5321cc27c88427bb5c830864f3b28fffe4f7baebb7e57a16249bc48fafd05"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-12",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-12",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "9a65ec8b9c718f19cca021189e4388ea9f056f0801f5421fef6ce9060514e9fa",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "8af0b5a2355455cc270514c6b4c3f9ce177361209d62c9bb3f6d828214f0b97f"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-13",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-13",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-parts"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "08fd3b6e2c8d0be8536aaf7a54d5b29625b416ed666a3a6ac3ea4a0d231e6a99",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "ed20c982aaa088a42f76da67908b1dca8e5171ce9442a0bd0bd27722f228412a"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-advanced-14",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-advanced-14",
       "difficulty": "advanced",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "7974e04bccec544914a9a76c321a0ace00475d9d9334e301efdf995c7fdd13c4",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1c4307ee440a250471286567d4414a6ec7ee6a1a009b1a4888ec03645d1e4c5b"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-01",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-01",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "64a15b96de5d6b2586ba95ec899324a5453ed0b7c9396b6cfea0d8cd2ea8dc6a",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "7f2d37c7b2b9d4ecb8b8c3e95180cbc151c8e64293504f5203688d3adfce2be4"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-02",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-02",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "07d274f66db81af411806eebbe234073b43aba32b4de680bf27d64d6165cc5a5",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1cb7ecf904a9304df650ee4a23983be800aeba1c0163c563d431eaddb4ce4116"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-03",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-03",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "ba6ab522ded0f30f231e4d7cbe53475629d6a5a407b7dd2ed5ca02cbd459360b",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "4d3ba939496bd1ad422f8d36e31d8620cc619bced7d10dfa50e4bd453b63b4a4"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-04",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-04",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "ca1cba79e26cd0ec96e9e6d771e93fdaec1e80b4e1a0be31ac7994ba61ba5a77",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "ef64bc44f50b545ce380279d2f84db14671c9210f51054503a33b8708eaf7644"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-05",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-05",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "daae153a33df88ddaa39ec8cedf3c77c327466c7877f6965e497e201d45298ec",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "88fd613ff97e01c39f8ea98fa3ee35c00e04c7de5ed865faf8e3fe9fe1db9163"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-06",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-06",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "bf3fae5720c29632740e7d5f9115d17affa13bb3e321f2975d8a9724f28d131d",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "c7531ad8ae3acfe39fed5b11108fb0249ad5e9ee986900e6f9a5d467ef31be68"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-07",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-07",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "a4a862de3260e1df6c8a60ae5059ff36e9453f2981e64dc72909fe6f3bdc043c",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9dd57562bd3172bccc6e75035713eae895f6f723863dd2cffaf1a02c960ff860"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-08",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-08",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "e218e50a151d31b235b5acba36fd91b6c663281a2b08453e17512cf0ae0a8ba8",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "88e74a92b98c0ecb952d7c8e0ae8d5103fa0305e235849b54a6119578a1b78f6"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-09",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-09",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "3da459d8cb67adb49633699ab8dbdf399e386430bcde21bc11c7b57f9b1b3421",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e32de177a3456fee777cdecd413d915418585e542a10691b26d75ad2f79fc327"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-10",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-10",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "bf82dc50511cfc54e22811bfba2aa8ad903277c55fb68b12973a354e96c6dd53",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1f82de3f232004dc1559eaac9cc5bd72f7487bea220bf191f80b53bf9d03c9db"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-11",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-11",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "9a9030ff30858e48436455378e1e8aa71d24ebb57234e496bfec8cb52e2f8551",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "455a6bb317638fa9e4155144ca40d32ee8015d6a8efbede04d720c9eef7ebc0c"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-12",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-12",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "b746348dfa84754137ae715ee85614906724c739601b6596efc8ba048fcde137",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "8a1d3466555c98d613207de047e3107dbcb2ca5deb80f1482764bfe4818b8bba"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-13",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-13",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "f198a1c059ec30208b4b1096516333492d0c968a706cd2fc0cd029a8c6553783",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "233498811f542c09ac8e36a915035068dac6d1e41315342087fbb07a645d727b"
     },
     {
       "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-03-high-14",
       "activityId": "challenge-supplement-grade-2-term-1-math-unit-03-high-14",
       "difficulty": "high",
       "knowledgePointIds": [
-        "angle-parts",
-        "angle-comparison"
+        "equal-sharing-and-grouping",
+        "division-facts-and-multiplication-check"
       ],
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "028636217984e74dd419237269161d5bd416e06f4388be3ff6b132d243ec8213",
-      "approvedBy": "Codex content-author self-review",
-      "approvedAt": "2026-10-27T05:10:05.801Z"
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "613e170a39c3907c017d2151d3a16f64ddac05ae4b580b434bdf96770a4195f8"
     }
   ]
 }

@@ -240,9 +240,9 @@ describe('二年级下册数学第九单元闯关题目草案', () => {
       coreKnowledgePointIds: knowledgePointIds,
     });
     expect(group.definition.mappingEvidence.source).toContain('grade-2-textbook-inventory.md');
-    expect(group.definition.mappingEvidence.notes).toContain('TapXWorld');
-    expect(group.definition.mappingEvidence.notes).toContain('不将回退目录称为最新版');
-    expect(group.definition.mappingEvidence.notes).toContain('尚无独立教育者复核');
+    expect(group.definition.mappingEvidence.notes).toContain('ISBN 978-7-107-37176-9');
+    expect(group.definition.mappingEvidence.notes).toContain('用户提供的人教版');
+    expect(group.definition.mappingEvidence.notes).toContain('独立教育者复核未完成');
     expect(group.definition.tasks).toHaveLength(5);
     expect(group.definition.tasks.every(({ targetCount }) => targetCount === 15)).toBe(true);
     for (const difficulty of ['basic', 'advanced', 'high'] as const) {
@@ -255,7 +255,7 @@ describe('二年级下册数学第九单元闯关题目草案', () => {
     expect(new Set(manifest.questions.map(({ approvedContentFingerprint }) => approvedContentFingerprint))).toHaveLength(90);
     expect(rows).toHaveLength(90);
     expect(new Set(rows.map(({ 题目ID }) => 题目ID))).toEqual(expectedIds);
-    expect(rows.every(({ 审核状态 }) => 审核状态.includes('作者逐题自审通过') && 审核状态.includes('未独立教育者复核'))).toBe(true);
+    expect(rows.every(({ 审核状态 }) => 审核状态.includes('AI 主审已复核') && 审核状态.includes('独立教育者复核数 0'))).toBe(true);
 
     const ledgerById = new Map(rows.map((row) => [row['题目ID'], row]));
     const supplementByActivityId = new Map(grade2Term2MathUnit09SupplementalActivities.map((item) => [item.activity.id, item]));
@@ -272,7 +272,7 @@ describe('二年级下册数学第九单元闯关题目草案', () => {
       expect(question.lifecycle).toBe('active');
       expect(question.approved).toBe(true);
       expect(question.answerLeakageReviewed).toBe(true);
-      expect(question.approvedBy).toBe('Codex content-author self-review');
+      expect(question.approvedBy).toBe('AI 主审（非独立教师复核）');
       expect(question.approvedAt).toMatch(/^2026-10-28T/u);
       expect(question.approvedContentFingerprint).toBe(await fingerprintActivity(activity!));
 
@@ -280,7 +280,7 @@ describe('二年级下册数学第九单元闯关题目草案', () => {
       expect(row['难度']).toBe(question.difficulty === 'basic' ? '基础' : question.difficulty === 'advanced' ? '进阶' : '高阶');
       expect(row['正确选项']).toBe(answerSummary(activity!));
       expect(row['知识点']).toBe(question.knowledgePointIds.join('；'));
-      expect(row['复核说明']).toContain('TapXWorld');
+      expect(row['复核说明']).toContain('ISBN 978-7-107-37176-9');
       expect(row['检查项']).toContain('线索');
       expect(row['内容指纹']).toBe(question.approvedContentFingerprint);
     }

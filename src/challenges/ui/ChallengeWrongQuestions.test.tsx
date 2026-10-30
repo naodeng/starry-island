@@ -56,8 +56,18 @@ describe('ChallengeWrongQuestions', () => {
     const onNavigate = vi.fn();
     render(<ChallengeWrongQuestions records={[]} onNavigate={onNavigate} />);
 
-    expect(screen.getByRole('status')).toHaveTextContent('完成挑战后，答错的题会出现在这里。');
+    expect(screen.getByRole('status')).toHaveTextContent('错题本还是空的');
+    expect(screen.getByRole('status')).toHaveTextContent('完成挑战后，答错的题会出现在这里；答对两次后会标记为已掌握。');
     fireEvent.click(screen.getByRole('button', { name: '返回闯关中心' }));
     expect(onNavigate).toHaveBeenCalledWith('/challenges');
+  });
+
+  it('explainsWhenTheSelectedWrongQuestionCategoryHasNoRecords', () => {
+    render(<ChallengeWrongQuestions records={[record('mastered-question', 2)]} onNavigate={vi.fn()} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '待掌握' }));
+
+    expect(screen.getByRole('status')).toHaveTextContent('这个分类暂时没有题目');
+    expect(screen.getByRole('status')).toHaveTextContent('试试切换到“全部”或其他分类。');
   });
 });

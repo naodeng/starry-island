@@ -36,7 +36,7 @@ describe('loadChallengeGrowthSummary', () => {
       earnedBadgeCount: 0,
     });
     expect(summary.groups).toHaveLength(growthGroups.length);
-    expect(summary.groups[0]).toMatchObject({ groupId: 'grade-2-term-1-math-unit-02', taskCount: 5, passedTaskCount: 1, badgeEarned: false });
+    expect(summary.groups[0]).toMatchObject({ groupId: growthGroups[0]!.id, taskCount: 5, passedTaskCount: 1, badgeEarned: false });
     expect(repository.close).toHaveBeenCalledOnce();
   });
 

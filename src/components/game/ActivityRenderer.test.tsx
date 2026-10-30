@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
-import type { ChoiceActivityDefinition } from '../../content/types';
+import type { ActivityDefinition, ChoiceActivityDefinition } from '../../content/types';
 import { SoundProvider, useSound } from '../../sound/SoundProvider';
 import { SOUND_PREFERENCE_KEY } from '../../sound/soundPreferences';
 import ActivityRenderer from './ActivityRenderer';
@@ -44,13 +44,63 @@ function setupSpeech(voices: SpeechSynthesisVoice[]) {
   return speech;
 }
 
-function renderActivity(onSolved = vi.fn()) {
+function renderActivity(onSolved = vi.fn(), renderedActivity: ActivityDefinition = activity) {
   return render(
     <SoundProvider>
-      <ActivityRenderer activity={activity} onSolved={onSolved} />
+      <ActivityRenderer activity={renderedActivity} onSolved={onSolved} />
     </SoundProvider>,
   );
 }
+
+const accessibleActivityCases: Array<{
+  kind: string;
+  activity: ActivityDefinition;
+  role: string;
+  name: string;
+}> = [
+  { kind: 'choice', activity, role: 'group', name: '选择一个答案' },
+  {
+    kind: 'match',
+    activity: {
+      id: 'accessible-match', kind: 'match', prompt: '找到对应词语。', hint: '读一读两个词语。', explanation: '词语可以配对。',
+      pairs: [{ id: 'one', left: '太阳', right: '白天' }, { id: 'two', left: '月亮', right: '夜晚' }],
+    },
+    role: 'group', name: '左侧词语',
+  },
+  {
+    kind: 'order',
+    activity: {
+      id: 'accessible-order', kind: 'order', prompt: '排好顺序。', hint: '看看先后。', explanation: '顺序已正确。',
+      items: [{ id: 'first', label: '第一步' }, { id: 'second', label: '第二步' }], correctOrder: ['first', 'second'],
+    },
+    role: 'list', name: '当前排列顺序',
+  },
+  {
+    kind: 'categorize',
+    activity: {
+      id: 'accessible-categorize', kind: 'categorize', prompt: '整理水果。', hint: '想想它们是什么。', explanation: '分类可以帮助整理。',
+      categories: [{ id: 'fruit', label: '水果' }, { id: 'vegetable', label: '蔬菜' }],
+      items: [{ id: 'apple', label: '苹果', categoryId: 'fruit' }],
+    },
+    role: 'group', name: '为苹果选择分类',
+  },
+  {
+    kind: 'arithmetic',
+    activity: {
+      id: 'accessible-arithmetic', kind: 'arithmetic', prompt: '算一算。', hint: '把两个数合起来。', explanation: '4 加 5 等于 9。',
+      expression: '4 + 5', correctAnswer: 9,
+    },
+    role: 'spinbutton', name: '输入计算结果',
+  },
+  {
+    kind: 'measurement',
+    activity: {
+      id: 'accessible-measurement', kind: 'measurement', prompt: '量一量。', hint: '移动到合适的位置。', explanation: '这段长度是 2 厘米。',
+      objectLabel: '彩带', targetLengthCm: 2, minCm: 1, maxCm: 3,
+    },
+    role: 'group', name: '调整终点',
+  },
+];
 
 function DisableSoundButton() {
   const { setEnabled } = useSound();
@@ -174,5 +224,24 @@ describe('ActivityRenderer local speech', () => {
     fireEvent.click(screen.getByRole('button', { name: '关闭声音' }));
 
     expect(speech.cancel).toHaveBeenCalledOnce();
+  });
+});
+
+describe('ActivityRenderer accessibility', () => {
+  it('announcesThePromptAndKeepsItVisibleAlongsideAnswerFeedback', () => {
+    renderActivity();
+    const prompt = screen.getByRole('heading', { level: 2, name: activity.prompt });
+
+    fireEvent.click(screen.getByRole('button', { name: /24 - 18/ }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(prompt).toBeInTheDocument();
+    expect(screen.getByRole('status')).toHaveTextContent(/没关系|勇敢尝试|换个角度|别着急|每一次尝试/);
+  });
+
+  it.each(accessibleActivityCases)('exposes labelled controls for $kind activities', ({ activity: testedActivity, role, name }) => {
+    renderActivity(vi.fn(), testedActivity);
+
+    expect(screen.getByRole(role, { name })).toBeInTheDocument();
   });
 });

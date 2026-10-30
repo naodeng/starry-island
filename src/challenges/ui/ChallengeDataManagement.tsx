@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from 'animal-island-ui';
+import EmptyState from '../../components/shared/EmptyState';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { QuarantineNormalization } from '../domain/quarantineRecovery';
 import { hasChallengeDataToClear } from '../domain/recovery';
@@ -351,7 +352,14 @@ export default function ChallengeDataManagement({
                   ))}
                 </ul>
               ) : (
-                <p className="challenge-quarantine-status" role="status">当前没有隔离记录。</p>
+                <div className="challenge-quarantine-empty-status" role="status">
+                  <EmptyState
+                    className="challenge-quarantine-empty"
+                    headingLevel={3}
+                    title="当前没有隔离记录"
+                    description="本机目前没有可显示的隔离记录。"
+                  />
+                </div>
               )}
               <div className="challenge-data-management-actions" aria-label="隔离记录分页">
                 <Button type="default" disabled={quarantineBusy || quarantineList.cursors.length <= 1} onClick={() => void loadAdjacentQuarantinePage('previous')}>上一页</Button>
@@ -388,13 +396,21 @@ export default function ChallengeDataManagement({
       {quarantineStatus && <p className="challenge-quarantine-status" role="status">{quarantineStatus}</p>}
       {quarantineError && <p className="challenge-quarantine-status" role="alert">{quarantineError}</p>}
 
-      {recoveryPoint && (
+      {recoveryPoint ? (
         <div className="challenge-recovery-point">
+          <h3>短期恢复点</h3>
           <p>本机有一个恢复点，有效至 {formatLocalTime(recoveryPoint.expiresAt)}。新清除操作会自动替换它。</p>
           <Button type="default" disabled={busy} onClick={() => { setStatus(null); setError(null); setPendingAction({ kind: 'restore' }); }}>
             恢复已清除的闯关记录
           </Button>
         </div>
+      ) : (
+        <EmptyState
+          className="challenge-no-recovery-point"
+          headingLevel={3}
+          title="当前没有恢复点"
+          description="完成清除闯关记录时会生成短期恢复点；长期备份请使用上方的导出功能。"
+        />
       )}
 
       {clearingScope && (

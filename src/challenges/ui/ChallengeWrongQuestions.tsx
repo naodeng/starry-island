@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from 'animal-island-ui';
+import EmptyState from '../../components/shared/EmptyState';
 import { getChallengeCenterPath } from '../../app/router';
 import type { WrongQuestionRecord } from '../domain/types';
 import { formatCorrectAnswer } from './ChallengeResult';
@@ -58,9 +59,16 @@ export default function ChallengeWrongQuestions({ records, onNavigate }: Challen
               })}
             </ol>
           ) : (
-            <p className="challenge-inline-note" role="status">
-              {records.length === 0 ? '完成挑战后，答错的题会出现在这里。' : '这个分类里暂时没有题目。'}
-            </p>
+            <div className="challenge-wrong-empty-status" role="status">
+              <EmptyState
+                className="challenge-wrong-empty"
+                headingLevel={3}
+                title={records.length === 0 ? '错题本还是空的' : '这个分类暂时没有题目'}
+                description={records.length === 0
+                  ? '完成挑战后，答错的题会出现在这里；答对两次后会标记为已掌握。'
+                  : '试试切换到“全部”或其他分类。'}
+              />
+            </div>
           )}
         </section>
       </div>

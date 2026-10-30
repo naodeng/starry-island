@@ -70,7 +70,7 @@
 .session-card > p { flex: 1; margin: 0 0 15px; }
 .session-card-meta { justify-content: flex-start; flex-wrap: wrap; margin: 0 0 17px; color: #617188; font-size: 13px; font-weight: 700; }
 .session-complete-label { margin-top: 10px; color: #42795f; font-size: 13px; font-weight: 800; text-align: center; }
-.catalog-empty-note, .task-track-empty { margin: 0; padding: 18px 20px; border: 1px dashed rgba(92, 121, 109, .3); border-radius: 18px; color: #63748a; background: rgba(255, 255, 255, .6); line-height: 1.7; }
+.catalog-empty-state { margin-top: 16px; }
 .difficulty-track-list { display: grid; gap: 24px; }
 .difficulty-track { padding: clamp(18px, 3vw, 28px); border: 1px solid rgba(89, 121, 112, .16); border-radius: 26px; background: rgba(255, 255, 255, .38); }
 .difficulty-track-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 18px; }

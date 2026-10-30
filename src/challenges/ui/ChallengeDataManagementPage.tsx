@@ -1,19 +1,22 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import packageJson from '../../../package.json';
-import { createChallengeBackup, isChallengeBackupData, normalizeImportedChallengeBackupData, parseChallengeBackup } from '../domain/backup';
+import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup } from '../domain/backup';
 import type { ChallengeBackupData, ChallengeBackupImport, ChallengeBackupPreferences } from '../domain/backup';
 import { mergeChallengeBackupData } from '../domain/backupMerge';
 import type { ChallengeClearScope, ChallengeRecoveryPointSummary } from '../domain/recovery';
 import { createChallengeDiagnosticReport } from '../domain/diagnostics';
 import type { ChallengeRecoveryRestoreResult, ChallengeRepository } from '../storage/repository';
 import { RevisionConflictError } from '../storage/repository';
-import { CHALLENGE_DATABASE_VERSION, createChallengeRepository } from '../storage/indexedDbRepository';
+import { CHALLENGE_DATABASE_VERSION } from '../storage/indexedDbRepository';
 import { useTheme } from '../../theme/ThemeProvider';
 import { useSound } from '../../sound/SoundProvider';
 import ChallengeBackupPanel from './ChallengeBackupPanel';
 import type { ChallengeBackupImportPreview } from './ChallengeBackupPanel';
 import ChallengeDataManagement from './ChallengeDataManagement';
+import useChallengeRepository from './useChallengeRepository';
+import readWithTimeout from './readWithTimeout';
+import LoadingState from '../../components/shared/LoadingState';
 import './challenge.css';
 
 function downloadJsonFile(filename: string, value: unknown) {
@@ -51,7 +54,7 @@ interface ChallengeDataManagementPageProps {
 const MAX_BACKUP_FILE_BYTES = 10 * 1024 * 1024;
 
 export default function ChallengeDataManagementPage({ onNavigate, repository: providedRepository }: ChallengeDataManagementPageProps) {
-  const repository = useMemo(() => providedRepository ?? createChallengeRepository(), [providedRepository]);
+  const repository = useChallengeRepository(providedRepository);
   const { preference: themePreference, setPreference: setThemePreference } = useTheme();
   const { enabled: soundEnabled, setEnabled: setSoundEnabled } = useSound();
   const [readState, setReadState] = useState<DataReadState>({ status: 'loading' });
@@ -60,7 +63,10 @@ export default function ChallengeDataManagementPage({ onNavigate, repository: pr
   async function readManagementState(showLoading = false) {
     if (showLoading) setReadState({ status: 'loading' });
     try {
-      const [point, count] = await Promise.all([repository.getRecoveryPoint(), repository.getQuarantinedRecordCount()]);
+      const [point, count] = await readWithTimeout(Promise.all([
+        repository.getRecoveryPoint(),
+        repository.getQuarantinedRecordCount(),
+      ]));
       setReadState({
         status: 'ready',
         recoveryPoint: point ? { createdAt: point.createdAt, expiresAt: point.expiresAt } : null,
@@ -73,10 +79,7 @@ export default function ChallengeDataManagementPage({ onNavigate, repository: pr
 
   useEffect(() => {
     void readManagementState(true);
-    return () => {
-      if (!providedRepository) repository.close();
-    };
-  }, [providedRepository, repository]);
+  }, [repository]);
 
   async function clearChallengeData(scope: ChallengeClearScope) {
     const result = await repository.clearChallengeData(scope);
@@ -100,9 +103,9 @@ export default function ChallengeDataManagementPage({ onNavigate, repository: pr
 
   async function exportBackup(includePreferences: boolean) {
     const snapshot = await repository.getBackupSnapshot();
-    const backup = await createChallengeBackup(snapshot, includePreferences ? {
-      preferences: { theme: themePreference, soundEnabled },
-    } : {});
+    const backup = await createChallengeBackup(snapshot, {
+      ...(includePreferences ? { preferences: { theme: themePreference, soundEnabled } } : {}),
+    });
     downloadJsonFile(`starry-island-challenges-${backup.createdAt.replace(/[:.]/g, '-')}.json`, backup);
   }
 
@@ -155,12 +158,7 @@ export default function ChallengeDataManagementPage({ onNavigate, repository: pr
     } catch {
       throw new Error('备份格式或完整性校验无效；本机记录没有更改。');
     }
-    let imported: ChallengeBackupData;
-    try {
-      imported = normalizeImportedChallengeBackupData(backup.data);
-    } catch {
-      throw new Error('备份中的闯关快照版本不受支持；本机记录没有更改。');
-    }
+    const imported: ChallengeBackupData = backup.data;
     let expectedLocal: ChallengeBackupData;
     try {
       expectedLocal = await repository.getBackupSnapshot();
@@ -195,7 +193,15 @@ export default function ChallengeDataManagementPage({ onNavigate, repository: pr
 
   function renderContent() {
     if (readState.status === 'loading') {
-      return <main className="challenge-page" aria-live="polite" aria-busy="true"><div className="challenge-shell"><h1>正在读取本机数据…</h1></div></main>;
+      return (
+        <main className="challenge-page" aria-live="polite" aria-busy="true">
+          <div className="challenge-shell">
+            <Card className="challenge-message-card challenge-loading-card" color="default">
+              <LoadingState title="正在读取本机数据…" description="正在安全检查闯关记录，不会更改现有数据。" headingLevel={1} />
+            </Card>
+          </div>
+        </main>
+      );
     }
     if (readState.status === 'error') {
       return (

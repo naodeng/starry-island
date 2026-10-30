@@ -40,15 +40,15 @@
       "grade": 2,
       "term": 1,
       "series": "义务教育教科书·数学（二年级上册）",
-      "edition": "2022年8月第2版",
+      "edition": null,
       "printing": null,
-      "isbn": "978-7-107-36923-0",
-      "sourceKind": "tapx-fallback",
-      "sourceUrl": "https://github.com/TapXWorld/ChinaTextbook/blob/5a80345f2043ba6f8db8d7be9cf3db82725ff1f7/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%C2%B7%20%E6%95%B0%E5%AD%A6%E4%BA%8C%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf",
+      "isbn": "978-7-107-38912-2",
+      "sourceKind": "user-provided",
+      "sourceUrl": "urn:starry-island:textbook:isbn:978-7-107-38912-2",
       "latestPepEvidenceUrl": "https://www.pep.com.cn/rjyx/qnbjsjc/sytj/202605/t20260514_2006676.shtml",
-      "fallbackReason": "人教社公开了新课标数学教材资源信息，但未找到本册完整新版学生用书和目录；按用户授权采用学校使用的 TapXWorld 固定快照。",
-      "checkedAt": "2026-10-14",
-      "tapxCommit": "5a80345f2043ba6f8db8d7be9cf3db82725ff1f7",
+      "fallbackReason": null,
+      "checkedAt": "2026-10-29",
+      "tapxCommit": null,
       "verificationStatus": "verified"
     },
     "grade-2/term-2/math": {
@@ -59,13 +59,13 @@
       "series": "义务教育教科书·数学（二年级下册）",
       "edition": null,
       "printing": null,
-      "isbn": null,
-      "sourceKind": "tapx-fallback",
-      "sourceUrl": "https://github.com/TapXWorld/ChinaTextbook/blob/5a80345f2043ba6f8db8d7be9cf3db82725ff1f7/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%BA%8C%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf",
+      "isbn": "978-7-107-37176-9",
+      "sourceKind": "user-provided",
+      "sourceUrl": "urn:starry-island:textbook:isbn:978-7-107-37176-9",
       "latestPepEvidenceUrl": "https://www.pep.com.cn/rjyx/qnbjsjc/sytj/202605/t20260514_2006676.shtml",
-      "fallbackReason": "人教社公开了新课标数学教材资源信息，但未找到本册完整新版学生用书和目录；按用户授权采用学校使用的 TapXWorld 固定快照。",
-      "checkedAt": "2026-10-14",
-      "tapxCommit": "5a80345f2043ba6f8db8d7be9cf3db82725ff1f7",
+      "fallbackReason": null,
+      "checkedAt": "2026-10-29",
+      "tapxCommit": null,
       "verificationStatus": "verified"
     },
     "grade-2/term-1/english": {
@@ -1290,7 +1290,7 @@
               "units": [
                 {
                   "id": "unit-01",
-                  "title": "第一单元 · 长度单位",
+                  "title": "第一单元 · 分类与整理",
                   "status": "active",
                   "type": "unit",
                   "formalUnitNumber": 1,
@@ -1300,7 +1300,7 @@
                 },
                 {
                   "id": "unit-02",
-                  "title": "第二单元 · 100以内的加法和减法（二）",
+                  "title": "第二单元 · 1～6 的表内乘法",
                   "status": "active",
                   "type": "unit",
                   "formalUnitNumber": 2,
@@ -1310,7 +1310,7 @@
                 },
                 {
                   "id": "unit-03",
-                  "title": "第三单元 · 角的初步认识",
+                  "title": "第三单元 · 1～6 的表内除法",
                   "status": "active",
                   "type": "unit",
                   "formalUnitNumber": 3,
@@ -1319,8 +1319,18 @@
                   "curriculumUnitKey": "grade-2/term-1/math/unit-03"
                 },
                 {
+                  "id": "integrated-practice-01",
+                  "title": "综合实践 · 校园小导游",
+                  "status": "active",
+                  "type": "integrated-practice",
+                  "formalUnitNumber": null,
+                  "achievementEligible": false,
+                  "textbookEditionId": "grade-2/term-1/math",
+                  "curriculumUnitKey": "grade-2/term-1/math/integrated-practice-01"
+                },
+                {
                   "id": "unit-04",
-                  "title": "第四单元 · 表内乘法（一）",
+                  "title": "第四单元 · 厘米和米",
                   "status": "active",
                   "type": "unit",
                   "formalUnitNumber": 4,
@@ -1329,8 +1339,18 @@
                   "curriculumUnitKey": "grade-2/term-1/math/unit-04"
                 },
                 {
+                  "id": "integrated-practice-02",
+                  "title": "综合实践 · 身体上的尺子",
+                  "status": "active",
+                  "type": "integrated-practice",
+                  "formalUnitNumber": null,
+                  "achievementEligible": false,
+                  "textbookEditionId": "grade-2/term-1/math",
+                  "curriculumUnitKey": "grade-2/term-1/math/integrated-practice-02"
+                },
+                {
                   "id": "unit-05",
-                  "title": "第五单元 · 观察物体（一）",
+                  "title": "第五单元 · 7～9 的表内乘、除法",
                   "status": "active",
                   "type": "unit",
                   "formalUnitNumber": 5,
@@ -1340,53 +1360,13 @@
                 },
                 {
                   "id": "unit-06",
-                  "title": "第六单元 · 表内乘法（二）",
+                  "title": "第六单元 · 复习与关联",
                   "status": "active",
                   "type": "unit",
                   "formalUnitNumber": 6,
                   "achievementEligible": true,
                   "textbookEditionId": "grade-2/term-1/math",
                   "curriculumUnitKey": "grade-2/term-1/math/unit-06"
-                },
-                {
-                  "id": "unit-07",
-                  "title": "第七单元 · 认识时间",
-                  "status": "active",
-                  "type": "unit",
-                  "formalUnitNumber": 7,
-                  "achievementEligible": true,
-                  "textbookEditionId": "grade-2/term-1/math",
-                  "curriculumUnitKey": "grade-2/term-1/math/unit-07"
-                },
-                {
-                  "id": "unit-08",
-                  "title": "第八单元 · 数学广角——搭配（一）",
-                  "status": "active",
-                  "type": "unit",
-                  "formalUnitNumber": 8,
-                  "achievementEligible": true,
-                  "textbookEditionId": "grade-2/term-1/math",
-                  "curriculumUnitKey": "grade-2/term-1/math/unit-08"
-                },
-                {
-                  "id": "unit-09",
-                  "title": "第九单元 · 总复习",
-                  "status": "active",
-                  "type": "unit",
-                  "formalUnitNumber": 9,
-                  "achievementEligible": true,
-                  "textbookEditionId": "grade-2/term-1/math",
-                  "curriculumUnitKey": "grade-2/term-1/math/unit-09"
-                },
-                {
-                  "id": "integrated-practice-01",
-                  "title": "综合实践 · 量一量，比一比",
-                  "status": "active",
-                  "type": "integrated-practice",
-                  "formalUnitNumber": null,
-                  "achievementEligible": false,
-                  "textbookEditionId": "grade-2/term-1/math",
-                  "curriculumUnitKey": "grade-2/term-1/math/integrated-practice-01"
                 }
               ]
             },
@@ -11214,11 +11194,11 @@
       "basicSessions": [
         {
           "id": "grade-2/term-1/math/unit-01/basic/task-01/session-01",
-          "title": "厘米和米探险队"
+          "title": "彩球分类小队"
         },
         {
           "id": "grade-2/term-1/math/unit-01/basic/task-02/session-01",
-          "title": "直尺与线段观察站"
+          "title": "文具整理观察员"
         }
       ]
     },
@@ -11240,11 +11220,11 @@
       "basicSessions": [
         {
           "id": "grade-2/term-1/math/unit-02/basic/task-01/session-01",
-          "title": "进位加法能量站"
+          "title": "相同加数转换器"
         },
         {
           "id": "grade-2/term-1/math/unit-02/basic/task-02/session-01",
-          "title": "退位减法与生活题"
+          "title": "2到6的口诀练习场"
         }
       ]
     },
@@ -11266,11 +11246,11 @@
       "basicSessions": [
         {
           "id": "grade-2/term-1/math/unit-03/basic/task-01/session-01",
-          "title": "角的形状观察站"
+          "title": "平均分贴纸"
         },
         {
           "id": "grade-2/term-1/math/unit-03/basic/task-02/session-01",
-          "title": "直角参照与角比较"
+          "title": "分组整理卡片"
         }
       ]
     },
@@ -11292,11 +11272,11 @@
       "basicSessions": [
         {
           "id": "grade-2/term-1/math/unit-04/basic/task-01/session-01",
-          "title": "相同加数转换器"
+          "title": "厘米和米探险队"
         },
         {
           "id": "grade-2/term-1/math/unit-04/basic/task-02/session-01",
-          "title": "2到6的口诀练习场"
+          "title": "直尺与线段观察站"
         }
       ]
     },
@@ -11318,11 +11298,11 @@
       "basicSessions": [
         {
           "id": "grade-2/term-1/math/unit-05/basic/task-01/session-01",
-          "title": "三面观察训练舱"
+          "title": "7的乘除口诀站"
         },
         {
           "id": "grade-2/term-1/math/unit-05/basic/task-02/session-01",
-          "title": "小方块摆放与描述"
+          "title": "8的乘除分组场"
         }
       ]
     },
@@ -11344,89 +11324,11 @@
       "basicSessions": [
         {
           "id": "grade-2/term-1/math/unit-06/basic/task-01/session-01",
-          "title": "7、8、9口诀训练场"
+          "title": "分类与统计回顾员"
         },
         {
           "id": "grade-2/term-1/math/unit-06/basic/task-02/session-01",
-          "title": "乘法问题解码站"
-        }
-      ]
-    },
-    "grade-2/term-1/math/unit-07": {
-      "sessionIds": {
-        "basic": [
-          "grade-2/term-1/math/unit-07/basic/task-01/session-01",
-          "grade-2/term-1/math/unit-07/basic/task-02/session-01"
-        ],
-        "advanced": [
-          "grade-2/term-1/math/unit-07/advanced/task-01/session-01",
-          "grade-2/term-1/math/unit-07/advanced/task-02/session-01"
-        ],
-        "high": [
-          "grade-2/term-1/math/unit-07/high/task-01/session-01",
-          "grade-2/term-1/math/unit-07/high/task-02/session-01"
-        ]
-      },
-      "basicSessions": [
-        {
-          "id": "grade-2/term-1/math/unit-07/basic/task-01/session-01",
-          "title": "时针分针识别舱"
-        },
-        {
-          "id": "grade-2/term-1/math/unit-07/basic/task-02/session-01",
-          "title": "几时几分读写站"
-        }
-      ]
-    },
-    "grade-2/term-1/math/unit-08": {
-      "sessionIds": {
-        "basic": [
-          "grade-2/term-1/math/unit-08/basic/task-01/session-01",
-          "grade-2/term-1/math/unit-08/basic/task-02/session-01"
-        ],
-        "advanced": [
-          "grade-2/term-1/math/unit-08/advanced/task-01/session-01",
-          "grade-2/term-1/math/unit-08/advanced/task-02/session-01"
-        ],
-        "high": [
-          "grade-2/term-1/math/unit-08/high/task-01/session-01",
-          "grade-2/term-1/math/unit-08/high/task-02/session-01"
-        ]
-      },
-      "basicSessions": [
-        {
-          "id": "grade-2/term-1/math/unit-08/basic/task-01/session-01",
-          "title": "搭配清单发现站"
-        },
-        {
-          "id": "grade-2/term-1/math/unit-08/basic/task-02/session-01",
-          "title": "连线与分类搭配"
-        }
-      ]
-    },
-    "grade-2/term-1/math/unit-09": {
-      "sessionIds": {
-        "basic": [
-          "grade-2/term-1/math/unit-09/basic/task-01/session-01",
-          "grade-2/term-1/math/unit-09/basic/task-02/session-01"
-        ],
-        "advanced": [
-          "grade-2/term-1/math/unit-09/advanced/task-01/session-01",
-          "grade-2/term-1/math/unit-09/advanced/task-02/session-01"
-        ],
-        "high": [
-          "grade-2/term-1/math/unit-09/high/task-01/session-01",
-          "grade-2/term-1/math/unit-09/high/task-02/session-01"
-        ]
-      },
-      "basicSessions": [
-        {
-          "id": "grade-2/term-1/math/unit-09/basic/task-01/session-01",
-          "title": "数学习惯回顾站"
-        },
-        {
-          "id": "grade-2/term-1/math/unit-09/basic/task-02/session-01",
-          "title": "图形时间与搭配回顾"
+          "title": "乘法口诀回顾员"
         }
       ]
     },
@@ -11448,11 +11350,37 @@
       "basicSessions": [
         {
           "id": "grade-2/term-1/math/integrated-practice-01/basic/task-01/session-01",
-          "title": "小小测量员"
+          "title": "校园方位观察员"
         },
         {
           "id": "grade-2/term-1/math/integrated-practice-01/basic/task-02/session-01",
-          "title": "长度比较小队"
+          "title": "图书馆路线小向导"
+        }
+      ]
+    },
+    "grade-2/term-1/math/integrated-practice-02": {
+      "sessionIds": {
+        "basic": [
+          "grade-2/term-1/math/integrated-practice-02/basic/task-01/session-01",
+          "grade-2/term-1/math/integrated-practice-02/basic/task-02/session-01"
+        ],
+        "advanced": [
+          "grade-2/term-1/math/integrated-practice-02/advanced/task-01/session-01",
+          "grade-2/term-1/math/integrated-practice-02/advanced/task-02/session-01"
+        ],
+        "high": [
+          "grade-2/term-1/math/integrated-practice-02/high/task-01/session-01",
+          "grade-2/term-1/math/integrated-practice-02/high/task-02/session-01"
+        ]
+      },
+      "basicSessions": [
+        {
+          "id": "grade-2/term-1/math/integrated-practice-02/basic/task-01/session-01",
+          "title": "认识身体尺"
+        },
+        {
+          "id": "grade-2/term-1/math/integrated-practice-02/basic/task-02/session-01",
+          "title": "脚步路线记录员"
         }
       ]
     },

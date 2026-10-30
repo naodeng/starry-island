@@ -27,6 +27,15 @@ function renderPanel(overrides: Partial<React.ComponentProps<typeof ChallengeBac
 }
 
 describe('ChallengeBackupPanel', () => {
+  it('explainsHowToStartAnImportWithoutShowingFakeBackupHistory', () => {
+    renderPanel();
+
+    expect(screen.getByRole('heading', { name: '尚未选择备份文件' })).toBeInTheDocument();
+    expect(screen.getByText('选择本机备份文件后，会先检查内容并展示安全合并预览。')).toBeInTheDocument();
+    expect(screen.queryByRole('list', { name: /历史备份|备份列表/ })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '选择闯关备份文件' })).toBeInTheDocument();
+  });
+
   it('exports only challenge data and includes preferences only after explicit opt-in', async () => {
     const { props } = renderPanel();
 
@@ -53,6 +62,7 @@ describe('ChallengeBackupPanel', () => {
 
     expect(await screen.findByRole('group', { name: '导入预览' })).toHaveTextContent('新增成绩 2 项，合并成绩 0 项');
     expect(screen.getByRole('group', { name: '导入预览' })).toHaveTextContent('备份设置：主题为深色，语音已关闭。');
+    expect(screen.queryByText(/排除旧版二年级上册数学记录/)).not.toBeInTheDocument();
     expect(screen.getByRole('checkbox', { name: '应用备份中的主题和语音偏好' })).not.toBeChecked();
     expect(onConfirmImportBackup).not.toHaveBeenCalled();
 

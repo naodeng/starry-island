@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { MouseEvent } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { ArrowRightIcon, BookIcon, CompassIcon } from 'naive-icons';
+import EmptyState from '../shared/EmptyState';
 import { getCompletedUnitCount, getCosmicRank } from '../../achievements/progress';
 import { resolveContinueLearningDestination, resolveLearningSessionDestination } from '../../app/continueLearning';
 import type { ContinueLearningDestination, LearningSessionDestination } from '../../app/continueLearning';
@@ -163,14 +164,26 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
                   </div>
                 ) : (
                   <>
-                    <ul className="home-challenge-counts" aria-label="闯关成长摘要">
-                      <li>已完成 <strong>{challengeState.summary.completedAttempts}</strong> 次挑战</li>
-                      <li>通过 <strong>{challengeState.summary.passedTaskCount}</strong> 个任务</li>
-                      <li>点亮 <strong>{challengeState.summary.earnedBadgeCount}</strong> 枚徽章</li>
-                    </ul>
-                    <Button type="text" onClick={() => onNavigate('/challenges/growth')}>
-                      查看闯关成长 <ArrowRightIcon size={16} aria-hidden="true" />
-                    </Button>
+                    {challengeState.summary.completedAttempts === 0
+                      && challengeState.summary.passedTaskCount === 0
+                      && challengeState.summary.earnedBadgeCount === 0 ? (
+                        <EmptyState
+                          title="还没有闯关成果"
+                          description="完成并提交一次挑战后，成绩和徽章会显示在这里。"
+                          headingLevel={3}
+                        />
+                      ) : (
+                        <>
+                          <ul className="home-challenge-counts" aria-label="闯关成长摘要">
+                            <li>已完成 <strong>{challengeState.summary.completedAttempts}</strong> 次挑战</li>
+                            <li>通过 <strong>{challengeState.summary.passedTaskCount}</strong> 个任务</li>
+                            <li>点亮 <strong>{challengeState.summary.earnedBadgeCount}</strong> 枚徽章</li>
+                          </ul>
+                          <Button type="text" onClick={() => onNavigate('/challenges/growth')}>
+                            查看闯关成长 <ArrowRightIcon size={16} aria-hidden="true" />
+                          </Button>
+                        </>
+                      )}
                   </>
                 )}
               </article>
@@ -183,7 +196,11 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
               <span>最多显示 3 条</span>
             </div>
             {recentDestinations.length === 0 ? (
-              <p className="home-recent-empty">完成一场学习后，最近记录会显示在这里。</p>
+              <EmptyState
+                title="还没有学习记录"
+                description="完成一场学习后，最近记录会显示在这里。"
+                headingLevel={3}
+              />
             ) : (
               <ol className="home-recent-list">
                 {recentDestinations.map(({ event, destination: recentDestination }) => {

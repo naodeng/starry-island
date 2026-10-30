@@ -5,6 +5,7 @@ import { getRegisteredLearningPositions } from '../../achievements/position';
 import type { LearningPosition } from '../../achievements/position';
 import type { ProgressState } from '../../storage/progress';
 import ThemeSwitcher from '../theme/ThemeSwitcher';
+import EmptyState from '../shared/EmptyState';
 import { useSound } from '../../sound/SoundProvider';
 
 interface SettingsPanelProps {
@@ -173,6 +174,16 @@ export default function SettingsPanel({ progress, active = true, onApplyLearning
       <section className="settings-section" aria-labelledby="settings-progress-heading">
         <h2 id="settings-progress-heading">学习进度设置</h2>
         <p>选择接下来要开始的位置，适合已经学过前面课程的同学。</p>
+        {positions.length === 0 ? (
+          <EmptyState
+            className="settings-start-empty"
+            headingLevel={3}
+            title="暂时没有可选择的课程起点"
+            description={hasUnregisteredSavedStart
+              ? '当前保存的学习起点尚未登记到课程目录。课程单元登记后，就可以在这里选择新的学习起点。'
+              : '课程单元登记后，就可以在这里选择学习起点。'}
+          />
+        ) : (
         <form className="learning-start-form" onSubmit={requestLearningStart}>
           <div className="learning-start-fields">
             <label>
@@ -204,6 +215,7 @@ export default function SettingsPanel({ progress, active = true, onApplyLearning
             {saved && <span role="status" className="learning-start-saved">已更新学习起点，星图也同步点亮啦！</span>}
           </div>
         </form>
+        )}
       </section>
     </div>
   );

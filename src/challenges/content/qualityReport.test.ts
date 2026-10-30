@@ -1,165 +1,18 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import type { ActivityDefinition, CurriculumUnit } from '../../content/types';
-import { loadUnit } from '../../content/unitLoader';
 import type { ChallengeManifest, ChallengeQualityInputs } from '../domain/types';
-import { parseChallengeManifest } from './manifestSchema';
-import { pilotSupplementalActivities } from './pilotSupplementalActivities';
-import { pilotEnglishSupplementalActivities } from './pilotEnglishSupplementalActivities';
-import { pilotChineseSupplementalActivities } from './pilotChineseSupplementalActivities';
-import { grade1MathUnit01SupplementalActivities } from './grade1MathUnit01SupplementalActivities';
-import { grade1MathUnit02SupplementalActivities } from './grade1MathUnit02SupplementalActivities';
-import { grade1MathUnit03SupplementalActivities } from './grade1MathUnit03SupplementalActivities';
-import { grade1MathUnit04SupplementalActivities } from './grade1MathUnit04SupplementalActivities';
-import { grade1MathUnit05SupplementalActivities } from './grade1MathUnit05SupplementalActivities';
-import { grade1MathUnit06SupplementalActivities } from './grade1MathUnit06SupplementalActivities';
-import { grade1MathUnit07SupplementalActivities } from './grade1MathUnit07SupplementalActivities';
-import { grade1MathUnit08SupplementalActivities } from './grade1MathUnit08SupplementalActivities';
-import { grade1MathUnit09SupplementalActivities } from './grade1MathUnit09SupplementalActivities';
-import { grade1Term1EnglishUnit01SupplementalActivities } from './grade1Term1EnglishUnit01SupplementalActivities';
-import { grade1Term1EnglishUnit02SupplementalActivities } from './grade1Term1EnglishUnit02SupplementalActivities';
-import { grade1Term1EnglishUnit03SupplementalActivities } from './grade1Term1EnglishUnit03SupplementalActivities';
-import { grade1Term1EnglishUnit04SupplementalActivities } from './grade1Term1EnglishUnit04SupplementalActivities';
-import { grade1Term1EnglishUnit05SupplementalActivities } from './grade1Term1EnglishUnit05SupplementalActivities';
-import { grade1Term1EnglishUnit06SupplementalActivities } from './grade1Term1EnglishUnit06SupplementalActivities';
-import { grade1Term2MathUnit01SupplementalActivities } from './grade1Term2MathUnit01SupplementalActivities';
-import { grade1Term2MathUnit02SupplementalActivities } from './grade1Term2MathUnit02SupplementalActivities';
-import { grade1Term2MathUnit03SupplementalActivities } from './grade1Term2MathUnit03SupplementalActivities';
-import { grade1Term2MathUnit04SupplementalActivities } from './grade1Term2MathUnit04SupplementalActivities';
-import { grade1Term2MathUnit05SupplementalActivities } from './grade1Term2MathUnit05SupplementalActivities';
-import { grade1Term2MathUnit06SupplementalActivities } from './grade1Term2MathUnit06SupplementalActivities';
-import { grade1Term2MathUnit07SupplementalActivities } from './grade1Term2MathUnit07SupplementalActivities';
-import { grade1Term2MathUnit08SupplementalActivities } from './grade1Term2MathUnit08SupplementalActivities';
-import { grade1Term2EnglishUnit01SupplementalActivities } from './grade1Term2EnglishUnit01SupplementalActivities';
-import { grade1Term2EnglishUnit02SupplementalActivities } from './grade1Term2EnglishUnit02SupplementalActivities';
-import { grade1Term2EnglishUnit03SupplementalActivities } from './grade1Term2EnglishUnit03SupplementalActivities';
-import { grade1Term2EnglishUnit04SupplementalActivities } from './grade1Term2EnglishUnit04SupplementalActivities';
-import { grade1Term2EnglishUnit05SupplementalActivities } from './grade1Term2EnglishUnit05SupplementalActivities';
-import { grade1Term2EnglishUnit06SupplementalActivities } from './grade1Term2EnglishUnit06SupplementalActivities';
-import { grade1Term2ChineseSemesterSupplementalActivities } from './grade1Term2ChineseSemesterSupplementalActivities';
-import { grade2Term1ChineseUnit01SupplementalActivities } from './grade2Term1ChineseUnit01SupplementalActivities';
-import { grade2Term1ChineseUnit02SupplementalActivities } from './grade2Term1ChineseUnit02SupplementalActivities';
-import { grade2Term1ChineseUnit03SupplementalActivities } from './grade2Term1ChineseUnit03SupplementalActivities';
-import { grade2Term1ChineseUnit04SupplementalActivities } from './grade2Term1ChineseUnit04SupplementalActivities';
-import { grade2Term1ChineseUnit05SupplementalActivities } from './grade2Term1ChineseUnit05SupplementalActivities';
-import { grade2Term1ChineseUnit06SupplementalActivities } from './grade2Term1ChineseUnit06SupplementalActivities';
-import { grade2Term1ChineseUnit07SupplementalActivities } from './grade2Term1ChineseUnit07SupplementalActivities';
-import { grade2Term1ChineseUnit08SupplementalActivities } from './grade2Term1ChineseUnit08SupplementalActivities';
-import { grade2Term2SupplementalActivities } from './grade2Term2SupplementalActivities';
-import { grade2Term1MathUnit01SupplementalActivities } from './grade2Term1MathUnit01SupplementalActivities';
-import { grade2Term1MathUnit03SupplementalActivities } from './grade2Term1MathUnit03SupplementalActivities';
-import { grade2Term1MathUnit04SupplementalActivities } from './grade2Term1MathUnit04SupplementalActivities';
-import { grade2Term1MathUnit05SupplementalActivities } from './grade2Term1MathUnit05SupplementalActivities';
-import { grade2Term1MathUnit06SupplementalActivities } from './grade2Term1MathUnit06SupplementalActivities';
-import { grade2Term1MathUnit07SupplementalActivities } from './grade2Term1MathUnit07SupplementalActivities';
-import { grade2Term1MathUnit08SupplementalActivities } from './grade2Term1MathUnit08SupplementalActivities';
-import { grade2Term1MathUnit09SupplementalActivities } from './grade2Term1MathUnit09SupplementalActivities';
-import { grade2Term1EnglishUnit01SupplementalActivities } from './grade2Term1EnglishUnit01SupplementalActivities';
-import { grade2Term1EnglishUnit02SupplementalActivities } from './grade2Term1EnglishUnit02SupplementalActivities';
-import { grade2Term1EnglishUnit03SupplementalActivities } from './grade2Term1EnglishUnit03SupplementalActivities';
-import { grade2Term1EnglishUnit04SupplementalActivities } from './grade2Term1EnglishUnit04SupplementalActivities';
-import { grade2Term1EnglishUnit05SupplementalActivities } from './grade2Term1EnglishUnit05SupplementalActivities';
-import { grade2Term1EnglishUnit06SupplementalActivities } from './grade2Term1EnglishUnit06SupplementalActivities';
+import { loadChallengeQualityInputs } from './qualityInputs';
 import { buildChallengeQualityReport, renderChallengeQualityMarkdown } from './qualityReport';
 import rawManifest from './pilotManifest';
 
-const safeKinds = new Set(['choice', 'match', 'order', 'categorize', 'arithmetic']);
-
-interface MutableChallengeQualityInputs extends ChallengeQualityInputs {
+type MutableChallengeQualityInputs = Omit<ChallengeQualityInputs, 'activitiesById' | 'sourceUnitByActivityId' | 'unitsById'> & {
   activitiesById: Map<string, ActivityDefinition>;
   sourceUnitByActivityId: Map<string, string>;
   unitsById: Map<string, CurriculumUnit>;
-}
+};
 
 async function loadPilotInputs(): Promise<MutableChallengeQualityInputs> {
-  const manifest: ChallengeManifest = structuredClone(parseChallengeManifest(rawManifest));
-  const activitiesById = new Map<string, ActivityDefinition>();
-  const sourceUnitByActivityId = new Map<string, string>();
-  const unitsById = new Map<string, CurriculumUnit>();
-
-  for (const sourceUnitId of new Set(manifest.groups.flatMap(({ definition }) => [
-    ...definition.sourceUnitIds,
-    ...(definition.learningTaskUnitIds ?? []),
-  ]))) {
-    const unit = await loadUnit(sourceUnitId);
-    if (!unit) throw new Error(`Test fixture could not load ${sourceUnitId}.`);
-    unitsById.set(sourceUnitId, unit);
-    for (const track of Object.values(unit.difficultyTracks)) {
-      for (const task of track.tasks) {
-        for (const session of task.sessions) {
-          for (const activity of session.activities) {
-            if (!safeKinds.has(activity.kind)) continue;
-            activitiesById.set(activity.id, activity);
-            sourceUnitByActivityId.set(activity.id, sourceUnitId);
-          }
-        }
-      }
-    }
-  }
-
-  for (const supplemental of [...pilotSupplementalActivities, ...pilotEnglishSupplementalActivities, ...pilotChineseSupplementalActivities, ...grade1MathUnit01SupplementalActivities, ...grade1MathUnit02SupplementalActivities, ...grade1MathUnit03SupplementalActivities, ...grade1MathUnit04SupplementalActivities, ...grade1MathUnit05SupplementalActivities, ...grade1MathUnit06SupplementalActivities, ...grade1MathUnit07SupplementalActivities, ...grade1MathUnit08SupplementalActivities, ...grade1MathUnit09SupplementalActivities, ...grade1Term1EnglishUnit01SupplementalActivities, ...grade1Term1EnglishUnit02SupplementalActivities, ...grade1Term1EnglishUnit03SupplementalActivities, ...grade1Term1EnglishUnit04SupplementalActivities, ...grade1Term1EnglishUnit05SupplementalActivities, ...grade1Term1EnglishUnit06SupplementalActivities, ...grade1Term2MathUnit01SupplementalActivities, ...grade1Term2MathUnit02SupplementalActivities, ...grade1Term2MathUnit03SupplementalActivities, ...grade1Term2MathUnit04SupplementalActivities, ...grade1Term2MathUnit05SupplementalActivities, ...grade1Term2MathUnit06SupplementalActivities, ...grade1Term2MathUnit07SupplementalActivities, ...grade1Term2MathUnit08SupplementalActivities, ...grade1Term2EnglishUnit01SupplementalActivities, ...grade1Term2EnglishUnit02SupplementalActivities, ...grade1Term2EnglishUnit03SupplementalActivities, ...grade1Term2EnglishUnit04SupplementalActivities, ...grade1Term2EnglishUnit05SupplementalActivities, ...grade1Term2EnglishUnit06SupplementalActivities, ...grade1Term2ChineseSemesterSupplementalActivities, ...grade2Term1ChineseUnit01SupplementalActivities, ...grade2Term1ChineseUnit02SupplementalActivities, ...grade2Term1ChineseUnit03SupplementalActivities, ...grade2Term1ChineseUnit04SupplementalActivities, ...grade2Term1ChineseUnit05SupplementalActivities, ...grade2Term1ChineseUnit06SupplementalActivities, ...grade2Term1ChineseUnit07SupplementalActivities, ...grade2Term1ChineseUnit08SupplementalActivities, ...grade2Term2SupplementalActivities, ...grade2Term1MathUnit01SupplementalActivities, ...grade2Term1MathUnit03SupplementalActivities, ...grade2Term1EnglishUnit06SupplementalActivities]) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-
-  for (const supplemental of grade2Term1MathUnit04SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-
-  for (const supplemental of grade2Term1MathUnit05SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-  for (const supplemental of grade2Term1MathUnit06SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-  for (const supplemental of grade2Term1MathUnit07SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-  for (const supplemental of grade2Term1MathUnit08SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-  for (const supplemental of grade2Term1MathUnit09SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-  for (const supplemental of grade2Term1EnglishUnit01SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-  for (const supplemental of grade2Term1EnglishUnit01SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-
-  for (const supplemental of grade2Term1EnglishUnit02SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-
-  for (const supplemental of grade2Term1EnglishUnit03SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-  for (const supplemental of grade2Term1EnglishUnit04SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-
-  for (const supplemental of grade2Term1EnglishUnit05SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-
-  for (const supplemental of grade2Term1EnglishUnit06SupplementalActivities) {
-    activitiesById.set(supplemental.activity.id, supplemental.activity);
-    sourceUnitByActivityId.set(supplemental.activity.id, supplemental.sourceUnitId);
-  }
-
-  return { manifest, activitiesById, sourceUnitByActivityId, unitsById };
+  return cloneInputs(await loadChallengeQualityInputs(rawManifest as unknown as ChallengeManifest));
 }
 
 function cloneInputs(input: ChallengeQualityInputs): MutableChallengeQualityInputs {

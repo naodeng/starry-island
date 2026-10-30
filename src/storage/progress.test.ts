@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { curriculum } from '../content/curriculum';
 import { getSessionsForDifficulty } from '../content/sessionUtils';
-import { completeSession, loadProgress, saveProgress, setLearningStart } from './progress';
+import { completeSession, loadProgress, migrateGrade2Term1MathProgress, saveProgress, setLearningStart } from './progress';
 import type { ProgressState } from './progress';
 
 const STORAGE_KEY = 'china-study-progress-v1';
@@ -9,6 +9,8 @@ const unit01 = curriculum.units['grade-2/term-1/chinese/unit-01'];
 const unit02 = curriculum.units['grade-2/term-1/chinese/unit-02'];
 const currentSessionId = getSessionsForDifficulty(unit01, 'basic')[0].id;
 const laterSessionId = getSessionsForDifficulty(unit02, 'basic')[0].id;
+const grade2Term1MathSessionId = getSessionsForDifficulty(curriculum.units['grade-2/term-1/math/unit-02'], 'basic')[0].id;
+const grade2Term2MathSessionId = getSessionsForDifficulty(curriculum.units['grade-2/term-2/math/unit-01'], 'basic')[0].id;
 const emptyProgress: ProgressState = { schemaVersion: 4, completedSessionIds: [], recentCompletions: [], learningStart: null };
 
 describe('progress storage', () => {
@@ -204,5 +206,61 @@ describe('progress storage', () => {
 
     const rejected = setLearningStart({ grade: 2, term: 1, unit: 99 });
     expect(rejected).toEqual(next);
+  });
+
+  it('clearsOnlyGrade2Term1MathProgressAndPreservesUnknownFieldsAndLearningStart', () => {
+    const t1Timestamp = '2026-10-28T01:00:00.000Z';
+    const t2Timestamp = '2026-10-28T02:00:00.000Z';
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      schemaVersion: 4,
+      completedSessionIds: [grade2Term1MathSessionId, grade2Term2MathSessionId, currentSessionId],
+      recentCompletions: [
+        { sessionId: grade2Term1MathSessionId, completedAt: t1Timestamp },
+        { sessionId: grade2Term2MathSessionId, completedAt: t2Timestamp },
+        { sessionId: currentSessionId, completedAt: t1Timestamp },
+      ],
+      learningStart: { grade: 2, term: 1, unit: 3 },
+      futureField: { keep: true },
+    }));
+
+    expect(migrateGrade2Term1MathProgress()).toBe('migrated');
+    expect(JSON.parse(window.localStorage.getItem(STORAGE_KEY)!)).toEqual({
+      schemaVersion: 4,
+      completedSessionIds: [grade2Term2MathSessionId, currentSessionId],
+      recentCompletions: [
+        { sessionId: grade2Term2MathSessionId, completedAt: t2Timestamp },
+        { sessionId: currentSessionId, completedAt: t1Timestamp },
+      ],
+      learningStart: { grade: 2, term: 1, unit: 3 },
+      futureField: { keep: true },
+    });
+    loadProgress();
+    expect(JSON.parse(window.localStorage.getItem(STORAGE_KEY)!).futureField).toEqual({ keep: true });
+  });
+
+  it('marksAnEmptyMigrationAndDoesNotClearNewProgressWhenRetried', () => {
+    expect(migrateGrade2Term1MathProgress()).toBe('migrated');
+    completeSession(loadProgress(), grade2Term1MathSessionId, '2026-10-28T03:00:00.000Z');
+
+    expect(migrateGrade2Term1MathProgress()).toBe('already-migrated');
+    expect(loadProgress().completedSessionIds).toContain(grade2Term1MathSessionId);
+  });
+
+  it('doesNotWriteTheMigrationMarkerWhenProgressWriteFailsAndCanRetry', () => {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      schemaVersion: 4,
+      completedSessionIds: [grade2Term1MathSessionId, currentSessionId],
+      recentCompletions: [],
+      learningStart: null,
+    }));
+    const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(function (this: Storage, key: string, value: string) {
+      if (key === STORAGE_KEY) throw new Error('quota exceeded');
+      return Storage.prototype.setItem.call(this, key, value);
+    });
+
+    expect(() => migrateGrade2Term1MathProgress()).toThrow('quota exceeded');
+    setItem.mockRestore();
+    expect(migrateGrade2Term1MathProgress()).toBe('migrated');
+    expect(loadProgress().completedSessionIds).toEqual([currentSessionId]);
   });
 });

@@ -57,7 +57,7 @@ export default function AppHeader({ onNavigate }: AppHeaderProps) {
             aria-label={navigationOpen ? '关闭导航菜单' : '打开导航菜单'}
             aria-expanded={navigationOpen}
             aria-haspopup="dialog"
-            aria-controls="app-navigation-drawer"
+            aria-controls={navigationOpen ? 'app-navigation-drawer' : undefined}
             icon={<MenuIcon size={20} aria-hidden="true" />}
             onClick={() => navigationOpen ? closeNavigation(true) : setNavigationOpen(true)}
           >

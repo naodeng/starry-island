@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, render as renderBase, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render as renderBase, screen, waitFor } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { IDBFactory } from 'fake-indexeddb';
 import type { ChoiceActivityDefinition } from '../../content/types';
@@ -131,6 +131,7 @@ afterEach(() => {
   cueAudioInstances.length = 0;
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
+  vi.useRealTimers();
 });
 
 beforeEach(() => {
@@ -141,6 +142,104 @@ beforeEach(() => {
 });
 
 describe('ChallengeRunner', () => {
+  it('showsARecoverableErrorWhenActiveAttemptReadNeverFinishes', async () => {
+    const repository = makeRepository();
+    vi.spyOn(repository, 'getActiveAttempt').mockImplementation(() => new Promise(() => {}));
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    vi.useFakeTimers();
+
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await act(async () => { await vi.advanceTimersByTimeAsync(10_000); });
+
+    expect(screen.getByRole('heading', { name: '暂时无法读取挑战' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '重新读取' })).toBeInTheDocument();
+  });
+
+  it('showsARecoverableErrorWhenTaskProgressReadNeverFinishes', async () => {
+    const repository = makeRepository();
+    vi.spyOn(repository, 'getActiveAttempt').mockResolvedValue(null);
+    vi.spyOn(repository, 'getTaskProgress').mockImplementation(() => new Promise(() => {}));
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    vi.useFakeTimers();
+
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await act(async () => {
+      await Promise.resolve();
+      await vi.advanceTimersByTimeAsync(10_000);
+    });
+
+    expect(screen.getByRole('heading', { name: '暂时无法读取挑战' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '重新读取' })).toBeInTheDocument();
+  });
+
+  it('doesNotStartAChallengeWhenRecentQuestionReadTimesOut', async () => {
+    const repository = makeRepository();
+    const getRecentQuestionIds = vi.spyOn(repository, 'getRecentQuestionIds').mockImplementation(() => new Promise(() => {}));
+    const beginAttempt = vi.spyOn(repository, 'beginAttempt');
+    vi.spyOn(repository, 'getActiveAttempt').mockResolvedValue(null);
+    vi.spyOn(repository, 'getTaskProgress').mockResolvedValue(null);
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await screen.findByRole('button', { name: '开始挑战' });
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+    await userClick(screen.getByRole('button', { name: '开始挑战' }));
+    await act(async () => { await Promise.resolve(); await Promise.resolve(); });
+    expect(getRecentQuestionIds).toHaveBeenCalledOnce();
+
+    await act(async () => { await vi.advanceTimersByTimeAsync(10_000); });
+
+    expect(screen.getByRole('alert')).toHaveTextContent('本机进度读取超时，本次没有创建新的挑战记录。');
+    expect(screen.getByRole('button', { name: '开始挑战' })).toBeEnabled();
+    expect(beginAttempt).not.toHaveBeenCalled();
+  });
+
+  it('preservesASavedFinalAnswerWhenProgressReadTimesOutBeforeCompletion', async () => {
+    const repository = makeRepository();
+    let activeAttempt: ChallengeAttempt | null = null;
+    const getActiveAttempt = vi.spyOn(repository, 'getActiveAttempt').mockImplementation(async () => activeAttempt);
+    const getTaskProgress = vi.spyOn(repository, 'getTaskProgress')
+      .mockResolvedValueOnce(null)
+      .mockImplementationOnce(() => new Promise(() => {}))
+      .mockResolvedValueOnce(null);
+    vi.spyOn(repository, 'getRecentQuestionIds').mockResolvedValue([]);
+    vi.spyOn(repository, 'beginAttempt').mockImplementation(async (attempt) => { activeAttempt = attempt; });
+    const saveAnswer = vi.spyOn(repository, 'saveAnswer').mockImplementation(async (_taskId, _revision, nextAttempt) => {
+      activeAttempt = nextAttempt;
+      return nextAttempt;
+    });
+    const completeAttempt = vi.spyOn(repository, 'completeAttempt').mockResolvedValue();
+    const { loadedGroup, task } = makeLoadedGroup(1);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    await waitFor(() => expect(activeAttempt).not.toBeNull());
+    const question = activeAttempt!.questions[0]!;
+    expect(await screen.findByRole('heading', { name: question.activity.prompt })).toBeInTheDocument();
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+    fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+    await act(async () => { await Promise.resolve(); await Promise.resolve(); });
+
+    expect(saveAnswer).toHaveBeenCalledOnce();
+    expect(getTaskProgress).toHaveBeenCalledTimes(2);
+    await act(async () => { await vi.advanceTimersByTimeAsync(10_000); });
+
+    expect(activeAttempt).toMatchObject({ currentIndex: 1, answers: { [question.questionId]: 'correct' } });
+    expect(screen.getByRole('alert')).toHaveTextContent('全部答案已保存，但成绩暂时没有确认。');
+    expect(completeAttempt).not.toHaveBeenCalled();
+
+    vi.useRealTimers();
+    await userClick(screen.getByRole('button', { name: '重试保存成绩' }));
+    expect(await screen.findByText('100 分')).toBeInTheDocument();
+    expect(getTaskProgress).toHaveBeenCalledTimes(3);
+    expect(saveAnswer).toHaveBeenCalledOnce();
+    expect(completeAttempt).toHaveBeenCalledOnce();
+    expect(getActiveAttempt).toHaveBeenCalled();
+  });
+
   it('does not offer a new challenge when its group is unavailable and no snapshot exists', async () => {
     const repository = makeRepository();
     const beginAttempt = vi.spyOn(repository, 'beginAttempt');

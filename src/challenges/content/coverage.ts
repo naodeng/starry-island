@@ -20,10 +20,10 @@ const V1_CATALOG_COMBINATION_IDS = Array.from({ length: 6 }, (_, gradeIndex) => 
     .map((subjectId) => `${gradeId}/term-${termNumber}/${subjectId}`));
 }).flat();
 
-// 冻结目标来自 PRD 的 6×2×3 学期组合与 2026-10-21 仓库基线中的 254 个正式单元。
+// 冻结目标来自 PRD 的 6×2×3 学期组合与 2026-10-29 当前教材目录中的 251 个正式单元。
 // 正式课程清单发生变更时，应先更新基线和覆盖测试，再调整这些值。
 export const V1_COVERAGE_TARGETS: CoverageTargetCounts = {
-  formalUnitGroups: 254,
+  formalUnitGroups: 251,
   semesterStageGroups: 108,
   catalogCombinationIds: V1_CATALOG_COMBINATION_IDS,
 };

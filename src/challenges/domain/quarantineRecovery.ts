@@ -1,5 +1,5 @@
-import { isChallengeBackupData, normalizeImportedChallengeBackupData } from './backup';
-import type { ChallengeBackupData, ChallengeBackupImportData } from './backup';
+import { isChallengeBackupData, normalizeRecoverySnapshotData } from './backup';
+import type { ChallengeBackupData, ChallengeRecoverySnapshotImportData } from './backup';
 import { isChallengeRecoveryPoint, isChallengeRecoveryPointActive } from './recovery';
 import type { ChallengeAttempt, TaskProgress, WrongQuestionRecord } from './types';
 
@@ -131,9 +131,9 @@ function eligible(
 
 function normalizedAttempt(record: PlainRecord): ChallengeAttempt | null {
   try {
-    const data = normalizeImportedChallengeBackupData({
+    const data = normalizeRecoverySnapshotData({
       ...EMPTY_BACKUP_DATA,
-      attempts: [record as ChallengeBackupImportData['attempts'][number]],
+      attempts: [record as ChallengeRecoverySnapshotImportData['attempts'][number]],
     });
     return data.attempts[0] ?? null;
   } catch {
@@ -176,7 +176,7 @@ function recoveryPointWithNormalizedAttempts(record: PlainRecord): PlainRecord |
     || !isRecord(record.data)) return null;
 
   try {
-    const data = normalizeImportedChallengeBackupData(record.data as unknown as ChallengeBackupImportData);
+    const data = normalizeRecoverySnapshotData(record.data as unknown as ChallengeRecoverySnapshotImportData);
     return { ...record, data };
   } catch {
     return null;

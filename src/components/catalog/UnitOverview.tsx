@@ -9,6 +9,7 @@ import CompanionAvatar, { COMPANION_PROFILES } from '../mascots/CompanionAvatar'
 import HeroGuide from '../mascots/HeroGuide';
 import CourseBreadcrumbs from './CourseBreadcrumbs';
 import { getPilotUnitChallengeGroupId } from '../../challenges/content/unitLinks';
+import EmptyState from '../shared/EmptyState';
 
 interface UnitOverviewProps {
   unitKey: string;
@@ -73,7 +74,9 @@ export default function UnitOverview({
     ? '家长提示：本课程依据 TapXWorld 固定快照中的教材内容设计，可能与人教社后续修订版存在差异。'
     : textbook?.sourceKind === 'pep-latest'
       ? '家长提示：本课程依据人教社公开最新版教材内容设计。'
-      : '家长提示：本课程教材来源正在核对中。';
+      : textbook?.sourceKind === 'user-provided'
+        ? `家长提示：本课程依据你提供的人教版教材（ISBN ${textbook.isbn}）设计。`
+        : '家长提示：本课程教材来源正在核对中。';
   const firstBasicTask = allBasicSessions.length > 0 ? unit.difficultyTracks.basic.tasks[0] : undefined;
   const pilotChallengeGroupId = !selectedTask ? getPilotUnitChallengeGroupId(unitKey) : undefined;
   const nextSessionIndex = selectedTask
@@ -230,7 +233,11 @@ export default function UnitOverview({
                         })}
                       </div>
                     ) : (
-                      <p className="task-track-empty">这档任务正在准备中，核对好教材内容后就会开放。</p>
+                      <EmptyState
+                        title="这档任务正在准备中"
+                        description="核对好教材内容后就会开放，你可以先选择已开放的任务。"
+                        headingLevel={3}
+                      />
                     )}
                   </section>
                 );

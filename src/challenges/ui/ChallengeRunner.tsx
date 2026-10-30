@@ -14,7 +14,9 @@ import { assemblePaper } from '../domain/assemble';
 import { finalizeAttempt, submitFirstAnswer } from '../domain/attempt';
 import { classifyChallengeError, getChallengeErrorMessage } from '../domain/errors';
 import { getChallengeDensityTier } from './densityTier';
+import readWithTimeout, { LocalDataReadTimeoutError } from './readWithTimeout';
 import ChallengeActivityRenderer from './ChallengeActivityRenderer';
+import LoadingState from '../../components/shared/LoadingState';
 import ChallengeResult from './ChallengeResult';
 
 interface ChallengeRunnerProps {
@@ -141,7 +143,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     setCompletedResult(null);
     setSaveError(null);
     const load = async () => {
-      let active = await repository.getActiveAttempt(task.id);
+      let active = await readWithTimeout(repository.getActiveAttempt(task.id));
       if (active) {
         setWaitingForWriter(true);
         const lease = await acquireChallengeWriterLease(task.id, { signal: lockController.signal });
@@ -150,7 +152,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           return;
         }
         writerLeaseRef.current = lease;
-        active = await repository.getActiveAttempt(task.id);
+        active = await readWithTimeout(repository.getActiveAttempt(task.id));
         if (!active) releaseWriterLease();
       }
       if (active && containsDisabledQuestion(active)) {
@@ -161,7 +163,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         setLoadState('ready');
         return;
       }
-      const savedProgress = await repository.getTaskProgress(task.id);
+      const savedProgress = await readWithTimeout(repository.getTaskProgress(task.id));
       if (cancelled) return;
       setWaitingForWriter(false);
       setProgress(savedProgress);
@@ -216,7 +218,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       lockAcquired = true;
       setWaitingForWriter(false);
 
-      const existing = await repository.getActiveAttempt(task.id);
+      const existing = await readWithTimeout(repository.getActiveAttempt(task.id));
       if (existing) {
         if (containsDisabledQuestion(existing)) {
           setSafetyPaused(true);
@@ -224,7 +226,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
           releaseWriterLease();
           return;
         }
-        const savedProgress = await repository.getTaskProgress(task.id);
+        const savedProgress = await readWithTimeout(repository.getTaskProgress(task.id));
         setProgress(savedProgress);
         if (existing.currentIndex === existing.questions.length) {
           const completed = await completeSavedAttempt(repository, existing, savedProgress);
@@ -246,7 +248,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         return;
       }
 
-      const recentIds = await repository.getRecentQuestionIds();
+      const recentIds = await readWithTimeout(repository.getRecentQuestionIds());
       const seed = crypto.randomUUID();
       const questions = assemblePaper(task, loadedGroup.candidates, seed, recentIds);
       const startedAt = new Date().toISOString();
@@ -274,7 +276,9 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         setSaveError(getChallengeErrorMessage(error, '暂时无法锁定本次挑战，请稍后重试。'));
         return;
       }
-      const existing = await repository.getActiveAttempt(task.id).catch(() => null);
+      const existing = error instanceof LocalDataReadTimeoutError
+        ? null
+        : await readWithTimeout(repository.getActiveAttempt(task.id)).catch(() => null);
       if (existing) {
         if (containsDisabledQuestion(existing)) {
           setSafetyPaused(true);
@@ -288,7 +292,9 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         setSaveError('另一个页面已经开始了这个任务，已载入那里的作答进度。');
       } else {
         releaseWriterLease();
-        setSaveError(getChallengeErrorMessage(error, '题目暂时无法准备好，请稍后重试。'));
+        setSaveError(error instanceof LocalDataReadTimeoutError
+          ? '本机进度读取超时，本次没有创建新的挑战记录。可以稍后重试。'
+          : getChallengeErrorMessage(error, '题目暂时无法准备好，请稍后重试。'));
       }
     } finally {
       if (lockControllerRef.current === lockController) lockControllerRef.current = null;
@@ -301,12 +307,14 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     if (!attempt || busy) return;
     setBusy(true);
     setSaveError(null);
+    let answerSaved = false;
     try {
       const saved = await repository.saveAnswer(task.id, attempt.revision, pending.nextAttempt);
+      answerSaved = true;
       setAttempt(saved);
       setPendingAnswer(null);
       if (saved.currentIndex === saved.questions.length) {
-        const completed = await completeSavedAttempt(repository, saved, await repository.getTaskProgress(task.id));
+        const completed = await completeSavedAttempt(repository, saved, await readWithTimeout(repository.getTaskProgress(task.id)));
         setProgress(completed.progress);
         setCompletedResult(completed);
         playFinalAnswerCue(pending.feedbackStatus, pending.previousConsecutiveCorrectCount);
@@ -316,7 +324,9 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
       }
     } catch (error) {
       const guidance = classifyChallengeError(error);
-      const current = await repository.getActiveAttempt(task.id).catch(() => null);
+      const current = error instanceof LocalDataReadTimeoutError
+        ? null
+        : await readWithTimeout(repository.getActiveAttempt(task.id)).catch(() => null);
       if (current && isSameAttemptSnapshot(current, pending.nextAttempt)) {
         setAttempt(current);
         setPendingAnswer(null);
@@ -328,6 +338,9 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
         if (current.currentIndex < current.questions.length) {
           playCueRef.current(getAnswerSoundFeedback(pending.feedbackStatus, pending.previousConsecutiveCorrectCount, false).cue);
         }
+      } else if (answerSaved) {
+        setPendingAnswer(null);
+        setSaveError('全部答案已保存，但成绩暂时没有确认。请重试完成保存。');
       } else {
         setPendingAnswer(pending);
         setSaveError(guidance.kind === 'storage-full'
@@ -357,7 +370,7 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
     setBusy(true);
     setSaveError(null);
     try {
-      const savedProgress = await repository.getTaskProgress(task.id);
+      const savedProgress = await readWithTimeout(repository.getTaskProgress(task.id));
       const completed = await completeSavedAttempt(repository, attempt, savedProgress);
       setProgress(completed.progress);
       setCompletedResult(completed);
@@ -500,7 +513,15 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
 }
 
 function ChallengeLoading({ message }: { message: string }) {
-  return <main className="challenge-page" aria-live="polite" aria-busy="true"><div className="challenge-shell"><h1>{message}</h1></div></main>;
+  return (
+    <main className="challenge-page" aria-live="polite" aria-busy="true">
+      <div className="challenge-shell">
+        <Card className="challenge-message-card challenge-loading-card" color="default">
+          <LoadingState title={message} description="正在核对这次挑战的题目和已保存进度。" headingLevel={1} />
+        </Card>
+      </div>
+    </main>
+  );
 }
 
 function ChallengeMessage({ title, message, onAction, actionLabel }: { title: string; message: string; onAction: () => void; actionLabel: string }) {

@@ -483,30 +483,52 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
     expect(derivePilotQuestionKnowledgePointIds(sourceUnitId, arithmetic!)).toEqual(['number-sequence']);
   });
 
-  it('tags length-unit selection separately from measuring and estimating', () => {
-    expect(derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-01',
-      choice('测量一支铅笔，哪个单位更方便？', ['厘米', '米']),
-    )).toEqual(['length-units']);
-    expect(derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-01',
-      choice('把物体一端对准0刻度，再读出另一端的长度。'),
-    )).toEqual(['measurement-and-estimation']);
+  it('maps the rebuilt Grade 2 Term 1 Math units to the new textbook knowledge points', async () => {
+    const definitions = [
+      ['grade-2/term-1/math/unit-01', ['classification-standards', 'classification-counts-and-comparison', 'complete-and-nonduplicated-records']],
+      ['grade-2/term-1/math/unit-02', ['equal-groups-multiplication', 'multiplication-facts']],
+      ['grade-2/term-1/math/unit-03', ['equal-sharing-and-grouping', 'division-facts-and-multiplication-check']],
+      ['grade-2/term-1/math/unit-04', ['length-units', 'measurement-and-estimation']],
+      ['grade-2/term-1/math/unit-05', ['multiplication-facts-7-9', 'division-facts-7-9']],
+      ['grade-2/term-1/math/unit-06', ['term-review-method-selection', 'term-review-result-checking']],
+      ['grade-2/term-1/math/integrated-practice-01', ['direction-and-reference-points']],
+      ['grade-2/term-1/math/integrated-practice-02', ['body-based-measurement-and-estimation']],
+    ] as const;
+
+    for (const [sourceUnitId, expectedPointIds] of definitions) {
+      const unit = await loadUnit(sourceUnitId);
+      const activities = Object.values(unit!.difficultyTracks).flatMap((track) => track.tasks
+        .flatMap((task) => task.sessions.flatMap((session) => session.activities)));
+      expect(activities).toHaveLength(48);
+      expect(activities.map((activity) => derivePilotQuestionKnowledgePointIds(sourceUnitId, activity)))
+        .toEqual(Array.from({ length: 48 }, () => expectedPointIds));
+    }
   });
 
-  it('derives only the operations present in a two-digit calculation', () => {
+  it('maps length-unit selection separately from measuring and estimating', () => {
+    expect(derivePilotQuestionKnowledgePointIds(
+      'grade-2/term-1/math/unit-04',
+      choice('测量一支铅笔，哪个单位更方便？', ['厘米', '米']),
+    )).toEqual(['length-units', 'measurement-and-estimation']);
+    expect(derivePilotQuestionKnowledgePointIds(
+      'grade-2/term-1/math/unit-04',
+      choice('把物体一端对准0刻度，再读出另一端的长度。'),
+    )).toEqual(['length-units', 'measurement-and-estimation']);
+  });
+
+  it('maps first-half multiplication and division to the new textbook ranges', () => {
     expect(derivePilotQuestionKnowledgePointIds(
       'grade-2/term-1/math/unit-02',
-      { ...base, kind: 'arithmetic', prompt: '计算。', expression: '38 + 27', correctAnswer: 65 },
-    )).toEqual(['two-digit-addition']);
+      { ...base, kind: 'arithmetic', prompt: '计算。', expression: '4 × 5', correctAnswer: 20 },
+    )).toEqual(['equal-groups-multiplication', 'multiplication-facts']);
     expect(derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-02',
-      { ...base, kind: 'arithmetic', prompt: '计算。', expression: '52 - 27', correctAnswer: 25 },
-    )).toEqual(['two-digit-subtraction']);
+      'grade-2/term-1/math/unit-03',
+      { ...base, kind: 'arithmetic', prompt: '计算。', expression: '30 ÷ 5', correctAnswer: 6 },
+    )).toEqual(['equal-sharing-and-grouping', 'division-facts-and-multiplication-check']);
     expect(derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-02',
-      { ...base, kind: 'arithmetic', prompt: '先加再减。', expression: '28 + 19 - 16', correctAnswer: 31 },
-    )).toEqual(['two-digit-addition', 'two-digit-subtraction']);
+      'grade-2/term-1/math/unit-05',
+      { ...base, kind: 'arithmetic', prompt: '计算。', expression: '9 × 7', correctAnswer: 63 },
+    )).toEqual(['multiplication-facts-7-9', 'division-facts-7-9']);
   });
 
   it('maps Grade 1 Unit 8 carrying addition, ten-complement strategy, stories, and checks distinctly', () => {
@@ -607,19 +629,11 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
     }
   });
 
-  it('distinguishes angle parts from angle comparison and multiplication meaning from facts', () => {
-    expect(derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-03',
-      choice('角由哪些部分组成？', ['顶点和两条边']),
-    )).toEqual(['angle-parts']);
-    expect(derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-03',
-      choice('这个角比直角大还是小？', ['大', '小']),
-    )).toEqual(['angle-comparison']);
-    expect(derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-04',
-      choice('4个5相加可以写成哪道乘法算式？', ['4 × 5']),
-    )).toEqual(['equal-groups-multiplication', 'multiplication-facts']);
+  it('keeps retired Grade 2 Term 1 Math unit paths unsupported', () => {
+    expect(() => derivePilotQuestionKnowledgePointIds(
+      'grade-2/term-1/math/unit-07',
+      choice('认识时间。'),
+    )).toThrow('No pilot knowledge-point mapping exists');
   });
 
   it('maps self-introduction and age questions to the Grade 3 English unit points', () => {
@@ -646,7 +660,7 @@ describe('derivePilotQuestionKnowledgePointIds', () => {
   it('fails closed for an unsupported source unit or a question with no detectable core point', () => {
     expect(() => derivePilotQuestionKnowledgePointIds('grade-6/term-1/math/unit-01', choice('计算。'))).toThrow();
     expect(() => derivePilotQuestionKnowledgePointIds(
-      'grade-2/term-1/math/unit-02',
+      'grade-2/term-1/math/unit-07',
       choice('请看图。'),
     )).toThrow();
   });

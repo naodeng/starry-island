@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { installAudioSpy, readAudioEvents } from './audioSpy';
 import { chooseSelectOption } from './selectOption';
 
@@ -103,12 +103,15 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
 test('doesNotPlayForDisabledOrAriaDisabledControls', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/grade-2/term-1/chinese/unit-01/basic/task-01/session-01');
-  await page.evaluate(() => {
+  const appFrame = page.locator('.app-frame');
+  await expect(appFrame).toBeAttached();
+  await appFrame.evaluate((element) => {
     const control = document.createElement('button');
     control.id = 'aria-disabled-sound-check';
     control.setAttribute('aria-disabled', 'true');
-    document.querySelector('.app-frame')?.appendChild(control);
+    element.appendChild(control);
   });
+  await expect(page.locator('#aria-disabled-sound-check')).toBeAttached();
   const disabledContinue = page.getByRole('button', { name: /^继续下一题/ });
   await disabledContinue.evaluate((element) => element.dispatchEvent(new MouseEvent('click', { bubbles: true })));
   await page.locator('#aria-disabled-sound-check').evaluate((element) => element.dispatchEvent(new MouseEvent('click', { bubbles: true })));

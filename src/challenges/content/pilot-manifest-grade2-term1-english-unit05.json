@@ -325,7 +325,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "bc83edacfa03e50cdd79cf9ac6798e69addcee512baf4afa37b746a231b5d982",
+      "approvedContentFingerprint": "11bee8620dbdd74bf59a5d10833805c2c121707c151b9e4f7ccf1da48af624cf",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
@@ -384,7 +384,7 @@
       "lifecycle": "active",
       "approved": true,
       "answerLeakageReviewed": true,
-      "approvedContentFingerprint": "5b902f7013bb4a7b5a7cfe5e366a205659c046197a99f6c6511d199fe881c88a",
+      "approvedContentFingerprint": "e1cc8d6597cb38379b1c8e018a9317d67483129a304834a2384f70bf82bb1088",
       "approvedBy": "Codex content-author self-review",
       "approvedAt": "2026-10-27T00:00:00.000Z"
     },
