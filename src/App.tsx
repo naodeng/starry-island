@@ -112,21 +112,21 @@ export default function App({ showTextbookMigrationNotice = false }: AppProps = 
     }
   }, [showMigrationNotice]);
 
-  const applyRoute = useCallback((path: string) => {
+  const applyRoute = useCallback((path: string, focusHeading = true) => {
     const requestId = ++routeRequestId.current;
     const immediateRoute = resolveRoute(path);
     setRoute(immediateRoute);
-    setNavigationRevision((revision) => revision + 1);
+    if (focusHeading) setNavigationRevision((revision) => revision + 1);
     if (immediateRoute.kind !== 'loading') return;
     void resolveAppRoute(path).then((nextRoute) => {
       if (requestId !== routeRequestId.current) return;
       setRoute(nextRoute);
-      setNavigationRevision((revision) => revision + 1);
+      if (focusHeading) setNavigationRevision((revision) => revision + 1);
     });
   }, []);
 
   useEffect(() => {
-    applyRoute(window.location.pathname);
+    applyRoute(window.location.pathname, false);
     const handlePopState = () => {
       previousPathRef.current = currentPathRef.current;
       currentPathRef.current = window.location.pathname;

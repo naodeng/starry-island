@@ -12,6 +12,8 @@ class TestAudio {
   paused = true;
   volume = 1;
   preload = 'auto';
+  private source = '';
+  sourceHistory: string[] = [];
   play = vi.fn(() => {
     this.paused = false;
     if (rejectNextPlayback) {
@@ -22,7 +24,17 @@ class TestAudio {
   });
   pause = vi.fn(() => { this.paused = true; });
 
-  constructor(public src: string) {
+  get src(): string {
+    return this.source;
+  }
+
+  set src(value: string) {
+    this.source = value;
+    this.sourceHistory.push(value);
+  }
+
+  constructor(src: string) {
+    this.src = src;
     audioInstances.push(this);
   }
 }
@@ -33,6 +45,7 @@ function SoundProbe() {
     <div>
       <output>{enabled ? '语音已开启' : '语音已关闭'}</output>
       <button onClick={() => playCue('answer-correct')}>播放答题提示</button>
+      <button onClick={() => playCue('answer-streak')}>播放连续答对提示</button>
       <button onClick={() => playCue('interaction-click')}>播放点击提示</button>
       <button onClick={() => setEnabled(false)}>关闭语音</button>
     </div>
@@ -41,9 +54,11 @@ function SoundProbe() {
 
 describe('SoundProvider', () => {
   beforeEach(() => {
+    vi.restoreAllMocks();
     localStorage.clear();
     audioInstances.length = 0;
     rejectNextPlayback = false;
+    vi.spyOn(Math, 'random').mockReturnValue(0);
     vi.stubGlobal('Audio', TestAudio);
   });
 
@@ -81,6 +96,18 @@ describe('SoundProvider', () => {
     await user.click(screen.getByRole('button', { name: '播放答题提示' }));
     expect(audioInstances).toHaveLength(1);
     expect(audio.play).toHaveBeenCalledOnce();
+  });
+
+  it('randomlyChangesPraiseAudioForRepeatedCorrectAnswers', async () => {
+    const user = userEvent.setup();
+    render(<SoundProvider><SoundProbe /></SoundProvider>);
+
+    await user.click(screen.getByRole('button', { name: '播放答题提示' }));
+    await user.click(screen.getByRole('button', { name: '播放连续答对提示' }));
+
+    expect(audioInstances).toHaveLength(1);
+    expect(audioInstances[0]!.sourceHistory).toEqual(['/audio/answer-correct.mp3', '/audio/answer-streak.mp3']);
+    expect(audioInstances[0]!.play).toHaveBeenCalledTimes(2);
   });
 
   it('keepsTheInterfaceUsableWhenBrowserPlaybackRejects', async () => {

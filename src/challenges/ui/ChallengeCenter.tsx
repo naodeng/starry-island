@@ -1,9 +1,11 @@
-import { Button, Card } from 'animal-island-ui';
+import { useState } from 'react';
+import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath } from '../../app/router';
 import EmptyState from '../../components/shared/EmptyState';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { TaskProgress } from '../domain/types';
+import { loadCourseSelection } from '../../storage/courseSelection';
 
 export function sortChallengeGroupsForDisplay(groups: readonly LoadedPilotGroup[]): LoadedPilotGroup[] {
   const subjectOrder = { chinese: 0, math: 1, english: 2 } as const;
@@ -113,6 +115,29 @@ interface ChallengeCenterProps {
 }
 
 export default function ChallengeCenter({ groups, progressByTaskId, progressReadState, onRetryProgress, onNavigate }: ChallengeCenterProps) {
+  const savedSelection = loadCourseSelection();
+  const [gradeFilter, setGradeFilter] = useState(savedSelection ? String(Number(savedSelection.gradeId.slice('grade-'.length))) : 'all');
+  const [semesterFilter, setSemesterFilter] = useState(savedSelection ? String(Number(savedSelection.termId.slice('term-'.length))) : 'all');
+  const availableGrades = [...new Set(groups.map(({ group }) => group.definition.grade))].sort((left, right) => left - right);
+  const gradeOptions = [
+    { key: 'all', label: '全部年级' },
+    ...availableGrades.map((grade) => ({ key: String(grade), label: `${grade}年级` })),
+  ];
+  const semesterGrades = gradeFilter === 'all'
+    ? groups
+    : groups.filter(({ group }) => group.definition.grade === Number(gradeFilter));
+  const availableSemesters = [...new Set(semesterGrades.map(({ group }) => group.definition.semester))]
+    .sort((left, right) => left - right);
+  const semesterOptions = [
+    { key: 'all', label: '全部学期' },
+    ...availableSemesters.map((semester) => ({ key: String(semester), label: semester === 1 ? '上学期' : '下学期' })),
+  ];
+  const sortedGroups = sortChallengeGroupsForDisplay(groups);
+  const filteredGroups = sortedGroups.filter(({ group }) => (
+    (gradeFilter === 'all' || group.definition.grade === Number(gradeFilter))
+      && (semesterFilter === 'all' || group.definition.semester === Number(semesterFilter))
+  ));
+
   return (
     <main className="challenge-page">
       <div className="challenge-shell">
@@ -148,8 +173,30 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
               description="课程路线通过内容质量检查后，会显示在这里。"
             />
           ) : (
-            <div className="challenge-card-grid">
-              {sortChallengeGroupsForDisplay(groups).map(({ group, status, issues }) => {
+            <>
+              <div className="challenge-filters" role="group" aria-label="筛选挑战路线">
+                <label>
+                  <span id="challenge-grade-filter-label">年级</span>
+                  <Select aria-label="闯关年级" options={gradeOptions} value={gradeFilter} onChange={setGradeFilter} />
+                </label>
+                <label>
+                  <span id="challenge-semester-filter-label">学期</span>
+                  <Select aria-label="闯关学期" options={semesterOptions} value={semesterFilter} onChange={setSemesterFilter} />
+                </label>
+              </div>
+              {filteredGroups.length === 0 ? (
+                <div className="challenge-filter-empty">
+                  <EmptyState
+                    className="challenge-route-empty"
+                    headingLevel={3}
+                    title="这个年级和学期暂时没有挑战路线"
+                    description="可以调整筛选条件，或显示全部已登记的挑战路线。"
+                  />
+                  <Button type="default" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); }}>显示全部挑战路线</Button>
+                </div>
+              ) : (
+                <div className="challenge-card-grid">
+                  {filteredGroups.map(({ group, status, issues }) => {
                 const taskProgress = group.definition.tasks.map(({ id }) => progressByTaskId[id]).filter(Boolean);
                 const passedCount = taskProgress.filter(({ everPassed }) => everPassed).length;
                 const progressLabel = status === 'ready'
@@ -180,8 +227,10 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
                     )}
                   </Card>
                 );
-              })}
-            </div>
+                  })}
+                </div>
+              )}
+            </>
           )}
         </section>
       </div>

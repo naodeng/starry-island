@@ -53,6 +53,40 @@ describe('App', () => {
     expect(await screen.findByRole('heading', { name: '显示主题' })).toBeInTheDocument();
   });
 
+  it('doesNotMoveFocusToTheHomeHeadingOnInitialLoad', async () => {
+    render(<App />);
+
+    const heading = await screen.findByRole('heading', { name: '今天，想从哪里出发？' });
+    expect(heading).not.toHaveFocus();
+    expect(heading).not.toHaveAttribute('data-route-focus', 'true');
+    expect(heading).not.toHaveAttribute('tabindex', '-1');
+  });
+
+  it('doesNotMoveFocusToTheCatalogHeadingAfterAnInitialLazyRouteLoad', async () => {
+    window.history.replaceState({}, '', '/courses');
+    render(<App />);
+
+    await screen.findByRole('group', { name: '选择学习年级和学期' });
+
+    const heading = document.querySelector('.catalog-brand-heading');
+    expect(heading).not.toBeNull();
+    expect(heading).not.toHaveFocus();
+    expect(heading).not.toHaveAttribute('data-route-focus', 'true');
+    expect(heading).not.toHaveAttribute('tabindex', '-1');
+  });
+
+  it('doesNotMoveFocusToTheUnitHeadingAfterAnInitialContentLoad', async () => {
+    window.history.replaceState({}, '', '/grade-2/term-1/math/unit-02');
+    render(<App />);
+
+    await screen.findAllByRole('button', { name: /查看任务/ });
+
+    const heading = screen.getByRole('heading', { level: 1 });
+    expect(heading).not.toHaveFocus();
+    expect(heading).not.toHaveAttribute('data-route-focus', 'true');
+    expect(heading).not.toHaveAttribute('tabindex', '-1');
+  });
+
   it('opensTheLazyChallengeCenterAndCrossSubjectPilotGroups', async () => {
     const user = userEvent.setup();
     render(<App />);

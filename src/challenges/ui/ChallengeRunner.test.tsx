@@ -11,6 +11,7 @@ import { RevisionConflictError } from '../storage/repository';
 import type { ChallengeRepository } from '../storage/repository';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import { SoundProvider } from '../../sound/SoundProvider';
+import { ANSWER_PRAISE_ASSETS } from '../../sound/soundCues';
 import ChallengeRunner from './ChallengeRunner';
 
 const repositories: ChallengeRepository[] = [];
@@ -443,12 +444,13 @@ describe('ChallengeRunner', () => {
     fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
 
     expect(await screen.findByRole('heading', { name: nextQuestion.activity.prompt })).toBeInTheDocument();
-    expect(playedCueSources).toEqual(['/audio/answer-correct.mp3']);
+    expect(playedCueSources).toHaveLength(1);
+    expect(ANSWER_PRAISE_ASSETS).toContain(playedCueSources[0]);
     expect(saveAnswer.mock.invocationCallOrder[0]).toBeLessThan(cueAudioInstances[0]!.play.mock.invocationCallOrder[0]!);
     expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, answers: { [firstQuestion.questionId]: 'correct' } });
   });
 
-  it('uses the existing consecutive-correct streak cue after a saved correct answer', async () => {
+  it('uses randomized praise clips after saved consecutive correct answers', async () => {
     stubChallengeAudio();
     const repository = makeRepository();
     const { loadedGroup, task } = makeLoadedGroup(3);
@@ -463,12 +465,15 @@ describe('ChallengeRunner', () => {
     fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
     fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
     expect(await screen.findByRole('heading', { name: active!.questions[1]!.activity.prompt })).toBeInTheDocument();
-    expect(playedCueSources).toEqual(['/audio/answer-correct.mp3']);
+    expect(playedCueSources).toHaveLength(1);
+    expect(ANSWER_PRAISE_ASSETS).toContain(playedCueSources[0]);
 
     fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
     fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
     expect(await screen.findByRole('heading', { name: active!.questions[2]!.activity.prompt })).toBeInTheDocument();
-    expect(playedCueSources).toEqual(['/audio/answer-correct.mp3', '/audio/answer-streak.mp3']);
+    expect(playedCueSources).toHaveLength(2);
+    expect(playedCueSources.every((source) => ANSWER_PRAISE_ASSETS.includes(source))).toBe(true);
+    expect(playedCueSources[1]).not.toBe(playedCueSources[0]);
   });
 
   it('respects the local sound preference while keeping the saved task usable', async () => {

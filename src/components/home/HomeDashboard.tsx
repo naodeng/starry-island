@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import type { MouseEvent } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon, BookIcon, CompassIcon } from 'naive-icons';
-import EmptyState from '../shared/EmptyState';
 import { getCompletedUnitCount, getCosmicRank } from '../../achievements/progress';
 import { resolveContinueLearningDestination, resolveLearningSessionDestination } from '../../app/continueLearning';
 import type { ContinueLearningDestination, LearningSessionDestination } from '../../app/continueLearning';
 import type { ChallengeGrowthSummary } from '../../challenges/domain/growth';
 import { loadChallengeGrowthSummary } from '../../challenges/domain/growthSummaryReader';
 import type { ProgressState, RecentCompletion } from '../../storage/progress';
+import { curriculumManifest } from '../../content/curriculumManifest';
+import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
+import type { CourseSelection } from '../../storage/courseSelection';
 import '../../styles/home-dashboard.css';
 
 interface HomeDashboardProps {
@@ -48,7 +50,20 @@ function getCourseLocation(destination: LearningSessionDestination): string {
   return `${destination.gradeTitle}${destination.termTitle} · ${destination.subjectTitle} · ${destination.unitTitle}`;
 }
 
+function getInitialCourseSelection(progress: ProgressState): CourseSelection {
+  const savedSelection = loadCourseSelection();
+  if (savedSelection) return savedSelection;
+
+  const grade = curriculumManifest.grades.find(({ id }) => id === `grade-${progress.learningStart?.grade}`)
+    ?? curriculumManifest.grades[0]!;
+  const term = grade.terms.find(({ id }) => id === `term-${progress.learningStart?.term}`)
+    ?? grade.terms[0]!;
+  const subject = term.subjects[0]!;
+  return { gradeId: grade.id, termId: term.id, subjectId: subject.id };
+}
+
 export default function HomeDashboard({ progress, onNavigate }: HomeDashboardProps) {
+  const [courseSelection, setCourseSelection] = useState(() => getInitialCourseSelection(progress));
   const [continueState, setContinueState] = useState<ContinueState>({ status: 'loading' });
   const [recentDestinations, setRecentDestinations] = useState<RecentDestination[]>([]);
   const [challengeState, setChallengeState] = useState<ChallengeSummaryState>({ status: 'loading' });
@@ -102,6 +117,21 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
     : destination
       ? '继续学习'
       : '浏览课程';
+  const selectedGrade = curriculumManifest.grades.find(({ id }) => id === courseSelection.gradeId) ?? curriculumManifest.grades[0]!;
+  const selectedTerm = selectedGrade.terms.find(({ id }) => id === courseSelection.termId) ?? selectedGrade.terms[0]!;
+
+  function updateCourseSelection(nextGradeId: string, nextTermId?: string) {
+    const nextGrade = curriculumManifest.grades.find(({ id }) => id === nextGradeId);
+    const nextTerm = nextGrade?.terms.find(({ id }) => id === (nextTermId ?? courseSelection.termId))
+      ?? nextGrade?.terms[0];
+    if (!nextGrade || !nextTerm) return;
+    const nextSubject = nextTerm.subjects.find(({ id }) => id === courseSelection.subjectId)
+      ?? nextTerm.subjects[0];
+    if (!nextSubject) return;
+    const nextSelection = { gradeId: nextGrade.id, termId: nextTerm.id, subjectId: nextSubject.id };
+    setCourseSelection(nextSelection);
+    saveCourseSelection(nextSelection);
+  }
 
   return (
     <main className="home-dashboard">
@@ -109,6 +139,28 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
         <header className="home-dashboard-heading">
           <h1>今天，想从哪里出发？</h1>
           <p>按自己的节奏继续学习，或去闯关试试所学。</p>
+          <div className="home-current-course" role="group" aria-label="当前课程选择">
+            <span className="eyebrow">当前课程</span>
+            <label>
+              <span id="home-current-grade-label">年级</span>
+              <Select
+                aria-label="当前年级"
+                options={curriculumManifest.grades.map(({ id, title }) => ({ key: id, label: title }))}
+                value={selectedGrade.id}
+                onChange={(gradeId) => updateCourseSelection(gradeId)}
+              />
+            </label>
+            <label>
+              <span id="home-current-term-label">学期</span>
+              <Select
+                aria-label="当前学期"
+                options={selectedGrade.terms.map(({ id, title }) => ({ key: id, label: title }))}
+                value={selectedTerm.id}
+                onChange={(termId) => updateCourseSelection(selectedGrade.id, termId)}
+              />
+            </label>
+            <span className="home-current-course-note">课程目录和闯关中心会沿用此选择。</span>
+          </div>
         </header>
 
         <div className="home-dashboard-content">
@@ -167,11 +219,12 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
                     {challengeState.summary.completedAttempts === 0
                       && challengeState.summary.passedTaskCount === 0
                       && challengeState.summary.earnedBadgeCount === 0 ? (
-                        <EmptyState
-                          title="还没有闯关成果"
-                          description="完成并提交一次挑战后，成绩和徽章会显示在这里。"
-                          headingLevel={3}
-                        />
+                        <div className="home-inline-empty home-challenge-empty" role="status">
+                          <div>
+                            <h4>还没有闯关成果</h4>
+                            <p>完成并提交一次挑战后，成绩和徽章会显示在这里。</p>
+                          </div>
+                        </div>
                       ) : (
                         <>
                           <ul className="home-challenge-counts" aria-label="闯关成长摘要">
@@ -196,11 +249,13 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
               <span>最多显示 3 条</span>
             </div>
             {recentDestinations.length === 0 ? (
-              <EmptyState
-                title="还没有学习记录"
-                description="完成一场学习后，最近记录会显示在这里。"
-                headingLevel={3}
-              />
+              <div className="home-inline-empty home-recent-empty" role="status">
+                <BookIcon size={24} aria-hidden="true" />
+                <div>
+                  <h3>还没有学习记录</h3>
+                  <p>完成一场学习后，最近记录会显示在这里。</p>
+                </div>
+              </div>
             ) : (
               <ol className="home-recent-list">
                 {recentDestinations.map(({ event, destination: recentDestination }) => {

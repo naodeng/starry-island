@@ -13,7 +13,6 @@
 .eyebrow { margin: 0 0 10px; color: #60806c; font-size: 13px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 .catalog-hero h1, .unit-hero h1, .route-message-card h1 { margin: 0; color: var(--animal-text-color); font-size: clamp(34px, 6vw, 58px); line-height: 1.15; }
 .catalog-hero .catalog-brand-heading { margin: -8px 0 4px; line-height: 0; }
-.catalog-brand-logo { display: block; width: clamp(160px, 18vw, 196px); max-width: 100%; height: auto; border-radius: var(--island-radius-card); box-shadow: var(--animal-shadow-lg); }
 .catalog-lead { max-width: 610px; margin: 15px 0 22px; color: var(--animal-text-color-secondary); font-size: 17px; line-height: 1.75; }
 .catalog-meta { display: flex; flex-wrap: wrap; gap: 9px; }
 .catalog-meta span { padding: 8px 13px; border: 1px solid rgba(103, 128, 113, .17); border-radius: 999px; color: #56677b; background: rgba(255,255,255,.75); font-size: 13px; font-weight: 700; }
@@ -100,7 +99,6 @@
   .catalog-hero { align-items: flex-start; flex-direction: column; }
   .catalog-hero-copy { max-width: 100%; }
   .catalog-hero-crew { flex-basis: auto; width: min(100%, 360px); align-self: flex-end; }
-  .catalog-brand-logo { width: clamp(160px, 34vw, 190px); }
   .hero-planet { flex-basis: 112px; width: 112px; height: 120px; margin: 0 -10px 0 4px; transform: scale(.72); transform-origin: center right; }
   .planet-core { inset: 28px 34px 22px; border-width: 7px; font-size: 25px; }
   .planet-ring { inset: 24px 0 18px; }
@@ -143,7 +141,6 @@
 .catalog-hero-copy { display: grid; align-content: center; gap: 20px; width: 100%; max-width: none; }
 .catalog-brand-lockup { display: grid; grid-template-columns: minmax(116px, 148px) minmax(0, 1fr); align-items: center; gap: clamp(16px, 2.7vw, 30px); }
 .catalog-hero .catalog-brand-heading { margin: 0; }
-.catalog-brand-logo { width: clamp(116px, 13vw, 148px); border: 1px solid rgba(81, 103, 126, .12); border-radius: 22px; box-shadow: none; }
 .catalog-hero-message { min-width: 0; }
 .catalog-hero-message .eyebrow { margin-bottom: 8px; }
 .catalog-lead { max-width: 480px; margin: 0 0 14px; font-size: clamp(14px, 1.35vw, 17px); line-height: 1.65; }
@@ -152,9 +149,6 @@
 .catalog-hero-crew { position: relative; z-index: 1; display: grid; align-content: center; justify-items: stretch; gap: 14px; min-width: 0; }
 .catalog-hero-crew-heading { margin: 0; color: var(--animal-text-color); font-size: 14px; font-weight: 900; letter-spacing: .04em; }
 .catalog-hero-crew .hero-guide { width: 100%; }
-.companion-roster { display: flex; justify-content: space-between; gap: 8px; padding: 0 2px; }
-.companion-roster-member { display: grid; justify-items: center; gap: 5px; min-width: 0; color: var(--animal-text-color-secondary); font-size: 11px; font-weight: 800; }
-.companion-roster-member .companion-avatar--small { --avatar-size: 44px; }
 @media (min-width: 701px) and (max-width: 900px) {
   .catalog-hero { grid-template-columns: minmax(0, 1fr); }
   .catalog-hero-crew { grid-template-columns: minmax(0, 1fr) minmax(285px, .95fr); align-items: center; gap: 10px 20px; }
@@ -167,14 +161,11 @@
   .catalog-hero { grid-template-columns: minmax(0, 1fr); gap: 21px; }
   .catalog-hero-copy { gap: 17px; }
   .catalog-brand-lockup { grid-template-columns: minmax(88px, 112px) minmax(0, 1fr); gap: 13px; }
-  .catalog-brand-logo { width: clamp(88px, 25vw, 112px); border-radius: 17px; }
   .catalog-lead { margin-bottom: 10px; font-size: 14px; line-height: 1.55; }
   .catalog-meta { gap: 6px; }
   .catalog-meta span { padding: 5px 8px; font-size: 11px; }
   .catalog-hero-crew { grid-template-columns: minmax(0, 1fr) minmax(250px, 1fr); align-items: center; gap: 10px 18px; width: 100%; }
   .catalog-hero-crew-heading { grid-column: 1 / -1; }
-  .companion-roster { justify-content: space-between; gap: 8px; }
-  .companion-roster-member .companion-avatar--small { --avatar-size: 40px; }
   .unit-hero { flex-direction: column; }
   .unit-hero-aside { grid-template-columns: minmax(0, 1fr) 88px; align-items: center; justify-items: stretch; flex-basis: auto; width: 100%; }
   .unit-hero-aside .unit-progress-orbit { justify-self: end; }
@@ -182,12 +173,8 @@
 @media (max-width: 420px) {
   .catalog-hero { padding: 20px 16px; }
   .catalog-brand-lockup { grid-template-columns: 88px minmax(0, 1fr); gap: 11px; }
-  .catalog-brand-logo { width: 88px; }
   .catalog-hero-crew { grid-template-columns: minmax(0, 1fr); gap: 11px; }
   .catalog-hero-crew-heading { grid-column: auto; }
-  .companion-roster { justify-content: space-between; gap: 4px; padding-inline: 0; }
-  .companion-roster-member { font-size: 12px; }
-  .companion-roster-member .companion-avatar--small { --avatar-size: 39px; }
   .unit-hero-aside { grid-template-columns: minmax(0, 1fr) 78px; }
   .unit-hero-aside .unit-progress-orbit { flex-basis: 78px; width: 78px; height: 78px; }
 }
@@ -323,25 +310,9 @@
   .exploration-zone-status { display: none; }
 }
 
-.catalog-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 4px 0 24px; }
+.catalog-topbar { display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin: 4px 0 24px; }
 .catalog-topbar .course-breadcrumbs { margin: 0; }
 .catalog-settings-button { flex: 0 0 auto; min-height: 40px; }
-.achievement-summary-section { display: grid; gap: 8px; min-width: 0; margin: 0; }
-.achievement-summary-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px 16px; padding: 13px 15px; border: 1px solid var(--animal-border-color); border-radius: 18px; color: var(--animal-text-color); background: var(--animal-bg-color-secondary); box-shadow: none; }
-.achievement-summary-main { display: grid; grid-template-columns: 46px minmax(0, 1fr); align-items: center; gap: 12px; min-width: 0; }
-.achievement-summary-symbol { display: grid; place-items: center; width: 46px; height: 46px; padding: 3px; border-radius: 50%; color: var(--island-highlight); font-size: 0; }
-.achievement-summary-symbol > span { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; color: var(--island-highlight); background: var(--animal-bg-color-secondary); font-size: 19px; font-weight: 900; }
-.achievement-summary-copy { min-width: 0; }
-.achievement-summary-copy .eyebrow { margin-bottom: 2px; font-size: 10px; }
-.achievement-summary-copy h2 { margin: 0; color: var(--animal-text-color); font-size: clamp(16px, 1.7vw, 19px); line-height: 1.3; }
-.achievement-summary-copy > p { margin: 2px 0 0; color: var(--animal-text-color-secondary); font-size: 11px; line-height: 1.45; }
-.achievement-summary-copy > p strong { color: var(--animal-primary-color); font-size: 14px; }
-.achievement-summary-next { display: grid; gap: 4px; max-width: 470px; margin-top: 7px; }
-.achievement-summary-next-label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 3px 8px; color: var(--animal-text-color-secondary); font-size: 10px; font-weight: 800; }
-.achievement-summary-track { height: 5px; overflow: hidden; border-radius: 999px; background: var(--animal-border-color); }
-.achievement-summary-track span { display: block; width: 100%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--island-mint), var(--island-sun)); transform: scaleX(1); transform-origin: left center; transition: transform .25s ease; }
-.achievement-summary-max { font-weight: 700; }
-.achievement-summary-card > button { min-height: 40px; padding-inline: 12px; white-space: nowrap; }
 .achievement-page-heading { margin: 8px 0 4px; }
 .achievement-page-heading h1 { margin: 2px 0 6px; color: #2e3d52; font-size: clamp(30px, 5vw, 42px); }
 .achievement-page-heading > p:last-child { margin: 0; color: #687a8d; line-height: 1.65; }
@@ -376,23 +347,12 @@
 
 @media (max-width: 700px) {
   .catalog-topbar { margin-bottom: 18px; }
-  .achievement-summary-card { grid-template-columns: minmax(0, 1fr) auto; gap: 9px 12px; padding: 11px 12px; }
-  .achievement-summary-main { grid-template-columns: 40px minmax(0, 1fr); gap: 9px; }
-  .achievement-summary-symbol { width: 40px; height: 40px; }
-  .achievement-summary-symbol > span { font-size: 17px; }
-  .achievement-summary-card > button { grid-column: 2; grid-row: 1; min-width: 0; }
   .settings-achievement-link { grid-template-columns: 1fr; justify-items: start; }
   .learning-start-fields { grid-template-columns: 1fr; }
 }
 @media (max-width: 420px) {
   .catalog-topbar { align-items: center; }
   .catalog-settings-button { min-height: 38px; padding-inline: 10px; }
-  .achievement-summary-card { grid-template-columns: minmax(0, 1fr); }
-  .achievement-summary-main { grid-template-columns: 38px minmax(0, 1fr); gap: 9px; }
-  .achievement-summary-symbol { width: 38px; height: 38px; }
-  .achievement-summary-symbol > span { font-size: 16px; }
-  .achievement-summary-next-label { justify-content: flex-start; }
-  .achievement-summary-card > button { grid-column: 1; grid-row: auto; justify-self: end; }
   .settings-modal > [class*='animal-modalClipped'] { padding: 42px 28px 26px; }
   .settings-modal .theme-switcher { align-items: flex-start; flex-direction: column; width: 100%; }
   .settings-modal .theme-switcher-options { width: 100%; }
@@ -497,19 +457,6 @@
 .catalog-grade-label:focus { outline: 2px solid var(--animal-border-color-hover); outline-offset: 5px; }
 .catalog-hero-message { display: grid; gap: 10px; }
 .catalog-hero-message .catalog-lead { margin: 0; }
-.catalog-hero-crew .achievement-summary-section--compact { margin-top: 2px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-card { gap: 8px 10px; padding: 10px 11px; border-radius: 17px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-main { grid-template-columns: 36px minmax(0, 1fr); gap: 8px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-symbol { width: 36px; height: 36px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-symbol > span { font-size: 15px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-copy .eyebrow { font-size: 10px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-copy h2 { font-size: 16px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-copy > p { font-size: 11px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-copy > p strong { font-size: 13px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-next { margin-top: 5px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-next-label { font-size: 10px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-track { height: 5px; }
-.catalog-hero-crew .achievement-summary-section--compact .achievement-summary-card > button { min-height: 40px; padding-inline: 9px; font-size: 12px; }
 .project-legal-footer {
   display: flex;
   flex-wrap: wrap;
@@ -713,7 +660,6 @@
   .unit-card h3 { font-size: 21px; }
 }
 @media (min-width: 701px) and (max-width: 900px) {
-  .catalog-hero-crew .achievement-summary-section--compact { grid-column: 1 / -1; width: 100%; }
 }
 @media (max-width: 1024px) {
   .catalog-current-route .catalog-current-route-action { min-height: 44px; }
@@ -722,7 +668,6 @@
   .catalog-hero::after { top: 61%; left: 77%; width: 190px; opacity: .3; }
   .catalog-current-route { width: 100%; gap: 8px; padding: 8px; }
   .catalog-current-route-copy { flex: 1; }
-  .catalog-hero-crew .achievement-summary-section--compact { grid-column: 1 / -1; width: 100%; }
   .project-legal-footer--page { padding-inline: max(14px, env(safe-area-inset-left)); }
 }
 @media (max-width: 420px) {
@@ -875,7 +820,6 @@ button[class*='animal-btn'] svg { display: block; flex: 0 0 auto; color: current
 /* Keep primary touch targets comfortably tappable after narrow-screen sizing overrides. */
 @media (max-width: 1024px) {
   .catalog-current-route .catalog-current-route-action,
-  .catalog-hero-crew .achievement-summary-section--compact .achievement-summary-card > button,
   .exploration-zone-toggle,
   .achievement-progress-group-toggle { min-height: 44px; }
 }
@@ -884,30 +828,19 @@ button[class*='animal-btn'] svg { display: block; flex: 0 0 auto; color: current
 @media (max-width: 480px) {
   .catalog-hero { gap: 13px; padding: 16px 14px; }
   .catalog-hero-copy { gap: 11px; }
-  .catalog-brand-lockup { grid-template-columns: 72px minmax(0, 1fr); gap: 9px; }
-  .catalog-brand-logo { width: 72px; border-radius: 14px; }
   .catalog-hero-message { display: grid; gap: 7px; }
   .catalog-hero-message .eyebrow { margin-bottom: 0; }
   .catalog-lead { margin: 0; font-size: 13px; line-height: 1.45; }
   .catalog-meta { gap: 4px; }
   .catalog-meta span { padding: 3px 5px; font-size: 10px; line-height: 1.3; }
-  .catalog-hero-crew { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: start; gap: 9px 10px; }
-  .catalog-hero-crew-heading { grid-column: 1 / -1; }
-  .companion-roster { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; }
-  .companion-roster-member { gap: 3px; font-size: 11px; }
-  .companion-roster-member .companion-avatar--small { --avatar-size: 36px; }
   .catalog-hero-crew .hero-guide--compact { min-height: 0; gap: 7px; padding: 7px; border-radius: 15px; }
   .catalog-hero-crew .hero-guide--compact .companion-avatar--small { --avatar-size: 36px; }
   .catalog-hero-crew .hero-guide--compact .hero-guide-copy p { font-size: 12px; line-height: 1.4; }
 }
 @media (max-width: 360px) {
-  .catalog-brand-lockup { grid-template-columns: 62px minmax(0, 1fr); gap: 8px; }
-  .catalog-brand-logo { width: 62px; }
   .catalog-meta { gap: 3px; }
   .catalog-meta span { padding: 2px 4px; font-size: 8px; }
   .catalog-current-route .catalog-current-route-action svg { display: none; }
-  .companion-roster { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 4px; }
-  .companion-roster-member .companion-avatar--small { --avatar-size: 32px; }
   .catalog-hero-crew .hero-guide--compact .companion-avatar--small { --avatar-size: 32px; }
 }
 @media (max-width: 480px) {
@@ -939,4 +872,27 @@ button[class*='animal-btn'] svg { display: block; flex: 0 0 auto; color: current
   .unit-card-active:hover,
   .session-card:hover,
   .task-card:hover { transform: translateY(-2px); border-color: var(--animal-border-color-hover); }
+}
+
+/* Keep the course landing focused on its page title and the selected route. */
+.catalog-brand-lockup {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.catalog-hero .catalog-brand-heading {
+  width: fit-content;
+  margin: 0;
+  color: var(--animal-text-color);
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.2;
+}
+
+.catalog-hero-crew {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 420px) {
+  .catalog-brand-lockup { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .catalog-hero-crew { grid-template-columns: minmax(0, 1fr); }
 }

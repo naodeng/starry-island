@@ -5,11 +5,7 @@ import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CatalogUnitEntry, SubjectId } from '../../content/types';
 import type { ProgressState } from '../../storage/progress';
 import { getUnitPath } from '../../app/router';
-import { COMPANION_IDS, COMPANION_PROFILES } from '../mascots/CompanionAvatar';
-import CompanionAvatar from '../mascots/CompanionAvatar';
 import HeroGuide from '../mascots/HeroGuide';
-import AchievementSummary from '../achievements/AchievementSummary';
-import CourseBreadcrumbs from './CourseBreadcrumbs';
 import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
 import EmptyState from '../shared/EmptyState';
 
@@ -65,7 +61,6 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
     <main className="catalog-page">
       <div className="catalog-shell">
         <div className="catalog-topbar">
-          <CourseBreadcrumbs items={[{ label: '课程目录' }]} onNavigate={onNavigate} />
           <Button type="default" className="catalog-settings-button" icon={<SettingsIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/settings')}>
             设置
           </Button>
@@ -73,16 +68,7 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
         <header className="catalog-hero">
           <div className="catalog-hero-copy">
             <div className="catalog-brand-lockup">
-              <h1 className="catalog-brand-heading">
-                <img
-                  className="catalog-brand-logo"
-                  src="/assets/brand/starry-island-logo-512.png"
-                  alt="星岛学园 · Starry Island"
-                  width="512"
-                  height="512"
-                  fetchPriority="high"
-                />
-              </h1>
+              <h1 className="catalog-brand-heading">课程目录</h1>
               <div className="catalog-hero-message">
                 <div className="catalog-current-route">
                   <span className="catalog-current-route-symbol" aria-hidden="true"><StarIcon size={17} /></span>
@@ -115,21 +101,7 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
           </div>
           <aside className="catalog-hero-crew" aria-label="学习伙伴小队">
             <p className="catalog-hero-crew-heading">星岛伙伴 · 一起探索</p>
-            <div className="companion-roster" aria-label="四位学习伙伴">
-              {COMPANION_IDS.map((id) => (
-                <div className="companion-roster-member" key={id}>
-                  <CompanionAvatar id={id} size="small" />
-                  <span>{COMPANION_PROFILES[id].name}</span>
-                </div>
-              ))}
-            </div>
             <HeroGuide mood="welcome" subject={subject.id} companionId={guideId} compact />
-            <AchievementSummary
-              compact
-              completedSessionIds={progress.completedSessionIds}
-              learningStart={progress.learningStart}
-              onNavigate={onNavigate}
-            />
           </aside>
         </header>
 

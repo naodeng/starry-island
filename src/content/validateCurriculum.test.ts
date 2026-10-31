@@ -553,4 +553,27 @@ describe('validateCurriculum', () => {
       expect.objectContaining({ code: 'USER_TEXTBOOK_TAPX_METADATA_UNEXPECTED', path: `textbooks.${textbookId}` }),
     ]));
   });
+
+  it('rejectsMissingAndMalformedUserProvidedIsbnValues', () => {
+    const curriculum = createCurriculum() as unknown as { textbooks: Record<string, Record<string, unknown>> };
+    const book = curriculum.textbooks[textbookId];
+    book.sourceKind = 'user-provided';
+    book.latestPepEvidenceUrl = 'https://pep.com.cn/evidence';
+    book.fallbackReason = null;
+    book.tapxCommit = null;
+
+    book.isbn = null;
+    book.sourceUrl = 'urn:starry-island:textbook:isbn:';
+    expect(validateCurriculum(curriculum as unknown as Curriculum)).toContainEqual(expect.objectContaining({
+      code: 'USER_TEXTBOOK_ISBN_INVALID',
+      path: `textbooks.${textbookId}.isbn`,
+    }));
+
+    book.isbn = '978-X-107-38912-2';
+    book.sourceUrl = 'urn:starry-island:textbook:isbn:978-X-107-38912-2';
+    expect(validateCurriculum(curriculum as unknown as Curriculum)).toContainEqual(expect.objectContaining({
+      code: 'USER_TEXTBOOK_ISBN_INVALID',
+      path: `textbooks.${textbookId}.isbn`,
+    }));
+  });
 });

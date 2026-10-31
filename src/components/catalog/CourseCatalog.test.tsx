@@ -72,6 +72,17 @@ describe('CourseCatalog', () => {
     expect(screen.getByRole('button', { name: '英语' })).toBeInTheDocument();
   });
 
+  it('keepsTheCatalogHeroFocusedOnCourseChoiceInsteadOfRepeatingTheBrandAndProgressPanels', () => {
+    renderCatalog();
+
+    expect(screen.getByRole('heading', { level: 1, name: '课程目录' })).toBeInTheDocument();
+    expect(document.querySelector('.catalog-brand-logo')).toBeNull();
+    expect(document.querySelector('.companion-roster')).toBeNull();
+    expect(screen.queryByRole('button', { name: '成就详情' })).not.toBeInTheDocument();
+    expect(screen.getByText('当前探索航线')).toBeInTheDocument();
+    expect(screen.getByText('云岛号 · 学习伙伴')).toBeInTheDocument();
+  });
+
   it('explainsWhenTheSelectedSubjectHasNoRegisteredUnitsAndKeepsSelectionAvailable', () => {
     const selectedSubject = curriculumManifest.grades[0]!.terms[0]!.subjects[0]!;
     const registeredUnits = selectedSubject.units;

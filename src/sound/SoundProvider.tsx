@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { SOUND_CUE_ASSETS } from './soundCues';
+import { getSoundCueAsset } from './soundCues';
 import type { SoundCue } from './soundCues';
 import { readSoundPreference, writeSoundPreference } from './soundPreferences';
 import { stopLocalSpeech } from './localChineseSpeech';
@@ -35,6 +35,7 @@ function stopAudio(audio: HTMLAudioElement | null): void {
 export function SoundProvider({ children }: SoundProviderProps) {
   const [enabled, setEnabledState] = useState(readSoundPreference);
   const channels = useRef<AudioChannels>({ voice: null, interaction: null });
+  const lastPraiseAsset = useRef<string | null>(null);
 
   const stopAll = useCallback(() => {
     stopAudio(channels.current.voice);
@@ -51,15 +52,17 @@ export function SoundProvider({ children }: SoundProviderProps) {
   const playCue = useCallback((cue: SoundCue) => {
     if (!enabled) return;
     const channel: SoundChannel = cue === 'interaction-click' ? 'interaction' : 'voice';
+    const source = getSoundCueAsset(cue, lastPraiseAsset.current);
+    if (cue === 'answer-correct' || cue === 'answer-streak') lastPraiseAsset.current = source;
     try {
       let audio = channels.current[channel];
       if (!audio) {
-        audio = new Audio(SOUND_CUE_ASSETS[cue]);
+        audio = new Audio(source);
         audio.preload = 'auto';
         channels.current[channel] = audio;
       } else {
         audio.pause();
-        audio.src = SOUND_CUE_ASSETS[cue];
+        audio.src = source;
       }
       audio.volume = channel === 'interaction' ? INTERACTION_CUE_VOLUME : 1;
       audio.currentTime = 0;

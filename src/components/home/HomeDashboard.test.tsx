@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import type { ChallengeGrowthSummary } from '../../challenges/domain/growth';
 import { loadChallengeGrowthSummary } from '../../challenges/domain/growthSummaryReader';
 import type { ProgressState } from '../../storage/progress';
@@ -8,6 +9,7 @@ import { curriculumManifest, getUnitManifest } from '../../content/curriculumMan
 import { getKnownCurriculumPositions } from '../../achievements/position';
 import { resolveAppRoute } from '../../app/router';
 import { resolveLearningSessionDestination } from '../../app/continueLearning';
+import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
 import HomeDashboard from './HomeDashboard';
 
 vi.mock('../../challenges/domain/growthSummaryReader', () => ({ loadChallengeGrowthSummary: vi.fn() }));
@@ -27,6 +29,7 @@ const emptyProgress: ProgressState = {
 };
 
 beforeEach(() => {
+  localStorage.clear();
   vi.mocked(loadChallengeGrowthSummary).mockReset();
   vi.mocked(loadChallengeGrowthSummary).mockResolvedValue(emptyChallengeSummary);
 });
@@ -37,6 +40,22 @@ describe('HomeDashboard', () => {
 
     const sections = within(screen.getByRole('main')).getAllByRole('heading', { level: 2 }).map(({ textContent }) => textContent);
     expect(sections.slice(0, 4)).toEqual(['继续学习', '当前进度', '最近学习记录', '闯关入口']);
+  });
+
+  it('letsLearnersChooseAndPersistTheCurrentGradeAndTermWithoutChangingLearningProgress', async () => {
+    saveCourseSelection({ gradeId: 'grade-2', termId: 'term-2', subjectId: 'math' });
+    const user = userEvent.setup();
+    render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} />);
+
+    expect(screen.getByRole('combobox', { name: '当前年级' })).toHaveTextContent('二年级');
+    expect(screen.getByRole('combobox', { name: '当前学期' })).toHaveTextContent('下学期');
+    await user.click(screen.getByRole('combobox', { name: '当前年级' }));
+    await user.click(await screen.findByRole('option', { name: '3年级' }));
+    await user.click(screen.getByRole('combobox', { name: '当前学期' }));
+    await user.click(await screen.findByRole('option', { name: '下学期' }));
+
+    expect(loadCourseSelection()).toMatchObject({ gradeId: 'grade-3', termId: 'term-2' });
+    expect(emptyProgress).toMatchObject({ completedSessionIds: [], learningStart: null });
   });
 
   it('showsRecentLearningEmptyStateWithTitleAndDescription', () => {
@@ -76,10 +95,20 @@ describe('HomeDashboard', () => {
     });
     render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} />);
 
-    expect(await screen.findByRole('heading', { level: 3, name: '还没有闯关成果' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 4, name: '还没有闯关成果' })).toBeInTheDocument();
     expect(screen.getByText('完成并提交一次挑战后，成绩和徽章会显示在这里。')).toBeInTheDocument();
+    expect(document.querySelector('.home-dashboard .empty-state')).not.toBeInTheDocument();
     expect(screen.queryByRole('list', { name: '闯关成长摘要' })).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: '进入闯关中心' })).toBeInTheDocument();
+  });
+
+  it('showsTheRecentHistoryEmptyStateAsACompactSectionMessage', () => {
+    render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} />);
+
+    const recentSection = screen.getByRole('region', { name: '最近学习记录' });
+    expect(within(recentSection).getByRole('heading', { level: 3, name: '还没有学习记录' })).toBeInTheDocument();
+    expect(within(recentSection).getByText('完成一场学习后，最近记录会显示在这里。')).toBeInTheDocument();
+    expect(within(recentSection).queryByRole('article')).not.toBeInTheDocument();
   });
 
   it('showsThreeLatestRealLearningEventsWithRegisteredCourseLinks', async () => {

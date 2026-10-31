@@ -1,10 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { curriculum } from '../content/curriculum';
 import { getSessionsForDifficulty } from '../content/sessionUtils';
-import { completeSession, loadProgress, migrateGrade2Term1MathProgress, saveProgress, setLearningStart } from './progress';
+import { acknowledgeGrade2Term1MathMigrationNotice, completeSession, hasPendingGrade2Term1MathMigrationNotice, loadProgress, migrateGrade2Term1MathProgress, saveProgress, setLearningStart } from './progress';
 import type { ProgressState } from './progress';
 
 const STORAGE_KEY = 'china-study-progress-v1';
+const MIGRATION_KEY = 'starry-island-migration-grade-2-term-1-math-v1';
 const unit01 = curriculum.units['grade-2/term-1/chinese/unit-01'];
 const unit02 = curriculum.units['grade-2/term-1/chinese/unit-02'];
 const currentSessionId = getSessionsForDifficulty(unit01, 'basic')[0].id;
@@ -130,6 +131,17 @@ describe('progress storage', () => {
     }
   });
 
+  it('doesNotRunBrowserOnlyMigrationOrNoticeAcknowledgementWithoutWindow', () => {
+    vi.stubGlobal('window', undefined);
+    try {
+      expect(() => migrateGrade2Term1MathProgress()).toThrow('Progress migration requires browser storage.');
+      expect(hasPendingGrade2Term1MathMigrationNotice()).toBe(false);
+      expect(() => acknowledgeGrade2Term1MathMigrationNotice()).not.toThrow();
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
   it('keepsSavedProgressInMemoryWhenStorageWritesFail', () => {
     const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('storage blocked'); });
     const next = saveProgress({ ...emptyProgress, completedSessionIds: [currentSessionId] });
@@ -238,6 +250,38 @@ describe('progress storage', () => {
     expect(JSON.parse(window.localStorage.getItem(STORAGE_KEY)!).futureField).toEqual({ keep: true });
   });
 
+  it('preservesLegacyRecentCompletionValuesWhenTheirShapeIsUnknown', () => {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      schemaVersion: 4,
+      completedSessionIds: [currentSessionId],
+      recentCompletions: 'legacy-value',
+      learningStart: null,
+    }));
+
+    expect(migrateGrade2Term1MathProgress()).toBe('migrated');
+    expect(JSON.parse(window.localStorage.getItem(STORAGE_KEY)!).recentCompletions).toBe('legacy-value');
+  });
+
+  it('keepsUnrecognizedRecentCompletionEntriesWhileRemovingMathEntries', () => {
+    const malformedEntries = [null, [], { sessionId: 42 }];
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      schemaVersion: 4,
+      completedSessionIds: [grade2Term1MathSessionId],
+      recentCompletions: [
+        ...malformedEntries,
+        { sessionId: grade2Term1MathSessionId },
+        { sessionId: currentSessionId },
+      ],
+      learningStart: null,
+    }));
+
+    expect(migrateGrade2Term1MathProgress()).toBe('migrated');
+    expect(JSON.parse(window.localStorage.getItem(STORAGE_KEY)!).recentCompletions).toEqual([
+      ...malformedEntries,
+      { sessionId: currentSessionId },
+    ]);
+  });
+
   it('marksAnEmptyMigrationAndDoesNotClearNewProgressWhenRetried', () => {
     expect(migrateGrade2Term1MathProgress()).toBe('migrated');
     completeSession(loadProgress(), grade2Term1MathSessionId, '2026-10-28T03:00:00.000Z');
@@ -262,5 +306,26 @@ describe('progress storage', () => {
     setItem.mockRestore();
     expect(migrateGrade2Term1MathProgress()).toBe('migrated');
     expect(loadProgress().completedSessionIds).toEqual([currentSessionId]);
+  });
+
+  it('rejectsCorruptOrUnsupportedProgressWithoutMarkingTheMigrationComplete', () => {
+    for (const raw of ['{not json', 'null', '[]', JSON.stringify({ schemaVersion: 4 })]) {
+      window.localStorage.setItem(STORAGE_KEY, raw);
+
+      expect(() => migrateGrade2Term1MathProgress()).toThrow(/migration was not applied/u);
+      expect(window.localStorage.getItem(MIGRATION_KEY)).toBeNull();
+    }
+  });
+
+  it('acknowledgesOnlyAnExistingPendingMigrationNotice', () => {
+    acknowledgeGrade2Term1MathMigrationNotice();
+    expect(window.localStorage.getItem(MIGRATION_KEY)).toBeNull();
+
+    expect(migrateGrade2Term1MathProgress()).toBe('migrated');
+    expect(hasPendingGrade2Term1MathMigrationNotice()).toBe(true);
+    acknowledgeGrade2Term1MathMigrationNotice();
+
+    expect(hasPendingGrade2Term1MathMigrationNotice()).toBe(false);
+    expect(window.localStorage.getItem(MIGRATION_KEY)).toBe('complete-v1');
   });
 });

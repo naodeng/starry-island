@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { LearningSession } from '../../content/types';
-import { SOUND_CUE_ASSETS } from '../../sound/soundCues';
+import { ANSWER_PRAISE_ASSETS, SOUND_CUE_ASSETS } from '../../sound/soundCues';
 import { SoundProvider } from '../../sound/SoundProvider';
 import SessionPlayer from './SessionPlayer';
 
@@ -104,16 +104,17 @@ describe('SessionPlayer', () => {
     expect(onComplete).toHaveBeenCalledWith(session.id);
     expect(screen.getByRole('heading', { name: '太棒了，能量收集完成！' })).toHaveFocus();
     expect(screen.getByText(/里的 8 个小挑战/)).toBeInTheDocument();
-    expect(playedSources).toEqual([
-      SOUND_CUE_ASSETS['answer-incorrect'],
-      SOUND_CUE_ASSETS['answer-correct'],
-      ...Array.from({ length: 6 }, () => SOUND_CUE_ASSETS['answer-streak']),
-      SOUND_CUE_ASSETS['session-complete'],
-    ]);
+    expect(playedSources[0]).toBe(SOUND_CUE_ASSETS['answer-incorrect']);
+    expect(playedSources.at(-1)).toBe(SOUND_CUE_ASSETS['session-complete']);
+    const correctAnswerPraiseSources = playedSources.slice(1, -1);
+    expect(correctAnswerPraiseSources).toHaveLength(7);
+    expect(correctAnswerPraiseSources.every((source) => ANSWER_PRAISE_ASSETS.includes(source))).toBe(true);
+    expect(correctAnswerPraiseSources.every((source, index) => index === 0 || source !== correctAnswerPraiseSources[index - 1])).toBe(true);
 
     await user.click(screen.getByRole('button', { name: '再玩一次' }));
     await user.click(screen.getByRole('button', { name: '正确选项 1' }));
     await user.click(screen.getByRole('button', { name: '提交答案' }));
-    expect(playedSources.at(-1)).toBe(SOUND_CUE_ASSETS['answer-correct']);
+    expect(ANSWER_PRAISE_ASSETS).toContain(playedSources.at(-1));
+    expect(playedSources.at(-1)).not.toBe(correctAnswerPraiseSources.at(-1));
   }, 30_000);
 });

@@ -1,10 +1,27 @@
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import type { ChallengeGroupManifest } from '../domain/types';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import ChallengeCenter from './ChallengeCenter';
 import { getChallengeGroupDescription, getChallengeGroupTitle } from './ChallengeCenter';
 import pilotManifest from '../content/pilotManifest';
+import { saveCourseSelection } from '../../storage/courseSelection';
+
+beforeEach(() => {
+  localStorage.clear();
+});
+
+function loadGroups(ids: string[]): LoadedPilotGroup[] {
+  return ids.map((id) => ({
+    group: pilotManifest.groups.find(({ definition }) => definition.id === id) as unknown as ChallengeGroupManifest,
+    status: 'ready',
+    candidates: [],
+    disabledQuestionIds: [],
+    learningTasks: [],
+    issues: [],
+  }));
+}
 
 describe('ChallengeCenter', () => {
   it('showsAnEmptyStateWhenNoChallengeGroupsAreRegistered', () => {
@@ -12,6 +29,57 @@ describe('ChallengeCenter', () => {
 
     expect(screen.getByRole('heading', { name: '暂无可用挑战路线' })).toBeInTheDocument();
     expect(screen.getByText('课程路线通过内容质量检查后，会显示在这里。')).toBeInTheDocument();
+  });
+
+  it('defaultsGradeAndSemesterFiltersToTheSavedCurrentCourseSelection', () => {
+    saveCourseSelection({ gradeId: 'grade-2', termId: 'term-2', subjectId: 'math' });
+    const groups = loadGroups([
+      'grade-1-term-1-math-unit-01',
+      'grade-2-term-2-math-unit-01',
+      'grade-3-term-1-english-unit-01',
+    ]);
+
+    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
+
+    expect(screen.getByRole('combobox', { name: '闯关年级' })).toHaveTextContent('2年级');
+    expect(screen.getByRole('combobox', { name: '闯关学期' })).toHaveTextContent('下学期');
+    expect(screen.getByRole('heading', { level: 3, name: '二年级下册数学 · 第一单元' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { level: 3, name: '一年级上册数学 · 第一单元' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { level: 3, name: '三年级上册英语 · 第一单元' })).not.toBeInTheDocument();
+  });
+
+  it('offersOnlyRegisteredGradeAndSemesterFilters', async () => {
+    const user = userEvent.setup();
+    const groups = loadGroups([
+      'grade-1-term-1-math-unit-01',
+      'grade-2-term-2-math-unit-01',
+      'grade-3-term-1-english-unit-01',
+    ]);
+    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
+
+    const gradeFilter = screen.getByRole('combobox', { name: '闯关年级' });
+    await user.click(gradeFilter);
+    expect(await screen.findByRole('option', { name: '1年级' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: '2年级' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: '3年级' })).toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: '4年级' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('option', { name: '2年级' }));
+
+    expect(screen.getByRole('heading', { level: 3, name: '二年级下册数学 · 第一单元' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { level: 3, name: '一年级上册数学 · 第一单元' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('combobox', { name: '闯关学期' }));
+    expect(await screen.findByRole('option', { name: '下学期' })).toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: '上学期' })).not.toBeInTheDocument();
+  });
+
+  it('offersAResetWhenTheSavedCurrentCourseHasNoChallengeRouteYet', () => {
+    saveCourseSelection({ gradeId: 'grade-3', termId: 'term-2', subjectId: 'math' });
+    const groups = loadGroups(['grade-3-term-1-english-unit-01']);
+    render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
+
+    expect(screen.getByRole('heading', { level: 3, name: '这个年级和学期暂时没有挑战路线' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '显示全部挑战路线' }));
+    expect(screen.getByRole('heading', { level: 3, name: '三年级上册英语 · 第一单元' })).toBeInTheDocument();
   });
 
   it('orders routes by grade, semester, subject, chapters, then semester stages', () => {
