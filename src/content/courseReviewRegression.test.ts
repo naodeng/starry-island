@@ -690,13 +690,13 @@ describe('course review regression cases', () => {
     expect(activityById('grade-2/term-2/english/unit-04/basic/task-01/session-01/question-04').prompt).toContain('表示几点');
   });
 
-  it('uses an actual two-step expression in the grade-two mixed-operation task', () => {
+  it('uses the new textbook multiplication topic in Grade 2 Term 1 Math Unit 2', () => {
     const activity = activityById('grade-2/term-1/math/unit-02/advanced/task-01/session-01/question-01');
 
     expect(activity.kind).toBe('arithmetic');
     if (activity.kind === 'arithmetic') {
-      expect(activity.expression).toBe('28 + 19 - 16');
-      expect(activity.correctAnswer).toBe(31);
+      expect(activity.expression).toBe('1 × 5');
+      expect(activity.correctAnswer).toBe(5);
     }
   });
 

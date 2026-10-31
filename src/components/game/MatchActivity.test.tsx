@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { MatchActivityDefinition } from '../../content/types';
+import { SoundProvider } from '../../sound/SoundProvider';
 import ActivityRenderer from './ActivityRenderer';
 import MatchActivity from './MatchActivity';
 
@@ -52,7 +53,11 @@ describe('MatchActivity', () => {
     const randomValues = [0.999, 0.999, 0, 0.999];
     let randomIndex = 0;
     const random = vi.fn(() => randomValues[randomIndex++] ?? 0.999);
-    render(<ActivityRenderer activity={activity} onSolved={vi.fn()} random={random} selectMessage={() => '继续找线索，再试一次。'} />);
+    render(
+      <SoundProvider>
+        <ActivityRenderer activity={activity} onSolved={vi.fn()} random={random} selectMessage={() => '继续找线索，再试一次。'} />
+      </SoundProvider>,
+    );
     const beforeRetry = getRightAnswerOrder();
     const left = within(screen.getByRole('group', { name: '左侧词语' }));
     const wrongPairs = [

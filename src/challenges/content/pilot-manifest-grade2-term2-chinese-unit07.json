@@ -1,0 +1,1532 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "00dd06676b2842022afaf18347098c157f6cdbb853d7f00b0e96637685a7751c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e880327fe40159dfac11cc426a2e0427ad605360257bc7250baa5828179683d7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b964e52489a807aeef91e1d375f0cd9265df6ecbe5e3610c8f80141fb63564c1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6302b84716f4451815c68aa9fda6245eadbc70b00d62b9a897ccd48389e4e7e7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ada412943bd55474b576a19c9b2d27a0bd78f82248520b5f9928880cf13d0028",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1abbdf0f59dcb5b19a5d4e80f34bfaf943b3e19c68a8036571d3b4f9d051eedc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f634cf70ae182b4f724ed56a86c43e872c0092e9b9d79981d3ce3616d058842c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af7211978d17e32a7ce9264412ca7a3c08aa0a5abe4212a1da00eeae6ee944a9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a23985a75ce583d5112e84c968913dc1240a728ea3b4acbe0f1d963255387547",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f1ee224d6a40a03737f6f563b75c7c1f1c6142bf9f194214b05c35c064013251",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f69f9502a6bd97492f4719fe73eb73fc1bd6572ed0fbe52090f1c64a75cc95d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ae7c8b3b3c690208438828d1090f7d48c649ea75bd68f0609d98f502e52a633",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7803dc46f8b6e88d795b03811b8d9cb14352345b731876f5e5e8bcbfe06ca773",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6bfe34553a3fdc5c8f29e88ad149751072d96e25812d638a80b76bfc074933c8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07a615a6a4171fc63fb8cbc6b97c85c00947c8e8942ff4e68f476a1c1cf0d48c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "daf0f11a1df283fc6bc47e1f38b6f89ba135f67a5f6bbfa0719bad1aa96fa468",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f5de0372e31a0a948bab47be248b333b0ded496e8828bc13a5dbe056c8a8118",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17cdc4be181a6695acdfdd276c71d27f40f5fbea38b91a86f83319f195c0a503",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f7f89988ce7b0db8b00ccd5185a995cef38889aa550a870e7fc4bd6e1ec4d928",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61b2499e6d0819300b61e10ea471f5ed7fb668cea7f6d1b4a5112bc98dac00d9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29d5cf1e82162abd700e1848db2b58697027584f2d53f6e62c3a7c7cad99e45a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a7cd3995463f491229dcd88084f177dfc65f10d60957a42f3c10ebf3c9b6202",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bd977955a8c1addc0479ae8e45fae49f9b9d9bd3b77bce652450183c702e4c0a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf73bc2b44023dc183a9edffedbbf1badb20fd322fd792c6bb19f6a4328de3a2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "924be1c6a1b7f1c59f7e41fb7f0cf350632b66659630f8763fb28df2aa85f1a1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "needs-based-planning-and-revision",
+        "growth-sequence-and-patient-waiting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "162375125e65820739505de5bbea33fb3a586aa829c845da44073f32fb790780",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5f06ee7d58852963d2bff94822fe042c25100c7fd70ecc0dbdd95bbfbe30e98",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "974ff0f282cb3a513f00adffa211d6469c5ff4c0414197054bf3afa49af8b9f7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "290b8cf00894d2fe6cbe2c4e39125bc0441e96026d564e989b2cb8d006c399b6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cd3b0d93249d895db99af235ad467ed5c871ce4e8b96f449a360efd1ca651bf4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44ab2ceee9e468d72a3e8f2487567659c88484ce57d1eee5da070d862ebfb9b1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "789c4c97076759e27af5977527171964ab1f05343003da4f37be3f4559b14217",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5701202ebe9e7ec44b8f7fcc481e171dd2693469a6cea91efd9b084ff546df7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a33c906b6f8cffd49ff1ce9131a66c6194602fe577e825795a46e799d1fdb0a9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d23c565149b0ea4f2cad0e2a593bbf42c086c92d32f0c9ca5ef1c47c71dae9dd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0315aeb660a024b24d3d1207cc0981e3265ee1ae142a8347b5d01948fb8344b5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "de96f7b913182f41be87aca2f88f3b5558e5d745767c160728a10d2881a49f34",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "515dd5797def5a78251bd133ba871a32eb0f53310dc2fd52a33cb43daf2fa7a3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "91f708a5865f833af4d8bf615865d36dfb9cfc584fd417df2bb2c1446dfacf42",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f06c8fb52c59e8935c6156a6961f062a58932138610dc972c07213f54024552a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6eaf72b323210bf90daede11c9da99c0504784efc86b2f952b5f1a11bf50a0fd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7080583f69e495ba5e9c5abfd6eff3bbcd6281b56afe2456824fc3a5e16a27ef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f8adf2fb2713b740b8af3d826e09d23cd9e2fbb1d6b48ecc3e778e80449c2399",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c632f481f3b903a98ea7e69caea4a3d59cc6fdcbbb549478279e4d64b505ee87",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a195e04729776d11448a1fe1ddf5b85d870f5e3fd2c096b22493b657121da59f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0d2948ecb1d4a3803f19b1773f67f1c0910d3e3ed2273a07c15e96046662321f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "animal-needs-and-environment-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58c3a023a28f5cf7ad6f0f4ddbeec4a71290d8c2f13b22e4933991730e6e5ad0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18642655aa17866b4f90ed87fcd4b9e7834bfb4dcbb0b3231c1a2345b5b62adc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e105a480d66a9140a4dfdb8da4944fb94f412223e702508592a1d63d89728dbd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c3915207adb29273d757cdfc8f199ca844ff3b3fb194816ae44119e14456cdd0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10afb589ccfba031ef8040417debc84c475d9676e14055e6068fc6472ca0515d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a0368ad12eea5b91f5d5e8d7c3a50d997ac9b323e3963c15c76a350772a607d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9120f60b72839f8bb5785a829080ae6f2039f55aa8668d5c8dcd1a49806ed4be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af0cd8c0dd2b09a162fac5a959a8e66c833c0d1269ade1c1f9221cb27941670d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0ac6595a49e8a7b841d0d91dcab9984dd225271fde3f75cfe85c237920e1cbc3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "31ed6cae97ab621f9011e334eaec8aa71a9afd6b8dbce7efd4702c5022791571",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ca7e09d298507c24afe30dee24148bdb5d1ae5b33f5b3b2099dd3081ea8790ba",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4748c7f8f6be6f0cf8d5319588e7e3e3ec1c09462ae0a380f3fe4b0549a7601c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "95221325e0c09c3b8332373d6786fdbed439edfd9486ea06dacfc13acbb25799",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25adebcd5946dbcb7aa00db1eac681fe6d6ee2d605bf5433c32e93210eff8d67",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "060da40fade2aa111f01a237ae644f134bf351ae3f311e81ea22e68189765275",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f279fa775470c568181a9728bef3c5f89e64429c2787ea45eeaa9015c5950c20",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0c5c22b5e3f5bccf986950324ea49296a402bce49950057ad56412173b88c6ca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "557dfae3efc10bc85afb75c466752d333e7d268a422af85d3eda7c119e84e6d1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8ef23cf06cc77369fffc81ebddf7e9b36ff12e20d51e140398b95bb6ec86b813",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42f6f8170f6cb79fbb2104009df17f3e673aaa3674ba365e9fcb9ec5a5996e23",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9fdcd6585b17be3022523a336a19b3918e63fafdee7112306ca3f7beba1a9088",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "228db5fdeec265a523a024913a61a5e52adf2ceb6e7a7e4b5c6413f394f9499e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b87e48fb63398c06b39b2b2ff83d4e5bf29b90d1d98618b4b67f2c3584486663",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13bf82662818c4cfc6b8496612ac4a4ea3bbbd22f94ef0ec7cf927dcb98df102",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6bdfb89eb16b7e7d2d06680d29ed08c621ae9ff5eba408074bd1b2c013afc51",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "95ff4cb702dd2466c87bcf6934adc8d2be08c97930e80c2b0b9c8e3a691f16db",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "animal-needs-and-environment-change"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "091838135a4080bda0a2b21f8b94d11ebd2c64172903da926350a8a36d1b06df",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5ab8e9c2a3840320214caa921c42bf650946ee503f589134ca664fc9c6564637",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "985b9641c54af318972dfb91ad8f2d5a1f42f2477d26cafdcf28d06350c0e039",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d1964d0cddd3bdb9da29143b46adaf67f506cef2cb11aa0fb8228079100fbb19",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "animal-needs-and-environment-change",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0068afbbfca286fa4a27bf7bcf95930da0086438cd6d005b71b37efb8e288cd1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b60829e9b57678c3dc1514c235bc05bd006c4b1ebbd3af27fcac8c4f0775a2e3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e96e0eded804ca340fe889b1a979f739c93cd4ae8a21ab8f0157c447e775274d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff28156295ca77242f3b1b933c4c979c742a1b95bfd8973d82409f0ff966c92d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "needs-based-planning-and-revision",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5fff0729decf5dec248e16e41ace6853a0b79a37607f6bdfd15e83e7dd7720e2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d706a2d20e7bffb52c871bf1bfef5163d85d0a371b33a16afbe12de7905a38e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "28e84f276022b7c86fe82e0e6e40ac204e846fd42ab4f6de181ec3b3ae9f4fe5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05b5e6e14af3ed96fe71bba31577b22329ecadd8eb01744e5b6b6e1f9e9ade6a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "animal-traits-and-respectful-observation",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c86c243a371cbdd122a94d7ad58149a22feaa5491f29a731644aaf82c735e456",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference",
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a471276ffa23c55c803de58e344c490dfc1ea0b8b32d209a6d224500dcd8dcf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "growth-sequence-and-patient-waiting",
+        "observation-evidence-and-inference",
+        "animal-traits-and-respectful-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "153b50398cc2ff83edfa7fbc9ec13c60023fcacfa73b83105bf65b7af0a0a97c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-needs-and-environment-change",
+        "needs-based-planning-and-revision",
+        "story-event-sequence-and-cause-effect"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "83ad9db3fc436e2fc7d0312462f96321ccb03afd59d9e52904785f9d76468640",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "needs-based-planning-and-revision",
+        "story-event-sequence-and-cause-effect",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c15560040d8383b0d08e4899cecc2adf1c1d162f305ad560e51438090024916d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-07-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-traits-and-respectful-observation",
+        "story-event-sequence-and-cause-effect",
+        "needs-based-planning-and-revision",
+        "animal-needs-and-environment-change",
+        "growth-sequence-and-patient-waiting",
+        "observation-evidence-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c1bcb1540019b0f2142393a01b7498af7f3f9b371eb876cb16d7a38f8babb15f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-chinese-unit-07",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-2/chinese/unit-07"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/chinese/unit-07"
+        ],
+        "coreKnowledgePointIds": [
+          "animal-traits-and-respectful-observation",
+          "story-event-sequence-and-cause-effect",
+          "needs-based-planning-and-revision",
+          "animal-needs-and-environment-change",
+          "growth-sequence-and-patient-waiting",
+          "observation-evidence-and-inference"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/chinese/unit-07; src/content/textbooks.ts#grade-2/term-2/chinese; src/content/grade-2/term-2/chinese/unit-07/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "按本册登记的 TapXWorld 固定快照目录和课程 sourceTopics 对应动物特点与尊重差异、故事事件顺序与因果、新情况下的计划调整、动物需要与环境变化、成长顺序与耐心等待、观察事实与推断。版本边界为登记的 2017 年 12 月第 1 版（TapXWorld 提交 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7）；属于 tapx-fallback，不称为最新版，不复制课文原文。原课程 48 题已有课程台账记录为 48/48 审校，本包补 42 道原创选择题，使每档各有 30 道候选；挑战题由作者逐题自审，尚无独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-chinese-unit-07/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-traits-and-respectful-observation",
+              "animal-needs-and-environment-change",
+              "observation-evidence-and-inference"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-07/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "story-event-sequence-and-cause-effect",
+              "needs-based-planning-and-revision",
+              "growth-sequence-and-patient-waiting"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-07/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "story-event-sequence-and-cause-effect",
+              "needs-based-planning-and-revision",
+              "animal-needs-and-environment-change",
+              "observation-evidence-and-inference"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-07/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-traits-and-respectful-observation",
+              "animal-needs-and-environment-change",
+              "growth-sequence-and-patient-waiting",
+              "observation-evidence-and-inference"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-07/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-traits-and-respectful-observation",
+              "story-event-sequence-and-cause-effect",
+              "needs-based-planning-and-revision",
+              "animal-needs-and-environment-change",
+              "growth-sequence-and-patient-waiting",
+              "observation-evidence-and-inference"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-07/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-07/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-07/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-07-high-14"
+      ]
+    }
+  ]
+}

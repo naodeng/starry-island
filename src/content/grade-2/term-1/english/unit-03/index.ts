@@ -25,7 +25,7 @@ const appearanceWords = lessonProfile(
     { word: 'handsome', meaning: '英俊的' },
     { word: 'pretty', meaning: '漂亮的' },
     { word: 'tall', meaning: '高的' },
-    { word: 'thin', meaning: '瘦的' },
+    { word: 'short', meaning: '身材较矮的或短的' },
   ],
   [
     phraseQuestion('“她很漂亮。”对应哪一句？', ['She is pretty.', 'She is tall.', 'He is handsome.'], 0, 'pretty 表示漂亮的。'),

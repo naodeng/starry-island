@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { curriculum } from '../content/curriculum';
 import * as unitLoader from '../content/unitLoader';
 import type { Curriculum } from '../content/types';
-import { getSessionPath, getSubjectTitle, getTaskPath, resolveAppRoute, resolveRoute } from './router';
+import { getChallengeCenterPath, getChallengeGroupPath, getChallengeGrowthPath, getChallengeTaskPath, getChallengeWrongQuestionsPath, getSessionPath, getSubjectTitle, getTaskPath, resolveAppRoute, resolveRoute } from './router';
 
 const unitKey = 'grade-2/term-1/chinese/unit-01';
 
@@ -15,6 +15,34 @@ function createPlayableCurriculum(): Curriculum {
 }
 
 describe('router', () => {
+  it('resolvesChallengeCenterGroupAndEncodedTaskRoutesWithoutLoadingCurriculum', () => {
+    const groupId = 'grade-2-term-1-math-first-half';
+    const taskId = 'grade-2-term-1-math-first-half/high-01';
+
+    expect(getChallengeGroupPath(groupId)).toBe(`/challenges/group/${groupId}`);
+    expect(getChallengeCenterPath()).toBe('/challenges');
+    expect(getChallengeTaskPath(taskId)).toBe(`/challenges/task/${encodeURIComponent(taskId)}`);
+    expect(getChallengeWrongQuestionsPath()).toBe('/challenges/wrong-questions');
+    expect(getChallengeGrowthPath()).toBe('/challenges/growth');
+    expect(resolveRoute('/challenges')).toEqual({ kind: 'challengeCenter' });
+    expect(resolveRoute('/challenges/wrong-questions')).toEqual({ kind: 'challengeWrongQuestions' });
+    expect(resolveRoute('/challenges/growth')).toEqual({ kind: 'growth', initialView: 'challenge' });
+    expect(resolveRoute('/growth')).toEqual({ kind: 'growth', initialView: 'overview' });
+    expect(resolveRoute('/settings')).toEqual({ kind: 'settings' });
+    expect(resolveRoute('/settings/backup')).toEqual({ kind: 'settingsBackup' });
+    expect(resolveRoute(getChallengeGroupPath(groupId))).toEqual({ kind: 'challengeGroup', groupId });
+    expect(resolveRoute(getChallengeTaskPath(taskId))).toEqual({ kind: 'challengeTask', taskId });
+  });
+
+  it('rejectsMalformedChallengeRoutes', () => {
+    expect(resolveRoute('/challenges/group/')).toMatchObject({ kind: 'notFound' });
+    expect(resolveRoute('/challenges/task/%E0%A4%A')).toMatchObject({ kind: 'notFound' });
+    expect(resolveRoute('/challenges/group/invalid%20group')).toMatchObject({ kind: 'notFound' });
+    expect(resolveRoute('/challenges/group/invalid%00id')).toMatchObject({ kind: 'notFound' });
+    expect(resolveRoute('/challenges/task/too%2Fmany%2Fparts')).toMatchObject({ kind: 'notFound' });
+    expect(resolveRoute('/challenges/unknown')).toMatchObject({ kind: 'notFound' });
+  });
+
   it('getTaskPathAndSessionPathUseCanonicalIds', () => {
     const taskId = `${unitKey}/basic/task-01`;
     const sessionId = `${taskId}/session-01`;
@@ -28,8 +56,8 @@ describe('router', () => {
     const taskPath = `/${unitKey}/basic/task-01`;
     const sessionPath = `${taskPath}/session-01`;
 
-    expect(resolveRoute('/', instance)).toEqual({ kind: 'catalog' });
-    expect(resolveRoute('/achievements', instance)).toEqual({ kind: 'achievements' });
+    expect(resolveRoute('/courses', instance)).toEqual({ kind: 'catalog' });
+    expect(resolveRoute('/achievements', instance)).toEqual({ kind: 'growth', initialView: 'learning' });
     expect(resolveRoute(`/${unitKey}`, instance)).toMatchObject({ kind: 'unit', unitKey });
     expect(resolveRoute(taskPath, instance)).toMatchObject({
       kind: 'task',
@@ -44,6 +72,25 @@ describe('router', () => {
       task: { id: `${unitKey}/basic/task-01` },
       session: { id: `${unitKey}/basic/task-01/session-01` },
     });
+  });
+
+  it('resolvesHomeAndCourseCatalogSeparatelyWithoutChangingCourseDeepLinks', () => {
+    const instance = createPlayableCurriculum();
+    const taskPath = `/${unitKey}/basic/task-01`;
+    const sessionPath = `${taskPath}/session-01`;
+
+    expect(resolveRoute('/', instance)).toEqual({ kind: 'home' });
+    expect(resolveRoute('/courses', instance)).toEqual({ kind: 'catalog' });
+    expect(resolveRoute(taskPath, instance)).toMatchObject({ kind: 'task', task: { id: `${unitKey}/basic/task-01` } });
+    expect(resolveRoute(sessionPath, instance)).toMatchObject({ kind: 'session', session: { id: `${unitKey}/basic/task-01/session-01` } });
+  });
+
+  it('mapsGrowthAliasesToTheirOriginalGrowthViews', () => {
+    expect(resolveRoute('/growth')).toEqual({ kind: 'growth', initialView: 'overview' });
+    expect(resolveRoute('/achievements')).toEqual({ kind: 'growth', initialView: 'learning' });
+    expect(resolveRoute('/challenges/growth')).toEqual({ kind: 'growth', initialView: 'challenge' });
+    expect(resolveRoute('/grade-2/term-1/chinese/unit-01/basic/task-01/session-01', createPlayableCurriculum()).kind).toBe('session');
+    expect(resolveRoute(getChallengeTaskPath('grade-2-term-1-math-first-half/high-01')).kind).toBe('challengeTask');
   });
 
   it('rejectsUnknownSubjectsAndMalformedNestedSlugs', () => {

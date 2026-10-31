@@ -1,0 +1,1523 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "351c54954be3790ef16bc202d9015131e18a0057c6ade9828090cdd243e2e5a1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c6525aba0fd32f4ae1d989a6c4bfc85213eee1001e95054fd04c75357982774",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "624299727d577a34f64ca8b3e860666a7a1d944d9a972b2e73788ca2157b0d97",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dcbc349ef816ac05223609468c74d67698aecfff5425f8a51b91f3d95c2a5d35",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-05",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "877e441310ab03717559a0c15c519f5b35866f9e3705c8a3573d430c2356e7a9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af16ca842d51b5e796f8b521931eb2bfca4a0034fe6312edb5724ab9cfe6dbdb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "499bf36dd610cd2fde397dc0996ffeef64bd6666ff4b6faeba9a6146b54cbe65",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05ad60eaaa515de0f8738ea701a39359783d068d038b0fd78f00229a7a1b0d50",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fb2582b2e7a112bcad51d239320dd2b4f981de23f11d5f5983b42a34364dd25b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62215faa5086a1e98e64cd5190f161491d7b0c4b71d5432ab648f8eb2987c8d3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87b92d562992c51b88420fe6490115a2109f08a72a885f054746e1030789326e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5194944450bb57a4ca940bc5da9576dca22a2beb1f493814b01575d0636708ec",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-05",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a793d1b5e7e3510f7de266415b92cd1e6fac8f5330db793de5affc8e9e58ffdc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c83533c3eca12f16c3fdb5a57ccad98b436a454442d4492296a14419ab9af7f3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37320b154820790efa2f040038f32649d4d7ff4b94fa1a17697db97c5f7f5189",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-05/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8a1dbe49dde474043c064243287baacbafe831a2c4fa73cb1ab6806b40d34b6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5be2cdfcaeac3eaa4fa8433e88efbc3bf0bd7b03b82a79d7bc5547d77674fb39",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9ec4ae71f3459f18b31f87370ddabd23c7acff00115d7581408b997fa7adf789",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e33853200d7a41860b4aae690c69c0be39ff3511880b8d68303bb58bd343b73c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18f80c6c0bcd82b55478ef564b90b1f185883b3118290c75dc18f3072c5a8cde",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b144cb77f77323d70ccaee945644d907409e82d83a25f2472b81ed0e8f36de79",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09be96154b54fad1d27a274aecd267a561dd9dce97bbc66203b688b5420c8cf3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a0cbb2a6afa5d40f01ef0dda48ca2408b8ef98cd3c3f8ae2aef44f6dde689f65",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41fcfc5bc721c96c5063205e2acba28c2c8bd0c96f8dd3356c71b8fda5e5b069",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb2321fb9486f0e90a1aa09f73e664e6a0f1c0f3d7defb922e4a0911ed507bed",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "94596fc2c0f1b600cda684f1e4e5c7e61813b1ffef6629fc5e47f8f5868963c2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "26e3107856f553876897fc685602aef3aafd8faf5fd366145f2649f8256dfb1d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c0afb3e009595839e2abff4a534454c174bafd270c5d724e221587c928520c24",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "90dde9561bf68040dad27795fd53b1b64ef74992ad42b2086bdbf38d28d3e2fc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6ff4f89dfc40e2bc244a23b6a4d448b97ab219791096d3485e8710d23448d0e3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c2b78a29de8683abdea938493a9723f4abc5544c5d3756ee858bfa0557b4a5d2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "03fe3315e5af9ab0379c3a539d13940abacbaef758930d90c5a3238a23438362",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5cc9151be5a53475162bb31b7f1532829494f6c6f0c780c00ef4010e16d749d9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36379306d1abd62cdff4099d522e83ba3d3f57e21a2c78c165f3e57c78ff0afc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5ba4e3bc64743a375833d3965e9cd58f5fe900c3fd8464523e62c4bf69899ce0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc9d849b051fa8e4795bfb862118236f5844f5302e46f8d931dce765d2eab9bc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d0531e319bc3ecdcb6c97785d5a1eca1c6dbbae203e084d01f3aa4d1671cdb27",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "834e3c001d994763d321d15a57e83dda99ccdd9f0093675f324afa1dd8963c80",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-07",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9535ba85cf5fc9f6a582b96ca301890b3f2bcebc8de16c2ee4d54f57a707903c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1308670e441893375f9072ca8d48778a2e1dde713b70c60adc2338923e83e30d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "adde602185c08b2f4aee162436f025f27725be062973a2323e72f396d9a75de4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a4740dda3030683aa3327f79c0190735c9ff1d9f6049747692b837c4a840740",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "56b461f85551c5f04b3879aa5d77810ec97cda62396efd22df8f20e58bcb4b44",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c279669aafc10401f052ece75262e60dd08cc06db94a4f266fdcb0a0dd7a0b4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1b1952600f3edd0cc1cd795bf5f1a8b4bd777fdb131da08b704dad38e5c90b37",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b03a63e0b93051b7f1c39bac3693569a187e3b43af3a1dd13c7d7c90d6e46236",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "91853ae1c5e46f933754c705afe2a30427edb2ac8afae0b71e6cd086358447d0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f0865263ed3ec739039def563b6f05fdace6e54a914c3eefa10d800a5f054e36",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c1dab33c49acf6cd55ccafeb22bd242da272bd37bf527a3298da59459b2e7bd1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52d7b2d4ced3fcd80891a30c26a596e272f6718333bc1ac3a4e82b61f54c1146",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "39a5669d0423dfa4475b47db119ccd72f6e4af9b085594c3c0667fb20212e6f5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "66747937fabc0d7daf4797cf338f37a2833bc7299ba06032e53e6ca7ecaf307f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5b2b31f57263025f0f7eb82b171b4bc0e7e29c2888727cbfbae8c044a00d5bda",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "acaa559c114c30e59af4dbd571c8e623018cabe3031e40fd9af3db3811c03024",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34dae135f6d7056e12506aa9b4c897faa9af584853752a75a32c759982e0ebc3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-16",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36c326614d2edf8cacd0c8d241113d07492f3cc5278529ec1c8cc04c6073cd67",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-17",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f642d6fd82a1d7108155e852fe48130b1747ce126c218ce3e9bdfea454d5745e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-18",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4b1eecb51f19ec078ee4ef6e3f67d8fc0abff8e01e493b1d3ee87f257bcb48a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-19",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a1b2c3ee2d8222306ec6a32870a09c7f99dc7233b171cece2dec26983312347",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-20",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4ff700e16fb59caac34ceccd656a2e513834b45f9de83c1a96272019965598cc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "803337eb726744ac7d4f586d6138763ab2b29b5ae8a3e3d4943d23e78f96a352",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "48e8e1692cc3f5a33bf2e53d9b32f66d1a36841a921df15b06c93f019ebd85cd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d7c2809276f866a7455ca0ae0fd86a050282787c1c41f392e2d979b8d8b15f36",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba654276a079bad382e13a784d152337ee6a0c67930b410fa78c997b8f1003eb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47eeb930a870d37483e6d6c2dcbadad7a3a65a60b23ccf70ba8cfefa27e3b081",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e9ff0c14af437d00a92a4cdc97a67e723f68fe149a4d2fa2e1e3e1ab9c3b5201",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "286dc0d910bf0ecd86a261ac4791b79713fc3527be09503e0dc058f596718574",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "67a7dd6f353be64b422d4f0bafd4ef737d42b8edea2251f7769e29e84a1f33a6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a19a2000a51ade4b78a5ef8624dc3b32ea2917edda8f37dad4ed1f471e6eec08",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db09531610b62b2bedbceff4467f44b6e61554e35eac7d4a93d66998c4e8ebef",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-06",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a4b4e0e37cb13bc6f1b9f69eeb81985d4a28623da7509639cc768f952e9a7aec",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-2/english/unit-05/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c68419ef9a171217186b12b7846a24adce546af40a1ddc2dbe3ba7ee378ac3a8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-01",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5f996416bd0c255743ca29d9da7e84da837c905d13cd6d0e0caef2e6f72f5bd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-02",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a81144f6feeae7b50cc3df71912419e7eb7490b40b1a0087beba4db9f3418f1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-03",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "126ab89fd941a1f71fdf6eefb06132a2261798f05803d92b60c1c5ae307577d0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-04",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0c94c663b43e38fd1c40dcb7229e86c6bd6c3596872569d632a807f804ab38a6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-05",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e8b1a1d2a3a38d9d7ab395f4b504f0f19078146f773cb93e21e1fc6425d06274",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-06",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "588a81ad03fd120cdcef9e449e868c99b393731ba6de870fa0092c514faa175a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-07",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff9081c268215eee22fdc455c1211db41b289cf8501487c34a0addc40908e413",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-08",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fe1582f54d8ca1569fdf81442c4f2dbf3308e8309869a87a5056ed6cbad3aa82",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-09",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "08765ad52da59aa15e40d958b69c88242bc874ae087ec3186707f0c5ff9c591c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-10",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79e67e79983c092be3e91513eb68e3c35fdbf781c0eebcfecf6bcace7abd3469",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-11",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "33d84af4e03bd49957dc566ddeb6ab2627395e47d30a131101d7a48b9a76d4b8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-12",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e4e24e7e9451f71424bf4f41f52f143b54648c7b22f852eb2879a9d46bd1b36",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-13",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec2dce816490a7cce6d288bbb99c949ff3d66aa3db08c559c4b4cb8cd4af83d6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-14",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42cccf4cd13e409ec71cd95885e1c3baf4f427ca6e2663645d5bca1d2c79deaf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-15",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6a612cacf9eb0a26f26e6f45ee00d644425c46cb722c51db67a2bcad1e978217",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-16",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cedbf28c122d46e073bca23a7e7b881bb09a0d1be5f2b748f239758da2b85a87",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-17",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-polite-requests",
+        "drink-request-word-order"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "500c7b08b423cbf40398bf8910406c88e809677db8a498e8a1582eaf50f02eba",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-18",
+      "activityId": "challenge-supplement-grade-1-term-2-english-unit-05-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "drink-word-meanings",
+        "drink-category-classification",
+        "drink-polite-requests"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1da33a791f993ee55399dc54da3c5e41c8080fefa13543b4b1c1318db9e8a91",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-2-english-unit-05",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 2,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-1/term-2/english/unit-05"
+        ],
+        "coreKnowledgePointIds": [
+          "drink-word-meanings",
+          "drink-category-classification",
+          "drink-polite-requests",
+          "drink-request-word-order"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#固定快照目录映射; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应 Drink 单元饮品词义、饮品词与礼貌请求句分类、Can I have…? 礼貌请求及词序；采用课程台账记录的 TapXWorld 固定回退快照，英语学校开设状态仍未确认。48 道原课程活动中10道跨难度重复题仅从闯关池排除，不修改原学习 Task；新增52道原创题（基础14、进阶20、高阶18），题库和审校台账标记为作者自审，未独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-2-english-unit-05/basic-01",
+            "difficulty": "basic",
+            "requiredKnowledgePointIds": [
+              "drink-word-meanings",
+              "drink-category-classification"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-05/basic-02",
+            "difficulty": "basic",
+            "requiredKnowledgePointIds": [
+              "drink-polite-requests",
+              "drink-request-word-order"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-05/advanced-01",
+            "difficulty": "advanced",
+            "requiredKnowledgePointIds": [
+              "drink-word-meanings",
+              "drink-category-classification"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-05/advanced-02",
+            "difficulty": "advanced",
+            "requiredKnowledgePointIds": [
+              "drink-polite-requests",
+              "drink-request-word-order"
+            ],
+            "targetCount": 15
+          },
+          {
+            "id": "grade-1-term-2-english-unit-05/high-01",
+            "difficulty": "high",
+            "requiredKnowledgePointIds": [
+              "drink-word-meanings",
+              "drink-category-classification",
+              "drink-polite-requests",
+              "drink-request-word-order"
+            ],
+            "targetCount": 15
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-05",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-05",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-05/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-basic-14",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-1/term-2/english/unit-05/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-15",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-16",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-17",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-18",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-19",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-advanced-20",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-2/english/unit-05/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-15",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-16",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-17",
+        "challenge-question:challenge-supplement-grade-1-term-2-english-unit-05-high-18"
+      ],
+      "releaseIntent": "released"
+    }
+  ]
+}

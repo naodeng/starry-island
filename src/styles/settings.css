@@ -1,0 +1,41 @@
+.settings-page-shell { max-width: 880px; padding-bottom: clamp(36px, 6vw, 64px); }
+.settings-page-heading { margin: 8px 0 18px; padding: 10px 0 4px; }
+.settings-page-heading .eyebrow { margin-bottom: 5px; }
+.settings-page-heading h1 { margin: 2px 0 6px; color: var(--animal-text-color); font-size: clamp(30px, 4.2vw, 36px); }
+.settings-page-heading > p:last-child { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; }
+.settings-page .settings-panel { padding: 6px clamp(20px, 4vw, 36px); border: 1px solid var(--animal-border-color); border-radius: 24px; background: var(--animal-bg-color); }
+.settings-page .settings-section { gap: 10px; padding: 20px 0; }
+.settings-page .settings-section h2 { margin: 0; color: var(--animal-text-color); font-size: 19px; font-weight: 900; }
+.settings-page .settings-section > p,
+.settings-page .settings-achievement-link p,
+.settings-page .settings-backup-link p { margin: 0; color: var(--animal-text-color-secondary); font-size: 13px; line-height: 1.6; }
+.settings-page .theme-switcher { justify-content: flex-start; width: max-content; max-width: 100%; color: var(--animal-text-color); border-color: var(--animal-border-color); background: var(--animal-bg-color-secondary); box-shadow: none; }
+.settings-page .theme-switcher-options { display: flex; flex-wrap: wrap; }
+.settings-page .theme-switcher-options [class*='animal-radioItem'] { min-height: 44px; }
+.settings-page .settings-backup-link { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px; margin-top: 18px; padding: 20px 22px; border: 1px solid var(--animal-border-color); border-radius: 20px; background: var(--animal-bg-color); }
+.settings-page .learning-start-confirmation { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 10px; width: 100%; padding: 14px; border: 1px solid var(--animal-primary-color); border-radius: 16px; background: var(--animal-bg-color-secondary); }
+.settings-page .learning-start-confirmation p { grid-column: 1 / -1; margin: 0; color: var(--animal-text-color); font-size: 13px; line-height: 1.6; }
+.settings-page .learning-start-actions { align-items: flex-start; }
+.settings-page .settings-start-empty { max-width: 640px; }
+.settings-page :is(button, [role='combobox']):focus-visible,
+.settings-page a:focus-visible { outline: 3px solid var(--animal-primary-color); outline-offset: 3px; }
+
+@media (max-width: 700px) {
+  .settings-page .settings-panel { padding-inline: 18px; border-radius: 20px; }
+  .settings-page .theme-switcher { align-items: flex-start; flex-direction: column; width: 100%; }
+  .settings-page .theme-switcher-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .settings-page .settings-backup-link { grid-template-columns: minmax(0, 1fr); justify-items: start; }
+  .settings-page .learning-start-confirmation { grid-template-columns: minmax(0, 1fr); }
+  .settings-page .learning-start-confirmation p { grid-column: auto; }
+}
+
+@media (max-width: 420px) {
+  .settings-page .settings-panel { padding-inline: 14px; }
+  .settings-page .theme-switcher-options [class*='animal-radioItem'] { gap: 6px; padding-inline: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings-page *,
+  .settings-page *::before,
+  .settings-page *::after { scroll-behavior: auto; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

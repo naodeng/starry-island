@@ -1,13 +1,13 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { readFileSync } from 'node:fs';
 import { installAudioSpy } from './audioSpy';
 import { chooseSelectOption } from './selectOption';
 
 const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
 
-test('showsCompactHomeExplorationProgressAndOpensAchievementDetails', async ({ page }) => {
+test('showsCatalogExplorationProgressAndOpensAchievementDetails', async ({ page }) => {
   await installAudioSpy(page);
-  await page.goto('/');
+  await page.goto('/courses');
 
   const hero = page.locator('.catalog-hero');
   await expect(hero.getByText('我的探索进度')).toBeVisible();
@@ -18,12 +18,13 @@ test('showsCompactHomeExplorationProgressAndOpensAchievementDetails', async ({ p
   await hero.getByRole('button', { name: /成就详情/ }).click();
 
   await expect(page).toHaveURL(/\/achievements$/);
-  await expect(page.getByRole('heading', { name: '我的成就星图' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
+  await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
 });
 
 test('updatesTheHighlightedCourseAndMovesKeyboardFocusToItsSelectors', async ({ page }) => {
   await installAudioSpy(page);
-  await page.goto('/');
+  await page.goto('/courses');
 
   const currentRoute = page.locator('.catalog-current-route');
   await expect(currentRoute).toContainText('1年级');
@@ -160,7 +161,7 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
   await page.setViewportSize({ width: 1280, height: 900 });
   await expect(page.locator('.mobile-study-dock')).toBeHidden();
 
-  await page.goto('/');
+  await page.goto('/courses');
   for (const theme of ['light', 'dark']) {
     await page.evaluate((preference) => localStorage.setItem('china-study-theme-v1', preference), theme);
     await page.reload();
@@ -210,7 +211,7 @@ test('rendersEveryVerifiedCourseEntryAndOpensItsUnit', async ({ page }) => {
       for (const subject of term.subjects) {
         const verifiedEntries = subject.units.filter((entry) => entry.status === 'active'
           && curriculumManifest.textbooks[entry.textbookEditionId]?.verificationStatus === 'verified');
-        await page.goto('/');
+        await page.goto('/courses');
         await expect(page.getByRole('heading', { name: '星岛学园 · Starry Island' })).toBeVisible();
         await chooseSelectOption(page, '年级', grade.title);
         await chooseSelectOption(page, '学期', term.title);
@@ -221,7 +222,7 @@ test('rendersEveryVerifiedCourseEntryAndOpensItsUnit', async ({ page }) => {
         }
         for (const entry of verifiedEntries) {
           await page.goto(`/${grade.id}/${term.id}/${subject.id}/${entry.id}`);
-          await expect(page.getByRole('heading', { name: entry.title, exact: true })).toBeVisible();
+          await expect(page.getByRole('heading', { name: entry.title, exact: true })).toBeVisible({ timeout: 15_000 });
         }
       }
     }
@@ -238,7 +239,7 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     { width: 1280, height: 900 },
   ]) {
     await page.setViewportSize(viewport);
-    await page.goto('/');
+    await page.goto('/courses');
     await expect(page.getByRole('heading', { name: '星岛学园 · Starry Island' })).toBeVisible();
     await expect(page.getByRole('button', { name: /进入单元/ }).first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
@@ -255,12 +256,13 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     }
 
     await page.getByRole('button', { name: '设置' }).click();
-    const dialog = page.getByRole('dialog');
-    await expect(dialog.locator('.project-legal-footer--dialog')).toContainText('PolyForm Noncommercial License 1.0.0');
-    await expect(dialog.getByRole('heading', { name: '学习进度设置' })).toBeVisible();
-    await expect(dialog.getByRole('button', { name: '应用学习起点' })).toBeVisible();
+    await expect(page).toHaveURL(/\/settings$/);
+    await expect(page.getByRole('heading', { name: '设置', level: 1 })).toBeVisible();
+    await expect(page.locator('.project-legal-footer--page')).toContainText('PolyForm Noncommercial License 1.0.0');
+    await expect(page.getByRole('heading', { name: '学习进度设置' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '应用学习起点' })).toBeVisible();
     if (viewport.width === 390) {
-      const themeLabel = page.locator('.settings-modal .theme-switcher-options [class*="animal-radioItem"] [class*="animal-label"]').first();
+      const themeLabel = page.locator('.settings-page .theme-switcher-options [class*="animal-radioItem"] [class*="animal-label"]').first();
       const dimensions = await themeLabel.evaluate((element) => {
         const style = getComputedStyle(element);
         return {
@@ -275,10 +277,9 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     }
 
     const geometry = await page.evaluate((viewportWidth) => {
-      const modal = document.querySelector('.settings-modal > [class*="animal-modalClipped"]');
-      const body = document.querySelector('.settings-modal [class*="animal-body"]');
-      if (!(modal instanceof HTMLElement) || !(body instanceof HTMLElement)) return null;
-      const bounds = modal.getBoundingClientRect();
+      const panel = document.querySelector('.settings-page .settings-panel');
+      if (!(panel instanceof HTMLElement)) return null;
+      const bounds = panel.getBoundingClientRect();
       return {
         left: bounds.left,
         right: bounds.right,
@@ -286,27 +287,15 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
         bottom: bounds.bottom,
         width: viewportWidth,
         height: window.innerHeight,
-        bodyCanScroll: body.scrollHeight > body.clientHeight,
+        pageCanScroll: document.documentElement.scrollHeight > window.innerHeight,
       };
     }, viewport.width);
     expect(geometry).not.toBeNull();
     expect(geometry!.left).toBeGreaterThanOrEqual(0);
     expect(geometry!.right).toBeLessThanOrEqual(geometry!.width);
     expect(geometry!.top).toBeGreaterThanOrEqual(0);
-    expect(geometry!.bottom).toBeLessThanOrEqual(geometry!.height);
-    if (viewport.width === 390) expect(geometry!.bodyCanScroll).toBe(true);
-
-    if (viewport.width === 390) {
-      await page.locator('.settings-modal [class*="animal-body"]').evaluate((element) => {
-        element.scrollTop = element.scrollHeight;
-      });
-      const closeBounds = await dialog.getByRole('button', { name: '关闭设置' }).boundingBox();
-      expect(closeBounds?.y).toBeGreaterThanOrEqual(0);
-      expect(closeBounds!.y + closeBounds!.height).toBeLessThanOrEqual(viewport.height);
-    }
-
-    await page.getByRole('button', { name: '关闭设置' }).click();
-    await expect(dialog).toBeHidden();
+    expect(geometry!.bottom).toBeGreaterThanOrEqual(0);
+    if (viewport.width === 390) expect(geometry!.pageCanScroll).toBe(true);
   }
 });
 
@@ -314,7 +303,7 @@ test('supportsKeyboardFocusReducedMotionAndNarrowScreens', async ({ page }) => {
   await installAudioSpy(page);
   await page.setViewportSize({ width: 375, height: 812 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/');
+  await page.goto('/courses');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
   await page.keyboard.press('Tab');

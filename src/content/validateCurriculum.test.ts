@@ -523,4 +523,57 @@ describe('validateCurriculum', () => {
       path: `textbooks.${textbookId}.sourceKind`,
     }));
   });
+
+  it('acceptsUserProvidedTextbookWithMatchingValidIsbnUrn', () => {
+    const curriculum = createCurriculum() as unknown as { textbooks: Record<string, Record<string, unknown>> };
+    const book = curriculum.textbooks[textbookId];
+    book.sourceKind = 'user-provided';
+    book.isbn = '978-7-107-38912-2';
+    book.sourceUrl = 'urn:starry-island:textbook:isbn:978-7-107-38912-2';
+    book.latestPepEvidenceUrl = 'https://pep.com.cn/evidence';
+    book.fallbackReason = null;
+    book.tapxCommit = null;
+
+    expect(validateCurriculum(curriculum as unknown as Curriculum)).toEqual([]);
+  });
+
+  it('rejectsInvalidUserProvidedIsbnUrnAndTapxMetadata', () => {
+    const curriculum = createCurriculum() as unknown as { textbooks: Record<string, Record<string, unknown>> };
+    const book = curriculum.textbooks[textbookId];
+    book.sourceKind = 'user-provided';
+    book.isbn = '978-7-107-38912-3';
+    book.sourceUrl = 'urn:starry-island:textbook:isbn:978-7-107-38912-2';
+    book.latestPepEvidenceUrl = 'https://pep.com.cn/evidence';
+    book.fallbackReason = '不应存在';
+    book.tapxCommit = '5a80345f2043ba6f8db8d7be9cf3db82725ff1f7';
+
+    expect(validateCurriculum(curriculum as unknown as Curriculum)).toEqual(expect.arrayContaining([
+      expect.objectContaining({ code: 'USER_TEXTBOOK_ISBN_INVALID', path: `textbooks.${textbookId}.isbn` }),
+      expect.objectContaining({ code: 'USER_TEXTBOOK_SOURCE_MISMATCH', path: `textbooks.${textbookId}.sourceUrl` }),
+      expect.objectContaining({ code: 'USER_TEXTBOOK_TAPX_METADATA_UNEXPECTED', path: `textbooks.${textbookId}` }),
+    ]));
+  });
+
+  it('rejectsMissingAndMalformedUserProvidedIsbnValues', () => {
+    const curriculum = createCurriculum() as unknown as { textbooks: Record<string, Record<string, unknown>> };
+    const book = curriculum.textbooks[textbookId];
+    book.sourceKind = 'user-provided';
+    book.latestPepEvidenceUrl = 'https://pep.com.cn/evidence';
+    book.fallbackReason = null;
+    book.tapxCommit = null;
+
+    book.isbn = null;
+    book.sourceUrl = 'urn:starry-island:textbook:isbn:';
+    expect(validateCurriculum(curriculum as unknown as Curriculum)).toContainEqual(expect.objectContaining({
+      code: 'USER_TEXTBOOK_ISBN_INVALID',
+      path: `textbooks.${textbookId}.isbn`,
+    }));
+
+    book.isbn = '978-X-107-38912-2';
+    book.sourceUrl = 'urn:starry-island:textbook:isbn:978-X-107-38912-2';
+    expect(validateCurriculum(curriculum as unknown as Curriculum)).toContainEqual(expect.objectContaining({
+      code: 'USER_TEXTBOOK_ISBN_INVALID',
+      path: `textbooks.${textbookId}.isbn`,
+    }));
+  });
 });

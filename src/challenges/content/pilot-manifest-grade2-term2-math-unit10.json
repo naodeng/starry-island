@@ -1,0 +1,1497 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "multiplication-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7d1a7eb92900e6eb1cc2d5890d068100a768a81855c123e9e5a8dd9ec8bb2893",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab006bafddcd841671a2032cfec0684f406c75e6247cc19411fc51ba0c87a445",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f46d41507d53dfc2072f4ff2a4d37a08252e0a72bfc35dc47e935097f434e615",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "99687636afb69a31213234471a40732c2686c0b4884d7ae063bef62061d2875d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58da6aafa85046918fbb0f37cc06cb26d5107d5cfca41eccd554b643dc2fad10",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "division-facts-from-multiplication",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41d59469ecaae7daf63c0b171dad90771758710d978bcdcb242cf002841cfa35",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "quotient-and-remainder-meaning",
+        "remainder-less-than-divisor",
+        "interpreting-remainder-in-context"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a92c6ce67d622be9968e5dc7e036f87bb1e217ca7eb8e4e33a2d3d31da5587ed",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "417d5bdf7210a6f100997c9da57a678c5b032c0e1f78fe35dbd60ad215becd3f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5c83ce1b44a65fd44d71675404999a24290bb428f13e65a659ae3ddc3bed4d5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87866d1f54dad73f11e08433a754f8f1dae95e354e5807eae5858f5206155842",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mass-unit-conversion",
+        "mass-comparison-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a96f6af27a02c1e21b6ef98cf001dfcfc1f0ec9f4feac5c5535f4dc6ef8f533e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3aed5c77a302eb07a31c9fd1d91e7fff4bbb9441404e505335479ac7e8aea9ec",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a5806fe5722e038500e8ef3c88046ee3c040403080a332f40da3357d8f374c2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "division-as-equal-sharing-and-grouping",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db82e84d224a3b4ddcfb97324fa8773a16dc9c38bf74f0e503296a6b6f4da37d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0e27e7c431ba3b25bda8f70ec6735f2dbd43783a7ec11c7a9af55c448a27d693",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-10/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data",
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58479a3c4df279e518b0d1b1bd6c5e81f4ac05bb28d85171afbba7e3cb78120a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "multiplication-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad61907be522640cbd42013078cdb1607b23377393181cb64d397f2d47c78df9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "984a48329c18f3bf32a5091c5b6aeef7eaea1052f30f8ac49fc15b0e727b7f8b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0ef13487afc83b540285d0025d3a0811848d53143e7697b66459f3e151f4ec50",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1e53610b409be26cc62d66df09296f2683d7ebdaff815bfdc4047c435d864997",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0ef945155e1fa87c4bcd16bf7d044c52df1bf0dca629471c3e99930e7505aacc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "945a2010c0b8c79a8683251a64161e438e075d86d30a523365fdd6f406c07bcf",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3e1c533b8d6fd39b720a4a40858fa99ff35fded2d9caf1a6beacb306e9519d71",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "division-as-equal-sharing-and-grouping"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7652d0b6fa1f55422ad6c5df1444dbab3c0ebd98bb34a3fea3cb75a19df83f81",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b04a9e87af99d5f6beb95b02c4d9cce80e84435c1cb8a919c4a52ab1c10b38cc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "04d7058a1645ac0dffd747e09d3e2a9cdc88e7a32ffa0ce7d94a8d2ccb42dbeb",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec793bbcae63be2d42220f5cc2c5a2b05b614f09fba55865e94f4475aeaf7e0c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d77ed9dc6a295fd3e455f995b1f8132b8c6cd5c9f05b17fccfdaadcff1499358",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "comparing-and-ordering-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35b3d87b6d741cb392ac545b001a7d73a97d855f2318704715bc90d0bd238787",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d32ae6d773294d88f2cbf744555ff7e16a548b30694e74082d2a9d725a6ce9f4",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "055e48e5e2995a160887ddb74a066d5cb67dd5fa5f0f29647c346090def5669a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9032ac93b76dfba963afc014f52431e12dcda61d5aabf7b3d2cd7a8113fabe08",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "quotient-and-remainder-meaning",
+        "remainder-less-than-divisor",
+        "interpreting-remainder-in-context"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "24c00248919996e40746570fe17171276e825d52921635f97ce4ea034717686e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "division-as-equal-sharing-and-grouping",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ba2ba6abf27642d378f44131020eb88dc1c9b57517116c5d5a097ccac33e4b1",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mass-unit-conversion",
+        "mass-comparison-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e581c524974220c96317f263b51ccef6baa87eae687c3f41ca810d759fec06f6",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7cbf1c05ff476c0d9ba6bb4f11c7c974fab7150719f28581f93917e58b55112a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4860407281735d8121321b1c7304c7f794ae7f62aa99f31dd7792556a25b579",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf5d8f57a9ad37029c3b4aaf6a3f18ef4ca260a35935dc0198bbdadf0a34a997",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "addition-and-subtraction-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "486fd6b259f5ab36ec756d1e797eec8c7689452de10e658676a9464949caa8c5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2df97926482cf5b0a58cf5e169c3ce7a866cbfd0f36fb34cec15e729cea9c5e0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a6d8976b0dce6844399e63331f608a604ce95a24d521f262d957d65d55697fe8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables",
+        "division-as-equal-sharing-and-grouping",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb675d1f7a2474213c513efbe5ef602fd6bbcca2386b8d4552a27d64770c0d43",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "remainder-less-than-divisor",
+        "mass-unit-conversion",
+        "mass-comparison-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f0ed390a8519a377db562fb9ed26dc63804a990c8b273ed43d7ceaff4e85762",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b7acca0362457df6cd368dc5b68297e0c829990c631571a99082b60d79ff5d4e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "106b53fcba3383ac8aa2d60490a82f62b9e7ff2c05fd3a73a5d255cdce0e7b18",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f7da19e6652afa674878c29ae96e99c45f6cba646b764b706fd383924a121f75",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a14ba1e4fdc2c77d37d4f4aaff221bf14d10652bb7b6291a39e04df7b1384ecc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "875bda563f09143b4214c084121aed5b1eab320c2b50ff031c9cebc6323d68fd",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "quotient-and-remainder-meaning",
+        "remainder-less-than-divisor",
+        "interpreting-remainder-in-context"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3cda95b2bde19dbdf0ee9eeae2bdb148129596f1bb3e53625b394b4acc4425f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mass-unit-conversion",
+        "mass-comparison-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10ddc8ff45f88328c0e6076aa84558427d8767065ddb0436de99c516db48df55",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "418b1c06c382d48cf8ff1eccb87a70ac77df390f3f204660e55392dce70b05bc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dacc53dbf939536575ebb2fa55628bc11d362878c92865e81007509bceca477c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3be22876b785f90fa7c206786096f19db6878796cbdcfdfe28e3c0e7f6b54a3",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7485752b7d19bfa7a1d15f36bbce4456ef9691f4fc714add94a6c572d539c56d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-writing-within-10000",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3c292c01ed96afbb2aae5bd37c97cb5a52440b9e9045c1f007ca2e2be0e651c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1371c7e1eb2f169c4c2f477cca434b368d63e23942eb74e9607f1f025993e9b2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1fd80fc70a0f5ba2c7667b3f13704b02e524339093f5aedf75acb4ee3403ca82",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c17d265bb028f2e8894a8c356017af290a47c85434bdf618fb84169169cda09",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mass-unit-conversion",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8c1de74e610faf2c46793376031003b7edbe0ff65458f33d31e6a4e5ef5334ec",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "mixed-operations-same-level-left-to-right"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb0a979dc5ba348ebab204f1f36a6a5a892a4ea92d3a71a2b54ad0f58947f427",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "quotient-and-remainder-meaning",
+        "remainder-less-than-divisor",
+        "interpreting-remainder-in-context"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "56e2b7eb90e0d00eda42f60efd98d7bb3aa36bc1149ce985c8308e86b49486bc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "multiplication-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4758c3090f7c2a580fc7a6639f5d3f5ebe8df03d61a14103bb5509c1c4b886f9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-and-subtraction-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "209de42c42354e1b222472d74ff5a38c54d4055189e2c12445bfd53a9df84ec7",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "quotient-and-remainder-meaning",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ef339f780317ed95e0111adb32e7125e465646655c98a6011d9f558d4eeb9eb",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6541c674d30ecf7b5bbd4f21d3fc9e9751faf1d5ac2971ce7cdac2a48993aa33",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "remainder-less-than-divisor",
+        "mass-unit-conversion",
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f5d4ad1255c7bacada8d0662168a9b653927cc6db32b0bca9a2d962d2f0d1fe",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3740866e3e76ddf4acce833e231da025612261e0a3d9df810e66c66f6ebd57ba",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3944e9e11996365cb7af644132480ce3631e641dfa366d7ecd0893cf3186eb5e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "multiplication-facts",
+        "division-facts-from-multiplication",
+        "division-as-equal-sharing-and-grouping"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f7bf760ea2f42424d1842abc549d10b3ae37e9323e296d43c5d89e30334fcde",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1309010a8001039b821669e03e0f72290602f4f9170eb751564a3e80d4b36946",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "quotient-and-remainder-meaning",
+        "remainder-less-than-divisor",
+        "interpreting-remainder-in-context"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b53187e4ea774d5deaf40dae73776eb96f38055f69685a1ce09906ba15fd71b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "interpreting-remainder-in-context",
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f8c954bba7770c85fd69a9d36f67e7cc6157aebbdbbb3751cea95c294a001324",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-unit-conversion",
+        "reading-and-reasoning-with-statistical-tables",
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2a3bcb52eba5ef90959ba81d977cac9f593e007a1d9b50b911569cfe812319a0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c7b98cb2d8bf5fb40472c4e59a0c70e42e6186c69bc1f44e69a0e6189d213a3",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables",
+        "two-digit-addition-and-subtraction"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b52b4746c3d1775c7695e00fafc383a5d0d855b6796c998f2d8e0be559721b5c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-10/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a1c5d1c0b8080bac07476e0b5f020acbc437422060c1056cbd0312bd51c119b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "quotient-and-remainder-meaning",
+        "remainder-less-than-divisor",
+        "interpreting-remainder-in-context"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1bc8566a9131f79f48ee12aea8506c61277d9c1ebe0af716ee9d78f1f7f0bba",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "multiplication-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b573f8030a6935eea6950b29f35d17ac20d6677d7228198620e9d0c8bbd4a216",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-and-subtraction-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "97582ada0a0445c605a16b8bfff623b4535b52b7626a773beac6893439633e29",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6fc8964d51a569e412755050ef1c946a900b55579fe06a53f75abc8f4d63004c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8fe59e587465f906fcbe3ce2aad58dc4f6e6c66b502f1bc54b2133d4f09dd581",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mixed-operations-multiplication-division-before-addition-subtraction",
+        "mixed-operations-parentheses-first"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a7b4ebe90df3112a914b21d4714ea7a954c77ac6b3eb6ec85a896b541e82c387",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "addition-and-subtraction-within-10000"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5da8fe508749b394549834093d32233de864fda45b7466f92cab6827f9a943f5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "two-digit-addition-and-subtraction",
+        "integrated-review-and-answer-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e47c09cfadf58dbdb368b19514f9c13aad95e9fc8262fc6a2560b50baac643e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "quotient-and-remainder-meaning",
+        "remainder-less-than-divisor",
+        "interpreting-remainder-in-context"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c78b4f5800501aea94aa3a93f62b72b33c61bcbbd167f0badbbe22079dfa5ba",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e449ce57604876c9392bf153827a4e993d0bcb5a27837a43c32b2290fb24f6c5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "division-as-equal-sharing-and-grouping",
+        "division-facts-from-multiplication"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c8aa65139f84fd3f328af303883a57afe3068dad25c211b9f2e11feab49aedf7",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "mass-unit-conversion"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2455a435728cf3957d02e5ec100d8d49570b413644a7bf8af82a95a088b867e9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "number-composition-and-place-value",
+        "zero-as-placeholder"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "989ead0d72ceb04ed82663ca6dace49cd2ad34d22ea03ab0245e82fd6f2265ee",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-10-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2feb4f2c7866cf63ec5821799e119f4ebfbf1e1786c7c08a9d14624d588f1461",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-math-unit-10",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-2/math/unit-10"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/math/unit-05",
+          "grade-2/term-2/math/unit-07",
+          "grade-2/term-2/math/unit-10"
+        ],
+        "coreKnowledgePointIds": [
+          "mass-unit-conversion",
+          "translation-direction-and-orientation",
+          "organizing-survey-data",
+          "reading-and-reasoning-with-statistical-tables"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#数学下册；src/content/textbooks.ts#grade-2/term-2/math；src/content/grade-2/term-2/math/unit-10/index.ts; 用户提供教材 ISBN 978-7-107-37176-9",
+          "checkedAt": "2026-10-29",
+          "notes": "依据用户提供的人教版二年级下册数学教材目录（ISBN 978-7-107-37176-9）核对，本单元“总复习”与目录第10单元主题相符；课程知识范围按本单元登记的 sourceTopics 对照。版次、印次未知，未逐页核对教材正文。保留48道课程源题并补充42道原创候选题，每档16道课程题和14道原创题，共90道。该单元题目由 AI 主审已逐题复核（2026-10-28）；独立教育者复核未完成（0人）。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-math-unit-10/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mass-unit-conversion",
+              "translation-direction-and-orientation"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-10/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "organizing-survey-data",
+              "reading-and-reasoning-with-statistical-tables"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-10/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mass-unit-conversion",
+              "translation-direction-and-orientation"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-10/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "organizing-survey-data",
+              "reading-and-reasoning-with-statistical-tables"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-10/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "mass-unit-conversion",
+              "translation-direction-and-orientation"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-10/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-basic-14",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-10/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-advanced-14",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-10/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-10-high-14"
+      ]
+    }
+  ]
+}

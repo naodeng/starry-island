@@ -100,8 +100,8 @@ const forecastCheck = lessonProfile(
   [
     { word: 'cloudy', meaning: '多云的' },
     { word: 'rainy', meaning: '下雨的' },
-    { word: 'sunny', meaning: '晴朗的' },
     { word: 'windy', meaning: '有风的' },
+    { word: 'sunny', meaning: '晴朗的' },
   ],
   [
     phraseQuestion('想问“今天天气怎么样？”，哪句合适？', ["What's the weather like today?", 'What day is it today?', 'What is your name?'], 0, '询问天气可以用 What’s the weather like…?'),

@@ -24,8 +24,8 @@ const weekdayNames = lessonProfile(
   [
     { word: 'Wednesday', meaning: '星期三' },
     { word: 'Thursday', meaning: '星期四' },
-    { word: 'Friday', meaning: '星期五' },
     { word: 'Sunday', meaning: '星期日' },
+    { word: 'Friday', meaning: '星期五' },
   ],
   [
     phraseQuestion('星期三的下一天是星期几？', ['Thursday', 'Friday', 'Sunday'], 0, 'Wednesday 后面是 Thursday。'),
@@ -79,8 +79,8 @@ const weeklyPlanner = lessonProfile(
 
 const weekdaySequence = lessonProfile(
   [
-    { word: 'Monday', meaning: '星期一' },
     { word: 'Tuesday', meaning: '星期二' },
+    { word: 'Monday', meaning: '星期一' },
     { word: 'Thursday', meaning: '星期四' },
     { word: 'Saturday', meaning: '星期六' },
   ],

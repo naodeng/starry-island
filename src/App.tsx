@@ -6,14 +6,21 @@ import { getNewCosmicRank } from './achievements/progress';
 import { getTaskPath, resolveAppRoute, resolveRoute } from './app/router';
 import type { AppRoute } from './app/router';
 import ProjectLegalFooter from './components/layout/ProjectLegalFooter';
+import AppHeader from './components/layout/AppHeader';
+import LoadingState from './components/shared/LoadingState';
 const CourseBreadcrumbs = lazy(() => import('./components/catalog/CourseBreadcrumbs'));
 const CourseCatalog = lazy(() => import('./components/catalog/CourseCatalog'));
+const HomeDashboard = lazy(() => import('./components/home/HomeDashboard'));
 const UnitOverview = lazy(() => import('./components/catalog/UnitOverview'));
 const SessionPlayer = lazy(() => import('./components/game/SessionPlayer'));
-const AchievementPage = lazy(() => import('./components/achievements/AchievementPage'));
+const GrowthPage = lazy(() => import('./components/growth/GrowthPage'));
+const SettingsPage = lazy(() => import('./components/settings/SettingsPage'));
+const ChallengeDataManagementPage = lazy(() => import('./challenges/ui/ChallengeDataManagementPage'));
+const ChallengePage = lazy(() => import('./challenges/ui/ChallengePage'));
 import './styles/catalog.css';
 import './styles/game.css';
-import { completeSession, loadProgress, setLearningStart } from './storage/progress';
+import './styles/app-shell.css';
+import { acknowledgeGrade2Term1MathMigrationNotice, completeSession, loadProgress, setLearningStart } from './storage/progress';
 import ThemeProvider from './theme/ThemeProvider';
 import { SoundProvider, useSound } from './sound/SoundProvider';
 import type { LearningPosition } from './achievements/position';
@@ -21,22 +28,30 @@ import { getEffectiveCompletedSessionIds } from './achievements/position';
 
 function PageRouteEffects({ navigationRevision }: { navigationRevision: number }) {
   useLayoutEffect(() => {
-    const main = document.querySelector<HTMLElement>('.app-frame main');
-    const heading = main?.querySelector<HTMLElement>('h1');
-    const pageTitle = heading?.textContent?.trim() || heading?.querySelector('img')?.alt || '课程目录';
-    document.title = pageTitle === '星岛学园 · Starry Island'
-      ? '星岛学园 | Starry Island'
-      : `${pageTitle} | 星岛学园`;
-    if (navigationRevision === 0 || !heading) return;
-    if (!heading.hasAttribute('tabindex')) heading.tabIndex = -1;
-    heading.dataset.routeFocus = 'true';
-    heading.focus({ preventScroll: true });
+    const appFrame = document.querySelector<HTMLElement>('.app-frame');
+    const updateTitle = () => {
+      const heading = appFrame?.querySelector<HTMLElement>('main h1');
+      const pageTitle = heading?.textContent?.trim() || heading?.querySelector('img')?.alt || '课程目录';
+      document.title = pageTitle === '星岛学园 · Starry Island'
+        ? '星岛学园 | Starry Island'
+        : `${pageTitle} | 星岛学园`;
+    };
+    updateTitle();
+    const observer = appFrame ? new MutationObserver(updateTitle) : null;
+    if (appFrame && observer) observer.observe(appFrame, { childList: true, characterData: true, subtree: true });
+    const heading = appFrame?.querySelector<HTMLElement>('main h1');
+    if (navigationRevision !== 0 && heading) {
+      if (!heading.hasAttribute('tabindex')) heading.tabIndex = -1;
+      heading.dataset.routeFocus = 'true';
+      heading.focus({ preventScroll: true });
+    }
+    return () => observer?.disconnect();
   }, [navigationRevision]);
 
   return null;
 }
 
-function AppFrame({ page, navigationRevision }: { page: ReactNode; navigationRevision: number }) {
+function AppFrame({ page, navigationRevision, onNavigate, textbookNotice }: { page: ReactNode; navigationRevision: number; onNavigate: (path: string) => void; textbookNotice?: ReactNode }) {
   const { playCue } = useSound();
 
   function playInteractionCue(event: MouseEvent<HTMLDivElement>) {
@@ -51,6 +66,8 @@ function AppFrame({ page, navigationRevision }: { page: ReactNode; navigationRev
 
   return (
     <div className="app-frame" onClick={playInteractionCue}>
+      <AppHeader onNavigate={onNavigate} />
+      {textbookNotice}
       <Suspense fallback={<RouteLoading message="正在准备这段学习旅程…" />}>
         <>{page}<PageRouteEffects key={navigationRevision} navigationRevision={navigationRevision} /></>
       </Suspense>
@@ -63,40 +80,53 @@ function RouteLoading({ message }: { message: string }) {
   return (
     <main className="route-message-page" aria-live="polite" aria-busy="true">
       <div className="catalog-shell">
-        <section className="route-message-card">
+        <Card className="route-message-card" color="default">
           <p className="eyebrow">星岛航线连接中</p>
-          <h1>{message}</h1>
-          <p>马上就好，正在为你打开课程内容。</p>
-        </section>
+          <LoadingState title={message} description="马上就好，正在为你打开课程内容。" headingLevel={1} />
+        </Card>
       </div>
     </main>
   );
 }
 
-export default function App() {
+interface AppProps {
+  showTextbookMigrationNotice?: boolean;
+}
+
+export default function App({ showTextbookMigrationNotice = false }: AppProps = {}) {
   const [route, setRoute] = useState<AppRoute>(() => resolveRoute(window.location.pathname));
   const [navigationRevision, setNavigationRevision] = useState(0);
   const [progress, setProgress] = useState(() => loadProgress());
+  const [showMigrationNotice, setShowMigrationNotice] = useState(showTextbookMigrationNotice);
   const [newlyUnlockedRank, setNewlyUnlockedRank] = useState<CosmicRank | null>(null);
   const routeRequestId = useRef(0);
   const currentPathRef = useRef(window.location.pathname);
   const previousPathRef = useRef<string | null>(null);
 
-  const applyRoute = useCallback((path: string) => {
+  useEffect(() => {
+    if (!showMigrationNotice) return;
+    try {
+      acknowledgeGrade2Term1MathMigrationNotice();
+    } catch {
+      // Keep the notice visible this session; a later launch can retry its acknowledgement.
+    }
+  }, [showMigrationNotice]);
+
+  const applyRoute = useCallback((path: string, focusHeading = true) => {
     const requestId = ++routeRequestId.current;
     const immediateRoute = resolveRoute(path);
     setRoute(immediateRoute);
-    setNavigationRevision((revision) => revision + 1);
+    if (focusHeading) setNavigationRevision((revision) => revision + 1);
     if (immediateRoute.kind !== 'loading') return;
     void resolveAppRoute(path).then((nextRoute) => {
       if (requestId !== routeRequestId.current) return;
       setRoute(nextRoute);
-      setNavigationRevision((revision) => revision + 1);
+      if (focusHeading) setNavigationRevision((revision) => revision + 1);
     });
   }, []);
 
   useEffect(() => {
-    applyRoute(window.location.pathname);
+    applyRoute(window.location.pathname, false);
     const handlePopState = () => {
       previousPathRef.current = currentPathRef.current;
       currentPathRef.current = window.location.pathname;
@@ -145,10 +175,18 @@ export default function App() {
         </div>
       </main>
     );
+  } else if (route.kind === 'home') {
+    page = <HomeDashboard progress={progress} onNavigate={navigate} />;
   } else if (route.kind === 'catalog') {
-    page = <CourseCatalog progress={progress} onNavigate={navigate} onApplyLearningStart={handleLearningStart} />;
-  } else if (route.kind === 'achievements') {
-    page = <AchievementPage progress={progress} onNavigate={navigate} />;
+    page = <CourseCatalog progress={progress} onNavigate={navigate} />;
+  } else if (route.kind === 'growth') {
+    page = <GrowthPage progress={progress} initialView={route.initialView} onNavigate={navigate} />;
+  } else if (route.kind === 'settings') {
+    page = <SettingsPage progress={progress} onApplyLearningStart={handleLearningStart} onNavigate={navigate} />;
+  } else if (route.kind === 'settingsBackup') {
+    page = <ChallengeDataManagementPage onNavigate={navigate} />;
+  } else if (route.kind === 'challengeCenter' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
+    page = <div data-sound-silent="true"><ChallengePage route={route} onNavigate={navigate} /></div>;
   } else if (route.kind === 'unit') {
     page = <UnitOverview unitKey={route.unitKey} unit={route.unit} completedSessionIds={effectiveCompletedSessionIds} onNavigate={navigate} />;
   } else if (route.kind === 'task') {
@@ -184,12 +222,12 @@ export default function App() {
     page = (
       <main className="route-message-page">
         <div className="catalog-shell">
-          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/' }, { label: route.title }]} onNavigate={navigate} />
+          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/courses' }, { label: route.title }]} onNavigate={navigate} />
           <Card className="route-message-card" color="default">
             <p className="eyebrow">学习小岛正在建设</p>
             <h1>{route.title}</h1>
             <p>我们正在核对教材版本、设计合适的小游戏，准备好后就会开放。</p>
-            <Button type="primary" onClick={() => navigate('/')}>回到课程目录</Button>
+            <Button type="primary" onClick={() => navigate('/courses')}>回到课程目录</Button>
           </Card>
         </div>
       </main>
@@ -198,22 +236,29 @@ export default function App() {
     page = (
       <main className="route-message-page route-message-page--not-found">
         <div className="catalog-shell">
-          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/' }, { label: '页面未找到' }]} onNavigate={navigate} />
+          <CourseBreadcrumbs items={[{ label: '课程目录', path: '/courses' }, { label: '页面未找到' }]} onNavigate={navigate} />
           <Card className="route-message-card" color="default">
             <p className="eyebrow">路线暂时中断</p>
             <h1>没有找到这门课程</h1>
             <p>别担心，从课程目录重新选择一座已经开放的学习岛吧。</p>
-            <Button type="primary" onClick={() => navigate('/')}>回到课程目录</Button>
+            <Button type="primary" onClick={() => navigate('/courses')}>回到课程目录</Button>
           </Card>
         </div>
       </main>
     );
   }
 
+  const textbookNotice = showMigrationNotice ? (
+    <aside className="textbook-migration-notice" role="status" aria-live="polite">
+      <p>二年级上册数学教材已更新，该科旧进度已重置；其他课程记录保留。</p>
+      <Button type="default" onClick={() => setShowMigrationNotice(false)}>知道了</Button>
+    </aside>
+  ) : null;
+
   return (
     <SoundProvider>
       <ThemeProvider>
-      <AppFrame page={page} navigationRevision={navigationRevision} />
+      <AppFrame page={page} navigationRevision={navigationRevision} onNavigate={navigate} textbookNotice={textbookNotice} />
       </ThemeProvider>
     </SoundProvider>
   );

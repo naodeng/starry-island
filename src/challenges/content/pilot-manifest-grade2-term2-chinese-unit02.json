@@ -1,0 +1,1507 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-labor-chain"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1258c87360cce6ab726f342c559ab2c294261214693e20371ee7caef62620798",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea2f18cb5d868a2f11de6e25b1e76ab4953ebaad554ee0be894363533a167f46",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b528ddf97099632067822436c1f083e4373e085b5a013e247cd62de18c9c5dc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3a9e8f63712bbb1e32b85d34218c20122c08e51bb1c697c0da7e981399277cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d290c665d29aefbbe2bcdbdb410465b37f4881ca2678104da4d227a00810d53b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b5c539ebfd00ebab015835fecfffb934f6441589fae4010706858f6a32708ef6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58b103e231161ad7a5d384fd1997a30999c9605a2026f85ed795c37ec9d93847",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7887e5eb67a8e5b5a626f0ad134b1895887de19e0d4c6d08c44e3d359b9a604f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c91bf15c4fb6972f0d41fa77b018a999a519c0d3e279806437367a27292c474",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d6232c017fa9f699dc42c90a3213641cd3e3cfd05ed750416ab922c154d2d531",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respectful-help",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4b0ab398d5628de210a75e25441923160a77b784dc6448fa0f0da051e09bebd6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "825feb3df99a15e655f9a4111e50f043277f91e0ca7245f25b31c23647c0b15f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f68ea241295d4714c53e8735160270cb1f4d0b0fd2bbedafc5b9f515a6a31a11",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47046258bb082764341b8aa37ef24623c28a8897717610aaea2eaf42bc9b91f0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad45ca4a6e03d6f03ff9daa7c95bee977a8ccbc7d150342c0c33187b5eae6c25",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a6e945bf501cb6e9c12e8b5adcf1acca33b0b30fb818ebc6f4bd25585f51fca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6383b5909d3ba4d5211a6438a227f8ad977393daa842d30af77777c9deb1506",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ea175fac8d849c15c017de2c8a1dad4ba44756312e54de1941d79842318e7ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42b77e98dac18eed7a4b7ae6f3bb8e7b7e6ee1e48ae244db34aa3ea1d09e4442",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "405f5773f1f066006017074abf683cd9a9b6047c2c3d6d130e0b7ed3e1c9f1c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c30eee9ce78e2bbcbfb4d5f3c6db05e0d698896afb7d397e021484498ec9c0c0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba8e03e2c4c2680468ee3bb51774214459f2d049695b62b56288090cc1fd0a55",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "independent-growth",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f30c3aa1240e62d6bff76b4b0067c72107dd7bb8bc113a12bfd3064e21320e2e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a2eeaf302a04e758be4df8370f7432a16b42a858b92add5eb69bbfdbe1fbe468",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "31254cba2dd592312c0c4bba963c5785e1459fbce2cec76115504a05b3958167",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "78e35c5e3bdc4d6c4bca40f7dc7e3f95d1b9e1e51deb969581594ff1a15ed2e2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "12fda545e59f9951a686643637d3cd6389aa6647be3800b085485934130e94c0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbc8c7f6fe11ed9bc8f9643a95eb24d96a66baaea07564629522ae5a0bc94035",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "538e1280916fe93fa852389c01ab855efc1ef5da1fe1c831ec542a908df91784",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "food-labor-chain",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab8712d21762d7a5127d702502be7880e7d5d6e031b8fa9e75fb39cad5f9dea3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-labor-chain"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d51acc143b684c01ec70b7b2ca8053825927f88fffa4269cea99120c758512e4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8ac635fe7ca6a9b227ccedca14f6988646b62548376b82d2b9d89de1493482c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "051e95bf2ce48234cab1fbf2b698be0806b384bc1305815912ce8158cb761c49",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a625b1c3b1e066f117756ac81a2fc8f7b947664c0161006082a7a85ee71e5fbb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3925de276ff485f09875eeee9eba9b00afaaa89a2e448672ec50bf0b4163361",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f07079834083c1a909007ab13edbb143e4bae18618c0eaba3dfac54f68c2c54",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b76265ff7a11bcb62e2c78184ff8c5ae1127a6cde4993847a24ce228f06e2041",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "74808ff62b62c92fb554e141e038b7bbf0b7913955429680dd7eca636bfeafe0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c9706221450616637906187b35e46e8dba204d05928272ec2fc96fb77b61855",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ce408677d34c02a8a6b54e189e40aae99fc1bd029066c13b99d96e1144ccfc79",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f4c297540b691765a4cdf96879e73031910713da506e3ea77103eea6fee341c6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5003cdfe8d02408cdd029e1e2523e667c60ff5029ab92d75f3fa133bd6e29623",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "food-labor-chain"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18579371fe989bdb7a08572a9e55f0b72f606b276544a2167cc86ff89c06fead",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a5cf670ebee0b5cf079a030d7e1679542d7018c6294f7075b945492b39c3821d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "584cf3fff1e0e3fe83ad2972fb76395b88e37551962d9c45c53068abfcbe5093",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "food-labor-chain"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3930497a5a147d585f6a1860fe03649fd4675f71a489faa9a6f966f9a516d54",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba30d8a916ffd548d3875953f3dfc0e333f4a3d1fb4a6fd44f9d1aad510e7743",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c0b83fb47ed3908ed4c6a6c782d4e776ede9188f70df4a4f3933d21c96321111",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-labor-chain"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2921ca7af2a7ed7bc280fd0d7b9b6919980c3591536829440c7633ade9e63d20",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0ec5335a96f7f6e33e2447fdaebb06449539e36ba8f72d646efdf8e102e412f4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69d8e8a34d057e5fa2fed2bab94ac72058d62e3c18621c3f4e55ad9006bcab5d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2a8f2076c891674c177fcd61bcd0feb635b160a531b3b6d10d392d9a4b0890be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "adb6135a8ceb9d6ecf342abfc7dbb1f25c2d713d6ca275110ada1021f2584a71",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e61bfb4c68442747d4ec9ebf55bb1d45b47c0a627c0d1c82c5f7392aee7ad9fd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c1c45fbe99f6197edfc8bec6399d5a86b462e86679d06a92dec68225aa913fbb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e7c700f60984cc7b11490366cd7e2a4c2c08083a2e877f150ffb54b66ca19fb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07aad0d7041f2560b1fe10b60cecbbf370a8fe35c601f5dd31de6932a3d65d6e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6628f29db9abc9c2a483da232ab06a292bbddb3033aeffac029fb5df9186967a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-action-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d3a05a3492e0d1c747b44080248a69c26680f72744c784e3207eaac9325ab50",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8787961a760c1a450948cb7f924b1c6524eda196ae4536677ebaf7d4a0887085",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "independent-growth",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b769a8df34a8529df773a4523243b2a177b921d4adcfc6a07fb1bd0e4cae01d3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2388c80107653143aaafeeb59670c33da6d7945496496c31f668ed66a9a4b350",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec47be1a298e74cc397ff23f1f2af9717df5e1ccf9ecb6499d25ce7048756100",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "858bbc3885807e4504ffbd6201989361a854260b9ce1e344cb2ea2b6670d5508",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8491a040c18f282736b492890d93d1a31c05c89fdb23f5408c3fe68aa6fc028e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9966e2debdebce9652d0d99ee94fb68c6ac2f1e2d36b27f0cc69959c0f63e62d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "83d8e3d6663819ab9521405041935a931ec42c44a614bc1c24c300b549031892",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c9be0982cda4e45448bee730c91432dfbb6f2eb7498037f6856eadfdfe3b9c7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9231b229514f10e72a962d75d8228e90779876dbcb809a036f9ff5af10638e1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respect-for-labor",
+        "story-action-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "589f88bd07f18737efc2b92e047e10881277323c5793bfdf7ff2878bce65ee97",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "independent-growth",
+        "story-action-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49e774ee6c54758e8352c4f7ec371bad2db80cc0317b2b11e76172e8be1eb3a4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "respectful-help",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6739036c2c5956ae1b1bd09e611a6790335a1b99bab3cbbf12523c37cefcdfe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f92e75b382e15610d908e0f18740364106ce33d58dedb31216750773b0833393",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "112f91cdec1e750360976d148b90613f098615fcc7adaee7aece62e329462374",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "independent-growth",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6fd6a02cc8a651af1ac046f8d2707dd1f9b477e0bf6b11e371f31f71421f732",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ae6aa734a4ef89c098901941ef7254571ea68a68fe1565d9396b1c01a6f54730",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "respectful-help",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc0e904203cad62330957ac04ab63388177355be4724da6976095b03151924a7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da6d0e5fe89030798dfd13b352efc918caf6c2c6d3ec20e9ad252588700faaa9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c9f98c6aa25d673597ab34f351d13824cc3f44c7814a7f19664414e5b6f2d7a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "independent-growth",
+        "story-action-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "516dc41a6d181d59f789e57fb8f26647ab4d1850bf5e2cbc2ecfbf1071aa353a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "respectful-help",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f76bbc85e083dc31b26185079f26bc47c121e68b93777604c8c64e378a9b52d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4da570b0fde9b06883fe83b25007d28a6ac7d471ef74d0828e3aefbadb5cbfe7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fair-cooperation",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0eca5f43371db1a8eb3a0898cee3607b8db3e45fb952d0376b2713b84f79f625",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "361e6aa7f004081006b04ba638890a1cb3adc0ea6cd93ccdd13faaeb72fddb36",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "food-labor-chain",
+        "fair-cooperation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb8ac5b53d74e82b082ae0d97f31366aa7ad841e9a9afbc5b27123675bec4a85",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "independent-growth",
+        "respectful-help"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "15594b5380c6ba3971624fb1473d757dc370f86fca16a3ccb5c2abaa22246e2c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "respect-for-labor",
+        "fair-cooperation",
+        "story-action-evidence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a71ccd2af0099fe70453e29998915a13b915c7a16f9a7fef8a34fdb1676a8724",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-action-evidence",
+        "independent-growth"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3bf2e2f01ac34a0aa4b6201f2766d124653a73bdf8fa857a694fae4f79443fa6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "respectful-help",
+        "fair-cooperation",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c20cbd2cb30bf1574bb4059929ea5f9175f5f837447126498ec03ea2ecf319f9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-02-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "independent-growth",
+        "respect-for-labor"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4f35b4ebbb7d538a379e9bcb37a09ca8aab37e3b0e398b5e594fd5ead676ade",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-chinese-unit-02",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-2/chinese/unit-02"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/chinese/unit-02"
+        ],
+        "coreKnowledgePointIds": [
+          "food-labor-chain",
+          "respect-for-labor",
+          "fair-cooperation",
+          "respectful-help",
+          "independent-growth",
+          "story-action-evidence"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-2/chinese/unit-02/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "对应二年级下册第二单元“关爱与劳动”，按已登记 sourceTopics 映射帮助他人、多人劳动与合作、人物行动和成长变化。教材依据 TapXWorld 固定回退快照；人教社 2025 修订内容存在差异，本组不表述为新版。保留原 48 道课程活动和六个学习 Task，另增 42 道原创题，不改学习内容和进度。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-chinese-unit-02/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "food-labor-chain",
+              "respect-for-labor",
+              "fair-cooperation",
+              "story-action-evidence"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-02/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "respectful-help",
+              "independent-growth"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-02/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "respectful-help",
+              "fair-cooperation",
+              "food-labor-chain",
+              "respect-for-labor"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-02/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "respectful-help",
+              "story-action-evidence",
+              "food-labor-chain",
+              "independent-growth"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-02/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fair-cooperation",
+              "respectful-help",
+              "food-labor-chain",
+              "respect-for-labor"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-02/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-02/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-02/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-02-high-14"
+      ]
+    }
+  ]
+}

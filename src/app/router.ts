@@ -2,10 +2,18 @@ import { curriculumManifest } from '../content/curriculumManifest';
 import { loadUnit } from '../content/unitLoader';
 import { getSessionsForDifficulty } from '../content/sessionUtils';
 import type { Curriculum, CurriculumUnit, Difficulty, LearningSession, LearningTask, SubjectId } from '../content/types';
+import { isValidChallengeGroupId, isValidChallengeTaskId } from '../challenges/domain/ids';
 
 export type AppRoute =
+  | { kind: 'home' }
   | { kind: 'catalog' }
-  | { kind: 'achievements' }
+  | { kind: 'growth'; initialView: 'overview' | 'learning' | 'challenge' }
+  | { kind: 'settings' }
+  | { kind: 'settingsBackup' }
+  | { kind: 'challengeCenter' }
+  | { kind: 'challengeWrongQuestions' }
+  | { kind: 'challengeGroup'; groupId: string }
+  | { kind: 'challengeTask'; taskId: string }
   | { kind: 'loading'; path: string; unitKey: string; curriculumUnitKey: string }
   | { kind: 'loadError'; path: string }
   | { kind: 'unit'; unitKey: string; unit: CurriculumUnit }
@@ -31,6 +39,26 @@ export function getTaskPath(unitKey: string, difficulty: Difficulty, taskId: str
 
 export function getSessionPath(unitKey: string, difficulty: Difficulty, taskId: string, sessionId: string): string {
   return `${getTaskPath(unitKey, difficulty, taskId)}/${lastPathSegment(sessionId)}`;
+}
+
+export function getChallengeGroupPath(groupId: string): string {
+  return `/challenges/group/${encodeURIComponent(groupId)}`;
+}
+
+export function getChallengeCenterPath(): string {
+  return '/challenges';
+}
+
+export function getChallengeWrongQuestionsPath(): string {
+  return '/challenges/wrong-questions';
+}
+
+export function getChallengeGrowthPath(): string {
+  return '/challenges/growth';
+}
+
+export function getChallengeTaskPath(taskId: string): string {
+  return `/challenges/task/${encodeURIComponent(taskId)}`;
 }
 
 function findCatalogUnit(instance: CurriculumCatalog, key: string) {
@@ -69,8 +97,32 @@ function mapLegacySession(unit: CurriculumUnit, unitKey: string, legacySessionSl
 
 export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit?: CurriculumUnit): AppRoute {
   const normalized = pathname.replace(/\/+$/, '') || '/';
-  if (normalized === '/') return { kind: 'catalog' };
-  if (normalized === '/achievements') return { kind: 'achievements' };
+  if (normalized === '/') return { kind: 'home' };
+  if (normalized === '/courses') return { kind: 'catalog' };
+  if (normalized === '/growth') return { kind: 'growth', initialView: 'overview' };
+  if (normalized === '/achievements') return { kind: 'growth', initialView: 'learning' };
+  if (normalized === '/settings') return { kind: 'settings' };
+  if (normalized === '/settings/backup') return { kind: 'settingsBackup' };
+
+  if (normalized === '/challenges') return { kind: 'challengeCenter' };
+  if (normalized === '/challenges/growth') return { kind: 'growth', initialView: 'challenge' };
+  if (normalized === '/challenges/wrong-questions') return { kind: 'challengeWrongQuestions' };
+  if (normalized.startsWith('/challenges/')) {
+    const match = /^\/challenges\/(group|task)\/([^/]+)$/.exec(normalized);
+    if (!match) return { kind: 'notFound', path: normalized };
+    let id: string;
+    try {
+      id = decodeURIComponent(match[2]!);
+    } catch {
+      return { kind: 'notFound', path: normalized };
+    }
+    if (!id || /[\u0000-\u001f]/.test(id)) return { kind: 'notFound', path: normalized };
+    if (match[1] === 'group' && !isValidChallengeGroupId(id)) return { kind: 'notFound', path: normalized };
+    if (match[1] === 'task' && !isValidChallengeTaskId(id)) return { kind: 'notFound', path: normalized };
+    return match[1] === 'group'
+      ? { kind: 'challengeGroup', groupId: id }
+      : { kind: 'challengeTask', taskId: id };
+  }
 
   const segments = normalized.split('/').filter(Boolean);
   if (segments.length !== 4 && segments.length !== 5 && segments.length !== 6 && segments.length !== 7) {

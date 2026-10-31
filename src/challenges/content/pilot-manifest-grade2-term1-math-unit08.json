@@ -1,0 +1,1743 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "379b653a748878e45e4a3c986b0fdecb31c888c65b7870d3c5456b56b5b2e502",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cfe21bf1a39054f6fea09b7ae5a5efbd3b7dd7cd1d4ab31f11272b3cf7512f67",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bca930a7c9038420653d451976db93ba57dcd0beb99d2d080250de628e7a6cad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18ccf000e2ae69b53232dd2af25f1c8d312068e60a4a62b862f4182f4c83e1ba",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "807ca5f1555b950d2e00954415308114d05cc758f8c71c1237b24073c76f6695",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d80ee90100d11ea12325fd9a0d2cc4faba7abc234bb0d66d3547210effe9d44e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5fbe433c6308c7361435e11efe983c42fd9345dca13b17fe9619e62c8bb43ff3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6babb88fd3b41e6d7e554d7a2b56258b95214c9d84e94b689ac9350aa5f12ad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69a2f8eec70337e0b4357e57cc38814f9aebbe2fa0888d2eff7cd6a25ba8cc20",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b3df14eb23d5d1643229ff391862f0030340d804f2f97eaa331245e5394b8c7b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f651c617352c766c49b19ee89b3b6cd7d736b0d651cbea50d914deddd29fa40",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "28aaf3f5eed54a1346ebcf61a5c8c013f2280f32b698576436377e7d41696c23",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a05beef56d22d7cc4d7470b145ad165765d607aba0bd5bb09916f917222f944",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e580011ce09613bf7f7d7f3a22bf1c3839b223d69974c0d642d3a8ebb28ce2b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "74405d0ea2b6feb6258ed9c227e27ddfad5e22a0355a100ba26f0965bfbabb86",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-08/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8448907009d6b6e3c116f0f5749cb0a70f3236bef286c6a97ca98269f40c5f6c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4fac050dcaa1dd4707ed1bb3a47e00cd10afc65bdf506e14bb2fbdeb5acb62d5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f586ee05df749bdb7217b6c2daccb4953a21c16937d1eb6008d75822ac64708d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2579f8510dbb6dbc55d0c0fb9fc137d7edcbe9b74738726c24896631b2813a03",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e9dd044692de4a69f916bde19997f6b070b9fdfc30a42ec6366837058743660f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "937506fed09d97ce5a11a2121acf72e46be920df3fb315035d393cd2d703b396",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1b1835b92f8f037f6f9beae186ad121e8a9bb2778ff9b7b12f68555d15acb26",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab72a30a9137911f15a114c2ede00fbbc248a6e02d3d88251ff58eba72b0d241",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58c2436fbe9170cde7aa6beda13d48d723245d8708ef34318ca556fbe14c2c45",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3df4a2cd84f4e5c5e441236fe9735134e871672dd8beffeb5e56cd265233e57",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b39fd35bec97a71373772ff5e549355044c6220bb8872a26ee8eac0c564d6228",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dea27cec4e6cd117a31dc236a1afa3b43001d7cd48ab5efe5bffdade46ac03f1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ee1af02102b3f5cafbc2a99380e9e3a674a29f11bc16661f4d9695f95ea2126e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "ordered-listing",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "171226fdab42da4ffbecf5cbb5b95672617000f308e7c345aaf4cd905fced966",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3d642943dbd54dfcedbfd7fcfb52a882ade9bfaacbf927275717ab5bf8a0224",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "057c3dc21d46e6cf0260a89c185d1bfbeaf8e8f83ebf2bd47d4e165e902dab89",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "515a3102a5cc6363247d9ef2d6bc8852afd1b2e3c8606e4cf3428edd371154fe",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "473ecc35bed3d4c7f62ceddc6e86a2604c82ccc65ee79ab1bd4c4684f7b37a50",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a8af8499935306cb81cb75727ef01e5a71b39ca6a35fe93a0b62f3c71adc421a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "881233b06d1b6df396d64cc63c5ec44ede4e7132ff08e4c6021bc8ae7954340b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "840b176d3341e66c136bc35622107da30adf6cbbde14172cb658aa38972f5e91",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "ordered-listing",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f56ca1bc94e1c3f8cea9ad0230b8a7b546d1aadfd9e757d9943b6a0e9717ef7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8b7a2c46fc02860eef2fd8d6e11262f67db9f605a28ae748f990aba9a6361e33",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "df8f1d3f55d99d7d3aebdb043831e5d4c88b027b2b393e3145638d4f86c6b4b8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4b7be85215fed76f535273bcb79057606546587c0988a9014942daa93b56281",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "502cf1c890088b787d95a26cbb11e0a1d5a322fd29104524635b7ad793a4b8ce",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "89ddea059da9255d4e9574243849ab196538c040fb44bdce6d7469480005672f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f36e3a96bfe6887d066720060a66bd937049c60ee041d83f01b04f8414efbb6d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "ordered-listing",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d1c6aab538a0463eb5f1520e920e463ad58c90b738b6e87135f814395052ad2d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "790183be909bd3a20ad1224c2afd45af76a748a92bede224573c8ec3503d938e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "ordered-listing",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "16994c9b8a13c6c6d79cdc05feb25e4cd2caed7c73ecb20aa54d108931b340b7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "53465d559e9666a587a62cd32cadad4a4039097e3b6ac85f400abef6af95cc99",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-08/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "ordered-listing",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "933a2267ce158b55e4208c1d657b509ed58b4e8abe5d23c998ba3cf155b2c0ed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "66318e865923e5730c979be651cff154b302f0064487eb7f5809fb8018a627d1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c4313394a2c9b8fb2d9b4480973290f281c797d2dff5e368f4b4a6dd709075e7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b8b3d42dbde55e25bd77b65e25ddf91ba6a86057fb9f67ba12cc8f7cacd67e6f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aeadc2863006da23d13178ad5fcf2cb8c61cc7f6031e71009736ee5dd234aec5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a880f905df5e1312ca8f3098657b81cab0992403b073ddbcab1575b1083c9f5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation",
+        "ordered-listing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "14ed3ff4f2b7275d8ca5ce615b39e6ea23190982e73046ad1d7171d1ea749a3d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6af8c8664985b5d54f411616f73d0040b1fd1e901b44b32f6da2cfeb4ff1f57d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "239f4e6c63ae58ac01ce3998ae5315c111deff2d97723e27b6c157bf6903172e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a20958ba556bf8c3a07389ddb268961616b1a87309f7c769e05ff1bfcd3da052",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6a196a8b7cd8e3998fd872ca6e32892d7e2ae91c6855a6524a907bd26efe536b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68e47db908a68d4c1aec483981455cd7e68653743574998e9237e974a90f0824",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "combination-counting",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "83e5d7175846833bf747eae8dec88b30251f79faecc1f19103dbccb24165dd14",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "903ea957088b89b13c124f10d984a5f98ace43c29e247c1de17be5e21f6cdde7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf95b6f473046f10280242464d83892ac0fd89a53fd6502937e81d3f6b2d9039",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85ac8a2d5def5f9cfb0d2def30757530dac761e33bfd5a287578a124595839cd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "48db7466fbf8dffb6d1c22e2c393d14cacf39a793c55422204c86e52ab2ee4c6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "869378b3acaf57d8ba15d2a05a1d1447192f579052d7b12c0fa5f4f89b8deba4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba697aaae9826145d47f4b9b04484bf55743afac0e2bb894f147ec5481394d2e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f6563f1f223acb7158bb23066b4958e2b62ebec7162ed58f025f355469653c6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "63338ac5ca09f647ffa8f73281b048d1cc52332eaa76f5608643f2f5fd915ac5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1249d8fcc19757ed54d9f8526a50713a8ddb3f3758a25c96934aba2891353620",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ce09ec9170e227344a1a33f8b927b6d669a0646d7598a8876e871a05d1dd7b5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab267d2b3f1fab4eb3b02fe0dd677a67722dfe7a52a6e14ba1354e16f4ebd2a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ad1b3c81f32392a3d1ffad50a373972c411e453723f83b28bb4a79c112ad437",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "explain-and-verify",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e043b2266f0eefaacb8d57ddae3120d7c823db3623200db010670189ae14a2ac",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff5a63e6b4d8ddfc38ba1d7e5fd235e7bdc6f280634764a9da4102e3781cdd37",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a6d7a32042b1c9a734c9e6968a57264f173d132ffbc36876c13b14d9a0e8d3c4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation",
+        "ordered-listing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b72487984171f1bce6293b23fb6cd52d0406c7b965280702e26f63cd3d816138",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e799d8e9df54f3e1c0212da3c4879217e0d6e92d3f6ade7a44125954d12398d5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0b9f9271d317bc48d7ff7d4edd06a380e4e222c466cb11c9aff18cbc0f892489",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb321bb314550ce95f5c5a8aad0d33c2c422cb6a409da9a90371e9ed094c6fd5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "422dfcf2b8f54bdea4945a4c563055198283d63a204df1a8df24174a405ed513",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "explain-and-verify",
+        "ordered-listing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b9e51f54e058bf89c388962a42922cd7a0ec905cd82a9547e320794f09485c7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "duplicate-and-omission-checking",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f8beb69d147e96acc794b1bf13c2da6eee65be1be03989419e1d8cc53e343a6e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "combination-counting"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8aceed0854dabe60d5aa7cd07eb563d1d988010f95e2bb328ddecd8f580c90ca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "740dd0eafbc92fb6b04fe48e9234b585c40cf3627c446f93676e494897cfdfdd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "combination-counting",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e631113238de5a23c78865aa343ecb81c3f18d2e6c1aec3406c5f4706e752eec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "two-category-pairing",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65b83eb97fa3b3a286886d6c6bfa0f9f57ad9065247a4785c7073c6896732d07",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "faddef1ace862dc84099edddf440bdbaebc167519c41fb4efd1e60b0a7d4c68a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "combination-counting",
+        "duplicate-and-omission-checking"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f9422d1770e4dd6e32d527043f22fdb91f7bfc3db79fa073e0c1ce038cedcc44",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "ordered-listing",
+        "two-category-pairing",
+        "explain-and-verify"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "788790a82b0d757841d3aee6a57ffbdd01c996be171f0cdfb57140d57bcf4a18",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-08-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "systematic-pairing-and-enumeration",
+        "complete-and-nonduplicated-records",
+        "list-and-line-representation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b7fa81150c619885c85ad72000706d02f78e13f4698b7915bab919971ada594b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-math-unit-08",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-1/math/unit-08"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/math/unit-08"
+        ],
+        "coreKnowledgePointIds": [
+          "systematic-pairing-and-enumeration",
+          "complete-and-nonduplicated-records"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级上册数学；src/content/grade-2/term-1/math/unit-08/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应数学广角“搭配（一）”，围绕两类物品配对、按序列举、表示搭配，以及检查清单中的重复和遗漏。教材目录使用项目裁定的 TapXWorld 固定回退快照（tapx-fallback），不表示采用人教社修订版。保留原有48道课程活动和六个学习Task，新增42道原创题；不改变课程任务、进度或交互。两个核心知识点表示本单元跨题型共同要求，逐题知识点另行记录搭配、计数、有序列举、列表/连线表示、重复遗漏检查和解释验证等细项。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-1-math-unit-08/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "systematic-pairing-and-enumeration"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-08/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "complete-and-nonduplicated-records"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-08/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "systematic-pairing-and-enumeration"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-08/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "complete-and-nonduplicated-records"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-08/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "systematic-pairing-and-enumeration",
+              "complete-and-nonduplicated-records"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-08/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-08/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-08/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-08-high-14"
+      ]
+    }
+  ]
+}

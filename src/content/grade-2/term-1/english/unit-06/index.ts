@@ -81,8 +81,8 @@ const holidayObjectClues = lessonProfile(
   [
     { word: 'card', meaning: '卡片' },
     { word: 'present', meaning: '礼物' },
-    { word: 'Christmas tree', meaning: '圣诞树' },
     { word: 'Father Christmas', meaning: '圣诞老人' },
+    { word: 'Christmas tree', meaning: '圣诞树' },
   ],
   [
     phraseQuestion('“圣诞快乐！”可以怎样祝福？', ['Merry Christmas!', 'Happy New Year!', 'You are welcome.'], 0, 'Merry Christmas! 是圣诞节祝福。'),

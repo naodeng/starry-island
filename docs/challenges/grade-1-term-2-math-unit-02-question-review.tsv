@@ -1,0 +1,91 @@
+题目ID	难度	知识点	正确选项	题意与答案复核	选项与答案泄漏检查	审核状态
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-01	基础	20以内退位减法、破十法、平十法与退位减法策略	14 - 5=9	课程题挑战候选复核：14 - 5 = 9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-02	基础	20以内退位减法、破十法、平十法与退位减法策略	15 - 7=8	课程题挑战候选复核：15 - 7 = 8。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-03	基础	20以内退位减法	14 - 5→9；15 - 7→8；11 - 4→7；12 - 6→6	课程题挑战候选复核：每个算式都要和它计算得到的得数对应。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-04	基础	20以内退位减法	7	课程题挑战候选复核：11 - 4 = 7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-05	基础	20以内退位减法	12 - 6（6）→11 - 4（7）→15 - 7（8）→14 - 5（9）	课程题挑战候选复核：按从小到大排列后，得数依次为 6、7、8、9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-06	基础	20以内退位减法	14 - 5 = 9→大于 7；15 - 7 = 8→大于 7；11 - 4 = 7→不大于 7；12 - 6 = 6→不大于 7	课程题挑战候选复核：逐个计算后按同一个标准分类。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-07	基础	20以内退位减法、破十法、平十法与退位减法策略	11 - 4=7	课程题挑战候选复核：列式 11 - 4，得数是 7。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-01/session-01/question-08	基础	20以内退位减法	9	课程题挑战候选复核：重新计算可知 14 - 5 = 9。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-01	基础	20以内退位减法、破十法、平十法与退位减法策略	12 - 3=9	课程题挑战候选复核：12 - 3 = 9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-02	基础	20以内退位减法、破十法、平十法与退位减法策略	13 - 5=8	课程题挑战候选复核：13 - 5 = 8。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-03	基础	20以内退位减法	12 - 3→9；13 - 5→8；14 - 7→7；15 - 9→6	课程题挑战候选复核：每个算式都要和它计算得到的得数对应。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-04	基础	20以内退位减法	7	课程题挑战候选复核：14 - 7 = 7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-05	基础	20以内退位减法	15 - 9（6）→14 - 7（7）→13 - 5（8）→12 - 3（9）	课程题挑战候选复核：按从小到大排列后，得数依次为 6、7、8、9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-06	基础	20以内退位减法	12 - 3 = 9→大于 7；13 - 5 = 8→大于 7；14 - 7 = 7→不大于 7；15 - 9 = 6→不大于 7	课程题挑战候选复核：逐个计算后按同一个标准分类。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-07	基础	20以内退位减法、破十法、平十法与退位减法策略	14 - 7=7	课程题挑战候选复核：列式 14 - 7，得数是 7。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/basic/task-02/session-01/question-08	基础	20以内退位减法	9	课程题挑战候选复核：重新计算可知 12 - 3 = 9。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-01	基础	20以内退位减法	8	原创题作者自审：13减去5等于8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-02	基础	20以内退位减法	5个	原创题作者自审：12减去7等于5，还剩5个积木。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-03	基础	20以内退位减法	8颗	原创题作者自审：14减去6等于8，剩下8颗珠子。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-04	基础	20以内退位减法	7	原创题作者自审：15减去8等于7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-05	基础	20以内退位减法	7张	原创题作者自审：11减去4等于7，还留下7张贴纸。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-06	基础	20以内退位减法	9个	原创题作者自审：14减去5等于9，还剩9个小苹果。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-07	基础	20以内退位减法	7个	原创题作者自审：16减去9等于7，余下7个棋子。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-08	基础	20以内退位减法	9	原创题作者自审：17减去8等于9。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-09	基础	20以内退位减法、破十法、平十法与退位减法策略	13拆成10和3；10−5=5；5+3=8	原创题作者自审：10减去5得5，再加上拆出的3，结果是8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-10	基础	20以内退位减法、破十法、平十法与退位减法策略	再减2，得8	原创题作者自审：14先减4得10，再减2得8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-11	基础	20以内退位减法	14	原创题作者自审：14减去6等于8，所以这个数是14。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-12	基础	20以内退位减法	13−6	原创题作者自审：13减去6等于7；另外两道的差分别是6和8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-13	基础	20以内退位减法、加法验算与逆运算检查	8+5=13	原创题作者自审：8加5等于13，回到了被减数，验算正确。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-basic-14	基础	20以内退位减法	13−5	原创题作者自审：13减去5和14减去6都等于8，两个差相等。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-01	进阶	20以内退位减法、破十法、平十法与退位减法策略	13 - 4=9	课程题挑战候选复核：13 - 4 = 9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-02	进阶	20以内退位减法、破十法、平十法与退位减法策略	14 - 6=8	课程题挑战候选复核：14 - 6 = 8。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-03	进阶	20以内退位减法	13 - 4 — 9	课程题挑战候选复核：“13 - 4”对应“9”。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-04	进阶	20以内退位减法	7	课程题挑战候选复核：15 - 8 = 7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-05	进阶	20以内退位减法	11 - 5（6）→15 - 8（7）→14 - 6（8）→13 - 4（9）	课程题挑战候选复核：按从小到大排列后，得数依次为 6、7、8、9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-06	进阶	20以内退位减法	大于 7	课程题挑战候选复核：“13 - 4 = 9”符合“大于 7”这一类。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-07	进阶	20以内退位减法、破十法、平十法与退位减法策略、加法验算与逆运算检查	15 - 8=7	课程题挑战候选复核：列式 15 - 8，得数是 7。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-01/session-01/question-08	进阶	20以内退位减法	13 - 4	课程题挑战候选复核：文具盒原有 13 支铅笔，拿出 4 支。 对应 13 - 4。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-01	进阶	20以内退位减法	11 - 2	课程题挑战候选复核：文具盒原有 11 支铅笔，拿出 2 支。 对应 11 - 2。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-02	进阶	20以内退位减法、破十法、平十法与退位减法策略	12 - 4=8	课程题挑战候选复核：12 - 4 = 8。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-03	进阶	20以内退位减法	11 - 2 — 9	课程题挑战候选复核：“11 - 2”对应“9”。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-04	进阶	20以内退位减法、加法验算与逆运算检查	13	课程题挑战候选复核：7 + 6 = 13，回到了原算式中的 13。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-05	进阶	20以内退位减法、加法验算与逆运算检查	先读清已知数量和所求问题→判断应使用哪种运算→列出算式并计算→用逆运算或估算核对	课程题挑战候选复核：读清数量和问题后判断运算，计算完成后用逆运算或估算核对。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-06	进阶	20以内退位减法	大于 7	课程题挑战候选复核：“11 - 2 = 9”符合“大于 7”这一类。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-07	进阶	20以内退位减法、破十法、平十法与退位减法策略、加法验算与逆运算检查	13 - 6=7	课程题挑战候选复核：列式 13 - 6，得数是 7。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/advanced/task-02/session-01/question-08	进阶	20以内退位减法	12 - 4	课程题挑战候选复核：文具盒原有 12 支铅笔，拿出 4 支。 对应 12 - 4。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-01	进阶	20以内退位减法、破十法、平十法与退位减法策略	15拆成10和5，10−7=3，再加5得8	原创题作者自审：10减去7得3，3加上5等于8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-02	进阶	20以内退位减法、破十法、平十法与退位减法策略	再减2，得8	原创题作者自审：16先减6得10，再减2得8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-03	进阶	20以内退位减法、破十法、平十法与退位减法策略	10−2=8	原创题作者自审：13先减3得10，5还剩2；10再减2得8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-04	进阶	20以内退位减法	7本	原创题作者自审：16减去7剩9本，9再减去2，剩7本。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-05	进阶	20以内退位减法	14	原创题作者自审：14减去6等于8，所以方框里填14。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-06	进阶	20以内退位减法、加法验算与逆运算检查	8+6=14	原创题作者自审：8加6等于14，回到了被减数。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-07	进阶	20以内退位减法、加法验算与逆运算检查	正确结果是7，因为7+8=15	原创题作者自审：7加8等于15，所以15减去8等于7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-08	进阶	20以内退位减法	两个差都是7	原创题作者自审：15减去8和14减去7都等于7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-09	进阶	20以内退位减法	16−8，因为减去的数较小	原创题作者自审：16减去8等于8，16减去9等于7，所以16减去8的差更大。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-10	进阶	20以内退位减法、破十法、平十法与退位减法策略	减2，结果是8	原创题作者自审：9分成7和2；17先减7得10，再减2得8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-11	进阶	20以内退位减法、加法验算与逆运算检查	8片	原创题作者自审：15减去7等于8，风吹掉了8片叶子。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-12	进阶	20以内退位减法	乙盒多1颗	原创题作者自审：甲盒剩6颗，乙盒剩7颗，乙盒多1颗。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-13	进阶	20以内退位减法	8	原创题作者自审：14减去8等于6，所以减数是8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-advanced-14	进阶	20以内退位减法、加法验算与逆运算检查	8	原创题作者自审：15减去8等于7，所以方框里填8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-01/session-01/question-01	高阶	20以内退位减法、破十法、平十法与退位减法策略	11 - 2=9	课程题挑战候选复核：11 - 2 = 9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-01/session-01/question-03	高阶	20以内退位减法	11 - 2 — 9	课程题挑战候选复核：“11 - 2”对应“9”。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-01/session-01/question-04	高阶	20以内退位减法	7	课程题挑战候选复核：13 - 6 = 7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-01/session-01/question-05	高阶	20以内退位减法	14 - 8（6）→13 - 6（7）→12 - 4（8）→11 - 2（9）	课程题挑战候选复核：按从小到大排列后，得数依次为 6、7、8、9。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-01/session-01/question-06	高阶	20以内退位减法	大于 7	课程题挑战候选复核：“11 - 2 = 9”符合“大于 7”这一类。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-01/session-01/question-07	高阶	20以内退位减法、破十法、平十法与退位减法策略、加法验算与逆运算检查	13 - 6=7	课程题挑战候选复核：列式 13 - 6，得数是 7。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-01/session-01/question-08	高阶	20以内退位减法、加法验算与逆运算检查	用差加上减数，检查是否回到被减数	课程题挑战候选复核：11 - 2 可以用差加上减数，检查是否回到被减数。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-02/session-01/question-01	高阶	20以内退位减法、加法验算与逆运算检查	重新按本单元方法计算得 9，再用逆运算或估算核对	课程题挑战候选复核：14 - 5 = 9；再用逆运算或估算核对，能发现原答案多了 1。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-02/session-01/question-03	高阶	20以内退位减法	14 - 5 — 9	课程题挑战候选复核：“14 - 5”对应“9”。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-02/session-01/question-04	高阶	20以内退位减法、加法验算与逆运算检查	11	课程题挑战候选复核：7 + 4 = 11，回到了原算式中的 11。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-02/session-01/question-06	高阶	20以内退位减法	大于 7	课程题挑战候选复核：“14 - 5 = 9”符合“大于 7”这一类。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-02/high/task-02/session-01/question-07	高阶	20以内退位减法、破十法、平十法与退位减法策略、加法验算与逆运算检查	11 - 4=7	课程题挑战候选复核：列式 11 - 4，得数是 7。	按题型答案键复算；提示未直接给出答案；不在答题前展示解释	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-01	高阶	20以内退位减法、加法验算与逆运算检查	8+6=14，所以差应是8	原创题作者自审：14减去6等于8，且8加6回到14；9加6不等于14。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-02	高阶	20以内退位减法	7个	原创题作者自审：17减去8剩9个，再减去2，最后剩7个。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-03	高阶	20以内退位减法、破十法、平十法与退位减法策略	两种方法都得到7	原创题作者自审：甲算4+3=7；乙先到10，再减3也得7。两种方法都正确。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-04	高阶	20以内退位减法	5张	原创题作者自审：18减去9剩9张，9再减去4，剩5张。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-05	高阶	20以内退位减法	14	原创题作者自审：6加8等于14，所以方框里是14。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-06	高阶	20以内退位减法、破十法、平十法与退位减法策略	再减5，得5	原创题作者自审：9分成4和5；14先减4得10，再减5得5。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-07	高阶	20以内退位减法、破十法、平十法与退位减法策略	拆出的3要加回来；4+3=7	原创题作者自审：15减8等于7，16减9也等于7，两个差相等。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-08	高阶	20以内退位减法	8张	原创题作者自审：18减去7剩11张，11再减3，剩8张。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-09	高阶	20以内退位减法、加法验算与逆运算检查	6	原创题作者自审：14减去6等于8，所以减数是6。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-10	高阶	20以内退位减法	差应是7，因为7+5=12	原创题作者自审：7加5等于12，所以12减去5等于7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-11	高阶	20以内退位减法	两人都剩8张	原创题作者自审：16减8等于8，15减7也等于8，两人各剩8张。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-12	高阶	20以内退位减法	差变成6，比原来少1	原创题作者自审：15减去9等于6，比15减去8的差7少1。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-13	高阶	20以内退位减法、加法验算与逆运算检查	7+6=13，回到了被减数	原创题作者自审：7加6等于13，可以证明13减去6等于7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-14	高阶	20以内退位减法、破十法、平十法与退位减法策略	10−6=4，再加3，得7	原创题作者自审：13拆成10和3；10减6得4，4加3得7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-15	高阶	20以内退位减法、加法验算与逆运算检查	8张	原创题作者自审：17减去9等于8，小华送出了8张贴纸。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-16	高阶	20以内退位减法、破十法、平十法与退位减法策略	小明算1+6=7；小红算10−3=7，结果相同	原创题作者自审：小明算10减9得1，再加6得7；小红算16减6得10，再减3得7。两种方法都得到7。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-17	高阶	20以内退位减法、破十法、平十法与退位减法策略	8	原创题作者自审：被减数增加1后，算式变成16−8，结果是8。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-02-high-18	高阶	20以内退位减法	12块	原创题作者自审：16−7=9，后来放进3块，9+3=12。	三项选项互异；答案键唯一；题干与提示未直接给出正确选项	作者自审通过（未独立教育者复核）

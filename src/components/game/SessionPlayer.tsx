@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon, StarIcon } from 'naive-icons';
 import type { CosmicRank } from '../../achievements/progress';
@@ -35,8 +35,15 @@ export default function SessionPlayer({ session, subject, newlyUnlockedRank, onC
   const consecutiveCorrectCount = useRef(0);
   const previousFeedbackMessages = useRef<Record<FeedbackStatus, string | null>>({ correct: null, incorrect: null });
   const activity = session.activities[sessionState.currentIndex];
+  const previousActivityId = useRef(activity?.id ?? null);
   const solved = isCurrentActivitySolved(sessionState);
   const progress = getSessionProgress(sessionState);
+
+  useEffect(() => {
+    if (!activity || previousActivityId.current === activity.id) return;
+    previousActivityId.current = activity.id;
+    document.getElementById(`activity-${activity.id}`)?.focus();
+  }, [activity?.id]);
 
   function handleSolved(activityId: string) {
     setSessionState((current) => markCurrentActivitySolved(current, activityId));

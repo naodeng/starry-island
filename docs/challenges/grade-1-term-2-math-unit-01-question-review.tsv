@@ -1,0 +1,91 @@
+题目ID	难度	知识点	正确选项	题意与答案复核	选项与答案泄漏检查	审核状态
+challenge-question:grade-1/term-2/math/unit-01/basic/task-01/session-01/question-01	基础	图形辨认、图形特征	△	按题目和答案键复核：△图卡的整体轮廓是三角形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-01/session-01/question-02	基础	图形辨认、图形特征	□	按题目和答案键复核：□图卡的整体轮廓像正方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-01/session-01/question-04	基础	图形辨认、图形特征	圆形图卡→圆的；三角形图卡→不是圆的；长方形图卡→不是圆的；正方形图卡→不是圆的	按题目和答案键复核：圆形图卡的整体轮廓是圆的，另外三张不是圆形。	按对应互动答案键复核；提示未直接给出完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-01/session-01/question-05	基础	图形辨认	长方形	按题目和答案键复核：图卡的整体轮廓没有改变，所以仍是长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-01/session-01/question-06	基础	图形拼组	挑选图卡 → 把图卡摆在一起 → 观察拼出的图案 → 画下结果	按题目和答案键复核：先挑选图卡，摆在一起后观察组合图案，最后画下结果。	按对应互动答案键复核；提示未直接给出完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-01/session-01/question-07	基础	图形辨认、图形拼组	图案由三角形图卡和圆形图卡摆成	按题目和答案键复核：拼组后可以描述图案由哪些图卡组成；图卡本身并没有变成另一种图形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-01/session-01/question-08	基础	图形辨认	圆盘	按题目和答案键复核：圆盘的整体轮廓和圆形图卡相似。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-01	基础	图形辨认、图形特征	▭	按题目和答案键复核：▭图卡的整体轮廓像长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-02	基础	图形辨认、图形特征	○	按题目和答案键复核：○图卡的整体轮廓像圆形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-03	基础	图形辨认	圆形图卡→圆盘；三角形图卡→三角形路牌；长方形图卡→书本封面；正方形图卡→方形窗格	按题目和答案键复核：每张图卡都和整体轮廓相似的物品对应。	按对应互动答案键复核；提示未直接给出完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-04	基础	图形辨认	圆盘→像圆形图卡；书本→不像圆形图卡；三角形旗子→不像圆形图卡；长方形画框→不像圆形图卡	按题目和答案键复核：圆盘整体轮廓接近圆形；书本、三角形旗子和长方形画框的轮廓不同。	按对应互动答案键复核；提示未直接给出完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-05	基础	图形辨认、图形特征	比较转动前后的整体轮廓	按题目和答案键复核：转动图卡后比较整体轮廓，可以发现图形没有因此改变。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-06	基础	图形拼组	选几张图卡 → 试着拼摆 → 调整图卡位置 → 说出新图案	按题目和答案键复核：选好图卡后试着拼摆，调整位置，再观察并说出新图案。	按对应互动答案键复核；提示未直接给出完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-07	基础	图形辨认、图形拼组	画出每张图卡的位置和拼成的整体图案	按题目和答案键复核：只记颜色或数量不能还原摆法；位置和整体图案能帮助别人复现。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/basic/task-02/session-01/question-08	基础	图形辨认	圆形图卡	按题目和答案键复核：盘子的外轮廓接近圆形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-01	基础	图形辨认	△	按题面、答案键与讲解复核：正确答案为“△”；△的整体轮廓是三角形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-02	基础	图形辨认	□	按题面、答案键与讲解复核：正确答案为“□”；□表示正方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-03	基础	图形辨认	○	按题面、答案键与讲解复核：正确答案为“○”；○表示圆形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-04	基础	图形辨认	▭	按题面、答案键与讲解复核：正确答案为“▭”；▭表示长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-05	基础	图形特征	圆形	按题面、答案键与讲解复核：正确答案为“圆形”；圆形的边缘是曲线，没有直边。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-06	基础	图形特征	三角形	按题面、答案键与讲解复核：正确答案为“三角形”；三角形有三条直边。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-07	基础	图形特征	正方形	按题面、答案键与讲解复核：正确答案为“正方形”；正方形有四条直边；圆形没有直边，三角形有三条直边。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-08	基础	图形辨认	长方形	按题面、答案键与讲解复核：正确答案为“长方形”；转动图卡不会改变它的整体轮廓，所以仍是长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-09	基础	图形拼组	圆形和三角形	按题面、答案键与讲解复核：正确答案为“圆形和三角形”；图案用了圆形图卡和三角形图卡；拼摆不会改变图卡本身的种类。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-10	基础	图形辨认	图卡和圆盘的整体轮廓	按题面、答案键与讲解复核：正确答案为“图卡和圆盘的整体轮廓”；比较整体轮廓能判断哪张图卡与圆盘的外形最像。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-11	基础	图形特征	3 条	按题面、答案键与讲解复核：正确答案为“3 条”；三角形有 3 条直边。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-12	基础	图形特征	边缘是弯曲的	按题面、答案键与讲解复核：正确答案为“边缘是弯曲的”；圆形的边缘是弯曲的，没有直边和角。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-13	基础	图形拼组	先选好图形卡，再试着摆放	按题面、答案键与讲解复核：正确答案为“先选好图形卡，再试着摆放”；先选卡片，再尝试摆放，才能观察拼出的图案。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-14	基础	图形拼组	画出每张卡的位置和整体轮廓	按题面、答案键与讲解复核：正确答案为“画出每张卡的位置和整体轮廓”；记录卡片位置和拼成的整体轮廓，伙伴更容易照着拼。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-basic-15	基础	图形拼组	圆形图卡	按题面、数量条件与答案键复核：三角形图卡有两张、圆形图卡有一张；再添一张圆形图卡后两种数量相等。	三项图形卡选项互异；题干给出数量条件但没有直接给出补齐答案。	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-01/session-01/question-01	进阶	图形辨认、图形特征	△	按题目和答案键复核：△图卡的整体轮廓是三角形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-01/session-01/question-02	进阶	图形辨认、图形特征	□	按题目和答案键复核：□图卡的整体轮廓像正方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-01/session-01/question-04	进阶	图形辨认	圆的	按题目和答案键复核：“圆形图卡”符合“圆的”这一类。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-01/session-01/question-05	进阶	图形辨认	长方形	按题目和答案键复核：图卡的整体轮廓没有改变，所以仍是长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-01/session-01/question-06	进阶	图形拼组	挑选图卡 → 把图卡摆在一起 → 观察拼出的图案 → 画下结果	按题目和答案键复核：先挑选图卡，摆在一起后观察组合图案，最后画下结果。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-01/session-01/question-07	进阶	图形辨认、图形拼组	图案由三角形图卡和圆形图卡摆成	按题目和答案键复核：拼组后可以描述图案由哪些图卡组成；图卡本身并没有变成另一种图形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-01/session-01/question-08	进阶	图形辨认、图形特征	比较图卡的整体轮廓	按题目和答案键复核：转动图卡会改变摆放方向；比较整体轮廓能帮助判断图形是否相同。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-01	进阶	图形辨认、图形特征	▭	按题目和答案键复核：▭图卡的整体轮廓像长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-02	进阶	图形辨认、图形特征	○	按题目和答案键复核：○图卡的整体轮廓像圆形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-03	进阶	图形辨认	圆形图卡 — 圆盘	按题目和答案键复核：“圆形图卡”对应“圆盘”。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-04	进阶	图形辨认	像圆形图卡	按题目和答案键复核：“圆盘”符合“像圆形图卡”这一类。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-05	进阶	图形辨认、图形特征	比较转动前后的整体轮廓	按题目和答案键复核：转动图卡后比较整体轮廓，可以发现图形没有因此改变。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-06	进阶	图形拼组	选几张图卡 → 试着拼摆 → 调整图卡位置 → 说出新图案	按题目和答案键复核：选好图卡后试着拼摆，调整位置，再观察并说出新图案。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-07	进阶	图形辨认、图形拼组	画出每张图卡的位置和拼成的整体图案	按题目和答案键复核：只记颜色或数量不能还原摆法；位置和整体图案能帮助别人复现。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/advanced/task-02/session-01/question-08	进阶	图形辨认、图形拼组	把图卡摆在一起试一试，再观察拼出的轮廓	按题目和答案键复核：把图卡摆在一起，观察拼出的整体轮廓，才能核对拼组结果。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-01	进阶	图形辨认	比较转动前后的整体轮廓	按题面、答案键与讲解复核：正确答案为“比较转动前后的整体轮廓”；转动只改变摆放方向；比较整体轮廓可以判断图形仍是正方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-02	进阶	图形拼组	长方形	按题面、答案键与讲解复核：正确答案为“长方形”；两张正方形卡并排拼成的整体外轮廓是长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-03	进阶	图形拼组	更大的正方形	按题面、答案键与讲解复核：正确答案为“更大的正方形”；两行两列的四张同样大小正方形卡拼成更大的正方形外轮廓。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-04	进阶	图形拼组	三角形的形状和卡片怎样摆放	按题面、答案键与讲解复核：正确答案为“三角形的形状和卡片怎样摆放”；三角形形状和拼摆方式都会影响结果，缺少这些信息就不能确定拼成什么。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-05	进阶	图形特征	沿圆形边缘观察有没有直线段	按题面、答案键与讲解复核：正确答案为“沿圆形边缘观察有没有直线段”；圆形边缘是曲线，没有四条直边。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-06	进阶	图形拼组	用同样的两张图卡，改变摆法后比较外轮廓	按题面、答案键与讲解复核：正确答案为“用同样的两张图卡，改变摆法后比较外轮廓”；用同样的两张图卡改变摆法并比较整体轮廓，才是在检查摆法的影响。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-07	进阶	图形拼组	对照记录检查卡片的位置和方向	按题面、答案键与讲解复核：正确答案为“对照记录检查卡片的位置和方向”；检查位置和方向能找到摆法差异，颜色不能说明轮廓为何不同。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-08	进阶	图形特征	圆形卡	按题面、答案键与讲解复核：正确答案为“圆形卡”；圆形边缘是曲线，没有直边；另外两种图形都有直边。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-09	进阶	图形拼组	不能，还要看卡片具体位置	按题面、答案键与讲解复核：正确答案为“不能，还要看卡片具体位置”；只在角上接触不能确定整体轮廓是长方形，还要知道卡片的位置和边是否对齐。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-10	进阶	图形特征	比较卡片整体的长短和形状	按题面、答案键与讲解复核：正确答案为“比较卡片整体的长短和形状”；比较整体轮廓和边的相对长短，比只看颜色更能帮助辨认图形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-11	进阶	图形辨认	按图形名称逐张核对	按题面、答案键与讲解复核：正确答案为“按图形名称逐张核对”；按名称逐张核对，能确认每个位置放的是要求的图形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-12	进阶	图形拼组	每张卡相对位置和摆放方向	按题面、答案键与讲解复核：正确答案为“每张卡相对位置和摆放方向”；每张卡的位置和方向能帮助伙伴还原同一个拼图。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-13	进阶	图形特征	观察整体轮廓和边缘特点	按题面、答案键与讲解复核：正确答案为“观察整体轮廓和边缘特点”；转动不会改变图形本身，观察整体轮廓和边缘仍能辨认。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-14	进阶	图形拼组	卡片的种类和摆放位置	按题面、答案键与讲解复核：正确答案为“卡片的种类和摆放位置”；只记录数量不够；卡片种类和摆放位置能帮助还原图案。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-advanced-15	进阶	图形拼组	正方形和圆形图卡	按题面、数量条件与答案键复核：正方形和圆形图卡各两张，三角形图卡一张；相同数量的一对唯一。	三项组合选项互异；题干未直接指出数量相同的两种图形。	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-01	高阶	图形辨认、图形特征	△	按题目和答案键复核：△图卡的整体轮廓是三角形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-02	高阶	图形辨认、图形特征	□	按题目和答案键复核：□图卡的整体轮廓像正方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-03	高阶	图形辨认、图形特征	圆形图卡 — 硬币的外轮廓	按题目和答案键复核：“圆形图卡”对应“硬币的外轮廓”。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-04	高阶	图形辨认	圆的	按题目和答案键复核：“圆形图卡”符合“圆的”这一类。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-05	高阶	图形辨认	长方形	按题目和答案键复核：图卡的整体轮廓没有改变，所以仍是长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-06	高阶	图形拼组	挑选图卡 → 把图卡摆在一起 → 观察拼出的图案 → 画下结果	按题目和答案键复核：先挑选图卡，摆在一起后观察组合图案，最后画下结果。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-07	高阶	图形辨认、图形拼组	图案由三角形图卡和圆形图卡摆成	按题目和答案键复核：拼组后可以描述图案由哪些图卡组成；图卡本身并没有变成另一种图形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-01/session-01/question-08	高阶	图形辨认、图形特征	转回不同方向比较整体轮廓	按题目和答案键复核：把图卡转动后比较整体轮廓，可以判断是否还是同一种图形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-01	高阶	图形辨认、图形特征	▭	按题目和答案键复核：▭图卡的整体轮廓像长方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-02	高阶	图形辨认、图形特征	○	按题目和答案键复核：○图卡的整体轮廓像圆形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-03	高阶	图形辨认	圆形图卡 — 圆盘	按题目和答案键复核：“圆形图卡”对应“圆盘”。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-04	高阶	图形辨认	像圆形图卡	按题目和答案键复核：“圆盘”符合“像圆形图卡”这一类。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-05	高阶	图形辨认、图形特征	比较转动前后的整体轮廓	按题目和答案键复核：转动图卡后比较整体轮廓，可以发现图形没有因此改变。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-06	高阶	图形拼组	选几张图卡 → 试着拼摆 → 调整图卡位置 → 说出新图案	按题目和答案键复核：选好图卡后试着拼摆，调整位置，再观察并说出新图案。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-07	高阶	图形辨认、图形拼组	画出每张图卡的位置和拼成的整体图案	按题目和答案键复核：只记颜色或数量不能还原摆法；位置和整体图案能帮助别人复现。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-01/high/task-02/session-01/question-08	高阶	图形辨认、图形特征、图形拼组	画出图卡的摆放位置和拼出的整体轮廓	按题目和答案键复核：画出摆放位置和整体轮廓，别人就能照着检查拼组结果。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-01	高阶	图形拼组	先核对卡片形状和摆放，再观察拼出的外轮廓	按题面、答案键与讲解复核：正确答案为“先核对卡片形状和摆放，再观察拼出的外轮廓”；只有知道三角形卡的形状与摆放，才能检查是否拼成正方形；“任意”说法不能直接成立。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-02	高阶	图形拼组	两张卡沿整条边对齐并排放	按题面、答案键与讲解复核：正确答案为“两张卡沿整条边对齐并排放”；沿整条边对齐并排放，能说明两张卡如何组成长方形外轮廓。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-03	高阶	图形特征	它的边缘是连续弯曲的，没有直边和角	按题面、答案键与讲解复核：正确答案为“它的边缘是连续弯曲的，没有直边和角”；圆形的边缘连续弯曲，没有直边和角；颜色和位置不是判断依据。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-04	高阶	图形辨认	转回原方向并比较整体轮廓	按题面、答案键与讲解复核：正确答案为“转回原方向并比较整体轮廓”；转回原方向比较整体轮廓，可以发现摆放方向改变但图形仍是三角形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-05	高阶	图形拼组	每张卡的形状、方向和相接位置	按题面、答案键与讲解复核：正确答案为“每张卡的形状、方向和相接位置”；形状、方向和相接位置都可能影响整体轮廓，记录它们才能定位原因。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-06	高阶	图形特征	不能，还需要观察整体轮廓和边的关系	按题面、答案键与讲解复核：正确答案为“不能，还需要观察整体轮廓和边的关系”；长方形和正方形都有四条直边和四个角；还要观察整体轮廓及边的关系。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-07	高阶	图形拼组	排成两行两列，卡片边对齐	按题面、答案键与讲解复核：正确答案为“排成两行两列，卡片边对齐”；两行两列且边对齐时，整体外轮廓是更大的正方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-08	高阶	图形辨认	观察它的整体轮廓，不用颜色和方向判断	按题面、答案键与讲解复核：正确答案为“观察它的整体轮廓，不用颜色和方向判断”；比较整体轮廓，能确认卡片仍是正方形。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-09	高阶	图形拼组	两组卡片的大小或摆放方式可能不同	按题面、答案键与讲解复核：正确答案为“两组卡片的大小或摆放方式可能不同”；卡片大小或摆放方式不同，组合后的外轮廓可能不同；颜色不能决定轮廓。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-10	高阶	图形特征	圆形	按题面、答案键与讲解复核：正确答案为“圆形”；圆形边缘没有角；三角形和正方形都有角。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-11	高阶	图形拼组	每张卡的方向、相接边和先后调整步骤	按题面、答案键与讲解复核：正确答案为“每张卡的方向、相接边和先后调整步骤”；方向、相接边和调整步骤能帮助伙伴复现拼组过程。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-12	高阶	图形辨认	整体轮廓和边缘特点	按题面、答案键与讲解复核：正确答案为“整体轮廓和边缘特点”；根据整体轮廓和边缘特点辨认图形，大小和位置不改变它的种类。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-13	高阶	图形拼组	用同样的图形卡分别试拼，并比较外轮廓	按题面、答案键与讲解复核：正确答案为“用同样的图形卡分别试拼，并比较外轮廓”；使用同样的卡片实际试拼，再比较外轮廓，结果才可以核对。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-01-high-14	高阶	图形特征	逐段沿两张卡的边缘观察，圆形没有直边	按题面、答案键与讲解复核：正确答案为“逐段沿两张卡的边缘观察，圆形没有直边”；正方形由直边围成，圆形边缘是曲线；逐段观察能发现说法错误。	三项选项互异；题干和提示未直接给出正确选项	作者自审通过（未独立教育者复核）

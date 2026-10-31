@@ -32,9 +32,9 @@ describe('curriculum directory layout', () => {
     const actualDirectories = entryDirectoriesFromFiles(Object.keys(courseFiles));
     const entryModuleDirectories = entryDirectoriesFromFiles(Object.keys(courseEntryModules));
 
-    expect(entries).toHaveLength(311);
+    expect(entries).toHaveLength(309);
     expect(entries.filter((entry) => entry.subjectId === 'chinese')).toHaveLength(95);
-    expect(entries.filter((entry) => entry.subjectId === 'math')).toHaveLength(122);
+    expect(entries.filter((entry) => entry.subjectId === 'math')).toHaveLength(120);
     expect(entries.filter((entry) => entry.subjectId === 'english')).toHaveLength(94);
     expect(new Set(expectedDirectories).size).toBe(expectedDirectories.length);
     expect(inspectLayout(expectedDirectories, actualDirectories, entryModuleDirectories)).toEqual({

@@ -1,13 +1,15 @@
 import { useId, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { ArrowRightIcon, CheckCircleIcon, ChevronDownIcon } from 'naive-icons';
-import { getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
+import { getChallengeGroupPath, getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CurriculumUnit, Difficulty, LearningTask } from '../../content/types';
 import { getSessionsForDifficulty } from '../../content/sessionUtils';
 import CompanionAvatar, { COMPANION_PROFILES } from '../mascots/CompanionAvatar';
 import HeroGuide from '../mascots/HeroGuide';
 import CourseBreadcrumbs from './CourseBreadcrumbs';
+import { getPilotUnitChallengeGroupId } from '../../challenges/content/unitLinks';
+import EmptyState from '../shared/EmptyState';
 
 interface UnitOverviewProps {
   unitKey: string;
@@ -72,8 +74,11 @@ export default function UnitOverview({
     ? '家长提示：本课程依据 TapXWorld 固定快照中的教材内容设计，可能与人教社后续修订版存在差异。'
     : textbook?.sourceKind === 'pep-latest'
       ? '家长提示：本课程依据人教社公开最新版教材内容设计。'
-      : '家长提示：本课程教材来源正在核对中。';
+      : textbook?.sourceKind === 'user-provided'
+        ? `家长提示：本课程依据你提供的人教版教材（ISBN ${textbook.isbn}）设计。`
+        : '家长提示：本课程教材来源正在核对中。';
   const firstBasicTask = allBasicSessions.length > 0 ? unit.difficultyTracks.basic.tasks[0] : undefined;
+  const pilotChallengeGroupId = !selectedTask ? getPilotUnitChallengeGroupId(unitKey) : undefined;
   const nextSessionIndex = selectedTask
     ? Math.max(0, selectedTask.sessions.findIndex((session) => !completedSessionIds.includes(session.id)))
     : -1;
@@ -95,7 +100,7 @@ export default function UnitOverview({
   const reviewId = `${disclosureId}-review`;
 
   const breadcrumbItems = [
-    { label: '课程目录', path: '/' },
+    { label: '课程目录', path: '/courses' },
     { label: gradeAndTerm.grade },
     { label: gradeAndTerm.term },
     { label: subjectTitle },
@@ -178,8 +183,21 @@ export default function UnitOverview({
                 <p className="eyebrow">选择任务</p>
                 <h2>准备好就出发</h2>
               </div>
-              <Button type="default" onClick={() => onNavigate('/')}>返回课程目录</Button>
+              <Button type="default" onClick={() => onNavigate('/courses')}>返回课程目录</Button>
             </div>
+
+            {pilotChallengeGroupId && (
+              <Card className="unit-challenge-entry" color="default">
+                <div>
+                  <p className="eyebrow">闯关练习 · 与学习进度分开记录</p>
+                  <h2>试试本单元闯关</h2>
+                  <p>闯关不提供提示或重试，也不会改变这里的学习场次进度。</p>
+                </div>
+                <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate(getChallengeGroupPath(pilotChallengeGroupId))}>
+                  进入闯关挑战
+                </Button>
+              </Card>
+            )}
 
             <div className="difficulty-track-list">
               {difficulties.map((difficulty) => {
@@ -215,7 +233,11 @@ export default function UnitOverview({
                         })}
                       </div>
                     ) : (
-                      <p className="task-track-empty">这档任务正在准备中，核对好教材内容后就会开放。</p>
+                      <EmptyState
+                        title="这档任务正在准备中"
+                        description="核对好教材内容后就会开放，你可以先选择已开放的任务。"
+                        headingLevel={3}
+                      />
                     )}
                   </section>
                 );

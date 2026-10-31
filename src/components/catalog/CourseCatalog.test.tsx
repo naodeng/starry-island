@@ -1,23 +1,49 @@
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CourseCatalog from './CourseCatalog';
 import ThemeProvider from '../../theme/ThemeProvider';
 import { SoundProvider } from '../../sound/SoundProvider';
+import { curriculumManifest } from '../../content/curriculumManifest';
 
-const progress = { schemaVersion: 3 as const, completedSessionIds: [], learningStart: null };
+const progress = { schemaVersion: 4 as const, completedSessionIds: [], recentCompletions: [], learningStart: null };
 
 function renderCatalog(onNavigate = vi.fn()) {
   return render(
     <SoundProvider>
       <ThemeProvider>
-        <CourseCatalog progress={progress} onNavigate={onNavigate} onApplyLearningStart={vi.fn()} />
+        <CourseCatalog progress={progress} onNavigate={onNavigate} />
       </ThemeProvider>
     </SoundProvider>,
   );
 }
 
 describe('CourseCatalog', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
+  it('remembersTheLastSelectedCourseAcrossCatalogVisits', async () => {
+    const user = userEvent.setup();
+    const firstVisit = renderCatalog();
+
+    await user.click(screen.getByRole('combobox', { name: '年级' }));
+    await user.click(await screen.findByRole('option', { name: '二年级' }));
+    await user.click(screen.getByRole('combobox', { name: '学期' }));
+    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.click(screen.getByRole('button', { name: '数学' }));
+
+    firstVisit.unmount();
+    renderCatalog();
+
+    const route = screen.getByText('当前探索航线').parentElement?.parentElement;
+    expect(route).toHaveTextContent('二年级');
+    expect(route).toHaveTextContent('下学期');
+    expect(route).toHaveTextContent('数学');
+    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('二年级');
+    expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('下学期');
+  });
+
   it('highlightsTheCurrentCourseAndLetsLearnersJumpToCourseSelection', async () => {
     const user = userEvent.setup();
     renderCatalog();
@@ -44,6 +70,56 @@ describe('CourseCatalog', () => {
     expect(screen.getByRole('button', { name: '语文' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '数学' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '英语' })).toBeInTheDocument();
+  });
+
+  it('keepsTheCatalogHeroFocusedOnCourseChoiceInsteadOfRepeatingTheBrandAndProgressPanels', () => {
+    renderCatalog();
+
+    expect(screen.getByRole('heading', { level: 1, name: '课程目录' })).toBeInTheDocument();
+    expect(document.querySelector('.catalog-brand-logo')).toBeNull();
+    expect(document.querySelector('.companion-roster')).toBeNull();
+    expect(screen.queryByRole('button', { name: '成就详情' })).not.toBeInTheDocument();
+    expect(screen.getByText('当前探索航线')).toBeInTheDocument();
+    expect(screen.getByText('云岛号 · 学习伙伴')).toBeInTheDocument();
+  });
+
+  it('explainsWhenTheSelectedSubjectHasNoRegisteredUnitsAndKeepsSelectionAvailable', () => {
+    const selectedSubject = curriculumManifest.grades[0]!.terms[0]!.subjects[0]!;
+    const registeredUnits = selectedSubject.units;
+    selectedSubject.units = [];
+
+    try {
+      renderCatalog();
+
+      expect(screen.getByRole('heading', { level: 3, name: '正在准备语文课程' })).toBeInTheDocument();
+      expect(screen.getByText('这个学期的课程内容正在核对教材版本，准备好后就会开放。')).toBeInTheDocument();
+      expect(screen.getByRole('combobox', { name: '年级' })).toBeInTheDocument();
+      expect(screen.getByRole('combobox', { name: '学期' })).toBeInTheDocument();
+      expect(screen.getByRole('group', { name: '选择学科' })).toBeInTheDocument();
+    } finally {
+      selectedSubject.units = registeredUnits;
+    }
+  });
+
+  it('offersAnIndependentChallengeCenterEntry', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+    renderCatalog(onNavigate);
+
+    await user.click(screen.getByRole('button', { name: '进入闯关中心' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/challenges');
+  });
+
+  it('navigatesToDedicatedSettingsInsteadOfOpeningAModal', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+    renderCatalog(onNavigate);
+
+    await user.click(screen.getByRole('button', { name: '设置' }));
+
+    expect(onNavigate).toHaveBeenCalledWith('/settings');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('opensVerifiedChineseAndMathUnits', async () => {

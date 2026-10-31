@@ -50,7 +50,7 @@ const askAndObserve = lessonProfile(
     phraseQuestion('看到一朵花，可以怎样说？', ['I can see a flower.', 'I can see a tree.', 'I can see a hill.'], 0, 'flower 表示花。'),
     phraseQuestion('“你能看见什么？”对应哪句话？', ['What can you see?', 'Where are you?', 'Who is your friend?'], 0, '询问能看见什么，可以说 What can you see?'),
   ],
-  ['植物', '地形'],
+  ['植物', '自然地景'],
   [
     { label: 'flower', categoryIndex: 0 }, { label: 'grass', categoryIndex: 0 },
     { label: 'hill', categoryIndex: 1 }, { label: 'lake', categoryIndex: 1 },
@@ -88,7 +88,7 @@ const landAndWaterClues = lessonProfile(
     phraseQuestion('“我能看见草。”应该选哪句？', ['I can see grass.', 'I can see a boat.', 'I can see a hill.'], 0, 'grass 表示草，通常不在前面加 a。'),
     phraseQuestion('“我能看见一个湖。”对应哪句？', ['I can see a lake.', 'I can see a tree.', 'I can see grass.'], 0, 'lake 表示湖，是可数名词，前面用 a。'),
   ],
-  ['陆地上的景物', '水面或水上物品'],
+  ['陆地上的景物', '水域景物或物品'],
   [
     { label: 'grass', categoryIndex: 0 }, { label: 'hill', categoryIndex: 0 },
     { label: 'lake', categoryIndex: 1 }, { label: 'boat', categoryIndex: 1 },

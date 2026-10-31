@@ -14,7 +14,7 @@ const profiles: Record<string, MathProfile> = {
   'solid-shapes': { mode: 'solid-shapes', context: '球、圆柱、正方体和长方体' },
   'add-10': { mode: 'arithmetic', operator: '+', limit: 10, context: '10 以内加减法' },
   'teen-numbers': { mode: 'place-value', limit: 20, context: '11～20 的数位和数序' },
-  clock: { mode: 'clock', context: '整时和半时' },
+  clock: { mode: 'clock', context: '整时读数和时针、分针的作用' },
   'make-ten': { mode: 'arithmetic', operator: '+', limit: 20, context: '凑十法和 20 以内进位加法' },
   'g1-math-review': { mode: 'practice', limit: 20, context: '一年级数与运算、图形、位置和时间' },
   'math-park': { mode: 'practice', limit: 10, context: '数学乐园里的数数、比较和简单运算' },
@@ -738,11 +738,83 @@ function makeShapes(p: MathProfile, difficulty: 'basic' | 'advanced' | 'high', t
   ];
 }
 
+function makeGrade1Term1Clock(difficulty: 'basic' | 'advanced' | 'high', taskIndex: number, hour: number, nextHour: number): MathQuestionSpec[] {
+  const readClock = (time: number) => choose(
+    `钟面上，时针指向 ${time}，分针指向 12，表示几时？`,
+    [`${time} 时`, `${time === 12 ? 11 : time + 1} 时`, `${time === 1 ? 3 : 1} 时`], 0,
+    '分针指向 12 表示整时，再看时针指向的数。',
+    `时针指向 ${time}，分针指向 12，表示 ${time} 时。`,
+  );
+  const handRoles = taskIndex === 0
+    ? pair('把指针和它的作用连起来。', [
+      ['较短的指针', '时针'],
+      ['较长的指针', '分针'],
+      ['整时时指向 12 的指针', '分针'],
+    ], '回想钟面上两根指针的长短和作用。', '较短的是时针，较长的是分针；整时时分针指向 12。')
+    : pair('把钟面观察记录和相应的指针名称连起来。', [
+      ['告诉我们是几时的指针', '时针'],
+      ['较长的一根指针', '分针'],
+      ['整时指向钟面顶端的指针', '分针'],
+    ], '逐条辨认指针的名称、长短和作用。', '时针告诉我们是几时；分针通常较长，整时指向 12。');
+
+  if (difficulty === 'basic') {
+    return [
+      readClock(hour),
+      choose(taskIndex === 0 ? '钟面上较短的一根指针叫什么？' : '时针和分针中，哪根通常较短？', ['时针', '分针', '钟面数字'], 0, '读出“几时”要看较短的指针。', '钟面上较短的一根指针是时针。'),
+      readClock(nextHour),
+      choose(taskIndex === 0 ? '钟面上的“几时”主要由哪根指针告诉我们？' : '读出小时数时，应该观察哪根指针指向的数？', ['时针', '分针', '钟面外框'], 0, '先找到较短的那根指针。', '时针指向的数告诉我们是几时。'),
+      choose(`${hour} 时整的钟面上，分针指向哪里？`, ['12', '6', '3'], 0, '整时的分针指向钟面顶端。', `${hour} 时整时，分针指向 12。`),
+      handRoles,
+      arrange(taskIndex === 0 ? '把看钟面并读出整时的步骤排好。' : '小组核对整时钟面的读数步骤。',
+        taskIndex === 0
+          ? ['看时针指向的数', '找到钟面上的 12', '确认分针指向 12', '说出时刻']
+          : ['记录时针指向的数', '先认清钟面上 12 的位置', '核对分针是否指向 12', '读出整时时刻'],
+        taskIndex === 0 ? [1, 2, 0, 3] : [1, 2, 0, 3], '先认清钟面，再看两根指针。', '先确认分针指向 12，再看时针并读出时刻。'),
+      taskIndex === 0
+        ? choose(`早上到校时，时针指向 ${hour}、分针指向 12。应读作？`, [`${hour} 时`, `${nextHour} 时`, '12 时'], 0, '分针指向 12 是整时。', `时针指向 ${hour}，所以读作 ${hour} 时。`)
+        : choose(`同伴看到时针指向 ${hour}、分针指向 12，却把时刻记成 12 时。应改成？`, [`${hour} 时`, `${nextHour} 时`, '12 时'], 0, '分针指向的数不是小时数。', `分针指向 12 表示整时；时针指向 ${hour}，所以是 ${hour} 时。`),
+    ];
+  }
+
+  if (difficulty === 'advanced') {
+    return [
+      choose(`时针指向 ${hour}、分针指向 12，同学只看分针读成 12 时，怎样改正？`, [`应读 ${hour} 时，因为小时数看时针`, '应读 12 时，因为分针指向 12', '忽略时针位置，仍可确定具体小时'], 0,
+        '两根指针的作用不同，读小时要看时针。', `分针指向 12 表示整时；时针指向 ${hour}，应读 ${hour} 时。`),
+      readClock(nextHour),
+      handRoles,
+      choose(taskIndex === 0 ? '读出钟面上的整时时刻，哪一步不能省略？' : '读“几时整”时，怎样确定具体的小时数？', ['看时针指向的数', '只看分针的长度', '只看钟面的颜色'], 0, '分针指向 12 只能说明是整时。', '还要看时针指向的数，才能读出具体是几时。'),
+      arrange(taskIndex === 0 ? '把三个整时时刻按从早到晚排列。' : '把下面三个整时时刻按先后排列。', taskIndex === 0 ? ['3 时', '9 时', '6 时'] : ['2 时', '6 时', '11 时'], taskIndex === 0 ? [0, 2, 1] : [0, 1, 2], '整时时刻可以按小时数先后排列。', taskIndex === 0 ? '从早到晚依次是 3 时、6 时、9 时。' : '从早到晚依次是 2 时、6 时、11 时。'),
+      choose(`钟面上的时针指向 ${hour}，分针指向 12。下面哪张记录卡相符？`, [`${hour} 时整`, `${nextHour} 时整`, '分针指向 12，不能读具体小时'], 0, '先确认分针指向 12，再读时针。', `这个钟面表示 ${hour} 时整。`),
+      choose(`两张钟面都显示整时：一张时针指向 ${hour}，另一张指向 ${nextHour}。哪张时刻较晚？`, [`时针指向 ${nextHour} 的钟面`, `时针指向 ${hour} 的钟面`, '只看分针才能比较'], 0, '两个时刻都是整时，比较时针指向的数。', `${nextHour} 比 ${hour} 大，所以时针指向 ${nextHour} 的钟面较晚。`),
+      taskIndex === 0
+        ? choose(`同学把时针指向 ${hour}、分针指向 12 的钟面记成 ${nextHour} 时。哪条线索能帮他改正？`, [`时针指向 ${hour}，分针指向 12`, '钟面上有 12 个数字', '分针比时针长'], 0, '用时针所指的数核对小时。', `时针指向 ${hour}，所以应记为 ${hour} 时整。`)
+        : choose('哪种读钟方法能减少把指针作用弄混？', ['先确认分针指向 12，再读时针指向的小时数', '把分针指向的数当作小时数', '只观察两根指针谁更长'], 0, '把整时的分针位置和小时数分开判断。', '分针指向 12 表示整时；时针指向的数表示小时。'),
+    ];
+  }
+
+  return [
+    choose(`一张记录卡写着“${hour} 时整”，钟面应怎样画？`, [`时针指向 ${hour}、分针指向 12`, `时针指向 12、分针指向 ${hour}`, `两根指针都指向 ${hour}`], 0,
+      '先确定分针在整时时的位置，再画时针。', `${hour} 时整时，时针指向 ${hour}，分针指向 12。`),
+    choose(`时针指向 ${nextHour}、分针指向 12，哪张时间卡与钟面一致？`, [`${nextHour} 时整`, `${hour} 时整`, '只凭分针不能确定小时数'], 0, '整时先看分针，再看时针指向的数。', `时针指向 ${nextHour}，所以是 ${nextHour} 时整。`),
+    handRoles,
+    choose(taskIndex === 0 ? '读出钟面上的“几时”，主要看哪根指针？' : '读钟面时，哪根指针告诉我们小时数？', ['时针', '分针', '钟面外框'], 0, '先找到较短的那根指针。', '时针指向的数告诉我们是几时。',),
+    arrange(taskIndex === 0 ? '把这三项整时时刻按从小到大排列。' : '把这三张整时卡按先后顺序排列。', taskIndex === 0 ? ['11 时', '5 时', '8 时'] : ['10 时', '4 时', '7 时'], taskIndex === 0 ? [1, 2, 0] : [1, 2, 0], '先比较三个小时数。', taskIndex === 0 ? '按从小到大排列为 5 时、8 时、11 时。' : '从小到大排列为 4 时、7 时、10 时。'),
+    choose(`作息卡写着“${hour} 时整开始、${nextHour} 时整继续”。哪项顺序正确？`, [`先 ${hour} 时，再 ${nextHour} 时`, `先 ${nextHour} 时，再 ${hour} 时`, '两项时刻相同'], 0, '比较两个整时的小时数。', `${hour} 小于 ${nextHour}，所以先 ${hour} 时，再 ${nextHour} 时。`),
+      choose(`同伴没有准确记录时针指向 ${hour}、分针指向 12 的钟面。应怎样核对？`, ['分针指向 12 表示整时，再按时针读小时', '只看时针长短就能读出小时', '分针指向 12 表示 12 时'], 0, '分别核对两根指针提供的信息。', `分针指向 12 表示整时，时针指向 ${hour}，应写 ${hour} 时整。`),
+    taskIndex === 0
+      ? choose(`同伴读时只看分针。钟面上时针指向 ${hour}、分针指向 12，怎样说明正确读法？`, [`时针告诉小时，分针指向 12 说明是整时`, '只看钟面数字多少来读小时', '指针的长短决定钟面数字'], 0, '两根指针提供的信息要合起来看。', `时针指向 ${hour}，分针指向 12，所以读作 ${hour} 时整。`)
+      : choose(`检查“时针 ${hour}、分针 12”的记录时，哪项证据最直接？`, ['时针指向的数决定小时，分针指向 12 说明整时', '钟面有 12 个数字', '两根指针长度不同'], 0, '分别核对两根指针所表示的信息。', `这组指针表示 ${hour} 时整。`),
+  ];
+}
+
 function makeClock(entry: AddedCourseEntry, difficulty: 'basic' | 'advanced' | 'high', taskIndex: number): MathQuestionSpec[] {
   const seed = seedFor(entry, difficulty, taskIndex);
   const hour = 1 + seed % 11;
   const nextHour = hour === 12 ? 1 : hour + 1;
   const elapsed = 10 + (seed % 4) * 5;
+  if (entry.id === 'grade-1/term-1/math/unit-07') {
+    return makeGrade1Term1Clock(difficulty, taskIndex, hour, nextHour);
+  }
   if (entry.grade === 1) {
     const finalQuestion = difficulty === 'basic'
       ? taskIndex === 0
@@ -1533,6 +1605,14 @@ function makeGradeThreeReview(entry: AddedCourseEntry, difficulty: 'basic' | 'ad
 
 function createSecondTaskMatchVariant(question: MathQuestionSpec, entry: AddedCourseEntry): MathQuestionSpec {
   if (question.kind !== 'match') return question;
+
+  if (entry.id === 'grade-1/term-1/math/unit-07') {
+    return pair('把另一组钟面线索和读时方法连起来。', [
+      ['分针指向 12', '表示整时'],
+      ['时针指向 8', '读作 8 时'],
+      ['较长的一根指针', '分针'],
+    ], '分别检查指针位置和它表示的信息。', '分针指向 12 表示整时；时针指向 8 表示 8 时；较长的一根指针是分针。');
+  }
 
   const variantByProfile: Record<string, MathQuestionSpec> = {
     location: pair('把位置描述和倒过来观察时的位置连起来。', [
