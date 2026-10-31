@@ -14,9 +14,15 @@ interface ChallengeWrongQuestionsProps {
 
 export default function ChallengeWrongQuestions({ records, onNavigate }: ChallengeWrongQuestionsProps) {
   const [filter, setFilter] = useState<WrongQuestionFilter>('all');
-  const visibleRecords = records.filter((record) => (
-    filter === 'all' || (filter === 'mastered' ? record.correctAttemptStreak >= 2 : record.correctAttemptStreak < 2)
-  ));
+  const [searchQuery, setSearchQuery] = useState('');
+  const normalizedSearchQuery = searchQuery.trim().toLocaleLowerCase('zh-CN');
+  const visibleRecords = records
+    .filter((record) => (
+      filter === 'all' || (filter === 'mastered' ? record.correctAttemptStreak >= 2 : record.correctAttemptStreak < 2)
+    ))
+    .filter(({ question }) => !normalizedSearchQuery || [question.activity.prompt, question.activity.explanation]
+      .some((text) => text.toLocaleLowerCase('zh-CN').includes(normalizedSearchQuery)))
+    .sort((left, right) => Date.parse(right.lastWrongAt) - Date.parse(left.lastWrongAt));
 
   return (
     <main className="challenge-page">
@@ -41,6 +47,20 @@ export default function ChallengeWrongQuestions({ records, onNavigate }: Challen
             </div>
           </div>
 
+          <label className="challenge-wrong-search">
+            <span>搜索题目内容</span>
+            <input
+              type="search"
+              aria-label="搜索错题题干或讲解"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="输入题干或讲解中的关键词"
+            />
+          </label>
+          <p className="challenge-wrong-results-count" aria-live="polite">
+            正在显示 {visibleRecords.length} / {records.length} 道错题，按最近答错时间排序
+          </p>
+
           {visibleRecords.length ? (
             <ol className="challenge-wrong-question-list">
               {visibleRecords.map(({ question, wrongCount, lastWrongAt, correctAttemptStreak }) => {
@@ -63,10 +83,12 @@ export default function ChallengeWrongQuestions({ records, onNavigate }: Challen
               <EmptyState
                 className="challenge-wrong-empty"
                 headingLevel={3}
-                title={records.length === 0 ? '错题本还是空的' : '这个分类暂时没有题目'}
+                title={records.length === 0 ? '错题本还是空的' : normalizedSearchQuery && visibleRecords.length === 0 ? '没有找到匹配的错题' : '这个分类暂时没有题目'}
                 description={records.length === 0
                   ? '完成挑战后，答错的题会出现在这里；答对两次后会标记为已掌握。'
-                  : '试试切换到“全部”或其他分类。'}
+                  : normalizedSearchQuery && visibleRecords.length === 0
+                    ? '换一个题干或讲解关键词再试，也可以清空搜索内容。'
+                    : '试试切换到“全部”或其他分类。'}
               />
             </div>
           )}

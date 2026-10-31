@@ -39,7 +39,7 @@
   background: var(--animal-bg-color);
 }
 
-.home-current-course > .eyebrow { align-self: center; margin: 0 2px 0 0; }
+.home-current-course > .eyebrow { align-self: center; margin: 0 2px 0 0; color: var(--animal-text-color-secondary); letter-spacing: .02em; }
 .home-current-course label { display: grid; gap: 5px; min-width: 140px; color: var(--animal-text-color-secondary); font-size: 13px; font-weight: 700; }
 .home-current-course [role='combobox'] { min-width: 130px; }
 .home-current-course-note { align-self: center; color: var(--animal-text-color-secondary); font-size: 12px; line-height: 1.5; }
@@ -289,6 +289,7 @@
 
 .home-dashboard-challenge-entry h2 { margin-bottom: 6px; }
 .home-dashboard-challenge-entry p { max-width: 44ch; }
+.home-dashboard-challenge-entry p { color: var(--animal-text-color); }
 .home-dashboard-challenge-entry > button { flex: 0 0 auto; white-space: nowrap; }
 .home-dashboard-challenge-entry > button span { white-space: nowrap; }
 
@@ -297,7 +298,7 @@
 }
 
 @media (max-width: 700px) {
-  .home-dashboard { padding-inline: 14px; }
+  .home-dashboard { padding-inline: 16px; }
   .home-dashboard-shell { padding-top: 24px; }
   .home-dashboard-heading { margin-bottom: 20px; }
   .home-dashboard-heading h1 { font-size: 26px; }

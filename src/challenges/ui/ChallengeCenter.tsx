@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
-import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath } from '../../app/router';
+import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath, getSubjectTitle } from '../../app/router';
 import EmptyState from '../../components/shared/EmptyState';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { TaskProgress } from '../domain/types';
@@ -116,9 +116,21 @@ interface ChallengeCenterProps {
 
 export default function ChallengeCenter({ groups, progressByTaskId, progressReadState, onRetryProgress, onNavigate }: ChallengeCenterProps) {
   const savedSelection = loadCourseSelection();
-  const [gradeFilter, setGradeFilter] = useState(savedSelection ? String(Number(savedSelection.gradeId.slice('grade-'.length))) : 'all');
-  const [semesterFilter, setSemesterFilter] = useState(savedSelection ? String(Number(savedSelection.termId.slice('term-'.length))) : 'all');
   const availableGrades = [...new Set(groups.map(({ group }) => group.definition.grade))].sort((left, right) => left - right);
+  const savedGrade = savedSelection ? Number(savedSelection.gradeId.slice('grade-'.length)) : null;
+  const defaultGrade = savedGrade !== null && availableGrades.includes(savedGrade) ? savedGrade : availableGrades[0];
+  const defaultGradeGroups = groups.filter(({ group }) => group.definition.grade === defaultGrade);
+  const defaultSemesters = [...new Set(defaultGradeGroups.map(({ group }) => group.definition.semester))].sort((left, right) => left - right);
+  const savedSemester = savedSelection ? Number(savedSelection.termId.slice('term-'.length)) : null;
+  const defaultSemester = savedSemester !== null && defaultSemesters.includes(savedSemester as 1 | 2)
+    ? savedSemester
+    : defaultSemesters[0];
+  const defaultSubjectGroups = defaultGradeGroups.filter(({ group }) => group.definition.semester === defaultSemester);
+  const defaultSubjects = defaultSubjectGroups.map(({ group }) => group.definition.subject);
+  const defaultSubject = savedSelection && defaultSubjects.includes(savedSelection.subjectId) ? savedSelection.subjectId : 'all';
+  const [gradeFilter, setGradeFilter] = useState(defaultGrade === undefined ? 'all' : String(defaultGrade));
+  const [semesterFilter, setSemesterFilter] = useState(defaultSemester === undefined ? 'all' : String(defaultSemester));
+  const [subjectFilter, setSubjectFilter] = useState<string>(defaultSubject);
   const gradeOptions = [
     { key: 'all', label: '全部年级' },
     ...availableGrades.map((grade) => ({ key: String(grade), label: `${grade}年级` })),
@@ -132,11 +144,23 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
     { key: 'all', label: '全部学期' },
     ...availableSemesters.map((semester) => ({ key: String(semester), label: semester === 1 ? '上学期' : '下学期' })),
   ];
+  const subjectGroups = semesterGrades.filter(({ group }) => (
+    semesterFilter === 'all' || group.definition.semester === Number(semesterFilter)
+  ));
+  const subjectOrder = { chinese: 0, math: 1, english: 2 } as const;
+  const availableSubjects = [...new Set(subjectGroups.map(({ group }) => group.definition.subject))]
+    .sort((left, right) => subjectOrder[left] - subjectOrder[right]);
+  const subjectOptions = [
+    { key: 'all', label: '全部学科' },
+    ...availableSubjects.map((subject) => ({ key: subject, label: getSubjectTitle(subject) })),
+  ];
   const sortedGroups = sortChallengeGroupsForDisplay(groups);
   const filteredGroups = sortedGroups.filter(({ group }) => (
     (gradeFilter === 'all' || group.definition.grade === Number(gradeFilter))
       && (semesterFilter === 'all' || group.definition.semester === Number(semesterFilter))
+      && (subjectFilter === 'all' || group.definition.subject === subjectFilter)
   ));
+  const hasActiveFilter = gradeFilter !== 'all' || semesterFilter !== 'all' || subjectFilter !== 'all';
 
   return (
     <main className="challenge-page">
@@ -177,12 +201,24 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
               <div className="challenge-filters" role="group" aria-label="筛选挑战路线">
                 <label>
                   <span id="challenge-grade-filter-label">年级</span>
-                  <Select aria-label="闯关年级" options={gradeOptions} value={gradeFilter} onChange={setGradeFilter} />
+                  <Select aria-label="闯关年级" options={gradeOptions} value={gradeFilter} onChange={(value) => { setGradeFilter(value); setSemesterFilter('all'); setSubjectFilter('all'); }} />
                 </label>
                 <label>
                   <span id="challenge-semester-filter-label">学期</span>
-                  <Select aria-label="闯关学期" options={semesterOptions} value={semesterFilter} onChange={setSemesterFilter} />
+                  <Select aria-label="闯关学期" options={semesterOptions} value={semesterFilter} onChange={(value) => { setSemesterFilter(value); setSubjectFilter('all'); }} />
                 </label>
+                <label>
+                  <span id="challenge-subject-filter-label">学科</span>
+                  <Select aria-label="闯关学科" options={subjectOptions} value={subjectFilter} onChange={setSubjectFilter} />
+                </label>
+              </div>
+              <div className="challenge-filter-summary">
+                <p role="status" aria-live="polite">正在显示 {filteredGroups.length} 条路线，共 {groups.length} 条</p>
+                {hasActiveFilter && (
+                  <Button type="text" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); setSubjectFilter('all'); }}>
+                    清除筛选
+                  </Button>
+                )}
               </div>
               {filteredGroups.length === 0 ? (
                 <div className="challenge-filter-empty">
@@ -192,7 +228,7 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
                     title="这个年级和学期暂时没有挑战路线"
                     description="可以调整筛选条件，或显示全部已登记的挑战路线。"
                   />
-                  <Button type="default" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); }}>显示全部挑战路线</Button>
+                  <Button type="default" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); setSubjectFilter('all'); }}>显示全部挑战路线</Button>
                 </div>
               ) : (
                 <div className="challenge-card-grid">

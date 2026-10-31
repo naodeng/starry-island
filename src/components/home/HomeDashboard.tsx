@@ -72,6 +72,10 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
   const currentRank = getCosmicRank(completedUnitCount);
 
   useEffect(() => {
+    saveCourseSelection(courseSelection);
+  }, [courseSelection]);
+
+  useEffect(() => {
     let cancelled = false;
     setContinueState({ status: 'loading' });
     void resolveContinueLearningDestination(progress).then((destination) => {
@@ -130,7 +134,6 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
     if (!nextSubject) return;
     const nextSelection = { gradeId: nextGrade.id, termId: nextTerm.id, subjectId: nextSubject.id };
     setCourseSelection(nextSelection);
-    saveCourseSelection(nextSelection);
   }
 
   return (
@@ -219,11 +222,12 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
                     {challengeState.summary.completedAttempts === 0
                       && challengeState.summary.passedTaskCount === 0
                       && challengeState.summary.earnedBadgeCount === 0 ? (
-                        <div className="home-inline-empty home-challenge-empty" role="status">
-                          <div>
+                        <div className="home-inline-empty home-challenge-empty">
+                          <div role="status">
                             <h4>还没有闯关成果</h4>
                             <p>完成并提交一次挑战后，成绩和徽章会显示在这里。</p>
                           </div>
+                          <Button type="default" onClick={() => onNavigate('/challenges')}>开始挑战</Button>
                         </div>
                       ) : (
                         <>

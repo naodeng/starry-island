@@ -130,15 +130,17 @@ export default function ChallengeBackupPanel({
       )}
       {backupExportState === 'success' && <p className="challenge-backup-status" role="status">闯关备份已生成并下载到此设备。</p>}
       {backupExportState === 'error' && <p className="challenge-backup-status" role="status">闯关备份没有生成；本机记录没有更改，可以稍后重试。</p>}
-      <section className="challenge-diagnostics-panel" aria-labelledby="challenge-diagnostics-heading">
-        <h3 id="challenge-diagnostics-heading">诊断信息</h3>
-        <p>只有点击后才会生成并下载；不会自动上传。文件只包含应用与存储版本、浏览器能力和闯关数据条数，不包含姓名、题目、答案或课程进度。</p>
-        <Button type="default" disabled={diagnosticsExportState === 'exporting'} onClick={() => void exportDiagnostics()}>
-          {diagnosticsExportState === 'exporting' ? '正在生成诊断信息…' : '手动导出脱敏诊断信息'}
-        </Button>
-        {diagnosticsExportState === 'success' && <p className="challenge-backup-status" role="status">诊断信息已生成并下载到此设备；没有上传任何数据。</p>}
-        {diagnosticsExportState === 'error' && <p className="challenge-backup-status" role="alert">诊断信息没有生成；本机记录没有更改，可以稍后重试。</p>}
-      </section>
+      <details className="challenge-diagnostics-panel">
+        <summary id="challenge-diagnostics-heading">诊断信息（高级）</summary>
+        <div className="challenge-diagnostics-content">
+          <p>只有点击后才会生成并下载；不会自动上传。文件只包含应用与存储版本、浏览器能力和闯关数据条数，不包含姓名、题目、答案或课程进度。</p>
+          <Button type="default" disabled={diagnosticsExportState === 'exporting'} onClick={() => void exportDiagnostics()}>
+            {diagnosticsExportState === 'exporting' ? '正在生成诊断信息…' : '手动导出脱敏诊断信息'}
+          </Button>
+          {diagnosticsExportState === 'success' && <p className="challenge-backup-status" role="status">诊断信息已生成并下载到此设备；没有上传任何数据。</p>}
+          {diagnosticsExportState === 'error' && <p className="challenge-backup-status" role="alert">诊断信息没有生成；本机记录没有更改，可以稍后重试。</p>}
+        </div>
+      </details>
       {backupImportState.status === 'preview' && (
         <div className="challenge-backup-preview" role="group" aria-label="导入预览">
           <p role="status">

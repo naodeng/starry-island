@@ -1,9 +1,9 @@
 .settings-page-shell { max-width: 880px; padding-bottom: clamp(36px, 6vw, 64px); }
 .settings-page-heading { margin: 8px 0 18px; padding: 10px 0 4px; }
 .settings-page-heading .eyebrow { margin-bottom: 5px; }
-.settings-page-heading h1 { margin: 2px 0 6px; color: var(--animal-text-color); font-size: clamp(30px, 5vw, 42px); }
+.settings-page-heading h1 { margin: 2px 0 6px; color: var(--animal-text-color); font-size: clamp(30px, 4.2vw, 36px); }
 .settings-page-heading > p:last-child { margin: 0; color: var(--animal-text-color-secondary); line-height: 1.65; }
-.settings-page .settings-panel { padding: 6px clamp(20px, 4vw, 36px); border: 1px solid var(--animal-border-color); border-radius: 24px; background: var(--animal-bg-color); box-shadow: 0 12px 28px color-mix(in srgb, var(--animal-text-color) 8%, transparent); }
+.settings-page .settings-panel { padding: 6px clamp(20px, 4vw, 36px); border: 1px solid var(--animal-border-color); border-radius: 24px; background: var(--animal-bg-color); }
 .settings-page .settings-section { gap: 10px; padding: 20px 0; }
 .settings-page .settings-section h2 { margin: 0; color: var(--animal-text-color); font-size: 19px; font-weight: 900; }
 .settings-page .settings-section > p,
