@@ -7,6 +7,7 @@ import type { SubjectId } from '../../content/types';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { TaskProgress } from '../domain/types';
 import { loadCourseSelection } from '../../storage/courseSelection';
+import { getGradeTitle } from '../../content/gradeTitle';
 
 export function sortChallengeGroupsForDisplay(groups: readonly LoadedPilotGroup[]): LoadedPilotGroup[] {
   const subjectOrder: Record<SubjectId, number> = { chinese: 0, math: 1, english: 2 };
@@ -31,9 +32,8 @@ export function sortChallengeGroupsForDisplay(groups: readonly LoadedPilotGroup[
 export function getChallengeGroupTitle(group: LoadedPilotGroup['group']): string {
   const { definition } = group;
   const termLabel = definition.semester === 1 ? '上册' : '下册';
-  const gradeLabel = ({ 1: '一', 2: '二', 3: '三', 4: '四', 5: '五', 6: '六' } as Record<number, string>)[definition.grade] ?? definition.grade;
   const subjectLabel = { chinese: '语文', math: '数学', english: '英语' }[definition.subject];
-  const courseLabel = `${gradeLabel}年级${termLabel}${subjectLabel}`;
+  const courseLabel = `${getGradeTitle(definition.grade)}${termLabel}${subjectLabel}`;
 
   if (definition.kind === 'unit') {
     const unitNumber = Number(definition.sourceUnitIds[0]?.match(/\/unit-(\d+)$/)?.[1]);
@@ -129,7 +129,7 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
   const [subjectFilter, setSubjectFilter] = useState<string>(defaultSubject);
   const gradeOptions = [
     { key: 'all', label: '全部年级' },
-    ...availableGrades.map((grade) => ({ key: String(grade), label: `${grade}年级` })),
+    ...availableGrades.map((grade) => ({ key: String(grade), label: getGradeTitle(grade) })),
   ];
   const semesterGrades = gradeFilter === 'all'
     ? groups

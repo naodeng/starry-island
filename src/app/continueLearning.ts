@@ -2,6 +2,7 @@ import { getEffectiveCompletedSessionIds, getKnownCurriculumPositions } from '..
 import type { KnownCurriculumPosition } from '../achievements/position';
 import { curriculumManifest, getUnitManifest } from '../content/curriculumManifest';
 import type { CurriculumProgressSource } from '../content/curriculumManifest';
+import { getGradeTitle } from '../content/gradeTitle';
 import { loadUnit as loadCurriculumUnit } from '../content/unitLoader';
 import type { CurriculumUnit, Difficulty, LearningSession, LearningTask } from '../content/types';
 import type { ProgressState } from '../storage/progress';
@@ -62,7 +63,7 @@ async function resolveSessionInPosition(
   return {
     path,
     grade: position.grade,
-    gradeTitle: `${position.grade}年级`,
+    gradeTitle: getGradeTitle(position.grade),
     term: position.term,
     termTitle: position.term === 1 ? '上册' : '下册',
     subject: position.subject,
@@ -125,7 +126,7 @@ export async function resolveContinueLearningDestination(
       return {
         path,
         grade: position.grade,
-        gradeTitle: `${position.grade}年级`,
+        gradeTitle: getGradeTitle(position.grade),
         term: position.term,
         termTitle: position.term === 1 ? '上册' : '下册',
         subject: position.subject,

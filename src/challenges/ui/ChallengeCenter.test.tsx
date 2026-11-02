@@ -41,7 +41,7 @@ describe('ChallengeCenter', () => {
 
     render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
 
-    expect(screen.getByRole('combobox', { name: '闯关年级' })).toHaveTextContent('2年级');
+    expect(screen.getByRole('combobox', { name: '闯关年级' })).toHaveTextContent('二年级');
     expect(screen.getByRole('combobox', { name: '闯关学期' })).toHaveTextContent('下学期');
     expect(screen.getByRole('heading', { level: 3, name: '二年级下册数学 · 第一单元' })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { level: 3, name: '一年级上册数学 · 第一单元' })).not.toBeInTheDocument();
@@ -59,11 +59,11 @@ describe('ChallengeCenter', () => {
 
     const gradeFilter = screen.getByRole('combobox', { name: '闯关年级' });
     await user.click(gradeFilter);
-    expect(await screen.findByRole('option', { name: '1年级' })).toBeInTheDocument();
-    expect(screen.getByRole('option', { name: '2年级' })).toBeInTheDocument();
-    expect(screen.getByRole('option', { name: '3年级' })).toBeInTheDocument();
-    expect(screen.queryByRole('option', { name: '4年级' })).not.toBeInTheDocument();
-    await user.click(screen.getByRole('option', { name: '2年级' }));
+    expect(await screen.findByRole('option', { name: '一年级' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: '二年级' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: '三年级' })).toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: '四年级' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('option', { name: '二年级' }));
 
     expect(screen.getByRole('heading', { level: 3, name: '二年级下册数学 · 第一单元' })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { level: 3, name: '一年级上册数学 · 第一单元' })).not.toBeInTheDocument();
@@ -77,7 +77,7 @@ describe('ChallengeCenter', () => {
     const groups = loadGroups(['grade-3-term-1-english-unit-01']);
     render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
 
-    expect(screen.getByRole('combobox', { name: '闯关年级' })).toHaveTextContent('3年级');
+    expect(screen.getByRole('combobox', { name: '闯关年级' })).toHaveTextContent('三年级');
     expect(screen.getByRole('combobox', { name: '闯关学期' })).toHaveTextContent('下学期');
     expect(screen.getByRole('combobox', { name: '闯关学科' })).toHaveTextContent('数学');
     expect(screen.getByRole('heading', { level: 3, name: '当前筛选条件下暂时没有挑战路线' })).toBeInTheDocument();

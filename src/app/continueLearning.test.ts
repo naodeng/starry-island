@@ -56,6 +56,7 @@ describe('continue learning destinations', () => {
     expect(destination).toMatchObject({
       path: `/${UNIT_KEYS[0]}/advanced/${advancedSession.id.split('/').at(-2)}/${advancedSession.id.split('/').at(-1)}`,
       difficulty: 'advanced',
+      gradeTitle: '二年级',
       sessionTitle: advancedSession.title,
     });
     expect(await resolveLearningSessionDestination(`${advancedSession.id}/unknown`, { source, loadUnit })).toBeNull();
@@ -69,6 +70,7 @@ describe('continue learning destinations', () => {
 
     expect(destination).toMatchObject({
       path: `/${UNIT_KEYS[0]}/basic/${firstUnitSession.id.split('/').at(-2)}/${firstUnitSession.id.split('/').at(-1)}`,
+      gradeTitle: '二年级',
       sessionTitle: firstUnitSession.title,
     });
     expect(loadUnit).toHaveBeenCalledWith(UNIT_KEYS[0]);

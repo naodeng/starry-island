@@ -52,6 +52,7 @@ import { unit as englishTerm2Review02 } from './grade-2/term-2/english/review-02
 import { addedCourseCatalog } from './grade-1-and-3/catalog';
 import { grade4To6CourseCatalog } from './grade-4-to-6/catalog';
 import { textbooks } from './textbooks';
+import { getGradeTitle } from './gradeTitle';
 import type { Curriculum, CurriculumUnit, SubjectId } from './types';
 
 const grade4To6CourseModules = Object.fromEntries(
@@ -76,7 +77,7 @@ function buildAddedGrade(gradeNumber: 1 | 3): Curriculum['grades'][number] {
   const gradeId = `grade-${gradeNumber}` as const;
   return {
     id: gradeId,
-    title: `${gradeNumber}年级`,
+    title: getGradeTitle(gradeNumber),
     terms: ([1, 2] as const).map((termNumber) => ({
       id: `term-${termNumber}` as const,
       title: termNumber === 1 ? '上学期' : '下学期',
@@ -106,7 +107,7 @@ export function buildPlannedGrade(
 ): Curriculum['grades'][number] {
   return {
     id: `grade-${gradeNumber}`,
-    title: `${gradeNumber}年级`,
+    title: getGradeTitle(gradeNumber),
     terms: ([1, 2] as const).map((termNumber) => ({
       id: `term-${termNumber}` as const,
       title: termNumber === 1 ? '上学期' : '下学期',
@@ -140,7 +141,7 @@ export const curriculum: Curriculum = {
     buildAddedGrade(1),
     {
       id: 'grade-2',
-      title: '2年级',
+      title: getGradeTitle(2),
       terms: [
         {
           id: 'term-1',

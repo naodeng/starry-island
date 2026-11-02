@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button, Card, Progress, Select } from 'animal-island-ui';
 import { getSubjectTitle } from '../../app/router';
 import { loadCourseSelection } from '../../storage/courseSelection';
+import { getGradeTitle } from '../../content/gradeTitle';
 import type { ChallengeGrowthGroup, ChallengeGrowthSummary } from '../domain/growth';
 
 interface ChallengeGrowthProps {
@@ -12,7 +13,6 @@ interface ChallengeGrowthProps {
 
 function getGroupTitle(group: ChallengeGrowthGroup): string {
   const term = group.semester === 1 ? '上册' : '下册';
-  const gradeName = ['一', '二', '三', '四', '五', '六'][group.grade - 1] ?? String(group.grade);
   let scope = '学期挑战';
   if (group.kind === 'unit') {
     const lastUnit = group.sourceUnitIds[0]?.split('/').at(-1);
@@ -25,7 +25,7 @@ function getGroupTitle(group: ChallengeGrowthGroup): string {
   } else if (group.stage === 'end-term') {
     scope = '期末综合';
   }
-  return `${gradeName}年级${term} · ${getSubjectTitle(group.subject)} · ${scope}`;
+  return `${getGradeTitle(group.grade)}${term} · ${getSubjectTitle(group.subject)} · ${scope}`;
 }
 
 export default function ChallengeGrowth({ summary, status, onRetry }: ChallengeGrowthProps) {
@@ -36,7 +36,7 @@ export default function ChallengeGrowth({ summary, status, onRetry }: ChallengeG
   const availableGrades = [...new Set(summary.groups.map(({ grade }) => grade))].sort((left, right) => left - right);
   const gradeOptions = [
     { key: 'all', label: '全部年级' },
-    ...availableGrades.map((grade) => ({ key: String(grade), label: `${grade}年级` })),
+    ...availableGrades.map((grade) => ({ key: String(grade), label: getGradeTitle(grade) })),
   ];
   const semesterGroups = gradeFilter === 'all'
     ? summary.groups

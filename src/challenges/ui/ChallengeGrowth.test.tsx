@@ -40,6 +40,7 @@ describe('ChallengeGrowth', () => {
     expect(screen.getByText('8 次')).toBeInTheDocument();
     expect(screen.getByText('3 个任务')).toBeInTheDocument();
     expect(screen.getByText('0 枚徽章')).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: '成长记录年级' })).toHaveTextContent('二年级');
     expect(screen.getByRole('heading', { name: '二年级上册 · 数学 · 第2单元' }).closest('li')).toHaveTextContent('3/5 个任务已通过');
     expect(screen.getByRole('heading', { name: '二年级上册 · 数学 · 前半学期' }).closest('li')).toHaveTextContent('0/5 个任务已通过');
     expect(screen.getByText(/只统计此设备保存的数据/)).toBeInTheDocument();

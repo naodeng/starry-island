@@ -23,7 +23,7 @@ describe('exploration map', () => {
     const zones = getExplorationZones(completedSessionIds, { grade: 2, term: 1, unit: 2 }, source);
 
     expect(zones).toHaveLength(12);
-    expect(zones[0]).toMatchObject({ gradeTitle: '1年级', termTitle: '上学期', hasCurriculum: false, isOpen: false });
+    expect(zones[0]).toMatchObject({ gradeTitle: '一年级', termTitle: '上学期', hasCurriculum: false, isOpen: false });
     expect(zones[2]).toMatchObject({ hasCurriculum: true, isStartZone: true, isOpen: true, completedUnitCount: 1 });
     expect(zones[2].units.find((node) => node.subjectTitle === '语文')).toMatchObject({ state: 'complete', completedSessions: completedSessionIds.length });
     expect(zones[2].units.filter((node) => node.state === 'comingSoon')).toHaveLength(12);

@@ -10,6 +10,7 @@ import HeroGuide from '../mascots/HeroGuide';
 import CourseBreadcrumbs from './CourseBreadcrumbs';
 import { getPilotUnitChallengeGroupId } from '../../challenges/content/unitLinks';
 import EmptyState from '../shared/EmptyState';
+import { getGradeTitle } from '../../content/gradeTitle';
 
 interface UnitOverviewProps {
   unitKey: string;
@@ -34,8 +35,9 @@ const DIFFICULTY_DESCRIPTIONS: Record<Difficulty, string> = {
 
 function getPositionLabels(unitKey: string): { grade: string; term: string } {
   const [gradeId, termId] = unitKey.split('/');
+  const gradeNumber = Number(gradeId?.replace('grade-', ''));
   return {
-    grade: `${Number(gradeId?.replace('grade-', '')) || ''}年级`,
+    grade: gradeNumber ? getGradeTitle(gradeNumber) : '年级',
     term: termId === 'term-1' ? '上学期' : '下学期',
   };
 }

@@ -47,10 +47,10 @@ describe('HomeDashboard', () => {
     const user = userEvent.setup();
     render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} />);
 
-    expect(screen.getByRole('combobox', { name: '当前年级' })).toHaveTextContent('2年级');
+    expect(screen.getByRole('combobox', { name: '当前年级' })).toHaveTextContent('二年级');
     expect(screen.getByRole('combobox', { name: '当前学期' })).toHaveTextContent('下学期');
     await user.click(screen.getByRole('combobox', { name: '当前年级' }));
-    await user.click(await screen.findByRole('option', { name: '3年级' }));
+    await user.click(await screen.findByRole('option', { name: '三年级' }));
     await user.click(screen.getByRole('combobox', { name: '当前学期' }));
     await user.click(await screen.findByRole('option', { name: '下学期' }));
 

@@ -628,7 +628,7 @@
   "grades": [
     {
       "id": "grade-1",
-      "title": "1年级",
+      "title": "一年级",
       "terms": [
         {
           "id": "term-1",
@@ -1192,7 +1192,7 @@
     },
     {
       "id": "grade-2",
-      "title": "2年级",
+      "title": "二年级",
       "terms": [
         {
           "id": "term-1",
@@ -1756,7 +1756,7 @@
     },
     {
       "id": "grade-3",
-      "title": "3年级",
+      "title": "三年级",
       "terms": [
         {
           "id": "term-1",
@@ -2350,7 +2350,7 @@
     },
     {
       "id": "grade-4",
-      "title": "4年级",
+      "title": "四年级",
       "terms": [
         {
           "id": "term-1",
@@ -2934,7 +2934,7 @@
     },
     {
       "id": "grade-5",
-      "title": "5年级",
+      "title": "五年级",
       "terms": [
         {
           "id": "term-1",
@@ -3508,7 +3508,7 @@
     },
     {
       "id": "grade-6",
-      "title": "6年级",
+      "title": "六年级",
       "terms": [
         {
           "id": "term-1",

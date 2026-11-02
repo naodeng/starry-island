@@ -145,14 +145,14 @@ function questionFingerprint(activity: ActivityDefinition): string {
 }
 
 describe('curriculum registry', () => {
-  it('uses Arabic numerals consistently for grade labels from one through six', () => {
+  it('uses Chinese numerals consistently for grade labels from one through six', () => {
     const expectedTitles = [
-      '1年级',
-      '2年级',
-      '3年级',
-      '4年级',
-      '5年级',
-      '6年级',
+      '一年级',
+      '二年级',
+      '三年级',
+      '四年级',
+      '五年级',
+      '六年级',
     ];
 
     expect(curriculum.grades.map(({ title }) => title)).toEqual(expectedTitles);

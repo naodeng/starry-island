@@ -28,7 +28,7 @@ describe('CourseCatalog', () => {
     const firstVisit = renderCatalog();
 
     await user.click(screen.getByRole('combobox', { name: '年级' }));
-    await user.click(await screen.findByRole('option', { name: '2年级' }));
+    await user.click(await screen.findByRole('option', { name: '二年级' }));
     await user.click(screen.getByRole('combobox', { name: '学期' }));
     await user.click(await screen.findByRole('option', { name: '下学期' }));
     await user.click(screen.getByRole('button', { name: '数学' }));
@@ -37,10 +37,10 @@ describe('CourseCatalog', () => {
     renderCatalog();
 
     const route = screen.getByText('当前探索航线').parentElement?.parentElement;
-    expect(route).toHaveTextContent('2年级');
+    expect(route).toHaveTextContent('二年级');
     expect(route).toHaveTextContent('下学期');
     expect(route).toHaveTextContent('数学');
-    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('2年级');
+    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('二年级');
     expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('下学期');
   });
 
@@ -49,7 +49,7 @@ describe('CourseCatalog', () => {
     renderCatalog();
 
     const route = screen.getByText('当前探索航线').parentElement?.parentElement;
-    expect(route).toHaveTextContent('1年级');
+    expect(route).toHaveTextContent('一年级');
     expect(route).toHaveTextContent('上学期');
     expect(route).toHaveTextContent('语文');
     expect(route).toHaveTextContent('人教版');
@@ -65,7 +65,7 @@ describe('CourseCatalog', () => {
   it('offersRegistryDrivenGradeAndTermControls', () => {
     renderCatalog();
 
-    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('1年级');
+    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('一年级');
     expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('上学期');
     expect(screen.getByRole('button', { name: '语文' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '数学' })).toBeInTheDocument();
@@ -180,7 +180,7 @@ describe('CourseCatalog', () => {
     renderCatalog();
 
     await user.click(screen.getByRole('combobox', { name: '年级' }));
-    await user.click(await screen.findByRole('option', { name: '6年级' }));
+    await user.click(await screen.findByRole('option', { name: '六年级' }));
     await user.click(screen.getByRole('combobox', { name: '学期' }));
     await user.click(await screen.findByRole('option', { name: '下学期' }));
 

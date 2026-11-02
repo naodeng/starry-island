@@ -167,7 +167,7 @@ describe('UnitOverview', () => {
     render(<UnitOverview unitKey={unitKey} unit={unit} selectedDifficulty="basic" selectedTask={task} completedSessionIds={[]} onNavigate={onNavigate} />);
 
     expect(screen.getByRole('heading', { name: task.title, level: 1 })).toBeInTheDocument();
-    expect(document.querySelector('.unit-hero .eyebrow')).toHaveTextContent(/2年级.*上学期.*语文.*UNIT 1.*基础版任务/);
+    expect(document.querySelector('.unit-hero .eyebrow')).toHaveTextContent(/二年级.*上学期.*语文.*UNIT 1.*基础版任务/);
     expect(screen.getByRole('heading', { name: '学习场次' })).toBeInTheDocument();
     const sessionCard = document.querySelector('.session-card') as HTMLElement;
     const startButton = within(sessionCard).getByRole('button', { name: '开始第 1 场' });

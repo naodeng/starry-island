@@ -18,7 +18,7 @@ describe('AchievementDashboard', () => {
     expect(screen.getByLabelText(`${zones.length} 个星区`)).toBeInTheDocument();
     expect(screen.getAllByText(/第\d+星区/)).toHaveLength(zones.length);
     expect(screen.getByRole('progressbar', { name: /距离月球开拓者的进度/ })).toHaveAttribute('aria-valuenow', '0');
-    expect(screen.getByRole('button', { name: '查看2年级上学期语文进度' })).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByRole('button', { name: '查看二年级上学期语文进度' })).toHaveAttribute('aria-expanded', 'false');
   });
 
   it('opensAndClosesAZoneAndCourseGroupOnDemand', async () => {
@@ -35,7 +35,7 @@ describe('AchievementDashboard', () => {
     expect(zoneToggle).toHaveAttribute('aria-expanded', 'false');
     expect(zoneDetails).not.toBeVisible();
 
-    const courseToggle = screen.getByRole('button', { name: '查看2年级上学期语文进度' });
+    const courseToggle = screen.getByRole('button', { name: '查看二年级上学期语文进度' });
     const courseDetails = document.getElementById(courseToggle.getAttribute('aria-controls')!);
     expect(courseDetails).not.toBeVisible();
     await user.click(courseToggle);
