@@ -1,0 +1,1564 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e980702e5ab26d9780fcd4f3c2df15d606307371569f4282e627c0668963725f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dcf15236a3b6512ced5aa8fdd22d376e4ac7011049a6d668c141e6f89a3fd6aa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1fd3813d20c1e91d267d6b22d9de0d87716de401768d04f296667f5f00791197",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f62e48d860032f3b41bd9bedb06d799cad07bc5fe068f2f8afc1f6c359fc486d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d6a611ccf403498f0a7cba5d934c4df28e307744d3f936e032c54183fdf0234",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "373919a13629481ebfadc2cd6e40cb3754ae9744da9239b08bfdd265c670ccd0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "ancient-life-and-natural-environment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f13a58fa80c681c1b049e202ee2de8560536aefdac25f4014fe530496f88a8bd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c49355863d4f9a2a8cfdd76fe90a34da027cc7773a5727b5f88f57462386328d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2bb8b6f6a1bf7ff6555520e9168708ac28467e38714524c5e46a4e8b4825291e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dcabdac08bdd0e05447b6fbe5c03006ee17cc8014da515d245262b12f3cd0163",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6756cba8b740ebcf4dfa524fb253406110e1e47012ea5cc514813ec24687df69",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7574aa829ba20e492b5bf87e1caadc843116b279d4f7c3501a18697f816af5d2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69bdf5a21243e0ed97e5fc3a95eefe965ac9a82fb6e129264153724df7c8d7f3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4215c3c6282f3437bde8c2da064805e32be270cbe508032dfe8601339ffd94c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3fec48705806b2a24b3ef6f80fff6be216c3a0e0ca15f039eb49a536b4eb5717",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "69667d984306978a7b38880b83cfaad70f71ebc12ed2af304a3407416d1a18c1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4705d6de4cfcb2f59b21a75b6852bb9f4d5dea2aee9650830e0b2d05289456c8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd04384e475a754a33784805625e0751569dd6665bfdb3945e324be406fe5a10",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba438fbf172abbecd63c2ef71246e2bbf1b3f4172e7bc3c0e55405e24f84a072",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "212acdef4db19dfa567f2fd29ca18ded88aa63d917ab4b6f2d39eed09ed1d34b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "db4a7a0bf1f7cb5d9b8cc93f1218f015f711f9fc7d1901887a263f2bf89c153c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34b8c5460a93b87cbae56b181e4539c5b7d21a2b6a1f89c995b4e771961d0735",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f2e05554271ccc84fa888eb47007e6d09dab3bfa106bbd9ad97e354da90b7d22",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "272bd1c9c080b918c912da9036fe56fc38f28e8a1a5cbe8b55da60a0f486e8b7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f8657816a46a311e040b64024f84ad9d0331e4899643d0d7cb91b7e67e39086b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7dddf1435e2badfe43b91724bd7c9eb01b68e1bfe033bf37d2ea9b955a820839",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef9a7d42cd445bc9736bdcb63fd7077120e8247fe3fa1b309ec8706f3e33c3cf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b9d270069f34ecd7389bf753867cc69a6edf5f55aa46a3dceecfd2b14df3e71",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb0f9b1cf24396c0cee1c2f5377aa7abe8ecfd2dc3bf3a0927e6eaf42e6baf6f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "225ab9692cf48b566d530adf1a7ab8e546f5e40e78e650ee8d6541569e8d8f54",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7020a3acac006b7674dd0556478dca3811d66f517d8795b6aecd5afb099e68d7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4144d4dd1ed9df8b128106cfdfa4a0eb0fe84e3ea1ad1d2d61c2ffa1faaf1563",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "myth-character-challenge-and-solution",
+        "imagination-vs-verifiable-facts",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36c17d302ba26571f9b433671af598b78a281f9a5984c62b0ce00c8bd792326f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41674fe7af187775cf4e9fae034dbb608325fd92a203a28c061fca10edceb8ef",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "30f277b9a49abade9762d561847e910063088bdafe5b22d387e17e23c10effad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4ce3545852936b54a00f44882ec4936aec4d7fcb0ecf211aabd927b8653f3262",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c514de61735b42305a626bf9f37c7ebe154e021058f20819d41653a31e22158b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence",
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "137ad9ee1c46ab33c768e225e22f4d77e51a61efcfe63370ed0c59872ce23f65",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "original-imaginative-story-writing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7fd864869af6bc447942ca977811a1ab04da86ff9184e6874bfac130191373b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6714fad4dc5949c4ceb18992255111d09619dc23f541208eec408783a41f7a87",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "ancient-life-and-natural-environment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "74e8f49f8a9eac76f193aac4d11f8e93ac5b58b7b7ea7a3e99467ac54fcca619",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87bb296e2fd4d2c6f4935bc27970b72c645e5cd841b3878a24e0e2c223f7273c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6185b7deefe087732692d2523c2612c253e60b2053f7adf6b97e23453d479437",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "original-imaginative-story-writing",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9cf6fc29471ec3f0275024af4e6b6d178e1610e3e6a64b486040e25bade6dc0a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9f86c2ff21d5c7dfe67e9595983f1eb65c6bc15b03406a871fabd04ec40d2d3c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts",
+        "original-imaginative-story-writing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "099405195aff8b21ef23052479929934f6da6c3390d1584911daffc583da219f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e1204e947af79cb69b575aefe7b1c4e4c47e4cafc85e35771b46f2d9bcc3243",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "original-imaginative-story-writing",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a2e744064ce3afed101d131e8fd87e5fa57aa6df65906fcc89fc4f0dba8514bc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49f7b31e1ba7778e4bc12900f38a2cc3af06e30a4a57b9313b2741b658130221",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "060427ba9c82daa4c608a73833f357cda394b884c21b8b993790eaa34f4509dc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ba2e65382dc5a61d8f8ddb6e2057781698d61e75f0b2e66b7d1654db0577d05",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e919acadffc6db6a2863353be2e21f1e50692002f6b33e0506780a77c5eb6bc4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "73baa9adbc9cf7be5bf5b39ed152ee02c7d4bcf925e5bd9e2055924ca5f4d394",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "173d3bd4caf5239874f0c8c5214b803bbdd621f5d3780066004f1a58519afdff",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "ancient-life-and-natural-environment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9036dc53e77db6dd26b1256eb066600fae695cfa9f6e96a81cb9a09ddbacb7ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a901cf537611f832af7d12b27b7f581359efe46fba7dacdda1620575e826c0c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "63bc3ed0c5f2935a07fa7c67c5807a7bb64fbe146f0d27a8297decdc024b1c0c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a27f0de5a231bc3bb56bbc441e2ffe32af96d611fda9992cc240b9675d9ab1d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "045c082c67a117e8c49783dfc5c2383f9624341ed748bd19b687838d81c6a9e6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence",
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d540dba7121ed2a33cf2681f1e5d43882ee105cfb4955e4db9547245c6f1d43e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "story-event-order-and-consequence",
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44951f83098d3ab02256703d81821fcc4da1df096b8af68fd2bac5b3919ddd32",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4db2c62f8c26b45c0757e70c21ff9a18b5830cf9a5690cb834cbd66f65c53c2e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34b22ebb1606fdc8cf355cffae0d465398360ee8f9aefb2791726345a81e28d9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6d2d8bdc373497eb7953a8cc00aa2b2a23dd59ae19bffd612c3eb20274526f29",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ce1f1a898f29b00aa29c59678fb506fca2cb623316608f22b1232a3f8f7bdef4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "959ea5ce0994a1fb7a689df4edd982f296b9a432603f2f2068c9a14457531fdf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42fd2900acc836e978ba81b84d54a9ad88851262b66c259557f34a5322dce874",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c6104422579ab08005af81bbf818a6c27b265c2054e3a515eabe6de7b033e82a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4fbc0a37a8ed095747074700fa7207a379604613d7ae61a1cc60f24b9cdd3f2a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e11971fe638b0bfaaa106c28ee8a959128e68a2db22298576ced3086fde1418d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "588e64c5adf0d54e2af6ba8f49b861287bd6e29a9904e68168bf27054d33b0da",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6b89b5064b997158b65828fc67975fe7ca1f6ea6bf77ad0991591f958d39642e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence",
+        "myth-character-challenge-and-solution"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb8e872c2708c9c21ee01916dc218921a335c4ae6ebd553dc227e54183c1c086",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eb0184f961c2b25c30a28dccb392b3256517d80ce4138827b873448c3a3143e7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ee4106db1498af83f9fa8cb4a640279b4dd35ad1490f5c344a9d645177ee743",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "caebf20eab55a3c46fa2f68693982fe3e2121643b8829c24f2b5a4896de1fde4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "939ac59934e3386e46940c0086dbfa5a4e6fe300a143caa42aa8031c67b22a11",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "ancient-life-and-natural-environment",
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba637ad2f66299b2b21a6051302e97018b30bb0a0d987f6f90a80910ba5693ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "text-evidence-and-faithful-retelling",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "126d3256dd0f652b1ed542fe841cc5bdde830596481a0c41d892db815909b8c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "73b0d67018a9b1dd45e8a838a4bf60fdcb5a8e417fb7151722b2af21c6a74297",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79e815bd1e5161d5c1fac642b45f116f02f3986add69a99601c55d6c746026cb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "text-evidence-and-faithful-retelling",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "22558dbf37e09cabed74df927c4a6d96856591d44d534f3ef692ff48271fe11b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c425a47f65df3f5eb09b8c0d7ecd0c356eb8a0c1febc2e5c12e6e3834ea9db90",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "555e0cfe362f9c50bd72c2610c46781817975a4458d981660a6b0b7fca70b8fd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "myth-character-challenge-and-solution",
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1bd0bf826ebb6b9f85e9643ce011f80c0a50418e5e56d04e30e6fa2a397b86a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling",
+        "imagination-vs-verifiable-facts"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d748558d8086eb897f64fd874a22a45aaaee939aab0a4f06166d911a33967484",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "text-evidence-and-faithful-retelling",
+        "imagination-vs-verifiable-facts",
+        "ancient-life-and-natural-environment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6476c31bccdc82c6ec6fef95621f8aeff60d871bce9462204871f3c6d47dbbe8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "original-imaginative-story-writing",
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c44ab960b9999a356291bd781d1a3254e1490aab41c16ea2ce7da6feedb7969b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "imagination-vs-verifiable-facts",
+        "text-evidence-and-faithful-retelling",
+        "ancient-life-and-natural-environment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b89fcb05659a6759dbd08c7b116410ee44b84d555963b8bf264a26f0168c0f5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-08-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "ancient-life-and-natural-environment",
+        "imagination-vs-verifiable-facts",
+        "myth-character-challenge-and-solution",
+        "story-event-order-and-consequence",
+        "text-evidence-and-faithful-retelling",
+        "original-imaginative-story-writing"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "84d48838936e7ef8e5de3bdf5c5d3e9f42e6b38be8e654f20035fbd913804f4a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-2-term-2-chinese-unit-08",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-2/chinese/unit-08"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/chinese/unit-08"
+        ],
+        "coreKnowledgePointIds": [
+          "ancient-life-and-natural-environment",
+          "imagination-vs-verifiable-facts",
+          "myth-character-challenge-and-solution",
+          "story-event-order-and-consequence",
+          "text-evidence-and-faithful-retelling",
+          "original-imaginative-story-writing"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/chinese/unit-08; src/content/textbooks.ts#grade-2/term-2/chinese; src/content/grade-2/term-2/chinese/unit-08/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "教材来源边界：tapx-fallback，TapXWorld/ChinaTextbook 固定提交 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7，2017 年 12 月第 1 版，ISBN 978-7-107-32383-6；该回退册次不称为最新版，也不混用其他版本。课程目录与审校台账登记 48/48 道课程题；仅依登记主题和可核实源题映射，不复制课文原文。补充 42 道原创选择题，按基础/进阶/高阶各 14 道逐题自审答案、干扰项、提示、讲解和知识点映射；尚无独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-chinese-unit-08/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "ancient-life-and-natural-environment",
+              "imagination-vs-verifiable-facts",
+              "original-imaginative-story-writing"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-08/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "myth-character-challenge-and-solution",
+              "story-event-order-and-consequence",
+              "text-evidence-and-faithful-retelling"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-08/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "ancient-life-and-natural-environment",
+              "imagination-vs-verifiable-facts",
+              "text-evidence-and-faithful-retelling"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-08/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "myth-character-challenge-and-solution",
+              "story-event-order-and-consequence",
+              "original-imaginative-story-writing"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-08/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "ancient-life-and-natural-environment",
+              "imagination-vs-verifiable-facts",
+              "myth-character-challenge-and-solution",
+              "story-event-order-and-consequence",
+              "text-evidence-and-faithful-retelling",
+              "original-imaginative-story-writing"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-08/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-08/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-08/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-08-high-14"
+      ],
+      "releaseIntent": "released"
+    }
+  ]
+}

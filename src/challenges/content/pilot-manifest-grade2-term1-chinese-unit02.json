@@ -1,0 +1,1514 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-2-term-1-chinese-unit-02",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-1/chinese/unit-02"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/chinese/unit-02"
+        ],
+        "coreKnowledgePointIds": [
+          "clear-description",
+          "measure-word-use",
+          "radical-clues",
+          "scene-vocabulary",
+          "seasonal-farming-sequence",
+          "tree-animal-classification"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#目录映射; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-1/chinese/unit-02/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应二年级上册第二单元“场景识字”，覆盖场景词语与量词、树木和动物分类、偏旁线索、四季农事及清楚表达。目录按项目已固定的 TapXWorld 回退快照，不表示采用人教社 2025 修订版。复用本单元 56 道现有学习活动中的 55 道作为闯关候选，并新增 35 道原创闯关题；将一题提示直接给出目标词义的课程活动保留在学习中、排除出闯关候选池；未修改任何学习 Task。"
+        },
+        "tasks": [
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-02/basic-01",
+            "requiredKnowledgePointIds": [
+              "scene-vocabulary",
+              "measure-word-use",
+              "clear-description"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-02/basic-02",
+            "requiredKnowledgePointIds": [
+              "tree-animal-classification",
+              "seasonal-farming-sequence",
+              "radical-clues"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-02/advanced-01",
+            "requiredKnowledgePointIds": [
+              "radical-clues",
+              "tree-animal-classification",
+              "clear-description"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-02/advanced-02",
+            "requiredKnowledgePointIds": [
+              "scene-vocabulary",
+              "measure-word-use",
+              "seasonal-farming-sequence"
+            ],
+            "targetCount": 15
+          },
+          {
+            "difficulty": "high",
+            "id": "grade-2-term-1-chinese-unit-02/high-01",
+            "requiredKnowledgePointIds": [
+              "seasonal-farming-sequence",
+              "clear-description",
+              "scene-vocabulary",
+              "measure-word-use",
+              "radical-clues",
+              "tree-animal-classification"
+            ],
+            "targetCount": 15
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-15",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-14",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-14"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "measure-word-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b23035f8d24e95feba1e1cab32d2e35c6a3e77194cb34862804b499a5addd09",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "measure-word-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "335a6c359ae79384c620cb659a7a10b55bf80b64c2a7fe41adcfab6964b64077",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "087bef0c98b1483c7c1d2ab601247c72628309961cf608d682bd39ebe620c77d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5c4afaba8ed34ad5dd7962a01c6dae286bcb9f7d3ff84156685e9208f9ff01e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "measure-word-use",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f9bdd093497dc0732a0a76742cf9951e5cda748b904e5f2fec835ae6785c7c0d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "measure-word-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab465923356a1e4811315b9b0ccfe07e195ae17343d2fb726db43dbe77bc94d7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c3b42d5056f7da32c4f4ccee2d93e09436c14aa70ffe25cf6362d972a41842e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "measure-word-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d90b73d0673d8e6bcd1c1dacfd3843441d13fde2133163899c2f05a6f6d1fef9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45fc8ef777a2a21f81423dfe5993eff7d0ffa2a14ce3e2619c66580620dd464e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c42b0a4bca9f4f56a423828fa9a7a94be0d4f3bf83c42909064f48112bbd6b4a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "radical-clues",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b96f36dd86fa489c5746d7d35f704dccd5ccb3cf739facb95882653160f978c5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "51e1c84f46d57183764fa266fd80cad8370de4061cf50dfc4d361ca896850022",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62dda82888fb12dbaf1beea0d813e1c99b0a090e6e58ae821ec8bb21fcef5c30",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "27a4924ca645f9c531e1a769696fecad6bfec5fd63a679a29643a3aacd65734d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "95b8c113675b5c9c03254e53db478a18d5fefa9a410c9122801232890651ce26",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1715879dbdff660fda2ad5d68d1c0edc8e739e6229e55f6f801e95a4b2b89c85",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0d9103e06722c93c6eef2479def55c7f9e99479ea0af1f851ba07e01091a371a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ae5102293629e05f3a900e3a835f6a45ed38c038d2c2f127486869ffd8396f2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4c55568869dd4863d23ab3f96faaf7067fa23188f488d522bba0d037d9c3dbb2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b705dfd71bb5f922af656171de20724ea173b92dbbbcdbf79ebdbee137f6173a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "949507ecfc6abc7bf0886a75b7172afc5aa4cbd29c61ec8925aa1314b3a6ecd6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0afca2338afd4bdfcf8b51ba3ee076a2717eef28b8e250e4e1cddc31c0815331",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8dad8ecd6aa7df9f942a65b39a377e28011f5924ce0677d447790446c64c4ac1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-02/basic/task-03/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0a727c35daa270ea520d6fc1e99ed5471abedf28c3a996add53106ef0e750dcb",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "measure-word-use",
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d9223b5948592f3f802d5fe165a230b24e7db8dbb6dde4842085ba0c7b946ee",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a60c86417021877c0e38befca316f96b4605d679907dec7092725418fe7d6f9c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b99ad0bbfd1198b807ef5d869247c7217f945e14c6e8554db4b2fc8ceb21bd6f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "radical-clues",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4716961504ba0c8aec0600ad41e1782763fc88f7c9c141c08938ca1fac2f6d0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c741da037d5f066da70a20fd14275975a113cf8e305fae2c6434c98679a2822f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "clear-description",
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11af45b57e170793dc061a31ee81d7049188763040cf0aba0493bbbe5b8376ca",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "measure-word-use",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c38c4afcb18ba015538c8bf21d33a98d19608c21b42877ca8eb8e09bacc091ff",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af7b739c38b9768f710d37e40df2d4625d8eab31de23461a6dce934edf096105",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "de864048108b641397dfd66bf0ea54b75f259318c3e6df13788426fe0e09ad7d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9979c1bd6a3197b0cf8aa0d5d9ff16e5f955faae8224a5cfc34f7cd6f0bdf31a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "466f8d0c6277db16a9fe64c3a02c5e9d272c5307afdf785952b30440d7ad5861",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e238b8399413a95551e00e558a608f1c39b671c108decd5b8936168a17f638aa",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a0c387a370228b20b87e67043c683c7a22be1f909ebf6a095953b72c0b00791c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff7de3b1b4609098b6e8b54807fdd9dbc9b91ce3d0b42adcb8771e77eadf58be",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "tree-animal-classification",
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4e17ab9c353ae483cb5a19cd6e895cbc706d40df9ba91eea21c6e6c7dea17aed",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc9346cd6aa59732126bba88964bf14f6f1d19263bc48e0f5370363ee7764d4c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "measure-word-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea5982c0eefd3ff0fc1d0704600c7588d53eabf7cd4459203b53a7394581055f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b40fdb61344b5e2d5a5ca3266efd5f3cdf4c4744704371637a3b7fb106f9f5b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "763e55eba79cc16326d830efaddf94e772e0c44a2de39fe77bc15e2f55834a0e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "measure-word-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d4e70bf31b98f8ab4c35c07b8d0cbb681d9b81d3fc1ba9571ea1ac93f2b9fdd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-02/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "86dd0f8c4bf64f6e655162fcbfe221b8290ea70ad3354048a932dc775dea9153",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "measure-word-use",
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f775f439ae8340b3f80fe3b20fb994cd6e16b62d184a7a560afaaaf508cddf56",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4aa76e1e83993b7cf3006d4d88a1ed65a86881c8a43817caf19668f043876427",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "radical-clues",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02884c78d209b029c192915b56aa45f1697d083c4cb4733f1a97b4d06e75c09a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2e77c84bbb0a0ea6c4e455d858881e367b2d1ef429cc281bded58f132f350134",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clear-description",
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "16cfdd8688cc0c7e774ab3d4021790336fd9da70687d8b41950703cae7076ee8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "radical-clues",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d752185b52338405232903ec13cc12807d60dbd1f3b33e6fd4e49ee3a2f43a8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "065f4deaa763005dcbebc8e253fabd046db79936ac5bcf42d5a087b86b07e96c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea1348048336e28b9df7a6135ab5c628dbcb0069a6223136c0179fdbea004956",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "measure-word-use",
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d243178c78198e9f8b827e87a9218701f59685fc55e5199d92c81375255bd99",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a2f229afe2570c29f0ce3b2cd9a92d816eb46c4a14ea70c2aae9ebdf94f7a49b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "clear-description",
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c2f68d3fca3af4edb8e4b5da3042467b4da2731874291dd70231842c86cbaf52",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "77dc447932dd1240844d426e518afd8cf4d9b625e95d53379b0363240f5011a0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "radical-clues",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aea63c75ba1ae922523fbe3f27338620967a1ec25bc76c73fd0e87806fe15091",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "measure-word-use",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f308b4d511450493f7cff9492a961cbafe8789189a924b1bb1d7a4e71b141e42",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-15",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "measure-word-use",
+        "scene-vocabulary",
+        "tree-animal-classification"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5300b5694ce9837ffcd8d79cb683cf4520f24ada8fba48345ce2889ca7889b8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d7fe1df7c4fb196eb6d4ae7352c4a6fcee0c18e9e026870e96445c6fd6451141",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4b15b4c865ae432b265f0f00b8e6f859ddf3614351e04fb49a0cf29006addad3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8524fedacf55e381128da8a1eb56851260a5ea235a5548a79361ac2d3ba2ac4b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f24be0ff3122b9b79d6315c628506556cf8ed7cc5805dcd69c9b65ed4978c8b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "49fc763e747981ccbb938e2589515e412bff92f3b3220289c39bbf174582f9d1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8a3d941a4773e0a307e939ff0d4775c179ed55f39c4abdea0749aa3a880483b7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70fb7b88730c33a080e4eeb0543cc25fe08d8a861f560b724643d6ed516281da",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b64a4352d04799cca5e15ffa3dc799c7526db79abae2859a7c523687a54b881",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af755e3869797392f8d2c15006a234487c2237f0975a075e56006111e092cc87",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "baa434cd917f4e54b6c3f7727e5f95c604e34043537a51ff8e744fe8a9eeed83",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c2d8fae0e4c80a0393168669c2542fd50095af912c1a60483090d9f28ad2d937",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fd532b61428516b0020b7573cc9260cb59f91145e0a22682e58b826ce4d2a9cd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b93ea53a64e4592a4eb37e7c5a94842e507736da51ed00b61231a4cedd1dbb1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e97c0e78f979090386c0a0cf6ae4a2eb56a6a8a5bf8d300243f002d49886c02a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1317e6a691f67210e72faed17cda6daf9d9fe36058943c862969b5e6dc090758",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-02/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a30629250bbee04ec29d02b76adac3a09fef96402e71e7abed3a29ce6f1dee0f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description",
+        "measure-word-use"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d4b262a57bf7325a4a22109ec9729d88bdc06eb081d84c92f6bae70a523f24a8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "radical-clues",
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3396b4028db3bdcf68c6a999804f0a95506d3b28787e7b5b55731e455e0e4e38",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d2bf758f609312c0dff474faa389d59e03aaa01f933cdc23596ea065900cbfd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "327530b15b7db8bf0cdf447c2b41f1026a329ce92074fd246dcbbacff177b7c2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "radical-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "39a019e5995a8e5eecb6fc26161546b34f8553c0030db7fa9e395e961e98bfc3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8fae39f1fc13b82cc5fc92783fe314980a5553a85c0b2d18527e967aa943bc8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a302b827650c272d696890ec4d8f7f9b590218427ec806dddac4ea73a1a12fd9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "radical-clues",
+        "tree-animal-classification",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "23076fed0f5bbb59a2906c8c3b50be3cc664359543ca0a9ce9cafd076fe262f6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1c3aee0833050ed60763d543f724a2013d89e619e7c02bafa482af382cf86c21",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "measure-word-use",
+        "tree-animal-classification",
+        "scene-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5b597a15de83e1af4600cbf068fefbbfb9735dd0e8da10bc4dca752140d7e89",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "radical-clues",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fb63a490171b1dd71392da5c277bfc03bb2400f2261b6117d29482531257815a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "scene-vocabulary",
+        "measure-word-use",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a6913e10751db6dabb1b3d1c61ef048db4b0305a0a9c4069e49fba9019b4383f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "seasonal-farming-sequence",
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "26a1ba60fc199892a7a21750838fd6bb54d14852ad1ec21ab8f3cafd3917ab34",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-02-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-02-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "tree-animal-classification",
+        "radical-clues",
+        "scene-vocabulary",
+        "clear-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6144b7183fe534c0cb4e4856373c62eb196db08975be75a35e918a187cb25952",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,1521 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e8f4adfdf6cd2970d1a621996fe81cb86eb52bbf641d4275a74a7fed4d8d7bc4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5082a8ec7386663a1359e0eb6df7fef56ac12a19f3c7bd1581dcf3f6b9b1b0f6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25e7e4447b058ca492d76bae3f7e28adb47c7daa72cc359ccbc46caa673a3657",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "24147b67d11ddc6b6e0bceb948223d55b0a5536e78fc177e0ce4e68b7d8f0afc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c494aeced4ad20116ff5e1c7f0c21e2773efebc90d47171f1bad28f50ef5edc7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "efd208db791a223badf859a301b0130c997898ae30f14464460b43c71dbb6458",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a37509fd9c0fefdc255363db0eb0833257cd0723525f88bdbb3f262acf8d7e49",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4ba61341fff466b97cc3fc385e8d3022bce03678276f1189f6bf8dd075638547",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "perspective-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eee1eb96a42259663e24ce7c0635c130cb7a3ec5ed23237eadc21c3b5f5fb29f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "perspective-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1fd1216bbd468bfc5e1f079dd3a7f00ab0793e7b532c2d08d71c4344fc71655f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5473c5b549dc2db9a2de1a6ca79dd431a83831e1635b924827161f58199282cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9eb87b55d88765b8a44b963c5955749d5c6d69c264175c3d58704ca6e954eea0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e5c6e7e84b8635075324286c360d7cf850a8abc008c904c434fea93cc5212e04",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "38c1a372ae4f3a65df75f89157b936d5be683e2131b0495ce4b862805080808a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87798af5eb2439a72d7b9b6ad9faae912e6e43a341c82b7fccfd719ee0a3491f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "10893f9cd31cfc4a8996a4873a7b78a4fceefdcc71637be78c802d86b0392097",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d1ac8956dfa3812c6df25e359bef007b03c667d65fa89e4db8ec6ceab3bd5a25",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "fable-action-consequence",
+        "perspective-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e29ee54b9c3210be814968a2e51df465c676977827865b5d2f3065fadaa759e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ebf7953a300778338fe50f8b05fbcf420ea39f4e40710fab631660c89ff6ce2f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a667681d9a4d0a58fc1a2db104471edbcc4e842a53d39ae11432f7da06fc8d7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aed3fa9c29037ec4cee88a43132ff32055c0f991fb42ce9c76aba59ddc7a56ea",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e365175ce03c3b9ce028dd3e62129e0ba1ab6f4e7e6e0ddfbe2f340c96b8763",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36c676cf16113e4b69e72217dddc5e231f48cfbdade7a5185b52f0c9b1da3ee5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "af884a010c94eed381071189644820c08d1f14107cdf3b8a0fa1fd2ece79cf1a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0b106315509cb0eeb187e58afd7e5800d3c0947bd6b00993a78ecc3fdfd28c5b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d5383b4050952a88ca611f507d19ec5097d33fe68ff21a8d7f88d6eda32e54d0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9194cf2c3ead0e839ff9e62aa1ea10240f4283d0e75e9a254a7a13b59b719697",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b540b4ff07de76d83b1fc6ff570be8a7cb4f560053d6b2ac0a341d85d93bc52f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "466294d78fcd972a0c82fddcaac0bf550766f647369581f31843dd8e42bab803",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6fe2e0d16c7bada23355bb3204230fbd8c997585ff6ee03fb7600fd0fa466eb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c4c43acec12e77a53aa61086513cebd3abb07a2b6d5ab0c1951f865c6602b75a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "670fe597f62299736e1a2b03824f098aa7f8ada7ba3b9dddb2cfb20db21dc34f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "12356f2724b01dd22913be4d075dccedd3b7f9eb8e59e7933e159b3a04bf7021",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4e5934fe6cd9215de3455bb8e53a5b55efd6a0c4614cd1a5ba470623b2a7338",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2a49b8aacc9711b9796d9d6fe2ce8528245c592219ac426f546b34f12de485ed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da3c5a28d88391017574142d1482099cbaca171363437f972b0c7923a5e6d59b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f0fc3d5d19daad9b56a6fcc050306b7da8839a99f84c5d5d1277fe030ddd15c2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "63e218c85ffb5474c4c46d9a74cfd6847a692c4defde9e63a61c0811f06ea7ae",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6584e3b3938892557cca6b8df090f4cd7d2f9b189e4700ecf8ea7235655b2d08",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "afcbda6393c63d2f31f2fbc91d3f794423d29f87a4e3abb8939bd592844d07f5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d451b78fda5c0a7c2962c497534663d6caee4fe774cab170f6aed57bb278c082",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f33e621bb923a01aaf98a0e4a7c31537fd29493bc61f50801f8ce0fb669c1cf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc66f96382c844f5147d9d1facaefbbf0e47622d249a4da5eb6fde355d41e334",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2df7584aa430f3a1f6639f989e58de53d3606828731ba6956df51f0c1bd4d701",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fa7edc0d9b2b721c5e0008cee6a02c5dba818163cce4b038b61c63cf55b40a5c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "33de48942b5b773e8729bf358575ccde805e81984ad35bf7bc08625cce9ed5e0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "14d0ecfbb0e7e3f5a3e842f53af87ebbe61ea3c38aeb6640b863b6a2a6950b1b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f2ec7dca8c75794d4468f961a7ffb49ebd3079a690de21e8759195f9c754b96",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "55b6b76e13b276a1d035714856dafb44fc61019252250e192eb0730c36abb4ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87c17528ae5276c3ed83851fa8170cf3eae688bd28a73be9ffeefe5790081f4f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7a2e4cb12249e75b363c2a424886f538fe054edd012b1b5c199af65988a8baaf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "738f596137e547c92c6b6f37e7a5cf872d5596ef16591cd2e1315e44407b04aa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0aaf75e1d2daa2b029b0c580bfd8435b9ce3255427af3b1f32fc264a10f96754",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f1d246667ce6281304eccbc621be688b32ff1ed73734633c500903a7c086c387",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17dc38c15225ffa20cabd24cb99974532b8039f32caeb58bab3845b75654667e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4b384fdc0b1e5660e0498ec8898e988f33404cb01d3e9676b28ce0ca1f592cb1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "perspective-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a1d215a2ce4b561934925dd38dc82e600559176b1030b76ef9ac4507924470b1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c67302457c2fb36fd1d5d74e38083436dded135cb5026365f04281eda6723555",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b32750dec0dfd333de92c28305de0dd12d266d1021ce89818b57f07dde36575b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8fce3e098ffbb1ad9a7ad836e40069c5ea1e8a94329fcc1354b464e91c2be197",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58bcd5961a2ae249b12a27f9648de91af418823f4050a8a664eda370c7368744",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e80c99def87a8d60b4a1f9f50e2054f199c7084e870e99d5fcfc67a88cb13160",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "de59f60e6290f433e7c2f1a98239b427a77c63efaac92f9910fed8d99bc3bfe0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34c91e534a6808bdaa4e32d7dc567a2d70f9788f4736faba8a6d24be321305d5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3fb8222f62102401317f08110ab666db436b4079dcb7fc3659be1cbddb4390c4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a67313c1100769d2da9f878a415a4b87acccda96d4744b44c659514bc8a7b482",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f68d43710fde4065a63432413c66512dde988d73bd562da8cc28a979a550f2a1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "fable-action-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "81048a7b43b1a312919cf718bf267fa7aa782ee22b9eb667e828814af2be54be",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "da4d5770bf53eb80473c43247cec2c3d2a31f492771b4996e271d0c1c58ae362",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0bcd70ab515bd14f9a8aa2bb57958d322cef37896e7487ac6e3a39940d96a278",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2a84aa849585ef37a5bead14eddf2f1eeb90f9c1dbc16fff20b1bbf13bbaedd9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb7016db3e585a9bd760f9c4b54c79f95b2cb8bfa196135b1599a0013bc20c90",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "perspective-and-description"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02683806ddb06df20f1eb38dcac46559dcb928baa733d2e7e08b9bd6b4219c2e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2e421e00c46ac69ada2179dea0f94e34a505e4774f02f2aa4fc8166d6dca228c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "840c64464234a9aa2efb10183764552733a949cd69cc0878f805376dd139534b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c70456d339de3cf90ad896f26d5b5e41e9124830a5383d4c48c773b0c0b41cb9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c59691358a25eded1ccc0e9da79a3eb5228f89770cbf3c273bbd770182be187c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a0c33a761ff659b32ba30bb1fdfdae5262cb958d969ac0208d504894dd6432f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "information-source-comparison",
+        "safe-decision-making",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ecb75bb1b90b2172ee890b3fcd0a0957db7d414703bd393b389564d3af77cbcf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec873922fbc8612a18b6193511d5486bfd5657374a9507fd0bdef89a73884227",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2ccd7e5a439023722bc5d65c9a0a04406a4d05c1a2c314752da854ba6d44143",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "52245181809f2d0bab353c33b6bc22939d4388f12fcd7c5843f617a002998fdc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41e1ee12ff82150d5175288fedf252f929e95099b92649941199270825b81cb8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "reflective-revision"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "570ac38fc8c5a3e52bfd76f43fbb3d6c6563e09e19c5112c13bdb90dd816b456",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "evidence-based-interpretation",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "128589e23a97e4d8cbcf8989867f81cbc2ee07a257ddaf5ac2bcb752732a82dc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "information-source-comparison"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "178b70164dbd109ba6b637785b5d182bc36ce6daa9dde1a58ff0f1d2a0406579",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "safe-decision-making",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "be747cf056ead27b7c5ab939d7f22ddad7b4b9512afd1a07941914d3b6baceea",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reflective-revision",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9a27c8eef10ed8c38b20eb592830f30fac4086221bf337bbdf3bb203563d51da",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "perspective-and-description",
+        "information-source-comparison",
+        "safe-decision-making"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36dc76fc6943c8061300e50aa79ccf3983fb1b059a7c4533947c00ba0e33dbd0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-05-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fable-action-consequence",
+        "reflective-revision",
+        "evidence-based-interpretation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d41bba23a0473ede6803cf35a2f66a52544ec0802af3575b2a7569f84a91a14b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-chinese-unit-05",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-2/chinese/unit-05"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/chinese/unit-05"
+        ],
+        "coreKnowledgePointIds": [
+          "fable-action-consequence",
+          "evidence-based-interpretation",
+          "perspective-and-description",
+          "information-source-comparison",
+          "safe-decision-making",
+          "reflective-revision"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/chinese/unit-05; src/content/textbooks.ts#grade-2/term-2/chinese; src/content/grade-2/term-2/chinese/unit-05/index.ts",
+          "checkedAt": "2026-10-28",
+          "notes": "按本册登记的 TapXWorld 固定快照目录和课程 sourceTopics 映射寓言行动与结果、证据推理、观察角度、信息来源、安全判断及复盘修正。版本边界为登记的 2017 年 12 月第 1 版（TapXWorld 提交 5a80345f2043ba6f8db8d7be9cf3db82725ff1f7）；不称为最新版，不复制课文原文。原课程 48 题已有课程台账记录为 48/48 审校，本包再补 42 道原创选择题；挑战题由作者逐题自审，尚无独立教育者复核。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-chinese-unit-05/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fable-action-consequence",
+              "evidence-based-interpretation",
+              "reflective-revision"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-05/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "perspective-and-description",
+              "information-source-comparison",
+              "safe-decision-making"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-05/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fable-action-consequence",
+              "evidence-based-interpretation",
+              "reflective-revision"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-05/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "perspective-and-description",
+              "information-source-comparison",
+              "safe-decision-making"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-05/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fable-action-consequence",
+              "evidence-based-interpretation",
+              "perspective-and-description",
+              "information-source-comparison",
+              "safe-decision-making",
+              "reflective-revision"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-05/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-05/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-05/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-05-high-14"
+      ]
+    }
+  ]
+}

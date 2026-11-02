@@ -1,27 +1,35 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { installAudioSpy, readAudioEvents } from './audioSpy';
 import { chooseSelectOption } from './selectOption';
+
+async function openSettingsFromNavigation(page: import('@playwright/test').Page) {
+  await page.getByRole('button', { name: '打开导航菜单' }).click();
+  await page.getByRole('dialog', { name: '全局导航' }).getByRole('button', { name: '设置' }).click();
+  await expect(page.getByRole('heading', { name: '设置', level: 1 })).toBeVisible();
+}
 
 test('persistsThemeLearningStartAndSoundPreference', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/');
-  await page.getByRole('button', { name: '设置' }).click();
-  const settingsDialog = page.getByRole('dialog');
+  await openSettingsFromNavigation(page);
   await expect(page.getByRole('switch', { name: '语音提示与交互音效' })).toBeChecked();
   await page.getByRole('radio', { name: '深色' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await chooseSelectOption(page, '学期', '下学期', settingsDialog);
-  await chooseSelectOption(page, '从第几单元开始', '第 1 单元', settingsDialog);
+  await chooseSelectOption(page, '学期', '下学期');
+  await chooseSelectOption(page, '从第几单元开始', '第 1 单元');
   await page.getByRole('button', { name: '应用学习起点' }).click();
+  await expect(page.getByRole('group', { name: '确认更改学习起点' })).toBeVisible();
+  await page.getByRole('button', { name: '确认并应用学习起点' }).click();
   await expect(page.getByText('已更新学习起点，星图也同步点亮啦！')).toBeVisible();
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('china-study-progress-v1') ?? '{}').learningStart))
     .toEqual({ grade: 2, term: 2, unit: 1 });
-  await page.getByRole('dialog').getByRole('button', { name: '查看成就详情' }).click();
-  await expect(page).toHaveURL(/\/achievements$/);
-  await expect(page.getByRole('heading', { name: '我的成就星图' })).toBeVisible();
+  await page.getByRole('button', { name: /查看成长详情/ }).click();
+  await expect(page).toHaveURL(/\/growth$/);
+  await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
+  await expect(page.getByRole('tab', { name: '成长概览' })).toHaveAttribute('aria-selected', 'true');
 
   await page.goto('/');
-  await page.getByRole('button', { name: '设置' }).click();
+  await openSettingsFromNavigation(page);
   const soundSwitch = page.getByRole('switch', { name: '语音提示与交互音效' });
   const pausesBeforeMute = (await readAudioEvents(page)).filter((event) => event.type === 'pause').length;
   const playsBeforeMute = (await readAudioEvents(page)).filter((event) => event.type === 'play').length;
@@ -29,11 +37,10 @@ test('persistsThemeLearningStartAndSoundPreference', async ({ page }) => {
   await expect(soundSwitch).not.toBeChecked();
   expect(await page.evaluate(() => localStorage.getItem('china-study-sound-enabled-v1'))).toBe('false');
   await expect.poll(async () => (await readAudioEvents(page)).filter((event) => event.type === 'play').length).toBe(playsBeforeMute);
-  await page.getByRole('button', { name: '关闭' }).click();
   expect((await readAudioEvents(page)).filter((event) => event.type === 'pause').length).toBeGreaterThan(pausesBeforeMute);
 
   await page.reload();
-  await page.getByRole('button', { name: '设置' }).click();
+  await openSettingsFromNavigation(page);
   await expect(page.getByRole('switch', { name: '语音提示与交互音效' })).not.toBeChecked();
   expect((await readAudioEvents(page)).filter((event) => event.type === 'play')).toHaveLength(playsBeforeMute);
 });
@@ -48,7 +55,8 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
   ]) {
     await page.setViewportSize(viewport);
     await page.goto('/achievements');
-    await expect(page.getByRole('heading', { name: '我的成就星图' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
+    await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
     await expect(page.locator('.exploration-zone')).toHaveCount(12);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
     const horizontalPadding = await page.locator('.achievement-page').evaluate((element) => ({
@@ -95,12 +103,15 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
 test('doesNotPlayForDisabledOrAriaDisabledControls', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/grade-2/term-1/chinese/unit-01/basic/task-01/session-01');
-  await page.evaluate(() => {
+  const appFrame = page.locator('.app-frame');
+  await expect(appFrame).toBeAttached();
+  await appFrame.evaluate((element) => {
     const control = document.createElement('button');
     control.id = 'aria-disabled-sound-check';
     control.setAttribute('aria-disabled', 'true');
-    document.querySelector('.app-frame')?.appendChild(control);
+    element.appendChild(control);
   });
+  await expect(page.locator('#aria-disabled-sound-check')).toBeAttached();
   const disabledContinue = page.getByRole('button', { name: /^继续下一题/ });
   await disabledContinue.evaluate((element) => element.dispatchEvent(new MouseEvent('click', { bubbles: true })));
   await page.locator('#aria-disabled-sound-check').evaluate((element) => element.dispatchEvent(new MouseEvent('click', { bubbles: true })));

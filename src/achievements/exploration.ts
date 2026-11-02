@@ -3,6 +3,7 @@ import type { CurriculumProgressSource } from '../content/curriculumManifest';
 import { getRegisteredCurriculumPositions } from './position';
 import type { LearningPosition } from './position';
 import { getLearningUnitProgress } from './progress';
+import { getGradeTitle } from '../content/gradeTitle';
 
 export interface ExplorationUnitNode {
   id: string;
@@ -59,7 +60,7 @@ export function getExplorationZones(completedSessionIds: string[], startAt?: Lea
     const termId = `term-${design.term}`;
     const grade = source.grades.find((entry) => entry.id === gradeId);
     const term = grade?.terms.find((entry) => entry.id === termId);
-    const gradeTitle = grade?.title ?? `${design.grade}年级`;
+    const gradeTitle = grade?.title ?? getGradeTitle(design.grade);
     const termTitle = term?.title ?? (design.term === 1 ? '上学期' : '下学期');
     const isStartZone = startAt?.grade === design.grade && startAt.term === design.term;
     const units = registeredPositions

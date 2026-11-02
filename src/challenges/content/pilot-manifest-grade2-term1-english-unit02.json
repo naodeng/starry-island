@@ -1,0 +1,1513 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "126524e1f99180599089cd7556ca2b89eb9c153e8a5e158dd61ecac418aa4119",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36ac56d93ffc5237c51ae6e7d482076a3eccdfaa8d5b1c88fc5092204b22bb46",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0631bd6d9df3b8c1d41f2f53cc6385ec21e52c2b71e33a329588a4da48a10139",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb6574a93b30952b0cc54192b8a33ce64e96f7cbae4abcb1297ed6b9045637a7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b17d3e1a729d9723c61e84bc08db1778a7de9ed0703cad9405779e2d4a7429d9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f410a410486f981238142edaebef2f8801c88ef55bbdca37940aa4c6e1283ac",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1362d4cc8339f28844f10b0e7d7f7e1b0734cabcc70332eafb4ff5b5c9044ade",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "923ffd52d43a76e966ad4e099dcc0914ad919e3c952e8d7d0039eec7522046fb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c79362f14789524eaa21e0d5c6787d2d1b3a4a251df8360b72583c88393aa5e2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17087e2a3e580374b764a44da887645110617161a82d9ef55bd95b95194fcca9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e9bc2e5f748351ffb79a9fb5c784d49b7d339ce4b162925ab2e960ede5786b6d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "99e505e29a4486ed626342acd5064bea8a266a3428658bf22460be2272a4a007",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c0cbd44d969a17ce2d7f03d9a55ec1b76c392418e69510d1797cdca3978f64c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-02/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0508e9a30bc1f73a7cfbcfbcd05a1cf32beeff6c444349cc88a4f50b8b358871",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e66844f7e6145922b897cf30e589ee52e70c55d7ed08d8c0563f7fec7d3cf9a0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbef9ef7a49c07e141a2aca9800c1eb775c97bb4e3a16a46d7cf5a2a5e828b2f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b08d744e7ab4f0ef4e3567ce0bcc42fe040553922de7efdd57e1021dd7e93a47",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "231c4947d6d363b55fbe74dfe05242294e563303c1183aa65fadce0021d88777",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d59dbc0bb8f23f3a0ceeed66183b53c259382e7dc102d643316ba81035d891c3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "149f43c883a25a70e1bef58330bbf2ff796347195526ad82f78f827cd1f596f9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bcf6ab8e76a22f2675442ff15480a75e6400d3cf97608d9738a697655e94fee8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ecb87bb78c491f141caa8cb8512eda25067c5a4fdab27b87af34abec969ef22d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61f436627f9f947cc844b4cae239f059f78843bb269b5f6b8be6c3b642decb1c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "edba2f21c2ba71dc0026916dac8ed18d9b3fa8b9b5f320c15c03adeacc285b00",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e05094632fbd58e7a3304d99f3133d474533513a82271ddd20ed90ed33d6eb6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec0010a56ffa7883347d9ebf2baf657e8b0b0d83a68b4201f4a275a0b2a0f954",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1690f938c1e9e51e1c38389914612b9481a45b31e9e0fb87094eb4d54d671c36",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d18a656628ee6b748a8afe9a5f27d73aac1a96b39148aaf5ea710a6ac7c94166",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b228f3307324eb3a0cb760384bada63d5f3264cfeb88567751024d74025848a8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "789e304c11cee06785350fc6909135fff865840d0469e16811f3c11eb857a9a6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5ac393c09beafcfd969d43596bfa6f7d3e0a9e274db454ced6360d8646fdec10",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65fdf6e5b96a8e1015d3f0c433fc2e063f28f3f8a6aee165320183a2202237ec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1922ff59924a7c066c73211999cb01f974951c69f1c0bf16e5e34ee45662c8a3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d343a44db6fad293f5256f6fb4b859480fd6a4365f5ff553e21e3cf124e5b3ab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a91567deb240124f13326ed7d1e639e55a0ed730aba5c93831aad5e88c4454d1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/english/unit-02/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b2f13994fdd5a9d8a76d8b847e9fbedcf7b4397f91ef1c844f2c3f0896fe2de2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8a2475f497d95ddfa70f5bec6642efee6c2e3de433b186fdf987c3df2a68ac8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "63e1cc81b8bf9b3ffec643b1b49173fc81a2fcd31a9d035c7655264111ae823f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "608f061c9732f4c38a58c36e8632d6dac9a30261658a8de2c35cc327b72247a9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6ce0292989876f325d4781f9cf21b2c145bb7f3c67b9ce3222325d2cf5a657ec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "15cabebf8e111bd2b6ff81bbe6d1d8ea72f1d9ea1d91f51214d6e30387e65759",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e3911273afe6ad65c252ece5a808020cd8cc5b97316d8033b141d1a38701737c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "362c5039ae8ac0881c361ef6310eca334690692103dc5f1f4c4cf17c31a2eb18",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "83c4b5ff4ce125be0810d693f00c26b1a865e0008024f2c2d715ff83bff08d25",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d2e9c4bd00286248eb185ce88517553aaadf2a6ce1a2c71a96725395dad53062",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e6683f53a8c850184a62259ffb8a4825b302611daab23ab624d52eef9df47c7d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e8be3d6aadffbf81c189850cd959fc2d543fce14405d13746ca0494ad04d938",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85cc785f16f6fd0c5a33fb919a74f838706376672d1618f5cf4fc78d3093001f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45ff64cf08bb4c9f40bc85ee642ce724079b88865f70e80ed7260d162770bf3e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5dfe206157fc57f47cb6808cd171c18b7a251959782ef409e765545c8b1200c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "817a259ae90446d89e046f4bda185a89b4e1570f1cc08a2f2cd61cc6311be8ec",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-basic-16",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d9431778b33fa6c9c9f5cba9c987b0b0215e6b6d63bf26c69b65586dafa74bc2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "68da1ffdf08c2a765637b0298ad3effd768cefa96cb3f15b9e20c55d8a201c34",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2e730ac25696b1910be3f9b2910a6eedd53e03886d564a63f0cb105905738561",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "72c0bec3610fbd0b187f78c6cc44abd2448dab4a3730db2dc14577ea6a688459",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a8cf0e0ffcb495f8df25a45c24639640e7e7ae1a7403b176a8055a5e534dcaab",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b5ba2fd5a9752abc9a6e18b6f7c2782e5d38fbd6f42f735e13f6b273aa2869c7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "32daaac2d74f4932bd556905e41298a5a87d9b7d1b2c3dae85ca1743c689ae9a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "987fa10ac7010d3cd037aaa7deacb9909dec50ea20d06d67cd6965fe8a9fb8aa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6012739f99c3901cf45856a57595a172a56d7261af39a043cb72e2deb842f318",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dfe984dfe1e20dec053e34f6c402bf14b62639778f20df5762b71c77e42b9144",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "960c340f122a64720100c1fefaf2f5f6b2cc014a4f6d99674fdc3befc20ad277",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "41044d476f2a3acb3ba0f59da005774faaf9448854355b81cdc6d8c35463b833",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9007362e101e256c2066cb25dbe72f439aa7eace1bedd05f8aa067ee22123ce1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79ff86c486d86730bee5a0cefb2163f71d01c28dd45d4f6ad4ca29ac6de70524",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7402ecb9f497297ae66b9af739e187ddec6f80e4b42eaa2ec02f89e81a995832",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f1c00404adde850ade81ec42b6767330782aea96a08caf6d889fd96dabfe9121",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ee1f1b761ce9e5ae196cc94d1bc82c3fe98e2c14cb1208025c3389eacf205144",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "abbba15a60684af6435a57157ac1d0186665d28463e08559a49802ab07beba74",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-18",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0cddd94d9598fb853bc304a91836303e18cc7b179464a3c07527974f7821faa0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-19",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "88142beee0c289b85eb8546ac42b03bd4119e2c283b5066178359a304e64e89c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-20",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "37717718c41b1fb10f71dfae78b7421d776f437f0110c6fc5c5e641da7e8c961",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-21",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-advanced-21",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bb2b2dcf8ec08027821f14c296ce2a9259fabbd2839616f7d8e70bf7f2b947ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09d282ee667ac3a8320d72de006baea6709d63786827794a5818e8eac48df2b0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "06b011480275b225aefdfd8cb105a058d434b5c215e9fdc2ee572c263fc813f4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6c62394dc2f08f22cc25c2130f7ac46f7c94e9bda368c0b2c2d392f527602e23",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ef6d3e947095f7c6a96f91de471ac627849edca49d67c79e583ba490cb96147a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e9a6cbb2a878e413d2ca52b0859427767eb8c1647fc1260e1cb5315418e4e956",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "187ecf404eaf0bd544eca3a61e812d2163d1d760ff689fd427c81bc213be412c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff509ef496ca986f25a39d6ef1711529d8a010c7df04732c9ddae901d6738f33",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea7c778dda1b0350af3df6372199d93f77d1cdf5ececc412d22213e60945f3bf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c9698500f107e0be02913115d168a1e631d86f2b4f8a3182f9e6f2e3cea415a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "11e8c718f19a1b519a52bbd5d079ce2a9194b6b06a8c10634a28b74ce3b5cd5d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a418f607c6303b2c4db7fb30fb0062dfa852e5cd10feacf041a318af78cadee5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "90259767dd5d0f2a9779535629e69185ec15b9b415e7a2286d1f4ea22da0e409",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb6f01c6daf89b1026a307d909a4c9de02bea3dd109ee2e6be4f5ccc8adee918",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aba08076831ea31b7e3db13ea05645f5f5d6a1b4ba0aaca2c5d6473005425baf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-15",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9b6f6cc896c1490fc87990f8cac491adcdf62187efae79ac6c19a8b5f2b83997",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-16",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ea0551fdccda818562c58db99abd5ab8136c6564835db8fdd3b072c7edacb7ad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-17",
+      "activityId": "challenge-supplement-grade-2-term-1-english-unit-02-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "people-vocabulary",
+        "friend-classmate-vocabulary",
+        "he-she-pronouns"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c51d5bab05d09b5745231090fe2d992f1fe6a41f7b72dd6aba93092d10322cf1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-english-unit-02",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-2/term-1/english/unit-02"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/english/unit-02"
+        ],
+        "coreKnowledgePointIds": [
+          "people-vocabulary",
+          "friend-classmate-vocabulary",
+          "he-she-pronouns"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#固定快照目录映射; src/content/grade-2/term-1/english/unit-02/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应 TapXWorld 固定回退目录中的 Boys and Girls；覆盖人物词汇、朋友与同班同学关系以及 he/she 初步表达。学校是否开设该册英语仍未确认；闯关题池不修改原学习课程。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-1-english-unit-02/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "people-vocabulary"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-02/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "friend-classmate-vocabulary",
+              "he-she-pronouns"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-02/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "people-vocabulary",
+              "he-she-pronouns"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-02/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "friend-classmate-vocabulary",
+              "he-she-pronouns"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-english-unit-02/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "people-vocabulary",
+              "friend-classmate-vocabulary",
+              "he-she-pronouns"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-02/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-basic-16",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-02/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-18",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-19",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-20",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-advanced-21",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/english/unit-02/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-english-unit-02-high-17"
+      ]
+    }
+  ]
+}

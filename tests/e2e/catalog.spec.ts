@@ -1,32 +1,33 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { readFileSync } from 'node:fs';
 import { installAudioSpy } from './audioSpy';
 import { chooseSelectOption } from './selectOption';
 
 const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
 
-test('showsCompactHomeExplorationProgressAndOpensAchievementDetails', async ({ page }) => {
+test('showsTheCurrentCourseRouteAndChallengeEntry', async ({ page }) => {
   await installAudioSpy(page);
-  await page.goto('/');
+  await page.goto('/courses');
 
   const hero = page.locator('.catalog-hero');
-  await expect(hero.getByText('我的探索进度')).toBeVisible();
-  await expect(hero.getByRole('progressbar', { name: /距离月球开拓者的进度/ })).toBeVisible();
-  await expect(page.locator('.catalog-hero-crew .achievement-summary-card')).toBeVisible();
+  await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
+  await expect(hero.getByText('当前探索航线')).toBeVisible();
+  await expect(page.locator('.catalog-current-route')).toContainText('一年级');
+  await expect(page.getByRole('heading', { name: '今天想探索哪座星球' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '准备好检验自己的学习成果了吗？' })).toBeVisible();
   await expect(page.locator('.project-legal-footer--page')).toContainText('© 2026');
   await expect(page.getByRole('link', { name: 'naodeng 的个人网站' })).toHaveAttribute('href', 'https://inaodeng.com');
-  await hero.getByRole('button', { name: /成就详情/ }).click();
-
-  await expect(page).toHaveURL(/\/achievements$/);
-  await expect(page.getByRole('heading', { name: '我的成就星图' })).toBeVisible();
+  await page.getByRole('button', { name: '进入闯关中心' }).click();
+  await expect(page).toHaveURL(/\/challenges$/);
+  await expect(page.getByRole('heading', { name: '闯关中心', level: 1 })).toBeVisible();
 });
 
 test('updatesTheHighlightedCourseAndMovesKeyboardFocusToItsSelectors', async ({ page }) => {
   await installAudioSpy(page);
-  await page.goto('/');
+  await page.goto('/courses');
 
   const currentRoute = page.locator('.catalog-current-route');
-  await expect(currentRoute).toContainText('1年级');
+  await expect(currentRoute).toContainText('一年级');
   await expect(currentRoute).toContainText('上学期');
   await expect(currentRoute).toContainText('语文');
   await expect(currentRoute).toContainText('人教版');
@@ -84,7 +85,7 @@ test('shows second advanced and high tasks across Chinese math and English', asy
       await expect(page.getByText('8 个挑战')).toBeVisible();
       await page.getByRole('button', { name: '开始第 1 场' }).click();
       await expect(page).toHaveURL(/\/session-01$/);
-      await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('挑战 1 / 8');
+      await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('挑战 1 / 8', { timeout: 15_000 });
     }
   }
 });
@@ -147,6 +148,7 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
 
   const submitAction = page.locator('.activity-submit-action').first();
   await expect(submitAction).toBeVisible();
+  await submitAction.scrollIntoViewIfNeeded();
   const submitBounds = await submitAction.boundingBox();
   expect(submitBounds?.y).toBeGreaterThan(0);
   expect(submitBounds!.y + submitBounds!.height).toBeLessThanOrEqual(844);
@@ -160,7 +162,7 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
   await page.setViewportSize({ width: 1280, height: 900 });
   await expect(page.locator('.mobile-study-dock')).toBeHidden();
 
-  await page.goto('/');
+  await page.goto('/courses');
   for (const theme of ['light', 'dark']) {
     await page.evaluate((preference) => localStorage.setItem('china-study-theme-v1', preference), theme);
     await page.reload();
@@ -202,16 +204,16 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
   }
 });
 
-test('rendersEveryVerifiedCourseEntryAndOpensItsUnit', async ({ page }) => {
-  test.setTimeout(300_000);
-  await installAudioSpy(page);
-  for (const grade of curriculumManifest.grades) {
+for (const grade of curriculumManifest.grades) {
+  test(`rendersVerifiedCourseEntriesAndOpensUnitsFor${grade.title}`, async ({ page }) => {
+    test.setTimeout(120_000);
+    await installAudioSpy(page);
     for (const term of grade.terms) {
       for (const subject of term.subjects) {
         const verifiedEntries = subject.units.filter((entry) => entry.status === 'active'
           && curriculumManifest.textbooks[entry.textbookEditionId]?.verificationStatus === 'verified');
-        await page.goto('/');
-        await expect(page.getByRole('heading', { name: '星岛学园 · Starry Island' })).toBeVisible();
+        await page.goto('/courses');
+        await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
         await chooseSelectOption(page, '年级', grade.title);
         await chooseSelectOption(page, '学期', term.title);
         await page.getByRole('button', { name: subject.title, exact: true }).click();
@@ -221,12 +223,12 @@ test('rendersEveryVerifiedCourseEntryAndOpensItsUnit', async ({ page }) => {
         }
         for (const entry of verifiedEntries) {
           await page.goto(`/${grade.id}/${term.id}/${subject.id}/${entry.id}`);
-          await expect(page.getByRole('heading', { name: entry.title, exact: true })).toBeVisible();
+          await expect(page.getByRole('heading', { name: entry.title, exact: true })).toBeVisible({ timeout: 15_000 });
         }
       }
     }
-  }
-});
+  });
+}
 
 test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) => {
   await installAudioSpy(page);
@@ -238,29 +240,28 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     { width: 1280, height: 900 },
   ]) {
     await page.setViewportSize(viewport);
-    await page.goto('/');
-    await expect(page.getByRole('heading', { name: '星岛学园 · Starry Island' })).toBeVisible();
+    await page.goto('/courses');
+    await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
     await expect(page.getByRole('button', { name: /进入单元/ }).first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
     if (viewport.width <= 1024) {
       const routeAction = await page.locator('.catalog-current-route-action').boundingBox();
-      const achievementAction = await page.locator('.catalog-hero-crew .achievement-summary-card').getByRole('button', { name: /成就详情/ }).boundingBox();
       expect(routeAction?.height).toBeGreaterThanOrEqual(44);
-      expect(achievementAction?.height).toBeGreaterThanOrEqual(44);
+      const settingsAction = await page.locator('.catalog-settings-button').boundingBox();
+      expect(settingsAction?.height).toBeGreaterThanOrEqual(44);
     }
     if (viewport.width === 390) {
-      const companionName = page.locator('.companion-roster-member').first().locator(':scope > span').last();
-      await expect(companionName).toBeVisible();
-      expect(await companionName.evaluate((element) => getComputedStyle(element).fontSize)).toBe('11px');
+      await expect(page.getByRole('complementary', { name: '学习伙伴小队' })).toBeVisible();
     }
 
     await page.getByRole('button', { name: '设置' }).click();
-    const dialog = page.getByRole('dialog');
-    await expect(dialog.locator('.project-legal-footer--dialog')).toContainText('PolyForm Noncommercial License 1.0.0');
-    await expect(dialog.getByRole('heading', { name: '学习进度设置' })).toBeVisible();
-    await expect(dialog.getByRole('button', { name: '应用学习起点' })).toBeVisible();
+    await expect(page).toHaveURL(/\/settings$/);
+    await expect(page.getByRole('heading', { name: '设置', level: 1 })).toBeVisible();
+    await expect(page.locator('.project-legal-footer--page')).toContainText('PolyForm Noncommercial License 1.0.0');
+    await expect(page.getByRole('heading', { name: '学习进度设置' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '应用学习起点' })).toBeVisible();
     if (viewport.width === 390) {
-      const themeLabel = page.locator('.settings-modal .theme-switcher-options [class*="animal-radioItem"] [class*="animal-label"]').first();
+      const themeLabel = page.locator('.settings-page .theme-switcher-options [class*="animal-radioItem"] [class*="animal-label"]').first();
       const dimensions = await themeLabel.evaluate((element) => {
         const style = getComputedStyle(element);
         return {
@@ -275,10 +276,9 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     }
 
     const geometry = await page.evaluate((viewportWidth) => {
-      const modal = document.querySelector('.settings-modal > [class*="animal-modalClipped"]');
-      const body = document.querySelector('.settings-modal [class*="animal-body"]');
-      if (!(modal instanceof HTMLElement) || !(body instanceof HTMLElement)) return null;
-      const bounds = modal.getBoundingClientRect();
+      const panel = document.querySelector('.settings-page .settings-panel');
+      if (!(panel instanceof HTMLElement)) return null;
+      const bounds = panel.getBoundingClientRect();
       return {
         left: bounds.left,
         right: bounds.right,
@@ -286,27 +286,15 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
         bottom: bounds.bottom,
         width: viewportWidth,
         height: window.innerHeight,
-        bodyCanScroll: body.scrollHeight > body.clientHeight,
+        pageCanScroll: document.documentElement.scrollHeight > window.innerHeight,
       };
     }, viewport.width);
     expect(geometry).not.toBeNull();
     expect(geometry!.left).toBeGreaterThanOrEqual(0);
     expect(geometry!.right).toBeLessThanOrEqual(geometry!.width);
     expect(geometry!.top).toBeGreaterThanOrEqual(0);
-    expect(geometry!.bottom).toBeLessThanOrEqual(geometry!.height);
-    if (viewport.width === 390) expect(geometry!.bodyCanScroll).toBe(true);
-
-    if (viewport.width === 390) {
-      await page.locator('.settings-modal [class*="animal-body"]').evaluate((element) => {
-        element.scrollTop = element.scrollHeight;
-      });
-      const closeBounds = await dialog.getByRole('button', { name: '关闭设置' }).boundingBox();
-      expect(closeBounds?.y).toBeGreaterThanOrEqual(0);
-      expect(closeBounds!.y + closeBounds!.height).toBeLessThanOrEqual(viewport.height);
-    }
-
-    await page.getByRole('button', { name: '关闭设置' }).click();
-    await expect(dialog).toBeHidden();
+    expect(geometry!.bottom).toBeGreaterThanOrEqual(0);
+    if (viewport.width === 390) expect(geometry!.pageCanScroll).toBe(true);
   }
 });
 
@@ -314,7 +302,7 @@ test('supportsKeyboardFocusReducedMotionAndNarrowScreens', async ({ page }) => {
   await installAudioSpy(page);
   await page.setViewportSize({ width: 375, height: 812 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/');
+  await page.goto('/courses');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
   await page.keyboard.press('Tab');

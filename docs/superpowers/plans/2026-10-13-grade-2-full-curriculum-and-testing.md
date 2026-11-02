@@ -2,7 +2,7 @@
 
 > 历史记录：本计划记录 2026-10-13 的实施任务与当时范围。当前课程任务数量及逐题审校要求由 [2026-10-15 课程目录规范与难度任务扩充设计](../specs/2026-10-15-curriculum-standardization-and-difficulty-review-design.md) 覆盖；以下复选状态仅反映当时的实施记录。
 
-> **执行要求：** 使用 superpowers:executing-plans Skill，按任务顺序 Native 实施。每项代码任务先写失败测试，再实现、验证并提交；不委派子代理。
+> **执行要求：** 使用 `superpowers:executing-plans` 技能，在本会话中按任务顺序实施。每项代码任务先写失败测试，再实现、验证并提交；不委派子代理。
 
 **目标：** 将当前二年级上学期语文、数学第一、二单元扩展为用户最终裁定版次的二年级上下学期语文、数学和英语（一年级起点预备级）完整互动课程，并补齐自动化质量保障。
 
@@ -29,7 +29,7 @@
 - E2E 用独立上下文和 127.0.0.1:4174 专用端口，禁止连接或清理用户当前 4173/5173 服务。
 - 过程文档中文；保留 PolyForm Noncommercial License 1.0.0、动物岛 UI 第三方声明和现有头像素材边界。
 
-## Review Focus
+## 审查重点
 
 - TapXWorld 与人教社公开最新版不一致：优先采用完整可核实的新版；找不到时依用户最新授权使用 TapX 回退，并逐册记录差异，不把回退快照称为最新版。
 - 完整新版学生书/目录证据不足：使用同一 TapX 文件的完整目录及知识范围，不跨版拼接；未知 ISBN、印次留空，不能由教师用书或文件日期推断。
@@ -42,7 +42,7 @@
 
 ---
 
-### Task 1：建立单元、组件与 E2E 测试基础
+### 任务 1：建立单元、组件与 E2E 测试基础
 
 **文件：** 修改 package.json、package-lock.json、.gitignore；创建 vitest.config.ts、playwright.config.ts、src/test/setup.ts、src/App.test.tsx、tests/e2e/smoke.spec.ts；修改 AGENTS.md 和原设计文档。Vitest 配置合并现有 Vite 配置，不修改 vite.config.ts。
 
@@ -54,11 +54,11 @@
 - [x] 在 AGENTS.md 增加测试命令；原设计文档标记新规格为当前范围并删除不新增自动化测试的旧约定。
 - [x] 运行单元、冒烟 E2E 和构建；精确暂存后以 Conventional Commits 提交。
 
-### Task 2：核对双来源版次并裁定目录清单
+### 任务 2：核对双来源版次并裁定目录清单
 
 **文件：** 创建 docs/curriculum/grade-2-textbook-inventory.md。
 
-**接口：** 本任务完成六册来源核对、TapX 快照回退裁定和目录映射；Task 3 的课程元数据记录来源类型、精确文件、固定提交号、PEP 新版证据和回退原因。未知书目信息留空。
+**接口：** 本任务完成六册来源核对、TapX 快照回退裁定和目录映射；任务 3 的课程元数据记录来源类型、精确文件、固定提交号、PEP 新版证据和回退原因。未知书目信息留空。
 
 - [x] 核对六册 TapXWorld 固定快照文件及版权页/目录；逐册检查人教社公开资料能否提供完整最新版学生书和目录。记录用户确认的校用快照及出版社已知新版信息。
 - [x] 区分编号单元、review、integrated-practice 并记录课程 key 映射。
@@ -66,7 +66,7 @@
 - [x] 找不到完整人教社最新版学生书或目录的册次，依用户授权采用 TapX 固定快照回退；记录 sourceKind、精确 PDF、commit、回退原因及可核实版次，不跨版本拼接，未知 ISBN/印次不猜。
 - [x] 审核双来源资料的完整性和可追溯性；运行单元测试与 diff 检查后提交。
 
-### Task 3：定义课程层级、元数据和完整性校验
+### 任务 3：定义课程层级、元数据和完整性校验
 
 **文件：** 修改 src/content/types.ts、src/content/curriculum.ts、四个现有 unit-01/unit-02 文件，以及 src/app/router.ts、src/achievements/{exploration,position,progress}.ts、src/components/achievements/AchievementDashboard.tsx、src/components/catalog/UnitOverview.tsx 这些旧 session 消费方；创建 src/content/textbooks.ts、src/content/sessionUtils.ts、src/content/sessionUtils.test.ts、src/content/validateCurriculum.ts、src/content/validateCurriculum.test.ts、src/content/curriculum.test.ts。
 
@@ -78,7 +78,7 @@
 - [x] 在 UnitOverview 显示当前课程来源说明；组件测试检查其与 PEP/TapX 来源字段相符，TapX 回退版不显示最新版标签。
 - [x] 测试所有旧开放内容结构，运行 validator、build，修正后提交。
 
-### Task 4：升级路由、目录和任务入口
+### 任务 4：升级路由、目录和任务入口
 
 **文件：** 修改 src/app/router.ts、src/App.tsx、src/components/catalog/CourseCatalog.tsx、src/components/catalog/UnitOverview.tsx、src/components/catalog/CourseBreadcrumbs.tsx、src/styles/catalog.css、src/styles/theme.css；创建 src/app/router.test.ts、src/components/catalog/CourseCatalog.test.tsx、src/components/catalog/UnitOverview.test.tsx。
 
@@ -89,7 +89,7 @@
 - [x] 单元页展示基础多任务、进阶/高阶单任务、目标、场次和任务级进度。
 - [x] 验证键盘、窄屏及现有设置入口；运行对应测试和构建后提交。
 
-### Task 5：录入二年级上学期语文
+### 任务 5：录入二年级上学期语文
 
 **文件：** src/content/grade-2/term-1/chinese/ 下所有单元、review、实践入口；修改 curriculum registry、数据测试和教材清单。
 
@@ -99,7 +99,7 @@
 - [x] 原创题目适龄、答案正确，不复制课文原句或插图。
 - [x] 运行课程结构和目录映射测试后提交。
 
-### Task 6：录入二年级下学期语文
+### 任务 6：录入二年级下学期语文
 
 **文件：** src/content/grade-2/term-2/chinese/ 下所有单元、review、实践入口；修改 registry、数据测试和教材清单。
 
@@ -108,7 +108,7 @@
 - [x] 每条符合三档任务结构和每场 8 题；校对语言和答案。目录映射测试断言不存在缺失或多余条目，validator 断言每个任务至少一场。
 - [x] 运行 validator、语文数据测试后提交。
 
-### Task 7：录入二年级上学期数学
+### 任务 7：录入二年级上学期数学
 
 **文件：** src/content/grade-2/term-1/math/ 下所有单元、review、实践入口；修改 registry、数据测试和教材清单。
 
@@ -117,7 +117,7 @@
 - [x] 每条提供基础至少两任务、进阶/高阶各一任务，每场八题；按知识点选用题型。数据测试遍历全部数学条目，断言任务结构、八题长度、测量范围和算术答案。
 - [x] 对运算和测量答案增加专项断言；全量单测 121/121、类型检查、临时目录 Vite 构建、数学与综合实践路由 E2E 1/1、`git diff --check` 均通过。
 
-### Task 8：录入二年级下学期数学
+### 任务 8：录入二年级下学期数学
 
 **文件：** src/content/grade-2/term-2/math/ 下所有条目；修改 registry、数据测试和教材清单。
 
@@ -126,7 +126,7 @@
 - [x] 满足三档、任务和八题规则，核验运算步骤及答案。新增下册答案检查，逐题断言解释步骤得到 correctAnswer。
 - [x] 运行全量 validator 和数学测试后提交。
 
-### Task 9：录入二年级上学期英语（一年级起点预备级）
+### 任务 9：录入二年级上学期英语（一年级起点预备级）
 
 **文件：** src/content/grade-2/term-1/english/ 下全部语言单元和复习入口；修改 registry、数据测试和教材清单。
 
@@ -135,7 +135,7 @@
 - [x] 正确区分编号单元和未编号 Revision；基础多任务、进阶/高阶各单任务、每场八题。数据测试断言 Revision 的 achievementEligible=false 且不占正式单元编号。
 - [x] 检查英文词汇、指令、语法和答案适龄准确；运行测试后提交。
 
-### Task 10：录入二年级下学期英语
+### 任务 10：录入二年级下学期英语
 
 **文件：** src/content/grade-2/term-2/english/ 下全部语言单元、复习和实践入口；修改 registry、数据测试和教材清单。
 
@@ -144,7 +144,7 @@
 - [x] 满足任务、场次和八题规则，复核英文内容。下册测试同样校验 Revision/实践计数及全部题目引用。
 - [x] 运行全量课程 validator 和英语数据测试后提交。
 
-### Task 11：实现判题、配对打散和随机鼓励反馈
+### 任务 11：实现判题、配对打散和随机鼓励反馈
 
 **文件：** 创建 src/learning/answers.ts、matching.ts、feedback.ts、session.ts 及同名 .test.ts；创建 src/sound/soundPreferences.ts、soundCues.ts 及测试、SoundProvider.tsx；将五段用户提供 MP3 放入 public/audio/ 并按规格表命名；修改 src/components/game/ActivityFeedback.tsx、ActivityRenderer.tsx、MatchActivity.tsx、SessionPlayer.tsx、SessionSummary.tsx；创建 ActivityFeedback.test.tsx、MatchActivity.test.tsx、SessionPlayer.test.tsx。
 
@@ -158,7 +158,7 @@
 - [x] SessionPlayer 用第 8 题完成状态决定全对音，用连续正确计数决定普通/连击音；ActivityRenderer 将正确与错误结果回报给场次，答错后正确重试重新开始连击计数；重玩场次时连击计数归零。
 - [x] 八题进度、最后一题完成、重复点击保护和鼓励反馈写组件测试；核心学习模块达到四项 100% 后提交。
 
-### Task 12：升级进度、成就、学习起点和主题
+### 任务 12：升级进度、成就、学习起点和主题
 
 **文件：** 修改 src/storage/progress.ts、src/achievements/position.ts、src/achievements/progress.ts、src/achievements/exploration.ts、src/theme/ThemeProvider.tsx、src/App.tsx、src/main.tsx、src/components/settings/SettingsDialog.tsx、src/components/catalog/CourseCatalog.tsx、src/components/achievements/AchievementSummary.tsx、AchievementPage.tsx、AchievementDashboard.tsx；创建 progress/achievement/theme 模块测试及相应组件测试。
 
@@ -171,7 +171,7 @@
 - [x] 更新设置页仅允许登记位置，说明替换影响；组件测试验证进度与主题交互；核心模块覆盖率达标后提交。
 - [x] 设置弹窗增加“语音提示与交互音效”开关，默认开启；关闭时通过统一音频 Provider 静音所有答题和点击提示，并立即停止播放。App 捕获可操作控件点击并播放提示音，原生 disabled、aria-disabled 和语音开关本身除外。组件测试覆盖开关、localStorage 持久化及关闭后的零播放、点击音和播放 Promise 拒绝。
 
-### Task 13：完成 E2E、覆盖率门槛、CI 和 PR 交付
+### 任务 13：完成 E2E、覆盖率门槛、CI 和 PR 交付
 
 **文件：** 修改 vitest.config.ts、package.json、README.md、AGENTS.md 和 UI 样式；创建 tests/e2e/catalog.spec.ts、learning-flow.spec.ts、settings-achievements.spec.ts、.github/workflows/quality.yml。
 

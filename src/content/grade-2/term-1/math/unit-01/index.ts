@@ -1,92 +1,123 @@
 import { buildMathUnit } from '../buildMathUnit';
-import { arrange, calculate, choose, chooseNumber, makeTask, measure, pair, q8, sortInto } from '../questionAuthoring';
+import { arrange, choose, chooseNumber, makeTask, pair, q8, sortInto } from '../questionAuthoring';
+
+interface ClassificationSet {
+  theme: string;
+  criterion: string;
+  categories: readonly [string, string];
+  examples: readonly [string, string, string, string, string, string];
+  counts: readonly [number, number];
+  total: number;
+  comparison: string;
+}
+
+function makeClassificationQuestions(set: ClassificationSet, difficulty: '基础' | '进阶' | '高阶') {
+  const [firstCount, secondCount] = set.counts;
+  const comparison = firstCount === secondCount ? '两类数量一样多' : `${firstCount > secondCount ? set.categories[0] : set.categories[1]}更多`;
+  const comparisonOptions = firstCount === secondCount
+    ? [comparison, `${set.categories[0]}更多`, `${set.categories[1]}更多`]
+    : [comparison, `${firstCount > secondCount ? set.categories[1] : set.categories[0]}更多`, '两类数量一样多'];
+  return q8([
+    choose(
+      `整理${set.theme}时，${difficulty}任务要按“${set.criterion}”分类，哪种做法合适？`,
+      [`每件物品只按${set.criterion}放入一类`, '看到喜欢的就随手放', '把同一件物品重复算进两类'],
+      0,
+      '先说清分类标准，再按同一标准逐件整理。',
+      `按${set.criterion}分类时，每件物品按对应特征放入一类，记录才清楚。`,
+    ),
+    sortInto(
+      `把${set.theme}按${set.criterion}分到“${set.categories[0]}”或“${set.categories[1]}”。`,
+      [...set.categories],
+      set.examples.map((label, index) => ({ label, categoryIndex: index < set.counts[0] ? 0 : 1 })),
+      `逐件观察${set.criterion}，不要漏掉或重复。`,
+      `按照${set.criterion}检查后，前${set.counts[0]}项属于${set.categories[0]}，其余属于${set.categories[1]}。`,
+    ),
+    chooseNumber(
+      `整理记录中，“${set.categories[0]}”有${firstCount}件，“${set.categories[1]}”有${secondCount}件，一共多少件？`,
+      set.total,
+      [set.total + 1, Math.max(1, set.total - 1)],
+      '把两个类别的数量合起来。',
+      `${firstCount}加${secondCount}等于${set.total}，分类前后总数相同。`,
+    ),
+    pair(
+      `把${set.theme}的类别和一个对应例子配起来。`,
+      [[set.categories[0], set.examples[0]], [set.categories[1], set.examples[set.counts[0]]!], ['分类前先看', set.criterion]],
+      '先确认每个例子符合哪个类别特征。',
+      `类别由${set.criterion}决定；分类前先观察特征，再把例子放到对应类别。`,
+    ),
+    choose(
+      `根据记录：${set.categories[0]} ${firstCount}件，${set.categories[1]} ${secondCount}件。哪种判断正确？`,
+      comparisonOptions as [string, string, string],
+      0,
+      '比较两个类别的数量。',
+      firstCount === secondCount ? `${firstCount}和${secondCount}相同，两类数量一样多。` : `${firstCount}和${secondCount}相比，${comparison}。`,
+    ),
+    sortInto(
+      `检查${set.theme}的分类记录。`,
+      ['记录清楚', '需要重新整理'],
+      [
+        { label: `先确定${set.criterion}，再逐件分类`, categoryIndex: 0 },
+        { label: '每件物品只记录一次', categoryIndex: 0 },
+        { label: '中途换了标准却没注明', categoryIndex: 1 },
+        { label: '有物品没有放入任何类别', categoryIndex: 1 },
+      ],
+      '检查标准是否一致、每件物品是否都被记录。',
+      '统一标准、完整记录且不重复，结果才可靠。',
+    ),
+    arrange(
+      `整理${set.theme}并比较两类数量。`,
+      ['数一数每类有几件', '先确定分类标准', '比较并记录结果', '逐件放入对应类别'],
+      [1, 3, 0, 2],
+      '先定标准，再动手分类。',
+      '确定标准、逐件分类、统计数量，最后比较并记录。',
+    ),
+    chooseNumber(
+      `改按“${set.comparison}”整理后，${set.theme}仍然一共多少件？`,
+      set.total,
+      [set.total + 2, Math.max(1, set.total - 2)],
+      '换的是分类标准，物品没有增加或减少。',
+      `分类标准改变会改变各类数量，但总件数仍是${set.total}。`,
+    ),
+  ]);
+}
+
+const sets: ClassificationSet[] = [
+  { theme: '彩球', criterion: '颜色', categories: ['红色', '蓝色'], examples: ['红色圆球', '红色方球', '红色三角球', '红色长方球', '蓝色圆球', '蓝色方球'], counts: [4, 2], total: 6, comparison: '形状' },
+  { theme: '文具', criterion: '用途', categories: ['书写工具', '测量工具'], examples: ['铅笔', '水彩笔', '蜡笔', '彩色记号笔', '直尺', '三角尺'], counts: [4, 2], total: 6, comparison: '颜色' },
+  { theme: '校园植物', criterion: '叶片颜色', categories: ['绿色', '黄色'], examples: ['绿叶小树', '绿色草叶', '绿叶灌木', '绿色藤叶', '黄叶小树', '黄色落叶'], counts: [4, 2], total: 6, comparison: '叶片形状' },
+  { theme: '运动用品', criterion: '使用场景', categories: ['室内使用', '户外使用'], examples: ['桌上棋盘', '室内软球', '足球', '飞盘', '跳绳', '篮球'], counts: [2, 4], total: 6, comparison: '颜色' },
+  { theme: '图书角用品', criterion: '形状', categories: ['圆形', '长方形'], examples: ['圆形计时器', '圆形贴纸', '圆形书签', '长方形故事书', '长方形书签卡', '长方形书架标签'], counts: [3, 3], total: 6, comparison: '用途' },
+  { theme: '教室物品', criterion: '是否可以移动', categories: ['可以移动', '固定在教室'], examples: ['椅子', '书本', '文具盒', '活动白板', '黑板', '门框'], counts: [4, 2], total: 6, comparison: '用途' },
+];
+
+const taskSpecs = [
+  ['彩球分类小队', '按一个清楚的标准分类，记录各类数量。'],
+  ['文具整理观察员', '选择合适标准整理文具，检查记录是否完整。'],
+  ['校园叶片统计员', '按特征分类并比较不同类别的数量。'],
+  ['运动用品整理师', '用一致的分类标准整理物品并核对总数。'],
+  ['图书角分类设计师', '根据不同特征整理物品，解释分类结果。'],
+  ['教室整理规划师', '设计分类步骤，检查记录是否完整且不重复。'],
+] as const;
+const companionIds = ['companion-01', 'companion-02', 'companion-03', 'companion-04'] as const;
+
+function makeTasks(indices: readonly number[], companionOffset: number) {
+  return indices.map((setIndex, taskIndex) => {
+    const [title, objective] = taskSpecs[setIndex]!;
+    const difficulty = taskIndex < 2 ? '基础' : taskIndex < 4 ? '进阶' : '高阶';
+    return makeTask(
+      title,
+      objective,
+      companionIds[(taskIndex + companionOffset) % companionIds.length]!,
+      makeClassificationQuestions(sets[setIndex]!, difficulty),
+    );
+  });
+}
 
 export const unit = buildMathUnit({
   formalUnitNumber: 1,
-  title: '第一单元 · 长度单位',
-  sourceTopics: ['厘米和米的认识及单位选择', '长度估测、直尺测量和线段的初步认识'],
-  basicTasks: [
-    makeTask('厘米和米探险队', '为常见物体选择厘米或米，并认识1米等于100厘米。', 'companion-01', q8([
-      choose('测量一支铅笔，哪个单位更方便？', ['厘米', '米', '千米'], 0, '铅笔是比较短的物体。', '比较短的物体通常用厘米测量。'),
-      choose('教室门的高度更适合用什么单位表示？', ['毫米', '厘米', '米'], 2, '门比一把直尺长得多。', '较高或较长的物体常用米作单位。'),
-      sortInto('把物品分到更合适的测量单位。', ['厘米', '米'], [
-        { label: '橡皮的长边', categoryIndex: 0 }, { label: '课桌的高度', categoryIndex: 1 },
-        { label: '数学书的宽', categoryIndex: 0 }, { label: '走廊的长度', categoryIndex: 1 },
-      ], '先估一估物品有多长。', '较短的物品适合用厘米，较长的距离适合用米。'),
-      measure('把直尺上的虚拟铅笔量到合适长度。', '虚拟铅笔', 8, 12, '从尺子的0刻度开始量。', '物体一端对准0，另一端对应的刻度就是长度。'),
-      choose('下面哪个物体的长度可能接近1米？', ['一张课桌的高度', '一颗米粒的长度', '一块橡皮的厚度'], 0, '想想什么东西大约和一把长尺差不多。', '课桌高度可能接近1米，米粒和橡皮都短得多。'),
-      pair('把物品和适合使用的单位配起来。', [['橡皮长度', '厘米'], ['操场一圈', '米'], ['书本宽度', '厘米']], '短长度和较长距离可以选不同单位。', '橡皮和书本的长度适合用厘米，操场一圈适合用米。'),
-      chooseNumber('1米等于多少厘米？', 100, [10, 1000], '1米可以分成100个1厘米。', '1米等于100厘米。'),
-      measure('把直尺上的虚拟书签量到合适长度。', '虚拟书签', 5, 10, '先找0刻度，再看终点。', '从0刻度开始测量，才能读出书签长度。'),
-    ])),
-    makeTask('直尺与线段观察站', '练习对准0刻度测量，辨认线段并比较长度。', 'companion-04', q8([
-      choose('用直尺量物体时，通常把物体一端对准哪里？', ['0刻度', '尺子的中间', '尺子的最后一个刻度'], 0, '测量要从统一的起点开始。', '把一端对准0刻度，另一端的刻度就是长度。'),
-      measure('调节尺子读出虚拟线段的长度。', '蓝色线段', 6, 10, '观察线段的起点和终点。', '对准0刻度后，线段终点的刻度是6厘米。'),
-      choose('线段有什么特点？', ['直直的，有两个端点', '弯弯的，没有端点', '可以一直向两边延长'], 0, '看看它的两头是否都停在固定位置。', '线段是直的，有两个端点，可以测量长度。'),
-      arrange('把测量步骤排好。', ['读出另一端对应的刻度', '把尺子的0刻度对准一端', '确认物体摆直并看清刻度'], [2, 1, 0], '先对准起点，再读终点。', '摆正物体、对准0刻度、读出终点，测量会更准确。'),
-      pair('把尺子读数和线段长度配起来。', [['终点在刻度4', '4厘米'], ['终点在刻度7', '7厘米'], ['终点在刻度9', '9厘米']], '从0刻度开始读数。', '起点在0时，终点的数字就是线段长度。'),
-      arrange('按从短到长排好虚拟线段。', ['8厘米', '3厘米', '10厘米', '5厘米'], [1, 3, 0, 2], '比较数字大小即可。', '从短到长是3、5、8、10厘米。'),
-      sortInto('把做法分进“测量更准确”或“容易量错”。', ['测量更准确', '容易量错'], [
-        { label: '从0刻度开始', categoryIndex: 0 }, { label: '物体斜着放', categoryIndex: 1 },
-        { label: '眼睛正对刻度读数', categoryIndex: 0 }, { label: '从尺子的边缘随便开始', categoryIndex: 1 },
-      ], '想想起点、摆放和读数位置。', '统一起点、摆正物体并正对刻度读数能减少误差。'),
-      chooseNumber('一根线段长5厘米，另一根长8厘米，第二根长多少厘米？', 8, [3, 13], '直接读题目给出的第二根长度。', '第二根线段的长度是8厘米。'),
-    ])),
-  ],
-  advancedTasks: [
-  makeTask('长度估测与换算挑战', '结合米和厘米的关系估测、测量并比较长度。', 'companion-02', q8([
-    calculate('把1米35厘米换成厘米再计算。', '100 + 35', 135, '先把1米换成100厘米。', '100厘米加35厘米等于135厘米。'),
-    calculate('1米比50厘米长多少厘米？', '100 - 50', 50, '先把1米换成厘米。', '1米是100厘米，100减50等于50厘米。'),
-    chooseNumber('2米等于多少厘米？', 200, [20, 102], '1米等于100厘米。', '2个100厘米合起来是200厘米。'),
-    measure('测量虚拟丝带并记录结果。', '虚拟丝带', 14, 20, '确认起点对准0刻度。', '丝带终点对应14厘米。'),
-    pair('把长度记录和换算结果配起来。', [['1米', '100厘米'], ['1米20厘米', '120厘米'], ['2米5厘米', '205厘米']], '每1米换成100厘米。', '把米换成厘米后再加上剩余厘米数。'),
-    arrange('按从短到长排列长度。', ['105厘米', '90厘米', '1米', '130厘米'], [1, 2, 0, 3], '先把米统一换成厘米。', '换成厘米后从短到长是90、100、105、130厘米。'),
-    choose('桌面估测结果是60厘米，哪种记录最清楚？', ['约60厘米', '肯定刚好60厘米', '大约60米'], 0, '估测要保留“大约”这样的词。', '估测不是精确测量，用“约”表达更准确。'),
-    sortInto('把记录分到“直接测量”或“估测”。', ['直接测量', '估测'], [
-      { label: '尺子读出书签是12厘米', categoryIndex: 0 }, { label: '看着桌面约有60厘米', categoryIndex: 1 },
-      { label: '量出线段是7厘米', categoryIndex: 0 }, { label: '估计门高接近2米', categoryIndex: 1 },
-    ], '看一看有没有使用尺子读出刻度。', '读刻度是测量，凭熟悉物体作比较是估测。'),
-  ])),
-  makeTask('长度比较与记录分析', '统一厘米单位后比较不同长度，检查测量和估测记录是否完整。', 'companion-01', q8([
-    calculate('2米35厘米等于多少厘米？', '200 + 35', 235, '2米先换成200厘米。', '200厘米加35厘米等于235厘米。'),
-    chooseNumber('把1米20厘米换成厘米，得数是多少？', 120, [108, 118], '先把1米换成100厘米，再加上20厘米。', '1米等于100厘米，100加20等于120，所以得数是120厘米。'),
-    calculate('一段绳子长2米，剪去75厘米，还剩多少厘米？', '200 - 75', 125, '把2米换成200厘米后再减。', '200减75等于125厘米。'),
-    pair('把长度和相同单位的表示配起来。', [['1米5厘米', '105厘米'], ['2米', '200厘米'], ['80厘米', '不到1米']], '先把米和厘米统一后再比较。', '1米等于100厘米，因此1米5厘米是105厘米。'),
-    arrange('按从短到长排列长度。', ['1米15厘米', '95厘米', '1米', '125厘米'], [1, 2, 0, 3], '先把米换成厘米。', '统一后是95、100、115、125厘米。'),
-    sortInto('把记录放进“长度写清楚”或“信息不完整”。', ['长度写清楚', '信息不完整'], [
-      { label: '课本长26厘米', categoryIndex: 0 }, { label: '桌面长60', categoryIndex: 1 },
-      { label: '彩带长1米20厘米', categoryIndex: 0 }, { label: '走廊大约12', categoryIndex: 1 },
-    ], '检查有没有写出数值、单位和对象。', '完整长度记录要有对象和单位，估测还要用“约”等词。'),
-    choose('估计教室门高时，哪种记录更准确？', ['大约2米', '肯定正好200厘米', '大约2厘米'], 0, '估测要说明是大约的长度。', '门高接近2米，用“大约”表达估测比说成精确测量更准确。'),
-    choose('量一条书签，哪种方法能减少读数错误？', ['一端对准0刻度，平放直尺', '从尺子任意数字开始读', '把书签斜放在尺子旁'], 0, '测量前先对准起点。', '物体和尺边对齐且从0开始，读出的长度更可靠。'),
-  ])),
-  ],
-  highTasks: [
-  makeTask('校园长度规划师', '设计一条安全测量路线，用统一单位记录并比较校园物品。', 'companion-03', q8([
-    choose('设计校园测量活动前，哪件事要先做？', ['确认活动范围和成人安排', '独自跑到校外测量', '不看路线就开始'], 0, '活动要先考虑安全。', '儿童在校园内活动也要听从老师安排并留在指定区域。'),
-    measure('测量虚拟花圃边长。', '花圃边', 18, 25, '把线段的一端对齐0。', '花圃边在虚拟尺上长18厘米。'),
-    calculate('两段测量记录分别是34厘米和26厘米，合起来多少厘米？', '34 + 26', 60, '把两段长度相加。', '34加26等于60厘米。'),
-    calculate('绳子长90厘米，剪去35厘米后还剩多少厘米？', '90 - 35', 55, '用原长减去剪掉的长度。', '90减35等于55厘米。'),
-    pair('把测量任务和合适记录配起来。', [['教室门高度', '约2米'], ['彩纸短边', '厘米数'], ['操场边长度', '米数']], '根据物体大小选择单位。', '短边记录厘米，较长距离常用米。'),
-    arrange('整理小组测量记录流程。', ['比较各组结果并说说差异', '选择安全的测量对象', '统一单位和测量起点', '记录结果并注明对象'], [1, 2, 3, 0], '先选对象，再统一方法。', '对象、方法、记录和比较构成完整的测量活动。'),
-    sortInto('把记录放进“长度事实”或“需要复测”。', ['长度事实', '需要复测'], [
-      { label: '直尺从0量到12厘米', categoryIndex: 0 }, { label: '尺子斜放后读到约8厘米', categoryIndex: 1 },
-      { label: '写明测量对象和单位', categoryIndex: 0 }, { label: '只写了一个数字没有单位', categoryIndex: 1 },
-    ], '看记录是否有清楚对象、起点和单位。', '方法明确并带单位的记录更可信，方法不清要复测。'),
-    chooseNumber('1米长的绳子用去40厘米，还剩多少厘米？', 60, [50, 140], '先把1米换成100厘米。', '100减40等于60厘米。'),
-  ])),
-  makeTask('校园测量路线设计师', '规划安全、可复查的校园测量活动，统一单位并用数据说明发现。', 'companion-04', q8([
-    choose('小组要测量校园里的物品，开始前先做什么？', ['听老师安排并选定安全范围', '独自到校外测量', '不商量就分头跑开'], 0, '先遵守活动安全要求。', '在老师安排的范围内活动，才能安全完成测量任务。'),
-    measure('虚拟花坛边长是多少厘米？', '花坛边', 24, 30, '将尺子的0刻度对准一端。', '虚拟花坛边的终点对应24厘米。'),
-    calculate('两条装饰带分别长48厘米和36厘米，合起来多少厘米？', '48 + 36', 84, '把两段长度相加。', '48加36等于84厘米。'),
-    calculate('测量绳长1米，剪去28厘米后还剩多少厘米？', '100 - 28', 72, '先把1米换成100厘米。', '100减28等于72厘米。'),
-    pair('把测量对象和合适单位配起来。', [['铅笔长度', '厘米'], ['教室宽度', '米'], ['书本宽度', '厘米']], '根据对象大约有多长来选择单位。', '铅笔和书本的长度适合用厘米，教室宽度适合用米。'),
-    arrange('排好一次校园测量记录流程。', ['比较记录并说出发现', '选择老师允许测量的对象', '确定单位和测量方法', '记录对象、数值和单位'], [1, 2, 3, 0], '先决定测量什么并确认安全。', '选对象、统一方法、记录和比较让活动结果可复查。'),
-    sortInto('把测量计划放进“可靠做法”或“需要调整”。', ['可靠做法', '需要调整'], [
-      { label: '从0刻度开始并写上厘米', categoryIndex: 0 }, { label: '尺子斜放后直接记数', categoryIndex: 1 },
-      { label: '测量前后使用同一单位', categoryIndex: 0 }, { label: '只记数字不写对象', categoryIndex: 1 },
-    ], '检查测量起点、单位和对象是否清楚。', '统一起点和单位并记录对象，数据更容易比较。'),
-    choose('两组测量同一张桌子结果不同，怎样处理更合理？', ['检查起点和读数方法后再量一次', '随便挑一个结果', '把两个数相加当作长度'], 0, '先核对大家是不是用了一样的方法。', '复核测量条件并重新测量，有助于找出差异原因。'),
-  ])),
-  ],
+  title: '第一单元 · 分类与整理',
+  sourceTopics: ['按物品特征选择分类标准', '分类、计数并用简单表格整理结果', '比较分类数量并理解分类标准变化时总数不变'],
+  basicTasks: makeTasks([0, 1], 0) as [ReturnType<typeof makeTask>, ReturnType<typeof makeTask>],
+  advancedTasks: makeTasks([2, 3], 2) as [ReturnType<typeof makeTask>, ReturnType<typeof makeTask>],
+  highTasks: makeTasks([4, 5], 0) as [ReturnType<typeof makeTask>, ReturnType<typeof makeTask>],
 });

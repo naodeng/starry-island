@@ -1,0 +1,91 @@
+题目ID	难度	知识点	正确答案	题意与答案复核	选项与答案泄漏检查	审核状态
+challenge-question:grade-1/term-2/math/unit-04/basic/task-01/session-01/question-01	基础	两位数的组成与数位	64	课程题挑战候选复核：64 里面的几个十和几个一合起来是多少？ 64 可以写成 60 + 4 = 64。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/basic/task-01/session-01/question-03	基础	两位数的组成与数位	64→十位 6，个位 4；54→十位 5，个位 4；65→十位 6，个位 5；20→十位 2，个位 0	课程题挑战候选复核：把数和它的十位、个位信息连起来。 逐个看十位和个位上的数字，再核对组成的数。	逐项核对配对关系；题干目标明确；提示未直接泄漏完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/basic/task-01/session-01/question-04	基础	100以内数序	65	课程题挑战候选复核：64 后面紧挨着的一个数是多少？ 64 后面紧挨着的数是 65。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/basic/task-01/session-01/question-05	基础	100以内数序	20、54、64、65	课程题挑战候选复核：把这些数按从小到大排列。 从小到大的顺序是 20、54、64、65。	逐项核对排序关系；题干顺序要求明确；提示未直接泄漏完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/basic/task-01/session-01/question-06	基础	整十数与一百	64→不是整十数；54→不是整十数；65→不是整十数；20→整十数	课程题挑战候选复核：按“整十数”和“不是整十数”分类。 个位是 0 的数是整十数。	逐项核对分类标签；分类标准一致；提示未直接泄漏完整答案	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/basic/task-01/session-01/question-07	基础	100以内数大小比较	10	课程题挑战候选复核：64 比 54 大多少？ 64 - 54 = 10。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/advanced/task-01/session-01/question-08	进阶	整十数与一百	52	课程题挑战候选复核：小明有 42 张卡片，又拿到 10 张，现在有多少张？ 42 + 10 = 52 张。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/advanced/task-02/session-01/question-08	进阶	整十数与一百	71	课程题挑战候选复核：数 81 向前退 10，得到多少？ 81 - 10 = 71。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/high/task-01/session-01/question-03	高阶	两位数的组成与数位	86 — 十位 8，个位 6	课程题挑战候选复核：原题要求：把数和它的十位、个位信息连起来。 同伴把“86”错连到“十位 7，个位 6”。应该改连到哪项？ “86”对应“十位 8，个位 6”。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/high/task-01/session-01/question-04	高阶	100以内数序	87	课程题挑战候选复核：同伴选了“106”来回答“86 后面紧挨着的一个数是多少？”，应该改选哪一项？ 86 后面紧挨着的数是 87。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:grade-1/term-2/math/unit-04/high/task-01/session-01/question-08	高阶	两位数的组成与数位	应把 8 个十和 6 个一合起来，写成 86。	课程题挑战候选复核：同伴把 86 写成了 14，怎样说明这个写法不对？ 8 个十和 6 个一合起来是 86，不是把两个数字直接相加。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-01	基础	两位数的组成与数位	46	原创题作者自审：4个十和6个一合起来是多少？ 4个十是40，6个一是6，合起来是46。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-02	基础	两位数的组成与数位	72	原创题作者自审：数位表里十位上是7，个位上是2，这个数是多少？ 十位上是7、个位上是2，组成的数是72。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-03	基础	两位数的组成与数位	5个十和8个一	原创题作者自审：58里面有几个十和几个一？ 58的十位是5，个位是8，所以有5个十和8个一。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-04	基础	两位数的组成与数位	60	原创题作者自审：6个十和0个一写成哪个数？ 6个十是60，个位是0，所以写作60。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-05	基础	两位数的组成与数位	9个一	原创题作者自审：数字9在数“39”里表示什么？ 39的9在个位，表示9个一。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-06	基础	两位数的组成与数位	83根	原创题作者自审：有8捆小棒，每捆10根，另外还有3根，一共是多少根？ 8个十是80，80加3等于83。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-07	基础	两位数的组成与数位	29	原创题作者自审：哪个数由2个十和9个一组成？ 2个十和9个一组成29。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-08	基础	两位数的组成与数位	67	原创题作者自审：“六十七”应该写成哪个数？ 六十七有6个十和7个一，写作67。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-09	基础	100以内数序	39	原创题作者自审：按顺序数：36，37，38，接下来是几？ 38后面紧挨着的数是39。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-10	基础	100以内数序	50	原创题作者自审：49后面紧挨着的数是几？ 49再往后一个数就是50。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-11	基础	100以内数序	69	原创题作者自审：哪个数在70的前面？ 70前面紧挨着的数是69。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-12	基础	100以内数序	83	原创题作者自审：数数时漏掉了一个数：81，82，□，84。方框里填几？ 81、82、83、84是连续的数，所以方框里是83。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-13	基础	100以内数序	24	原创题作者自审：从小到大排：42、24、40，最前面应该是哪一个？ 24的十位是2，比40和42的十位都小，所以排在最前面。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-14	基础	100以内数序	98	原创题作者自审：从96接着往后数两个数，第二个数是几？ 96后面是97，再往后一个是98。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-15	基础	100以内数序	57、58、59	原创题作者自审：从小到大排，哪一组数的顺序正确？ 57、58、59依次增加1，顺序正确。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-16	基础	100以内数序	99	原创题作者自审：数到100前面的一个数是几？ 99后面是100，所以100前面的一个数是99。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-17	基础	100以内数大小比较	63	原创题作者自审：哪个数更大：63还是36？ 63有6个十，36有3个十，6个十比3个十多，所以63更大。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-18	基础	100以内数大小比较	＜	原创题作者自审：在“48 □ 51”中，应该填“＞”还是“＜”？ 48比51小，所以48＜51。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-19	基础	100以内数大小比较	57	原创题作者自审：下面哪个数最小：75、57、70？ 57的十位是5，另外两个数的十位是7，所以57最小。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-20	基础	100以内数大小比较	小禾	原创题作者自审：小雨有28张卡片，小禾有32张。谁的卡片更多？ 32有3个十，28有2个十，所以小禾的卡片更多。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-21	基础	整十数与一百	100	原创题作者自审：10个十合起来是几？ 10个十是100，也就是一百。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-22	基础	整十数与一百	8个十	原创题作者自审：80里面有几个十？ 80由8个十组成，所以里面有8个十。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-23	基础	整十数与一百	50	原创题作者自审：比40多一个十的数是几？ 40加一个十是50。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-basic-24	基础	整十数与一百	100个一	原创题作者自审：100里面有几个一？ 100由100个一组成，也可以说是10个十。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-01	进阶	两位数的组成与数位	57	原创题作者自审：小明用5捆小棒和7根散棒摆数，摆出的数是多少？ 5捆是5个十，另有7个一，合起来是57。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-02	进阶	两位数的组成与数位	74	原创题作者自审：一个两位数，十位上的数比个位上的数多3，个位是4。这个数是多少？ 十位是7，个位是4，所以这个数是74。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-03	进阶	两位数的组成与数位	83	原创题作者自审：数位表上的十位是8，个位上的数比十位少5。这个数是几？ 8减5等于3，十位是8、个位是3，组成83。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-04	进阶	两位数的组成与数位	3根	原创题作者自审：哪一组小棒能摆出“六十三”：6捆和几根？ 6捆表示6个十，还要3根表示3个一，合起来是63。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-05	进阶	两位数的组成与数位	59	原创题作者自审：一个两位数由9个十和5个一组成。把个位上的数字和十位上的数字交换后，得到几？ 95交换十位和个位后，十位变成5、个位变成9，得到59。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-06	进阶	两位数的组成与数位	46	原创题作者自审：十位上是4，个位上的数字比十位大2。这个数是多少？ 个位数字是6，所以十位4、个位6，组成46。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-07	进阶	两位数的组成与数位	6	原创题作者自审：数“82”里，十位上的数字比个位上的数字大多少？ 8比2大6，所以十位上的数字比个位上的数字大6。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-08	进阶	100以内数序	40	原创题作者自审：按每次增加2的规律接着写：34，36，38，□。 38加2等于40，所以方框里填40。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-09	进阶	100以内数序	3个数：68、69、70	原创题作者自审：从67后面开始，每次往后数一个，数到70要经过几个数？ 从67后面继续数，经过68、69、70，一共3个数。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-10	进阶	100以内数序	19	原创题作者自审：把61、16、60、19从小到大排列，第二个数是哪一个？ 顺序是16、19、60、61，第二个数是19。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-11	进阶	100以内数序	85	原创题作者自审：从88往前退，连续数三个数，不把88算进去，第三个数是几？ 不把88算进去，往前数是87、86、85，第三个数是85。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-12	进阶	100以内数序	47	原创题作者自审：在40和50之间，个位是7的数是哪一个？ 40和50之间十位都是4，个位是7的数是47。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-13	进阶	100以内数序	93	原创题作者自审：把93、39、90、99按从大到小排列，排在第二的是几？ 从大到小是99、93、90、39，第二个是93。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-14	进阶	100以内数序	75	原创题作者自审：从一个数往后数，得到76、77、78。这个数可能是几？ 75后面依次是76、77、78，所以起点是75。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-15	进阶	100以内数大小比较	84	原创题作者自审：用4、8组成一个两位数，哪个数更大：48还是84？ 84的十位是8，48的十位是4，8个十比4个十多，所以84更大。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-16	进阶	100以内数大小比较	7	原创题作者自审：在□里填一个数字，使“6□＞65”成立，下面哪个数字可以填？ 填7后是67，67比65大；填4或5都不大于65。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-17	进阶	100以内数大小比较	科普书多18本	原创题作者自审：图书角有46本故事书、64本科普书。哪类书多？多多少本？ 64减46等于18，科普书多18本。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-18	进阶	100以内数大小比较	56	原创题作者自审：三个数中，哪个数最接近60：56、68、43？ 56和60相差4，68相差8，43相差17，所以56最接近60。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-19	进阶	100以内数大小比较	3	原创题作者自审：小兔排队：小花前面是52号，后面是54号。小花的号码比50大多少？ 52、53、54连续，小花是53；53比50多3。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-20	进阶	100以内数大小比较	78＞69	原创题作者自审：下面哪个比较结果正确？ 78有7个十，69有6个十，所以78＞69。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-21	进阶	100以内数大小比较	45	原创题作者自审：从45、54、50中选出一个比50小的数。 45的十位是4，比50小；54更大，50与50相等。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-22	进阶	整十数与一百	80	原创题作者自审：小林有6个十，后来又得到2个十，现在有多少？ 6个十加2个十是8个十，8个十是80。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-23	进阶	整十数与一百	60厘米	原创题作者自审：一根彩带长70厘米，剪掉一个十厘米，还剩多少厘米？ 70减10等于60，还剩60厘米。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-24	进阶	整十数与一百	10	原创题作者自审：□个十合起来是100，方框里填几？ 10个十是100，所以方框里填10。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-25	进阶	整十数与一百	100	原创题作者自审：90再添上一个十，是多少？ 9个十再添1个十是10个十，也就是100。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-26	进阶	整十数与一百	60支	原创题作者自审：小盒里有7捆每捆10支的铅笔，取走一捆，还剩多少支？ 70减10等于60，还剩60支。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-27	进阶	整十数与一百	80	原创题作者自审：用整十数表示：3个十和另外5个十合起来是多少？ 3个十加5个十是8个十，也就是80。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-advanced-28	进阶	整十数与一百	2个十	原创题作者自审：100比80多几个十？ 100减80等于20，20是2个十。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-01	高阶	两位数的组成与数位	两个数位写反了，正确数是53	原创题作者自审：小亮说“十位是5、个位是3的数是35”。他错在哪里？ 十位是5、个位是3，应写成53；35把两个数位写反了。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-02	高阶	两位数的组成与数位	46	原创题作者自审：一个数有4个十和一些一，个位数字比十位数字多2。这个数是多少？ 个位数字是6，十位是4，所以这个数是46。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-03	高阶	两位数的组成与数位	63	原创题作者自审：用数字2和9组成两个不同的两位数。它们相差多少？ 92减29等于63，两个数相差63。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-04	高阶	两位数的组成与数位	63	原创题作者自审：一个两位数十位和个位上的数字合起来是9，十位是6。这个数是多少？ 9减6等于3，十位6、个位3，组成63。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-05	高阶	两位数的组成与数位	改成84	原创题作者自审：小芳把“八个十和四个一”写成48。她应该怎样改？ 八个十写在十位是8，四个一写在个位是4，所以应写84。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-06	高阶	两位数的组成与数位	55	原创题作者自审：哪个数比“5个十和8个一”组成的数少3个一？ 58少3个一是55。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-07	高阶	两位数的组成与数位	不会，还是71	原创题作者自审：数“71”里的7个十换成70个一，数的大小会变吗？ 7个十等于70个一，70加1仍是71，数的大小不变。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-08	高阶	100以内数序	50	原创题作者自审：一列数从47开始，每次加1，把47算作第1个数。第4个数是多少？ 依次数出47、48、49、50，第4个数是50。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-09	高阶	100以内数序	57	原创题作者自审：小明从60开始倒着数，把60算作第1个数。数到第4个数时停下，是几？ 从60开始数四个数是60、59、58、57，最后停在57。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-10	高阶	100以内数序	73、74	原创题作者自审：数列里有两个空格：72，□，□，75。应该依次填什么？ 72、73、74、75是连续的数，所以依次填73、74。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-11	高阶	100以内数序	3个数	原创题作者自审：从29往后数，数到32时，一共向后数了几个数？ 从29继续数经过30、31、32，一共3个数。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-12	高阶	100以内数序	48	原创题作者自审：把48、84、80、44从大到小排列，第三个数是几？ 顺序是84、80、48、44，第三个数是48。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-13	高阶	100以内数序	100	原创题作者自审：从小到大排三个连续数，最小的是98。最大的数是多少？ 三个连续数是98、99、100，最大的是100。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-14	高阶	100以内数序	63	原创题作者自审：按每次减少1的规律填空：65，64，□，62。 64少1是63，方框里应填63。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-15	高阶	100以内数大小比较	47	原创题作者自审：用数字4、7组成两位数，哪一个数最接近50？ 47离50差3，74离50差24，所以47更接近50。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-16	高阶	100以内数大小比较	65	原创题作者自审：小兔的号码比62大，比66小，个位是5。小兔的号码是几？ 62和66之间有63、64、65，其中个位是5的是65。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-17	高阶	100以内数大小比较	57	原创题作者自审：把“58＞□”补完整，方框里最大可以填几？ 比58小的最大整数组成数是57，所以最大填57。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-18	高阶	100以内数大小比较	60	原创题作者自审：有三张号码卡：46、64、60。哪张卡放在46和64之间？ 46＜60＜64，所以60在46和64之间。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-19	高阶	100以内数大小比较	先比较十位，52有5个十，49有4个十，所以52更大	原创题作者自审：小雨说“52比49小，因为2比9小”。怎样说明她错了？ 十位上的5比4大，所以52比49大，不应先用个位判断。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-20	高阶	100以内数大小比较	4	原创题作者自审：□里填哪个数字，能让“□3＜53”成立？ 填4得到43，43＜53；填5得到53相等，填6则更大。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-21	高阶	100以内数大小比较	80	原创题作者自审：连续三个数是□、79、□。这三个数中哪个最大？ 这三个数是78、79、80，最大的是80。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-22	高阶	整十数与一百	9个十加1个十是10个十，也就是100	原创题作者自审：小军有9捆小棒，又添1捆。他说现在是“910”。怎样改正？ 9捆加1捆是10捆；10个十是100，不写成910。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-23	高阶	整十数与一百	60支	原创题作者自审：一盒彩笔有40支。再放进几支整十支的彩笔，能正好变成100支？ 100减40等于60，需要再放进60支，也就是6个十。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-24	高阶	整十数与一百	一个十是10，80减10应是70	原创题作者自审：小华把80减一个十算成79，错在哪里？ 一个十是10，不是1；80减10等于70。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-25	高阶	整十数与一百	10串	原创题作者自审：有100颗珠子，每10颗穿成一串。可以穿成几串？ 100里面有10个十，所以可以穿成10串。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-26	高阶	整十数与一百	100	原创题作者自审：60、70、80、90、□，每次增加一个十。方框里应填哪个整十数？ 90再加10是100，数列为60、70、80、90、100。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-1-term-2-math-unit-04-high-27	高阶	整十数与一百	70厘米	原创题作者自审：一根绳子长100厘米，剪去3个十厘米，还剩多少厘米？ 3个十是30，100减30等于70厘米。	三项选项互异；答案键唯一；提示未直接给出正确选项	作者自审通过（未独立教育者复核）

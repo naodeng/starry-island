@@ -81,7 +81,11 @@ npm run build
 git diff --check
 ```
 
-Vitest 覆盖率门槛为 statements、branches、functions 和 lines 各不低于 60%；核心路由、课程校验、判题、学习进度、成就、主题和声音状态模块分别要求四项 100%。Playwright 使用专用端口 `127.0.0.1:4174`。GitHub Actions 会在提交和 PR 中运行构建、单元测试、覆盖率与 E2E。
+Vitest 的语句、分支、函数和行覆盖率均须达到 60%；核心路由、课程校验、判题、学习进度、成就、主题和声音状态模块分别要求四项达到 100%。Playwright 使用专用端口 `127.0.0.1:4174`。GitHub Actions 会在提交和拉取请求（PR）中运行构建、单元测试、覆盖率与端到端（E2E）测试。
+
+## 问题反馈
+
+在 GitHub 仓库的问题列表页面（Issues）选择“问题反馈”报告功能故障，选择“题目修正建议”提交题目问题。提交的问题可能对公众可见，请勿填写孩子或家庭的可识别信息；题目修正需提供可核对的教材定位信息或公开来源。表单当前随本地分支维护，合入默认分支且仓库启用问题跟踪后才会在线显示。
 
 ## 部署到 Cloudflare Pages
 
@@ -98,6 +102,10 @@ Vitest 覆盖率门槛为 statements、branches、functions 和 lines 各不低�
 本项目是纯静态 SPA，不需要 Pages Functions 或独立 Worker。不要添加顶层 `404.html`，以保留 Cloudflare Pages 的 SPA 回退，使单元、任务和场次深层路由可以直接打开。构建产物应包含 `index.html`，不应包含顶层 `404.html`。配置详情见 [Pages 构建配置](https://developers.cloudflare.com/pages/configuration/build-configuration/)、[构建镜像](https://developers.cloudflare.com/pages/configuration/build-image/)和[页面路由](https://developers.cloudflare.com/pages/configuration/serving-pages/)官方文档。
 
 当前仓库交付只验证本地构建和本地预览；这不代表已连接 Cloudflare 项目或完成线上部署。
+
+## 闯关系统方案与本地最小可用版本
+
+闯关系统需求已冻结至 REQ-001～REQ-085；本地分支 `codex/challenge-system-mvp` 已实现基础引擎和八个代表性试点组，包含一年级上册数学第一至第四单元、二年级数学第二单元与前半学期、三年级英语第一单元和五年级语文第一单元。跨标签页修订冲突保护、错题本、结果页学习建议、本机成长统计、备份导入/导出、安全清除和恢复均已进入该本地实现。当前功能分支尚未推送或发布；这些试点不代表完整课程或 540 个学期任务已交付。详见[闯关系统文档](docs/challenges/README.md)。所有后续开发仍须保持现有学习任务、进度与交互兼容。
 
 ## 品牌素材、隐私与许可
 

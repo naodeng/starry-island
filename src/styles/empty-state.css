@@ -1,0 +1,35 @@
+.empty-state .empty-state-content {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 18px 12px;
+  text-align: center;
+}
+
+.empty-state-icon {
+  display: grid;
+  place-items: center;
+}
+
+.empty-state-title {
+  margin: 0;
+  line-height: 1.35;
+}
+
+
+.empty-state-description {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--animal-text-color-secondary);
+  line-height: 1.6;
+}
+
+:root[data-theme='dark'] .empty-state {
+  color: var(--island-ink);
+  border-color: var(--island-border);
+  background: var(--island-surface-soft);
+}
+
+:root[data-theme='dark'] .empty-state .empty-state-title { color: var(--island-ink); }
+:root[data-theme='dark'] .empty-state .empty-state-description { color: var(--island-muted); }

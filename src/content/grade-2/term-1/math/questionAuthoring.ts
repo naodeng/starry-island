@@ -11,7 +11,7 @@ export type MathQuestionSpec = QuestionBase & (
   | { kind: 'arithmetic'; expression: string; correctAnswer: number; carryBorrowSteps?: readonly string[] }
   | { kind: 'measurement'; objectLabel: string; targetLengthCm: number; minCm: number; maxCm: number }
   | { kind: 'match'; pairs: ReadonlyArray<readonly [string, string]>; sourceContext?: string }
-  | { kind: 'order'; items: readonly string[]; correctOrderIndices: readonly number[] }
+  | { kind: 'order'; items: readonly string[]; correctOrderIndices: readonly number[]; acceptedOrderIndices?: readonly (readonly number[])[] }
   | { kind: 'categorize'; categories: readonly string[]; items: ReadonlyArray<{ label: string; categoryIndex: number }> }
 );
 
@@ -88,8 +88,9 @@ export function arrange(
   correctOrderIndices: readonly number[],
   hint: string,
   explanation: string,
+  acceptedOrderIndices?: readonly (readonly number[])[],
 ): MathQuestionSpec {
-  return { kind: 'order', prompt, items, correctOrderIndices, hint, explanation };
+  return { kind: 'order', prompt, items, correctOrderIndices, acceptedOrderIndices, hint, explanation };
 }
 
 export function sortInto(

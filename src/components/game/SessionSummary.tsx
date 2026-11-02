@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { RocketIcon, StarIcon } from 'naive-icons';
 import type { CosmicRank } from '../../achievements/progress';
@@ -13,13 +14,19 @@ interface SessionSummaryProps {
 }
 
 export default function SessionSummary({ session, subject, newlyUnlockedRank, onExit, onReplay }: SessionSummaryProps) {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    headingRef.current?.focus();
+  }, []);
+
   return (
     <main className="game-page">
       <div className="game-shell">
         <Card className="session-finish-card" color="default">
           <span className="finish-emblem" aria-hidden="true"><StarIcon size={36} /></span>
           <p className="eyebrow">任务完成</p>
-          <h1>太棒了，能量收集完成！</h1>
+          <h1 ref={headingRef} tabIndex={-1}>太棒了，能量收集完成！</h1>
           <p>你完成了“{session.title}”里的 {session.activities.length} 个小挑战，这份认真和坚持值得一枚星章！</p>
           <div className="earned-star" role="img" aria-label="获得一枚星章"><StarIcon size={40} /></div>
           {newlyUnlockedRank && (

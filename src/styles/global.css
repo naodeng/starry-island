@@ -13,7 +13,7 @@ body { margin: 0; min-width: 0; min-height: 100vh; min-height: 100dvh; color: va
 button, input { font: inherit; }
 .app-frame { min-height: 100vh; min-height: 100dvh; }
 .app-frame main h1[data-route-focus='true'] { width: fit-content; max-width: 100%; }
-.app-frame main h1[data-route-focus='true']:focus-visible { outline: 3px solid var(--animal-primary-color); outline-offset: 4px; border-radius: 8px; }
+.app-frame main h1[data-route-focus='true']:focus-visible { outline: 2px solid var(--animal-primary-color); outline-offset: 3px; border-radius: 8px; }
 .app-toolbar { position: relative; z-index: 2; display: flex; justify-content: flex-end; width: min(1120px, calc(100% - 48px)); margin: 14px auto 0; }
 .theme-switcher { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 7px 10px 8px; border: 1px solid rgba(81, 103, 126, .14); border-radius: 18px; background: rgba(255, 255, 255, .88); box-shadow: 0 5px 18px rgba(48, 73, 62, .08); }
 .theme-switcher legend { padding: 0 4px; color: var(--island-muted); font-size: 11px; font-weight: 800; }

@@ -1,0 +1,17 @@
+课程ID	范围类型	课程原活动已审数	闯关补充活动已审数	合计已审数	明确缺陷数	待核实活动数	AI主审	教育者复核数	最终状态	复核范围与依据	缺陷/待核实记录
+grade-2/term-1/english/unit-01	Unit	48	54	102	0	0	逐题复核	0	AI主审完成	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 54 题；TapXWorld 固定快照；无教师签核。	无
+grade-2/term-1/english/unit-02	Unit	48	54	102	0	0	逐题复核	0	AI主审完成	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 54 题；TapXWorld 固定快照；无教师签核。	无
+grade-2/term-1/english/unit-03	Unit	48	56	104	1	0	逐题复核	0	AI主审完成；修复已复读	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 56 题；TapXWorld 固定快照；无教师签核。	修复1项跨同难度两任务重复：basic/task-01 与 basic/task-02 的 question-04；后者改为 short，且与同任务 question-03 的 tall 不重复。
+grade-2/term-1/english/unit-04	Unit	48	48	96	0	0	逐题复核	0	AI主审完成	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 48 题；TapXWorld 固定快照；无教师签核。	无
+grade-2/term-1/english/unit-05	Unit	48	48	96	2	0	逐题复核	0	AI主审完成；修复已复读	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 48 题；TapXWorld 固定快照；无教师签核。	修复2项分类标签：advanced/task-01/question-07 将 lake 从“地形”改归“自然地景”；advanced/task-02/question-07 将“水面或水上物品”改为“水域景物或物品”。
+grade-2/term-1/english/unit-06	Unit	48	59	107	1	40	逐题复核	0	待核实	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 59 题；TapXWorld 固定快照；无教师签核。	修复1项跨同难度进阶任务重复：advanced/task-01 与 advanced/task-02 的 question-04；后者目标改为 Christmas tree。40 道题出现固定快照未支持的表达，待核实。
+grade-2/term-2/english/unit-01	Unit	48	42	90	0	0	逐题复核	0	AI主审完成	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 42 题；TapXWorld 固定快照；无教师签核。	无
+grade-2/term-2/english/unit-02	Unit	48	42	90	1	0	逐题复核	0	AI主审完成；修复已复读	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 42 题；TapXWorld 固定快照；无教师签核。	修复1项同难度高阶任务重复：high/task-01 与 high/task-02 的 question-04；后者目标改为 sunny。
+grade-2/term-2/english/unit-03	Unit	48	42	90	0	0	逐题复核	0	AI主审完成	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 42 题；TapXWorld 固定快照；无教师签核。	无
+grade-2/term-2/english/unit-04	Unit	48	42	90	0	0	逐题复核	0	AI主审完成	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 42 题；TapXWorld 固定快照；无教师签核。	无
+grade-2/term-2/english/unit-05	Unit	48	42	90	0	0	逐题复核	0	AI主审完成	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 42 题；TapXWorld 固定快照；无教师签核。	无
+grade-2/term-2/english/unit-06	Unit	48	42	90	2	0	逐题复核	0	AI主审完成；修复已复读	当前源运行时 48 题 + A-逐题范围.tsv 中英语闯关补充题 42 题；TapXWorld 固定快照；无教师签核。	修复2项跨同难度任务重复：basic 两任务 question-04（Sunday→Friday）；advanced 两任务 question-01（Monday→Tuesday）。
+grade-2/term-1/english/review-01	Revision	48	0	48	0	0	逐题复核	0	AI主审完成	A-非闯关课程原有活动.tsv；独立逐题复核题干、选项/答案、提示/解析及对应册次单元范围。	无
+grade-2/term-1/english/review-02	Revision	48	0	48	0	0	逐题复核	0	AI主审完成	A-非闯关课程原有活动.tsv；独立逐题复核题干、选项/答案、提示/解析及对应册次单元范围。	无
+grade-2/term-2/english/review-01	Revision	48	0	48	0	0	逐题复核	0	AI主审完成	A-非闯关课程原有活动.tsv；独立逐题复核题干、选项/答案、提示/解析及对应册次单元范围。	无
+grade-2/term-2/english/review-02	Revision	48	0	48	0	0	逐题复核	0	AI主审完成	A-非闯关课程原有活动.tsv；独立逐题复核题干、选项/答案、提示/解析及对应册次单元范围。	无

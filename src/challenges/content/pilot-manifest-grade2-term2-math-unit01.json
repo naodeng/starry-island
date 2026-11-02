@@ -1,0 +1,1461 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5368dbfea76142885aa8d6139be67e91be5c21483344de92d37181827467fd99",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1bc8b40a1f662f0abc585046dac3298b36497e5a3e7bc6f4d04de9ed1ddb729b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ab668a2c9f43213a0462d97ae9eb2087554a7230c5da2561d7737f1d40b69dfe",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "88216bcfadb57a9bc881fd013fbbe782f149dd1991849fdf17d18b425b22b2bc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f88b846315a425b81d57bd930d64272a49489b7178f0c11d0da8739e2e96b3d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f9d37c4c5b985616fba2f2b94a4fc988a2617ad5247d422c7d3c8cf6d7fd0709",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "38e7255122114f62fe2c38cfe0c16a88c413835b1b0abceb6c469e44b12dbc94",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a0a68dede5db09f9d03095946e79ccac7da24ae6c9e83965728cca23302ced14",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "448f93b06a6074258e040d3c164576904c35381dd35b69b860c0ecae96ee079c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5e5d2d71713cd61f9ac1eaf99068a680e51074e9bee1f3b51c185f2ce65c730",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c2c20f8d71cc75dbacfc287e4dd3ee7d81b468ed692ab975c3d0542623eeb627",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba11f7f688ea17b4a54284ec1de722e54a8133874795b96598edbcca0415129d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1a51ee40a5db5e270f691bc737d40a6a3010e86052ab503c6ea8d2d1957256e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf81e503c8744f06593180873b66cefea9f72c9a7f9f67b0911126af62192fb6",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0d90248e4fb1eeb673c546756ee38af4cc8b16909a630a8cd76ba3d86dda9661",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-01/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1d20a58ac4ba4bf5ee01dfd14927bdb43b73bb5f9c2a89d7c78ac13ed577aae7",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9113b14f9e1a90fda4eaa106fa1462cc9f53ed954d7c911e6384b89bb6448774",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8c7bf37d2d1ea7ffbc9d5065e06c93505fa5cbbb4f2fd352f20da6e4ce5e58eb",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1a9b1215951a24392bb8507f351c6f344d6e911a94001a7b7055d3517cd90b3",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e9adb975d087adf131f45c156becd404009a560e200ba9fc751a2dbf918357c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fafa84f5f1916cbb88143079799cfcd162fa9780f2430167c1fc1f4d0b7ec403",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "45a4130d3ffa9babfb95d819b45a1b86fa57510b8276656c1bdd9bf53a70b145",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f4d310240fdb3e93e67b396e63e964bd4351222aab0b3780d304091f6e075f5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0fa420ff2064aabfb5a777f346060aa3efc537b18c127ec02adc5686b69fded6",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1134c588bb2d3cdae1225d69129b661d9c3a1b0c4f1437d765dccf3094f4e963",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a9581611a0022697758f3d3c62eed8683fb80f09cd662e369e1f94a11ecf83f1",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75ab0ce89d89b95ea8b04a79e52d80cb9f8c75e44a47d35058e2d1e7d0c37446",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6a1279c8a6d31b407b41d1c02fa7aac83b42d92f7dab4f253d475163f87a1b06",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b427a3ed1967fadec4012bad6a334b59af70be6dc4cc77a872a72a6a951457c9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e35951f333fbf0d7f6b5648349eebe4bde1c7d3d608287586c27d8bdc8bdfe0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "164c579e2a4fecfc563aa9f9847546c15afde4a220e44d819e8532e0862ec2ab",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3f61ea6530fdc5bab599c3c7e51d64c6a2a703063fbd1569be5bd5535f56d44",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bfdedb15658434b162fb9d70470ce90e7734f48eab74100c793b4750cca72f3f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aac0d907390cf0ed829cf978a3e5ff06273804bfd92f2557c4fb13b93ea9f86c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ac41777d17cd96d63236c06170aeb6fbce0d4e5e20393cbde5883819a249b7d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65b6d9b4d16940130464c7a31e8bc9bdf4b4819977b7be11ad84586c58d53782",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a36965a443722d49e5e4dd09f46bdacda14c638ae99f1d18bd89c83936d3d213",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c3f86f7bc7f3b0ad3c9708753cd32788bd83c09022f57ff5390e4786f4f0fe47",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "549a5d9e8faf35d54ca7a122573ece2ddc58a3ae3b072d6f828d645f52e80d7b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9dc77fbcdd3c7dcf33b2e6dccb10fdc4bbc2aae8f87573ff8bdce5366c922ff9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bafbd3c6c97516a8942dd3a4f70ed3f244c541d2274fd9f49efb0040f2aeaec9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75429ff8f0f9c2ebe3afabac5c5105d9f604d03a8a03bcd3aaa611ce81546c88",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "83ebc0ae29a01fe5852408dcf3578f094cb9c2de12fa4d76ba89a1e2fc291053",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4fe64d68b076fbff8fc29300b6591523df32d8e31c5a34a752c3b4889ab4721a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b7b4c1085193330d99cca919a78b02c60ab638a8191b0ec1e727d164eadb3791",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "824718b71adc493960f2bc779979f7d28f409c060b92b58c468302a04f668197",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d32b97ba61bf04ddfcc703bf5ae9b904cc01cebd54261df6d5b923a892fafbdb",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c1e6c005e1ffd6791995f6d620ad4bcd7bd24afc40ce94e9630b724b9e3cca99",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "abc5d8c50f7c43c5a4f83c20f4ec182af25a47e2fcbbbe26cbc74d28c5268c5e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4dc97093b7ca745550f9ef5bd6f25caf4ae58db6e34839d00ebae5e5e9591c0e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5957548be5e847ed272749570ea125dca6849a68413d5d734044dee72beb470e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "27d96337007e9e917e15fee11e15d0a4a9c77b193e4b85d496d759127765ad1a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b25a87f93167f6b530a8a9ab33c05da8c933b2f02d805b41eacc1d24ffe72e5f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b128c6cf50cfa4a54f702a44e5e25d59017ef584298cfbaa8564d0903ae4f243",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "72e939be7d690aaf182d416cd0426ae299e2772076c6d142c2f12a8a104fbc9c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "72f1501b250dcf3026b2eab2262a31266b4e704dbd325590446fd7d0d030c7fb",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "debb356225ef127d8e98ed7523e5a4475d6e1543b814fabc2a8e303346fa9312",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf54d37e4af9961694fc8837c725d73278bb394d8dde77da3245b79e75a727b1",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba1c90ba4cf8db3d484876403579f0b934047a3ca2f492c0c009b4f1e81f596e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "04dcc8294c1acac8185cffa8b6c203e54432b3778a3d9c6b4b9bfa378bfca964",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9fe9b775d5304399343f203697ac4626614d06cf89b2e8fff82b502248c0d7a8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "60d9c3ad4defc26dea85b29a4ada1dbecfe1092d9e996e912fe68da033bbb100",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc37837744c204d30bba750d7d07b058f401bd371f94d846715751c3450ee8e2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "095f008b78a44efa55ae9eb98d3f2023e572d8d79c5493a9619734c5e23de076",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d815e0681e02303f5321c3be7b1b55bb37a9932a75cb9ad82b3fb1bdb4d70a1",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "896e830b6709beaba541e1c25e99779cd67f40d2e9a4587bc574e3568019e151",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1c16f0c5221e24c080e7e4a51600d7d86b3d95b1000d6e287bc03a9e5d6e010d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6855878b315fba3bf840ba12565509d53e307d11544d67d6c85ec8fcb1a0ced3",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1f232685caea980d5ff2a31bb960fcbc3ed54df857f43f6080f957ced6a699b0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6cb2219ac5b434952ee24ffcda649eac4aef2d68294b3ca314c08cca9a9f264e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf20bbf3d9a8a59defe9a6ebe7c921562497f6265a2e071f78ac8bb8bb61e36f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7bbe9b35354e6a4348fa4f27c3c8884d7f81e3f07ee0881e3328bdc193d49009",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f830da862f383eb8c7cfedf687f2ffa37f080ec620cf2c1f9c1079305b7a057",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17d1ecef89cdaff1ea56936cee98016be57dff645b0c0f589d570d0a0aa0fc27",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d185c36cea32ec3102531c79f88430a55a0fe422e7764b42652d84701056a863",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-01/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f6709a290bd2d7910b57db1d21778c52073ca9196453ad7e30ec382806f10a8a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e81f168edcb8a1f1d8e18f171e8970c708389381a7be7c333db77cf55a663da4",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "308ccabdc7746297d5697a3c1341ae5d9466b76eb8af99e6c43556653276c7b5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70564b977a64f16e530a3d70a4f6051e95a3cbd93897c4fb64604b71eaad86fc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "575ddbafb6c327381c8ec5a2b3167fb8d1d8bc2516e3ca7d77e92e1c08260349",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ee7b983347d2f535641ff6633d5b03c7c24c35adaff9c3c00577a1a6969da5c0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18bd672328a59c2e0498ea4b621e6edcba34c4101068b0d526ddd207f0dc3df9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6a6e7642947f662a987bbe39654bb31cfaf650fb2a059b3558a94470b7c47d4",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2b49a142c9dc2309c018f66ae637672ab415de2cbe7b6186452ac71f2958509f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "084baeb8621c3f2879e6563a0ae8c5239e44b3a683017c7e9e39d0b980c8fced",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c4077d75486906a5c9b74b512baab9bedd7f2005b53d5416af08fb33470ec81",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e0277fd01998180640b71ca365e0a1b8df653545d994ed95275d3eef254ea358",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fadc964a930610016233fc678884d157c9a8ebb7c6f523bd3e7a93a0aa485f0f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "organizing-survey-data",
+        "reading-and-reasoning-with-statistical-tables"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a4a82649890eb6fe626aa25959888f3aef52579a6b8a5d9af5b0a8040e56eb23",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-01-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "survey-design-and-data-collection",
+        "organizing-survey-data"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7812e881adb49798f16c1852ad6236c37076283ca6fb44814361f5f89196faca",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-math-unit-01",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-2/math/unit-01"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/math/unit-01"
+        ],
+        "coreKnowledgePointIds": [
+          "survey-design-and-data-collection",
+          "organizing-survey-data",
+          "reading-and-reasoning-with-statistical-tables"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/math/unit-01; src/content/textbooks.ts#grade-2/term-2/math; src/content/grade-2/term-2/math/unit-01/index.ts; 用户提供教材 ISBN 978-7-107-37176-9",
+          "checkedAt": "2026-10-29",
+          "notes": "依据用户提供的人教版二年级下册数学教材目录（ISBN 978-7-107-37176-9）核对，本单元“数据收集和整理”与目录第1单元主题相符；课程知识范围按本单元登记的 sourceTopics 对照。版次、印次未知，未逐页核对教材正文。保留48道课程源题并补充42道原创候选题，每档16道课程题和14道原创题，共90道。该单元题目由 AI 主审已逐题复核（2026-10-28）；独立教育者复核未完成（0人）。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-math-unit-01/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "organizing-survey-data"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-01/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "survey-design-and-data-collection",
+              "reading-and-reasoning-with-statistical-tables"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-01/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "survey-design-and-data-collection",
+              "organizing-survey-data"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-01/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "organizing-survey-data",
+              "reading-and-reasoning-with-statistical-tables"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-01/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "survey-design-and-data-collection",
+              "organizing-survey-data",
+              "reading-and-reasoning-with-statistical-tables"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-01/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-basic-14",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-01/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-advanced-14",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-01/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-01-high-14"
+      ]
+    }
+  ]
+}

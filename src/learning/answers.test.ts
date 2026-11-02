@@ -65,4 +65,21 @@ describe('submitAnswer', () => {
     expect(submitAnswer(invalidChoice, 'missing')).toBe(false);
     expect(submitAnswer({ kind: 'unknown' } as unknown as ActivityDefinition, 'anything')).toBe(false);
   });
+
+  it('accepts a separately reviewed valid alternative order', () => {
+    const activity = {
+      id: 'valid-alternate-order', kind: 'order', prompt: '观察并判断', hint: '提示', explanation: '说明',
+      items: [
+        { id: 'choose', label: '选择动作' },
+        { id: 'path', label: '观察路线' },
+        { id: 'center', label: '观察转动中心' },
+        { id: 'decide', label: '作出判断' },
+      ],
+      correctOrder: ['choose', 'path', 'center', 'decide'],
+      acceptedOrders: [['choose', 'center', 'path', 'decide']],
+    } as ActivityDefinition;
+
+    expect(submitAnswer(activity, ['choose', 'center', 'path', 'decide'])).toBe(true);
+    expect(submitAnswer(activity, ['center', 'choose', 'path', 'decide'])).toBe(false);
+  });
 });

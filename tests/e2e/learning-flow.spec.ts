@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { installAudioSpy, readAudioEvents } from './audioSpy';
 import { unit as observationUnit } from '../../src/content/grade-2/term-1/chinese/unit-01';
 import { unit as arithmeticUnit } from '../../src/content/grade-2/term-1/math/unit-02';
@@ -29,8 +29,8 @@ async function solveMatch(page: import('@playwright/test').Page, pairs: Array<[s
   const left = page.getByRole('group', { name: '左侧词语' });
   const right = page.getByRole('group', { name: '右侧词语' });
   for (const [leftText, rightText] of pairs) {
-    await left.getByRole('button', { name: leftText }).click();
-    await right.getByRole('button', { name: rightText }).click();
+    await left.getByRole('button', { name: leftText, exact: true }).click();
+    await right.getByRole('button', { name: rightText, exact: true }).click();
   }
   await page.getByRole('button', { name: '检查配对' }).click();
 }
@@ -212,20 +212,22 @@ test('playsAnswerCuesInOrderAndSavesEightQuestionProgress', async ({ page }) => 
 
   await expect(page.getByRole('heading', { name: '太棒了，能量收集完成！' })).toBeVisible();
   const answerCues = (await readAudioEvents(page))
-    .filter((event) => event.type === 'play' && /answer-(correct|streak|incorrect)|session-complete/.test(event.src))
+    .filter((event) => event.type === 'play' && /answer-(correct|streak|incorrect|praise-\d{2})|session-complete/.test(event.src))
     .map((event) => event.src);
-  expect(answerCues).toEqual([
-    '/audio/answer-incorrect.mp3',
-    '/audio/answer-correct.mp3',
-    '/audio/answer-streak.mp3',
-    '/audio/answer-incorrect.mp3',
-    '/audio/answer-correct.mp3',
-    ...Array.from({ length: 4 }, () => '/audio/answer-streak.mp3'),
-    '/audio/session-complete.mp3',
-  ]);
+  expect(answerCues).toHaveLength(10);
+  expect(answerCues[0]).toBe('/audio/answer-incorrect.mp3');
+  expect(answerCues[1]).toMatch(/^\/audio\/answer-(?:correct|praise-\d{2})\.mp3$/);
+  expect(answerCues[2]).toMatch(/^\/audio\/answer-(?:correct|streak|praise-\d{2})\.mp3$/);
+  expect(answerCues[3]).toBe('/audio/answer-incorrect.mp3');
+  expect(answerCues.slice(4, 9).every((asset) => /^\/audio\/answer-(?:correct|streak|praise-\d{2})\.mp3$/.test(asset))).toBe(true);
+  expect(answerCues[9]).toBe('/audio/session-complete.mp3');
   expect((await readAudioEvents(page)).some((event) => event.type === 'play' && event.src === '/audio/interaction-click.mp3')).toBe(true);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('china-study-progress-v1') ?? '{}').completedSessionIds))
     .toContain('grade-2/term-1/chinese/unit-01/basic/task-01/session-01');
+
+  await page.goto('/');
+  const recentLearning = page.getByRole('region', { name: '最近学习记录' });
+  await expect(recentLearning.getByRole('link').first()).toHaveAttribute('href', sessionUrl);
 });
 
 test('keepsAnsweringWhenBrowserRejectsAudioPlayback', async ({ page }) => {
@@ -245,21 +247,24 @@ test('playsInteractionCuesForArithmeticAndMeasurementInputs', async ({ page }) =
   await installAudioSpy(page);
   await page.goto('/grade-2/term-1/math/unit-02/basic/task-01/session-01');
   const answer = page.getByRole('spinbutton', { name: '输入计算结果' });
+  const firstArithmetic = arithmeticUnit.difficultyTracks.basic.tasks[0]?.sessions[0]?.activities
+    .find((activity) => activity.kind === 'arithmetic');
+  if (!firstArithmetic || firstArithmetic.kind !== 'arithmetic') throw new Error('Expected the multiplication unit to contain an arithmetic activity.');
   await answer.click();
 
   const arithmeticClickCount = (await readAudioEvents(page))
     .filter((event) => event.type === 'play' && event.src === '/audio/interaction-click.mp3').length;
   expect(arithmeticClickCount).toBe(1);
-  await answer.fill('36');
+  await answer.fill(String(firstArithmetic.correctAnswer + 1));
   await page.getByRole('button', { name: '检查答案' }).click();
   await expect(page.locator('.activity-feedback')).toContainText(/这次还没|勇敢尝试|还差|先别|每一次尝试/);
   await page.getByRole('button', { name: '再试一次' }).click();
   await page.getByRole('button', { name: '给我一点提示' }).click();
-  await answer.fill('37');
+  await answer.fill(String(firstArithmetic.correctAnswer));
   await page.getByRole('button', { name: '检查答案' }).click();
   await expect(page.getByRole('status')).toContainText(/答对了|真棒|太好了|成功啦/);
 
-  await page.goto('/grade-2/term-1/math/unit-01/basic/task-01/session-01');
+  await page.goto('/grade-2/term-1/math/unit-04/basic/task-01/session-01');
   await solveChoice(page, '厘米');
   await continueToNext(page);
   await solveChoice(page, '米');

@@ -1,0 +1,1489 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "groups": [
+    {
+      "definition": {
+        "id": "grade-1-term-1-english-unit-03",
+        "kind": "unit",
+        "grade": 1,
+        "semester": 1,
+        "subject": "english",
+        "sourceUnitIds": [
+          "grade-1/term-1/english/unit-03"
+        ],
+        "coreKnowledgePointIds": [
+          "animal-word-vocabulary",
+          "animal-preference-sentences",
+          "animal-description-sentences"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-1-and-3-textbook-inventory.md#固定快照目录映射; src/content/grade-1-and-3/catalog.ts",
+          "checkedAt": "2026-10-26",
+          "notes": "对应 Animals 单元登记的常见动物词汇和 It is a…、I like cats. 简单表达；采用课程台账记录的 TapXWorld 固定回退快照，英语学校开设状态仍未确认。为避免重复模板和未确认的分类内容进入闯关池，筛选保留 26 道课程题并补充 64 道原创题，不修改原学习 Task。"
+        },
+        "tasks": [
+          {
+            "id": "grade-1-term-1-english-unit-03/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-word-vocabulary"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-03/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-description-sentences",
+              "animal-preference-sentences"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-03/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-word-vocabulary",
+              "animal-description-sentences"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-03/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-word-vocabulary",
+              "animal-preference-sentences"
+            ]
+          },
+          {
+            "id": "grade-1-term-1-english-unit-03/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "animal-word-vocabulary",
+              "animal-preference-sentences",
+              "animal-description-sentences"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-06",
+        "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-03/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-03/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-03/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-03/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-08",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-01",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-02",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-03",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-04",
+        "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-17",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-18",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-17",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-18",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-19",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-20",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-21",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-22",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-23",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-24",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-25",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-26",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-01",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-02",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-03",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-04",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-05",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-06",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-07",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-08",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-09",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-10",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-11",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-12",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-13",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-14",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-15",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-16",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-17",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-18",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-19",
+        "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-20"
+      ],
+      "releaseIntent": "released"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7c4ce9592f75748b1b80910e74b46a0353b1592f0547ec958931614b76533e1e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1afd2c276bf3e3351c074730855d7c5533fe594b9cfb301d1494686c9973e2be",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "129326fa4a085629e4c70f0371f1c8b1111f5be212ab8ab41745e58f4746bec5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "27cef9aaddee5f43353123fd39104b11978cf1fb9613543b74c65b426fedabc8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c3fd08a06200d828600f2126a8cba584e61aba0b98bbe4ca2778d8fca422001",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f89e15711a8dd6cc55cdb647d37928037c8d25062eef74dff655b9109cfb716",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7e4e47671319f843e02766379548bd204d620ffb602443ad2faf1ccaf2bdf47",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ca539203258bf2e89cc9f292fdc294570497c212c45ed416ad36316bea100a6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7fb56ca2dd751db7ba89a0ecc967f60be16d4691374501a47774aa51ab2d6b88",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6990448dcf704bcbd86690b01057936d89eddc48027385b6a89464063bf1f252",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-06",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "583c991e1c7231b7e706a57dd69e9dad785e251080257dd237f7c25abec3f019",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/basic/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-03/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "81b7516955c71cdce1d6e3b3c58564a88f2679328a88d40d7a9b446224447559",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/advanced/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-03/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c901aad75e2657ec015aff9f4bf4f8b1611301b9bed351efd90411e45ea6a7e1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/advanced/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-03/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "724b94928310d1e1667924d3914a19607da07f9e7fc8cca74a325d08298f9adc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/advanced/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-03/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5dc7ca99d7df483325f82cae66183da3a1a5f9ed61d3969714d1e875ebcd3e52",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/advanced/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-03/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ced092a05ecb552ce408a52ddca95e575f5833f8166f9dbe4511488aae7caffe",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "650e5d80da206cc7c53170ca8aea7a40d9463fc3d62af05adcf2f2be4fe58d69",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3f14d02829dc6c41e7860f5c1910f32e31cdaa67dc03b032b10757297909d6c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3ed74ab0590cbd83cdd3d8ebe07638b58e988b9976d6f6cd12c521634be8e52f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7c6b237cd86aebb9a359519e9577fdfde9cbdc08f8a91c5405a2f9a0341247f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-01/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6e424ebe15ae3dd70a4c08aa51278d5370b872713e6df8c654d7ce5ed8b66ac8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-01",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f15465ffa06ef2b6190eff9d81c841a061f7f1355591038bec436271154e576e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-02",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "59c22b73fdb038308e8ce9bae28795734b51785dcfc3e3d08db30852b76f87a0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-03",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f5f5a54f1d61ff94d8cf18767ac7a7faf3bfc131b1074552b0eb9d6d69a4ed1",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-04",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cfa4556b88c5e1203526a88da30ade47053856e4816f1d048bba1d427e8fdf9d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-1/term-1/english/unit-03/high/task-02/session-01/question-08",
+      "activityId": "grade-1/term-1/english/unit-03/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5cf55609729eb7dd504f8fa7d47f01bfee5812fc00276546f71d00c9c648d88a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-01",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09c0f7bc207ec21ea05cd3514dc274ec0f92f53de1b8f4f05be5cbcf210ed838",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-02",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3a267330d973fbb0f148bc4e03ce7511208bc87221b243b2477df5adac4caa91",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-03",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c4043bf76d3ba85bc64c45049f989efce5dc65c6ec57b9ede7abfefd61820a9e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-04",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "42fcb62de7b5b61e94e9c931c61db945c2f1336f8cb42eb05568c27e98c64fde",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-05",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1cea041ebcfcb6f22f0d346c210972e9832a04ba964051d579e3bcb68b21143f",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-06",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "424621cce05da838500814d06d45c4148a90c9f578af1b6f637b0155197cf4c9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-07",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "26507280d2172872de8e9621a061fb083c3df204b014bff9de56c90fca002ef4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-08",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e43288df20d1de8d41391de1369c1a2469736796aab9a3a5e4a44aff96b4d3df",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-09",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad847a7a14658c60a424a41de2d2558aa285912665108e8f51773f5781f6a957",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-10",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e295137ffc50ffc06f22f8f75dee617c21c3b370eaea7080a6da30202693d10d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-11",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0756f8b550af7f77224ae3e64a8f967386d52db945e59f71b8cdcaef1bc214ff",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-12",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf43c55c597c7c4a17e8b4e27ec84a0b430bd35b588e4a8ffb71d6c660ec27d5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-13",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-description-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2eb9d129ad6acd4af736b0efa7debf9f14d383f137d351d9834dd5cb78b0c9e7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-14",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-description-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "74b932d3aba00f097073ef681d70cb3da5dad4419fe3c942f86a6e4e58cac6b7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-15",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b4a3cf71b75bbef7da028834f9f15d71a6d20a9093dbfc8a7119d322d9a983d0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-16",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-16",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25f2ca04f07d0eabe194afec000d6408d6ead27d6c7175043222d87eb76a4bf6",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-17",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-17",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-description-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "942cc268e8af4ef63f7259f4cc4e8c9cbbb87de613c6fe19c8b6213f74bccfb2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-basic-18",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-basic-18",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "animal-description-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8100f576b9684d1fafb9723b2e342840444b09e889f8d5eef11423b606c49dc4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-01",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8daf78862eb5d587a8b70480061ec330f67a1c2c8d3f7b4e20f4f456f4e90ff4",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-02",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8f8a35df476825a39e02724112c7da6ac378c897c759038c9bcb098435a80e04",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-03",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba5eb601cee45880420cbcbd51bd7082d786bdf63d00f3eb3c7fc5831f3d8157",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-04",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f2e42da65b2df0c937b57f7e57cbd0d7e9fd36389d9cac2bbebe038c12247e71",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-05",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cd5f9cbbc0e54b2ba383b4a5aa2bb260b3a9b5aac7f62b959c637a8db34b8c7e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-06",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e38c953216c2124a6f58e035586f1fc590a2eaae3f8a922e48b39ac9223283b5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-07",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eb8459174ea8d1cef8fbf3e7ea7f3d74f70e907b7747435172f183e62848e731",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-08",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "39b675444cfa760254cd1f98ae77a29cb256f410acd603c06619ce8a22ebd6e3",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-09",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-preference-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4e98d85c57e32048880705c0e2a31d3439c8ef37f448d9ed67d2fa8c9e6e149d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-10",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-description-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8c6e2450c99b48a92961bcce3112ccd4462324144003998b71ff3ed5ba777542",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-11",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f70894a6d2e4c2ffeeb66a9f8e64c4f20274501af0691edcf18a3b54bf00cc98",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-12",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-description-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ad20882d454ede11e33e1e5311f900fcaed7dc5edcbf8b0e9c946e1f6528eb63",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-13",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f87c9172394b39158e6f215abecc038344566c5ae1ab5e946640a3881cdc52e8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-14",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8981a9ce6e5d9fa48ddaedecb5cae3c96d9fedacecf57e99933bd8d4eac4ad11",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-15",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "12d4e56a68d3e890d23f129af07ea2547a9acf35b633baf50df22361a61da856",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-16",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-16",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d35c0d90098efc2e07c28ee24a90dd24ce7321ac0328035784524c1f2543811c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-17",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-17",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ac5bdd40766ef63f9712f88377a21aa2335babaa7dddfe6223ac4c5d4be165a9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-18",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-18",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d28d9e76ce138af9f1e21f8e1d0776f4bbd1f84fd9d36b4681bc8cbe764573b5",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-19",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-19",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-preference-sentences",
+        "animal-word-vocabulary"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6f7a0bd7a9c3eb40a192b5bf222a9af9e8214fea5ddcfc1541952bedcfe84098",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-20",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-20",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "127140b612a8ea14d4f57a4e64366404f6dce16cd735de9b45d574a699b8c5e8",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-21",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-21",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b881997a7a26aa1580971b9fdb65ef2eec1cdf71f517ba2ec1a5c3f6c72d31bd",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-22",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-22",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44240885019cca4acfcd83eef7085c63f00e7655309ef3c167e13e7da40068a9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-23",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-23",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ffc238eae462076ea9812472b883c645a2c00d06fb9af95d140e4975b9cb2610",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-24",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-24",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d9eab60b83105cd186a77131576353d51b9a9b10b40e22f0185cf774635686a9",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-25",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-25",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c3e4177ac04f8b9a2208badd0a6535ed6848b36b213e614c4f585c1cfe68d1d0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-advanced-26",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-advanced-26",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7e101322735b31ed473eac0b3f5c3e3dd0dce1208e31ee0b9957da7a879ff31d",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-01",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e229deac09a6ec59b313cd67b3cf241585cdedade3e380d8aa923aa74175ed7",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-02",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "824be353f396929855462d5291eb244efab5ee3d54a73b793467a98a319ac7d0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-03",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "95f9cd5866dc1efc736b75f0cad39554594b67ac540333a3ecbf87182740eadf",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-04",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1e124686949e12aa79a3416faf33eab62cacbc1355664daaca1b6ae181ffd369",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-05",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f18c2fd2cf32776e1a6d5dbc72bc37a41c63e4efd66d7b95b6db4ee522a39718",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-06",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cf5762da813d4a37ab6855e502a841b5bcf2981999b5d41490e1c81952001e08",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-07",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "90a8a18bbbf11d059abe480ceacb57096ac1393bcb40c1e7208e556f65b87d85",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-08",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "648ddc92a5e94138d5be9fd58457d69f207ebdc993603d86f0b12638e1b4a57b",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-09",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c161feedc9f1d9889c78a2f9d38214a5f1e832d8ddc8bc8043e6b987253f482c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-10",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cb806e7b1410501181bce2aa00184d897f0c59711b00e9ecb6273c00ae674c2a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-11",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fdfc6672d28755b8e57c819903a3349a3f51d30c709c12fe94879d6eb9734b97",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-12",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3e8bf089ebafc6dacb9276efdb5cb9d936d83c82c1fae11dcbf04c6df521382a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-13",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b1d264d3c4ecc560f0cb0cc035577401572dd97987c0bf787cda82aefb091a56",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-14",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "86d4867de7619f79bb531857ce60cff2b969d3cc17a39c11c7432fa3c5a7b3f2",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-15",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "87866017c5fad29037361b8cef4267468a692a80489b20522ffb26f880cd58fc",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-16",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-16",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3448d9cb255d92f3b6f89a460948a841efaaa41afcd6556261a5c7e0542b164c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-17",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-17",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ce3a2b9386bc46f4f97e74a5ee7d3086c559262d9b174b0f78916ae46631e73e",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-18",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-18",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ae288c6dcec034486953429d911eca6e25ef69ca953eff66ad0b7f7c57acc25a",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-19",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-19",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2311d4e348f0acc1a87f39a5636f8f5ba62e00f6070341b1727a189ce9327c0",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-1-term-1-english-unit-03-high-20",
+      "activityId": "challenge-supplement-grade-1-term-1-english-unit-03-high-20",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "animal-word-vocabulary",
+        "animal-preference-sentences",
+        "animal-description-sentences"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "667b0ca333bf3ca3091b482c45df2d9f5c5e01c82b324cec368263c9d598f93c",
+      "approvedBy": "Codex 内容作者自审",
+      "approvedAt": "2026-10-26T00:00:00.000Z"
+    }
+  ]
+}

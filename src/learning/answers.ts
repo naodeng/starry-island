@@ -26,8 +26,9 @@ export function submitAnswer(activity: ActivityDefinition, answer: unknown): boo
     }
     case 'order':
       return Array.isArray(answer)
-        && answer.length === activity.correctOrder.length
-        && answer.every((item, index) => item === activity.correctOrder[index]);
+        && [activity.correctOrder, ...(activity.acceptedOrders ?? [])].some((order) => (
+          answer.length === order.length && answer.every((item, index) => item === order[index])
+        ));
     case 'categorize':
       return isStringRecord(answer)
         && Object.keys(answer).length === activity.items.length

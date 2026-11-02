@@ -170,6 +170,16 @@ function matchesTapxCommit(sourceUrl: string, commit: string): boolean {
   }
 }
 
+function isValidIsbn13(value: string | null): value is string {
+  if (!value) return false;
+  const digits = value.replaceAll('-', '');
+  if (!/^97[89]\d{10}$/.test(digits)) return false;
+  const checksum = [...digits.slice(0, 12)].reduce((sum, digit, index) => (
+    sum + Number(digit) * (index % 2 === 0 ? 1 : 3)
+  ), 0);
+  return (10 - (checksum % 10)) % 10 === Number(digits[12]);
+}
+
 function validateTextbookSource(book: TextbookEdition, path: string, issues: ValidationIssue[]): void {
   if (!isOfficialPepUrl(book.latestPepEvidenceUrl)) {
     addIssue(issues, 'PEP_EVIDENCE_URL_INVALID', `${path}.latestPepEvidenceUrl`, '最新版证据链接必须来自人教社官方网站。');
@@ -199,7 +209,20 @@ function validateTextbookSource(book: TextbookEdition, path: string, issues: Val
     return;
   }
 
-  addIssue(issues, 'TEXTBOOK_SOURCE_KIND_INVALID', `${path}.sourceKind`, '教材来源类型必须是 pep-latest 或 tapx-fallback。');
+  if (book.sourceKind === 'user-provided') {
+    if (!isValidIsbn13(book.isbn)) {
+      addIssue(issues, 'USER_TEXTBOOK_ISBN_INVALID', `${path}.isbn`, '用户提供教材必须登记校验位正确的 ISBN-13。');
+    }
+    if (book.sourceUrl !== `urn:starry-island:textbook:isbn:${book.isbn ?? ''}`) {
+      addIssue(issues, 'USER_TEXTBOOK_SOURCE_MISMATCH', `${path}.sourceUrl`, '用户提供教材来源标识必须与 ISBN 完全一致。');
+    }
+    if (book.tapxCommit !== null || book.fallbackReason !== null) {
+      addIssue(issues, 'USER_TEXTBOOK_TAPX_METADATA_UNEXPECTED', path, '用户提供教材不能带有 TapX 回退提交号或回退原因。');
+    }
+    return;
+  }
+
+  addIssue(issues, 'TEXTBOOK_SOURCE_KIND_INVALID', `${path}.sourceKind`, '教材来源类型必须是 pep-latest、tapx-fallback 或 user-provided。');
 }
 
 function validateTask(

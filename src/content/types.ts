@@ -4,7 +4,7 @@ export type TermId = `term-${TermNumber}`;
 export type CatalogStatus = 'active' | 'comingSoon';
 export type CatalogEntryType = 'unit' | 'review' | 'integrated-practice' | 'theme';
 export type Difficulty = 'basic' | 'advanced' | 'high';
-export type TextbookSourceKind = 'pep-latest' | 'tapx-fallback';
+export type TextbookSourceKind = 'pep-latest' | 'tapx-fallback' | 'user-provided';
 export type TextbookVerificationStatus = 'pending' | 'verified';
 export type SchoolOfferingStatus = 'confirmed' | 'unconfirmed';
 export type CurriculumUnitKey = string;
@@ -67,6 +67,7 @@ export interface OrderActivityDefinition extends ActivityBase {
   kind: 'order';
   items: OrderItem[];
   correctOrder: string[];
+  acceptedOrders?: string[][];
 }
 
 export interface CategorizeCategory {

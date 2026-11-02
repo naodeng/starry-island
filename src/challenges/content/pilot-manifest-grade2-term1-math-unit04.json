@@ -1,0 +1,1521 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-math-unit-04",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-1/math/unit-04"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/math/unit-04"
+        ],
+        "coreKnowledgePointIds": [
+          "length-units",
+          "measurement-and-estimation"
+        ],
+        "mappingEvidence": {
+          "source": "用户提供的人教版数学教材 ISBN 978-7-107-38912-2；docs/curriculum/grade-2-textbook-inventory.md；src/content/grade-2/term-1/math/",
+          "checkedAt": "2026-10-29",
+          "notes": "按本册目录顺序迁移到 6 个正式单元和 2 项综合实践；候选题由 AI 主审，独立教育者复核未完成。阶段分组按正式章节 1–3 / 4–6 划分，实践活动进入对应阶段及期末题池。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-1-math-unit-04/basic-01-v2",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "length-units",
+              "measurement-and-estimation"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-04/basic-02-v2",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "length-units",
+              "measurement-and-estimation"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-04/advanced-01-v2",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "length-units",
+              "measurement-and-estimation"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-04/advanced-02-v2",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "length-units",
+              "measurement-and-estimation"
+            ]
+          },
+          {
+            "id": "grade-2-term-1-math-unit-04/high-01-v2",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "length-units",
+              "measurement-and-estimation"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-16",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-17",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-15",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-15"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "af2745a15dab8322601d865b6f750548fdd90857d328b19184e80a3b0a5cacee"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "8caa1bda3cd63eee9648d8d819e5a8cec11ac81a73c31d2423d63f793f6ae907"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "40a4236e74a4fb34e22b914a8e0e2bce99d551119f70ea1e261ee0e20b217864"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "bb8bc01de68850dc9982869d1eb71558e320d6911041ca3c7a20d1db407abc03"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "92debe2d71b20e5a377486a95be17d912b06aceaa3c238cae7cfe0604b98f556"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d9ad065978b467ada6174248cf09eef6fecb86620f269e1bb97092c1b7ab6577"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "b523214dc68a36aa7178a1dadfefaaf0cdd15691d57c556a7ab630c30cf06054"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "b437dae8fb97d6c0fdbb33c5808d507bde97bbb47dc3160c6c5d062f01b2344b"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "4ba83f9a6704150c40e6d387190912d589ca6d517f9a658eed40499967129f22"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9ae7c158fb032a5c09a0b7ee73eb05ab679a88e369582ab98584f979c8e0a222"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e8a1c26706ef1231ef6f060e88ecd74e11083bf4b740c4ae9c28453869ad475a"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "23bacf920d8a31189b93b756524510ae061a003d86ab4bc2bda3bc6106974c7f"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-04/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d48799e1d01a7a7dfb332ec17c9f91f4baeacf43d649d8e6b7070a9e97387959"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "42ea42fa30fe2e1c9055d57842883d69e1139b1e7ec84c35fbe1ca245c1bb0df"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "b3607e0f5b2b4e474b69958ee25fdea5f97c78edf585dc4b8c8e679ab5af53fa"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "ce8111c33f037664eb64592068d67f73f00df7e103f247e68a56dfef0205f6bb"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "6510d2b7cf429e23aa3c93cd6072091aea0a7d4c696f3c81e3a9a1c44dada26c"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "81dafb4c9d74ad38d190bfb81b605e706e5bf5d8573508878a98285f669f32ff"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "61f2119726f304825f44344afcfd412c7710cec6c524164f6261bef20433cdf1"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "269a90cae1da17e6cb282cde31e609bf15819d8878700261697b84270fdffc1e"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "40674589d009141362f27d38b48939f65e30d169e7dbe171fe73170b0a2a4cc4"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "69de0b1e055457287bf46905820035547d714f462a9c1a8086708924f7512e60"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1e6d67155ace434c6db511b21e4e359ad429d384c496048d4426d3476bd89b19"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "2fcb61c16c7cbb26be462b22adc639e075b6f11bf496270b982fb2be3716ebc8"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "f04f4e009162cf693ded7e05d860a37df8f4442fd07e0ecd8e68e4e271804ae5"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "77ebb1b2b2d843b6c6ad76ee5153c232053075c3ec0c99f0bdc27740b931d4ff"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1e207bf9601ca34ba675948b6076dbb3f21a285031b974cee6081778f8e961fc"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-04/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1e3ba92b0bf14cfee54873736d98e8ad184ad58cd77a51ae5880be292f9488dc"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "aa255a55bac4686af6f26f409b2abbde6ca52e61f67a60b32c26515c33b10765"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "503611e8e9a83746eb5ded52837b0c31043fc13f87123f6787bf53512c23c859"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "b93ed77ee2ee46c644a2fb73b48e8fa2f0e974510db22c00eddee939f331fc01"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9ba82606b6af59212ed3d3e0bd013686bea5d2465e330ee34eead924632737c2"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "ddf6643048f481ffe6ed586aca5c9104bd6e9b10c3d36893df095dc45ee23fc9"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9e9e8028206fa50b2bed4fe6565ef9d22f2641fa13a15c260f6bb6f16d085c87"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "e1e13a74054804d292781132b1531917d8e8d558577d893bdaa3b4f9c77b223e"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "08b6dfaee36b0ece207e78c741824b9fab4df6abff3307913ffb7e837c48d1e7"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "2fab35d49ad1e6f0961735bf1804717b9a70cdf16b36c605082f9f0c86e97e68"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d4b77520e6fafa70dcab3ac232ec178291d0242873d0e4a772a8d8a33a5bc5aa"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "bf3450fd45e452a661364c5c969a98f6553d69c16273a1e45489fbe81eadf507"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "ee3e6fb9d1c6972eca11c33385bfd921fb2347acf1ae29531fd5d7f19e17e20c"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "98b67966c6e00d9f122374d696bf63ad73a85dd9e8c46424b763a2b0d303848d"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "2ebf887145a5fc31452273d6e810589fda72c4892417a82a3aebe3fa702835ed"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/math/unit-04/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/math/unit-04/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1a89ca014ead988dc6fdd2fbf0aae1175c258e4e00c519e7528768241950a506"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "45a72311de56855c703818ad6f9796422d528ca04bea26a24cf1ad0cbd98e955"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "88e3000fc0610dd05b9ad122ec16cd3cbbd8af435051632acc9a3f603f70c406"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "ce0f607253d5f52ef5f2ca9ee8a78ef35e121d52e31aaa768bd598dfc5ad7b4b"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "7993c7b0e790dcfb596aa89004098471bef31804e74ba03d2090ddb6e5f47769"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "326a26a696ddd14cdd30d8af50a948466ed91266a7c0a048594e81731a4a6798"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "187bb65e4d902be430b09c4c0778e3853a5df0be069b09eb8711d516c73a20c6"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "3f39030a760087d5bd2c4e6d3ef2467d36b5373a361a59874a07fc3fc7a5a914"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "855feabb5d7542c5b32464898f9216ef73769095d6692f90150fb1aeff31f193"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "99abd932b5b90b05578b0185f8eafff8b1576274ef4ea5a937cda44eff831671"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d7bbca69db8401e93db44b25336ea96bd347270073a2d0c09be098caebe70e6d"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "72da299af9df3a8e974ee936eddabb7bc03285084b7986874fe47d966d92b155"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "233d361210360e068dc7a581c005386c9ee02cf3b510234b225866fe53399f15"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "9a62d06091b6d549bfc887b607a2524ede10c0eb273d51c4ff05fe3e3b24c0ee"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "0a934a3d5050f8f01ace4c6728c69f1b572ac41bf83286558e3f62d9be8eae5e"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-15",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-15",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "6a393e7fb319738c60e669eacc80e42d4b66cacb8efcc27d786f7dfc3baf12bc"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-16",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-16",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "88289f783d71fc3ea0d4fe577a2e3b3b24fbc7b13713868923a649eea50a536a"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-basic-17",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-basic-17",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "0685267d56bdb11a9c4878ea2bcd4d581a91bc829cdf97b2318e8aad99e55661"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d0a93a7596ca8bdaf7ad958c1274c2432af9ae8c6d5d1cde45592df8580f9991"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "c164b2e1eb2ff0b077573e607f4fcaa9012c13e18bde51eb76f101cbea10f726"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "df4a607c086f84e3adcc66c1779b403fe234d2d64958b93c585678e6002186da"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "44736c95b875a501e919ac617d0c6aee382bd9f5220443824c469d445d8871a3"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "8ff0d2040af5f009eb2716f8265415de0c35b8436f1a272ff905c6c8ecea5d89"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "4d34ddc708b9d390493171203a441ae714466f0f7b663badd59c788df76f6f01"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "0e7319cef937e80e34a82995260716c721d335e4a54a0ced8b299c1be54eeac8"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "842fb832a92e7701b495942e66541266d2db9b678ba9dc5c3f998a6f45797fe7"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "c27cabbec5d599018454f4a310c5220740ed3de18bed447a7f94a809eeb4376d"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "95a20e43d53cdbcaa7acec72bda200187c8d92aff6fe8ef8b590348fa7f18107"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "a07b93962169526eda5d5959153451184e132deef123fd55a25eeb7d40aee574"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "495b889348aa679b9a531bf4c6c94b21808715c6200eafa614d7c8005d595dfd"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "dfd757a87cde65fd849b5fc06c39e9652e51e7dd45010bea757cf947c2b7ca98"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "60aede5537b89994ab2fe388a08a6031d71c65d9bbbf30a6b1f3aa8b1c519857"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-advanced-15",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-advanced-15",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "d74691d66f9b7f932c1eaaff91c6eee8fd5389ecb212465212c08311e2655f7a"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "67c8736d5b8fa6ffc9c19ed5a42e43d9b348495c3821eec3cd4e5809b41b763e"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "1cc6fd0d357f7fc0ebdc27deb83d83d06e9f3b0790962a3ee4129a45cdce2b98"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "933c70b892df340f908d94b37702e2d2f324f4556e81eb50233da971f45d574a"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "92c7512a491a51fc431d301a18d58af3f331547af528d7dc55441e8682cfc04c"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "f9b169564f09c223f7fc49937c45bec96c6e82d211871b777d028fe6fc79cf77"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "37928d67f2a9f9451c06ee82aed7062c8d71b895418f100a17807d1cac346c6e"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "5898e81efe654fa732a1f75e1cbb1144563465f6420ad54ba8ff68be2daa9d70"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "12960657bf1777a8139528dc5a4ed84539f1395332d621a10fb6fc9d50d84770"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "0dfd84817cbfad7b9cd5370eceab46af4f6dfdc1288df8f4d1ec7b39ba84bd18"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "47b989d318cb4f616432b218830c18d3d774398901ae643fd000490ed893be9c"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "3a4adcd79a75135e79b2c19646bc2c7690f96b3d162def38946886f10176ac53"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "096d5788f9dd875657636ad84485270eb7b90c82b28dfd3998c57a1ddc7a462f"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "19b6cf2912ee0f1a74ec147f65cd10e3aced6bae0157b4b4a6139499b61845f5"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "6c577baca543a8f47d3de6e7a2a5bf184013edfa312c5693483e76c119e8fdfa"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-math-unit-04-high-15",
+      "activityId": "challenge-supplement-grade-2-term-1-math-unit-04-high-15",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "length-units",
+        "measurement-and-estimation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-29T00:00:00.000Z",
+      "approvedContentFingerprint": "3093e8efc108b5e6a94e2d5202577f744197d71c3792b8152dc018e0b771c164"
+    }
+  ]
+}

@@ -1,0 +1,1476 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "223d82a601897ad7b49210bf473dc7cd9acbf0b2c54d06d8c2eefa254619fb6c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d6bc55204bea804f9ec31fc0206172858921f26d68cb0568919bc7fedc09b012",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d41faa566d8bb3a6a77c68655bf308f034047a390ed0556313f55bf0a0113f5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "35c3fc6156b174818ad9bc1cc4121e88bd3f55141a8c9edec13493f19c6d6aec",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a272b468bd195d88f0814d3b4514eacb4af5e98fc8b08e553a45892d15b0056",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e2f8862878a1fa19cec46fa45d552588ab74dfab601e793ab2abc6a90fc446e7",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3d78a9011dca412be27fb8717f4549ad206cdfef7fc181e4ed32cb1cd774a08b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "909456eca3fa6a5374f94970d789dd51efcc34f2427940ed3a34bdbbc422251a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "56bd74ae24c88795a4a99a1ee42945d6b4539e33724810ba2a8e7b9d903d4911",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bf67e81e89d3b0214e4d90d70b973142e150de571d2954478610b3dc18a999f6",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6751ab18c2cefde3501d7a85539ba628fedc5dc64fd99d986f1d4fec563ff675",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "efedd2b63359bf6f82c2b407f3882c65e6d24cd3ab63b94e2b17991363fcb461",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c60a5d2ff2b0856f4a9db5c9fa8fe0588d41084e70148a1a14ac0d45cdfa3254",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "535f6e1d5cfc8e695a26207f83f1bf772a4245d07b1653f6c6166a0151bef554",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "13d49e240e35448ed203692f21e58f050ed5ca46a92c4e8c75e5ad3d6382488c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-03/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc394c96dca3cad2c18435b1795b233203b2ff35f6f90e97f1b5733ac9fadd70",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61a6d9b4c01030e8fa73a312292b5dcfca90faed2ee68eceace4e1e32f216246",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d259ed56e01c94586b86ead77b1f8f95057bf7531ad33d39573cece8c3dfce39",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6ed328163b4896ffce70143d819a230ada68becd579ee6898c8ddca29639ff53",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d1fd3b6322958f3eb88dc72f2634b9758f87c59ef4958e70f97189a323395f8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed3da790182df4024874054b7ca88cf31870885978e4868da1921cd5bf2c377d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ba34330fef90c7d1ef57ab7f3e534dd841a8b3f9898c9c3e2f18c57f9b9d739a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18005c3c0d6930c6669ebced668ec7b9d505bc188e568ee48907c71f08008600",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "71d324b1c08516c6a789cedd8b97f699832636f673003210f62b813872c02d9e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e6dca41e0013d86dc779c8439c80b5150c1118e4988c19c94cd0a2d3e2ec3fc",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d29becbfa6a9142ad82c9bbf3494126e8da60321aa64981f232926d4b12448d8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e67d709a4a510fc481a072e00b16082b2283b7d77d86ebe4fb20da0a9d42ba2d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "daf9855c541bf81c82f6c5dd3bdc209cb4341eeea3520308de973fa1fdbce452",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1aa4c5ab81c447943b8ecae2fa173a3e403457588d242714b87f1f921e845d5f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b93003f31a92d8e65c6f839203efb070d5bda4df1bc728e13a5613c3ae5b2f2d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "20331c1fb99a6707aa22f92c2a81657ebff075955ffbfa157ca03d31b38a0703",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "85706fa6a1ab2a6a52acdedc8eab8bf4fc544e81fd66bf04dbc2665515eb41e0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "29f5da773e848ce9e93de74d88ff9400cf0f5d1c6b25c80a63e290e5fab3ae32",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2df424a4981e329a75d1ce0d6f33bbb08b23a6c97885301f1cec554ff2dbd44c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "76cfd2baa2ff2541dae18ec7ac8e6737fa1701ec080e1327e874418eab15da4c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3b97f679304274e68f142f053a5dd46adba9329e9b832450885d68d0e2ac2138",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d79b43b30584a69dec877094e9e6572250ca06757225111d326526a7c8cd2953",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "485e024984e730048a75c4afa6042a7371bdd8010795db6a6a8d184c84686286",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "965a163f23c467aea34b90a98e6becca22a483042d4ff493d73aa3f4c54acca5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64b5fd13d039a9849fea84b2e890103ff1ede1915722d808d87291518aa914e7",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "371139c806e7b0d8412690ab821f4030e2debcc6f3d8104f6ba6ba0701b4680c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4f6a1e2a374aca15c8237f30b8aa6f53767178f78e14c09e10ddd562de20ceb2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a152ce5e329a94471417f09f4f0d9c9f0cab1eeffa46210a732583c94e7c38a5",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f5daec9fad7855d00bd5709d2b378c66826723f6d3ff20c61d93237d83ed5f80",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "79356db866f064c803ab3b5d554e05ff99f72aae2d9ba5331430c4bf70aff351",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "295b805cf0cf3b0510ab86099b5cd5c1b3c3e31b639e4a0ca4fb5ad80ef1c10c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "99e9c4e5b45284ea17d276bc149759731d87ead28e5158644e01624b46146800",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/math/unit-03/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4dc263b8c1990cf5110d2eb538b5090546cbb6ce7e56170b4a053c61c0ed164e",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "61ecbf178b661424074539753e287b821ee8f66e89589b513aa8eed5a8d0c402",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0be7483a427f812e19b7b85235e7dca9e0da790634abebb281458c4e0d815146",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f83b3871e052a8de6592c9a23920e60f37b1ef995675842259e18e0165aeb5ad",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "77f812a6691e7e297d0be2288431f53483f56419b2961510ae19f113ff818184",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "602f7d1d6ad24c313474b79ef50429d5d02ff74fbf5dba5298e6122993d1afb0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a323d852d80c6852df39cb90385a3b2e9d400f63b8076c2b0b6c03866a28ade",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7ad174199a9127ce4fc0af211115f0cea5b66dc8faa7149e9cee812eab9152f7",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fe0dbeeeff6a075fb4dfd3ff186dfa7613343aba2132c6df5534c7bc15187724",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "73e166295c4d176d6206a6b12f7866a5d4b62621c725fb58e439eaa805e3fe9a",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3828f3ee4b978c8b1086f489aa326b185738c151544c7ea4c17a0899b2ddf735",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff33e6f3f40bb3ebbce9cc0f150ccfe5958a588fc3a2815f4cb3fd99df285d18",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6ec04a8fe45f20168cf272fe20af7c6fbb4096716ea6cc1cdfebbeddc9b289c8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d2553654dfd4ead38265743ed9f2024b601f7c1a6840438ac6160c3d3335c6c8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d21f346976fb911f89d711809ce61f40db6149dc54ade0778a708bf4d29271f",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a2e7832a2db322dfcfbb52789cb04da2c1ecb7d3d9af3fc84ee5059931e06a7d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3c740e69d90488357b03d1a64b90abcf2884c155da61a672c457a4b0d84fff3",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "780b0a7392ff2c2e574e9b31ceba1b745088e23e6a3888f0a30933a4274b53a6",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8974e5dbfb6769ea6a2962bbd235bed7a04dbd39fea86029bbfc0e6420635e8c",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "598c33c8e73725a863344470cd2d2fddcec1a363dd1be88e9be72f66cedbed51",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "93844f33672f12dc7821189ca405318cfb8ccc16a51d5afbbfb88c6439968d38",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed272d8a1768defc3f23161383c5776ef649304c407d42fd43fc3ac276f33213",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b74d1bd7eb12f2ea9326ecc41d2d51d654b29a4c716e1661e5917ee8d5527793",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f7c32f5df76e5cbb7217ebf57da5b6a19321c181d2b50893e4881886fab5cf7",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "acf39cc724ccb3e0e808fd4e5e17dc34c13616efcd0fab9eb6f9b630ff28bbfa",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b88b3179532daf2fa99deea6834ad1ffc7ddaf4abf745e8589726b04141632c2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "454cdb7b5bd2ceac1486bccf09a77ded2504bb2e5568ccfa1cafcae6c5ff6f0b",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c3d27482966b51b073c1983f8524740b44071f01ea8322b6c57f52a1e966e5ba",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f92c2467848b8d03d3e09da10d248988b33c343e681f0a0f1d0ca9922d08e63",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fb103bd52c18764edab2113b4bf46ea21a7028c964f26189bc90d2d900df0f82",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e00739fc01dee4e51d17871fd832c77f10459c631ec324b3c66e160aaf13fe8",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fce42774362429638f98ab6f56a00b71fc6535c47656bf64bb023694cedb823d",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4dad4a0c4472699f5564e107a0648c77f5bc3b5e76988db068d1c43eee75d1b9",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis",
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ec20f37edc87746b337401eb3545ca19c286704df469326b2e3ea4bdd41e2ee2",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "aaf97c1820b552b6f4442b3dc3c757c28c4654f878c0036b3b84b6ade628b0b6",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "58c3b06501b9e65e4a058d0e07e8ca882ba90f5b0dd73ef015e3f7c1619786a0",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "130fa55b9ab4c506366ef2133be90593784b58b88259d7752f9725f9ccc56857",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3daa3e3c4eed9d2502acdc8cde77e74da2b3dd7f313b3b02dac3c954aff3dc11",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e697dda10822502d20fed6dfd55fe73920ae669958436532d096707537cc4120",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dd0226f5e2d4bfa18b414318ee24231de636fff4c6514ecc685ae4c680589d71",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "axis-symmetry-and-symmetry-axis"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "38fc6ec9add582567f3522d3f39c8b0bdc740ff2541147f47c14cd38cfa1bba6",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "02f28c0006d0cf1c720950aa9f7393f0f9aff19597d18187738cc72dac8c17ef",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-math-unit-03-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "translation-direction-and-orientation",
+        "rotation-around-fixed-center"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a4ace1b49fd296aececab3ca36ea13a9cf771de4aba5f135a96c30b6e0ba6eeb",
+      "approvedBy": "AI 主审（非独立教师复核）",
+      "approvedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-math-unit-03",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "math",
+        "sourceUnitIds": [
+          "grade-2/term-2/math/unit-03"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/math/unit-03"
+        ],
+        "coreKnowledgePointIds": [
+          "axis-symmetry-and-symmetry-axis",
+          "translation-direction-and-orientation",
+          "rotation-around-fixed-center"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv#grade-2/term-2/math/unit-03; src/content/textbooks.ts#grade-2/term-2/math; src/content/grade-2/term-2/math/unit-03/index.ts; 用户提供教材 ISBN 978-7-107-37176-9",
+          "checkedAt": "2026-10-29",
+          "notes": "依据用户提供的人教版二年级下册数学教材目录（ISBN 978-7-107-37176-9）核对，本单元“图形的运动（一）”与目录第3单元主题相符；课程知识范围按本单元登记的 sourceTopics 对照。版次、印次未知，未逐页核对教材正文。保留48道课程源题并补充42道原创候选题，每档16道课程题和14道原创题，共90道。该单元题目由 AI 主审已逐题复核（2026-10-28）；独立教育者复核未完成（0人）。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-math-unit-03/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "axis-symmetry-and-symmetry-axis"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-03/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "translation-direction-and-orientation",
+              "rotation-around-fixed-center"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-03/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "axis-symmetry-and-symmetry-axis",
+              "translation-direction-and-orientation"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-03/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "translation-direction-and-orientation",
+              "rotation-around-fixed-center"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-math-unit-03/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "axis-symmetry-and-symmetry-axis",
+              "translation-direction-and-orientation",
+              "rotation-around-fixed-center"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-03/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-03/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/math/unit-03/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-math-unit-03-high-14"
+      ]
+    }
+  ]
+}

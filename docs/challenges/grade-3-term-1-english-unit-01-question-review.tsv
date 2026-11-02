@@ -1,0 +1,43 @@
+题目ID	难度	知识点	正确选项	题意与答案复核	选项与答案泄漏检查	审核状态
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-01	基础	姓名与自我介绍	name	name 表示“名字”，age 表示“年龄”、class 表示“班级”，只有 name 符合题意。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-02	基础	姓名与自我介绍	my	my 指说话者自己的所属；your 指对方，old 不表示所属。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-03	基础	姓名与自我介绍	your	your 表示“你的”；dear 是称呼，year 表示“年”。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-04	基础	姓名与自我介绍	my and name	my 和 name 都与姓名表达有关；另两组分别偏向年龄/时间和学校信息。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-05	基础	姓名与自我介绍	My name is Amy.	My name is Amy. 是已学的姓名介绍；干扰项改为已学年龄问句和称呼，不再出现未教句型。	选项互异；仅使用本单元已学的姓名句型、年龄问句和称呼；题干与提示未泄漏答案。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-06	基础	姓名与自我介绍	Dear Amy	Dear Amy 是称呼用语；Old Amy 和 Age Amy 都不适合作为称呼。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-07	基础	姓名与自我介绍	My name is Ben.	My name is Ben. 用已学姓名句型表达本人姓名；干扰项仅用已学年龄问句和 Dear 称呼。	选项互异；仅使用本单元已学的姓名句型、年龄问句和称呼；题干与提示未泄漏答案。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-08	基础	年龄与班级	age	age 表示“年龄”；name 表示“名字”，my 表示“我的”。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-09	基础	年龄与班级	How old are you?	How old are you? 询问年龄；其他选项改用本单元已学的姓名句型和称呼。	选项互异；仅使用本单元已学的姓名句型、年龄问句和称呼；题干与提示未泄漏答案。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-10	基础	年龄与班级	year	year 表示“年”；grade 表示“年级”，name 表示“名字”。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-11	基础	年龄与班级	class	class 表示“班级”；age 表示“年龄”，your 表示“你的”。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-12	基础	年龄与班级	grade	grade 表示“年级”，与 class“班级”不同；old 与年龄表达相关。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-13	基础	年龄与班级	年龄与班级	How old are you? 按交际意图归入年龄主题，不是姓名或学习用品。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-basic-14	基础	年龄与班级	old	How old are you? 中 old 提示询问年龄；name 和 dear 不符合这一语境。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-01	进阶	姓名与自我介绍	my=我的；your=你的	逐一核对 my=我的、your=你的，排除方向颠倒及词义错误的选项。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-02	进阶	姓名与自我介绍	My name is Amy.	My name is Amy. 与目标姓名一致；干扰项使用已学年龄问句和称呼，不要求识别未教学龄回答句。	选项互异；仅使用本单元已学的姓名句型、年龄问句和称呼；题干与提示未泄漏答案。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-03	进阶	姓名与自我介绍	My name is Leo.	My name is Leo. 表达本人姓名；干扰项改为本单元已学年龄问句和称呼。	选项互异；仅使用本单元已学的姓名句型、年龄问句和称呼；题干与提示未泄漏答案。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-04	进阶	姓名与自我介绍	Dear Sam	Dear Sam 是写信称呼 Sam 的表达；Age Sam 和 Class Sam 不成立。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-05	进阶	姓名与自我介绍、年龄与班级	my, your, name	my、your、name 与姓名表达相关；其余选项包含年龄或学校信息词。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-06	进阶	姓名与自我介绍、年龄与班级	name 表示“名字”	name 表示“名字”；其他选项把它错配成年级或班级。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-07	进阶	姓名与自我介绍	你的名字	your 表示“你的”，name 表示“名字”；正确合义为“你的名字”。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-08	进阶	年龄与班级	年龄相关	结合 How old are you? 判断 old 与年龄有关，而不是姓名或班级名称。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-09	进阶	年龄与班级	age=年龄；class=班级	age=年龄、class=班级；其余选项将词义交叉错配。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-10	进阶	姓名与自我介绍、年龄与班级	How old are you?	How old are you? 询问年龄；My name is Amy. 介绍姓名；Dear Amy 是称呼。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-11	进阶	年龄与班级	grade 表示“年级”	grade 表示“年级”；另外两项把它错解释为年龄或名字。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-12	进阶	年龄与班级	age, old, year	age、old、year 都与年龄/年数语境相关；my、your、name、dear 属于姓名表达。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-13	进阶	年龄与班级	class	class 表示“班级”；grade 是“年级”，age 是“年龄”。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-advanced-14	进阶	年龄与班级	year	year 表示“年”；name 和 your 分别表示名字及“你的”。	选项互异；题干与提示未直接出现正确选项	作者自审通过
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-01	高阶	姓名与自我介绍、年龄与班级	句子介绍姓名 Amy；年龄 8 来自信息卡	句子直接介绍 Amy 的姓名，年龄 8 仅来自卡片；两类信息来源区分正确。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-02	高阶	年龄与班级	年龄；9 岁	How old are you? 询问年龄；Age: 9 对应 9 岁，未把姓名或班级混入。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-03	高阶	姓名与自我介绍、年龄与班级	Name=姓名；Age=年龄	按 My name is Amy. 与 Age: 8 核对栏目；Name/Age 的正确对应唯一。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-04	高阶	姓名与自我介绍	my=我的；your=你的；my 指说话者，your 指听话人	核对 my/your 的指向；本题聚焦姓名与称呼知识点。	选项互异；仅使用本单元已学的姓名句型、年龄问句和称呼；题干与提示未泄漏答案。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-05	高阶	姓名与自我介绍、年龄与班级	My name is Amy. → How old are you?	按交流目的先自我介绍姓名、再询问年龄；顺序与已教两句一致。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-06	高阶	姓名与自我介绍、年龄与班级	Amy—姓名；8—年龄；2—班级	按 Name、Age、Class 三个标签核对数据，三项一一对应。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-07	高阶	姓名与自我介绍、年龄与班级	you 指 Amy；Sam 想了解她的年龄	对话对象是 Amy，How old are you? 询问年龄；Age: 8 与问句目标相符。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-08	高阶	姓名与自我介绍、年龄与班级	姓名 Li Ming；年龄 9；年级 3；班级 2	核对 Name/Age/Grade/Class 标签；四类数据没有错位。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-09	高阶	年龄与班级	you 指 Amy；问句询问她的年龄	依据对话对象确定 you 指 Amy，并依据 How old 判断问句询问年龄。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-10	高阶	姓名与自我介绍、年龄与班级	姓名是 Ben；年龄需查看信息卡	My name is Ben. 只提供姓名；题面另给的 Age 信息不冒充句子内容。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-11	高阶	年龄与班级	old 与年龄有关；year 表示“年”	对照已教 How old are you? 与 year 词义；年龄主题和时间单位解释正确。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-12	高阶	姓名与自我介绍、年龄与班级	姓名 Ben；年龄 9；班级 2	句子只提供姓名，Age/Class 卡片提供另外两项；字段和数值对应正确。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-13	高阶	姓名与自我介绍、年龄与班级	my=我的；name=名字；Age 属于年龄主题	逐项核对 my、name 与 Age 的词义/信息类别；组合解释一致。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）
+challenge-question:challenge-supplement-grade-3-term-1-english-unit-01-high-14	高阶	姓名与自我介绍、年龄与班级	句子介绍姓名 Li Ming；卡片记录年龄 9 岁和 3 班	区分 My name is Li Ming. 直接表达与 Age/Class 卡片信息；三项对应正确。	仅使用本单元已教的姓名自我介绍句型（My name is …）、年龄问句（How old are you?）和个人信息词汇；选项互异，未引入其他英语句型。	本次内容复核通过（未独立教育者复核）

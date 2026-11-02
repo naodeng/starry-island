@@ -1,0 +1,1503 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6798f5a06992acc2160265483021455223870021aec97a287bb3655008eecdd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "56cc21b826ef0d0682a4c6538e8686be0cc426759535a97216be4f6ed0206f16",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70fc38596b2a331aa3ebc93599ce7fedc5fa76aad6fb22cbe2c705cb71efb6dc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "76a6b7a8c87db1014ecf1dd8d3714492c3b2e4cc83b34d2eea0ae5ab94a98557",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a13c2e6534a55354acea8e852644a77f18bd58ea89a7393ff067e35834ea7bd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "487c89bb790f5cc85d68c9bbbd8166f86e913f04b1d7fb08da4dc83f7054aad7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d004a462bb5ce1af9899a8024881d7f9803eab3fb64d58756a66413338d8ed2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2ff53017b1611d4687eadf204fbe7153eba7dca1eee7a86f23a0924d7b664cbc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2d3caba42dcedd21b6ff8b5106f6e822d2970079e750340d9f5c498f0fdcb58a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3972fcb8bbe2a0b1ba2902066d4df6ffe98f5317153bdbb6788e0c22ebd4532",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "94b3b5b1efa9d3cb53f8eb6b1ef2c08f7ac09ff98141ecf6e76e056d76ec1497",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e37cc7d097864fe7cd07a97099e72b816779f9c32207c027fe984d668c66f2e2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "826729b2632906d1bc26aa07c425be5f59ba1032b035d7ca65f505ffa50c2c5f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a46d4a83bba4f82284425b369e210cf4532ecd52c43def3b7b74742cc9111f72",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d54ca07d3cc5baf3f9b90b3d34286ba18bafa6e98f0f2dcd28df7c43cbfbe525",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "05f19b4e99efc05ad2d242c72a4f58f13b386f404f4bb9979e5834cc82845ca9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f1806bdfbb220bbde30e949ffb83d388714c45334a57602c11abed2504d33fa",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d9340df6977ee51e8da2070b840642d5f2240e7394cbab8b4f01102193800bb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9cffe2589572fd3310e3c1a070f1afcb4434def81d9136ec90e39c4d28c4e6ca",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference",
+        "spring-poetry-imagery"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8e208fe8325fa644074fbc5dc53ca9b147ff05094a1ca5e6ca18a526ca148816",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "88ad5194bc186353c5046b7490a37522b9c65d18587a0b32e5f3dfc62aeae6af",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "389603022462244de04ab7b47ba6c7662a9de47cd4f682102db4d3607e4fd392",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f9305027a5253b1ad802100b5581e628404d7bc13d1ecea1baf4b092b2c52a2c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "576e5defd10cf72faddbf82270a7668c18fe1834fd5a00e089de623ee5ffd8c9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "303ece8297fd5d49aed338b73f7a4c5231a728f804197c9d28614b4961c69fdd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c5980e5024d63c7cf75abaf144cb45d97f34cdf637b7e724669962d913036390",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bcac15458d8939f4c4673792c06fb25a597c8ec328b2533cc705331bb687379e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e743a30f90922a442d829dc17950baaa0577defd5fd122ebd3756448de2ca4e1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c4f7489aa688eb514bac5f24307ec927cae56fd91ff3118b1dcc8e79be1ab3f4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4062fabe65777e399ac5755f52b85051f84ed7750df3875241f0dcc58a9c3710",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d2b1ee2efc1334e9ab8f3c0ec7630bcfa49a2694344e985fc2c81bc8e2b76a7c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "367a620f20f73b84aace6d90671dd1f7c623ee1c464175f449d138278d4f6eac",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "030a60c45590ee5fb20b5069d601e7601c9c812b26e6c3786975091e411a3a32",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6a4b7b01038e64188f46712ed4ed03b803568a26f7d7706f594dbc48728a5539",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9d02e71bfbffe2d2aefe44ec32b564ab3b2e8e8a7322550bc4a3b96da5483fed",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "595a396ef0ceb1ac0e6df6068e481a5fb53f65716d1d3569f1444028cf8d8159",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b9f0520945a93fb6ce3b493b577eb96305e31bc5488c73da4fad7a339e65ef04",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-facts-and-inference",
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "182b4738aad352ab85ed0b8e974814422f52e5143aa4f8faf442da72d3b5327f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9717658d2d01495d100c8b6d8e5c0446075d53245f81fec8c7e5276ab9511725",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "887598e230c4ecf09a4af648d1323240d4e857846bf0da4424cbadf4801cc382",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7b14b83e106e22311ceabbdc06f2902bdfb039387a99b2fcaeb08adf7affc50",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2f10eca74eec8efe87d131834716b156273e4ea9a2786c11fdd968700fead7f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fda9a8a5177e8eac16d91a440f13299a55d79a02b9d9150629d093c6b9415a0e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "72550c35d96a0fa16c4adb002c2e07a3266093e0caf8454d74c8fb34d40f39f9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f52be141b36407a4bae71879d12c80ca610937c3608fe87657aba44272ab4e98",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e97eb95e2a965d14d1eddd7127bcbcff68cd6b99b58f19444b30b849eefc1673",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "387d6656e1f50b3c19904efcd0d55a1079909a316061ed137e631bc387214564",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-facts-and-inference",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "19029aeff47c65b242b189473283ab13ab9447df2a77fb085e5a35b6844d8850",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "spring-poetry-imagery"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff224accafffe135b8988aa27b53296b99a4d84b5c65f8ef1a3aec5fc297cad6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5182343ffc5d753ccd9cc9bd0400d4250426baf6e55760c610ee2a2733c60110",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "92c8ed6bb41e96bfcaeea0165df02ca171cff1e82bbe7064c5ec5df92a6fc5e0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "478f82823aa6e3e076b380ff10e51951b1c34db4283d3a3462818607c145ace1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8b206f2d8bdc3508879f177fc1e8de9f5678b1e57b822c2f31b7ccd5954b023b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8596fa7d5d9d38598b16864d7f7fb0c5e165329f0d435602f9067192d3c6202e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "observation-facts-and-inference",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "62b2f19d92c8ec89b98e02cfc61e20b8d5314b5b41e4d41766a2484deab17798",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2981c4902628098bb21e2dd69e3b3bb63d30d4e35f34c4cd13048fd93b6c1ae4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5c45a6f74e67b93868f2724d53b1703e43e76f7eb944decf4b9d776c87707274",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "18f70440a9c0fe224b3474c07b860ad7b4f9a5e64f92969bca4cd03daceda378",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2503c5021ce774120833e911c20d88d08cdec24237ed272dc0e3c6aa9ac95e82",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "b6c92c340854124372b978db5af92798b9a65faef15972fae799531628acf87d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "48eb27465b464e9810d1d41d82a71e7d672ffda608291093c632b51a32339628",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8eae9ea0301fef525e235dc310a1b22b1cbffe88108e309b5637385d22220347",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "326ca4ac7886d20a0501a3dbe6bb8ea46db0c7ddfdd526fce5c98a8a12005dee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3bcb97bdcec2deab446fc9588b8a9ac4c2e264dfab9c98bbcdbdad852ef1c947",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8d6b8c042e13175190dce66ff3a503dae0ceb997267cd75c7c4de370bac47389",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-facts-and-inference",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "475ced846457551bf2ab222bcafc05ba6b93ca99ee7c70ca6fc6280c55f18fbd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dcd99c9774fb82c7f2a9061b22288e44bc7e1202c15bfa499b5aa321dce99f2d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence",
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "64675c359e10b084171677bcd9c40f6b0ed15f97c2101ea9f3f8483de7bad899",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5f7c000233270757179abc10a4586e254dcb440ad7fc538283b961fad0fbb2d6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "70ca0a4856cbc7eae73319e1ceb74acab9ed32f629fe369c30253cdb9fb45286",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-facts-and-inference",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d94a1e1fc9a25163745f5759fa8cfa215d6f91b9219d3beb1ec7a4bec58befb5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-poetry-imagery",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7fc2d3848d1075e3bbfc227b5cad3935c1ac466d0d6e2022b13fd7259ff06160",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d15a220bc837b55067a5d28b45b3d335997cf205d030c1820bd5255f5648d1b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eeef41e77442262a5c1d32705de95fd59211e618c3906cc0cd28a5ba8672ec46",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "spring-poetry-imagery"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6bc9038c0cb371f3e0d43566dcef2c12320cb1bc92dfd5dc85e8a61f5678d057",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e1dbdcd34c581e00218892f6da98b5d40fd7d825f0a3efa3b2c3875047281b8f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-01",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4a62a1df034ea5eb82c3c53ff44832b3b689789c2a21211672eee4dc41b3486f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-02",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-facts-and-inference",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8916208aeffaa296643ea246227330baf47b01d2f9551a09c21a277ac531896",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-03",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "75e490e3967596915c9d4b69ae2263a9edc70ac8a89ff355c6fd7f37ead405fd",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-04",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference",
+        "spring-poetry-imagery"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a489995a2ac7985d54b6a6154d82c679a918b8ed49fff6af6e0338781dfcaa06",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-05",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence",
+        "planting-sequence-and-care"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "36c8787e7c2628710cc8d84af14eed74983a73865476b33763389b1896016e4a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-06",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "plant-growth-recording",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ed6475bbcfd0903b84eaaf0a77ba52f2a286b0b8e256c2a89058ad6c3c3a46df",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-07",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "44e3e25ba93be04de3d3dd914f404e8bce3249a89e0a1cc63c35a1c7c6debc71",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-08",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6587f12d28d36f7c359a2cdd70e7716ebd94e8ea65dda0a91e29073c1d753904",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-09",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "observation-facts-and-inference",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a3c2bd0f686e105fc8b7b7a67ab015fc126ce0d4ad81eae921c91b3eba641aad",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-10",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "sharing-kindness-and-consequence",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7dfd9dd3c1b90684b73bacebbcf6d9ced05780d117a77184c9aa047bfb2c4f41",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-11",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "12706237223da6e36bd8680f759c12b373a1d9f6abc275302fa6f74209e07c80",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-12",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference",
+        "sharing-kindness-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5e7fdabeb9cf46a757e3c00718200ddece7fb0197ad2ef647f569c08b7167f33",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-13",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "planting-sequence-and-care",
+        "sharing-kindness-and-consequence",
+        "observation-facts-and-inference"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7386f383b85cd99a239ef4853c6ad3eb0c91e2b9b00afd8568ec7c4c964b97ee",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-14",
+      "activityId": "challenge-supplement-grade-2-term-2-chinese-unit-01-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "spring-sensory-observation",
+        "observation-facts-and-inference",
+        "plant-growth-recording"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "65a9f6b8e8eb11472c757ebca55f6203fdd5b34a6ff9c0f67d6f386cff0f1820",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-2-chinese-unit-01",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 2,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-2/chinese/unit-01"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-2/chinese/unit-01"
+        ],
+        "coreKnowledgePointIds": [
+          "spring-sensory-observation",
+          "spring-poetry-imagery",
+          "observation-facts-and-inference",
+          "plant-growth-recording",
+          "sharing-kindness-and-consequence",
+          "planting-sequence-and-care"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#二年级下册; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-2/chinese/unit-01/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应二年级下册第一单元“春天来了”，按课程 sourceTopics 映射春日观察、诗画表达、分享善意和植树劳动。教材目录依据仓库固定 TapXWorld 回退快照，不表示采用人教社 2025 修订版。保留原 48 道课程活动及六个学习 Task，另新增 42 道原创选择题；未改课程内容和学习进度。"
+        },
+        "tasks": [
+          {
+            "id": "grade-2-term-2-chinese-unit-01/basic-01",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "spring-sensory-observation",
+              "spring-poetry-imagery",
+              "observation-facts-and-inference"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-01/basic-02",
+            "difficulty": "basic",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "plant-growth-recording",
+              "sharing-kindness-and-consequence",
+              "planting-sequence-and-care"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-01/advanced-01",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "spring-sensory-observation",
+              "observation-facts-and-inference",
+              "plant-growth-recording"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-01/advanced-02",
+            "difficulty": "advanced",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "spring-poetry-imagery",
+              "observation-facts-and-inference",
+              "sharing-kindness-and-consequence",
+              "planting-sequence-and-care"
+            ]
+          },
+          {
+            "id": "grade-2-term-2-chinese-unit-01/high-01",
+            "difficulty": "high",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "spring-sensory-observation",
+              "spring-poetry-imagery",
+              "observation-facts-and-inference",
+              "plant-growth-recording",
+              "sharing-kindness-and-consequence",
+              "planting-sequence-and-care"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-01/basic/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-basic-14",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-01/advanced/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-advanced-14",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-2/chinese/unit-01/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-2-chinese-unit-01-high-14"
+      ]
+    }
+  ]
+}

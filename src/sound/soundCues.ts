@@ -10,6 +10,25 @@ export const SOUND_CUE_ASSETS: Record<SoundCue, string> = {
   'interaction-click': '/audio/interaction-click.mp3',
 };
 
+export const ANSWER_PRAISE_ASSETS = [
+  SOUND_CUE_ASSETS['answer-correct'],
+  SOUND_CUE_ASSETS['answer-streak'],
+  ...Array.from({ length: 11 }, (_, index) => `/audio/answer-praise-${String(index + 1).padStart(2, '0')}.mp3`),
+];
+
+export function getSoundCueAsset(
+  cue: SoundCue,
+  previousPraiseAsset: string | null,
+  random: () => number = Math.random,
+): string {
+  if (cue !== 'answer-correct' && cue !== 'answer-streak') return SOUND_CUE_ASSETS[cue];
+  const choices = previousPraiseAsset && ANSWER_PRAISE_ASSETS.length > 1
+    ? ANSWER_PRAISE_ASSETS.filter((asset) => asset !== previousPraiseAsset)
+    : ANSWER_PRAISE_ASSETS;
+  const index = Math.floor(random() * choices.length);
+  return choices[index] ?? SOUND_CUE_ASSETS[cue];
+}
+
 export interface AnswerSoundFeedback {
   cue: SoundCue;
   consecutiveCorrectCount: number;

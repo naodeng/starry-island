@@ -3,29 +3,28 @@ import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon, SettingsIcon, StarIcon } from 'naive-icons';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CatalogUnitEntry, SubjectId } from '../../content/types';
-import type { LearningPosition } from '../../achievements/position';
 import type { ProgressState } from '../../storage/progress';
 import { getUnitPath } from '../../app/router';
-import { COMPANION_IDS, COMPANION_PROFILES } from '../mascots/CompanionAvatar';
-import CompanionAvatar from '../mascots/CompanionAvatar';
 import HeroGuide from '../mascots/HeroGuide';
-import AchievementSummary from '../achievements/AchievementSummary';
-import SettingsDialog from '../settings/SettingsDialog';
-import CourseBreadcrumbs from './CourseBreadcrumbs';
+import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
+import EmptyState from '../shared/EmptyState';
 
 interface CourseCatalogProps {
   progress: ProgressState;
   onNavigate: (path: string) => void;
-  onApplyLearningStart: (position: LearningPosition) => void;
 }
 
-export default function CourseCatalog({ progress, onNavigate, onApplyLearningStart }: CourseCatalogProps) {
-  const initialGrade = curriculumManifest.grades.find((entry) => entry.id === `grade-${progress.learningStart?.grade}`) ?? curriculumManifest.grades[0];
-  const initialTerm = initialGrade?.terms.find((entry) => entry.id === `term-${progress.learningStart?.term}`) ?? initialGrade?.terms[0];
-  const [subjectId, setSubjectId] = useState<SubjectId>('chinese');
+export default function CourseCatalog({ progress, onNavigate }: CourseCatalogProps) {
+  const savedSelection = loadCourseSelection();
+  const initialGrade = curriculumManifest.grades.find((entry) => entry.id === savedSelection?.gradeId)
+    ?? curriculumManifest.grades.find((entry) => entry.id === `grade-${progress.learningStart?.grade}`)
+    ?? curriculumManifest.grades[0];
+  const initialTerm = initialGrade?.terms.find((entry) => entry.id === savedSelection?.termId)
+    ?? initialGrade?.terms.find((entry) => entry.id === `term-${progress.learningStart?.term}`)
+    ?? initialGrade?.terms[0];
+  const [subjectId, setSubjectId] = useState<SubjectId>(savedSelection?.subjectId ?? 'chinese');
   const [gradeId, setGradeId] = useState(initialGrade?.id ?? 'grade-2');
   const [termId, setTermId] = useState(initialTerm?.id ?? 'term-1');
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const courseSelectionRef = useRef<HTMLDivElement>(null);
   const grade = curriculumManifest.grades.find((entry) => entry.id === gradeId) ?? curriculumManifest.grades[0];
   const term = grade?.terms.find((entry) => entry.id === termId) ?? grade?.terms[0];
@@ -50,17 +49,6 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
     if (unit.status === 'active') onNavigate(getUnitPath(unit.curriculumUnitKey!));
   }
 
-  function applyLearningStart(position: LearningPosition) {
-    const nextGrade = curriculumManifest.grades.find((entry) => entry.id === `grade-${position.grade}`);
-    const nextTerm = nextGrade?.terms.find((entry) => entry.id === `term-${position.term}`);
-    if (nextGrade && nextTerm) {
-      setGradeId(nextGrade.id);
-      setTermId(nextTerm.id);
-      setSubjectId(nextTerm.subjects.find((entry) => entry.id === 'chinese')?.id ?? nextTerm.subjects[0]?.id ?? 'chinese');
-    }
-    onApplyLearningStart(position);
-  }
-
   function focusCourseSelection() {
     const target = courseSelectionRef.current;
     if (!target) return;
@@ -73,24 +61,14 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
     <main className="catalog-page">
       <div className="catalog-shell">
         <div className="catalog-topbar">
-          <CourseBreadcrumbs items={[{ label: '课程目录' }]} onNavigate={onNavigate} />
-          <Button type="default" className="catalog-settings-button" icon={<SettingsIcon size={18} aria-hidden="true" />} onClick={() => setSettingsOpen(true)}>
+          <Button type="default" className="catalog-settings-button" icon={<SettingsIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/settings')}>
             设置
           </Button>
         </div>
         <header className="catalog-hero">
           <div className="catalog-hero-copy">
             <div className="catalog-brand-lockup">
-              <h1 className="catalog-brand-heading">
-                <img
-                  className="catalog-brand-logo"
-                  src="/assets/brand/starry-island-logo-512.png"
-                  alt="星岛学园 · Starry Island"
-                  width="512"
-                  height="512"
-                  fetchPriority="high"
-                />
-              </h1>
+              <h1 className="catalog-brand-heading">课程目录</h1>
               <div className="catalog-hero-message">
                 <div className="catalog-current-route">
                   <span className="catalog-current-route-symbol" aria-hidden="true"><StarIcon size={17} /></span>
@@ -123,23 +101,22 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
           </div>
           <aside className="catalog-hero-crew" aria-label="学习伙伴小队">
             <p className="catalog-hero-crew-heading">星岛伙伴 · 一起探索</p>
-            <div className="companion-roster" aria-label="四位学习伙伴">
-              {COMPANION_IDS.map((id) => (
-                <div className="companion-roster-member" key={id}>
-                  <CompanionAvatar id={id} size="small" />
-                  <span>{COMPANION_PROFILES[id].name}</span>
-                </div>
-              ))}
-            </div>
             <HeroGuide mood="welcome" subject={subject.id} companionId={guideId} compact />
-            <AchievementSummary
-              compact
-              completedSessionIds={progress.completedSessionIds}
-              learningStart={progress.learningStart}
-              onNavigate={onNavigate}
-            />
           </aside>
         </header>
+
+        <section className="catalog-challenge-entry" aria-labelledby="challenge-entry-heading">
+          <Card className="catalog-challenge-entry-card" color="default">
+            <div>
+              <p className="eyebrow">独立闯关 · 记录保存在本机</p>
+              <h2 id="challenge-entry-heading">准备好检验自己的学习成果了吗？</h2>
+              <p>每道题只提交一次答案，完成后可以查看得分和讲解。</p>
+            </div>
+            <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/challenges')}>
+              进入闯关中心
+            </Button>
+          </Card>
+        </section>
 
         <section className="catalog-section" aria-labelledby="subject-heading">
           <div className="catalog-section-heading">
@@ -153,7 +130,10 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
                   key={entry.id}
                   type={subject.id === entry.id ? 'primary' : 'default'}
                   aria-pressed={subject.id === entry.id}
-                  onClick={() => setSubjectId(entry.id)}
+                  onClick={() => {
+                    setSubjectId(entry.id);
+                    saveCourseSelection({ gradeId: grade.id, termId: term.id, subjectId: entry.id });
+                  }}
                 >
                   {entry.title}
                 </Button>
@@ -177,9 +157,14 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
                 onChange={(value) => {
                   const nextGrade = curriculumManifest.grades.find((entry) => entry.id === value);
                   if (!nextGrade) return;
+                  const nextTerm = nextGrade.terms[0];
+                  const nextSubject = nextTerm?.subjects[0];
+                  const nextTermId = nextTerm?.id ?? 'term-1';
+                  const nextSubjectId = nextSubject?.id ?? 'chinese';
                   setGradeId(nextGrade.id);
-                  setTermId(nextGrade.terms[0]?.id ?? 'term-1');
-                  setSubjectId(nextGrade.terms[0]?.subjects[0]?.id ?? 'chinese');
+                  setTermId(nextTermId);
+                  setSubjectId(nextSubjectId);
+                  saveCourseSelection({ gradeId: nextGrade.id, termId: nextTermId, subjectId: nextSubjectId });
                 }}
               />
             </label>
@@ -193,7 +178,9 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
                   const nextTerm = grade.terms.find((entry) => entry.id === value);
                   if (!nextTerm) return;
                   setTermId(nextTerm.id);
-                  setSubjectId(nextTerm.subjects[0]?.id ?? 'chinese');
+                  const nextSubjectId = nextTerm.subjects[0]?.id ?? 'chinese';
+                  setSubjectId(nextSubjectId);
+                  saveCourseSelection({ gradeId: grade.id, termId: nextTerm.id, subjectId: nextSubjectId });
                 }}
               />
             </label>
@@ -203,55 +190,53 @@ export default function CourseCatalog({ progress, onNavigate, onApplyLearningSta
               英语预备级是否属于学校本学期实际开设课程，请以学校安排为准。
             </p>
           ) : null}
-          <div className="unit-grid">
-            {subject.units.map((unit) => {
-              const active = unit.status === 'active'
-                && curriculumManifest.textbooks[unit.textbookEditionId]?.verificationStatus === 'verified';
-              return (
-                <Card
-                  key={unit.id}
-                  className={`unit-card ${active ? 'unit-card-active' : 'unit-card-soon'}`}
-                  color="default"
-                  aria-label={`${unit.title}${active ? '' : '，筹备中'}`}
-                >
-                  <div className="unit-card-topline">
-                    <span className="unit-number">
-                      {unit.formalUnitNumber !== null
-                        ? `UNIT ${String(unit.formalUnitNumber).padStart(2, '0')}`
-                        : unit.type === 'review' ? '复习站' : unit.type === 'theme' ? '主题组' : '实践站'}
-                    </span>
-                    <span className={`unit-status ${active ? 'is-active' : 'is-soon'}`}>{active ? '可以出发' : '筹备中'}</span>
-                  </div>
-                  <h3>{unit.title}</h3>
-                  {active ? (
-                    <>
-                      <p>{subject.id === 'chinese' ? '识字、阅读与表达小游戏' : subject.id === 'math' ? '测量、运算与思维小游戏' : '单词、表达与语言小游戏'}</p>
-                      <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => openUnit(unit)}>进入单元</Button>
-                    </>
-                  ) : (
-                    <p className="coming-soon-copy">这座学习小岛正在准备中，过一段时间再来看看吧。</p>
-                  )}
-                </Card>
-              );
-            })}
-          </div>
-          {!subject.units.length ? <p className="catalog-empty-note">这个学期的{subject.title}课程正在核对教材版本，准备好后就会开放。</p> : null}
+          {subject.units.length ? (
+            <div className="unit-grid">
+              {subject.units.map((unit) => {
+                const active = unit.status === 'active'
+                  && curriculumManifest.textbooks[unit.textbookEditionId]?.verificationStatus === 'verified';
+                return (
+                  <Card
+                    key={unit.id}
+                    className={`unit-card ${active ? 'unit-card-active' : 'unit-card-soon'}`}
+                    color="default"
+                    aria-label={`${unit.title}${active ? '' : '，筹备中'}`}
+                  >
+                    <div className="unit-card-topline">
+                      <span className="unit-number">
+                        {unit.formalUnitNumber !== null
+                          ? `UNIT ${String(unit.formalUnitNumber).padStart(2, '0')}`
+                          : unit.type === 'review' ? '复习站' : unit.type === 'theme' ? '主题组' : '实践站'}
+                      </span>
+                      <span className={`unit-status ${active ? 'is-active' : 'is-soon'}`}>{active ? '可以出发' : '筹备中'}</span>
+                    </div>
+                    <h3>{unit.title}</h3>
+                    {active ? (
+                      <>
+                        <p>{subject.id === 'chinese' ? '识字、阅读与表达小游戏' : subject.id === 'math' ? '测量、运算与思维小游戏' : '单词、表达与语言小游戏'}</p>
+                        <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => openUnit(unit)}>进入单元</Button>
+                      </>
+                    ) : (
+                      <p className="coming-soon-copy">这座学习小岛正在准备中，过一段时间再来看看吧。</p>
+                    )}
+                  </Card>
+                );
+              })}
+            </div>
+          ) : (
+            <EmptyState
+              className="catalog-empty-state"
+              title={`正在准备${subject.title}课程`}
+              description="这个学期的课程内容正在核对教材版本，准备好后就会开放。"
+              headingLevel={3}
+            />
+          )}
         </section>
         <footer className="catalog-footer">
           <span>学习靠好奇心，每次完成一点点就很棒。</span>
           <span className="footer-orbit" aria-hidden="true"><StarIcon size={22} /></span>
         </footer>
       </div>
-      <SettingsDialog
-        open={settingsOpen}
-        progress={progress}
-        onClose={() => setSettingsOpen(false)}
-        onApplyLearningStart={applyLearningStart}
-        onNavigate={(path) => {
-          setSettingsOpen(false);
-          onNavigate(path);
-        }}
-      />
     </main>
   );
 }

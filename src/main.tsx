@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client';
 import 'animal-island-ui/style';
 import './styles/theme.css';
 import './styles/global.css';
-import App from './App';
+import TextbookMigrationGate from './app/TextbookMigrationGate';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <TextbookMigrationGate />
   </React.StrictMode>,
 );

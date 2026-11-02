@@ -1,0 +1,118 @@
+.loading-state {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-width: 0;
+  text-align: center;
+}
+
+.loading-state-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  color: var(--animal-primary-color);
+}
+
+.loading-state-visual::before {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--island-border);
+  border-radius: 50%;
+  background: var(--animal-primary-color-bg);
+  content: '';
+}
+
+.loading-state-orbit {
+  position: absolute;
+  inset: 1px;
+  border: 1px dashed var(--island-mint);
+  border-radius: 50%;
+  animation: loading-state-orbit 8s linear infinite;
+}
+
+.loading-state-compass {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--animal-primary-color);
+  background: var(--animal-bg-color);
+  animation: loading-state-float 2.2s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+.loading-state-star {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  color: var(--island-sun);
+  animation: loading-state-twinkle 2.2s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+.loading-state-title {
+  max-width: 100%;
+  margin: 0;
+  color: var(--animal-text-color);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.loading-state-description {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--animal-text-color-secondary);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.loading-state-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 10px;
+}
+
+.loading-state-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--animal-primary-color);
+  animation: loading-state-dot 1.2s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+.loading-state-dots span:nth-child(2) { animation-delay: .12s; }
+.loading-state-dots span:nth-child(3) { animation-delay: .24s; }
+
+@keyframes loading-state-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes loading-state-float {
+  0%, 100% { transform: translateY(1px); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes loading-state-twinkle {
+  0%, 100% { opacity: .62; transform: scale(.92); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+@keyframes loading-state-dot {
+  0%, 60%, 100% { opacity: .45; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-state-orbit,
+  .loading-state-compass,
+  .loading-state-star,
+  .loading-state-dots span {
+    animation: none;
+  }
+}

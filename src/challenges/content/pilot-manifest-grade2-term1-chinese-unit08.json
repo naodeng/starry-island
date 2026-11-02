@@ -1,0 +1,1495 @@
+{
+  "version": "pilot-2026-10-28.1",
+  "groups": [
+    {
+      "releaseIntent": "released",
+      "definition": {
+        "id": "grade-2-term-1-chinese-unit-08",
+        "kind": "unit",
+        "grade": 2,
+        "semester": 1,
+        "subject": "chinese",
+        "sourceUnitIds": [
+          "grade-2/term-1/chinese/unit-08"
+        ],
+        "learningTaskUnitIds": [
+          "grade-2/term-1/chinese/unit-08"
+        ],
+        "coreKnowledgePointIds": [
+          "fairy-tale-story-clues",
+          "friendly-communication-repair",
+          "action-and-consequence",
+          "fact-inference-and-perspective",
+          "responsible-action-adjustment"
+        ],
+        "mappingEvidence": {
+          "source": "docs/curriculum/grade-2-textbook-inventory.md#目录映射; docs/curriculum/grade-2-question-review.tsv; src/content/grade-2/term-1/chinese/unit-08/index.ts",
+          "checkedAt": "2026-10-27",
+          "notes": "对应二年级上册第八单元“童话与成长”，主题依据固定教材清单中的《狐假虎威》《纸船和风筝》《风娃娃》和课程 sourceTopics。目录沿用项目固定 TapXWorld 回退快照，不表示采用人教社 2025 修订版。复用本单元 48 道现有学习活动并新增 42 道原创闯关题；未修改任何学习 Task。"
+        },
+        "tasks": [
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-08/basic-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fairy-tale-story-clues",
+              "fact-inference-and-perspective",
+              "action-and-consequence"
+            ]
+          },
+          {
+            "difficulty": "basic",
+            "id": "grade-2-term-1-chinese-unit-08/basic-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "friendly-communication-repair",
+              "responsible-action-adjustment"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-08/advanced-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fairy-tale-story-clues",
+              "friendly-communication-repair",
+              "action-and-consequence"
+            ]
+          },
+          {
+            "difficulty": "advanced",
+            "id": "grade-2-term-1-chinese-unit-08/advanced-02",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fact-inference-and-perspective",
+              "responsible-action-adjustment"
+            ]
+          },
+          {
+            "difficulty": "high",
+            "id": "grade-2-term-1-chinese-unit-08/high-01",
+            "targetCount": 15,
+            "requiredKnowledgePointIds": [
+              "fairy-tale-story-clues",
+              "friendly-communication-repair",
+              "action-and-consequence",
+              "fact-inference-and-perspective",
+              "responsible-action-adjustment"
+            ]
+          }
+        ]
+      },
+      "questionIds": [
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-08",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-01",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-02",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-03",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-04",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-05",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-06",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-07",
+        "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-14",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-01",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-02",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-03",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-04",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-05",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-06",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-07",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-08",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-09",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-10",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-11",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-12",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-13",
+        "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-14"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "cbcafced34d3403015779b4136a3c17143dd6004233ba8206d073879e2bb1b11",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "8becefeb26596fc8d8237438daee91d7f1e4e60756a0c2a0c62f0b270ddfc716",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "be2508cef7977b26e80ad58b8ce1eddb83cde8be2596301eed6dd451f87b621d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f3937cfa6b900764e0ab63d0075f39f0448180ae1c6e35138cc3205aa169815f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9d5468c6c9ddd4bbb957d81033b240cfb16dfca90fb9df373df8496435c927b4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e83fad90e5aab004ffdd30211559db939f8435744aa6e5ded4bb332b341da55b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "228ad65b8a5001f2e0848609fa2ac8d56672d5812b73e7189453858b98985812",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-01/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "04f9bba0e74e5837f7662372814e0456ad703466d9c1b910ea3c82860bf0ed7f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d5eb0f487c0ce2c0e79d40a082aa2d05f315f154233f42ade66c371afe69594f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fbc51173c6fcc82b1bb0d052cf8e75b809620f6711dd7613ee24feca28ffcd67",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "eee530e87e108ba93d75255fc0b931dcc87c9af966f9b23063810f915ac29a82",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "484c1237fecbb8de917ede2969efddd5c2fa862b875472b1fbdf7df1cf22fe25",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d084afdfac6582d1efa5ecddb68b182b94376a3bf6b94e28af9907e02fca5002",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "df669d006dcb587b1cc4b7cc2a7b7df47ac1d546991a6a7e68fa517feab2b3b1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "856683c56df5da445b01020741aa2a94550b5cff845dafa242d4fcda2ac4650c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-08/basic/task-02/session-01/question-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c842d3f0c0486799afabc8b4cb578c12422d6f92e6344b20e8dc75de6c9ca146",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "474a89e726bd4e3aaa4f425f175c55705b91dbfbfdea09befc7617d57bec9fa8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "responsible-action-adjustment",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0910ca3fa9831e2a813214f1c5be08f4a856051c37946f9b11d276426fc6bc28",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d650d0309129fb895cbde4e09e053e13a46a547ac49e221b1c513fcba14ab0d2",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "efa8a286f91b51848a2977013d1066b29377ccd34423cc4f3bb6043dc4bc8846",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "bab0947de19071d5103701d9539c33ed9ec14d12cb362d31354ecdc425587bcf",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "178b31707e0e4c286f82740d46af0a2ba894b8703603609127ddbfd5f19dfd78",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d8ccf81ec3d2dd0195bf48bc23ce9f3ade303bf648ecea8ac2f429eb11652d3b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-01/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a12b077f6ca7f1a2b19d24f189c96b60261831c4da24e169d7221f92e4323d5c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a64aedb6014ffc45d0a20ed7404cea035e9c29abc087eee3858b427475207327",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "71bc175fc86df03b3d550ed5705e8d6dd927c28d2eda8155062094b45c15cf14",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "responsible-action-adjustment",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c64b69b6be4dd2aa1f02a3440ad1e79909eda1c923f6d5d156bf5c0bbe694e4",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d3693ae33e98eb7cde5a9dc7b718d80ead4e2fb78aa8d559694d1f7d95df1e46",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2cc9e839825109f01a678fc00e5ee54662c008ed17ad27914aaaaad04ddc4830",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5a8cd89c09d9a76245d053483d26623f5e1f96b5a504ab610e735bace66077de",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f67d1e84e69bb2aad008f8f6be76d786e61304d123b85a9e6ea8f4f69dcf2823",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-08/advanced/task-02/session-01/question-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "1013be531f5f91d2c3c9334a3c90f135151a7bf939984ab59a893da5cd0ec814",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "77eec4669d75c1ad7d361002eb42a28047b2b6b4456123c6ff2d4eb286ca7468",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a87e619beac29c3202b84ff1baaed03d2c05a66bb19d7f938250c910cfd0aa77",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "542f8f47e21d2e3e8f120d050a4e4e256f6df7b2b3c7c8491b81b7b4f4dfab01",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dac038de91e3adb63bc038c00e241f0f8cfca6a902ac58cfb083aa79e8bdef39",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "34007052803c008c6914524ee7837fc6a1d92ae63309f6ee86c85ac5877c08b7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff712fc05f71d75be39f503699a38d26583648069f76063554a4ac3896fa3210",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9c670d7d8d777f82c522453f172a2192c89792f47d204538823c4c032d510fea",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-01/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e759465cd33faffb5d8aca1ab1b493e4f779514125f3c5a10944f25280405ef5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-01",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c31dd97ad2b8ff193b19d4f00a632a5182b95c8dc2398abd2806e6279e099ff6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-02",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "707accbac0d449cbfc75c265f3875322eea59a46b36489f85aa120dccdbb0e27",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-03",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "532a51c2966c4d0ddb2bed85fcfca665e425a2259956f81e218701d850c199f8",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-04",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "734ca15df9ab504892603853c4f525f4b3acf0470cf30d839cf6de3564841181",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-05",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4423c44c47dd83d0c75c9ff5b5a69b523181284bd6ebb2bbda32766de19a9397",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-06",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "f473b062be7208650d61afcfe0aa36ab0366293e8d0a74be3695cff2aff87690",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-07",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6467f33b5af1853733be32e4ada7d71689c5aa2093ac6508b8dc854eeae41b1e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-08",
+      "activityId": "grade-2/term-1/chinese/unit-08/high/task-02/session-01/question-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "ff4aef5afd1087cbd4920fcdd73568a228c516bb375394e67d48a2270e54f5a6",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-01",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "621794bae3f00b0590a2b637efeaea7282cf521a9a9c2e7bc3646f0b9dd5b580",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-02",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3375abcf93a6ad9a596eec12f031a89e28af1ac04c2499502822117fe557dd90",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-03",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "86a00d01b8cd375ba8d066be1875153f0c8eb7c09f1ad38f05539cb405346a4c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-04",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "dc1fb74e2cac524045d655790b751cac96305f90c9f19e189d7c0a5522b92cd5",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-05",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2c9d35a2791615dc219295c1a6eb0419dad906d955a56507ee746ff102167262",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-06",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "67584a7dbcda12999edca5e2ec177527f52b398d5d72a2f7275dc65b0bece80f",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-07",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "7b3e6e5377cc9a6eb7fed37d3bc8fc2cf70087f4ecee3e768144bd6ae3ea01c9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-08",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5051afbe769d21d78c15a452bf534b4d2bee1fa64096eaf93930f953cac3933c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-09",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "d71a07274e426e6581f1ab17812db517555677cd73b54bb278630763f4000b91",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-10",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "responsible-action-adjustment",
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e7a7c121f91dd4722c6cd83b17d23047d3f5b4ad30cc6e38af8a3588376fd96a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-11",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "5d74e9d92a3861791fbcbb96528a695c05c504eec59741d498992f75f446bf00",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-12",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "89cffbb09a4204b8351b40942efe9c24327854c7efb4a02bf482b27aa4cd4b3b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-13",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "responsible-action-adjustment",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e42ff2606576c53410ed0c857c4c0eca4b0445db6b232f3dba94989b414282b3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-basic-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-basic-14",
+      "difficulty": "basic",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e21726bacb4fa45d9e1b2212e4604aa5b0622cc97fdf5606331dd208d39a5ee1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-01",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "c29896370dab9be7a6db79904b416a1381c0475f1b828b3a0f4b1901eaef3118",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-02",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "32f66011fdfadfe2b51cb5a578fcab96a56c5a4c8612824633dc0bf8492c5c8d",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-03",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "470e4b115585dd0ea0ef29b79c734ce4e36d3454a756f9b4eed6ec6422bd629a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-04",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "17e0e87cdede233436d46f96a7255cb672ecd75c464955111d9d464b3ffbf4cc",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-05",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e916f5c39f7e08faf3c5e4e260264c16eba2477c51e942b2746c34411ff984d9",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-06",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "4d2105d2f2e07406bce83008b9d1aa059b68f2a06603a98f5b7e002473165bb0",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-07",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "192498ee4e1c24d001386089a674f3af6ecf428d63190fa6e314d5a8a172d401",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-08",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "015c16ab3e1b34b6265e34209fa31711a1f5976f2661e2aaebf9ad6a77a4eeb1",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-09",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "09c08ef7aff51c166a8f0fc794f1f6947094187b7cc54c27cd922ac104ed2696",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-10",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "responsible-action-adjustment",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "316617b74a445a2149542d70501329b11457e39a9f19ae6ad55400034b4cbd26",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-11",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9e56f128f066d687d54c00ab869e90fb1fd2f05b577ab50967192918a98a7497",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-12",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "47a28d7c86a7dc86dd4c31c16ccdd3525656e96ab02ffb61275c07b0c4959375",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-13",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a15202958a2fccff646ccd92a7beec3fffc144dff307e3827a7401e8769e4f6e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-advanced-14",
+      "difficulty": "advanced",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "3f2d80a898bf93c6edc66eb7fe9b8f28815bf6ea3e312ba7753536ed1cf004d7",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-01",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-01",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "0f681d2ec6fdebf1c5df52a1686f2cc39073fdb5d94ef2c4d89c3d29aa1d4b82",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-02",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-02",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "82952f38148e4582a67a06ed1724853c1e0380e5d4c1d2a6f4313b20e28e036b",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-03",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-03",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "95062056de255a99a39177c2fac0c4814c966509dd5edf58cd90b751b52a331a",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-04",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-04",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "e84f3dcdeec8d8d8e4829d4512773d9ca532f84f304952178b4ab0b061094b79",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-05",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-05",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "2a1a01a62a9f9f759a49da954851d4642276c4793375f53defa7d62432c78dd3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-06",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-06",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "943492ccc48447116d8ca8af474f9c22b842cc5696dec47e7e145183a82dfca3",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-07",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-07",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "fact-inference-and-perspective"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "07bad6621f1250ad32b96dee4528ea291e8d598361ec0cac9ef323a5ff91e921",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-08",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-08",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "friendly-communication-repair"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "fc1bce35d2cb1dc18108638f4ad7568afae8802b03a458a14012f09563ff6924",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-09",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-09",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fact-inference-and-perspective",
+        "fairy-tale-story-clues"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "435b3e7c6f25dd4a9f8ed366a6f33cb6186d501584e3a921805cf8ba0efd6278",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-10",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-10",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "friendly-communication-repair",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "9887d7f7f5cdd7656c37c3eba9c59ba4c4d1e6d7728c1e08845c7e783691aa05",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-11",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-11",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "action-and-consequence",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "25b4cddbcf7e5f64c6ff8cd1edb27a79dab40540c3cef577b56bba605af7ddeb",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-12",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-12",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "fact-inference-and-perspective",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "a79017b6182042b10c6ca458de9869a8aaf2d5686eaf0153010b22b34f1d8a0e",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-13",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-13",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "responsible-action-adjustment",
+        "action-and-consequence"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "495b56359841666f21a568e5b66168b4b34c8780ceb955d42a5312f29dec1a64",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    },
+    {
+      "questionId": "challenge-question:challenge-supplement-grade-2-term-1-chinese-unit-08-high-14",
+      "activityId": "challenge-supplement-grade-2-term-1-chinese-unit-08-high-14",
+      "difficulty": "high",
+      "knowledgePointIds": [
+        "fairy-tale-story-clues",
+        "friendly-communication-repair",
+        "action-and-consequence",
+        "fact-inference-and-perspective",
+        "responsible-action-adjustment"
+      ],
+      "lifecycle": "active",
+      "approved": true,
+      "answerLeakageReviewed": true,
+      "approvedContentFingerprint": "6304dc762c77d3e310c6f5e1f6a4f0938f0bb1bf41c42f76657cb733d8022e0c",
+      "approvedBy": "Codex content-author self-review",
+      "approvedAt": "2026-10-27T00:00:00.000Z"
+    }
+  ]
+}
