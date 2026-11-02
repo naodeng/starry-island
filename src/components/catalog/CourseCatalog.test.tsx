@@ -36,30 +36,22 @@ describe('CourseCatalog', () => {
     firstVisit.unmount();
     renderCatalog();
 
-    const route = screen.getByText('当前探索航线').parentElement?.parentElement;
-    expect(route).toHaveTextContent('二年级');
-    expect(route).toHaveTextContent('下学期');
-    expect(route).toHaveTextContent('数学');
     expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('二年级');
     expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('下学期');
+    expect(screen.getByRole('button', { name: '数学' })).toHaveAttribute('aria-pressed', 'true');
   });
 
-  it('highlightsTheCurrentCourseAndLetsLearnersJumpToCourseSelection', async () => {
+  it('tracksTheSelectedCourseInControlsAndLetsLearnersSwitchSubject', async () => {
     const user = userEvent.setup();
     renderCatalog();
 
-    const route = screen.getByText('当前探索航线').parentElement?.parentElement;
-    expect(route).toHaveTextContent('一年级');
-    expect(route).toHaveTextContent('上学期');
-    expect(route).toHaveTextContent('语文');
-    expect(route).toHaveTextContent('人教版');
-
-    const selection = screen.getByRole('group', { name: '选择学习年级和学期' });
-    await user.click(screen.getByRole('button', { name: /调整课程选择/ }));
-    expect(selection).toHaveFocus();
+    expect(screen.getByRole('combobox', { name: '年级' })).toHaveTextContent('一年级');
+    expect(screen.getByRole('combobox', { name: '学期' })).toHaveTextContent('上学期');
+    expect(screen.getByRole('button', { name: '语文' })).toHaveAttribute('aria-pressed', 'true');
 
     await user.click(screen.getByRole('button', { name: '英语' }));
-    expect(route).toHaveTextContent('英语');
+    expect(screen.getByRole('button', { name: '英语' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('button', { name: '语文' })).toHaveAttribute('aria-pressed', 'false');
   });
 
   it('offersRegistryDrivenGradeAndTermControls', () => {
@@ -79,7 +71,7 @@ describe('CourseCatalog', () => {
     expect(document.querySelector('.catalog-brand-logo')).toBeNull();
     expect(document.querySelector('.companion-roster')).toBeNull();
     expect(screen.queryByRole('button', { name: '成就详情' })).not.toBeInTheDocument();
-    expect(screen.getByText('当前探索航线')).toBeInTheDocument();
+    expect(screen.queryByText('当前探索航线')).not.toBeInTheDocument();
     expect(screen.getByText('云岛号 · 学习伙伴')).toBeInTheDocument();
   });
 
@@ -111,14 +103,10 @@ describe('CourseCatalog', () => {
     expect(onNavigate).toHaveBeenCalledWith('/challenges');
   });
 
-  it('navigatesToDedicatedSettingsInsteadOfOpeningAModal', async () => {
-    const user = userEvent.setup();
-    const onNavigate = vi.fn();
-    renderCatalog(onNavigate);
+  it('doesNotDuplicateTheGlobalSettingsEntry', () => {
+    renderCatalog();
 
-    await user.click(screen.getByRole('button', { name: '设置' }));
-
-    expect(onNavigate).toHaveBeenCalledWith('/settings');
+    expect(screen.queryByRole('button', { name: '设置' })).not.toBeInTheDocument();
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
@@ -130,7 +118,7 @@ describe('CourseCatalog', () => {
     expect(screen.getAllByRole('button', { name: /进入单元/ })).toHaveLength(8);
     expect(screen.queryByText('筹备中')).not.toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: '数学' }));
-    expect(screen.getByText('数学', { selector: '.catalog-route-subject' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '数学' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.queryByText('筹备中')).not.toBeInTheDocument();
     expect(screen.getAllByRole('button', { name: /进入单元/ })).toHaveLength(10);
     expect(onNavigate).not.toHaveBeenCalled();

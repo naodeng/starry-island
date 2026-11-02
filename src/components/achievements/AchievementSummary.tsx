@@ -27,7 +27,7 @@ export default function AchievementSummary({ completedSessionIds, learningStart,
           <span
             className="achievement-summary-symbol"
             aria-hidden="true"
-            style={{ background: `conic-gradient(var(--island-mint) ${rankProgress}%, var(--island-border) ${rankProgress}% 100%)` }}
+            style={{ background: /* taste-skill-ignore: conic fill encodes rank progress. */ `conic-gradient(var(--island-mint) ${rankProgress}%, var(--island-border) ${rankProgress}% 100%)` }}
           >
             <span>{completedCount}</span>
           </span>

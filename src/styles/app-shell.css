@@ -99,7 +99,7 @@
   border-radius: 24px 0 0 24px;
   color: var(--animal-text-color);
   background: var(--animal-bg-color);
-  box-shadow: -14px 0 38px rgba(24, 43, 31, .2);
+  box-shadow: -14px 0 38px rgba(24, 43, 31, .2) /* taste-skill-ignore: drawer overlay separation. */;
   animation: app-navigation-drawer-in .22s cubic-bezier(.4, 0, .2, 1) both;
 }
 
