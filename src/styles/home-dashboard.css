@@ -91,7 +91,7 @@
   line-height: 1.65;
 }
 
-.home-continue-copy p { color: var(--animal-text-color-secondary); }
+.home-continue-copy p { color: var(--animal-text-color); }
 
 .home-continue-panel > button { flex: 0 0 auto; }
 .home-loading-copy { color: var(--animal-text-color-secondary); }

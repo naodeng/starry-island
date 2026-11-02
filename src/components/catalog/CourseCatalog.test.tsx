@@ -163,7 +163,7 @@ describe('CourseCatalog', () => {
     expect(screen.getByText('第一单元 · Classroom')).toBeInTheDocument();
   });
 
-  it('labels unnumbered textbook themes as theme groups', async () => {
+  it('doesNotRepeatTheThemeGroupLabelAboveItsTitle', async () => {
     const user = userEvent.setup();
     renderCatalog();
 
@@ -172,6 +172,7 @@ describe('CourseCatalog', () => {
     await user.click(screen.getByRole('combobox', { name: '学期' }));
     await user.click(await screen.findByRole('option', { name: '下学期' }));
 
-    expect(screen.getByText('主题组', { selector: '.unit-number' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /古诗词诵读 ·/ })).not.toHaveTextContent('主题组');
+    expect(screen.queryByText('主题组', { selector: '.unit-number' })).not.toBeInTheDocument();
   });
 });

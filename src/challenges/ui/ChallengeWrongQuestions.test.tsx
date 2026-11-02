@@ -57,7 +57,7 @@ describe('ChallengeWrongQuestions', () => {
     render(<ChallengeWrongQuestions records={[]} onNavigate={onNavigate} />);
 
     expect(screen.getByRole('status')).toHaveTextContent('错题本还是空的');
-    expect(screen.getByRole('status')).toHaveTextContent('完成挑战后，答错的题会出现在这里；答对两次后会标记为已掌握。');
+    expect(screen.getByRole('status')).toHaveTextContent('还没有需要回看的题目，完成一场挑战后，错题会显示在这里。');
     fireEvent.click(screen.getByRole('button', { name: '返回闯关中心' }));
     expect(onNavigate).toHaveBeenCalledWith('/challenges');
   });

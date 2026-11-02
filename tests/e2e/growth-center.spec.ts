@@ -16,12 +16,16 @@ test('keeps course growth and challenge growth in separate views', async ({ page
   await expect(page.getByRole('region', { name: '最近闯关活动' })).toHaveCount(0);
 
   await page.getByRole('tab', { name: '学习星图' }).click();
-  await expect(page.getByRole('heading', { name: '每完成一点，星岛就亮一点' })).toBeVisible();
-  await expect(page.locator('.exploration-zone')).toHaveCount(12);
+  await expect(page.getByRole('heading', { name: '本学期星区' })).toBeVisible();
+  await expect(page.getByRole('tab', { name: '一年级', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.exploration-zone')).toHaveCount(1);
+  await page.getByRole('tab', { name: '二年级', exact: true }).click();
+  await expect(page.getByRole('tab', { name: '二年级', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.exploration-zone')).toHaveCount(1);
   await expect(page.getByRole('region', { name: '闯关成长摘要' })).toHaveCount(0);
 
   await page.getByRole('tab', { name: '闯关成长' }).click();
-  await expect(page.getByRole('heading', { name: '闯关成长记录', level: 2 })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '闯关累计', level: 2 })).toBeVisible();
   await expect(page.getByRole('heading', { name: '各路线进度' })).toBeVisible();
   await expect(page.getByRole('region', { name: '学习星图' })).toHaveCount(0);
 });
@@ -29,9 +33,9 @@ test('keeps course growth and challenge growth in separate views', async ({ page
 test('keeps both historical growth links on their original views', async ({ page }) => {
   await page.goto('/achievements');
   await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
-  await expect(page.getByRole('heading', { name: '每完成一点，星岛就亮一点' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '本学期星区' })).toBeVisible();
 
   await page.goto('/challenges/growth');
   await expect(page.getByRole('tab', { name: '闯关成长' })).toHaveAttribute('aria-selected', 'true');
-  await expect(page.getByRole('heading', { name: '闯关成长记录', level: 2 })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '闯关累计', level: 2 })).toBeVisible();
 });

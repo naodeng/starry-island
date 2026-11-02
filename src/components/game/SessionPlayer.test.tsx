@@ -85,13 +85,13 @@ describe('SessionPlayer', () => {
     expect(screen.getByRole('heading', { level: 2, name: session.activities[1]!.prompt })).toHaveFocus();
 
     for (let index = 1; index < session.activities.length - 1; index += 1) {
-      expect(screen.getByText(`挑战 ${index + 1} / 8`)).toBeInTheDocument();
+      expect(screen.getByText(`第 ${index + 1} / 8 题`)).toBeInTheDocument();
       await user.click(screen.getByRole('button', { name: `正确选项 ${index + 1}` }));
       await user.click(screen.getByRole('button', { name: '提交答案' }));
       await user.click(screen.getByRole('button', { name: /^继续下一题/ }));
     }
 
-    expect(screen.getByText('挑战 8 / 8')).toBeInTheDocument();
+    expect(screen.getByText('第 8 / 8 题')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: '正确选项 8' }));
     await user.click(screen.getByRole('button', { name: '提交答案' }));
     const finishButton = screen.getByRole('button', { name: /^完成本场/ });

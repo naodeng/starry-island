@@ -19,7 +19,7 @@ describe('UnitOverview', () => {
     expect(onNavigate).toHaveBeenCalledWith('/courses');
   });
 
-  it('showsThreeDifficultyTracksAndBasicTasks', async () => {
+  it('showsDifficultyTabsAndTheSelectedBasicTasks', async () => {
     const user = userEvent.setup();
     render(<UnitOverview unitKey={unitKey} unit={unit} completedSessionIds={[]} onNavigate={vi.fn()} />);
 
@@ -27,14 +27,18 @@ describe('UnitOverview', () => {
     await user.click(screen.getByRole('button', { name: /教材来源说明/ }));
     expect(screen.getByText(/家长提示：本课程依据 TapXWorld 固定快照/)).toBeInTheDocument();
     expect(screen.getByText(/可能与人教社后续修订版存在差异/)).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: /^基础版/ })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: /^进阶版/ })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: /^高阶版/ })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '基础版任务' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: '进阶版任务' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: '高阶版任务' })).toBeInTheDocument();
-    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(7);
+    expect(screen.queryByRole('heading', { name: '进阶版任务' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: '高阶版任务' })).not.toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(unit.difficultyTracks.basic.tasks.length);
     expect(screen.getByRole('button', { name: /开始基础任务/ })).toBeInTheDocument();
   });
 
-  it('distinguishesAPlannedDifficultyTrackFromMissingCourseContent', () => {
+  it('distinguishesAPlannedDifficultyTrackFromMissingCourseContent', async () => {
+    const user = userEvent.setup();
     const unitWithPlannedHighTrack = {
       ...unit,
       difficultyTracks: {
@@ -44,10 +48,13 @@ describe('UnitOverview', () => {
     };
     render(<UnitOverview unitKey={unitKey} unit={unitWithPlannedHighTrack} completedSessionIds={[]} onNavigate={vi.fn()} />);
 
+    await user.click(screen.getByRole('tab', { name: /^高阶版/ }));
     expect(screen.getByRole('heading', { level: 2, name: '高阶版任务' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: '这档任务正在准备中' })).toBeInTheDocument();
     expect(screen.getByText('核对好教材内容后就会开放，你可以先选择已开放的任务。')).toBeInTheDocument();
-    expect(screen.getAllByRole('button', { name: '查看任务' }).length).toBeGreaterThan(0);
+    expect(screen.queryByRole('button', { name: '查看任务' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('tab', { name: /^基础版/ }));
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(unit.difficultyTracks.basic.tasks.length);
   });
 
   it('disclosesTheUserProvidedTextbookIsbn', async () => {
@@ -82,11 +89,12 @@ describe('UnitOverview', () => {
     const pilotUnit = curriculum.units[pilotUnitKey];
     render(<UnitOverview unitKey={pilotUnitKey} unit={pilotUnit} completedSessionIds={[]} onNavigate={onNavigate} />);
 
-    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    const basicTaskCount = pilotUnit.difficultyTracks.basic.tasks.length;
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(basicTaskCount);
     await user.click(screen.getByRole('button', { name: '进入闯关挑战' }));
 
     expect(onNavigate).toHaveBeenCalledWith(getChallengeGroupPath('grade-1-term-1-math-unit-03'));
-    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(basicTaskCount);
     expect(screen.getByText(/不会改变这里的学习场次进度/)).toBeInTheDocument();
   });
 
@@ -97,11 +105,12 @@ describe('UnitOverview', () => {
     const pilotUnit = curriculum.units[pilotUnitKey];
     render(<UnitOverview unitKey={pilotUnitKey} unit={pilotUnit} completedSessionIds={[]} onNavigate={onNavigate} />);
 
-    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    const basicTaskCount = pilotUnit.difficultyTracks.basic.tasks.length;
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(basicTaskCount);
     await user.click(screen.getByRole('button', { name: '进入闯关挑战' }));
 
     expect(onNavigate).toHaveBeenCalledWith(getChallengeGroupPath('grade-1-term-1-math-unit-04'));
-    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(basicTaskCount);
     expect(screen.getByText(/不会改变这里的学习场次进度/)).toBeInTheDocument();
   });
 
@@ -112,11 +121,12 @@ describe('UnitOverview', () => {
     const pilotUnit = curriculum.units[pilotUnitKey];
     render(<UnitOverview unitKey={pilotUnitKey} unit={pilotUnit} completedSessionIds={[]} onNavigate={onNavigate} />);
 
-    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    const basicTaskCount = pilotUnit.difficultyTracks.basic.tasks.length;
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(basicTaskCount);
     await user.click(screen.getByRole('button', { name: '进入闯关挑战' }));
 
     expect(onNavigate).toHaveBeenCalledWith(getChallengeGroupPath('grade-1-term-1-math-unit-05'));
-    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(6);
+    expect(screen.getAllByRole('button', { name: '查看任务' })).toHaveLength(basicTaskCount);
     expect(screen.getByText(/不会改变这里的学习场次进度/)).toBeInTheDocument();
   });
 
@@ -167,7 +177,7 @@ describe('UnitOverview', () => {
     render(<UnitOverview unitKey={unitKey} unit={unit} selectedDifficulty="basic" selectedTask={task} completedSessionIds={[]} onNavigate={onNavigate} />);
 
     expect(screen.getByRole('heading', { name: task.title, level: 1 })).toBeInTheDocument();
-    expect(document.querySelector('.unit-hero .eyebrow')).toHaveTextContent(/二年级.*上学期.*语文.*UNIT 1.*基础版任务/);
+    expect(document.querySelector('.unit-hero .eyebrow')).toHaveTextContent(/二年级.*上学期.*语文.*第 1 单元.*基础版任务/);
     expect(screen.getByRole('heading', { name: '学习场次' })).toBeInTheDocument();
     const sessionCard = document.querySelector('.session-card') as HTMLElement;
     const startButton = within(sessionCard).getByRole('button', { name: '开始第 1 场' });

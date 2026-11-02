@@ -28,7 +28,7 @@ test('continuesIntoARegisteredBasicSessionAndKeepsCourseRoutesAvailable', async 
 
   await page.getByRole('button', { name: '继续学习' }).click();
   await expect(page).toHaveURL(/\/grade-\d+\/term-[12]\/(chinese|math|english)\/unit-\d{2}\/basic\/task-\d{2}\/session-\d{2}$/);
-  await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('挑战 1 / 8');
+  await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('第 1 / 8 题');
 
   await page.goto('/courses');
   await expect(page.getByRole('button', { name: /进入单元/ }).first()).toBeVisible();
@@ -90,7 +90,10 @@ test('rendersTheHomeDashboardOnPhoneAndDesktopInBothThemesWithReducedMotion', as
           return (Math.max(foreground, background) + 0.05) / (Math.min(foreground, background) + 0.05);
         });
       });
-      expect(continueCopyContrast.every((ratio) => ratio >= 4.5)).toBe(true);
+      expect(
+        continueCopyContrast.every((ratio) => ratio >= 4.5),
+        `Expected at least 4.5:1 text contrast in ${theme} at ${viewport.width}px; got ${continueCopyContrast.join(', ')}`,
+      ).toBe(true);
     }
   }
 

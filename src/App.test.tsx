@@ -46,6 +46,7 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: '打开导航菜单' }));
     await user.click(screen.getByRole('button', { name: '课程' }));
     expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: '打开导航菜单' }));
     await user.click(await screen.findByRole('button', { name: '设置' }));
 
     expect(window.location.pathname).toBe('/settings');
@@ -120,6 +121,7 @@ describe('App', () => {
     window.history.replaceState({}, '', '/courses');
     render(<App />);
 
+    await user.click(await screen.findByRole('button', { name: '打开导航菜单' }));
     await user.click(await screen.findByRole('button', { name: '设置' }));
     await user.click(screen.getByRole('combobox', { name: '学期' }));
     await user.click(await screen.findByRole('option', { name: '下学期' }));
@@ -248,22 +250,23 @@ describe('App', () => {
     const user = userEvent.setup();
     window.history.replaceState({}, '', '/courses');
     const view = render(<App />);
+    await user.click(await screen.findByRole('button', { name: '打开导航菜单' }));
     await user.click(await screen.findByRole('button', { name: '设置' }));
     expect(window.location.pathname).toBe('/settings');
-    expect(playedSources).toEqual(['/audio/interaction-click.mp3']);
+    expect(playedSources).toEqual(['/audio/interaction-click.mp3', '/audio/interaction-click.mp3']);
 
     const soundSwitch = screen.getByRole('switch', { name: '语音提示与交互音效' });
     expect(soundSwitch).toBeChecked();
     await user.click(soundSwitch);
     expect(soundSwitch).not.toBeChecked();
     expect(window.localStorage.getItem('china-study-sound-enabled-v1')).toBe('false');
-    expect(playedSources).toHaveLength(1);
+    expect(playedSources).toHaveLength(2);
 
     view.unmount();
     render(<App />);
     expect(await screen.findByRole('heading', { name: '设置', level: 1 })).toBeInTheDocument();
     expect(screen.getByRole('switch', { name: '语音提示与交互音效' })).not.toBeChecked();
-    expect(playedSources).toHaveLength(1);
+    expect(playedSources).toHaveLength(2);
   });
 
   it('playsInteractionCueWhenANumberAnswerInputIsClicked', async () => {

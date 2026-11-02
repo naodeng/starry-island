@@ -36,7 +36,7 @@ describe('ChallengeGrowth', () => {
   it('shows local progress totals and registered route progress without owning a page heading', () => {
     render(<ChallengeGrowth summary={summary} status="ready" onRetry={vi.fn()} />);
 
-    expect(screen.getByRole('heading', { name: '闯关成长记录', level: 2 })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '闯关累计', level: 2 })).toBeInTheDocument();
     expect(screen.getByText('8 次')).toBeInTheDocument();
     expect(screen.getByText('3 个任务')).toBeInTheDocument();
     expect(screen.getByText('0 枚徽章')).toBeInTheDocument();

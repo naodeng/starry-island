@@ -1,61 +1,55 @@
-# Starry Island UI review
+# 星岛学园前端界面审查
 
-## Scope and direction
+## 审查范围与设计方向
 
-- Product: a local-first learning app for children in grades 1–6, opened on phones and desktop; recurring jobs are choosing a lesson, answering a short activity, reviewing progress, and managing local data.
-- Direction sheet: `accent-ladder`, seed `672929999` (2026-11-02), app kind `community`; it fits the child-facing product and its repeated progress data. The project already fixes its palette and typeface, so the sheet was dealt with `--keep palette,type`.
-- Kept face: Starry Island's course map and its green progress ladder. The primary green stays on actions and progress; pale green areas group related learning content. Existing subject colours remain only where they encode a real subject or illustration.
-- Product element: the student's selected grade + term + subject becomes one course route, and completed units become visible lights on the learning map.
+- 产品面向小学一至六年级学生，学习进度保存在本机；常见操作包括选择课程、完成练习、查看成长记录和管理本地数据。
+- 采用 `.taste-skill/direction.json` 记录的 `accent-ladder` 方向（种子 `672929999`）。项目已有品牌色和字体，本轮保留现有色彩与字体系统。
+- 保留星岛课程地图和绿色进度阶梯：绿色用于主要操作与进度，浅绿色用于分组；学科色仅在有实际含义时使用。
+- 课程选择聚焦于年级、学期、学科；完成的单元点亮对应的学习星图。
 
-## Screen questions
+## 页面检查问题
 
-| Screen | First question |
+| 页面 | 首要问题 |
 | --- | --- |
-| Home | What lesson can I continue now? |
-| Course catalog | Which grade, term and subject should I open? |
-| Unit overview | Which task or session should I start? |
-| Learning session | What is this question asking me to do? |
-| Growth overview | What progress has this device saved? |
-| Learning star map | Which units have lit up for this grade and term? |
-| Challenge growth | How many challenges, passed tasks and badges are recorded for this grade and term? |
-| Challenge center | Which registered challenge route should I try? |
-| Challenge group | Which of the five tasks should I start? |
-| Challenge task intro | What should I know before beginning this challenge? |
-| Challenge runner/result | How am I doing, and what should I review next? |
-| Wrong questions | Which missed question should I review? |
-| Settings | Which local preference or learning start should I change? |
-| Backup and recovery | How can I export, preview, restore or clear local challenge data? |
+| 首页 | 现在可以从哪里继续学习？ |
+| 课程目录 | 应该进入哪个年级、学期和学科？ |
+| 单元概览 | 先开始哪档任务或哪场练习？ |
+| 学习场次 | 这道题要我做什么？ |
+| 成长概览 | 这台设备保存了哪些学习进度？ |
+| 学习星图 | 这个年级和学期有哪些已点亮的单元？ |
+| 闯关成长 | 本年级和学期记录了多少挑战、通过任务和徽章？ |
+| 闯关中心 | 应该尝试哪条已登记的挑战路线？ |
+| 挑战分组 | 五项任务里应该从哪一项开始？ |
+| 挑战说明 | 开始前需要了解什么？ |
+| 挑战答题与结果 | 当前进度如何，接下来可以复习什么？ |
+| 错题本 | 应该回顾哪道错题？ |
+| 设置 | 要调整哪项本机偏好或学习起点？ |
+| 备份与恢复 | 如何导出、预览、恢复或清除本机挑战数据？ |
 
-## Baseline review notes (current worktree, before this pass)
+## 修改前发现
 
-- Course catalog: the hero carries three informational chips and a companion panel; each unit repeats an uppercase padded number, a status badge, a subject description and a full-width action. On a phone, the filters and first unit consume most of the first screen.
-- Unit detail: the task route repeats the selected task title in both the hero and session card. On a phone, the companion card, progress ring, session card and fixed start bar push content down and crowd the viewport.
-- Challenge center: four page-local navigation buttons take two rows on a phone, while three stacked filters push the first route below the fold. Two destinations overlap the global menu.
-- Challenge growth: an introductory heading and description repeat the section title and another explanatory block; the route summary appears late on desktop and requires three stacked controls on narrow screens.
-- Learning session: title/goal, companion, progress, question number and activity icon occupy several stacked surfaces before the answer options. The current question should take visual priority sooner.
-- Settings and backup: both remain readable on mobile; settings has a clear control hierarchy. Backup's export, file selection, preview and destructive data actions need their separation and warnings preserved.
-- Wrong questions: search, state filters, count and empty state are legible, though the first screen can be shortened without hiding the review action.
+- 课程目录：顶部包含多组重复信息；单元卡片重复显示编号、状态、学科说明和入口。手机首屏被介绍区和筛选区占去大半。
+- 单元页：任务标题在顶部和任务卡中重复；手机上伙伴卡、进度环、任务卡和固定操作条挤占首屏。
+- 闯关中心：页面内导航按钮过多，与全局菜单中的入口重复；窄屏上的筛选器和按钮占用较多空间。
+- 成长页：标题和说明重复；星图与进度记录同时展示多个年级学期，内容难以聚焦。
+- 学习场次：在题目之前堆叠了标题、伙伴、进度、题号和装饰图标，练习内容出现得较晚。
+- 设置与备份：手机上仍可阅读；备份页的导出、文件选择、预览和危险操作需要保留清晰区分与提示。
+- 错题本：搜索、状态筛选、数量和空状态清晰，但首屏文字还可精简。
 
-## Baseline evidence and limits
+## 本轮调整
 
-- Read-only screenshots and accessibility trees were captured in the local browser for `/`, `/courses`, `/growth` (all three tabs), `/settings`, `/settings/backup`, `/challenges`, one challenge group, a challenge intro, `/challenges/wrong-questions`, one unit, one learning-task page, and one learning session. No answer was submitted and no progress/settings/backup data was changed.
-- The Taste Skill static scan ran on `src` in app mode: 31 FAIL and 425 WARN. Many findings come from non-UI curriculum/test files and internal zero-padded identifiers; those are not treated as visual defects. UI-source findings will be rerun against app code after the visual changes.
-- `inspect.mjs --app` could not launch the installed Chrome on this host: Chrome exited with `SIGABRT` and no stderr. The screenshots above are from the real in-app browser. Final production inspection will be attempted again; if Chrome continues to abort, that limit will be reported rather than presenting an inspector score.
-- Browser inspection of a completed challenge result was intentionally avoided because opening the runner and submitting answers would create a local attempt and alter user data. The result screen is reviewed from its component and responsive styles.
+- 课程目录移除与全局菜单重复的设置入口，减少卡片重复标签和元数据，并统一卡片高度、间距与操作位置。
+- 单元概览与任务页减少重复标题和说明；学习场次提前呈现题目，明确题目序号并降低装饰信息的干扰。
+- 成长页采用年级与学期标签，每次只展示一个范围；将筛选控件放在摘要之前，全部年级累计头衔放在聚焦内容之后。标签支持方向键、Home 和 End。
+- 闯关、分组、挑战说明和错题页面减少重复导航与空状态说明，调整窄屏筛选器布局。
+- 首页继续学习信息去除课程单元名与场次标题的重复片段；共用页面保留现有品牌色、浅色/深色主题、焦点样式和减少动态效果规则。
 
-## Review and changes delivered
+## 复核记录与限制
 
-- Course catalog: removed the duplicate Settings action because Settings is already in the app menu; reduced repeated labels and metadata in unit cards, made cards align consistently, and tightened the hero and filters so the first learning choices are easier to scan.
-- Unit overview and task route: removed the repeated selected-task title, reduced metadata noise, simplified session entry, and kept the fixed action usable on narrow screens.
-- Learning session: brought the current question and answer choices higher in the page, clarified question position, and reduced decorative content competing with the activity.
-- Growth: added grade 1–6 and term 1–2 tabs that show one scope at a time; moved the scope selector before the selected-term summary, and placed all-grade cumulative ranks after the focused content. Grade and term tabs support arrow keys plus Home/End.
-- Challenge center, group, task intro and wrong questions: reduced duplicate navigation and repeated intro copy, tightened filters and cards, and shortened the empty state. Challenge result was reviewed in source because submitting an attempt would mutate local progress.
-- Home, shared shell, themes and supporting surfaces: removed repeated course/session title fragments, aligned spacing, card edges and status hierarchy, and retained the existing green identity, light/dark theme support, focus indicators and reduced-motion CSS.
-
-## Final review evidence and limits
-
-- Real-browser review covered `/`, `/courses`, `/growth` (all three views), `/settings`, `/settings/backup`, `/challenges`, one challenge group, one challenge task intro, `/challenges/wrong-questions`, one unit overview, one task route, one learning session, and an unknown-route screen. Desktop and narrow layouts were checked; the theme was also viewed in dark mode and restored to system preference. Grade/term keyboard navigation and visible focus were checked. Reduced-motion styles were confirmed in source; browser preference emulation was not separately recorded.
-- The focused Taste Skill scan over app/UI source finished with **0 FAIL, 66 WARN**. The warnings are the existing eyebrow/kicker pattern and a zero-padded sound-clock value. The broader `src` scan also reports unrelated content/test-fixture findings, so it is not used as an app UI score.
-- `inspect.mjs --app` remains unavailable on this host because its Chrome process exits with `SIGABRT` and no stderr; visual review used screenshots and accessibility trees from the in-app browser instead.
-- No challenge answer was submitted. Opening the fresh preview on port `5176` ran the app's existing textbook migration on that origin and reset legacy Grade 2 Term 1 Math progress there; the app displayed its migration notice. The user's existing tab on port `5175` uses a separate origin and was left untouched. No learning start, settings, backup or challenge attempt was changed by this review.
-- Final verification passed: `npm run build` (TypeScript and Vite production build, 893 modules) and `git diff --check`. The focused Taste Skill scan reported 0 FAIL, 66 WARN. Tests were not run.
+- 使用本机浏览器和辅助功能树检查 `/`、`/courses`、`/growth`（三个视图）、`/settings`、`/settings/backup`、`/challenges`、一个挑战分组、一个挑战说明、`/challenges/wrong-questions`、一个单元页、一个任务页、一个学习场次和未知路由。动态课程页面按共用页面类型抽查。
+- 检查了桌面和窄屏布局、深色主题、年级/学期键盘切换及可见焦点。减少动态效果的 CSS 规则已核对，但未单独模拟浏览器的减少动态效果偏好。
+- Taste Skill 定向界面扫描结果为 **0 FAIL、66 WARN**。提示主要涉及现有 eyebrow/kicker 标签样式及声音时钟的补零格式；完整源码扫描另有内容和测试样例提示，不作为界面评分。
+- `inspect.mjs --app` 在本机启动 Chrome 时以 `SIGABRT` 退出且无错误输出，因此使用应用内浏览器截图和辅助功能树复核，没有报告 Inspector 分数。
+- 没有提交挑战答案。打开 `5176` 本机预览时，应用已有的教材迁移逻辑清理了该来源下二年级上册数学的旧进度，并显示迁移提示；原 `5175` 页面未操作。未更改学习起点、设置、备份或挑战答题记录。
+- 本轮本地验证：`npm run build`、`git diff --check`、`npm run test:unit` 全部通过；单元测试为 268 个文件、1716 个测试。
+- 完整 E2E 共执行 102 项，最后一轮有 101 项通过；剩余一项因提示音断言未包含已登记的 `answer-praise-XX` 本地素材而失败。更新断言后，该用例专项复跑通过；全量 E2E 的最终状态以本次提交触发的 PR 检查为准。
