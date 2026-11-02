@@ -85,7 +85,7 @@ export default function ChallengeWrongQuestions({ records, onNavigate }: Challen
                 headingLevel={3}
                 title={records.length === 0 ? '错题本还是空的' : normalizedSearchQuery && visibleRecords.length === 0 ? '没有找到匹配的错题' : '这个分类暂时没有题目'}
                 description={records.length === 0
-                  ? '完成挑战后，答错的题会出现在这里；答对两次后会标记为已掌握。'
+                  ? '还没有需要回看的题目，完成一场挑战后，错题会显示在这里。'
                   : normalizedSearchQuery && visibleRecords.length === 0
                     ? '换一个题干或讲解关键词再试，也可以清空搜索内容。'
                     : '试试切换到“全部”或其他分类。'}

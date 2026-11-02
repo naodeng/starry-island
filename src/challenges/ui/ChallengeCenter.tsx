@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
-import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath, getSubjectTitle } from '../../app/router';
+import { getChallengeGroupPath, getChallengeWrongQuestionsPath, getSubjectTitle } from '../../app/router';
 import EmptyState from '../../components/shared/EmptyState';
 import type { SubjectId } from '../../content/types';
 import type { LoadedPilotGroup } from '../content/pilotContent';
@@ -175,8 +175,6 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
           <p>每道题只提交一次答案。完成挑战后，可以查看得分和解题讲解。</p>
           <div className="challenge-hero-actions">
             <Button type="default" onClick={() => onNavigate('/courses')}>返回课程目录</Button>
-            <Button type="default" onClick={() => onNavigate(getChallengeGrowthPath())}>查看成长记录</Button>
-            <Button type="default" onClick={() => onNavigate('/settings/backup')}>设置与数据管理</Button>
             <Button type="primary" onClick={() => onNavigate(getChallengeWrongQuestionsPath())}>打开错题本</Button>
           </div>
         </header>

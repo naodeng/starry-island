@@ -9,7 +9,7 @@
 .settings-page .settings-section > p,
 .settings-page .settings-achievement-link p,
 .settings-page .settings-backup-link p { margin: 0; color: var(--animal-text-color-secondary); font-size: 13px; line-height: 1.6; }
-.settings-page .theme-switcher { justify-content: flex-start; width: max-content; max-width: 100%; color: var(--animal-text-color); border-color: var(--animal-border-color); background: var(--animal-bg-color-secondary); box-shadow: none; }
+.settings-page .theme-switcher { justify-content: flex-start; width: max-content; max-width: 100%; color: var(--animal-text-color); border-color: var(--animal-border-color); background: var(--animal-bg-color-secondary); }
 .settings-page .theme-switcher-options { display: flex; flex-wrap: wrap; }
 .settings-page .theme-switcher-options [class*='animal-radioItem'] { min-height: 44px; }
 .settings-page .settings-backup-link { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px; margin-top: 18px; padding: 20px 22px; border: 1px solid var(--animal-border-color); border-radius: 20px; background: var(--animal-bg-color); }

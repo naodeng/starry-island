@@ -1,6 +1,6 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Button, Card, Select } from 'animal-island-ui';
-import { ArrowRightIcon, SettingsIcon, StarIcon } from 'naive-icons';
+import { ArrowRightIcon, StarIcon } from 'naive-icons';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CatalogUnitEntry, SubjectId } from '../../content/types';
 import type { ProgressState } from '../../storage/progress';
@@ -25,7 +25,6 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
   const [subjectId, setSubjectId] = useState<SubjectId>(savedSelection?.subjectId ?? 'chinese');
   const [gradeId, setGradeId] = useState(initialGrade?.id ?? 'grade-2');
   const [termId, setTermId] = useState(initialTerm?.id ?? 'term-1');
-  const courseSelectionRef = useRef<HTMLDivElement>(null);
   const grade = curriculumManifest.grades.find((entry) => entry.id === gradeId) ?? curriculumManifest.grades[0];
   const term = grade?.terms.find((entry) => entry.id === termId) ?? grade?.terms[0];
   const subject = term?.subjects.find((entry) => entry.id === subjectId) ?? term?.subjects[0];
@@ -49,51 +48,17 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
     if (unit.status === 'active') onNavigate(getUnitPath(unit.curriculumUnitKey!));
   }
 
-  function focusCourseSelection() {
-    const target = courseSelectionRef.current;
-    if (!target) return;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    target.scrollIntoView?.({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-    target.focus({ preventScroll: true });
-  }
-
   return (
     <main className="catalog-page">
       <div className="catalog-shell">
-        <div className="catalog-topbar">
-          <Button type="default" className="catalog-settings-button" icon={<SettingsIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/settings')}>
-            设置
-          </Button>
-        </div>
         <header className="catalog-hero">
           <div className="catalog-hero-copy">
             <div className="catalog-brand-lockup">
               <h1 className="catalog-brand-heading">课程目录</h1>
               <div className="catalog-hero-message">
-                <div className="catalog-current-route">
-                  <span className="catalog-current-route-symbol" aria-hidden="true"><StarIcon size={17} /></span>
-                  <div className="catalog-current-route-copy">
-                    <span className="catalog-current-route-label">当前探索航线</span>
-                    <div className="catalog-current-route-values" aria-live="polite" aria-atomic="true">
-                      <strong>{grade.title}</strong>
-                      <span className="catalog-route-term">{term.title}</span>
-                      <span className="catalog-route-subject">{subject.title}</span>
-                      <span className="catalog-route-edition">人教版</span>
-                    </div>
-                  </div>
-                  <Button
-                    type="default"
-                    className="catalog-current-route-action"
-                    aria-label={`调整课程选择，当前为${grade.title}${term.title}${subject.title}人教版`}
-                    onClick={focusCourseSelection}
-                  >
-                    <span className="button-label-with-icon"><span className="catalog-current-route-action-label">调整</span><ArrowRightIcon size={15} aria-hidden="true" /></span>
-                  </Button>
-                </div>
                 <p className="catalog-lead">快乐学习，点亮每一颗知识星球。选好课程，和伙伴一起出发！</p>
                 <div className="catalog-meta" aria-label="课程信息">
                   <span>每场约20分钟</span>
-                  <span>随时开始</span>
                   <span>进度保存在本机</span>
                 </div>
               </div>
@@ -104,19 +69,6 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
             <HeroGuide mood="welcome" subject={subject.id} companionId={guideId} compact />
           </aside>
         </header>
-
-        <section className="catalog-challenge-entry" aria-labelledby="challenge-entry-heading">
-          <Card className="catalog-challenge-entry-card" color="default">
-            <div>
-              <p className="eyebrow">独立闯关 · 记录保存在本机</p>
-              <h2 id="challenge-entry-heading">准备好检验自己的学习成果了吗？</h2>
-              <p>每道题只提交一次答案，完成后可以查看得分和讲解。</p>
-            </div>
-            <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/challenges')}>
-              进入闯关中心
-            </Button>
-          </Card>
-        </section>
 
         <section className="catalog-section" aria-labelledby="subject-heading">
           <div className="catalog-section-heading">
@@ -141,7 +93,6 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
             </div>
           </div>
           <div
-            ref={courseSelectionRef}
             id="catalog-course-selection"
             className="catalog-grade-label"
             role="group"
@@ -203,22 +154,17 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
                     aria-label={`${unit.title}${active ? '' : '，筹备中'}`}
                   >
                     <div className="unit-card-topline">
-                      <span className="unit-number">
-                        {unit.formalUnitNumber !== null
-                          ? `UNIT ${String(unit.formalUnitNumber).padStart(2, '0')}`
-                          : unit.type === 'review' ? '复习站' : unit.type === 'theme' ? '主题组' : '实践站'}
-                      </span>
-                      <span className={`unit-status ${active ? 'is-active' : 'is-soon'}`}>{active ? '可以出发' : '筹备中'}</span>
+                      {unit.formalUnitNumber === null && unit.type !== 'theme' && (
+                        <span className="unit-number">
+                          {unit.type === 'review' ? '复习站' : '实践站'}
+                        </span>
+                      )}
+                      <span className={`unit-status ${active ? 'is-active' : 'is-soon'}`}>{active ? '已开放' : '筹备中'}</span>
                     </div>
                     <h3>{unit.title}</h3>
                     {active ? (
-                      <>
-                        <p>{subject.id === 'chinese' ? '识字、阅读与表达小游戏' : subject.id === 'math' ? '测量、运算与思维小游戏' : '单词、表达与语言小游戏'}</p>
-                        <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => openUnit(unit)}>进入单元</Button>
-                      </>
-                    ) : (
-                      <p className="coming-soon-copy">这座学习小岛正在准备中，过一段时间再来看看吧。</p>
-                    )}
+                      <Button type="primary" block icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => openUnit(unit)}>进入单元</Button>
+                    ) : null}
                   </Card>
                 );
               })}
@@ -231,6 +177,18 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
               headingLevel={3}
             />
           )}
+        </section>
+        <section className="catalog-challenge-entry" aria-labelledby="challenge-entry-heading">
+          <Card className="catalog-challenge-entry-card" color="default">
+            <div>
+              <p className="eyebrow">独立闯关 · 记录保存在本机</p>
+              <h2 id="challenge-entry-heading">想检验自己的学习成果？</h2>
+              <p>每题提交一次答案，完成后可以查看得分和讲解。</p>
+            </div>
+            <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate('/challenges')}>
+              进入闯关中心
+            </Button>
+          </Card>
         </section>
         <footer className="catalog-footer">
           <span>学习靠好奇心，每次完成一点点就很棒。</span>

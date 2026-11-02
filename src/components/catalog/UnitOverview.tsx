@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import type { KeyboardEvent } from 'react';
 import { Button, Card } from 'animal-island-ui';
 import { ArrowRightIcon, CheckCircleIcon, ChevronDownIcon } from 'naive-icons';
 import { getChallengeGroupPath, getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
@@ -32,6 +33,7 @@ const DIFFICULTY_DESCRIPTIONS: Record<Difficulty, string> = {
   advanced: '试着把几个知识点连起来解决问题。',
   high: '挑战更灵活的任务，发现更多解题办法。',
 };
+const DIFFICULTY_LEVELS: Difficulty[] = ['basic', 'advanced', 'high'];
 
 function getPositionLabels(unitKey: string): { grade: string; term: string } {
   const [gradeId, termId] = unitKey.split('/');
@@ -62,15 +64,17 @@ export default function UnitOverview({
   const completedCount = visibleSessions.filter((session) => completedSessionIds.includes(session.id)).length;
   const subjectTitle = getSubjectTitle(unit.subject);
   const unitNumber = unit.formalUnitNumber ?? unit.id.slice(-2);
+  const unitNumberLabel = Number.isFinite(Number(unitNumber)) ? `第 ${Number(unitNumber)} 单元` : '学习单元';
   const firstSession = selectedTask?.sessions[0] ?? allBasicSessions[0];
   const taskReviewPoints = selectedTask ? getTaskReviewPoints(selectedTask) : [];
   const disclosureId = useId();
   const [sourceDisclosureOpen, setSourceDisclosureOpen] = useState(false);
   const [knowledgeMapOpen, setKnowledgeMapOpen] = useState(false);
   const [reviewOpen, setReviewOpen] = useState(false);
+  const [activeDifficulty, setActiveDifficulty] = useState<Difficulty>(selectedDifficulty ?? 'basic');
   const [expandedSessionIds, setExpandedSessionIds] = useState<string[]>([]);
   const gradeAndTerm = getPositionLabels(unitKey);
-  const difficulties: Difficulty[] = selectedDifficulty ? [selectedDifficulty] : ['basic', 'advanced', 'high'];
+  const difficulties: Difficulty[] = selectedTask ? [] : [activeDifficulty];
   const textbook = curriculumManifest.textbooks[unit.textbookEditionId];
   const sourceDisclosure = textbook?.sourceKind === 'tapx-fallback'
     ? '家长提示：本课程依据 TapXWorld 固定快照中的教材内容设计，可能与人教社后续修订版存在差异。'
@@ -101,6 +105,22 @@ export default function UnitOverview({
   const knowledgeMapId = `${disclosureId}-map`;
   const reviewId = `${disclosureId}-review`;
 
+  function handleDifficultyTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, currentIndex: number) {
+    let nextIndex: number | null = null;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (currentIndex + 1) % DIFFICULTY_LEVELS.length;
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (currentIndex + DIFFICULTY_LEVELS.length - 1) % DIFFICULTY_LEVELS.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = DIFFICULTY_LEVELS.length - 1;
+    if (nextIndex === null) return;
+
+    event.preventDefault();
+    const nextDifficulty = DIFFICULTY_LEVELS[nextIndex]!;
+    setActiveDifficulty(nextDifficulty);
+    event.currentTarget.parentElement
+      ?.querySelector<HTMLButtonElement>(`[data-difficulty-tab="${nextDifficulty}"]`)
+      ?.focus();
+  }
+
   const breadcrumbItems = [
     { label: '课程目录', path: '/courses' },
     { label: gradeAndTerm.grade },
@@ -117,7 +137,7 @@ export default function UnitOverview({
         <header className={'unit-hero' + (selectedTask ? ' unit-hero--task' : '')}>
           <div>
             <p className="eyebrow">
-              {gradeAndTerm.grade} · {gradeAndTerm.term} · {subjectTitle} · UNIT {unitNumber}
+              {gradeAndTerm.grade} · {gradeAndTerm.term} · {subjectTitle} · {unitNumberLabel}
               {selectedTask && <span> · {DIFFICULTY_LABELS[selectedDifficulty!]}任务</span>}
             </p>
             <h1>{selectedTask?.title ?? unit.title}</h1>
@@ -125,7 +145,6 @@ export default function UnitOverview({
             <div className="catalog-meta">
               <span>{visibleSessions.length} 场游戏</span>
               <span>每场建议 20 分钟</span>
-              <span>已完成 {completedCount}/{visibleSessions.length}</span>
             </div>
             <div className="catalog-source-disclosure-wrap">
               <Button
@@ -140,21 +159,23 @@ export default function UnitOverview({
               <p id={sourceDisclosureId} className="catalog-source-disclosure" role="note" hidden={!sourceDisclosureOpen}>{sourceDisclosure}</p>
             </div>
           </div>
-          <div className="unit-hero-aside">
-            {firstSession && <HeroGuide mood="welcome" subject={unit.subject} companionId={firstSession.companionId} compact />}
-            <div
-              className="unit-progress-orbit"
-              role="progressbar"
-              aria-label={`场次完成进度，已完成${completedCount}场，共${visibleSessions.length}场`}
-              aria-valuemin={0}
-              aria-valuemax={Math.max(1, visibleSessions.length)}
-              aria-valuenow={completedCount}
-            >
-              <span className="unit-progress-total">/ {visibleSessions.length}</span>
-              <strong>{completedCount}</strong>
-              <small>已完成</small>
-            </div>
-          </div>
+          {!selectedTask && (
+            <aside className="unit-hero-aside">
+              {firstSession && <HeroGuide mood="welcome" subject={unit.subject} companionId={firstSession.companionId} compact />}
+              <div
+                className="unit-progress-orbit"
+                role="progressbar"
+                aria-label={`场次完成进度，已完成${completedCount}场，共${visibleSessions.length}场`}
+                aria-valuemin={0}
+                aria-valuemax={Math.max(1, visibleSessions.length)}
+                aria-valuenow={completedCount}
+              >
+                <span className="unit-progress-total">/ {visibleSessions.length}</span>
+                <strong>{completedCount}</strong>
+                <small>已完成</small>
+              </div>
+            </aside>
+          )}
         </header>
 
         {!selectedTask ? (
@@ -188,20 +209,38 @@ export default function UnitOverview({
               <Button type="default" onClick={() => onNavigate('/courses')}>返回课程目录</Button>
             </div>
 
-            {pilotChallengeGroupId && (
-              <Card className="unit-challenge-entry" color="default">
-                <div>
-                  <p className="eyebrow">闯关练习 · 与学习进度分开记录</p>
-                  <h2>试试本单元闯关</h2>
-                  <p>闯关不提供提示或重试，也不会改变这里的学习场次进度。</p>
-                </div>
-                <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate(getChallengeGroupPath(pilotChallengeGroupId))}>
-                  进入闯关挑战
-                </Button>
-              </Card>
-            )}
+            <div className="difficulty-tabs" role="tablist" aria-label="选择任务难度">
+              {DIFFICULTY_LEVELS.map((difficulty, index) => {
+                const taskCount = unit.difficultyTracks[difficulty].tasks.length;
+                return (
+                  <Button
+                    key={difficulty}
+                    id={`difficulty-tab-${difficulty}`}
+                    data-difficulty-tab={difficulty}
+                    className="difficulty-tab"
+                    type={activeDifficulty === difficulty ? 'primary' : 'default'}
+                    role="tab"
+                    aria-label={`${DIFFICULTY_LABELS[difficulty]}，${taskCount}个任务`}
+                    aria-selected={activeDifficulty === difficulty}
+                    aria-controls="difficulty-track-panel"
+                    tabIndex={activeDifficulty === difficulty ? 0 : -1}
+                    onClick={() => setActiveDifficulty(difficulty)}
+                    onKeyDown={(event) => handleDifficultyTabKeyDown(event, index)}
+                  >
+                    <span>{DIFFICULTY_LABELS[difficulty]}</span>
+                    <span className="difficulty-tab-count" aria-hidden="true">{taskCount}</span>
+                  </Button>
+                );
+              })}
+            </div>
 
-            <div className="difficulty-track-list">
+            <div
+              className="difficulty-track-list"
+              id="difficulty-track-panel"
+              role="tabpanel"
+              aria-labelledby={`difficulty-tab-${activeDifficulty}`}
+              tabIndex={0}
+            >
               {difficulties.map((difficulty) => {
                 const track = unit.difficultyTracks[difficulty];
                 return (
@@ -220,7 +259,7 @@ export default function UnitOverview({
                           const doneCount = task.sessions.filter((session) => completedSessionIds.includes(session.id)).length;
                           return (
                             <Card className="task-card" key={task.id} color="default">
-                              <div className="session-card-number">任务 {String(task.order).padStart(2, '0')}</div>
+                              <div className="session-card-number">任务 {task.order}</div>
                               <h3>{task.title}</h3>
                               <p>{task.objective}</p>
                               <div className="session-card-meta">
@@ -245,6 +284,18 @@ export default function UnitOverview({
                 );
               })}
             </div>
+            {pilotChallengeGroupId && (
+              <Card className="unit-challenge-entry" color="default">
+                <div>
+                  <p className="eyebrow">闯关练习 · 与学习进度分开记录</p>
+                  <h2>试试本单元闯关</h2>
+                  <p>闯关不提供提示或重试，也不会改变这里的学习场次进度。</p>
+                </div>
+                <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} onClick={() => onNavigate(getChallengeGroupPath(pilotChallengeGroupId))}>
+                  进入闯关挑战
+                </Button>
+              </Card>
+            )}
           </section>
         ) : (
           <section className="unit-content-section" aria-labelledby="task-sessions-heading">
@@ -266,7 +317,7 @@ export default function UnitOverview({
                       <CompanionAvatar id={session.companionId} size="small" />
                       <span>{companion.name}陪你完成本场</span>
                     </div>
-                    <h3>{session.title}</h3>
+                    {session.title !== selectedTask.title && <h3>{session.title}</h3>}
                     <Button
                       type="text"
                       className="session-objective-toggle"

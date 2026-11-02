@@ -81,7 +81,7 @@ describe('GrowthPage', () => {
     expect(onNavigate).toHaveBeenCalledWith('/challenges');
     fireEvent.click(screen.getByRole('button', { name: '查看学习星图' }));
     expect(screen.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByRole('heading', { name: '每完成一点，星岛就亮一点' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '本学期星区' })).toBeInTheDocument();
   });
 
   it('showsAnEmptyRecentGrowthState', () => {
@@ -126,7 +126,7 @@ describe('GrowthPage', () => {
     render(<GrowthPage progress={emptyProgress} initialView="learning" onNavigate={vi.fn()} />);
 
     expect(screen.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByRole('heading', { name: '每完成一点，星岛就亮一点' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '本学期星区' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '成长中心', level: 1 })).toBeInTheDocument();
   });
 
@@ -147,7 +147,7 @@ describe('GrowthPage', () => {
     fireEvent.click(screen.getByRole('button', { name: '重新读取闯关进度' }));
     expect(await screen.findByText('17 次挑战')).toBeInTheDocument();
     await user.click(screen.getByRole('tab', { name: '学习星图' }));
-    expect(screen.getByRole('heading', { name: '每完成一点，星岛就亮一点' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '本学期星区' })).toBeInTheDocument();
   }, 30_000);
 
   it('changesViewsWithKeyboardArrowKeysAndVisibleFocus', async () => {

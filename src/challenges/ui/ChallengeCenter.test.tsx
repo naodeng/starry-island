@@ -227,15 +227,15 @@ describe('ChallengeCenter', () => {
     expect(getChallengeGroupDescription(secondHalf)).toBe('按课程主题顺序练习上册后半部分内容。');
   });
 
-  it('links to local growth, settings data management, and the course catalog', () => {
+  it('linksToTheCourseCatalogAndWrongQuestionsWithoutDuplicateMenuActions', () => {
     const onNavigate = vi.fn();
     const groups: LoadedPilotGroup[] = [];
     render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={onNavigate} />);
 
-    fireEvent.click(screen.getByRole('button', { name: '查看成长记录' }));
-    expect(onNavigate).toHaveBeenLastCalledWith('/challenges/growth');
-    fireEvent.click(screen.getByRole('button', { name: '设置与数据管理' }));
-    expect(onNavigate).toHaveBeenLastCalledWith('/settings/backup');
+    expect(screen.queryByRole('button', { name: '查看成长记录' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: '设置与数据管理' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '打开错题本' }));
+    expect(onNavigate).toHaveBeenLastCalledWith('/challenges/wrong-questions');
     fireEvent.click(screen.getByRole('button', { name: '返回课程目录' }));
     expect(onNavigate).toHaveBeenLastCalledWith('/courses');
     expect(screen.queryByRole('heading', { name: '闯关备份' })).not.toBeInTheDocument();

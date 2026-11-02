@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { Button, Card } from 'animal-island-ui';
-import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon, StarIcon } from 'naive-icons';
+import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon } from 'naive-icons';
 import type { CosmicRank } from '../../achievements/progress';
 import type { LearningSession, SubjectId } from '../../content/types';
 import { selectFeedbackMessage } from '../../learning/feedback';
@@ -133,14 +133,12 @@ export default function SessionPlayer({ session, subject, newlyUnlockedRank, onC
             </Button>
             <p id={sessionObjectiveId} className="session-intro-objective" hidden={!sessionObjectiveOpen}>{session.objective}</p>
           </div>
-          <span className="session-intro-star" aria-hidden="true"><StarIcon size={96} /></span>
         </Card>
         <div className="session-support-row">
           <HeroGuide mood="hint" subject={subject} companionId={session.companionId} compact />
           <section className="game-progress-section" aria-label="挑战进度">
             <div className="game-progress-labels">
-              <span>挑战 {sessionState.currentIndex + 1} / {session.activities.length}</span>
-              <span>{sessionState.solvedActivityIds.length} 个挑战已完成</span>
+              <span>第 {sessionState.currentIndex + 1} / {session.activities.length} 题</span>
             </div>
             <div className="game-progress-track" role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100} aria-label="本场完成进度">
               <span style={{ transform: `scaleX(${progress / 100})` }} />
@@ -149,7 +147,6 @@ export default function SessionPlayer({ session, subject, newlyUnlockedRank, onC
         </div>
         <Card className="activity-card" color="default">
           <div className="activity-card-heading">
-            <span className="activity-number">挑战 {String(sessionState.currentIndex + 1).padStart(2, '0')}</span>
             <span className="activity-kind-label">{activity.kind === 'choice' ? '选择' : activity.kind === 'match' ? '配对' : activity.kind === 'order' ? '排序' : activity.kind === 'categorize' ? '分类' : activity.kind === 'measurement' ? '测量' : '计算'}</span>
           </div>
           <ActivityRenderer

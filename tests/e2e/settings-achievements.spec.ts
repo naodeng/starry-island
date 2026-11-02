@@ -8,6 +8,11 @@ async function openSettingsFromNavigation(page: import('@playwright/test').Page)
   await expect(page.getByRole('heading', { name: '设置', level: 1 })).toBeVisible();
 }
 
+async function selectGradeTwoFirstTerm(page: import('@playwright/test').Page) {
+  await page.getByRole('tab', { name: '二年级', exact: true }).click();
+  await page.getByRole('tab', { name: '上学期', exact: true }).click();
+}
+
 test('persistsThemeLearningStartAndSoundPreference', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/');
@@ -57,7 +62,8 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
     await page.goto('/achievements');
     await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
     await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('.exploration-zone')).toHaveCount(12);
+    await selectGradeTwoFirstTerm(page);
+    await expect(page.locator('.exploration-zone')).toHaveCount(1);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
     const horizontalPadding = await page.locator('.achievement-page').evaluate((element) => ({
       left: Number.parseFloat(getComputedStyle(element).paddingLeft),
@@ -66,12 +72,13 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
     expect(horizontalPadding.left).toBeGreaterThanOrEqual(viewport.width <= 700 ? 14 : 24);
     expect(horizontalPadding.right).toBeGreaterThanOrEqual(viewport.width <= 700 ? 14 : 24);
 
-    const responsiveZoneToggle = page.getByRole('button', { name: /第3星区的单元进度/ });
+    const responsiveZoneToggle = page.locator('.exploration-zone').first().getByRole('button', { name: /第.+星区的单元进度/ });
     const zoneToggleBounds = await responsiveZoneToggle.boundingBox();
     if (viewport.width <= 1024) expect(zoneToggleBounds?.height).toBeGreaterThanOrEqual(44);
+    const zoneDetails = page.locator(`#${await responsiveZoneToggle.getAttribute('aria-controls')}`);
     await responsiveZoneToggle.click();
     await expect(responsiveZoneToggle).toHaveAttribute('aria-expanded', 'true');
-    await expect(page.locator('#exploration-zone-units-3')).toBeVisible();
+    await expect(zoneDetails).toBeVisible();
     await responsiveZoneToggle.click();
     await expect(responsiveZoneToggle).toHaveAttribute('aria-expanded', 'false');
     if (viewport.width <= 1024) {
@@ -80,12 +87,14 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
     }
   }
 
-  const zoneToggle = page.getByRole('button', { name: /第3星区的单元进度/ });
+  await selectGradeTwoFirstTerm(page);
+  const zoneToggle = page.locator('.exploration-zone').first().getByRole('button', { name: /第.+星区的单元进度/ });
   await expect(zoneToggle).toHaveAttribute('aria-expanded', 'false');
+  const zoneDetails = page.locator(`#${await zoneToggle.getAttribute('aria-controls')}`);
   await zoneToggle.focus();
   await page.keyboard.press('Enter');
   await expect(zoneToggle).toHaveAttribute('aria-expanded', 'true');
-  await expect(page.locator('#exploration-zone-units-3')).toBeVisible();
+  await expect(zoneDetails).toBeVisible();
 
   const chineseToggle = page.getByRole('button', { name: /二年级上学期语文进度/ });
   const mathToggle = page.getByRole('button', { name: /二年级上学期数学进度/ });

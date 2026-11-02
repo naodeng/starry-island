@@ -5,16 +5,17 @@ import { chooseSelectOption } from './selectOption';
 
 const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
 
-test('showsTheCurrentCourseRouteAndChallengeEntry', async ({ page }) => {
+test('showsTheCourseSelectorsAndChallengeEntry', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/courses');
 
-  const hero = page.locator('.catalog-hero');
   await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
-  await expect(hero.getByText('当前探索航线')).toBeVisible();
-  await expect(page.locator('.catalog-current-route')).toContainText('一年级');
+  await expect(page.getByRole('combobox', { name: '年级' })).toContainText('一年级');
+  await expect(page.getByRole('combobox', { name: '学期' })).toContainText('上学期');
+  await expect(page.getByRole('button', { name: '语文', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.catalog-current-route')).toHaveCount(0);
   await expect(page.getByRole('heading', { name: '今天想探索哪座星球' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: '准备好检验自己的学习成果了吗？' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '想检验自己的学习成果？' })).toBeVisible();
   await expect(page.locator('.project-legal-footer--page')).toContainText('© 2026');
   await expect(page.getByRole('link', { name: 'naodeng 的个人网站' })).toHaveAttribute('href', 'https://inaodeng.com');
   await page.getByRole('button', { name: '进入闯关中心' }).click();
@@ -22,32 +23,36 @@ test('showsTheCurrentCourseRouteAndChallengeEntry', async ({ page }) => {
   await expect(page.getByRole('heading', { name: '闯关中心', level: 1 })).toBeVisible();
 });
 
-test('updatesTheHighlightedCourseAndMovesKeyboardFocusToItsSelectors', async ({ page }) => {
+test('updatesTheSelectedCourseUsingCatalogControls', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/courses');
 
-  const currentRoute = page.locator('.catalog-current-route');
-  await expect(currentRoute).toContainText('一年级');
-  await expect(currentRoute).toContainText('上学期');
-  await expect(currentRoute).toContainText('语文');
-  await expect(currentRoute).toContainText('人教版');
-  await page.getByRole('button', { name: /调整课程选择/ }).click();
-  await expect(page.getByRole('group', { name: '选择学习年级和学期' })).toBeFocused();
+  await expect(page.getByRole('combobox', { name: '年级' })).toContainText('一年级');
+  await expect(page.getByRole('combobox', { name: '学期' })).toContainText('上学期');
 
   await chooseSelectOption(page, '学期', '下学期');
   await page.getByRole('button', { name: '英语', exact: true }).click();
-  await expect(currentRoute).toContainText('下学期');
-  await expect(currentRoute).toContainText('英语');
+  await expect(page.getByRole('combobox', { name: '学期' })).toContainText('下学期');
+  await expect(page.getByRole('button', { name: '英语', exact: true })).toHaveAttribute('aria-pressed', 'true');
 });
 
-test('showsAllThreeTaskTiersAndOpensARegisteredLearningSession', async ({ page }) => {
+test('showsDifficultyTabsAndOpensARegisteredLearningSession', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/grade-2/term-1/chinese/unit-01');
   await expect(page.getByRole('heading', { name: '第一单元 · 大自然的秘密' })).toBeVisible();
 
-  await expect(page.locator('.difficulty-track--basic')).toContainText('3 个任务');
+  const basicTab = page.getByRole('tab', { name: /^基础版/ });
+  const advancedTab = page.getByRole('tab', { name: /^进阶版/ });
+  const highTab = page.getByRole('tab', { name: /^高阶版/ });
+  await expect(basicTab).toHaveAttribute('aria-selected', 'true');
+  await expect(advancedTab).toContainText('进阶版');
+  await expect(highTab).toContainText('高阶版');
+  await advancedTab.click();
   await expect(page.locator('.difficulty-track--advanced')).toContainText('2 个任务');
+  await highTab.click();
   await expect(page.locator('.difficulty-track--high')).toContainText('2 个任务');
+  await basicTab.click();
+  await expect(page.locator('.difficulty-track--basic')).toContainText('3 个任务');
   await page.locator('.difficulty-track--basic').getByRole('button', { name: '查看任务' }).first().click();
   await expect(page).toHaveURL(/\/grade-2\/term-1\/chinese\/unit-01\/basic\/task-01$/);
   await expect(page.getByRole('heading', { name: '学习场次' })).toBeVisible();
@@ -67,6 +72,8 @@ test('shows second advanced and high tasks across Chinese math and English', asy
   for (const unitKey of samples) {
     for (const difficulty of ['advanced', 'high'] as const) {
       await page.goto(`/${unitKey}`);
+      const difficultyLabel = difficulty === 'advanced' ? '进阶版' : '高阶版';
+      await page.getByRole('tab', { name: new RegExp(`^${difficultyLabel}`) }).click();
       const track = page.locator(`.difficulty-track--${difficulty}`);
       const taskSlug = 'task-02';
       const expectedPath = `/${unitKey}/${difficulty}/${taskSlug}`;
@@ -85,7 +92,7 @@ test('shows second advanced and high tasks across Chinese math and English', asy
       await expect(page.getByText('8 个挑战')).toBeVisible();
       await page.getByRole('button', { name: '开始第 1 场' }).click();
       await expect(page).toHaveURL(/\/session-01$/);
-      await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('挑战 1 / 8', { timeout: 15_000 });
+      await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('第 1 / 8 题', { timeout: 15_000 });
     }
   }
 });
@@ -167,7 +174,7 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
     await page.evaluate((preference) => localStorage.setItem('china-study-theme-v1', preference), theme);
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
-    const metrics = await page.locator('.catalog-settings-button').evaluate((button) => {
+    const metrics = await page.getByRole('button', { name: '打开导航菜单' }).evaluate((button) => {
       const icon = button.querySelector('span[class*="animal-btn-icon"] svg');
       const label = Array.from(button.children).find((child) => !(child instanceof HTMLElement && child.className.includes('animal-btn-icon')));
       if (!(icon instanceof SVGElement) || !(label instanceof HTMLElement)) return null;
@@ -200,7 +207,7 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
     expect(metrics!.centerOffset).toBeLessThanOrEqual(2);
     expect(metrics!.contrast).toBeGreaterThanOrEqual(4.5);
     expect(metrics!.iconContrast).toBeGreaterThanOrEqual(4.5);
-    expect(metrics!.iconFillContrast).toBeGreaterThanOrEqual(4.5);
+    if (metrics!.iconFillContrast !== null) expect(metrics!.iconFillContrast).toBeGreaterThanOrEqual(4.5);
   }
 });
 
@@ -245,16 +252,15 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     await expect(page.getByRole('button', { name: /进入单元/ }).first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
     if (viewport.width <= 1024) {
-      const routeAction = await page.locator('.catalog-current-route-action').boundingBox();
-      expect(routeAction?.height).toBeGreaterThanOrEqual(44);
-      const settingsAction = await page.locator('.catalog-settings-button').boundingBox();
-      expect(settingsAction?.height).toBeGreaterThanOrEqual(44);
+      const menuAction = await page.getByRole('button', { name: '打开导航菜单' }).boundingBox();
+      expect(menuAction?.height).toBeGreaterThanOrEqual(44);
     }
     if (viewport.width === 390) {
       await expect(page.getByRole('complementary', { name: '学习伙伴小队' })).toBeVisible();
     }
 
-    await page.getByRole('button', { name: '设置' }).click();
+    await page.getByRole('button', { name: '打开导航菜单' }).click();
+    await page.getByRole('dialog', { name: '全局导航' }).getByRole('button', { name: '设置' }).click();
     await expect(page).toHaveURL(/\/settings$/);
     await expect(page.getByRole('heading', { name: '设置', level: 1 })).toBeVisible();
     await expect(page.locator('.project-legal-footer--page')).toContainText('PolyForm Noncommercial License 1.0.0');

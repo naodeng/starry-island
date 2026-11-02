@@ -112,14 +112,11 @@ export default function ChallengeGrowth({ summary, status, onRetry }: ChallengeG
 
   return (
     <div className="challenge-growth-view">
-      <h2>闯关成长记录</h2>
-      <p className="challenge-growth-intro">看看已经完成的挑战、通过的任务和点亮的组徽章。这里只显示本机汇总，不推测挑战发生时间。</p>
-
       <section className="challenge-section" aria-label="闯关成长摘要" aria-labelledby="challenge-growth-summary-heading">
         <div className="challenge-section-heading">
           <div>
             <p className="eyebrow">本机累计记录</p>
-            <h2 id="challenge-growth-summary-heading">一步一步积累</h2>
+            <h2 id="challenge-growth-summary-heading">闯关累计</h2>
           </div>
         </div>
         <div className="challenge-growth-metrics">

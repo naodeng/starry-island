@@ -24,15 +24,16 @@
 .growth-summary-domain { display: grid; align-content: start; gap: 11px; min-width: 0; }
 .growth-summary-domain-title { display: flex; align-items: center; gap: 9px; color: var(--animal-primary-color); }
 .growth-summary-domain-title h2 { margin: 0; color: var(--animal-text-color); font-size: 20px; font-weight: 900; }
-.growth-summary-card { display: grid; align-content: start; gap: 9px; min-height: 196px; padding: 22px; }
+.growth-page .growth-summary-card:not(.growth-summary-empty) { display: grid; align-content: start; gap: 9px; min-height: 196px; padding: 22px; border: 1px solid var(--animal-border-color); border-radius: 18px; color: var(--animal-text-color); background: var(--animal-bg-color); }
 .growth-summary-card > p,
 .growth-summary-card > strong,
-.growth-summary-card > span { margin: 0; color: var(--challenge-card-text); }
+.growth-summary-card > span { margin: 0; color: var(--animal-text-color-secondary); }
+.growth-page .growth-summary-card > strong { color: var(--animal-primary-color); }
 .growth-summary-card > p { font-weight: 800; }
 .growth-summary-card > strong { font-size: clamp(22px, 3vw, 30px); font-weight: 900; line-height: 1.25; }
 .growth-summary-card > span { line-height: 1.5; }
 .growth-summary-card > button { justify-self: start; margin: 1px 0 0 -12px; }
-.growth-summary-card > ul { display: flex; flex-wrap: wrap; gap: 7px 18px; margin: 0; padding: 0; color: var(--challenge-card-text); list-style: none; }
+.growth-summary-card > ul { display: flex; flex-wrap: wrap; gap: 7px 18px; margin: 0; padding: 0; color: var(--animal-text-color-secondary); list-style: none; }
 .growth-summary-card > ul li { line-height: 1.55; }
 .growth-summary-empty { box-sizing: border-box; min-height: 196px; padding: 10px 14px; }
 .growth-summary-empty .empty-state-content { gap: 7px; padding: 10px 0; }

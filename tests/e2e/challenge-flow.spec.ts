@@ -1,11 +1,23 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
+import type { Page } from '@playwright/test';
 import { expect, test } from './fixtures';
 
+const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
 const taskId = 'grade-2-term-1-math-unit-02/basic-01-v2';
 const taskUrl = `/challenges/task/${encodeURIComponent(taskId)}`;
 const semesterTaskId = 'grade-2-term-1-math-first-half/basic-01-v2';
 const semesterTaskUrl = `/challenges/task/${encodeURIComponent(semesterTaskId)}`;
+
+async function expectCourseBasicTaskCount(page: Page) {
+  const unitKey = new URL(page.url()).pathname.split('/').filter(Boolean).slice(0, 4).join('/');
+  const basicTaskCount: number | undefined = curriculumManifest.units[unitKey]?.sessionIds?.basic?.length;
+  expect(basicTaskCount, `Expected the course manifest to register basic tasks for ${unitKey}`).toBeGreaterThan(0);
+  await expect(page.getByRole('tab', { name: /^基础版/ })).toHaveAttribute('aria-selected', 'true');
+  const basicTrack = page.locator('.difficulty-track--basic');
+  await expect(basicTrack).toBeVisible();
+  await expect(basicTrack.getByRole('button', { name: '查看任务' })).toHaveCount(basicTaskCount!);
+}
 
 interface E2EAttemptSnapshot {
   taskId: string;
@@ -162,7 +174,7 @@ test('keeps growth statistics readable in both themes', async ({ page }) => {
     await page.goto('/challenges/growth');
     await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
     await expect(page.getByRole('tab', { name: '闯关成长' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.getByRole('heading', { name: '闯关成长记录', level: 2 })).toBeVisible();
+    await expect(page.getByRole('heading', { name: '闯关累计', level: 2 })).toBeVisible();
     await expect(page).toHaveTitle('成长中心 | 星岛学园');
     await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe(theme);
 
@@ -695,7 +707,7 @@ test('plays a local challenge answer cue after saving a submitted answer', async
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
   await expect.poll(() => page.evaluate(() => (window as Window & { __challengeCueSources: string[] }).__challengeCueSources)).toHaveLength(1);
   const [source] = await page.evaluate(() => (window as Window & { __challengeCueSources: string[] }).__challengeCueSources);
-  expect(source).toMatch(/^\/audio\/answer-(correct|incorrect)\.mp3$/);
+  expect(source).toMatch(/^\/audio\/answer-(correct|incorrect|praise-\d{2})\.mp3$/);
 });
 
 test('opens the local wrong-question notebook from the challenge center', async ({ page }) => {
@@ -707,7 +719,7 @@ test('opens the local wrong-question notebook from the challenge center', async 
   await page.getByRole('button', { name: '打开错题本' }).click();
 
   await expect(page.getByRole('heading', { name: '错题本', exact: true })).toBeVisible();
-  await expect(page.getByText('完成挑战后，答错的题会出现在这里；答对两次后会标记为已掌握。', { exact: true })).toBeVisible();
+  await expect(page.getByText('还没有需要回看的题目，完成一场挑战后，错题会显示在这里。', { exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: '返回闯关中心' })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
@@ -764,7 +776,7 @@ test('opens the Grade 2 Chinese Unit 4 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-04');
@@ -787,7 +799,7 @@ test('opens the Grade 2 Chinese Unit 5 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-05');
@@ -810,7 +822,7 @@ test('opens the Grade 2 Chinese Unit 6 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-06');
@@ -833,7 +845,7 @@ test('opens the Grade 2 Chinese Unit 7 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-07');
@@ -856,7 +868,7 @@ test('opens the Grade 2 Chinese Unit 8 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-chinese-unit-08');
@@ -879,7 +891,7 @@ test('opens the Grade 2 Term 2 Chinese Unit 1 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-2-chinese-unit-01');
@@ -902,7 +914,7 @@ test('opens the Grade 2 Term 2 Chinese Unit 2 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-2-chinese-unit-02');
@@ -925,7 +937,7 @@ test('opens the Grade 2 Term 2 Chinese Unit 3 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-2-chinese-unit-03');
@@ -948,7 +960,7 @@ test('opens the Grade 2 Math Unit 1 challenge from its course page without chang
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-01');
@@ -971,7 +983,7 @@ test('opens the Grade 2 Math Unit 2 challenge from its course page without chang
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-02');
@@ -994,7 +1006,7 @@ test('opens the Grade 2 Math Unit 3 challenge from its course page without chang
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-03');
@@ -1017,7 +1029,7 @@ test('opens the Grade 2 Math Unit 4 challenge from its course page without chang
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-04');
@@ -1040,7 +1052,7 @@ test('opens the Grade 2 Math Unit 5 challenge from its course page without chang
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-05');
@@ -1063,7 +1075,7 @@ test('opens the Grade 2 Math Unit 6 challenge from its course page without chang
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-math-unit-06');
@@ -1086,7 +1098,7 @@ test('opens the Grade 2 English Unit 1 challenge from My Family without changing
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-unit-01');
@@ -1109,7 +1121,7 @@ test('opens the Grade 2 English Unit 2 challenge from Boys and Girls without cha
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-unit-02');
@@ -1138,7 +1150,7 @@ test('opens the Grade 2 English Unit 3 challenge from My Friends without changin
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-2-term-1-english-unit-03');
@@ -1159,7 +1171,7 @@ test('opens the Grade 2 English Unit 4 challenge from In the Community without c
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });
   await page.goto('/grade-2/term-1/english/unit-04');
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
   await page.setViewportSize({ width: 390, height: 844 });
@@ -1255,7 +1267,7 @@ test('opens the Grade 1 English Unit 4 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-04');
@@ -1277,7 +1289,7 @@ test('opens the Grade 1 English Unit 5 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-05');
@@ -1299,7 +1311,7 @@ test('opens the Grade 1 English Unit 6 challenge from its course page without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-english-unit-06');
@@ -1442,7 +1454,7 @@ test('opens the Grade 1 math Unit 3 challenge from its course page without chang
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-03');
@@ -1471,7 +1483,7 @@ test('opens the Grade 1 math Unit 4 challenge on a narrow dark screen without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-04');
@@ -1494,7 +1506,7 @@ test('opens the Grade 1 math Unit 5 challenge on a narrow dark screen without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-05');
@@ -1516,7 +1528,7 @@ test('opens the Grade 1 math Unit 6 challenge on a narrow dark screen without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-06');
@@ -1538,7 +1550,7 @@ test('opens the Grade 1 math Unit 7 challenge on a narrow dark screen without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-07');
@@ -1560,7 +1572,7 @@ test('opens the Grade 1 math Unit 8 challenge on a narrow dark screen without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-08');
@@ -1582,7 +1594,7 @@ test('opens the Grade 1 math Unit 9 challenge on a narrow dark screen without ch
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-1-math-unit-09');
@@ -1604,7 +1616,7 @@ test('opens the Grade 1 Term 2 Math Unit 1 challenge from its course page withou
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-01');
@@ -1626,7 +1638,7 @@ test('opens the Grade 1 Term 2 Math Unit 2 challenge from its course page withou
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-02');
@@ -1648,7 +1660,7 @@ test('opens the Grade 1 Term 2 Math Unit 3 challenge from its course page withou
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-03');
@@ -1670,7 +1682,7 @@ test('opens the Grade 1 Term 2 Math Unit 5 challenge from its course page withou
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-05');
@@ -1692,7 +1704,7 @@ test('opens the Grade 1 Term 2 Math Unit 6 challenge from its course page withou
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-06');
@@ -1714,7 +1726,7 @@ test('opens the Grade 1 Term 2 Math Unit 7 challenge from its course page withou
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-07');
@@ -1736,7 +1748,7 @@ test('opens the Grade 1 Term 2 Math Unit 8 challenge from its course page withou
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-math-unit-08');
@@ -1758,7 +1770,7 @@ test('opens the Grade 1 Term 2 English Unit 1 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-01');
@@ -1780,7 +1792,7 @@ test('opens the Grade 1 Term 2 English Unit 2 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-02');
@@ -1802,7 +1814,7 @@ test('opens the Grade 1 Term 2 English Unit 3 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-03');
@@ -1824,7 +1836,7 @@ test('opens the Grade 1 Term 2 English Unit 4 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-04');
@@ -1846,7 +1858,7 @@ test('opens the Grade 1 Term 2 English Unit 5 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-05');
@@ -1868,7 +1880,7 @@ test('opens the Grade 1 Term 2 English Unit 6 challenge from its course page wit
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
 
   await expect(page.getByRole('button', { name: '进入闯关挑战' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '查看任务' })).toHaveCount(6);
+  await expectCourseBasicTaskCount(page);
   await page.getByRole('button', { name: '进入闯关挑战' }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL('/challenges/group/grade-1-term-2-english-unit-06');

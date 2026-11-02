@@ -50,6 +50,15 @@ function getCourseLocation(destination: LearningSessionDestination): string {
   return `${destination.gradeTitle}${destination.termTitle} · ${destination.subjectTitle} · ${destination.unitTitle}`;
 }
 
+function getContinueSessionTitle(destination: LearningSessionDestination): string {
+  const unitLabels = destination.unitTitle.split(' · ');
+  const sessionLabels = destination.sessionTitle.split(' · ');
+  while (unitLabels.length && sessionLabels.length && unitLabels.at(-1) === sessionLabels[0]) {
+    sessionLabels.shift();
+  }
+  return sessionLabels.length ? sessionLabels.join(' · ') : destination.sessionTitle;
+}
+
 function getInitialCourseSelection(progress: ProgressState): CourseSelection {
   const savedSelection = loadCourseSelection();
   if (savedSelection) return savedSelection;
@@ -172,7 +181,7 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
               <div className="home-continue-copy">
                 <h2 id="home-continue-heading">继续学习</h2>
                 {destination ? (
-                  <p>{getCourseLocation(destination)} · {destination.sessionTitle}</p>
+                  <p>{getCourseLocation(destination)} · {getContinueSessionTitle(destination)}</p>
                 ) : continueState.status === 'loading' ? (
                   <p className="home-loading-copy" aria-busy="true">正在为你查找已开放课程中的下一场基础版学习。</p>
                 ) : (
