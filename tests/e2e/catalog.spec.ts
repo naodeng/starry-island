@@ -12,7 +12,7 @@ test('showsTheCurrentCourseRouteAndChallengeEntry', async ({ page }) => {
   const hero = page.locator('.catalog-hero');
   await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
   await expect(hero.getByText('当前探索航线')).toBeVisible();
-  await expect(page.locator('.catalog-current-route')).toContainText('1年级');
+  await expect(page.locator('.catalog-current-route')).toContainText('一年级');
   await expect(page.getByRole('heading', { name: '今天想探索哪座星球' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '准备好检验自己的学习成果了吗？' })).toBeVisible();
   await expect(page.locator('.project-legal-footer--page')).toContainText('© 2026');
@@ -27,7 +27,7 @@ test('updatesTheHighlightedCourseAndMovesKeyboardFocusToItsSelectors', async ({ 
   await page.goto('/courses');
 
   const currentRoute = page.locator('.catalog-current-route');
-  await expect(currentRoute).toContainText('1年级');
+  await expect(currentRoute).toContainText('一年级');
   await expect(currentRoute).toContainText('上学期');
   await expect(currentRoute).toContainText('语文');
   await expect(currentRoute).toContainText('人教版');
