@@ -71,7 +71,7 @@ export default function ChallengeActivityRenderer({ activity, disabled, densityT
     <section className="activity-renderer challenge-activity" data-grade-tier={densityTier} aria-labelledby={`challenge-activity-${activity.id}`}>
       <div className="activity-prompt-row">
         <span className="activity-symbol" aria-hidden="true"><StarIcon size={18} /></span>
-        <h2 id={`challenge-activity-${activity.id}`}>{activity.prompt}</h2>
+        <h2 id={`challenge-activity-${activity.id}`} tabIndex={-1}>{activity.prompt}</h2>
       </div>
       <div className="challenge-prompt-speech">
         <Button type="default" disabled={!soundEnabled || disabled} onClick={readPrompt}>朗读题目</Button>

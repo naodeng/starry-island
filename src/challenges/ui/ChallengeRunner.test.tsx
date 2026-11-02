@@ -450,6 +450,24 @@ describe('ChallengeRunner', () => {
     expect(await repository.getActiveAttempt(task.id)).toMatchObject({ currentIndex: 1, answers: { [firstQuestion.questionId]: 'correct' } });
   });
 
+  it('moves keyboard focus to the next question after the saved answer advances', async () => {
+    const repository = makeRepository();
+    const { loadedGroup, task } = makeLoadedGroup(2);
+    render(<ChallengeRunner loadedGroup={loadedGroup} task={task} repository={repository} manifestVersion="test-v1" taskTitle="基础闯关 1" onNavigate={vi.fn()} />);
+
+    await userClick(await screen.findByRole('button', { name: '开始挑战' }));
+    const active = await waitFor(async () => {
+      const loaded = await repository.getActiveAttempt(task.id);
+      expect(loaded).not.toBeNull();
+      return loaded;
+    });
+    const nextQuestion = active!.questions[1]!;
+    fireEvent.click(screen.getByRole('button', { name: '正确答案' }));
+    fireEvent.click(screen.getByRole('button', { name: '提交答案' }));
+
+    expect(await screen.findByRole('heading', { name: nextQuestion.activity.prompt })).toHaveFocus();
+  });
+
   it('uses randomized praise clips after saved consecutive correct answers', async () => {
     stubChallengeAudio();
     const repository = makeRepository();

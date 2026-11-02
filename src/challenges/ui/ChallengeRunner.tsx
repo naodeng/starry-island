@@ -99,6 +99,23 @@ export default function ChallengeRunner({ loadedGroup, task, repository, manifes
   const lockControllerRef = useRef<AbortController | null>(null);
   const playCueRef = useRef(playCue);
   const completionCuePlayedRef = useRef(false);
+  const currentQuestion = attempt?.questions[attempt.currentIndex] ?? null;
+  const previousQuestionIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!currentQuestion) {
+      previousQuestionIdRef.current = null;
+      return;
+    }
+    if (previousQuestionIdRef.current === null) {
+      previousQuestionIdRef.current = currentQuestion.questionId;
+      return;
+    }
+    if (previousQuestionIdRef.current === currentQuestion.questionId) return;
+
+    previousQuestionIdRef.current = currentQuestion.questionId;
+    document.getElementById(`challenge-activity-${currentQuestion.activity.id}`)?.focus();
+  }, [currentQuestion?.questionId, currentQuestion?.activity.id]);
 
   useEffect(() => {
     playCueRef.current = playCue;
