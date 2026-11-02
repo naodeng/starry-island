@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildPlannedGrade, curriculum, getAddedCourseUnit } from './curriculum';
+import { curriculumManifest } from './curriculumManifest';
 import { validateCurriculum } from './validateCurriculum';
 import { getSessionsForDifficulty } from './sessionUtils';
 import { getKnownCurriculumPositions } from '../achievements/position';
@@ -144,6 +145,20 @@ function questionFingerprint(activity: ActivityDefinition): string {
 }
 
 describe('curriculum registry', () => {
+  it('uses Arabic numerals consistently for grade labels from one through six', () => {
+    const expectedTitles = [
+      '1年级',
+      '2年级',
+      '3年级',
+      '4年级',
+      '5年级',
+      '6年级',
+    ];
+
+    expect(curriculum.grades.map(({ title }) => title)).toEqual(expectedTitles);
+    expect(curriculumManifest.grades.map(({ title }) => title)).toEqual(expectedTitles);
+  });
+
   it('keeps catalog entries planned when their course modules are not registered yet', () => {
     const grade = buildPlannedGrade(4, {});
     const unit = grade.terms[0].subjects.find(({ id }) => id === 'math')?.units[0];

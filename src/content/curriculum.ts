@@ -140,7 +140,7 @@ export const curriculum: Curriculum = {
     buildAddedGrade(1),
     {
       id: 'grade-2',
-      title: '二年级',
+      title: '2年级',
       terms: [
         {
           id: 'term-1',
