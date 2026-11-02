@@ -94,6 +94,7 @@ describe('App', () => {
     await user.click(await screen.findByRole('button', { name: '进入闯关中心' }));
     expect(await screen.findByRole('heading', { name: '闯关中心' }, { timeout: 5000 })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '选择一条挑战航线' })).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: '清除筛选' }));
     const soundsBeforeChallengeNavigation = playedSources.length;
 
     const unitChallengeCard = screen.getByRole('heading', { name: '二年级上册数学 · 第二单元' }).closest('.challenge-group-card');
@@ -105,6 +106,7 @@ describe('App', () => {
     expect(playedSources).toHaveLength(soundsBeforeChallengeNavigation);
 
     await user.click(screen.getByRole('button', { name: '返回闯关中心' }));
+    await user.click(screen.getByRole('button', { name: '清除筛选' }));
     const englishChallengeCard = screen.getByRole('heading', { name: '三年级上册英语 · 第一单元' }).closest('.challenge-group-card');
     expect(englishChallengeCard).not.toBeNull();
     await user.click(within(englishChallengeCard as HTMLElement).getByRole('button', { name: '查看挑战任务' }));

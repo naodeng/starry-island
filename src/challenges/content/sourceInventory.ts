@@ -1,4 +1,5 @@
 import type { ActivityDefinition, CurriculumUnit, Difficulty } from '../../content/types';
+import { V1_COVERAGE_TARGETS } from './coverage';
 
 const DIFFICULTIES: Difficulty[] = ['basic', 'advanced', 'high'];
 const COMPATIBLE_ACTIVITY_KINDS = new Set<ActivityDefinition['kind']>(['choice', 'arithmetic', 'match', 'order', 'categorize']);
@@ -9,7 +10,7 @@ export interface SourceInventoryTargetCounts {
 }
 
 export const V1_SOURCE_INVENTORY_TARGETS: SourceInventoryTargetCounts = {
-  formalUnitCount: 254,
+  formalUnitCount: V1_COVERAGE_TARGETS.formalUnitGroups,
   minimumUniqueActivitiesPerDifficulty: 30,
 };
 

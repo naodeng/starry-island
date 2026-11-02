@@ -77,7 +77,10 @@ describe('ChallengeCenter', () => {
     const groups = loadGroups(['grade-3-term-1-english-unit-01']);
     render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
 
-    expect(screen.getByRole('heading', { level: 3, name: '这个年级和学期暂时没有挑战路线' })).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: '闯关年级' })).toHaveTextContent('3年级');
+    expect(screen.getByRole('combobox', { name: '闯关学期' })).toHaveTextContent('下学期');
+    expect(screen.getByRole('combobox', { name: '闯关学科' })).toHaveTextContent('数学');
+    expect(screen.getByRole('heading', { level: 3, name: '当前筛选条件下暂时没有挑战路线' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: '显示全部挑战路线' }));
     expect(screen.getByRole('heading', { level: 3, name: '三年级上册英语 · 第一单元' })).toBeInTheDocument();
   });

@@ -1,4 +1,5 @@
-import { Button, Card } from 'animal-island-ui';
+import { useState } from 'react';
+import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeCenterPath, getChallengeTaskPath } from '../../app/router';
 import type { LoadedPilotGroup } from '../content/pilotContent';
@@ -14,6 +15,7 @@ interface ChallengeGroupProps {
 
 export default function ChallengeGroup({ loadedGroup, progressByTaskId, onNavigate }: ChallengeGroupProps) {
   const { group } = loadedGroup;
+  const [difficultyFilter, setDifficultyFilter] = useState('all');
   if (loadedGroup.status !== 'ready') {
     return (
       <main className="challenge-page">
@@ -28,6 +30,15 @@ export default function ChallengeGroup({ loadedGroup, progressByTaskId, onNaviga
       </main>
     );
   }
+  const difficultyOptions = [
+    { key: 'all', label: '全部难度' },
+    { key: 'basic', label: '基础' },
+    { key: 'advanced', label: '进阶' },
+    { key: 'high', label: '高阶' },
+  ];
+  const visibleTasks = group.definition.tasks.filter((task) => difficultyFilter === 'all' || task.difficulty === difficultyFilter);
+  const hasActiveFilter = difficultyFilter !== 'all';
+
   return (
     <main className="challenge-page">
       <div className="challenge-shell">
@@ -47,8 +58,22 @@ export default function ChallengeGroup({ loadedGroup, progressByTaskId, onNaviga
               {group.definition.tasks.filter(({ id }) => progressByTaskId[id]?.everPassed).length}/5 个任务已通过
             </p>
           </div>
+          <div className="challenge-filters" role="group" aria-label="筛选挑战任务">
+            <label>
+              <span>难度</span>
+              <Select aria-label="任务难度" options={difficultyOptions} value={difficultyFilter} onChange={setDifficultyFilter} />
+            </label>
+          </div>
+          <div className="challenge-filter-summary">
+            <p role="status" aria-live="polite">正在显示 {visibleTasks.length} 个任务，共 {group.definition.tasks.length} 个</p>
+            {hasActiveFilter && (
+              <Button type="text" onClick={() => setDifficultyFilter('all')}>
+                显示全部难度
+              </Button>
+            )}
+          </div>
           <div className="challenge-task-grid">
-            {group.definition.tasks.map((task) => {
+            {visibleTasks.map((task) => {
               const progress = progressByTaskId[task.id];
               return (
                 <Card className="challenge-task-card" color="default" key={task.id}>

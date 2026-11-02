@@ -34,7 +34,7 @@ describe('runSourceInventoryCommand', () => {
 
     expect(exitCode).toBe(0);
     expect(errors).toEqual([]);
-    expect(output.join('')).toContain('0/254 个正式单元');
+    expect(output.join('')).toContain('0/251 个正式单元');
     const report = JSON.parse(await readFile(resolve(cwd, 'reports/curriculum-source-inventory-report.json'), 'utf8'));
     const markdown = await readFile(resolve(cwd, 'reports/curriculum-source-inventory-report.md'), 'utf8');
     expect(report.catalogBaselineMatches).toBe(false);

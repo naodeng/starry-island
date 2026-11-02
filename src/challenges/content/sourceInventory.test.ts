@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { ActivityDefinition, CurriculumUnit, Difficulty } from '../../content/types';
-import { analyzeCurriculumSourceInventory, renderCurriculumSourceInventoryMarkdown } from './sourceInventory';
+import { V1_COVERAGE_TARGETS } from './coverage';
+import { analyzeCurriculumSourceInventory, renderCurriculumSourceInventoryMarkdown, V1_SOURCE_INVENTORY_TARGETS } from './sourceInventory';
 
 const fixtureTargets = { formalUnitCount: 1, minimumUniqueActivitiesPerDifficulty: 2 };
 const difficulties: Difficulty[] = ['basic', 'advanced', 'high'];
@@ -68,6 +69,10 @@ function createUnit(
 }
 
 describe('analyzeCurriculumSourceInventory', () => {
+  it('shares the current formal-unit catalog baseline with challenge coverage', () => {
+    expect(V1_SOURCE_INVENTORY_TARGETS.formalUnitCount).toBe(V1_COVERAGE_TARGETS.formalUnitGroups);
+  });
+
   it('counts supported source activities, removes exact duplicates, and reports each difficulty shortage', () => {
     const unit = createUnit('grade-1/term-1/math/unit-01', {
       basic: [choice('basic-1', '同一道题'), choice('basic-2', '同一道题'), measurement('basic-measurement')],

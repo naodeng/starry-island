@@ -3,12 +3,13 @@ import { Button, Card, Select } from 'animal-island-ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeGroupPath, getChallengeGrowthPath, getChallengeWrongQuestionsPath, getSubjectTitle } from '../../app/router';
 import EmptyState from '../../components/shared/EmptyState';
+import type { SubjectId } from '../../content/types';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { TaskProgress } from '../domain/types';
 import { loadCourseSelection } from '../../storage/courseSelection';
 
 export function sortChallengeGroupsForDisplay(groups: readonly LoadedPilotGroup[]): LoadedPilotGroup[] {
-  const subjectOrder = { chinese: 0, math: 1, english: 2 } as const;
+  const subjectOrder: Record<SubjectId, number> = { chinese: 0, math: 1, english: 2 };
   const stageOrder = { 'first-half': 0, 'second-half': 1, 'end-term': 2 } as const;
   const unitNumber = (group: LoadedPilotGroup) => Number(group.group.definition.sourceUnitIds[0]?.match(/\/unit-(\d+)$/u)?.[1] ?? Number.MAX_SAFE_INTEGER);
 
@@ -118,18 +119,13 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
   const savedSelection = loadCourseSelection();
   const availableGrades = [...new Set(groups.map(({ group }) => group.definition.grade))].sort((left, right) => left - right);
   const savedGrade = savedSelection ? Number(savedSelection.gradeId.slice('grade-'.length)) : null;
-  const defaultGrade = savedGrade !== null && availableGrades.includes(savedGrade) ? savedGrade : availableGrades[0];
-  const defaultGradeGroups = groups.filter(({ group }) => group.definition.grade === defaultGrade);
-  const defaultSemesters = [...new Set(defaultGradeGroups.map(({ group }) => group.definition.semester))].sort((left, right) => left - right);
-  const savedSemester = savedSelection ? Number(savedSelection.termId.slice('term-'.length)) : null;
-  const defaultSemester = savedSemester !== null && defaultSemesters.includes(savedSemester as 1 | 2)
-    ? savedSemester
-    : defaultSemesters[0];
-  const defaultSubjectGroups = defaultGradeGroups.filter(({ group }) => group.definition.semester === defaultSemester);
-  const defaultSubjects = defaultSubjectGroups.map(({ group }) => group.definition.subject);
-  const defaultSubject = savedSelection && defaultSubjects.includes(savedSelection.subjectId) ? savedSelection.subjectId : 'all';
+  const hasSavedGrade = savedGrade !== null && availableGrades.includes(savedGrade);
+  const defaultGrade = hasSavedGrade ? savedGrade : undefined;
+  const savedSemester = savedSelection?.termId === 'term-1' ? 1 : savedSelection?.termId === 'term-2' ? 2 : null;
+  const defaultSemester = hasSavedGrade ? savedSemester : null;
+  const defaultSubject = hasSavedGrade && savedSelection ? savedSelection.subjectId : 'all';
   const [gradeFilter, setGradeFilter] = useState(defaultGrade === undefined ? 'all' : String(defaultGrade));
-  const [semesterFilter, setSemesterFilter] = useState(defaultSemester === undefined ? 'all' : String(defaultSemester));
+  const [semesterFilter, setSemesterFilter] = useState(defaultSemester === null ? 'all' : String(defaultSemester));
   const [subjectFilter, setSubjectFilter] = useState<string>(defaultSubject);
   const gradeOptions = [
     { key: 'all', label: '全部年级' },
@@ -140,19 +136,27 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
     : groups.filter(({ group }) => group.definition.grade === Number(gradeFilter));
   const availableSemesters = [...new Set(semesterGrades.map(({ group }) => group.definition.semester))]
     .sort((left, right) => left - right);
+  const selectedSemester = semesterFilter === '1' ? 1 : semesterFilter === '2' ? 2 : null;
+  const filterSemesters = selectedSemester !== null && !availableSemesters.includes(selectedSemester)
+    ? [...availableSemesters, selectedSemester].sort((left, right) => left - right)
+    : availableSemesters;
   const semesterOptions = [
     { key: 'all', label: '全部学期' },
-    ...availableSemesters.map((semester) => ({ key: String(semester), label: semester === 1 ? '上学期' : '下学期' })),
+    ...filterSemesters.map((semester) => ({ key: String(semester), label: semester === 1 ? '上学期' : '下学期' })),
   ];
   const subjectGroups = semesterGrades.filter(({ group }) => (
     semesterFilter === 'all' || group.definition.semester === Number(semesterFilter)
   ));
-  const subjectOrder = { chinese: 0, math: 1, english: 2 } as const;
-  const availableSubjects = [...new Set(subjectGroups.map(({ group }) => group.definition.subject))]
+  const subjectOrder: Record<SubjectId, number> = { chinese: 0, math: 1, english: 2 };
+  const availableSubjects: SubjectId[] = [...new Set(subjectGroups.map(({ group }) => group.definition.subject))]
     .sort((left, right) => subjectOrder[left] - subjectOrder[right]);
+  const selectedSubject = (['chinese', 'math', 'english'] as const).find((subject) => subject === subjectFilter) ?? null;
+  const filterSubjects = selectedSubject !== null && !availableSubjects.includes(selectedSubject)
+    ? [...availableSubjects, selectedSubject].sort((left, right) => subjectOrder[left] - subjectOrder[right])
+    : availableSubjects;
   const subjectOptions = [
     { key: 'all', label: '全部学科' },
-    ...availableSubjects.map((subject) => ({ key: subject, label: getSubjectTitle(subject) })),
+    ...filterSubjects.map((subject) => ({ key: subject, label: getSubjectTitle(subject) })),
   ];
   const sortedGroups = sortChallengeGroupsForDisplay(groups);
   const filteredGroups = sortedGroups.filter(({ group }) => (
@@ -225,7 +229,7 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
                   <EmptyState
                     className="challenge-route-empty"
                     headingLevel={3}
-                    title="这个年级和学期暂时没有挑战路线"
+                    title="当前筛选条件下暂时没有挑战路线"
                     description="可以调整筛选条件，或显示全部已登记的挑战路线。"
                   />
                   <Button type="default" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); setSubjectFilter('all'); }}>显示全部挑战路线</Button>

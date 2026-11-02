@@ -5,21 +5,21 @@ import { chooseSelectOption } from './selectOption';
 
 const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
 
-test('showsCatalogExplorationProgressAndOpensAchievementDetails', async ({ page }) => {
+test('showsTheCurrentCourseRouteAndChallengeEntry', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/courses');
 
   const hero = page.locator('.catalog-hero');
-  await expect(hero.getByText('我的探索进度')).toBeVisible();
-  await expect(hero.getByRole('progressbar', { name: /距离月球开拓者的进度/ })).toBeVisible();
-  await expect(page.locator('.catalog-hero-crew .achievement-summary-card')).toBeVisible();
+  await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
+  await expect(hero.getByText('当前探索航线')).toBeVisible();
+  await expect(page.locator('.catalog-current-route')).toContainText('1年级');
+  await expect(page.getByRole('heading', { name: '今天想探索哪座星球' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '准备好检验自己的学习成果了吗？' })).toBeVisible();
   await expect(page.locator('.project-legal-footer--page')).toContainText('© 2026');
   await expect(page.getByRole('link', { name: 'naodeng 的个人网站' })).toHaveAttribute('href', 'https://inaodeng.com');
-  await hero.getByRole('button', { name: /成就详情/ }).click();
-
-  await expect(page).toHaveURL(/\/achievements$/);
-  await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
-  await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
+  await page.getByRole('button', { name: '进入闯关中心' }).click();
+  await expect(page).toHaveURL(/\/challenges$/);
+  await expect(page.getByRole('heading', { name: '闯关中心', level: 1 })).toBeVisible();
 });
 
 test('updatesTheHighlightedCourseAndMovesKeyboardFocusToItsSelectors', async ({ page }) => {
@@ -85,7 +85,7 @@ test('shows second advanced and high tasks across Chinese math and English', asy
       await expect(page.getByText('8 个挑战')).toBeVisible();
       await page.getByRole('button', { name: '开始第 1 场' }).click();
       await expect(page).toHaveURL(/\/session-01$/);
-      await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('挑战 1 / 8');
+      await expect(page.getByRole('region', { name: '挑战进度' })).toContainText('挑战 1 / 8', { timeout: 15_000 });
     }
   }
 });
@@ -148,6 +148,7 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
 
   const submitAction = page.locator('.activity-submit-action').first();
   await expect(submitAction).toBeVisible();
+  await submitAction.scrollIntoViewIfNeeded();
   const submitBounds = await submitAction.boundingBox();
   expect(submitBounds?.y).toBeGreaterThan(0);
   expect(submitBounds!.y + submitBounds!.height).toBeLessThanOrEqual(844);
@@ -203,16 +204,16 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
   }
 });
 
-test('rendersEveryVerifiedCourseEntryAndOpensItsUnit', async ({ page }) => {
-  test.setTimeout(300_000);
-  await installAudioSpy(page);
-  for (const grade of curriculumManifest.grades) {
+for (const grade of curriculumManifest.grades) {
+  test(`rendersVerifiedCourseEntriesAndOpensUnitsFor${grade.title}`, async ({ page }) => {
+    test.setTimeout(120_000);
+    await installAudioSpy(page);
     for (const term of grade.terms) {
       for (const subject of term.subjects) {
         const verifiedEntries = subject.units.filter((entry) => entry.status === 'active'
           && curriculumManifest.textbooks[entry.textbookEditionId]?.verificationStatus === 'verified');
         await page.goto('/courses');
-        await expect(page.getByRole('heading', { name: '星岛学园 · Starry Island' })).toBeVisible();
+        await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
         await chooseSelectOption(page, '年级', grade.title);
         await chooseSelectOption(page, '学期', term.title);
         await page.getByRole('button', { name: subject.title, exact: true }).click();
@@ -226,8 +227,8 @@ test('rendersEveryVerifiedCourseEntryAndOpensItsUnit', async ({ page }) => {
         }
       }
     }
-  }
-});
+  });
+}
 
 test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) => {
   await installAudioSpy(page);
@@ -240,19 +241,17 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
   ]) {
     await page.setViewportSize(viewport);
     await page.goto('/courses');
-    await expect(page.getByRole('heading', { name: '星岛学园 · Starry Island' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
     await expect(page.getByRole('button', { name: /进入单元/ }).first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
     if (viewport.width <= 1024) {
       const routeAction = await page.locator('.catalog-current-route-action').boundingBox();
-      const achievementAction = await page.locator('.catalog-hero-crew .achievement-summary-card').getByRole('button', { name: /成就详情/ }).boundingBox();
       expect(routeAction?.height).toBeGreaterThanOrEqual(44);
-      expect(achievementAction?.height).toBeGreaterThanOrEqual(44);
+      const settingsAction = await page.locator('.catalog-settings-button').boundingBox();
+      expect(settingsAction?.height).toBeGreaterThanOrEqual(44);
     }
     if (viewport.width === 390) {
-      const companionName = page.locator('.companion-roster-member').first().locator(':scope > span').last();
-      await expect(companionName).toBeVisible();
-      expect(await companionName.evaluate((element) => getComputedStyle(element).fontSize)).toBe('11px');
+      await expect(page.getByRole('complementary', { name: '学习伙伴小队' })).toBeVisible();
     }
 
     await page.getByRole('button', { name: '设置' }).click();

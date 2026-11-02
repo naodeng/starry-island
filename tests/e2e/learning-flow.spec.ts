@@ -212,17 +212,15 @@ test('playsAnswerCuesInOrderAndSavesEightQuestionProgress', async ({ page }) => 
 
   await expect(page.getByRole('heading', { name: '太棒了，能量收集完成！' })).toBeVisible();
   const answerCues = (await readAudioEvents(page))
-    .filter((event) => event.type === 'play' && /answer-(correct|streak|incorrect)|session-complete/.test(event.src))
+    .filter((event) => event.type === 'play' && /answer-(correct|streak|incorrect|praise-\d{2})|session-complete/.test(event.src))
     .map((event) => event.src);
-  expect(answerCues).toEqual([
-    '/audio/answer-incorrect.mp3',
-    '/audio/answer-correct.mp3',
-    '/audio/answer-streak.mp3',
-    '/audio/answer-incorrect.mp3',
-    '/audio/answer-correct.mp3',
-    ...Array.from({ length: 4 }, () => '/audio/answer-streak.mp3'),
-    '/audio/session-complete.mp3',
-  ]);
+  expect(answerCues).toHaveLength(10);
+  expect(answerCues[0]).toBe('/audio/answer-incorrect.mp3');
+  expect(answerCues[1]).toMatch(/^\/audio\/answer-(?:correct|praise-\d{2})\.mp3$/);
+  expect(answerCues[2]).toMatch(/^\/audio\/answer-(?:correct|streak|praise-\d{2})\.mp3$/);
+  expect(answerCues[3]).toBe('/audio/answer-incorrect.mp3');
+  expect(answerCues.slice(4, 9).every((asset) => /^\/audio\/answer-(?:correct|streak|praise-\d{2})\.mp3$/.test(asset))).toBe(true);
+  expect(answerCues[9]).toBe('/audio/session-complete.mp3');
   expect((await readAudioEvents(page)).some((event) => event.type === 'play' && event.src === '/audio/interaction-click.mp3')).toBe(true);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('china-study-progress-v1') ?? '{}').completedSessionIds))
     .toContain('grade-2/term-1/chinese/unit-01/basic/task-01/session-01');

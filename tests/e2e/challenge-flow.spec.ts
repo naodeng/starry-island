@@ -351,6 +351,7 @@ test('downloads a user-requested diagnostics report containing only allowlisted 
   await page.goto('/settings/backup');
   await expect(page.getByRole('heading', { name: '备份与恢复', level: 1 })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
+  await page.locator('.challenge-diagnostics-panel > summary').click();
   await expect(page.getByText(/只有点击后才会生成并下载；不会自动上传。/)).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
@@ -637,6 +638,7 @@ test('previews and safely merges an active attempt without duplicating data', as
   expect(await page.evaluate(() => localStorage.getItem('china-study-progress-v1'))).toBe(learningProgressBefore);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
+  await page.locator('.challenge-diagnostics-panel > summary').click();
   const diagnosticsDownloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: '手动导出脱敏诊断信息' }).click();
   const diagnosticsDownload = await diagnosticsDownloadPromise;

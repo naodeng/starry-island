@@ -1,4 +1,4 @@
-const PILOT_UNIT_GROUPS: Readonly<Record<string, string>> = {
+export const PILOT_UNIT_GROUPS: Readonly<Record<string, string>> = {
   'grade-1/term-1/math/unit-01': 'grade-1-term-1-math-unit-01',
   'grade-1/term-1/math/unit-02': 'grade-1-term-1-math-unit-02',
   'grade-1/term-1/math/unit-03': 'grade-1-term-1-math-unit-03',
@@ -34,9 +34,6 @@ const PILOT_UNIT_GROUPS: Readonly<Record<string, string>> = {
   'grade-2/term-1/math/unit-04': 'grade-2-term-1-math-unit-04',
   'grade-2/term-1/math/unit-05': 'grade-2-term-1-math-unit-05',
   'grade-2/term-1/math/unit-06': 'grade-2-term-1-math-unit-06',
-  'grade-2/term-1/math/unit-07': 'grade-2-term-1-math-unit-07',
-  'grade-2/term-1/math/unit-08': 'grade-2-term-1-math-unit-08',
-  'grade-2/term-1/math/unit-09': 'grade-2-term-1-math-unit-09',
   'grade-2/term-1/english/unit-01': 'grade-2-term-1-english-unit-01',
   'grade-2/term-1/english/unit-02': 'grade-2-term-1-english-unit-02',
   'grade-2/term-1/english/unit-03': 'grade-2-term-1-english-unit-03',
