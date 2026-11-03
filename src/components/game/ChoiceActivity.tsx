@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import type { ChoiceActivityDefinition } from '../../content/types';
 
 interface ChoiceActivityProps {

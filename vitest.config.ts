@@ -6,11 +6,6 @@ export default mergeConfig(viteConfig, defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     include: ['src/**/*.{test,spec}.{ts,tsx}', 'src/**/*.{test,spec}.mjs'],
-    server: {
-      deps: {
-        inline: ['animal-island-ui'],
-      },
-    },
     clearMocks: true,
     restoreMocks: true,
     coverage: {

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import { BookIcon, CloseIcon, CompassIcon, FlagIcon, HomeIcon, SettingsIcon, StarIcon } from 'naive-icons';
 
 interface AppNavigationDrawerProps {

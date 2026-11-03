@@ -114,5 +114,5 @@ Vitest 的语句、分支、函数和行覆盖率均须达到 60%；核心路由
 学习进度、主题与声音偏好只保存在当前浏览器的 `localStorage`。网站不要求账号，不连接在线语音服务，也不收集访客资料。
 
 - 本项目自有代码与内容采用 [PolyForm Noncommercial License 1.0.0](LICENSE)，该许可限制商业用途。使用前请阅读完整许可文本。
-- 直接依赖 `animal-island-ui` 按其 MIT 许可使用；作者、项目链接和许可正文见 [第三方声明](THIRD-PARTY-NOTICES.md)，构建产物包含 `third-party-notices.txt`。
+- UI 使用仓库内的语义化组件与样式；图标依赖 `naive-icons`，其 MIT 许可见 [第三方声明](THIRD-PARTY-NOTICES.md)，构建产物包含 `third-party-notices.txt`。
 - 其他依赖按其各自上游许可使用；版本和依赖清单见 `package.json` 与 `package-lock.json`。

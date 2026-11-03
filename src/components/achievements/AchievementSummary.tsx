@@ -1,4 +1,4 @@
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { COSMIC_RANKS, getCompletedUnitCount, getCosmicRank } from '../../achievements/progress';
 import type { LearningPosition } from '../../achievements/position';

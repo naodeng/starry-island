@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import type { MatchActivityDefinition } from '../../content/types';
 import { shuffleMatchAnswers } from '../../learning/matching';
 

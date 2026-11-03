@@ -21,7 +21,7 @@
 .empty-state-description {
   max-width: 48ch;
   margin: 0;
-  color: var(--animal-text-color-secondary);
+  color: var(--island-muted);
   line-height: 1.6;
 }
 

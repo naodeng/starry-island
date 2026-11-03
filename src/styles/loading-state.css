@@ -12,7 +12,7 @@
   place-items: center;
   width: 68px;
   height: 68px;
-  color: var(--animal-primary-color);
+  color: var(--app-accent);
 }
 
 .loading-state-visual::before {
@@ -20,7 +20,7 @@
   inset: 8px;
   border: 1px solid var(--island-border);
   border-radius: 50%;
-  background: var(--animal-primary-color-bg);
+  background: var(--app-accent-soft);
   content: '';
 }
 
@@ -40,8 +40,8 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  color: var(--animal-primary-color);
-  background: var(--animal-bg-color);
+  color: var(--app-accent);
+  background: var(--island-surface);
   animation: loading-state-float 2.2s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 
@@ -58,7 +58,7 @@
 .loading-state-title {
   max-width: 100%;
   margin: 0;
-  color: var(--animal-text-color);
+  color: var(--island-ink);
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -66,7 +66,7 @@
 .loading-state-description {
   max-width: 48ch;
   margin: 0;
-  color: var(--animal-text-color-secondary);
+  color: var(--island-muted);
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
@@ -82,7 +82,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--animal-primary-color);
+  background: var(--app-accent);
   animation: loading-state-dot 1.2s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 

@@ -1,4 +1,4 @@
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../ui';
 import type { FeedbackStatus } from '../../learning/feedback';
 
 export type ActivityFeedbackStatus = 'unanswered' | 'hint' | FeedbackStatus;

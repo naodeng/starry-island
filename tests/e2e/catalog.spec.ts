@@ -175,8 +175,8 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
     const metrics = await page.getByRole('button', { name: '打开导航菜单' }).evaluate((button) => {
-      const icon = button.querySelector('span[class*="animal-btn-icon"] svg');
-      const label = Array.from(button.children).find((child) => !(child instanceof HTMLElement && child.className.includes('animal-btn-icon')));
+      const icon = button.querySelector('.ui-button-icon svg');
+      const label = button.querySelector('.ui-button-label');
       if (!(icon instanceof SVGElement) || !(label instanceof HTMLElement)) return null;
       const iconBounds = icon.closest('span')!.getBoundingClientRect();
       const labelBounds = label.getBoundingClientRect();
@@ -267,7 +267,7 @@ test('keepsCatalogAndSettingsUsableOnPhoneTabletAndDesktop', async ({ page }) =>
     await expect(page.getByRole('heading', { name: '学习进度设置' })).toBeVisible();
     await expect(page.getByRole('button', { name: '应用学习起点' })).toBeVisible();
     if (viewport.width === 390) {
-      const themeLabel = page.locator('.settings-page .theme-switcher-options [class*="animal-radioItem"] [class*="animal-label"]').first();
+      const themeLabel = page.locator('.settings-page .theme-switcher-options .ui-radio-option > span:last-child').first();
       const dimensions = await themeLabel.evaluate((element) => {
         const style = getComputedStyle(element);
         return {

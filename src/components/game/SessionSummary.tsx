@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../ui';
 import { RocketIcon, StarIcon } from 'naive-icons';
 import type { CosmicRank } from '../../achievements/progress';
 import type { LearningSession, SubjectId } from '../../content/types';

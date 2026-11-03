@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../../components/ui';
 import { getChallengeGroupPath } from '../../app/router';
 import { submitAnswer as isAnswerCorrect } from '../../learning/answers';
 import { useSound } from '../../sound/SoundProvider';

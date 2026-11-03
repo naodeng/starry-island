@@ -23,7 +23,7 @@
 
 ## UI、无障碍与主题
 
-- 本项目使用 `animal-island-ui`。全局样式只在 `src/main.tsx` 导入一次；组件属性以已安装包的 TypeScript 声明为准，不猜测或虚构 API。优先复用组件和设计变量。
+- 本项目使用本地 UI 原语 `src/components/ui.tsx`，样式与设计令牌维护在 `src/styles/ui.css` 和 `src/styles/theme.css`；新增界面优先复用这些原语与变量，保持语义化标签、键盘操作和两种主题。
 - 主题选项为“跟随系统 / 浅色 / 深色”，首次访问默认跟随系统；手动选择存于当前设备。新增页面和组件需兼容两种主题。
 - 语音提示默认开启，语音偏好只保存在当前设备；用户关闭后，答题鼓励语音和交互提示音都保持静音。音频只使用本地素材，不请求外部语音服务；浏览器播放失败不得影响答题和进度。
 - 支持键盘操作、可见焦点、语义化标签、足够的文字对比度和 `prefers-reduced-motion`。颜色不能作为状态的唯一提示；完成状态应有文字或图标。
@@ -41,6 +41,6 @@
 - 完成修改后运行 `npm run build` 和 `git diff --check`；涉及 UI 时手动检查桌面与窄屏、浅色与深色、键盘焦点和 reduced motion。
 - 审查结论区分必须修复的问题与可选建议；不要把建议说成缺陷，也不要声称未执行的验证已经通过。
 
-## 上游 UI 参考
+## UI 参考
 
-编写 Animal Island 风格的 React UI 时，参考 [animal-island-ui 上游 AGENTS.md](https://github.com/guokaigdg/animal-island-ui/blob/main/AGENTS.md) 与仓库 `animal-island-ui-style` Skill。只沿用适用于本项目的组件 API、设计系统、依赖控制和审查原则；上游专属 CI、发布和文档流程不自动适用于本仓库。
+当前界面以 Figma 移动学习应用设计为视觉基准；继续保留本仓库已经实现的课程范围、路由、学习与挑战流程、本机数据存储及无障碍要求。新增 UI 依赖前先确认其必要性、许可和替代方案。

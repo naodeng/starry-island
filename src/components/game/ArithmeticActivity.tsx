@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Input } from 'animal-island-ui';
+import { Button, Input } from '../ui';
 import type { ArithmeticActivityDefinition } from '../../content/types';
 
 interface ArithmeticActivityProps {

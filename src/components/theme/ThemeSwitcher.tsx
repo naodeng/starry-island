@@ -1,4 +1,4 @@
-import { Radio } from 'animal-island-ui';
+import { Radio } from '../ui';
 import type { ThemePreference } from '../../theme/ThemeProvider';
 import { useTheme } from '../../theme/ThemeProvider';
 

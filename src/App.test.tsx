@@ -154,7 +154,7 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: '正在打开课程' })).toBeInTheDocument();
     expect(screen.getByText('马上就好，正在为你打开课程内容。')).toBeInTheDocument();
     expect(screen.getByRole('main')).toHaveAttribute('aria-busy', 'true');
-    expect(screen.getByRole('main').querySelector('.route-message-card')?.className).toMatch(/animal-card-/);
+    expect(screen.getByRole('main').querySelector('.route-message-card')?.className).toContain('ui-card');
   });
 
   it('showsALoadErrorAndRetriesTheSameCourseRoute', async () => {

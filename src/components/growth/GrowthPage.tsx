@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { MouseEvent, KeyboardEvent } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../ui';
 import { ArrowRightIcon, BookIcon, CompassIcon } from 'naive-icons';
 import { getCompletedUnitCount, getCosmicRank } from '../../achievements/progress';
 import EmptyState from '../shared/EmptyState';

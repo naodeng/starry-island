@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import { StarIcon } from 'naive-icons';
 import type { ActivityDefinition } from '../../content/types';
 import { submitAnswer } from '../../learning/answers';

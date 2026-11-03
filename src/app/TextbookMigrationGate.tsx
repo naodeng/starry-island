@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../components/ui';
 import App from '../App';
 import { initializeGrade2Term1MathTextbookMigration } from './textbookMigration';
 

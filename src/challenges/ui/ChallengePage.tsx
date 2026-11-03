@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../../components/ui';
 import type { AppRoute } from '../../app/router';
 import type { TaskProgress, WrongQuestionRecord } from '../domain/types';
 import type { ChallengeRepository } from '../storage/repository';

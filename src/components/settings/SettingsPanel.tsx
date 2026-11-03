@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Select, Switch } from 'animal-island-ui';
+import { Button, Select, Switch } from '../ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getRegisteredLearningPositions } from '../../achievements/position';
 import type { LearningPosition } from '../../achievements/position';

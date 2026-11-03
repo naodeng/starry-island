@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Card, Select } from 'animal-island-ui';
+import { Button, Card, Select } from '../../components/ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeCenterPath, getChallengeTaskPath } from '../../app/router';
 import type { LoadedPilotGroup } from '../content/pilotContent';

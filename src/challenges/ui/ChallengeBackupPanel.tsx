@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button, Checkbox, Upload } from 'animal-island-ui';
-import type { UploadCustomRequestOptions } from 'animal-island-ui';
+import { Button, Checkbox, Upload } from '../../components/ui';
+import type { UploadCustomRequestOptions } from '../../components/ui';
 import EmptyState from '../../components/shared/EmptyState';
 import type { ChallengeBackupPreferences } from '../domain/backup';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';

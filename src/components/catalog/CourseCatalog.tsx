@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Card, Select } from 'animal-island-ui';
+import { Button, Card, Select } from '../ui';
 import { ArrowRightIcon, StarIcon } from 'naive-icons';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CatalogUnitEntry, SubjectId } from '../../content/types';

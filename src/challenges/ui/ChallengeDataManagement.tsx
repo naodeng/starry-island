@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../../components/ui';
 import EmptyState from '../../components/shared/EmptyState';
 import type { ChallengeBackupMergeSummary } from '../domain/backupMerge';
 import type { QuarantineNormalization } from '../domain/quarantineRecovery';

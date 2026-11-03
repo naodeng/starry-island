@@ -15,7 +15,7 @@ describe('TextbookMigrationGate', () => {
     render(<TextbookMigrationGate initialize={initialize} />);
 
     expect(screen.getByRole('heading', { name: '正在更新二年级上册数学' })).toBeInTheDocument();
-    expect(screen.getByRole('main').querySelector('.route-message-card')?.className).toMatch(/animal-card-/);
+    expect(screen.getByRole('main').querySelector('.route-message-card')?.className).toContain('ui-card');
     expect(screen.queryByTestId('app')).not.toBeInTheDocument();
     resolve({ showNotice: true });
     expect(await screen.findByTestId('app')).toHaveTextContent('app-ready:true');
@@ -32,7 +32,7 @@ describe('TextbookMigrationGate', () => {
     expect(screen.queryByTestId('app')).not.toBeInTheDocument();
     const retry = screen.getByRole('button', { name: '重试更新' });
     expect(retry).toBeVisible();
-    expect(screen.getByRole('alert').querySelector('.route-message-card')?.className).toMatch(/animal-card-/);
+    expect(screen.getByRole('alert').querySelector('.route-message-card')?.className).toContain('ui-card');
     fireEvent.click(retry);
     expect(await screen.findByTestId('app')).toHaveTextContent('app-ready:false');
     expect(initialize).toHaveBeenCalledTimes(2);

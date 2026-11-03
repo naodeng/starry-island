@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../../components/ui';
 import EmptyState from '../../components/shared/EmptyState';
 import { getChallengeCenterPath } from '../../app/router';
 import type { WrongQuestionRecord } from '../domain/types';
@@ -27,7 +27,7 @@ export default function ChallengeWrongQuestions({ records, onNavigate }: Challen
   return (
     <main className="challenge-page">
       <div className="challenge-shell">
-        <header className="challenge-subpage-heading">
+        <header className="challenge-subpage-heading challenge-subpage-heading--wrong">
           <p className="eyebrow">本机保存 · 不记录完整作答历史</p>
           <h1>错题本</h1>
           <p>挑战中答错的题会保存在这里。之后在两次独立挑战中连续答对，就会标记为已掌握。</p>

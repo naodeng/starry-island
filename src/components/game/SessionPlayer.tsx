@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
-import { Button, Card } from 'animal-island-ui';
-import { ArrowLeftIcon, ArrowRightIcon, ChevronDownIcon } from 'naive-icons';
+import { Button, Card } from '../ui';
+import { ChevronDownIcon } from 'naive-icons';
 import type { CosmicRank } from '../../achievements/progress';
 import type { LearningSession, SubjectId } from '../../content/types';
 import { selectFeedbackMessage } from '../../learning/feedback';
@@ -115,7 +115,7 @@ export default function SessionPlayer({ session, subject, newlyUnlockedRank, onC
     <main className="game-page">
       <div className="game-shell">
         <header className="game-topbar">
-          <Button type="default" icon={<ArrowLeftIcon size={18} aria-hidden="true" />} onClick={onExit}>返回单元</Button>
+          <Button type="default" icon={<img src="/assets/figma/mobile-learning/arrow-left.svg" alt="" width="18" height="15" />} onClick={onExit}>返回单元</Button>
           <span className="game-duration">建议用时 {session.durationMinutes} 分钟</span>
         </header>
         <Card className="session-intro-card" color="default">
@@ -164,7 +164,7 @@ export default function SessionPlayer({ session, subject, newlyUnlockedRank, onC
               {solved ? '准备好后，继续探索下一题。' : '完成当前挑战后，就可以继续下一题。'}
             </p>
           </div>
-          <Button type="primary" icon={<ArrowRightIcon size={18} aria-hidden="true" />} aria-describedby={`${sessionObjectiveId}-next`} disabled={!solved} onClick={continueSession}>
+          <Button type="primary" icon={<img src="/assets/figma/mobile-learning/arrow-right.svg" alt="" width="18" height="15" />} aria-describedby={`${sessionObjectiveId}-next`} disabled={!solved} onClick={continueSession}>
             {sessionState.currentIndex === session.activities.length - 1 ? '完成本场' : '继续下一题'}
           </Button>
         </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { KeyboardEvent } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../ui';
 import { ArrowRightIcon, CheckCircleIcon, CheckIcon, ClockIcon, CompassIcon, FlameIcon, GlobeIcon, KeyIcon, LockIcon, MapIcon, MoonIcon, RefreshIcon, RocketIcon, ShieldIcon, StarIcon, TrophyIcon, WaterCupIcon } from 'naive-icons';
 import { COSMIC_RANKS, getCompletedUnitCount, getCosmicRank, getLearningUnitProgress } from '../../achievements/progress';
 import type { LearningPosition } from '../../achievements/position';

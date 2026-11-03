@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { MouseEvent } from 'react';
-import { Button, Card, Select } from 'animal-island-ui';
+import { Button, Card, Select } from '../ui';
 import { ArrowRightIcon, BookIcon, CompassIcon } from 'naive-icons';
 import { getCompletedUnitCount, getCosmicRank } from '../../achievements/progress';
 import { resolveContinueLearningDestination, resolveLearningSessionDestination } from '../../app/continueLearning';
@@ -190,8 +190,9 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
               </div>
               <Button
                 type="primary"
+                className="home-continue-action"
                 disabled={continueState.status === 'loading'}
-                icon={<ArrowRightIcon size={18} aria-hidden="true" />}
+                icon={<img src="/assets/figma/mobile-learning/play-icon.svg" alt="" width="56" height="56" />}
                 onClick={() => onNavigate(destination ? destination.path : '/courses')}
               >
                 {continueLabel}

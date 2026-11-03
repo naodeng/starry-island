@@ -1,4 +1,4 @@
-import { Button } from 'animal-island-ui';
+import { Button } from '../../components/ui';
 import { getTaskPath } from '../../app/router';
 import type { ActivityDefinition } from '../../content/types';
 import { submitAnswer } from '../../learning/answers';

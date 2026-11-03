@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Card, Select } from 'animal-island-ui';
+import { Button, Card, Select } from '../../components/ui';
 import { ArrowRightIcon } from 'naive-icons';
 import { getChallengeGroupPath, getChallengeWrongQuestionsPath, getSubjectTitle } from '../../app/router';
 import EmptyState from '../../components/shared/EmptyState';
@@ -169,7 +169,7 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
   return (
     <main className="challenge-page">
       <div className="challenge-shell">
-        <header className="challenge-hero">
+        <header className="challenge-hero challenge-hero--center">
           <p className="eyebrow">独立练习 · 进度保存在本机</p>
           <h1>闯关中心</h1>
           <p>每道题只提交一次答案。完成挑战后，可以查看得分和解题讲解。</p>

@@ -1,6 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from './components/ui';
 import type { CosmicRank } from './achievements/progress';
 import { getNewCosmicRank } from './achievements/progress';
 import { getTaskPath, resolveAppRoute, resolveRoute } from './app/router';

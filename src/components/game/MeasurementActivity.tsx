@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import { MinusIcon, PlusIcon } from 'naive-icons';
 import type { MeasurementActivityDefinition } from '../../content/types';
 

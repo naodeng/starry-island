@@ -1,42 +1,45 @@
 :root {
-  --island-ink: #27334a;
-  --island-muted: #65758a;
-  --island-paper: #fff9ec;
-  --island-card: rgba(255, 255, 255, .92);
-  --island-surface: #fffdf8;
-  --island-surface-soft: #f3f7ef;
-  --island-surface-tint: #eaf4e8;
-  --island-border: rgba(81, 103, 126, .16);
-  --island-highlight: #39785a;
-  --island-mint: #79bd92;
-  --island-sky: #84b8df;
-  --island-sun: #f2bd61;
-  --island-coral: #ec927d;
-  --island-lilac: #9e91d0;
-  --island-icon-outline: #2a2a2a;
-  --island-icon-on-dark: #e1ebe1;
-  --island-line: rgba(81, 103, 126, .14);
-  --island-radius-card: 28px;
-  --island-shadow-card: 0 18px 48px rgba(67, 84, 110, .1);
-  --animal-primary-color: #397451;
-  --animal-font-family: Nunito, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif !important;
-  --animal-primary-color-hover: #326a49;
-  --animal-primary-color-active: #285b3d;
-  --animal-primary-color-bg: #e4f2e6;
-  --animal-text-color: #27334a;
-  --animal-text-color-secondary: #65758a;
-  --animal-text-color-muted: #728197;
-  --animal-text-color-disabled: #9ca7b1;
-  --animal-border-color: #dce5dc;
-  --animal-border-color-hover: #7aa78b;
-  --animal-border-color-light: #e7ece4;
-  --animal-bg-color: #fffdf8;
-  --animal-bg-color-secondary: #f3f5ed;
-  --animal-bg-color-disabled: #ecefe9;
-  --challenge-card-text: #725d42;
-  --animal-shadow-sm: 0 2px 5px rgba(48, 73, 62, .08);
-  --animal-shadow-base: 0 5px 16px rgba(48, 73, 62, .1);
-  --animal-shadow-lg: 0 12px 28px rgba(48, 73, 62, .14);
+  --island-ink: #0c0a1c;
+  --island-muted: #696777;
+  --island-paper: #fff;
+  --island-card: #fff;
+  --island-surface: #fff;
+  --island-surface-soft: #f8f7ff;
+  --island-surface-tint: #f0eeff;
+  --island-border: #ebe9f5;
+  --island-highlight: #6d57fc;
+  --island-mint: #65b99a;
+  --island-sky: #82b6f4;
+  --island-sun: #f5b348;
+  --island-coral: #ee898c;
+  --island-lilac: #a891f6;
+  --island-icon-outline: #1b163f;
+  --island-icon-on-dark: #f0eeff;
+  --island-line: rgba(27, 22, 63, .1);
+  --island-radius-card: 24px;
+  --island-shadow-card: 0 3px 10px rgba(181, 179, 193, .11);
+  --app-accent: #6d57fc;
+  --app-font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  --app-accent-hover: #5a43e6;
+  --app-accent-pressed: #1b163f;
+  --app-accent-soft: #f0eeff;
+  --app-success: #258268;
+  --app-success-hover: #1c6d56;
+  --app-warning: #a46708;
+  --app-warning-hover: #875305;
+  --app-error: #b74658;
+  --app-error-hover: #9c3548;
+  --app-muted-strong: #575565;
+  --app-disabled: #888693;
+  --app-border-hover: #a99cf5;
+  --app-line: #e9e7f1;
+  --app-disabled-bg: #f0eef5;
+  --challenge-card-text: #53445f;
+  --app-shadow-sm: 0 2px 5px rgba(27, 22, 63, .07);
+  --app-shadow-base: 0 3px 12px rgba(27, 22, 63, .09);
+  --app-shadow-lg: 0 12px 28px rgba(27, 22, 63, .14);
+  --app-motion-duration-fast: .16s;
+  --app-motion-ease: cubic-bezier(.2, .8, .2, 1);
 }
 
 .companion-avatar {
@@ -57,67 +60,65 @@
 .companion-avatar--large { --avatar-size: 94px; border-width: 4px; }
 .companion-avatar-spark { position: absolute; right: 3px; bottom: 2px; display: grid; place-items: center; width: 19px; height: 19px; border: 2px solid white; border-radius: 50%; color: white; background: var(--island-sun); font-size: 10px; line-height: 1; }
 .companion-avatar--small .companion-avatar-spark { right: 0; bottom: 0; width: 14px; height: 14px; border-width: 1px; font-size: 8px; }
-.hero-guide { position: relative; display: flex; align-items: center; gap: 14px; width: min(100%, 360px); padding: 14px 16px; border: 1px solid var(--animal-border-color); border-radius: 24px; background: var(--animal-bg-color-secondary); }
+.hero-guide { position: relative; display: flex; align-items: center; gap: 14px; width: min(100%, 360px); padding: 14px 16px; border: 1px solid var(--island-border); border-radius: 24px; background: var(--island-surface-soft); }
 .hero-guide-copy { min-width: 0; }
 .hero-guide-name { display: block; margin-bottom: 4px; color: #486b63; font-size: 12px; font-weight: 900; letter-spacing: .03em; }
 .hero-guide-copy p { margin: 0; color: #53657c; font-size: 14px; line-height: 1.55; }
 .hero-guide-spark { margin-left: auto; color: var(--island-sun); font-size: 28px; }
-.hero-guide--welcome { background: var(--animal-bg-color-secondary); }
+.hero-guide--welcome { background: var(--island-surface-soft); }
 .hero-guide--hint { border-color: #e2edf7; background: #f6fbff; }
-.hero-guide--celebrate { justify-content: center; width: min(100%, 390px); margin: 22px auto 0; border-color: var(--animal-border-color); background: var(--animal-primary-color-bg); text-align: left; }
+.hero-guide--celebrate { justify-content: center; width: min(100%, 390px); margin: 22px auto 0; border-color: var(--island-border); background: var(--app-accent-soft); text-align: left; }
 .hero-guide--compact { width: auto; min-height: 60px; padding: 8px 11px; border-radius: 18px; }
 .hero-guide--compact .hero-guide-copy p { font-size: 12px; }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --island-ink: #edf3e9;
-  --island-muted: #b6c4b8;
-  --island-paper: #1d2923;
-  --island-card: #29382f;
-  --island-surface: #29382f;
-  --island-surface-soft: #304137;
-  --island-surface-tint: #354b3d;
-  --island-border: rgba(198, 220, 198, .18);
-  --island-highlight: #a4dcb3;
-  --island-mint: #8ccea0;
-  --island-sky: #93bde0;
-  --island-sun: #f0c46d;
-  --island-icon-outline: #e1ebe1;
-  --island-icon-on-dark: #e1ebe1;
-  --island-line: rgba(198, 220, 198, .16);
-  --island-shadow-card: 0 18px 48px rgba(0, 0, 0, .24);
-  --animal-primary-color: #a4dcb3;
-  --animal-primary-color-hover: #b8e5c2;
-  --animal-primary-color-active: #d1efd4;
-  --animal-primary-color-bg: #314c3b;
-  --animal-success-color: #8bc98f;
-  --animal-success-color-hover: #9dd59f;
-  --animal-warning-color: #e6be66;
-  --animal-warning-color-hover: #f0ce7f;
-  --animal-error-color: #df8880;
-  --animal-error-color-hover: #eba097;
-  --animal-text-color: #edf3e9;
-  --animal-text-color-secondary: #bac8bc;
-  --animal-text-color-muted: #a2b3a6;
-  --animal-text-color-disabled: #839286;
-  --animal-border-color: #506356;
-  --animal-border-color-hover: #91c59d;
-  --animal-border-color-light: #3e5144;
-  --animal-bg-color: #29382f;
-  --animal-bg-color-secondary: #35463a;
-  --animal-bg-color-disabled: #303b33;
-  --animal-shadow-sm: 0 2px 5px rgba(0, 0, 0, .2);
-  --animal-shadow-base: 0 5px 16px rgba(0, 0, 0, .22);
-  --animal-shadow-lg: 0 12px 28px rgba(0, 0, 0, .28);
+  --island-ink: #f5f3ff;
+  --island-muted: #c0bdcf;
+  --island-paper: #15131f;
+  --island-card: #211e30;
+  --island-surface: #211e30;
+  --island-surface-soft: #28253a;
+  --island-surface-tint: #342f50;
+  --island-border: #403b53;
+  --island-highlight: #b2a3ff;
+  --island-mint: #83cbb0;
+  --island-sky: #9bbcf0;
+  --island-sun: #f5c36c;
+  --island-coral: #ee9ba1;
+  --island-lilac: #bfafff;
+  --island-icon-outline: #f0eeff;
+  --island-icon-on-dark: #f0eeff;
+  --island-line: rgba(240, 238, 255, .13);
+  --island-shadow-card: 0 8px 24px rgba(0, 0, 0, .22);
+  --app-accent: #b2a3ff;
+  --app-accent-hover: #c4b8ff;
+  --app-accent-pressed: #ddd6ff;
+  --app-accent-soft: #342f50;
+  --app-success: #83cbb0;
+  --app-success-hover: #9bd9c3;
+  --app-warning: #f5c36c;
+  --app-warning-hover: #ffd481;
+  --app-error: #ee9ba1;
+  --app-error-hover: #f5b1b7;
+  --app-muted-strong: #d3d0df;
+  --app-disabled: #9b97a8;
+  --app-border-hover: #8f80d6;
+  --app-line: #403b53;
+  --app-disabled-bg: #302c3d;
+  --challenge-card-text: #e4dff0;
+  --app-shadow-sm: 0 2px 5px rgba(0, 0, 0, .18);
+  --app-shadow-base: 0 3px 12px rgba(0, 0, 0, .2);
+  --app-shadow-lg: 0 12px 28px rgba(0, 0, 0, .28);
 }
 
 :root[data-theme='dark'] svg { color: inherit; }
 
 :root[data-theme='dark'] :is(
-  button[class*='animal-btn-default'],
-  button[class*='animal-btn-text'],
-  button[class*='animal-btn-link'],
-  button[class*='animal-btn-dashed'],
+  button.ui-button--default,
+  button.ui-button--text,
+  button.ui-button--link,
+  button.ui-button--dashed,
   .achievement-next-rank-icon,
   .achievement-progress-orbit,
   .achievement-badge-symbol,
@@ -125,10 +126,10 @@
   .achievement-unit.is-pending .achievement-unit-check
 ) svg[viewBox='0 0 48 48'][stroke='#2A2A2A' i],
 :root[data-theme='dark'] :is(
-  button[class*='animal-btn-default'],
-  button[class*='animal-btn-text'],
-  button[class*='animal-btn-link'],
-  button[class*='animal-btn-dashed'],
+  button.ui-button--default,
+  button.ui-button--text,
+  button.ui-button--link,
+  button.ui-button--dashed,
   .achievement-next-rank-icon,
   .achievement-progress-orbit,
   .achievement-badge-symbol,
@@ -138,10 +139,10 @@
   stroke: var(--island-icon-on-dark) !important;
 }
 :root[data-theme='dark'] :is(
-  button[class*='animal-btn-default'],
-  button[class*='animal-btn-text'],
-  button[class*='animal-btn-link'],
-  button[class*='animal-btn-dashed'],
+  button.ui-button--default,
+  button.ui-button--text,
+  button.ui-button--link,
+  button.ui-button--dashed,
   .achievement-next-rank-icon,
   .achievement-progress-orbit,
   .achievement-badge-symbol,
@@ -149,10 +150,10 @@
   .achievement-unit.is-pending .achievement-unit-check
 ) svg[viewBox='0 0 48 48'][fill='#2A2A2A' i],
 :root[data-theme='dark'] :is(
-  button[class*='animal-btn-default'],
-  button[class*='animal-btn-text'],
-  button[class*='animal-btn-link'],
-  button[class*='animal-btn-dashed'],
+  button.ui-button--default,
+  button.ui-button--text,
+  button.ui-button--link,
+  button.ui-button--dashed,
   .achievement-next-rank-icon,
   .achievement-progress-orbit,
   .achievement-badge-symbol,
@@ -160,10 +161,10 @@
   .achievement-unit.is-pending .achievement-unit-check
 ) svg[viewBox='0 0 48 48'] [fill='#2A2A2A' i],
 :root[data-theme='dark'] :is(
-  button[class*='animal-btn-default'],
-  button[class*='animal-btn-text'],
-  button[class*='animal-btn-link'],
-  button[class*='animal-btn-dashed'],
+  button.ui-button--default,
+  button.ui-button--text,
+  button.ui-button--link,
+  button.ui-button--dashed,
   .achievement-next-rank-icon,
   .achievement-progress-orbit,
   .achievement-badge-symbol,
@@ -171,10 +172,10 @@
   .achievement-unit.is-pending .achievement-unit-check
 ) svg[viewBox='0 0 48 48'][fill='#264653' i],
 :root[data-theme='dark'] :is(
-  button[class*='animal-btn-default'],
-  button[class*='animal-btn-text'],
-  button[class*='animal-btn-link'],
-  button[class*='animal-btn-dashed'],
+  button.ui-button--default,
+  button.ui-button--text,
+  button.ui-button--link,
+  button.ui-button--dashed,
   .achievement-next-rank-icon,
   .achievement-progress-orbit,
   .achievement-badge-symbol,
@@ -195,8 +196,8 @@
 }
 :root[data-theme='dark'] .catalog-hero,
 :root[data-theme='dark'] .unit-hero {
-  border-color: var(--animal-border-color);
-  background: var(--animal-bg-color);
+  border-color: var(--island-border);
+  background: var(--island-surface);
 }
 :root[data-theme='dark'] .catalog-hero h1,
 :root[data-theme='dark'] .unit-hero h1,
@@ -232,14 +233,14 @@
 :root[data-theme='dark'] .achievement-unit-count,
 :root[data-theme='dark'] .achievement-session-state,
 :root[data-theme='dark'] .achievement-kindness { color: var(--island-muted); }
-:root[data-theme='dark'] .achievement-section { border-color: var(--island-border); background: rgba(41, 56, 47, .78); }
+:root[data-theme='dark'] .achievement-section { border-color: var(--island-border); background: var(--island-surface-soft); }
 :root[data-theme='dark'] .achievement-progress-orbit { border-color: #55785e; color: #c3e3a8; background: #354b38; }
 :root[data-theme='dark'] .achievement-section-heading > div > p:last-child strong { color: #b6e1b3; }
 :root[data-theme='dark'] .achievement-badge strong { color: #deecdc; }
 :root[data-theme='dark'] .achievement-badge-state,
 :root[data-theme='dark'] .achievement-badge-count { color: #b0c8b3; }
 :root[data-theme='dark'] .achievement-badge-symbol { color: #b5dfb8; }
-:root[data-theme='dark'] .achievement-badge.is-current { border-color: #79a87f; background: var(--animal-primary-color-bg); }
+:root[data-theme='dark'] .achievement-badge.is-current { border-color: #79a87f; background: var(--app-accent-soft); }
 :root[data-theme='dark'] .achievement-badge.is-unlocked { border-color: #536b55; background: #2e4034; }
 :root[data-theme='dark'] .achievement-badge.is-locked { color: #a8b2a9; border-color: #465148; background: #303832; }
 :root[data-theme='dark'] .achievement-badge.is-locked strong,
@@ -257,8 +258,8 @@
 :root[data-theme='dark'] .achievement-session-list li.is-complete > span:first-child,
 :root[data-theme='dark'] .achievement-session-list li.is-complete .achievement-session-state { color: #a8ddb2; }
 :root[data-theme='dark'] .achievement-session-state { color: #9eab9f; }
-:root[data-theme='dark'] .eyebrow { color: #a4d5aa; }
-:root[data-theme='dark'] .catalog-meta span { border-color: var(--island-border); background: rgba(48, 65, 55, .78); }
+:root[data-theme='dark'] .eyebrow { color: var(--island-highlight); }
+:root[data-theme='dark'] .catalog-meta span { border-color: var(--island-border); background: var(--island-surface-soft); }
 :root[data-theme='dark'] .unit-card,
 :root[data-theme='dark'] .session-card,
 :root[data-theme='dark'] .source-card,
@@ -266,10 +267,10 @@
 :root[data-theme='dark'] .achievement-badge {
   color: var(--island-ink);
   border-color: var(--island-border);
-  background: var(--animal-bg-color);
+  background: var(--island-surface);
 }
-:root[data-theme='dark'] .task-review-list li { background: rgba(48, 65, 55, .78); }
-:root[data-theme='dark'] .unit-card-soon { background: var(--animal-bg-color-secondary); }
+:root[data-theme='dark'] .task-review-list li { background: var(--island-surface-soft); }
+:root[data-theme='dark'] .unit-card-soon { background: var(--island-surface-soft); }
 :root[data-theme='dark'] .unit-status.is-active { color: #b8e9bf; background: #385844; }
 :root[data-theme='dark'] .unit-status.is-soon { color: #e4d3a5; background: #514631; }
 :root[data-theme='dark'] .unit-progress-orbit { border-color: rgba(164, 196, 167, .32); color: #b4e0bc; background: #304739; }
@@ -281,15 +282,15 @@
 :root[data-theme='dark'] .hero-guide {
   color: var(--island-ink);
   border-color: var(--island-border);
-  background: rgba(48, 65, 55, .88);
+  background: var(--island-surface-soft);
 }
-:root[data-theme='dark'] .hero-guide-name { color: #a8d7b0; }
-:root[data-theme='dark'] .hero-guide-copy p { color: #c5d1c7; }
-:root[data-theme='dark'] .hero-guide--welcome { background: var(--animal-bg-color-secondary); }
-:root[data-theme='dark'] .hero-guide--hint { border-color: #485d67; background: #2b3a40; }
-:root[data-theme='dark'] .hero-guide--celebrate { border-color: #496448; background: var(--animal-primary-color-bg); }
-:root[data-theme='dark'] .companion-avatar { border-color: #d9e8d9; }
-:root[data-theme='dark'] .companion-avatar-spark { border-color: #29382f; }
+:root[data-theme='dark'] .hero-guide-name { color: var(--island-highlight); }
+:root[data-theme='dark'] .hero-guide-copy p { color: var(--island-muted); }
+:root[data-theme='dark'] .hero-guide--welcome { background: var(--island-surface-soft); }
+:root[data-theme='dark'] .hero-guide--hint { border-color: var(--island-border); background: var(--app-accent-soft); }
+:root[data-theme='dark'] .hero-guide--celebrate { border-color: var(--island-border); background: var(--app-accent-soft); }
+:root[data-theme='dark'] .companion-avatar { border-color: var(--island-border); }
+:root[data-theme='dark'] .companion-avatar-spark { border-color: var(--island-surface); }
 :root[data-theme='dark'] .game-duration,
 :root[data-theme='dark'] .game-progress-labels,
 :root[data-theme='dark'] .activity-kind-label,
@@ -318,18 +319,18 @@
 :root[data-theme='dark'] .session-finish-card {
   color: var(--island-ink);
   border-color: var(--island-border);
-  background: #29382f;
+  background: var(--island-surface);
 }
 :root[data-theme='dark'] .session-intro-card h1 { color: var(--island-ink); }
 :root[data-theme='dark'] .session-intro-card p:last-child { color: var(--island-muted); }
-:root[data-theme='dark'] .game-duration { border-color: var(--island-border); background: #29382f; }
-:root[data-theme='dark'] .game-progress-track { background: #3b4b3f; }
+:root[data-theme='dark'] .game-duration { border-color: var(--island-border); background: var(--island-surface); }
+:root[data-theme='dark'] .game-progress-track { background: var(--island-surface-tint); }
 :root[data-theme='dark'] .game-progress-section,
-:root[data-theme='dark'] .game-navigation-row { border-color: var(--island-border); background: #29382f; }
-:root[data-theme='dark'] .game-navigation-copy > span { color: #a8d7b0; }
-:root[data-theme='dark'] .game-navigation-row > button:disabled { border-color: var(--island-border); color: var(--island-muted); background: #3a4440; }
+:root[data-theme='dark'] .game-navigation-row { border-color: var(--island-border); background: var(--island-surface); }
+:root[data-theme='dark'] .game-navigation-copy > span { color: var(--island-highlight); }
+:root[data-theme='dark'] .game-navigation-row > button:disabled { border-color: var(--island-border); color: var(--island-muted); background: var(--app-disabled-bg); }
 :root[data-theme='dark'] .game-navigation-row.is-solved { background: #304a39; }
-:root[data-theme='dark'] .activity-kind-label { color: #c1cbd1; background: #3a444a; }
+:root[data-theme='dark'] .activity-kind-label { color: var(--island-muted); background: var(--island-surface-soft); }
 :root[data-theme='dark'] .activity-prompt-row { border-color: var(--island-border); }
 :root[data-theme='dark'] .activity-guidance { border-color: var(--island-border); }
 :root[data-theme='dark'] .order-row,
@@ -343,10 +344,10 @@
 :root[data-theme='dark'] .ruler-face {
   color: var(--island-ink);
   border-color: var(--island-border);
-  background: #304137;
+  background: var(--island-surface-soft);
 }
 :root[data-theme='dark'] .choice-option-letter,
-:root[data-theme='dark'] .order-index { color: #c3e4c8; background: #3a5943; }
+:root[data-theme='dark'] .order-index { color: var(--app-accent-pressed); background: var(--app-accent-soft); }
 :root[data-theme='dark'] .match-choice small,
 :root[data-theme='dark'] .activity-feedback.is-correct strong,
 :root[data-theme='dark'] .calculation-steps strong { color: #aaddb2; }
@@ -361,52 +362,51 @@
 :root[data-theme='dark'] .place-value-board { border-color: #607868; }
 :root[data-theme='dark'] .place-number-value,
 :root[data-theme='dark'] .place-digit-grid strong { color: #d4e7d4; }
-:root[data-theme='dark'] .calculation-steps { color: #c5d2c8; }
+:root[data-theme='dark'] .calculation-steps { color: var(--island-muted); }
 :root[data-theme='dark'] .summary-achievement { border-color: #6c925f; background: #354d38; }
 :root[data-theme='dark'] :where(a, button, input):focus-visible { outline-color: #b3e6bb; }
 :root[data-theme='dark'] .theme-switcher {
   color: var(--island-ink);
   border-color: var(--island-border);
-  background: rgba(41, 56, 47, .95);
+  background: var(--island-surface);
 }
-:root[data-theme='dark'] .theme-switcher [class*='animal-label'] { color: #d6e2d6; }
-:root[data-theme='dark'] .theme-switcher [class*='animal-checked'] [class*='animal-label'] { color: #f0f5ee; }
-:root[data-theme='dark'] .theme-switcher [class*='animal-radioItem'] { background: #324239; }
-:root[data-theme='dark'] .theme-switcher [class*='animal-radioItem'][class*='animal-checked'] { background: #405c46; }
-:root[data-theme='dark'] .theme-switcher input[type='radio'] { background: #2d3c32; }
-:root[data-theme='dark'] .exploration-map { border-color: var(--island-border); background: var(--animal-bg-color); }
+:root[data-theme='dark'] .theme-switcher .ui-radio-option > span:last-child { color: var(--island-muted); }
+:root[data-theme='dark'] .theme-switcher .ui-radio-option.is-checked > span:last-child { color: var(--island-ink); }
+:root[data-theme='dark'] .theme-switcher .ui-radio-option { background: transparent; }
+:root[data-theme='dark'] .theme-switcher .ui-radio-option.is-checked { background: var(--app-accent-soft); }
+:root[data-theme='dark'] .exploration-map { border-color: var(--island-border); background: var(--island-surface); }
 :root[data-theme='dark'] .exploration-map-heading h3,
 :root[data-theme='dark'] .achievement-detail-heading h3 { color: var(--island-ink); }
 :root[data-theme='dark'] .exploration-map-heading > div > p:last-child,
 :root[data-theme='dark'] .achievement-detail-heading p { color: var(--island-muted); }
-:root[data-theme='dark'] .exploration-map-count { border-color: var(--island-border); color: #c4dfc6; background: #304239; }
-:root[data-theme='dark'] .exploration-zone { color: #aab6ac; border-color: #46564a; background: #2b352d; }
-:root[data-theme='dark'] .exploration-zone.is-open { border-color: #57785d; color: #c4d8c5; background: var(--animal-primary-color-bg); }
-:root[data-theme='dark'] .exploration-zone-symbol { color: #a4b1a6; border-color: #4b594d; background: #354138; }
-:root[data-theme='dark'] .exploration-zone.is-open .exploration-zone-symbol { color: #c5e1b5; border-color: #5d805e; background: #3a5540; }
+:root[data-theme='dark'] .exploration-map-count { border-color: var(--island-border); color: var(--app-accent-pressed); background: var(--app-accent-soft); }
+:root[data-theme='dark'] .exploration-zone { color: var(--island-muted); border-color: var(--island-border); background: var(--island-surface-soft); }
+:root[data-theme='dark'] .exploration-zone.is-open { border-color: var(--app-border-hover); color: var(--app-accent-pressed); background: var(--app-accent-soft); }
+:root[data-theme='dark'] .exploration-zone-symbol { color: var(--island-muted); border-color: var(--island-border); background: var(--island-surface); }
+:root[data-theme='dark'] .exploration-zone.is-open .exploration-zone-symbol { color: var(--app-accent-pressed); border-color: var(--app-border-hover); background: var(--island-surface); }
 :root[data-theme='dark'] .exploration-zone-kicker,
 :root[data-theme='dark'] .exploration-zone-style,
 :root[data-theme='dark'] .exploration-zone-artifact,
-:root[data-theme='dark'] .exploration-zone-note { color: #a8b5aa; }
-:root[data-theme='dark'] .exploration-zone h4 { color: #bec9bf; }
-:root[data-theme='dark'] .exploration-zone.is-open h4 { color: #e1f0de; }
-:root[data-theme='dark'] .exploration-zone-status { color: #b2bdb3; background: #3a453c; }
-:root[data-theme='dark'] .exploration-zone-status.is-open { color: #d1efce; background: #3b5942; }
+:root[data-theme='dark'] .exploration-zone-note { color: var(--island-muted); }
+:root[data-theme='dark'] .exploration-zone h4 { color: var(--island-ink); }
+:root[data-theme='dark'] .exploration-zone.is-open h4 { color: var(--app-accent-pressed); }
+:root[data-theme='dark'] .exploration-zone-status { color: var(--island-muted); background: var(--island-surface); }
+:root[data-theme='dark'] .exploration-zone-status.is-open { color: var(--app-accent-pressed); background: var(--island-surface); }
 :root[data-theme='dark'] .exploration-zone.is-open .exploration-zone-style,
 :root[data-theme='dark'] .exploration-zone.is-open .exploration-zone-artifact,
 :root[data-theme='dark'] .exploration-zone.is-open .exploration-zone-note,
-:root[data-theme='dark'] .exploration-subject-group h5 { color: #c0d4c2; }
-:root[data-theme='dark'] .exploration-subject-group h5::after { background: rgba(189, 218, 192, .19); }
-:root[data-theme='dark'] .exploration-unit-node { color: #b2bcb3; border-color: #465449; background: #303a32; }
-:root[data-theme='dark'] .exploration-node-symbol { color: #aeb9af; background: #3c483e; }
-:root[data-theme='dark'] .exploration-node-title { color: #bac5bb; }
-:root[data-theme='dark'] .exploration-node-state { color: #a5b1a7; }
-:root[data-theme='dark'] .exploration-unit-node.is-complete { color: #d8efda; border-color: #6b9b6b; background: var(--animal-primary-color-bg); }
+:root[data-theme='dark'] .exploration-subject-group h5 { color: var(--app-accent-pressed); }
+:root[data-theme='dark'] .exploration-subject-group h5::after { background: var(--island-border); }
+:root[data-theme='dark'] .exploration-unit-node { color: var(--island-muted); border-color: var(--island-border); background: var(--island-surface); }
+:root[data-theme='dark'] .exploration-node-symbol { color: var(--island-muted); background: var(--island-surface-tint); }
+:root[data-theme='dark'] .exploration-node-title { color: var(--island-ink); }
+:root[data-theme='dark'] .exploration-node-state { color: var(--island-muted); }
+:root[data-theme='dark'] .exploration-unit-node.is-complete { color: #d8efda; border-color: #6b9b6b; background: var(--app-accent-soft); }
 :root[data-theme='dark'] .exploration-unit-node.is-complete .exploration-node-symbol { color: #203426; background: #9acb8d; }
 :root[data-theme='dark'] .exploration-unit-node.is-complete .exploration-node-title,
 :root[data-theme='dark'] .exploration-unit-node.is-complete .exploration-node-state { color: #d0ead0; }
-:root[data-theme='dark'] .exploration-map-note { color: #c3d1c5; background: rgba(35, 49, 40, .68); }
-:root[data-theme='dark'] .achievement-summary-card { color: var(--island-ink); border-color: var(--island-border); background: var(--animal-bg-color-secondary); }
+:root[data-theme='dark'] .exploration-map-note { color: var(--island-muted); background: var(--island-surface-soft); }
+:root[data-theme='dark'] .achievement-summary-card { color: var(--island-ink); border-color: var(--island-border); background: var(--island-surface-soft); }
 :root[data-theme='dark'] .achievement-summary-symbol { color: #c5e1b5; border-color: #58745b; background: #3a5540; }
 :root[data-theme='dark'] .achievement-summary-copy h2 { color: #dcebdd; }
 :root[data-theme='dark'] .achievement-summary-copy > p,
@@ -416,25 +416,14 @@
 :root[data-theme='dark'] .achievement-summary-track { background: #405248; }
 :root[data-theme='dark'] .achievement-page-heading h1 { color: var(--island-ink); }
 :root[data-theme='dark'] .achievement-page-heading > p:last-child { color: var(--island-muted); }
-:root[data-theme='dark'] .catalog-selector { color: #c4d4c6; }
-/* The installed Select trigger uses fixed light colors, so map its surface to the site theme. */
-:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) [class*='animal-trigger'] {
-  color: var(--animal-text-color);
-  border-color: var(--animal-border-color);
-  background: var(--animal-bg-color-secondary);
+:root[data-theme='dark'] .catalog-selector { color: var(--island-muted); }
+:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) .ui-select {
+  color: var(--island-ink);
+  border-color: var(--island-border);
+  background-color: var(--island-surface-soft);
 }
-:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) [class*='animal-value'],
-:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) [class*='animal-searchInput'] { color: var(--animal-text-color); }
-:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) [class*='animal-placeholder'],
-:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) [class*='animal-arrow'] { color: var(--animal-text-color-secondary); }
-:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) [class*='animal-dropdown'] {
-  border: 1px solid var(--animal-border-color);
-  border-radius: 16px;
-  color: var(--animal-text-color);
-  background: var(--animal-bg-color-secondary);
-  box-shadow: var(--animal-shadow-lg) /* taste-skill-ignore: dropdown overlay separation. */;
-}
-:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) [class*='animal-option'] { color: var(--animal-text-color); }
+:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) .ui-select-chevron { color: var(--island-muted); }
+:root[data-theme='dark'] :is(.catalog-selector, .learning-start-fields) option { color: var(--island-ink); }
 :root[data-theme='dark'] .difficulty-track { border-color: transparent; background: transparent; }
 :root[data-theme='dark'] .difficulty-track-heading h2,
 :root[data-theme='dark'] .task-card h3 { color: var(--island-ink); }
@@ -442,7 +431,7 @@
 :root[data-theme='dark'] .task-card > p,
 :root[data-theme='dark'] .catalog-empty-note,
 :root[data-theme='dark'] .task-track-empty { color: var(--island-muted); }
-:root[data-theme='dark'] .difficulty-task-count { color: #d0e6d0; background: #3b5a43; }
-:root[data-theme='dark'] .task-card { border-color: var(--island-border); background: var(--animal-bg-color); }
+:root[data-theme='dark'] .difficulty-task-count { color: var(--app-accent-pressed); background: var(--app-accent-soft); }
+:root[data-theme='dark'] .task-card { border-color: var(--island-border); background: var(--island-surface); }
 :root[data-theme='dark'] .catalog-empty-note,
-:root[data-theme='dark'] .task-track-empty { border-color: #526552; background: rgba(40, 53, 44, .8); }
+:root[data-theme='dark'] .task-track-empty { border-color: var(--island-border); background: var(--island-surface-soft); }

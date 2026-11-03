@@ -1,4 +1,4 @@
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import type { LearningPosition } from '../../achievements/position';
 import type { ProgressState } from '../../storage/progress';
 import SettingsPanel from './SettingsPanel';

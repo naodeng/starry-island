@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { MouseEvent } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import { MenuIcon } from 'naive-icons';
 import AppNavigationDrawer from './AppNavigationDrawer';
 

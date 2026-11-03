@@ -1,6 +1,6 @@
 import { useId, useState } from 'react';
 import type { KeyboardEvent } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../ui';
 import { ArrowRightIcon, CheckCircleIcon, ChevronDownIcon } from 'naive-icons';
 import { getChallengeGroupPath, getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
 import { curriculumManifest } from '../../content/curriculumManifest';
@@ -131,7 +131,7 @@ export default function UnitOverview({
   ];
 
   return (
-    <main className="unit-page">
+    <main className={`unit-page${selectedTask ? ' unit-page--task' : ''}`}>
       <div className="catalog-shell">
         <CourseBreadcrumbs items={breadcrumbItems} onNavigate={onNavigate} />
         <header className={'unit-hero' + (selectedTask ? ' unit-hero--task' : '')}>
@@ -146,6 +146,16 @@ export default function UnitOverview({
               <span>{visibleSessions.length} 场游戏</span>
               <span>每场建议 20 分钟</span>
             </div>
+            {!selectedTask && firstBasicTask && (
+              <Button
+                className="unit-hero-action"
+                type="primary"
+                icon={<ArrowRightIcon size={18} aria-hidden="true" />}
+                onClick={() => onNavigate(getTaskPath(unitKey, 'basic', firstBasicTask.id))}
+              >
+                查看基础任务
+              </Button>
+            )}
             <div className="catalog-source-disclosure-wrap">
               <Button
                 type="text"
@@ -388,17 +398,6 @@ export default function UnitOverview({
               onClick={() => onNavigate(getSessionPath(unitKey, selectedDifficulty!, selectedTask.id, dockSession.id))}
             >
               {dockActionLabel}
-            </Button>
-          </aside>
-        ) : !selectedTask && firstBasicTask ? (
-          <aside className="mobile-study-dock" aria-label="继续学习">
-            <p>从基础任务开始，稳稳点亮知识</p>
-            <Button
-              type="primary"
-              icon={<ArrowRightIcon size={18} aria-hidden="true" />}
-              onClick={() => onNavigate(getTaskPath(unitKey, 'basic', firstBasicTask.id))}
-            >
-              开始基础任务
             </Button>
           </aside>
         ) : null}

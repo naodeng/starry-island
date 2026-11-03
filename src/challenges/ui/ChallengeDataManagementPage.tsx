@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Card } from 'animal-island-ui';
+import { Button, Card } from '../../components/ui';
 import packageJson from '../../../package.json';
 import { createChallengeBackup, isChallengeBackupData, parseChallengeBackup } from '../domain/backup';
 import type { ChallengeBackupData, ChallengeBackupImport, ChallengeBackupPreferences } from '../domain/backup';

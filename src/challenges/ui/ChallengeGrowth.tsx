@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button, Card, Progress, Select } from 'animal-island-ui';
+import { Button, Card, Progress, Select } from '../../components/ui';
 import { getSubjectTitle } from '../../app/router';
 import { loadCourseSelection } from '../../storage/courseSelection';
 import { getGradeTitle } from '../../content/gradeTitle';

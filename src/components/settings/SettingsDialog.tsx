@@ -1,4 +1,4 @@
-import { Button, Modal } from 'animal-island-ui';
+import { Button, Modal } from '../ui';
 import { CloseIcon } from 'naive-icons';
 import type { LearningPosition } from '../../achievements/position';
 import type { ProgressState } from '../../storage/progress';
@@ -21,7 +21,6 @@ export default function SettingsDialog({ open, progress, onClose, onApplyLearnin
       title="设置"
       width="min(760px, calc(100vw - 24px))"
       className="settings-modal"
-      typewriter={false}
       footer={null}
       onClose={onClose}
     >

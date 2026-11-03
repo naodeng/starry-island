@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from 'animal-island-ui';
+import { Button } from '../ui';
 import { ArrowDownIcon, ArrowUpIcon } from 'naive-icons';
 import type { OrderActivityDefinition } from '../../content/types';
 
