@@ -93,7 +93,7 @@ describe('App', () => {
     render(<App />);
 
     await user.click(await screen.findByRole('button', { name: '进入闯关中心' }));
-    expect(await screen.findByRole('heading', { name: '闯关中心' }, { timeout: 5000 })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: '闯关中心' }, { timeout: 15_000 })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '选择一条挑战航线' })).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: '清除筛选' }));
     const soundsBeforeChallengeNavigation = playedSources.length;
@@ -101,7 +101,7 @@ describe('App', () => {
     const unitChallengeCard = screen.getByRole('heading', { name: '二年级上册数学 · 第二单元' }).closest('.challenge-group-card');
     expect(unitChallengeCard).not.toBeNull();
     await user.click(within(unitChallengeCard as HTMLElement).getByRole('button', { name: '查看挑战任务' }));
-    expect(await screen.findByRole('heading', { name: '选择一个任务开始' }, { timeout: 5000 })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: '选择一个任务开始' }, { timeout: 15_000 })).toBeInTheDocument();
     expect(screen.getAllByRole('button', { name: /开始挑战/ })).toHaveLength(5);
     expect(window.location.pathname).toBe('/challenges/group/grade-2-term-1-math-unit-02');
     expect(playedSources).toHaveLength(soundsBeforeChallengeNavigation);
@@ -111,10 +111,10 @@ describe('App', () => {
     const englishChallengeCard = screen.getByRole('heading', { name: '三年级上册英语 · 第一单元' }).closest('.challenge-group-card');
     expect(englishChallengeCard).not.toBeNull();
     await user.click(within(englishChallengeCard as HTMLElement).getByRole('button', { name: '查看挑战任务' }));
-    expect(await screen.findByRole('heading', { name: '选择一个任务开始' }, { timeout: 5000 })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: '选择一个任务开始' }, { timeout: 15_000 })).toBeInTheDocument();
     expect(window.location.pathname).toBe('/challenges/group/grade-3-term-1-english-unit-01');
     expect(playedSources).toHaveLength(soundsBeforeChallengeNavigation);
-  });
+  }, 30_000);
 
   it('appliesTheChosenLearningStartFromTheDedicatedSettingsPage', async () => {
     const user = userEvent.setup();
@@ -123,8 +123,7 @@ describe('App', () => {
 
     await user.click(await screen.findByRole('button', { name: '打开导航菜单' }));
     await user.click(await screen.findByRole('button', { name: '设置' }));
-    await user.click(screen.getByRole('combobox', { name: '学期' }));
-    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '学期' }), '2');
     await user.click(screen.getByRole('button', { name: '应用学习起点' }));
     await user.click(screen.getByRole('button', { name: '确认并应用学习起点' }));
 

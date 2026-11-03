@@ -58,16 +58,14 @@ describe('ChallengeCenter', () => {
     render(<ChallengeCenter groups={groups} progressByTaskId={{}} progressReadState="ready" onRetryProgress={vi.fn()} onNavigate={vi.fn()} />);
 
     const gradeFilter = screen.getByRole('combobox', { name: '闯关年级' });
-    await user.click(gradeFilter);
     expect(await screen.findByRole('option', { name: '一年级' })).toBeInTheDocument();
     expect(screen.getByRole('option', { name: '二年级' })).toBeInTheDocument();
     expect(screen.getByRole('option', { name: '三年级' })).toBeInTheDocument();
     expect(screen.queryByRole('option', { name: '四年级' })).not.toBeInTheDocument();
-    await user.click(screen.getByRole('option', { name: '二年级' }));
+    await user.selectOptions(gradeFilter, '2');
 
     expect(screen.getByRole('heading', { level: 3, name: '二年级下册数学 · 第一单元' })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { level: 3, name: '一年级上册数学 · 第一单元' })).not.toBeInTheDocument();
-    await user.click(screen.getByRole('combobox', { name: '闯关学期' }));
     expect(await screen.findByRole('option', { name: '下学期' })).toBeInTheDocument();
     expect(screen.queryByRole('option', { name: '上学期' })).not.toBeInTheDocument();
   });

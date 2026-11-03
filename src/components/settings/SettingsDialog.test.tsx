@@ -49,12 +49,9 @@ describe('SettingsDialog', () => {
     expect(dialog.getByRole('contentinfo', { name: '版权与许可' })).toHaveTextContent('© 2026 naodeng All Rights Reserved.');
     expect(dialog.getByRole('link', { name: 'naodeng 的个人网站' })).toHaveAttribute('href', 'https://inaodeng.com');
     expect(dialog.getByRole('link', { name: 'PolyForm Noncommercial License 1.0.0' })).toHaveAttribute('href', 'https://polyformproject.org/licenses/noncommercial/1.0.0/');
-    await user.click(dialog.getByRole('combobox', { name: '年级' }));
-    await user.click(await dialog.findByRole('option', { name: '2 年级' }));
-    await user.click(dialog.getByRole('combobox', { name: '学期' }));
-    await user.click(await dialog.findByRole('option', { name: '上学期' }));
-    await user.click(dialog.getByRole('combobox', { name: '从第几单元开始' }));
-    await user.click(await dialog.findByRole('option', { name: '第 2 单元' }));
+    await user.selectOptions(dialog.getByRole('combobox', { name: '年级' }), '2');
+    await user.selectOptions(dialog.getByRole('combobox', { name: '学期' }), '1');
+    await user.selectOptions(dialog.getByRole('combobox', { name: '从第几单元开始' }), '2');
     await user.click(screen.getByRole('button', { name: '应用学习起点' }));
     expect(onApplyLearningStart).not.toHaveBeenCalled();
     await user.click(screen.getByRole('button', { name: '确认并应用学习起点' }));

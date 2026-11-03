@@ -650,6 +650,7 @@ button.ui-button svg { display: inline-block; flex: 0 0 auto; vertical-align: mi
 @media (max-width: 900px) {
   .session-card-action.is-dock-target { display: none; }
   .unit-page .session-card { min-height: 0; }
+  .unit-hero-action { display: none; }
 }
 
 @media (max-width: 700px) {
@@ -660,13 +661,12 @@ button.ui-button svg { display: inline-block; flex: 0 0 auto; vertical-align: mi
   .course-breadcrumbs-compact li:first-child { flex: 0 1 auto; }
   .course-breadcrumbs-compact li:last-child { flex: 1 1 auto; overflow: hidden; }
   .course-breadcrumbs-compact li:last-child > span { overflow: hidden; text-overflow: ellipsis; }
-  .unit-page--task { padding-bottom: calc(116px + env(safe-area-inset-bottom)); }
+  .unit-page { padding-bottom: calc(116px + env(safe-area-inset-bottom)); }
   .unit-content-section { gap: 16px; margin-top: 16px; }
   .source-card--compact { padding: 12px 15px; border-radius: 20px; }
   .source-topic-list { margin-top: 12px; }
   .unit-hero h1 { text-wrap: balance; }
   .unit-hero .catalog-lead { margin-top: 8px; }
-  .unit-hero-action { width: 100%; margin-top: 12px; }
   .unit-hero--task { gap: 12px; padding: 18px 16px; border-radius: 23px; }
   .unit-hero--task h1 { font-size: clamp(27px, 7vw, 34px); }
   .unit-hero--task .catalog-lead { margin: 8px 0 10px; font-size: 14px; line-height: 1.5; }
@@ -706,14 +706,15 @@ button.ui-button svg { display: inline-block; flex: 0 0 auto; vertical-align: mi
     border: 1px solid var(--island-border);
     border-radius: 20px;
     color: var(--island-ink);
-    background: color-mix(in srgb, var(--island-surface) 93%, transparent);
+    background: var(--island-surface);
+    box-shadow: var(--app-shadow-base);
   }
   .mobile-study-dock p { min-width: 0; margin: 0; color: var(--island-muted); font-size: 12px; font-weight: 800; line-height: 1.35; }
   .mobile-study-dock button.ui-button { flex: 0 0 auto; min-height: 46px; padding-inline: 14px; font-size: 13px; }
 }
 
 @media (min-width: 701px) and (max-width: 900px) {
-  .unit-page--task { padding-bottom: calc(116px + env(safe-area-inset-bottom)); }
+  .unit-page { padding-bottom: calc(116px + env(safe-area-inset-bottom)); }
   .mobile-study-dock {
     position: fixed;
     z-index: 30;
@@ -730,7 +731,8 @@ button.ui-button svg { display: inline-block; flex: 0 0 auto; vertical-align: mi
     border: 1px solid var(--island-border);
     border-radius: 20px;
     color: var(--island-ink);
-    background: color-mix(in srgb, var(--island-surface) 93%, transparent);
+    background: var(--island-surface);
+    box-shadow: var(--app-shadow-base);
   }
   .mobile-study-dock p { min-width: 0; margin: 0; color: var(--island-muted); font-size: 13px; font-weight: 800; }
   .mobile-study-dock button.ui-button { flex: 0 0 auto; min-height: 48px; }

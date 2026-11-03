@@ -55,12 +55,9 @@ describe('SettingsPage', () => {
     const onApplyLearningStart = vi.fn();
     renderSettings(emptyProgress, vi.fn(), onApplyLearningStart);
 
-    await user.click(screen.getByRole('combobox', { name: '年级' }));
-    await user.click(await screen.findByRole('option', { name: '2 年级' }));
-    await user.click(screen.getByRole('combobox', { name: '学期' }));
-    await user.click(await screen.findByRole('option', { name: '下学期' }));
-    await user.click(screen.getByRole('combobox', { name: '从第几单元开始' }));
-    await user.click(await screen.findByRole('option', { name: '第 1 单元' }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '年级' }), '2');
+    await user.selectOptions(screen.getByRole('combobox', { name: '学期' }), '2');
+    await user.selectOptions(screen.getByRole('combobox', { name: '从第几单元开始' }), '1');
     await user.click(screen.getByRole('button', { name: '应用学习起点' }));
 
     expect(onApplyLearningStart).not.toHaveBeenCalled();

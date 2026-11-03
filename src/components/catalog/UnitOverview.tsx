@@ -400,6 +400,17 @@ export default function UnitOverview({
               {dockActionLabel}
             </Button>
           </aside>
+        ) : !selectedTask && firstBasicTask ? (
+          <aside className="mobile-study-dock" aria-label="继续学习">
+            <p>从基础任务开始，稳稳点亮知识</p>
+            <Button
+              type="primary"
+              icon={<ArrowRightIcon size={18} aria-hidden="true" />}
+              onClick={() => onNavigate(getTaskPath(unitKey, 'basic', firstBasicTask.id))}
+            >
+              开始基础任务
+            </Button>
+          </aside>
         ) : null}
       </div>
     </main>

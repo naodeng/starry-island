@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
-import type { Page } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 import { expect, test } from './fixtures';
 
 const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
@@ -17,6 +17,38 @@ async function expectCourseBasicTaskCount(page: Page) {
   const basicTrack = page.locator('.difficulty-track--basic');
   await expect(basicTrack).toBeVisible();
   await expect(basicTrack.getByRole('button', { name: '查看任务' })).toHaveCount(basicTaskCount!);
+}
+
+async function getForegroundContrast(locator: Locator) {
+  return locator.evaluate((element) => {
+    const colorChannels = (color: string) => (color.match(/[\d.]+/g) ?? []).map(Number);
+    const luminance = (color: string) => colorChannels(color).slice(0, 3).map((channel) => {
+      const normalized = channel / 255;
+      return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+    }).reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index]!, 0);
+    const foreground = getComputedStyle(element).color;
+    let background = 'rgb(255, 255, 255)';
+    let ancestor: HTMLElement | null = element as HTMLElement;
+
+    while (ancestor) {
+      const candidate = getComputedStyle(ancestor).backgroundColor;
+      const channels = colorChannels(candidate);
+      const alpha = channels.length > 3 ? channels[3]! : 1;
+      if (channels.length >= 3 && alpha >= 0.99) {
+        background = candidate;
+        break;
+      }
+      ancestor = ancestor.parentElement;
+    }
+
+    const foregroundLuminance = luminance(foreground);
+    const backgroundLuminance = luminance(background);
+    return {
+      foreground,
+      contrast: (Math.max(foregroundLuminance, backgroundLuminance) + 0.05)
+        / (Math.min(foregroundLuminance, backgroundLuminance) + 0.05),
+    };
+  });
 }
 
 interface E2EAttemptSnapshot {
@@ -2038,15 +2070,22 @@ test('saves, restores and completes a challenge without changing learning progre
   await expect(page.getByLabel('本次闯关结果')).toContainText(/\d+\/15 题答对/);
   await expect(page.getByLabel('本次闯关结果')).toContainText(/\d+ 颗星/);
 
+  const taskRecordCard = page.locator('.challenge-result-summary > *');
+  const darkContrast = await getForegroundContrast(taskRecordCard);
+  expect(darkContrast.contrast).toBeGreaterThanOrEqual(4.5);
+
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'no-preference' });
   await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('light');
-  const taskRecordCard = page.locator('.challenge-result-summary > *');
-  await expect.poll(() => taskRecordCard.evaluate((element) => getComputedStyle(element).color)).toBe('rgb(39, 51, 74)');
+  const lightContrast = await getForegroundContrast(taskRecordCard);
+  expect(lightContrast.contrast).toBeGreaterThanOrEqual(4.5);
+  expect(lightContrast.foreground).not.toBe(darkContrast.foreground);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
   await expect.poll(() => page.evaluate(() => document.documentElement.dataset.theme)).toBe('dark');
-  await expect.poll(() => taskRecordCard.evaluate((element) => getComputedStyle(element).color)).toBe('rgb(237, 243, 233)');
+  const darkContrastAfterSwitch = await getForegroundContrast(taskRecordCard);
+  expect(darkContrastAfterSwitch.contrast).toBeGreaterThanOrEqual(4.5);
+  expect(darkContrastAfterSwitch.foreground).toBe(darkContrast.foreground);
 
   const reviewTaskButton = page.getByRole('button', { name: /^复习：/ }).first();
   await expect(reviewTaskButton).toBeVisible();

@@ -41,12 +41,11 @@ describe('ChallengeGroup', () => {
     ['基础', 'basic', 2],
     ['进阶', 'advanced', 2],
     ['高阶', 'high', 1],
-  ] as const)('filters tasks to the %s difficulty and can restore all tasks', async (label, difficulty, expectedCount) => {
+  ] as const)('filters tasks to the %s difficulty and can restore all tasks', async (_label, difficulty, expectedCount) => {
     const user = userEvent.setup();
     render(<ChallengeGroup loadedGroup={loadedGroup} progressByTaskId={{}} onNavigate={vi.fn()} />);
 
-    await user.click(screen.getByRole('combobox', { name: '任务难度' }));
-    await user.click(await screen.findByRole('option', { name: label }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '任务难度' }), difficulty);
 
     expect(screen.getAllByRole('heading', { level: 3 }).map(({ textContent }) => textContent)).toEqual(
       group.definition.tasks

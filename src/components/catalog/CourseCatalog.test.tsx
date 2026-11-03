@@ -27,10 +27,8 @@ describe('CourseCatalog', () => {
     const user = userEvent.setup();
     const firstVisit = renderCatalog();
 
-    await user.click(screen.getByRole('combobox', { name: '年级' }));
-    await user.click(await screen.findByRole('option', { name: '二年级' }));
-    await user.click(screen.getByRole('combobox', { name: '学期' }));
-    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '年级' }), 'grade-2');
+    await user.selectOptions(screen.getByRole('combobox', { name: '学期' }), 'term-2');
     await user.click(screen.getByRole('button', { name: '数学' }));
 
     firstVisit.unmount();
@@ -128,8 +126,7 @@ describe('CourseCatalog', () => {
     const user = userEvent.setup();
     renderCatalog();
 
-    await user.click(screen.getByRole('combobox', { name: '学期' }));
-    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '学期' }), 'term-2');
     await user.click(screen.getByRole('button', { name: '数学' }));
 
     expect(screen.getAllByRole('button', { name: /进入单元/ })).toHaveLength(9);
@@ -153,8 +150,7 @@ describe('CourseCatalog', () => {
     const user = userEvent.setup();
     renderCatalog();
 
-    await user.click(screen.getByRole('combobox', { name: '学期' }));
-    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '学期' }), 'term-2');
     await user.click(screen.getByRole('button', { name: '英语' }));
 
     expect(screen.getByText('英语预备级是否属于学校本学期实际开设课程，请以学校安排为准。')).toBeInTheDocument();
@@ -167,10 +163,8 @@ describe('CourseCatalog', () => {
     const user = userEvent.setup();
     renderCatalog();
 
-    await user.click(screen.getByRole('combobox', { name: '年级' }));
-    await user.click(await screen.findByRole('option', { name: '六年级' }));
-    await user.click(screen.getByRole('combobox', { name: '学期' }));
-    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '年级' }), 'grade-6');
+    await user.selectOptions(screen.getByRole('combobox', { name: '学期' }), 'term-2');
 
     expect(screen.getByRole('heading', { name: /古诗词诵读 ·/ })).not.toHaveTextContent('主题组');
     expect(screen.queryByText('主题组', { selector: '.unit-number' })).not.toBeInTheDocument();

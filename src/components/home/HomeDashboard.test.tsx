@@ -49,10 +49,8 @@ describe('HomeDashboard', () => {
 
     expect(screen.getByRole('combobox', { name: '当前年级' })).toHaveTextContent('二年级');
     expect(screen.getByRole('combobox', { name: '当前学期' })).toHaveTextContent('下学期');
-    await user.click(screen.getByRole('combobox', { name: '当前年级' }));
-    await user.click(await screen.findByRole('option', { name: '三年级' }));
-    await user.click(screen.getByRole('combobox', { name: '当前学期' }));
-    await user.click(await screen.findByRole('option', { name: '下学期' }));
+    await user.selectOptions(screen.getByRole('combobox', { name: '当前年级' }), 'grade-3');
+    await user.selectOptions(screen.getByRole('combobox', { name: '当前学期' }), 'term-2');
 
     expect(loadCourseSelection()).toMatchObject({ gradeId: 'grade-3', termId: 'term-2' });
     expect(emptyProgress).toMatchObject({ completedSessionIds: [], learningStart: null });

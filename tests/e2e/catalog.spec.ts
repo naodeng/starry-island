@@ -142,6 +142,11 @@ test('keepsMobileStudyActionsWithinReachAndUsesReadableAlignedIconsInBothThemes'
 
   const unitDock = page.locator('.mobile-study-dock');
   await expect(unitDock).toBeVisible();
+  const dockBackgroundAlpha = await unitDock.evaluate((dock) => {
+    const channels = (getComputedStyle(dock).backgroundColor.match(/[\d.]+/g) ?? []).map(Number);
+    return channels.length > 3 ? channels[channels.length - 1]! : 1;
+  });
+  expect(dockBackgroundAlpha).toBeGreaterThanOrEqual(0.99);
   const unitDockBounds = await unitDock.boundingBox();
   expect(unitDockBounds?.y).toBeGreaterThan(0);
   expect(unitDockBounds!.y + unitDockBounds!.height).toBeLessThanOrEqual(844);
