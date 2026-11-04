@@ -13,8 +13,22 @@ interface ChallengeGroupProps {
   onNavigate: (path: string) => void;
 }
 
+function ChallengeGroupHeading({ title }: { title: string }) {
+  const separatorIndex = title.lastIndexOf(' · ');
+  const prefix = separatorIndex === -1 ? title : title.slice(0, separatorIndex + 2);
+  const suffix = separatorIndex === -1 ? '' : title.slice(separatorIndex + 3);
+
+  return (
+    <h1 className="challenge-group-title" aria-label={title}>
+      <span className="challenge-group-title-prefix">{prefix}</span>
+      {suffix ? ` ${suffix}` : null}
+    </h1>
+  );
+}
+
 export default function ChallengeGroup({ loadedGroup, progressByTaskId, onNavigate }: ChallengeGroupProps) {
   const { group } = loadedGroup;
+  const groupTitle = getChallengeGroupTitle(group);
   const [difficultyFilter, setDifficultyFilter] = useState('all');
   if (loadedGroup.status !== 'ready') {
     return (
@@ -22,7 +36,7 @@ export default function ChallengeGroup({ loadedGroup, progressByTaskId, onNaviga
         <div className="challenge-shell">
           <Card className="challenge-message-card" color="default">
             <p className="eyebrow">路线暂不可用</p>
-            <h1>{getChallengeGroupTitle(group)}</h1>
+            <ChallengeGroupHeading title={groupTitle} />
             <p>这条挑战路线还没有通过内容质量检查，暂时不能开始。</p>
             <Button type="primary" onClick={() => onNavigate(getChallengeCenterPath())}>返回闯关中心</Button>
           </Card>
@@ -45,7 +59,7 @@ export default function ChallengeGroup({ loadedGroup, progressByTaskId, onNaviga
         <header className="challenge-subpage-heading">
           <Button type="text" onClick={() => onNavigate(getChallengeCenterPath())}>返回闯关中心</Button>
           <p className="eyebrow">{group.definition.kind === 'unit' ? '单元挑战' : '学期阶段挑战'}</p>
-          <h1>{getChallengeGroupTitle(group)}</h1>
+          <ChallengeGroupHeading title={groupTitle} />
           <p>每题提交一次答案。所有任务均可自由选择，不会影响课程学习进度。</p>
         </header>
         <section className="challenge-section" aria-labelledby="challenge-task-list-heading">
