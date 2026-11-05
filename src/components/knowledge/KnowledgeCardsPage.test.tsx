@@ -7,10 +7,11 @@ describe('KnowledgeCardsPage', () => {
   beforeEach(() => localStorage.clear());
 
   it('defaultsToGradeTwoTermOneChineseAndShowsItsKnowledgeCards', () => {
-    render(<KnowledgeCardsPage onNavigate={vi.fn()} />);
+    render(<KnowledgeCardsPage track={{ gradeId: 'grade-2', termId: 'term-1' }} onNavigate={vi.fn()} />);
 
     expect(screen.getByRole('heading', { name: '知识卡片' })).toBeInTheDocument();
-    expect(screen.getByLabelText('学期')).toHaveValue('term-1');
+    expect(screen.getByLabelText('当前学习赛道')).toHaveTextContent('二年级 · 上学期');
+    expect(screen.queryByLabelText('学期')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: '语文' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('heading', { name: '《小蝌蚪找妈妈》：成长顺序与观察线索' })).toBeInTheDocument();
     expect(screen.getByText('观察生物的变化，可以按先后记录外形和动作；判断要依据看见的线索。')).toBeVisible();
@@ -20,7 +21,7 @@ describe('KnowledgeCardsPage', () => {
 
   it('supportsStepByStepReviewAndSwitchingToAllCards', async () => {
     const user = userEvent.setup();
-    render(<KnowledgeCardsPage onNavigate={vi.fn()} />);
+    render(<KnowledgeCardsPage track={{ gradeId: 'grade-2', termId: 'term-1' }} onNavigate={vi.fn()} />);
 
     expect(screen.getByRole('button', { name: '逐张复习' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('progressbar', { name: '知识卡片复习进度' })).toHaveAttribute('aria-valuenow', '1');
@@ -38,11 +39,12 @@ describe('KnowledgeCardsPage', () => {
     expect(screen.getByRole('heading', { name: '《我是什么》：水的自然现象' })).toBeInTheDocument();
   });
 
-  it('changesTermAndSubjectAndShowsTheEnglishOfferingNote', async () => {
+  it('filtersWithinTheSelectedTrackAndShowsTheEnglishOfferingNote', async () => {
     const user = userEvent.setup();
-    render(<KnowledgeCardsPage onNavigate={vi.fn()} />);
+    render(<KnowledgeCardsPage track={{ gradeId: 'grade-2', termId: 'term-2' }} onNavigate={vi.fn()} />);
 
-    await user.selectOptions(screen.getByLabelText('学期'), 'term-2');
+    expect(screen.getByLabelText('当前学习赛道')).toHaveTextContent('二年级 · 下学期');
+    expect(screen.queryByLabelText('学期')).not.toBeInTheDocument();
     expect(screen.getByLabelText('课程条目')).toHaveValue('unit-01');
 
     await user.click(screen.getByRole('button', { name: '数学' }));
@@ -70,7 +72,7 @@ describe('KnowledgeCardsPage', () => {
   it('initializesFromADirectUnitRoute', () => {
     render(<KnowledgeCardsPage unitKey="grade-2/term-2/math/unit-03" onNavigate={vi.fn()} />);
 
-    expect(screen.getByLabelText('学期')).toHaveValue('term-2');
+    expect(screen.getByLabelText('当前学习赛道')).toHaveTextContent('二年级 · 下学期');
     expect(screen.getByRole('button', { name: '数学' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByLabelText('课程条目')).toHaveValue('unit-03');
     expect(screen.getByRole('heading', { name: '认识轴对称图形和对称轴' })).toBeInTheDocument();
@@ -80,16 +82,17 @@ describe('KnowledgeCardsPage', () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();
     const unitKey = 'grade-2/term-1/math/unit-01';
-    const view = render(<KnowledgeCardsPage unitKey={unitKey} onNavigate={onNavigate} />);
+    const track = { gradeId: 'grade-2', termId: 'term-1' } as const;
+    const view = render(<KnowledgeCardsPage track={track} unitKey={unitKey} onNavigate={onNavigate} />);
 
-    await user.selectOptions(screen.getByLabelText('学期'), 'term-2');
-    view.rerender(<KnowledgeCardsPage onNavigate={onNavigate} />);
     await user.click(screen.getByRole('button', { name: '英语' }));
-    expect(screen.getByRole('heading', { name: '游泳、踢足球、骑自行车和放风筝' })).toBeInTheDocument();
+    expect(onNavigate).toHaveBeenCalledWith('/knowledge');
+    view.rerender(<KnowledgeCardsPage track={track} onNavigate={onNavigate} />);
+    expect(screen.getByRole('button', { name: '英语' })).toHaveAttribute('aria-pressed', 'true');
 
-    view.rerender(<KnowledgeCardsPage unitKey={unitKey} onNavigate={onNavigate} />);
+    view.rerender(<KnowledgeCardsPage track={track} unitKey={unitKey} onNavigate={onNavigate} />);
 
-    expect(screen.getByLabelText('学期')).toHaveValue('term-1');
+    expect(screen.getByLabelText('当前学习赛道')).toHaveTextContent('二年级 · 上学期');
     expect(screen.getByRole('button', { name: '数学' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByLabelText('课程条目')).toHaveValue('unit-01');
     expect(screen.getByRole('heading', { name: '按物品特征选择分类标准' })).toBeInTheDocument();
