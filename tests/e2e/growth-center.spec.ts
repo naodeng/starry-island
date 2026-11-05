@@ -17,11 +17,9 @@ test('keeps course growth and challenge growth in separate views', async ({ page
 
   await page.getByRole('tab', { name: '学习星图' }).click();
   await expect(page.getByRole('heading', { name: '本学期星区' })).toBeVisible();
-  await expect(page.getByRole('tab', { name: '一年级', exact: true })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.achievement-current-scope')).toContainText('二年级 · 上学期');
   await expect(page.locator('.exploration-zone')).toHaveCount(1);
-  await page.getByRole('tab', { name: '二年级', exact: true }).click();
-  await expect(page.getByRole('tab', { name: '二年级', exact: true })).toHaveAttribute('aria-selected', 'true');
-  await expect(page.locator('.exploration-zone')).toHaveCount(1);
+  await expect(page.getByRole('tab', { name: '二年级', exact: true })).toHaveCount(0);
   await expect(page.getByRole('region', { name: '闯关成长摘要' })).toHaveCount(0);
 
   await page.getByRole('tab', { name: '闯关成长' }).click();

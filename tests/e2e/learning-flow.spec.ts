@@ -20,9 +20,8 @@ async function setOrder(page: import('@playwright/test').Page, wanted: string[])
   await page.getByRole('button', { name: '检查顺序' }).click();
 }
 
-async function selectGradeTwoFirstTerm(page: import('@playwright/test').Page) {
-  await page.getByRole('tab', { name: '二年级', exact: true }).click();
-  await page.getByRole('tab', { name: '上学期', exact: true }).click();
+async function expectGradeTwoFirstTermTrack(page: import('@playwright/test').Page) {
+  await expect(page.locator('.achievement-current-scope')).toContainText('二年级 · 上学期');
 }
 
 async function solveChoice(page: import('@playwright/test').Page, answer: string) {
@@ -349,7 +348,7 @@ test('completesTwoBasicTasksAndTwoTasksPerHigherTier', async ({ page }) => {
 
     if (taskIndex < 2) {
       await page.goto('/achievements');
-      await selectGradeTwoFirstTerm(page);
+      await expectGradeTwoFirstTermTrack(page);
       const unitProgress = page.locator('.achievement-unit').filter({ hasText: unitTitle });
       await expect(unitProgress).toContainText(`${taskIndex + 1} / 2`);
       await expect(unitProgress).toHaveClass(taskIndex === 0 ? /is-pending/ : /is-complete/);
@@ -357,7 +356,7 @@ test('completesTwoBasicTasksAndTwoTasksPerHigherTier', async ({ page }) => {
   }
 
   await page.goto('/achievements');
-  await selectGradeTwoFirstTerm(page);
+  await expectGradeTwoFirstTermTrack(page);
   const unitProgress = page.locator('.achievement-unit').filter({ hasText: unitTitle });
   await expect(unitProgress).toContainText('2 / 2');
   await expect(unitProgress).toHaveClass(/is-complete/);

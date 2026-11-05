@@ -1,0 +1,84 @@
+.course-track-modal .ui-modal-title {
+  padding: 28px 28px 0;
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+.course-track-modal .ui-modal-body {
+  padding: 8px 28px 28px;
+}
+
+.course-track-eyebrow { margin: 0 0 7px; }
+
+.course-track-description {
+  margin: 0;
+  color: var(--island-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.course-track-fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 20px 0 0;
+  border: 0;
+}
+
+.course-track-fieldset legend {
+  margin-bottom: 10px;
+  color: var(--island-ink);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.course-track-options {
+  display: grid;
+  gap: 8px;
+}
+
+.course-track-options--grades { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.course-track-options--terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.course-track-option {
+  min-height: 48px;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.course-track-option[aria-pressed='true'] {
+  border-color: var(--app-accent);
+  color: var(--app-accent-pressed);
+  background: var(--app-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--app-accent);
+}
+
+.course-track-option:focus-visible,
+.course-track-actions .ui-button:focus-visible {
+  outline: 3px solid var(--app-accent);
+  outline-offset: 3px;
+}
+
+.course-track-note {
+  padding: 12px 13px;
+  margin: 18px 0 0;
+  border-radius: 12px;
+  color: var(--island-muted);
+  background: var(--island-surface-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.course-track-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.course-track-actions .ui-button { min-height: 46px; padding-inline: 18px; }
+
+@media (max-width: 560px) {
+  .course-track-modal .ui-modal-title { padding: 23px 18px 0; font-size: 23px; }
+  .course-track-modal .ui-modal-body { padding: 8px 18px 20px; }
+  .course-track-option { min-height: 46px; padding-inline: 8px; }
+}

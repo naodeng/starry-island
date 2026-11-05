@@ -7,6 +7,7 @@ import { isValidChallengeGroupId, isValidChallengeTaskId } from '../challenges/d
 export type AppRoute =
   | { kind: 'home' }
   | { kind: 'catalog' }
+  | { kind: 'knowledgeCards'; unitKey?: string }
   | { kind: 'growth'; initialView: 'overview' | 'learning' | 'challenge' }
   | { kind: 'settings' }
   | { kind: 'settingsBackup' }
@@ -31,6 +32,10 @@ function lastPathSegment(id: string): string {
 
 export function getUnitPath(unitKey: string): string {
   return `/${unitKey}`;
+}
+
+export function getKnowledgePath(unitKey?: string): string {
+  return unitKey ? `/knowledge/${unitKey}` : '/knowledge';
 }
 
 export function getTaskPath(unitKey: string, difficulty: Difficulty, taskId: string): string {
@@ -99,6 +104,24 @@ export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit
   const normalized = pathname.replace(/\/+$/, '') || '/';
   if (normalized === '/') return { kind: 'home' };
   if (normalized === '/courses') return { kind: 'catalog' };
+  if (normalized === '/knowledge') return { kind: 'knowledgeCards' };
+  if (normalized.startsWith('/knowledge/')) {
+    const segments = normalized.split('/').filter(Boolean);
+    if (segments.length !== 5) return { kind: 'notFound', path: normalized };
+    const [, gradeId, termId, subjectId, unitId] = segments;
+    if (gradeId !== 'grade-2'
+      || !/^term-[12]$/.test(termId!)
+      || !['chinese', 'math', 'english'].includes(subjectId!)
+      || !/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(unitId!)) {
+      return { kind: 'notFound', path: normalized };
+    }
+    const unitKey = `${gradeId}/${termId}/${subjectId}/${unitId}`;
+    const entry = findCatalogUnit(instance ?? curriculumManifest, unitKey);
+    const textbook = entry && (instance ?? curriculumManifest).textbooks[entry.textbookEditionId];
+    return entry?.status === 'active' && textbook?.verificationStatus === 'verified'
+      ? { kind: 'knowledgeCards', unitKey }
+      : { kind: 'notFound', path: normalized };
+  }
   if (normalized === '/growth') return { kind: 'growth', initialView: 'overview' };
   if (normalized === '/achievements') return { kind: 'growth', initialView: 'learning' };
   if (normalized === '/settings') return { kind: 'settings' };

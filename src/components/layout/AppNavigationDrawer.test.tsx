@@ -31,6 +31,12 @@ describe('AppNavigationDrawer', () => {
     expect(screen.getByRole('button', { name: '闯关' })).toHaveAttribute('aria-current', 'page');
   });
 
+  it('marksTheKnowledgeDestinationAsCurrentOnAUnitCardRoute', () => {
+    render(<AppNavigationDrawer open currentPath="/knowledge/grade-2/term-1/math/unit-01" onClose={vi.fn()} onNavigate={vi.fn()} />);
+
+    expect(screen.getByRole('button', { name: '知识卡片' })).toHaveAttribute('aria-current', 'page');
+  });
+
   it('closesOnEscapeAndRequestsFocusRestoration', () => {
     const onClose = vi.fn();
     render(<AppNavigationDrawer open onClose={onClose} onNavigate={vi.fn()} />);

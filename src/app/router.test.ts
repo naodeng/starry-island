@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { curriculum } from '../content/curriculum';
 import * as unitLoader from '../content/unitLoader';
 import type { Curriculum } from '../content/types';
-import { getChallengeCenterPath, getChallengeGroupPath, getChallengeGrowthPath, getChallengeTaskPath, getChallengeWrongQuestionsPath, getSessionPath, getSubjectTitle, getTaskPath, resolveAppRoute, resolveRoute } from './router';
+import { getChallengeCenterPath, getChallengeGroupPath, getChallengeGrowthPath, getChallengeTaskPath, getChallengeWrongQuestionsPath, getKnowledgePath, getSessionPath, getSubjectTitle, getTaskPath, resolveAppRoute, resolveRoute } from './router';
 
 const unitKey = 'grade-2/term-1/chinese/unit-01';
 
@@ -49,6 +49,32 @@ describe('router', () => {
 
     expect(getTaskPath(unitKey, 'basic', taskId)).toBe(`/${unitKey}/basic/task-01`);
     expect(getSessionPath(unitKey, 'basic', taskId, sessionId)).toBe(`/${unitKey}/basic/task-01/session-01`);
+  });
+
+  it('createsAndResolvesKnowledgeCardLibraryPathsOnlyForGradeTwoCourses', () => {
+    expect(getKnowledgePath()).toBe('/knowledge');
+    expect(getKnowledgePath(unitKey)).toBe(`/knowledge/${unitKey}`);
+    expect(resolveRoute('/knowledge')).toEqual({ kind: 'knowledgeCards' });
+    expect(resolveRoute(getKnowledgePath(unitKey))).toEqual({ kind: 'knowledgeCards', unitKey });
+    expect(resolveRoute('/knowledge/grade-2/term-1/chinese/unit-99').kind).toBe('notFound');
+    expect(resolveRoute('/knowledge/grade-3/term-1/chinese/unit-01').kind).toBe('notFound');
+    expect(resolveRoute('/knowledge/grade-2/term-1/science/unit-01').kind).toBe('notFound');
+  });
+
+  it('rejectsKnowledgePathsWithTheWrongNumberOfSegments', () => {
+    expect(resolveRoute('/knowledge/grade-2/term-1/chinese').kind).toBe('notFound');
+    expect(resolveRoute('/knowledge/grade-2/term-1/chinese/unit-01/extra').kind).toBe('notFound');
+  });
+
+  it('rejectsUnsupportedTermsMalformedUnitSlugsAndUnverifiedKnowledgeEntries', () => {
+    expect(resolveRoute('/knowledge/grade-2/term-3/chinese/unit-01').kind).toBe('notFound');
+    expect(resolveRoute('/knowledge/grade-2/term-1/chinese/Unit-01').kind).toBe('notFound');
+
+    const instance = createPlayableCurriculum();
+    const entry = instance.grades.find((grade) => grade.id === 'grade-2')!.terms[0].subjects.find((subject) => subject.id === 'chinese')!.units[0];
+    instance.textbooks[entry.textbookEditionId].verificationStatus = 'pending';
+
+    expect(resolveRoute(getKnowledgePath(unitKey), instance).kind).toBe('notFound');
   });
 
   it('resolvesCatalogUnitTaskAndSessionRoutes', () => {

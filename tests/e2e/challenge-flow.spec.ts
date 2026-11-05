@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import type { Locator, Page } from '@playwright/test';
 import { expect, test } from './fixtures';
+import { selectCourseTrack } from './selectTrack';
 
 const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
 const taskId = 'grade-2-term-1-math-unit-02/basic-01-v2';
@@ -158,23 +159,19 @@ async function readQuarantinedAttemptState(page: import('@playwright/test').Page
   }), taskId);
 }
 
-test('opens the Grade 5 Chinese pilot with matching subject routes and preserves learning progress', async ({ page }) => {
+test('opens the Grade 5 Chinese pilot on the selected track and preserves learning progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '五年级', '上学期');
   await page.goto('/challenges');
   await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await expect(page.locator('.challenge-track-context')).toContainText('五年级 · 上学期');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
-  const mathGroup = page.locator('.challenge-group-card').filter({ hasText: '二年级上册数学 · 第二单元' });
-  const englishGroup = page.locator('.challenge-group-card').filter({ hasText: '三年级上册英语 · 第一单元' });
+  await expect(page.locator('.challenge-group-card')).toHaveCount(1);
   const chineseGroup = page.locator('.challenge-group-card').filter({ hasText: '五年级上册语文 · 第一单元' });
-
-  await expect(mathGroup).toContainText('练习两位数加减法、进位退位和数量关系。');
-  await expect(englishGroup).toContainText('练习本单元的自我介绍、年龄和班级表达。');
   await expect(chineseGroup).toContainText('阅读本单元课文，练习文本线索、表达方法与习作。');
-  await expect(englishGroup).not.toContainText('练习两位数加减法、进位退位和数量关系。');
-  await expect(chineseGroup).not.toContainText('练习两位数加减法、进位退位和数量关系。');
 
   await chineseGroup.getByRole('button', { name: '查看挑战任务' }).click();
   await expect(page).toHaveURL('/challenges/group/grade-5-term-1-chinese-unit-01');
@@ -779,6 +776,7 @@ test('opens the local wrong-question notebook from the challenge center', async 
 test('opens the Grade 3 English Unit 1 pilot without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '三年级', '上学期');
   await page.goto('/challenges');
   await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '三年级上册英语 · 第一单元' })).toBeVisible();
@@ -1230,6 +1228,7 @@ test('opens the Grade 2 English Unit 4 challenge from In the Community without c
 test('opens the Grade 1 English Unit 1 challenge without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/challenges');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册英语 · 第一单元' });
@@ -1251,6 +1250,7 @@ test('opens the Grade 1 English Unit 1 challenge without changing course progres
 test('opens the Grade 1 English Unit 2 challenge without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/challenges');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册英语 · 第二单元' });
@@ -1272,6 +1272,7 @@ test('opens the Grade 1 English Unit 2 challenge without changing course progres
 test('opens the Grade 1 English Unit 3 challenge without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/challenges');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册英语 · 第三单元' });
@@ -1360,6 +1361,7 @@ test('opens the Grade 1 English Unit 6 challenge from its course page without ch
 
 test('opens the Grade 1 Math second-half stage and preserves course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/challenges');
   await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
@@ -1384,6 +1386,7 @@ test('opens the Grade 1 Math second-half stage and preserves course progress', a
 test('opens the Grade 1 Chinese theme-based semester stage without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/challenges');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const firstHalfCard = page.locator('.challenge-group-card').filter({
@@ -1442,6 +1445,7 @@ test('opens the Grade 2 English first-half semester stage without changing cours
 test('opens the Grade 1 math Unit 1 challenge from the center without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/challenges');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册数学 · 第一单元' });
@@ -1462,6 +1466,7 @@ test('opens the Grade 1 math Unit 1 challenge from the center without changing c
 test('opens the Grade 1 math Unit 2 position challenge from the center without changing course progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/challenges');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   const group = page.locator('.challenge-group-card').filter({ hasText: '一年级上册数学 · 第二单元' });

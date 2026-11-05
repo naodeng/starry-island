@@ -2,7 +2,7 @@ import { useId, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 import { Button, Card } from '../ui';
 import { ArrowRightIcon, CheckCircleIcon, ChevronDownIcon } from 'naive-icons';
-import { getChallengeGroupPath, getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
+import { getChallengeGroupPath, getKnowledgePath, getSessionPath, getSubjectTitle, getTaskPath, getUnitPath } from '../../app/router';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CurriculumUnit, Difficulty, LearningTask } from '../../content/types';
 import { getSessionsForDifficulty } from '../../content/sessionUtils';
@@ -154,6 +154,11 @@ export default function UnitOverview({
                 onClick={() => onNavigate(getTaskPath(unitKey, 'basic', firstBasicTask.id))}
               >
                 查看基础任务
+              </Button>
+            )}
+            {!selectedTask && unitKey.startsWith('grade-2/') && (
+              <Button className="unit-hero-action unit-hero-action--knowledge" type="default" onClick={() => onNavigate(getKnowledgePath(unitKey))}>
+                查看本单元知识卡片
               </Button>
             )}
             <div className="catalog-source-disclosure-wrap">

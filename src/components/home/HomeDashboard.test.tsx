@@ -9,7 +9,7 @@ import { curriculumManifest, getUnitManifest } from '../../content/curriculumMan
 import { getKnownCurriculumPositions } from '../../achievements/position';
 import { resolveAppRoute } from '../../app/router';
 import { resolveLearningSessionDestination } from '../../app/continueLearning';
-import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
+import { loadCourseTrack, saveCourseTrack } from '../../storage/courseTrack';
 import HomeDashboard from './HomeDashboard';
 
 vi.mock('../../challenges/domain/growthSummaryReader', () => ({ loadChallengeGrowthSummary: vi.fn() }));
@@ -42,17 +42,18 @@ describe('HomeDashboard', () => {
     expect(sections.slice(0, 4)).toEqual(['继续学习', '当前进度', '最近学习记录', '闯关入口']);
   });
 
-  it('letsLearnersChooseAndPersistTheCurrentGradeAndTermWithoutChangingLearningProgress', async () => {
-    saveCourseSelection({ gradeId: 'grade-2', termId: 'term-2', subjectId: 'math' });
+  it('showsTheCurrentTrackAndOffersOneSettingsEntryWithoutChangingLearningProgress', async () => {
+    saveCourseTrack({ gradeId: 'grade-2', termId: 'term-2' });
     const user = userEvent.setup();
-    render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} />);
+    const onOpenTrackSettings = vi.fn();
+    render(<HomeDashboard progress={emptyProgress} onNavigate={vi.fn()} onOpenTrackSettings={onOpenTrackSettings} />);
 
-    expect(screen.getByRole('combobox', { name: '当前年级' })).toHaveTextContent('二年级');
-    expect(screen.getByRole('combobox', { name: '当前学期' })).toHaveTextContent('下学期');
-    await user.selectOptions(screen.getByRole('combobox', { name: '当前年级' }), 'grade-3');
-    await user.selectOptions(screen.getByRole('combobox', { name: '当前学期' }), 'term-2');
+    expect(screen.getByRole('group', { name: '当前学习赛道' })).toHaveTextContent('二年级 · 下学期');
+    expect(screen.queryByRole('combobox', { name: /当前年级|当前学期/ })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: '设置学习赛道' }));
 
-    expect(loadCourseSelection()).toMatchObject({ gradeId: 'grade-3', termId: 'term-2' });
+    expect(onOpenTrackSettings).toHaveBeenCalledOnce();
+    expect(loadCourseTrack()).toEqual({ gradeId: 'grade-2', termId: 'term-2' });
     expect(emptyProgress).toMatchObject({ completedSessionIds: [], learningStart: null });
   });
 

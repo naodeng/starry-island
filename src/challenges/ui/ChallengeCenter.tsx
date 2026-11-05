@@ -6,7 +6,7 @@ import EmptyState from '../../components/shared/EmptyState';
 import type { SubjectId } from '../../content/types';
 import type { LoadedPilotGroup } from '../content/pilotContent';
 import type { TaskProgress } from '../domain/types';
-import { loadCourseSelection } from '../../storage/courseSelection';
+import { loadCourseTrack } from '../../storage/courseTrack';
 import { getGradeTitle } from '../../content/gradeTitle';
 
 export function sortChallengeGroupsForDisplay(groups: readonly LoadedPilotGroup[]): LoadedPilotGroup[] {
@@ -116,37 +116,17 @@ interface ChallengeCenterProps {
 }
 
 export default function ChallengeCenter({ groups, progressByTaskId, progressReadState, onRetryProgress, onNavigate }: ChallengeCenterProps) {
-  const savedSelection = loadCourseSelection();
-  const availableGrades = [...new Set(groups.map(({ group }) => group.definition.grade))].sort((left, right) => left - right);
-  const savedGrade = savedSelection ? Number(savedSelection.gradeId.slice('grade-'.length)) : null;
-  const hasSavedGrade = savedGrade !== null && availableGrades.includes(savedGrade);
-  const defaultGrade = hasSavedGrade ? savedGrade : undefined;
-  const savedSemester = savedSelection?.termId === 'term-1' ? 1 : savedSelection?.termId === 'term-2' ? 2 : null;
-  const defaultSemester = hasSavedGrade ? savedSemester : null;
-  const defaultSubject = hasSavedGrade && savedSelection ? savedSelection.subjectId : 'all';
-  const [gradeFilter, setGradeFilter] = useState(defaultGrade === undefined ? 'all' : String(defaultGrade));
-  const [semesterFilter, setSemesterFilter] = useState(defaultSemester === null ? 'all' : String(defaultSemester));
-  const [subjectFilter, setSubjectFilter] = useState<string>(defaultSubject);
-  const gradeOptions = [
-    { key: 'all', label: '全部年级' },
-    ...availableGrades.map((grade) => ({ key: String(grade), label: getGradeTitle(grade) })),
-  ];
-  const semesterGrades = gradeFilter === 'all'
-    ? groups
-    : groups.filter(({ group }) => group.definition.grade === Number(gradeFilter));
-  const availableSemesters = [...new Set(semesterGrades.map(({ group }) => group.definition.semester))]
-    .sort((left, right) => left - right);
-  const selectedSemester = semesterFilter === '1' ? 1 : semesterFilter === '2' ? 2 : null;
-  const filterSemesters = selectedSemester !== null && !availableSemesters.includes(selectedSemester)
-    ? [...availableSemesters, selectedSemester].sort((left, right) => left - right)
-    : availableSemesters;
-  const semesterOptions = [
-    { key: 'all', label: '全部学期' },
-    ...filterSemesters.map((semester) => ({ key: String(semester), label: semester === 1 ? '上学期' : '下学期' })),
-  ];
-  const subjectGroups = semesterGrades.filter(({ group }) => (
-    semesterFilter === 'all' || group.definition.semester === Number(semesterFilter)
-  ));
+  const savedTrack = loadCourseTrack();
+  const trackGrade = savedTrack ? Number(savedTrack.gradeId.match(/^grade-(\d+)$/)?.[1]) : null;
+  const trackSemester = savedTrack?.termId === 'term-1' ? 1 : savedTrack?.termId === 'term-2' ? 2 : null;
+  const trackTitle = trackGrade !== null && trackSemester !== null
+    ? `${getGradeTitle(trackGrade)} · ${trackSemester === 1 ? '上学期' : '下学期'}`
+    : '全部已登记路线';
+  const trackGroups = savedTrack && trackGrade !== null && trackSemester !== null
+    ? groups.filter(({ group }) => group.definition.grade === trackGrade && group.definition.semester === trackSemester)
+    : groups;
+  const [subjectFilter, setSubjectFilter] = useState<string>('all');
+  const subjectGroups = trackGroups;
   const subjectOrder: Record<SubjectId, number> = { chinese: 0, math: 1, english: 2 };
   const availableSubjects: SubjectId[] = [...new Set(subjectGroups.map(({ group }) => group.definition.subject))]
     .sort((left, right) => subjectOrder[left] - subjectOrder[right]);
@@ -158,13 +138,9 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
     { key: 'all', label: '全部学科' },
     ...filterSubjects.map((subject) => ({ key: subject, label: getSubjectTitle(subject) })),
   ];
-  const sortedGroups = sortChallengeGroupsForDisplay(groups);
-  const filteredGroups = sortedGroups.filter(({ group }) => (
-    (gradeFilter === 'all' || group.definition.grade === Number(gradeFilter))
-      && (semesterFilter === 'all' || group.definition.semester === Number(semesterFilter))
-      && (subjectFilter === 'all' || group.definition.subject === subjectFilter)
-  ));
-  const hasActiveFilter = gradeFilter !== 'all' || semesterFilter !== 'all' || subjectFilter !== 'all';
+  const sortedGroups = sortChallengeGroupsForDisplay(trackGroups);
+  const filteredGroups = sortedGroups.filter(({ group }) => subjectFilter === 'all' || group.definition.subject === subjectFilter);
+  const hasActiveFilter = subjectFilter !== 'all';
 
   return (
     <main className="challenge-page">
@@ -191,6 +167,7 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
               <h2 id="challenge-groups-heading">选择一条挑战航线</h2>
             </div>
           </div>
+          <p className="challenge-track-context">当前赛道：{trackTitle}</p>
           {groups.length === 0 ? (
             <EmptyState
               className="challenge-route-empty"
@@ -202,35 +179,35 @@ export default function ChallengeCenter({ groups, progressByTaskId, progressRead
             <>
               <div className="challenge-filters" role="group" aria-label="筛选挑战路线">
                 <label>
-                  <span id="challenge-grade-filter-label">年级</span>
-                  <Select aria-label="闯关年级" options={gradeOptions} value={gradeFilter} onChange={(value) => { setGradeFilter(value); setSemesterFilter('all'); setSubjectFilter('all'); }} />
-                </label>
-                <label>
-                  <span id="challenge-semester-filter-label">学期</span>
-                  <Select aria-label="闯关学期" options={semesterOptions} value={semesterFilter} onChange={(value) => { setSemesterFilter(value); setSubjectFilter('all'); }} />
-                </label>
-                <label>
                   <span id="challenge-subject-filter-label">学科</span>
                   <Select aria-label="闯关学科" options={subjectOptions} value={subjectFilter} onChange={setSubjectFilter} />
                 </label>
               </div>
               <div className="challenge-filter-summary">
-                <p role="status" aria-live="polite">正在显示 {filteredGroups.length} 条路线，共 {groups.length} 条</p>
+                <p role="status" aria-live="polite">正在显示 {filteredGroups.length} 条路线，共 {trackGroups.length} 条</p>
                 {hasActiveFilter && (
-                  <Button type="text" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); setSubjectFilter('all'); }}>
+                  <Button type="text" onClick={() => setSubjectFilter('all')}>
                     清除筛选
                   </Button>
                 )}
               </div>
-              {filteredGroups.length === 0 ? (
+              {trackGroups.length === 0 ? (
+                <EmptyState
+                  className="challenge-route-empty"
+                  headingLevel={3}
+                  title="当前赛道暂无挑战路线"
+                  description="课程路线准备好后，会显示在这里。你可以先去课程目录继续学习。"
+                  action={{ label: '浏览课程目录', onAction: () => onNavigate('/courses') }}
+                />
+              ) : filteredGroups.length === 0 ? (
                 <div className="challenge-filter-empty">
                   <EmptyState
                     className="challenge-route-empty"
                     headingLevel={3}
                     title="当前筛选条件下暂时没有挑战路线"
-                    description="可以调整筛选条件，或显示全部已登记的挑战路线。"
+                    description="可以调整学科，或显示当前赛道的全部路线。"
                   />
-                  <Button type="default" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); setSubjectFilter('all'); }}>显示全部挑战路线</Button>
+                  <Button type="default" onClick={() => setSubjectFilter('all')}>显示当前赛道全部路线</Button>
                 </div>
               ) : (
                 <div className="challenge-card-grid">

@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Button, Card, Progress, Select } from '../../components/ui';
 import { getSubjectTitle } from '../../app/router';
-import { loadCourseSelection } from '../../storage/courseSelection';
+import { loadCourseTrack } from '../../storage/courseTrack';
 import { getGradeTitle } from '../../content/gradeTitle';
 import type { ChallengeGrowthGroup, ChallengeGrowthSummary } from '../domain/growth';
 
@@ -29,63 +29,24 @@ function getGroupTitle(group: ChallengeGrowthGroup): string {
 }
 
 export default function ChallengeGrowth({ summary, status, onRetry }: ChallengeGrowthProps) {
-  const [gradeFilter, setGradeFilter] = useState('all');
-  const [semesterFilter, setSemesterFilter] = useState('all');
   const [subjectFilter, setSubjectFilter] = useState('all');
-  const filtersInitialized = useRef(false);
-  const availableGrades = [...new Set(summary.groups.map(({ grade }) => grade))].sort((left, right) => left - right);
-  const gradeOptions = [
-    { key: 'all', label: '全部年级' },
-    ...availableGrades.map((grade) => ({ key: String(grade), label: getGradeTitle(grade) })),
-  ];
-  const semesterGroups = gradeFilter === 'all'
-    ? summary.groups
-    : summary.groups.filter(({ grade }) => grade === Number(gradeFilter));
-  const availableSemesters = [...new Set(semesterGroups.map(({ semester }) => semester))].sort((left, right) => left - right);
-  const semesterOptions = [
-    { key: 'all', label: '全部学期' },
-    ...availableSemesters.map((semester) => ({ key: String(semester), label: semester === 1 ? '上学期' : '下学期' })),
-  ];
+  const savedTrack = loadCourseTrack();
+  const trackGrade = savedTrack ? Number(savedTrack.gradeId.match(/^grade-(\d+)$/)?.[1]) : null;
+  const trackSemester = savedTrack?.termId === 'term-1' ? 1 : savedTrack?.termId === 'term-2' ? 2 : null;
+  const trackTitle = trackGrade !== null && trackSemester !== null
+    ? `${getGradeTitle(trackGrade)} · ${trackSemester === 1 ? '上学期' : '下学期'}`
+    : '全部已登记路线';
+  const trackGroups = savedTrack && trackGrade !== null && trackSemester !== null
+    ? summary.groups.filter((group) => group.grade === trackGrade && group.semester === trackSemester)
+    : summary.groups;
   const subjectLabels = { chinese: '语文', math: '数学', english: '英语' } as const;
-  const availableSubjects = ['chinese', 'math', 'english'].filter((subject) => (
-    semesterGroups.some((group) => (semesterFilter === 'all' || group.semester === Number(semesterFilter)) && group.subject === subject)
-  ));
+  const availableSubjects = (['chinese', 'math', 'english'] as const).filter((subject) => trackGroups.some((group) => group.subject === subject));
   const subjectOptions = [
     { key: 'all', label: '全部学科' },
     ...availableSubjects.map((subject) => ({ key: subject, label: subjectLabels[subject as keyof typeof subjectLabels] })),
   ];
-  const filteredGroups = summary.groups.filter((group) => (
-    (gradeFilter === 'all' || group.grade === Number(gradeFilter))
-      && (semesterFilter === 'all' || group.semester === Number(semesterFilter))
-      && (subjectFilter === 'all' || group.subject === subjectFilter)
-  ));
-  const hasActiveFilter = gradeFilter !== 'all' || semesterFilter !== 'all' || subjectFilter !== 'all';
-
-  useEffect(() => {
-    if (status !== 'ready' || summary.groups.length === 0 || filtersInitialized.current) return;
-    filtersInitialized.current = true;
-
-    const savedSelection = loadCourseSelection();
-    const savedGrade = savedSelection ? Number(savedSelection.gradeId.slice('grade-'.length)) : null;
-    const grade = savedGrade !== null && availableGrades.includes(savedGrade)
-      ? savedGrade
-      : availableGrades[0]!;
-    const gradeGroups = summary.groups.filter((group) => group.grade === grade);
-    const availableSemesters = [...new Set(gradeGroups.map(({ semester }) => semester))].sort((left, right) => left - right);
-    const savedSemester = savedSelection?.termId === 'term-1'
-      ? 1
-      : savedSelection?.termId === 'term-2' ? 2 : null;
-    const semester = savedSemester !== null && availableSemesters.some((availableSemester) => availableSemester === savedSemester)
-      ? savedSemester
-      : availableSemesters[0]!;
-    const subjects = ['chinese', 'math', 'english'].filter((subject) => (
-      gradeGroups.some((group) => group.semester === semester && group.subject === subject)
-    ));
-
-    setGradeFilter(String(grade));
-    setSemesterFilter(String(semester));
-    setSubjectFilter(savedSelection && subjects.includes(savedSelection.subjectId) ? savedSelection.subjectId : 'all');
-  }, [availableGrades, status, summary.groups]);
+  const filteredGroups = trackGroups.filter((group) => subjectFilter === 'all' || group.subject === subjectFilter);
+  const hasActiveFilter = subjectFilter !== 'all';
 
   if (status === 'loading') {
     return (
@@ -142,53 +103,31 @@ export default function ChallengeGrowth({ summary, status, onRetry }: ChallengeG
             <h2 id="challenge-growth-groups-heading">各路线进度</h2>
           </div>
         </div>
+        <p className="challenge-track-context">当前赛道：{trackTitle}</p>
         {summary.groups.length === 0 ? (
           <p className="challenge-inline-note" role="status">完成一场挑战后，成长记录会出现在这里。</p>
         ) : (
           <>
             <div className="challenge-filters" role="group" aria-label="筛选成长路线">
               <label>
-                <span>年级</span>
-                <Select
-                  aria-label="成长记录年级"
-                  options={gradeOptions}
-                  value={gradeFilter}
-                  onChange={(value) => {
-                    setGradeFilter(value);
-                    setSemesterFilter('all');
-                    setSubjectFilter('all');
-                  }}
-                />
-              </label>
-              <label>
-                <span>学期</span>
-                <Select
-                  aria-label="成长记录学期"
-                  options={semesterOptions}
-                  value={semesterFilter}
-                  onChange={(value) => {
-                    setSemesterFilter(value);
-                    setSubjectFilter('all');
-                  }}
-                />
-              </label>
-              <label>
                 <span>学科</span>
                 <Select aria-label="成长记录学科" options={subjectOptions} value={subjectFilter} onChange={setSubjectFilter} />
               </label>
             </div>
             <div className="challenge-filter-summary">
-              <p aria-live="polite">正在显示 {filteredGroups.length} 条路线，共 {summary.groups.length} 条</p>
+              <p aria-live="polite">正在显示 {filteredGroups.length} 条路线，共 {trackGroups.length} 条</p>
               {hasActiveFilter && (
-                <Button type="text" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); setSubjectFilter('all'); }}>
+                <Button type="text" onClick={() => setSubjectFilter('all')}>
                   清除筛选
                 </Button>
               )}
             </div>
-            {filteredGroups.length === 0 ? (
+            {trackGroups.length === 0 ? (
+              <p className="challenge-inline-note" role="status">当前赛道还没有挑战记录。</p>
+            ) : filteredGroups.length === 0 ? (
               <div className="challenge-filter-empty">
                 <p className="challenge-inline-note" role="status">当前筛选条件下暂时没有登记的挑战路线。</p>
-                <Button type="default" onClick={() => { setGradeFilter('all'); setSemesterFilter('all'); setSubjectFilter('all'); }}>显示全部路线</Button>
+                <Button type="default" onClick={() => setSubjectFilter('all')}>显示当前赛道全部路线</Button>
               </div>
             ) : (
               <ul className="challenge-growth-list">

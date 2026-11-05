@@ -8,9 +8,8 @@ async function openSettingsFromNavigation(page: import('@playwright/test').Page)
   await expect(page.getByRole('heading', { name: '设置', level: 1 })).toBeVisible();
 }
 
-async function selectGradeTwoFirstTerm(page: import('@playwright/test').Page) {
-  await page.getByRole('tab', { name: '二年级', exact: true }).click();
-  await page.getByRole('tab', { name: '上学期', exact: true }).click();
+async function expectGradeTwoFirstTermTrack(page: import('@playwright/test').Page) {
+  await expect(page.locator('.achievement-current-scope')).toContainText('二年级 · 上学期');
 }
 
 test('persistsThemeLearningStartAndSoundPreference', async ({ page }) => {
@@ -62,7 +61,7 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
     await page.goto('/achievements');
     await expect(page.getByRole('heading', { name: '成长中心', level: 1 })).toBeVisible();
     await expect(page.getByRole('tab', { name: '学习星图' })).toHaveAttribute('aria-selected', 'true');
-    await selectGradeTwoFirstTerm(page);
+    await expectGradeTwoFirstTermTrack(page);
     await expect(page.locator('.exploration-zone')).toHaveCount(1);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
     const horizontalPadding = await page.locator('.achievement-page').evaluate((element) => ({
@@ -87,7 +86,7 @@ test('keepsAchievementDetailsSkimmableAcrossPhoneTabletAndDesktop', async ({ pag
     }
   }
 
-  await selectGradeTwoFirstTerm(page);
+  await expectGradeTwoFirstTermTrack(page);
   const zoneToggle = page.locator('.exploration-zone').first().getByRole('button', { name: /第.+星区的单元进度/ });
   await expect(zoneToggle).toHaveAttribute('aria-expanded', 'false');
   const zoneDetails = page.locator(`#${await zoneToggle.getAttribute('aria-controls')}`);

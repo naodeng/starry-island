@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import type { KeyboardEvent } from 'react';
 import { Button, Card } from '../ui';
 import { ArrowRightIcon, CheckCircleIcon, CheckIcon, ClockIcon, CompassIcon, FlameIcon, GlobeIcon, KeyIcon, LockIcon, MapIcon, MoonIcon, RefreshIcon, RocketIcon, ShieldIcon, StarIcon, TrophyIcon, WaterCupIcon } from 'naive-icons';
 import { COSMIC_RANKS, getCompletedUnitCount, getCosmicRank, getLearningUnitProgress } from '../../achievements/progress';
 import type { LearningPosition } from '../../achievements/position';
 import { getExplorationZones } from '../../achievements/exploration';
-import { loadCourseSelection } from '../../storage/courseSelection';
+import { loadCourseTrack } from '../../storage/courseTrack';
 import { getGradeTitle } from '../../content/gradeTitle';
 import { curriculumManifest } from '../../content/curriculumManifest';
 
@@ -18,7 +17,7 @@ type GradeLevel = typeof GRADE_LEVELS[number];
 type TermLevel = typeof TERM_LEVELS[number];
 
 function getInitialSchoolScope(learningStart: LearningPosition | null): { grade: GradeLevel; term: TermLevel } {
-  const selection = loadCourseSelection();
+  const selection = loadCourseTrack();
   const selectedGrade = Number(selection?.gradeId.match(/^grade-(\d+)$/)?.[1]);
   const selectedTerm = Number(selection?.termId.match(/^term-(\d+)$/)?.[1]);
   const startGrade = learningStart?.grade;
@@ -69,7 +68,7 @@ export default function AchievementDashboard({ completedSessionIds, learningStar
     });
     return groups;
   }, []);
-  const [selectedScope, setSelectedScope] = useState(() => getInitialSchoolScope(learningStart));
+  const selectedScope = getInitialSchoolScope(learningStart);
   const [expandedZoneId, setExpandedZoneId] = useState<string | null>(null);
   const [expandedRecordGroupKey, setExpandedRecordGroupKey] = useState<string | null>(null);
   const gradeTitle = getGradeTitle(selectedScope.grade);
@@ -78,85 +77,14 @@ export default function AchievementDashboard({ completedSessionIds, learningStar
   const visibleProgressGroups = progressGroups.filter((group) => group.gradeTitle === gradeTitle && group.termTitle === termTitle);
   const visibleUnitCount = visibleProgressGroups.reduce((total, group) => total + group.units.length, 0);
 
-  function handleScopeTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, currentIndex: number, options: readonly number[], select: (value: number) => void, attribute: 'grade' | 'term') {
-    let nextIndex: number | null = null;
-    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (currentIndex + 1) % options.length;
-    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (currentIndex + options.length - 1) % options.length;
-    else if (event.key === 'Home') nextIndex = 0;
-    else if (event.key === 'End') nextIndex = options.length - 1;
-    if (nextIndex === null) return;
-
-    event.preventDefault();
-    const value = options[nextIndex]!;
-    select(value);
-    event.currentTarget.parentElement
-      ?.querySelector<HTMLButtonElement>(`[data-${attribute}-tab="${value}"]`)
-      ?.focus();
-  }
-
-  function updateScope(nextScope: { grade?: GradeLevel; term?: TermLevel }) {
-    setSelectedScope((current) => ({ ...current, ...nextScope }));
-    setExpandedZoneId(null);
-    setExpandedRecordGroupKey(null);
-  }
-
   return (
     <>
-      <div className="achievement-scope-controls" aria-label="筛选学习星图">
-        <div className="achievement-scope-control">
-          <span className="achievement-scope-label" id="achievement-grade-label">年级</span>
-          <div className="achievement-scope-tabs achievement-grade-tabs" role="tablist" aria-labelledby="achievement-grade-label">
-            {GRADE_LEVELS.map((grade, index) => (
-              <Button
-                key={grade}
-                id={`achievement-grade-tab-${grade}`}
-                data-grade-tab={grade}
-                className="achievement-scope-tab"
-                type={selectedScope.grade === grade ? 'primary' : 'default'}
-                role="tab"
-                aria-label={getGradeTitle(grade)}
-                aria-selected={selectedScope.grade === grade}
-                aria-controls="achievement-filter-panel"
-                tabIndex={selectedScope.grade === grade ? 0 : -1}
-                onClick={() => updateScope({ grade })}
-                onKeyDown={(event) => handleScopeTabKeyDown(event, index, GRADE_LEVELS, (value) => updateScope({ grade: value as GradeLevel }), 'grade')}
-              >
-                {getGradeTitle(grade)}
-              </Button>
-            ))}
-          </div>
-        </div>
-        <div className="achievement-scope-control">
-          <span className="achievement-scope-label" id="achievement-term-label">学期</span>
-          <div className="achievement-scope-tabs achievement-term-tabs" role="tablist" aria-labelledby="achievement-term-label">
-            {TERM_LEVELS.map((term, index) => (
-              <Button
-                key={term}
-                id={`achievement-term-tab-${term}`}
-                data-term-tab={term}
-                className="achievement-scope-tab"
-                type={selectedScope.term === term ? 'primary' : 'default'}
-                role="tab"
-                aria-selected={selectedScope.term === term}
-                aria-controls="achievement-filter-panel"
-                tabIndex={selectedScope.term === term ? 0 : -1}
-                onClick={() => updateScope({ term })}
-                onKeyDown={(event) => handleScopeTabKeyDown(event, index, TERM_LEVELS, (value) => updateScope({ term: value as TermLevel }), 'term')}
-              >
-                {term === 1 ? '上学期' : '下学期'}
-              </Button>
-            ))}
-          </div>
-        </div>
+      <div className="achievement-current-scope" aria-label={`当前赛道：${gradeTitle} · ${termTitle}`}>
+        <span>当前赛道</span>
+        <strong>{gradeTitle} · {termTitle}</strong>
       </div>
 
-      <div
-        className="achievement-filter-panel"
-        id="achievement-filter-panel"
-        role="tabpanel"
-        aria-labelledby={`achievement-grade-tab-${selectedScope.grade} achievement-term-tab-${selectedScope.term}`}
-        tabIndex={0}
-      >
+      <div className="achievement-filter-panel">
         <section className="exploration-map" aria-labelledby="exploration-map-heading">
           <div className="exploration-map-heading">
             <div>
