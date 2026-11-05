@@ -108,9 +108,8 @@ export function resolveRoute(pathname: string, instance?: Curriculum, loadedUnit
   if (normalized.startsWith('/knowledge/')) {
     const segments = normalized.split('/').filter(Boolean);
     if (segments.length !== 5) return { kind: 'notFound', path: normalized };
-    const [knowledge, gradeId, termId, subjectId, unitId] = segments;
-    if (knowledge !== 'knowledge'
-      || gradeId !== 'grade-2'
+    const [, gradeId, termId, subjectId, unitId] = segments;
+    if (gradeId !== 'grade-2'
       || !/^term-[12]$/.test(termId!)
       || !['chinese', 'math', 'english'].includes(subjectId!)
       || !/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(unitId!)) {

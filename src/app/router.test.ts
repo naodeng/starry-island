@@ -66,6 +66,17 @@ describe('router', () => {
     expect(resolveRoute('/knowledge/grade-2/term-1/chinese/unit-01/extra').kind).toBe('notFound');
   });
 
+  it('rejectsUnsupportedTermsMalformedUnitSlugsAndUnverifiedKnowledgeEntries', () => {
+    expect(resolveRoute('/knowledge/grade-2/term-3/chinese/unit-01').kind).toBe('notFound');
+    expect(resolveRoute('/knowledge/grade-2/term-1/chinese/Unit-01').kind).toBe('notFound');
+
+    const instance = createPlayableCurriculum();
+    const entry = instance.grades.find((grade) => grade.id === 'grade-2')!.terms[0].subjects.find((subject) => subject.id === 'chinese')!.units[0];
+    instance.textbooks[entry.textbookEditionId].verificationStatus = 'pending';
+
+    expect(resolveRoute(getKnowledgePath(unitKey), instance).kind).toBe('notFound');
+  });
+
   it('resolvesCatalogUnitTaskAndSessionRoutes', () => {
     const instance = createPlayableCurriculum();
     const taskPath = `/${unitKey}/basic/task-01`;
