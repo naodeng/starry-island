@@ -61,6 +61,11 @@ describe('router', () => {
     expect(resolveRoute('/knowledge/grade-2/term-1/science/unit-01').kind).toBe('notFound');
   });
 
+  it('rejectsKnowledgePathsWithTheWrongNumberOfSegments', () => {
+    expect(resolveRoute('/knowledge/grade-2/term-1/chinese').kind).toBe('notFound');
+    expect(resolveRoute('/knowledge/grade-2/term-1/chinese/unit-01/extra').kind).toBe('notFound');
+  });
+
   it('resolvesCatalogUnitTaskAndSessionRoutes', () => {
     const instance = createPlayableCurriculum();
     const taskPath = `/${unitKey}/basic/task-01`;
