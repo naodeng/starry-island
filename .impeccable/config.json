@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/styles/catalog.css"
+        ],
+        "createdAt": "2026-11-05T03:55:34.176Z",
+        "reason": "Code review triage: the current 1px neutral border separates explanation and example inside a review card; it is not a colored accent border on the card edge."
+      }
+    ]
+  }
+}

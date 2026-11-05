@@ -72,6 +72,8 @@ src/content/grade-2/term-2/english/review-01/index.ts
 
 在相应台账记录每个课程条目的教材版本/来源、单元或主题依据、题目总数、已审数量、各项审校状态、修复记录和独立的复核范围/证据：一年级、三年级使用 `docs/curriculum/grade-1-and-3-question-review.tsv`，二年级使用 `docs/curriculum/grade-2-question-review.tsv`，四至六年级使用 `docs/curriculum/grade-4-to-6-question-review.tsv`。发现问题时记录完整题目 ID、修改原因和状态；生成器修复可以按审核规则记录可无歧义展开的精确题目范围，并经台账校验确认每个展开 ID 存在，整课修复可记录完整 48 题范围。没有修复时“修复记录”保留“无”，复核日期、范围和证据写入复核列；未审完时不得把该行标记为“完成”。
 
+知识卡片等配套学习内容单独记入 `docs/curriculum/knowledge-card-review.tsv`，每个课程条目一行，以 `<课程 ID>#knowledge-cards` 标识卡片集，并记录卡片总数、已审数量、教材来源、`sourceTopics` 依据、逐卡复核范围与证据、修复记录和独立教育者复核数；闯关题台账中的题目计数保持不变。
+
 ## 新增课程检查清单
 
 1. 核对教材清单、来源类型、单元类别和 `sourceTopics`。

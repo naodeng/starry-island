@@ -9,6 +9,23 @@ const unitKey = 'grade-2/term-1/chinese/unit-01';
 const unit = curriculum.units[unitKey];
 
 describe('UnitOverview', () => {
+  it('opensKnowledgeCardsForAGradeTwoUnit', async () => {
+    const user = userEvent.setup();
+    const onNavigate = vi.fn();
+    render(<UnitOverview unitKey={unitKey} unit={unit} completedSessionIds={[]} onNavigate={onNavigate} />);
+
+    await user.click(screen.getByRole('button', { name: '查看本单元知识卡片' }));
+
+    expect(onNavigate).toHaveBeenCalledWith(`/knowledge/${unitKey}`);
+  });
+
+  it('doesNotShowKnowledgeCardEntryForOtherGrades', () => {
+    const otherUnitKey = 'grade-4/term-1/math/unit-01';
+    render(<UnitOverview unitKey={otherUnitKey} unit={curriculum.units[otherUnitKey]} completedSessionIds={[]} onNavigate={vi.fn()} />);
+
+    expect(screen.queryByRole('button', { name: '查看本单元知识卡片' })).not.toBeInTheDocument();
+  });
+
   it('returnsToTheCourseCatalogRoute', async () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();

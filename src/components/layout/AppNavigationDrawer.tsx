@@ -13,6 +13,7 @@ interface AppNavigationDrawerProps {
 const PRIMARY_DESTINATIONS = [
   { label: '首页', path: '/', Icon: HomeIcon },
   { label: '课程', path: '/courses', Icon: BookIcon },
+  { label: '知识卡片', path: '/knowledge', Icon: BookIcon },
   { label: '闯关', path: '/challenges', Icon: FlagIcon },
   { label: '成长', path: '/growth', Icon: StarIcon },
   { label: '错题', path: '/challenges/wrong-questions', Icon: CompassIcon },
@@ -20,6 +21,7 @@ const PRIMARY_DESTINATIONS = [
 
 function isCurrentDestination(path: string, currentPath: string): boolean {
   if (path === '/') return currentPath === '/';
+  if (path === '/knowledge') return currentPath === path || currentPath.startsWith('/knowledge/');
   if (path === '/challenges') return currentPath === path || currentPath.startsWith('/challenges/group/') || currentPath.startsWith('/challenges/task/');
   if (path === '/growth') return currentPath === path || currentPath === '/achievements' || currentPath === '/challenges/growth';
   if (path === '/settings') return currentPath === path || currentPath.startsWith('/settings/');

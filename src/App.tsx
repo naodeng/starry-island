@@ -10,6 +10,7 @@ import AppHeader from './components/layout/AppHeader';
 import LoadingState from './components/shared/LoadingState';
 const CourseBreadcrumbs = lazy(() => import('./components/catalog/CourseBreadcrumbs'));
 const CourseCatalog = lazy(() => import('./components/catalog/CourseCatalog'));
+const KnowledgeCardsPage = lazy(() => import('./components/knowledge/KnowledgeCardsPage'));
 const HomeDashboard = lazy(() => import('./components/home/HomeDashboard'));
 const UnitOverview = lazy(() => import('./components/catalog/UnitOverview'));
 const SessionPlayer = lazy(() => import('./components/game/SessionPlayer'));
@@ -179,6 +180,8 @@ export default function App({ showTextbookMigrationNotice = false }: AppProps = 
     page = <HomeDashboard progress={progress} onNavigate={navigate} />;
   } else if (route.kind === 'catalog') {
     page = <CourseCatalog progress={progress} onNavigate={navigate} />;
+  } else if (route.kind === 'knowledgeCards') {
+    page = <KnowledgeCardsPage unitKey={route.unitKey} onNavigate={navigate} />;
   } else if (route.kind === 'growth') {
     page = <GrowthPage progress={progress} initialView={route.initialView} onNavigate={navigate} />;
   } else if (route.kind === 'settings') {
