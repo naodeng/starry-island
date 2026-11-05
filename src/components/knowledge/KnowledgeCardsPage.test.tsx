@@ -57,7 +57,7 @@ describe('KnowledgeCardsPage', () => {
   it('revealsTheAnswerAndOpensTheSelectedCourse', async () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();
-    render(<KnowledgeCardsPage onNavigate={onNavigate} />);
+    render(<KnowledgeCardsPage track={{ gradeId: 'grade-2', termId: 'term-1' }} onNavigate={onNavigate} />);
 
     const details = screen.getAllByText('查看答案和思路')[0]!;
     expect(details.closest('details')).not.toHaveAttribute('open');
