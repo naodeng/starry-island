@@ -1,17 +1,18 @@
 import { expect, test } from './fixtures';
 import { readFileSync } from 'node:fs';
 import { installAudioSpy } from './audioSpy';
-import { chooseSelectOption } from './selectOption';
+import { selectCourseTrack } from './selectTrack';
 
 const curriculumManifest = JSON.parse(readFileSync(new URL('../../src/content/curriculum-manifest.json', import.meta.url), 'utf8'));
 
-test('showsTheCourseSelectorsAndChallengeEntry', async ({ page }) => {
+test('showsTheCurrentTrackAndChallengeEntry', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/courses');
 
   await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
-  await expect(page.getByRole('combobox', { name: '年级' })).toContainText('一年级');
-  await expect(page.getByRole('combobox', { name: '学期' })).toContainText('上学期');
+  await expect(page.locator('.catalog-track-context')).toContainText('二年级 · 上学期');
+  await expect(page.getByRole('combobox', { name: '年级' })).toHaveCount(0);
+  await expect(page.getByRole('combobox', { name: '学期' })).toHaveCount(0);
   await expect(page.getByRole('button', { name: '语文', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.catalog-current-route')).toHaveCount(0);
   await expect(page.getByRole('heading', { name: '今天想探索哪座星球' })).toBeVisible();
@@ -23,17 +24,14 @@ test('showsTheCourseSelectorsAndChallengeEntry', async ({ page }) => {
   await expect(page.getByRole('heading', { name: '闯关中心', level: 1 })).toBeVisible();
 });
 
-test('updatesTheSelectedCourseUsingCatalogControls', async ({ page }) => {
+test('filtersSubjectsWithinTheCurrentTrack', async ({ page }) => {
   await installAudioSpy(page);
   await page.goto('/courses');
 
-  await expect(page.getByRole('combobox', { name: '年级' })).toContainText('一年级');
-  await expect(page.getByRole('combobox', { name: '学期' })).toContainText('上学期');
-
-  await chooseSelectOption(page, '学期', '下学期');
-  await page.getByRole('button', { name: '英语', exact: true }).click();
-  await expect(page.getByRole('combobox', { name: '学期' })).toContainText('下学期');
-  await expect(page.getByRole('button', { name: '英语', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.catalog-track-context')).toContainText('二年级 · 上学期');
+  await page.getByRole('button', { name: '数学', exact: true }).click();
+  await expect(page.getByRole('button', { name: '数学', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.catalog-track-context')).toContainText('二年级 · 上学期');
 });
 
 test('showsDifficultyTabsAndOpensARegisteredLearningSession', async ({ page }) => {
@@ -221,13 +219,12 @@ for (const grade of curriculumManifest.grades) {
     test.setTimeout(120_000);
     await installAudioSpy(page);
     for (const term of grade.terms) {
+      await selectCourseTrack(page, grade.title, term.title);
       for (const subject of term.subjects) {
         const verifiedEntries = subject.units.filter((entry) => entry.status === 'active'
           && curriculumManifest.textbooks[entry.textbookEditionId]?.verificationStatus === 'verified');
         await page.goto('/courses');
         await expect(page.getByRole('heading', { name: '课程目录', level: 1 })).toBeVisible();
-        await chooseSelectOption(page, '年级', grade.title);
-        await chooseSelectOption(page, '学期', term.title);
         await page.getByRole('button', { name: subject.title, exact: true }).click();
         await expect(page.getByRole('button', { name: /进入单元/ })).toHaveCount(verifiedEntries.length);
         for (const entry of verifiedEntries) {
