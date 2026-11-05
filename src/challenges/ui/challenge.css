@@ -18,6 +18,7 @@
 .challenge-filters { display: flex; flex-wrap: wrap; align-items: end; gap: 12px 18px; padding: 16px 18px; border: 1px solid var(--island-border); border-radius: 20px; background: var(--island-surface); }
 .challenge-filters label { display: grid; gap: 6px; min-width: min(100%, 170px); color: var(--island-muted); font-size: 14px; font-weight: 700; }
 .challenge-filters .ui-select-wrap { min-width: 160px; }
+.challenge-track-context { margin: 0 2px -8px; color: var(--island-muted); font-size: 14px; font-weight: 700; }
 .challenge-filter-summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 8px 2px 12px; }
 .challenge-filter-summary p { margin: 0; color: var(--island-muted); font-size: 13px; }
 .challenge-filter-empty { display: grid; justify-items: start; gap: 14px; }

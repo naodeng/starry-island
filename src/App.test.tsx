@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import App from './App';
 import * as unitLoader from './content/unitLoader';
 import { curriculumManifest } from './content/curriculumManifest';
+import { saveCourseTrack } from './storage/courseTrack';
 
 const playedSources: string[] = [];
 
@@ -24,6 +25,7 @@ class AppTestAudio {
 describe('App', () => {
   beforeEach(() => {
     window.localStorage.clear();
+    saveCourseTrack({ gradeId: 'grade-2', termId: 'term-1' });
     window.history.replaceState({}, '', '/');
     playedSources.length = 0;
     vi.stubGlobal('Audio', AppTestAudio);
@@ -45,7 +47,7 @@ describe('App', () => {
     expect(screen.getByRole('link', { name: 'naodeng 的个人网站' })).toHaveAttribute('href', 'https://inaodeng.com');
     await user.click(screen.getByRole('button', { name: '打开导航菜单' }));
     await user.click(screen.getByRole('button', { name: '课程' }));
-    expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
+    expect(await screen.findByRole('note', { name: '当前学习赛道' })).toHaveTextContent('二年级');
     await user.click(screen.getByRole('button', { name: '打开导航菜单' }));
     await user.click(await screen.findByRole('button', { name: '设置' }));
 
@@ -67,7 +69,7 @@ describe('App', () => {
     window.history.replaceState({}, '', '/courses');
     render(<App />);
 
-    await screen.findByRole('group', { name: '选择学习年级和学期' });
+    await screen.findByRole('note', { name: '当前学习赛道' });
 
     const heading = document.querySelector('.catalog-brand-heading');
     expect(heading).not.toBeNull();
@@ -95,7 +97,6 @@ describe('App', () => {
     await user.click(await screen.findByRole('button', { name: '进入闯关中心' }));
     expect(await screen.findByRole('heading', { name: '闯关中心' }, { timeout: 15_000 })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '选择一条挑战航线' })).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: '清除筛选' }));
     const soundsBeforeChallengeNavigation = playedSources.length;
 
     const unitChallengeCard = screen.getByRole('heading', { name: '二年级上册数学 · 第二单元' }).closest('.challenge-group-card');
@@ -107,12 +108,11 @@ describe('App', () => {
     expect(playedSources).toHaveLength(soundsBeforeChallengeNavigation);
 
     await user.click(screen.getByRole('button', { name: '返回闯关中心' }));
-    await user.click(screen.getByRole('button', { name: '清除筛选' }));
-    const englishChallengeCard = screen.getByRole('heading', { name: '三年级上册英语 · 第一单元' }).closest('.challenge-group-card');
+    const englishChallengeCard = screen.getByRole('heading', { name: '二年级上册英语 · 第一单元' }).closest('.challenge-group-card');
     expect(englishChallengeCard).not.toBeNull();
     await user.click(within(englishChallengeCard as HTMLElement).getByRole('button', { name: '查看挑战任务' }));
     expect(await screen.findByRole('heading', { name: '选择一个任务开始' }, { timeout: 15_000 })).toBeInTheDocument();
-    expect(window.location.pathname).toBe('/challenges/group/grade-3-term-1-english-unit-01');
+    expect(window.location.pathname).toBe('/challenges/group/grade-2-term-1-english-unit-01');
     expect(playedSources).toHaveLength(soundsBeforeChallengeNavigation);
   }, 30_000);
 
@@ -187,7 +187,7 @@ describe('App', () => {
       expect(screen.getByText('我们正在核对教材版本、设计合适的小游戏，准备好后就会开放。')).toBeInTheDocument();
       await user.click(screen.getByRole('button', { name: '回到课程目录' }));
       expect(window.location.pathname).toBe('/courses');
-      expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
+      expect(await screen.findByRole('note', { name: '当前学习赛道' })).toBeInTheDocument();
     } finally {
       course.status = originalStatus;
     }
@@ -202,7 +202,7 @@ describe('App', () => {
     expect(screen.getByText('别担心，从课程目录重新选择一座已经开放的学习岛吧。')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: '回到课程目录' }));
     expect(window.location.pathname).toBe('/courses');
-    expect(await screen.findByRole('group', { name: '选择学习年级和学期' })).toBeInTheDocument();
+    expect(await screen.findByRole('note', { name: '当前学习赛道' })).toBeInTheDocument();
   });
 
   it('showsAndDismissesTheTextbookMigrationNotice', async () => {

@@ -1,33 +1,33 @@
 import { useState } from 'react';
-import { Button, Card, Select } from '../ui';
+import { Button, Card } from '../ui';
 import { ArrowRightIcon, StarIcon } from 'naive-icons';
 import { curriculumManifest } from '../../content/curriculumManifest';
 import type { CatalogUnitEntry, SubjectId } from '../../content/types';
 import type { ProgressState } from '../../storage/progress';
 import { getUnitPath } from '../../app/router';
 import HeroGuide from '../mascots/HeroGuide';
-import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
+import { getGradeTitle } from '../../content/gradeTitle';
+import { loadCourseTrack } from '../../storage/courseTrack';
+import type { CourseTrack } from '../../storage/courseTrack';
 import EmptyState from '../shared/EmptyState';
 
 interface CourseCatalogProps {
   progress: ProgressState;
   onNavigate: (path: string) => void;
+  track?: CourseTrack | null;
 }
 
-export default function CourseCatalog({ progress, onNavigate }: CourseCatalogProps) {
-  const savedSelection = loadCourseSelection();
-  const initialGrade = curriculumManifest.grades.find((entry) => entry.id === savedSelection?.gradeId)
-    ?? curriculumManifest.grades.find((entry) => entry.id === `grade-${progress.learningStart?.grade}`)
-    ?? curriculumManifest.grades[0];
-  const initialTerm = initialGrade?.terms.find((entry) => entry.id === savedSelection?.termId)
-    ?? initialGrade?.terms.find((entry) => entry.id === `term-${progress.learningStart?.term}`)
-    ?? initialGrade?.terms[0];
-  const [subjectId, setSubjectId] = useState<SubjectId>(savedSelection?.subjectId ?? 'chinese');
-  const [gradeId, setGradeId] = useState(initialGrade?.id ?? 'grade-2');
-  const [termId, setTermId] = useState(initialTerm?.id ?? 'term-1');
-  const grade = curriculumManifest.grades.find((entry) => entry.id === gradeId) ?? curriculumManifest.grades[0];
-  const term = grade?.terms.find((entry) => entry.id === termId) ?? grade?.terms[0];
+export default function CourseCatalog({ progress, onNavigate, track }: CourseCatalogProps) {
+  void progress;
+  const currentTrack = track === undefined ? loadCourseTrack() : track;
+  const fallbackGrade = curriculumManifest.grades[0]!;
+  const grade = curriculumManifest.grades.find((entry) => entry.id === currentTrack?.gradeId) ?? fallbackGrade;
+  const term = grade.terms.find((entry) => entry.id === currentTrack?.termId) ?? grade.terms[0];
+  const [subjectId, setSubjectId] = useState<SubjectId>(term?.subjects[0]?.id ?? 'chinese');
   const subject = term?.subjects.find((entry) => entry.id === subjectId) ?? term?.subjects[0];
+  const trackLabel = currentTrack
+    ? `${getGradeTitle(Number(currentTrack.gradeId.replace('grade-', '')))} · ${term?.title ?? ''}`
+    : '尚未设置';
   const subjectTextbook = subject?.units[0]
     ? curriculumManifest.textbooks[subject.units[0].textbookEditionId]
     : undefined;
@@ -71,6 +71,11 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
         </header>
 
         <section className="catalog-section" aria-labelledby="subject-heading">
+          <div className="catalog-track-context" role="note" aria-label="当前学习赛道">
+            <span className="eyebrow">当前赛道</span>
+            <strong>{trackLabel}</strong>
+            <span>学科可在本页选择；调整年级和学期可点首页“赛道”或前往设置</span>
+          </div>
           <div className="catalog-section-heading">
             <div>
               <p className="eyebrow">学习地图</p>
@@ -82,59 +87,12 @@ export default function CourseCatalog({ progress, onNavigate }: CourseCatalogPro
                   key={entry.id}
                   type={subject.id === entry.id ? 'primary' : 'default'}
                   aria-pressed={subject.id === entry.id}
-                  onClick={() => {
-                    setSubjectId(entry.id);
-                    saveCourseSelection({ gradeId: grade.id, termId: term.id, subjectId: entry.id });
-                  }}
+                  onClick={() => setSubjectId(entry.id)}
                 >
                   {entry.title}
                 </Button>
               ))}
             </div>
-          </div>
-          <div
-            id="catalog-course-selection"
-            className="catalog-grade-label"
-            role="group"
-            aria-label="选择学习年级和学期"
-            tabIndex={-1}
-          >
-            <label className="catalog-selector">
-              <span>年级</span>
-              <Select
-                aria-label="年级"
-                options={curriculumManifest.grades.map((entry) => ({ key: entry.id, label: entry.title }))}
-                value={grade.id}
-                onChange={(value) => {
-                  const nextGrade = curriculumManifest.grades.find((entry) => entry.id === value);
-                  if (!nextGrade) return;
-                  const nextTerm = nextGrade.terms[0];
-                  const nextSubject = nextTerm?.subjects[0];
-                  const nextTermId = nextTerm?.id ?? 'term-1';
-                  const nextSubjectId = nextSubject?.id ?? 'chinese';
-                  setGradeId(nextGrade.id);
-                  setTermId(nextTermId);
-                  setSubjectId(nextSubjectId);
-                  saveCourseSelection({ gradeId: nextGrade.id, termId: nextTermId, subjectId: nextSubjectId });
-                }}
-              />
-            </label>
-            <label className="catalog-selector">
-              <span>学期</span>
-              <Select
-                aria-label="学期"
-                options={grade.terms.map((entry) => ({ key: entry.id, label: entry.title }))}
-                value={term.id}
-                onChange={(value) => {
-                  const nextTerm = grade.terms.find((entry) => entry.id === value);
-                  if (!nextTerm) return;
-                  setTermId(nextTerm.id);
-                  const nextSubjectId = nextTerm.subjects[0]?.id ?? 'chinese';
-                  setSubjectId(nextSubjectId);
-                  saveCourseSelection({ gradeId: grade.id, termId: nextTerm.id, subjectId: nextSubjectId });
-                }}
-              />
-            </label>
           </div>
           {subject.id === 'english' && subjectTextbook?.schoolOfferingStatus === 'unconfirmed' ? (
             <p className="catalog-source-disclosure" role="note">

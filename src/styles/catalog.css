@@ -20,6 +20,10 @@
 .unit-hero-action { min-height: 48px; margin-top: 16px; }
 .unit-hero-action--knowledge { margin-left: 10px; }
 .catalog-section { margin-top: 52px; }
+.catalog-track-context { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin: 0 0 16px; color: var(--island-muted); font-size: 13px; }
+.catalog-track-context .eyebrow { margin: 0; color: var(--island-muted); }
+.catalog-track-context strong { padding: 7px 11px; border: 1px solid var(--island-border); border-radius: 999px; color: var(--app-accent-pressed); background: var(--app-accent-soft); font-size: 14px; }
+.catalog-track-context > span:last-child { font-size: 12px; }
 .catalog-challenge-entry { margin-top: 24px; }
 .catalog-challenge-entry-card, .unit-challenge-entry { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 28px; border: 1px solid var(--island-border); border-radius: var(--island-radius-card); background: var(--island-surface); }
 .catalog-challenge-entry-card h2, .unit-challenge-entry h2 { margin: 0; color: var(--island-ink); font-size: clamp(20px, 3vw, 26px); }
@@ -91,8 +95,13 @@
 .knowledge-filter { display: grid; gap: 7px; min-width: 0; color: var(--island-muted); font-size: 14px; font-weight: 800; }
 .knowledge-filter .ui-select-wrap { min-width: 0; width: 100%; }
 .knowledge-filter .ui-select { width: 100%; }
+.knowledge-track-context { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; min-height: 44px; color: var(--island-muted); font-size: 13px; }
+.knowledge-track-context strong { padding: 7px 11px; border: 1px solid var(--island-border); border-radius: 999px; color: var(--app-accent-pressed); background: var(--app-accent-soft); font-size: 14px; }
 .knowledge-subject-switch { display: flex; flex-wrap: wrap; gap: 8px; }
 .knowledge-subject-switch .ui-button { min-height: 44px; }
+.knowledge-filters--empty { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+.knowledge-filters--empty strong { color: var(--island-ink); }
+.knowledge-filters--empty p { margin: 5px 0 0; color: var(--island-muted); font-size: 13px; line-height: 1.5; }
 .knowledge-unit-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 26px 0 18px; padding: 22px 24px; border: 1px solid var(--island-border); border-radius: 20px; background: var(--island-surface); }
 .knowledge-unit-heading .eyebrow { margin-bottom: 7px; }
 .knowledge-unit-title-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; }
@@ -151,6 +160,8 @@
   .catalog-challenge-entry-card, .unit-challenge-entry { align-items: stretch; flex-direction: column; gap: 16px; padding: 20px; }
   .knowledge-hero { align-items: flex-start; flex-direction: column; padding: 25px 22px; }
   .knowledge-filters { grid-template-columns: minmax(0, 1fr); gap: 13px; padding: 16px; }
+  .knowledge-filters--empty { grid-template-columns: minmax(0, 1fr); }
+  .knowledge-filters--empty .ui-button { justify-self: start; }
   .knowledge-subject-switch { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .knowledge-subject-switch .ui-button { padding-inline: 10px; }
   .knowledge-unit-heading { align-items: stretch; flex-direction: column; gap: 16px; padding: 19px; }
@@ -894,30 +905,14 @@ button.ui-button svg { display: inline-block; flex: 0 0 auto; vertical-align: mi
 .difficulty-tab-count { display: grid; place-items: center; min-width: 22px; height: 22px; padding-inline: 5px; border-radius: 999px; color: var(--app-accent); background: var(--island-surface-soft); font-size: 12px; font-weight: 800; }
 .difficulty-track-list:focus-visible { outline: 3px solid var(--app-accent); outline-offset: 5px; border-radius: 16px; }
 
-.achievement-scope-controls {
-  display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(220px, .8fr);
-  align-items: end;
-  gap: 12px;
-  margin-top: 22px;
-}
-.achievement-scope-control { display: grid; gap: 6px; min-width: 0; }
-.achievement-scope-label { color: var(--island-muted); font-size: 13px; font-weight: 800; }
-.achievement-scope-tabs { display: grid; gap: 4px; min-width: 0; padding: 4px; border: 1px solid var(--island-border); border-radius: 15px; background: var(--island-surface-soft); }
-.achievement-grade-tabs { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-.achievement-term-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.achievement-scope-tab { min-width: 0; min-height: 42px; padding-inline: 5px; font-size: 13px; }
-.achievement-scope-tab:focus-visible { outline: 3px solid var(--app-accent); outline-offset: 2px; }
+.achievement-current-scope { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin: 18px 0 4px; color: var(--island-muted); font-size: 13px; }
+.achievement-current-scope strong { color: var(--island-ink); font-size: 15px; }
 .achievement-filter-panel { display: grid; gap: 12px; min-width: 0; }
-.achievement-filter-panel:focus-visible { outline: 3px solid var(--app-accent); outline-offset: 5px; border-radius: 18px; }
 .achievement-filter-empty { grid-column: 1 / -1; margin: 0; padding: 16px; border: 1px solid var(--island-border); border-radius: 16px; color: var(--island-muted); background: var(--island-surface-soft); line-height: 1.55; }
 .exploration-zone-grid.is-single { grid-template-columns: minmax(0, 1fr); }
 
 @media (max-width: 700px) {
-  .achievement-scope-controls { grid-template-columns: minmax(0, 1fr); gap: 9px; margin-top: 18px; }
-  .achievement-grade-tabs { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .achievement-term-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .achievement-scope-tab { font-size: 12px; }
+  .achievement-current-scope { margin-top: 14px; }
   .difficulty-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
   .difficulty-tab { gap: 5px; padding-inline: 5px; font-size: 13px; }
 }
@@ -925,7 +920,5 @@ button.ui-button svg { display: inline-block; flex: 0 0 auto; vertical-align: mi
 @media (max-width: 420px) {
   .catalog-brand-lockup { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .catalog-hero-crew { grid-template-columns: minmax(0, 1fr); }
-  .achievement-scope-tabs { gap: 2px; padding: 3px; }
-  .achievement-scope-tab { padding-inline: 2px; font-size: 12px; }
   .difficulty-tab { flex-wrap: wrap; gap: 2px 4px; min-height: 44px; padding-inline: 3px; font-size: 12px; }
 }

@@ -5,16 +5,19 @@ import { curriculumManifest } from '../../content/curriculumManifest';
 import { knowledgeCardsByUnit } from '../../content/knowledgeCards/grade-2';
 import type { KnowledgeCardDefinition } from '../../content/knowledgeCards/types';
 import type { CatalogSubjectEntry, CatalogTermEntry, CatalogUnitEntry, SubjectId, TermId } from '../../content/types';
-import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
+import { loadCourseTrack } from '../../storage/courseTrack';
+import type { CourseTrack } from '../../storage/courseTrack';
 import CourseBreadcrumbs from '../catalog/CourseBreadcrumbs';
 import { Button, Card, Select } from '../ui';
 
 interface KnowledgeCardsPageProps {
   unitKey?: string;
   onNavigate: (path: string) => void;
+  track?: CourseTrack | null;
 }
 
 interface KnowledgeSelection {
+  gradeId: string;
   termId: TermId;
   subjectId: SubjectId;
   unitId: string;
@@ -22,16 +25,14 @@ interface KnowledgeSelection {
 
 type KnowledgeViewMode = 'review' | 'all';
 
-const grade = curriculumManifest.grades.find(({ id }) => id === 'grade-2')!;
-
-function getUnitKey(termId: TermId, subjectId: SubjectId, entry: CatalogUnitEntry): string {
-  return entry.curriculumUnitKey ?? `grade-2/${termId}/${subjectId}/${entry.id}`;
+function getUnitKey(gradeId: string, termId: TermId, subjectId: SubjectId, entry: CatalogUnitEntry): string {
+  return entry.curriculumUnitKey ?? `${gradeId}/${termId}/${subjectId}/${entry.id}`;
 }
 
-function getAvailableUnits(term: CatalogTermEntry, subject: CatalogSubjectEntry): CatalogUnitEntry[] {
+function getAvailableUnits(gradeId: string, term: CatalogTermEntry, subject: CatalogSubjectEntry): CatalogUnitEntry[] {
   return subject.units.filter((entry) => {
     const textbook = curriculumManifest.textbooks[entry.textbookEditionId];
-    const unitKey = getUnitKey(term.id, subject.id, entry);
+    const unitKey = getUnitKey(gradeId, term.id, subject.id, entry);
     return entry.status === 'active'
       && textbook?.verificationStatus === 'verified'
       && Boolean(knowledgeCardsByUnit[unitKey]);
@@ -40,28 +41,28 @@ function getAvailableUnits(term: CatalogTermEntry, subject: CatalogSubjectEntry)
 
 function findUnitByKey(unitKey?: string): KnowledgeSelection | null {
   if (!unitKey) return null;
-  for (const term of grade.terms) {
-    for (const subject of term.subjects) {
-      const entry = subject.units.find((candidate) => getUnitKey(term.id, subject.id, candidate) === unitKey);
-      if (entry && getAvailableUnits(term, subject).includes(entry)) {
-        return { termId: term.id, subjectId: subject.id, unitId: entry.id };
+  for (const grade of curriculumManifest.grades) {
+    for (const term of grade.terms) {
+      for (const subject of term.subjects) {
+        const entry = subject.units.find((candidate) => getUnitKey(grade.id, term.id, subject.id, candidate) === unitKey);
+        if (entry && getAvailableUnits(grade.id, term, subject).includes(entry)) {
+          return { gradeId: grade.id, termId: term.id, subjectId: subject.id, unitId: entry.id };
+        }
       }
     }
   }
   return null;
 }
 
-function getInitialSelection(unitKey?: string): KnowledgeSelection {
+function getInitialSelection(unitKey: string | undefined, track: CourseTrack | null): KnowledgeSelection {
   const directSelection = findUnitByKey(unitKey);
   if (directSelection) return directSelection;
 
-  const saved = loadCourseSelection();
-  const term = grade.terms.find(({ id }) => id === (saved?.gradeId === grade.id ? saved.termId : 'term-1'))
-    ?? grade.terms[0]!;
-  const subject = term.subjects.find(({ id }) => id === (saved?.gradeId === grade.id ? saved.subjectId : 'chinese'))
-    ?? term.subjects[0]!;
-  const firstUnit = getAvailableUnits(term, subject)[0];
-  return { termId: term.id, subjectId: subject.id, unitId: firstUnit?.id ?? '' };
+  const grade = curriculumManifest.grades.find(({ id }) => id === track?.gradeId) ?? curriculumManifest.grades[0]!;
+  const term = grade.terms.find(({ id }) => id === track?.termId) ?? grade.terms[0]!;
+  const subject = term.subjects[0]!;
+  const firstUnit = getAvailableUnits(grade.id, term, subject)[0];
+  return { gradeId: grade.id, termId: term.id, subjectId: subject.id, unitId: firstUnit?.id ?? '' };
 }
 
 function getUnitTypeLabel(type: CatalogUnitEntry['type']): string | null {
@@ -121,8 +122,9 @@ function KnowledgeCardView({ card, mode }: { card: KnowledgeCardDefinition; mode
   );
 }
 
-export default function KnowledgeCardsPage({ unitKey, onNavigate }: KnowledgeCardsPageProps) {
-  const [selection, setSelection] = useState(() => getInitialSelection(unitKey));
+export default function KnowledgeCardsPage({ unitKey, onNavigate, track }: KnowledgeCardsPageProps) {
+  const currentTrack = track === undefined ? loadCourseTrack() : track;
+  const [selection, setSelection] = useState(() => getInitialSelection(unitKey, currentTrack));
   const [viewMode, setViewMode] = useState<KnowledgeViewMode>('review');
   const [reviewIndex, setReviewIndex] = useState(0);
   useEffect(() => {
@@ -130,41 +132,40 @@ export default function KnowledgeCardsPage({ unitKey, onNavigate }: KnowledgeCar
     if (routeSelection) {
       setSelection(routeSelection);
       setReviewIndex(0);
+      return;
     }
-  }, [unitKey]);
+    if (unitKey) return;
+    setSelection((current) => {
+      if (current.gradeId === currentTrack?.gradeId && current.termId === currentTrack?.termId) return current;
+      return getInitialSelection(undefined, currentTrack);
+    });
+    setReviewIndex(0);
+  }, [unitKey, currentTrack?.gradeId, currentTrack?.termId]);
 
+  const grade = curriculumManifest.grades.find(({ id }) => id === selection.gradeId) ?? curriculumManifest.grades[0]!;
   const term = grade.terms.find(({ id }) => id === selection.termId) ?? grade.terms[0]!;
   const subject = term.subjects.find(({ id }) => id === selection.subjectId) ?? term.subjects[0]!;
-  const entries = getAvailableUnits(term, subject);
+  const entries = getAvailableUnits(grade.id, term, subject);
   const selectedUnit = entries.find(({ id }) => id === selection.unitId) ?? entries[0];
-  const selectedUnitKey = selectedUnit ? getUnitKey(term.id, subject.id, selectedUnit) : '';
+  const selectedUnitKey = selectedUnit ? getUnitKey(grade.id, term.id, subject.id, selectedUnit) : '';
   const cards = knowledgeCardsByUnit[selectedUnitKey] ?? [];
 
   function persistSelection(next: KnowledgeSelection) {
     setSelection(next);
     setReviewIndex(0);
-    saveCourseSelection({ gradeId: grade.id, termId: next.termId, subjectId: next.subjectId });
     if (unitKey) onNavigate(getKnowledgePath());
-  }
-
-  function handleTermChange(nextTermId: string) {
-    const nextTerm = grade.terms.find(({ id }) => id === nextTermId);
-    if (!nextTerm) return;
-    const nextSubject = nextTerm.subjects.find(({ id }) => id === selection.subjectId) ?? nextTerm.subjects[0]!;
-    const firstUnit = getAvailableUnits(nextTerm, nextSubject)[0];
-    persistSelection({ termId: nextTerm.id, subjectId: nextSubject.id, unitId: firstUnit?.id ?? '' });
   }
 
   function handleSubjectChange(nextSubjectId: SubjectId) {
     const nextSubject = term.subjects.find(({ id }) => id === nextSubjectId);
     if (!nextSubject) return;
-    const firstUnit = getAvailableUnits(term, nextSubject)[0];
-    persistSelection({ termId: term.id, subjectId: nextSubject.id, unitId: firstUnit?.id ?? '' });
+    const firstUnit = getAvailableUnits(grade.id, term, nextSubject)[0];
+    persistSelection({ gradeId: grade.id, termId: term.id, subjectId: nextSubject.id, unitId: firstUnit?.id ?? '' });
   }
 
   function handleUnitChange(nextUnitId: string) {
     if (!entries.some(({ id }) => id === nextUnitId)) return;
-    persistSelection({ ...selection, unitId: nextUnitId });
+    persistSelection({ ...selection, gradeId: grade.id, termId: term.id, unitId: nextUnitId });
   }
 
   const textbookNotes = selectedUnit ? getTextbookNotes(selectedUnit.textbookEditionId, subject.id) : [];
@@ -177,51 +178,56 @@ export default function KnowledgeCardsPage({ unitKey, onNavigate }: KnowledgeCar
         <CourseBreadcrumbs items={[{ label: '课程目录', path: '/courses' }, { label: '知识卡片' }]} onNavigate={onNavigate} />
         <header className="knowledge-hero">
           <div>
-            <p className="eyebrow">二年级 · 知识回顾</p>
+            <p className="eyebrow">{grade.title} · {term.title} · 知识回顾</p>
             <h1>知识卡片</h1>
-            <p className="catalog-lead">按学期和课程找到知识点，先试着回答，再打开答案和思路。</p>
+            <p className="catalog-lead">在当前赛道选择学科和课程条目，先试着回答，再打开答案和思路。</p>
           </div>
-          <span className="knowledge-grade-badge">二年级</span>
+          <span className="knowledge-grade-badge">{grade.title}</span>
         </header>
 
-        <section className="knowledge-filters" aria-label="筛选知识卡片">
-          <label className="knowledge-filter">
-            <span>学期</span>
-            <Select
-              aria-label="学期"
-              options={grade.terms.map(({ id, title }) => ({ key: id, label: title }))}
-              value={term.id}
-              onChange={handleTermChange}
-            />
-          </label>
-          <div className="knowledge-subject-switch" role="group" aria-label="选择学科">
-            {term.subjects.map((entry) => (
-              <Button
-                key={entry.id}
-                type={entry.id === subject.id ? 'primary' : 'default'}
-                aria-pressed={entry.id === subject.id}
-                onClick={() => handleSubjectChange(entry.id)}
-              >
-                {entry.title}
-              </Button>
-            ))}
-          </div>
-          <label className="knowledge-filter knowledge-filter--unit">
-            <span>课程条目</span>
-            <Select
-              aria-label="课程条目"
-              options={entries.map(({ id, title }) => ({ key: id, label: title }))}
-              value={selectedUnit?.id ?? ''}
-              onChange={handleUnitChange}
-            />
-          </label>
-        </section>
+        {entries.length ? (
+          <section className="knowledge-filters" aria-label="筛选知识卡片">
+            <div className="knowledge-track-context" role="note" aria-label="当前学习赛道">
+              <span>当前赛道</span>
+              <strong>{grade.title} · {term.title}</strong>
+            </div>
+            <div className="knowledge-subject-switch" role="group" aria-label="选择学科">
+              {term.subjects.map((entry) => (
+                <Button
+                  key={entry.id}
+                  type={entry.id === subject.id ? 'primary' : 'default'}
+                  aria-pressed={entry.id === subject.id}
+                  onClick={() => handleSubjectChange(entry.id)}
+                >
+                  {entry.title}
+                </Button>
+              ))}
+            </div>
+            <label className="knowledge-filter knowledge-filter--unit">
+              <span>课程条目</span>
+              <Select
+                aria-label="课程条目"
+                options={entries.map(({ id, title }) => ({ key: id, label: title }))}
+                value={selectedUnit?.id ?? ''}
+                onChange={handleUnitChange}
+              />
+            </label>
+          </section>
+        ) : (
+          <section className="knowledge-filters knowledge-filters--empty" aria-label="当前赛道的知识卡片" role="status">
+            <div>
+              <strong>当前赛道还没有知识卡片</strong>
+              <p>可以先到课程目录学习已开放的课程。</p>
+            </div>
+            <Button onClick={() => onNavigate('/courses')}>浏览课程目录</Button>
+          </section>
+        )}
 
         {selectedUnit ? (
           <>
             <section className="knowledge-unit-heading" aria-labelledby="knowledge-unit-title">
               <div>
-                <p className="eyebrow">二年级 · {term.title} · {subject.title}</p>
+                <p className="eyebrow">{grade.title} · {term.title} · {subject.title}</p>
                 <div className="knowledge-unit-title-row">
                   <h2 id="knowledge-unit-title">{selectedUnit.title}</h2>
                   {getUnitTypeLabel(selectedUnit.type) && <span className="knowledge-entry-type">{getUnitTypeLabel(selectedUnit.type)}</span>}
@@ -291,9 +297,9 @@ export default function KnowledgeCardsPage({ unitKey, onNavigate }: KnowledgeCar
               <div className="catalog-empty-state" role="status">这个课程条目的知识卡片正在整理中。</div>
             )}
           </>
-        ) : (
+        ) : entries.length > 0 ? (
           <div className="catalog-empty-state" role="status">这个课程条目的知识卡片正在整理中。</div>
-        )}
+        ) : null}
       </div>
     </main>
   );

@@ -6,6 +6,7 @@ import { getGradeTitle } from '../content/gradeTitle';
 import { loadUnit as loadCurriculumUnit } from '../content/unitLoader';
 import type { CurriculumUnit, Difficulty, LearningSession, LearningTask } from '../content/types';
 import type { ProgressState } from '../storage/progress';
+import type { CourseTrack } from '../storage/courseTrack';
 import { getSessionPath, getSubjectTitle, resolveRoute } from './router';
 
 export interface LearningSessionDestination {
@@ -27,6 +28,7 @@ export type ContinueLearningDestination = LearningSessionDestination;
 export interface ContinueLearningOptions {
   source?: CurriculumProgressSource;
   loadUnit?: (unitKey: string) => Promise<CurriculumUnit | undefined>;
+  track?: CourseTrack | null;
 }
 
 const DIFFICULTIES: readonly Difficulty[] = ['basic', 'advanced', 'high'];
@@ -102,7 +104,14 @@ export async function resolveContinueLearningDestination(
     source,
   ));
 
-  for (const position of getKnownCurriculumPositions(source)) {
+  const track = options.track;
+  const trackGrade = track ? Number(track.gradeId.match(/^grade-(\d+)$/)?.[1]) : null;
+  const trackTerm = track?.termId === 'term-1' ? 1 : track?.termId === 'term-2' ? 2 : null;
+  const positions = getKnownCurriculumPositions(source).filter((position) => (
+    !track || (position.grade === trackGrade && position.term === trackTerm)
+  ));
+
+  for (const position of positions) {
     if (!position.curriculumUnitKey) continue;
     const manifest = getUnitManifest(position.curriculumUnitKey, source);
     const nextSessionIds = manifest?.sessionIds.basic.filter((sessionId) => !completedSessionIds.has(sessionId)) ?? [];

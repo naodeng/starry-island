@@ -8,6 +8,7 @@ import type { AppRoute } from './app/router';
 import ProjectLegalFooter from './components/layout/ProjectLegalFooter';
 import AppHeader from './components/layout/AppHeader';
 import LoadingState from './components/shared/LoadingState';
+import CourseTrackDialog from './components/settings/CourseTrackDialog';
 const CourseBreadcrumbs = lazy(() => import('./components/catalog/CourseBreadcrumbs'));
 const CourseCatalog = lazy(() => import('./components/catalog/CourseCatalog'));
 const KnowledgeCardsPage = lazy(() => import('./components/knowledge/KnowledgeCardsPage'));
@@ -26,6 +27,8 @@ import ThemeProvider from './theme/ThemeProvider';
 import { SoundProvider, useSound } from './sound/SoundProvider';
 import type { LearningPosition } from './achievements/position';
 import { getEffectiveCompletedSessionIds } from './achievements/position';
+import { loadCourseTrack, saveCourseTrack } from './storage/courseTrack';
+import type { CourseTrack } from './storage/courseTrack';
 
 function PageRouteEffects({ navigationRevision }: { navigationRevision: number }) {
   useLayoutEffect(() => {
@@ -98,6 +101,8 @@ export default function App({ showTextbookMigrationNotice = false }: AppProps = 
   const [route, setRoute] = useState<AppRoute>(() => resolveRoute(window.location.pathname));
   const [navigationRevision, setNavigationRevision] = useState(0);
   const [progress, setProgress] = useState(() => loadProgress());
+  const [courseTrack, setCourseTrack] = useState<CourseTrack | null>(() => loadCourseTrack());
+  const [courseTrackDialogOpen, setCourseTrackDialogOpen] = useState(() => courseTrack === null);
   const [showMigrationNotice, setShowMigrationNotice] = useState(showTextbookMigrationNotice);
   const [newlyUnlockedRank, setNewlyUnlockedRank] = useState<CosmicRank | null>(null);
   const routeRequestId = useRef(0);
@@ -159,6 +164,12 @@ export default function App({ showTextbookMigrationNotice = false }: AppProps = 
     setNewlyUnlockedRank(null);
   }
 
+  function handleCourseTrackSave(nextTrack: CourseTrack) {
+    saveCourseTrack(nextTrack);
+    setCourseTrack(nextTrack);
+    setCourseTrackDialogOpen(false);
+  }
+
   const effectiveCompletedSessionIds = getEffectiveCompletedSessionIds(progress.completedSessionIds, progress.learningStart);
   let page;
   if (route.kind === 'loading') {
@@ -177,15 +188,30 @@ export default function App({ showTextbookMigrationNotice = false }: AppProps = 
       </main>
     );
   } else if (route.kind === 'home') {
-    page = <HomeDashboard progress={progress} onNavigate={navigate} />;
+    page = (
+      <HomeDashboard
+        progress={progress}
+        track={courseTrack}
+        onOpenTrackSettings={() => setCourseTrackDialogOpen(true)}
+        onNavigate={navigate}
+      />
+    );
   } else if (route.kind === 'catalog') {
-    page = <CourseCatalog progress={progress} onNavigate={navigate} />;
+    page = <CourseCatalog progress={progress} track={courseTrack} onNavigate={navigate} />;
   } else if (route.kind === 'knowledgeCards') {
-    page = <KnowledgeCardsPage unitKey={route.unitKey} onNavigate={navigate} />;
+    page = <KnowledgeCardsPage track={courseTrack} unitKey={route.unitKey} onNavigate={navigate} />;
   } else if (route.kind === 'growth') {
     page = <GrowthPage progress={progress} initialView={route.initialView} onNavigate={navigate} />;
   } else if (route.kind === 'settings') {
-    page = <SettingsPage progress={progress} onApplyLearningStart={handleLearningStart} onNavigate={navigate} />;
+    page = (
+      <SettingsPage
+        progress={progress}
+        track={courseTrack}
+        onOpenTrackSettings={() => setCourseTrackDialogOpen(true)}
+        onApplyLearningStart={handleLearningStart}
+        onNavigate={navigate}
+      />
+    );
   } else if (route.kind === 'settingsBackup') {
     page = <ChallengeDataManagementPage onNavigate={navigate} />;
   } else if (route.kind === 'challengeCenter' || route.kind === 'challengeWrongQuestions' || route.kind === 'challengeGroup' || route.kind === 'challengeTask') {
@@ -261,7 +287,14 @@ export default function App({ showTextbookMigrationNotice = false }: AppProps = 
   return (
     <SoundProvider>
       <ThemeProvider>
-      <AppFrame page={page} navigationRevision={navigationRevision} onNavigate={navigate} textbookNotice={textbookNotice} />
+        <AppFrame page={page} navigationRevision={navigationRevision} onNavigate={navigate} textbookNotice={textbookNotice} />
+        <CourseTrackDialog
+          open={courseTrackDialogOpen}
+          required={courseTrack === null}
+          track={courseTrack}
+          onClose={() => setCourseTrackDialogOpen(false)}
+          onSave={handleCourseTrackSave}
+        />
       </ThemeProvider>
     </SoundProvider>
   );

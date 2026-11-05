@@ -1,7 +1,8 @@
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import type { ChallengeGrowthSummary } from '../domain/growth';
 import ChallengeGrowth from './ChallengeGrowth';
+import { saveCourseTrack } from '../../storage/courseTrack';
 
 const summary: ChallengeGrowthSummary = {
   completedAttempts: 8,
@@ -14,6 +15,10 @@ const summary: ChallengeGrowthSummary = {
 };
 
 describe('ChallengeGrowth', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
   it('announces loading state as an embeddable section', () => {
     const { container } = render(<ChallengeGrowth summary={summary} status="loading" onRetry={vi.fn()} />);
 
@@ -34,13 +39,17 @@ describe('ChallengeGrowth', () => {
   });
 
   it('shows local progress totals and registered route progress without owning a page heading', () => {
+    saveCourseTrack({ gradeId: 'grade-2', termId: 'term-1' });
     render(<ChallengeGrowth summary={summary} status="ready" onRetry={vi.fn()} />);
 
     expect(screen.getByRole('heading', { name: '闯关累计', level: 2 })).toBeInTheDocument();
     expect(screen.getByText('8 次')).toBeInTheDocument();
     expect(screen.getByText('3 个任务')).toBeInTheDocument();
     expect(screen.getByText('0 枚徽章')).toBeInTheDocument();
-    expect(screen.getByRole('combobox', { name: '成长记录年级' })).toHaveTextContent('二年级');
+    expect(screen.getByText('当前赛道：二年级 · 上学期')).toBeInTheDocument();
+    expect(screen.getByRole('combobox', { name: '成长记录学科' })).toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: '成长记录年级' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('combobox', { name: '成长记录学期' })).not.toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '二年级上册 · 数学 · 第2单元' }).closest('li')).toHaveTextContent('3/5 个任务已通过');
     expect(screen.getByRole('heading', { name: '二年级上册 · 数学 · 前半学期' }).closest('li')).toHaveTextContent('0/5 个任务已通过');
     expect(screen.getByText(/只统计此设备保存的数据/)).toBeInTheDocument();

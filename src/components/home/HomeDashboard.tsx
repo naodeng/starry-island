@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { MouseEvent } from 'react';
-import { Button, Card, Select } from '../ui';
+import { Button, Card } from '../ui';
 import { ArrowRightIcon, BookIcon, CompassIcon } from 'naive-icons';
 import { getCompletedUnitCount, getCosmicRank } from '../../achievements/progress';
 import { resolveContinueLearningDestination, resolveLearningSessionDestination } from '../../app/continueLearning';
@@ -8,14 +8,16 @@ import type { ContinueLearningDestination, LearningSessionDestination } from '..
 import type { ChallengeGrowthSummary } from '../../challenges/domain/growth';
 import { loadChallengeGrowthSummary } from '../../challenges/domain/growthSummaryReader';
 import type { ProgressState, RecentCompletion } from '../../storage/progress';
-import { curriculumManifest } from '../../content/curriculumManifest';
-import { loadCourseSelection, saveCourseSelection } from '../../storage/courseSelection';
-import type { CourseSelection } from '../../storage/courseSelection';
+import { getGradeTitle } from '../../content/gradeTitle';
+import { loadCourseTrack } from '../../storage/courseTrack';
+import type { CourseTrack } from '../../storage/courseTrack';
 import '../../styles/home-dashboard.css';
 
 interface HomeDashboardProps {
   progress: ProgressState;
   onNavigate: (path: string) => void;
+  track?: CourseTrack | null;
+  onOpenTrackSettings?: () => void;
 }
 
 type ContinueState = { status: 'loading' } | { status: 'ready'; destination: ContinueLearningDestination | null };
@@ -59,20 +61,12 @@ function getContinueSessionTitle(destination: LearningSessionDestination): strin
   return sessionLabels.length ? sessionLabels.join(' · ') : destination.sessionTitle;
 }
 
-function getInitialCourseSelection(progress: ProgressState): CourseSelection {
-  const savedSelection = loadCourseSelection();
-  if (savedSelection) return savedSelection;
-
-  const grade = curriculumManifest.grades.find(({ id }) => id === `grade-${progress.learningStart?.grade}`)
-    ?? curriculumManifest.grades[0]!;
-  const term = grade.terms.find(({ id }) => id === `term-${progress.learningStart?.term}`)
-    ?? grade.terms[0]!;
-  const subject = term.subjects[0]!;
-  return { gradeId: grade.id, termId: term.id, subjectId: subject.id };
-}
-
-export default function HomeDashboard({ progress, onNavigate }: HomeDashboardProps) {
-  const [courseSelection, setCourseSelection] = useState(() => getInitialCourseSelection(progress));
+export default function HomeDashboard({ progress, onNavigate, track, onOpenTrackSettings }: HomeDashboardProps) {
+  const currentTrack = track === undefined ? loadCourseTrack() : track;
+  const gradeNumber = Number(currentTrack?.gradeId.match(/^grade-(\d+)$/)?.[1]);
+  const gradeTitle = Number.isInteger(gradeNumber) ? getGradeTitle(gradeNumber) : null;
+  const termTitle = currentTrack?.termId === 'term-1' ? '上学期' : currentTrack?.termId === 'term-2' ? '下学期' : null;
+  const trackLabel = gradeTitle && termTitle ? `${gradeTitle} · ${termTitle}` : null;
   const [continueState, setContinueState] = useState<ContinueState>({ status: 'loading' });
   const [recentDestinations, setRecentDestinations] = useState<RecentDestination[]>([]);
   const [challengeState, setChallengeState] = useState<ChallengeSummaryState>({ status: 'loading' });
@@ -81,20 +75,16 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
   const currentRank = getCosmicRank(completedUnitCount);
 
   useEffect(() => {
-    saveCourseSelection(courseSelection);
-  }, [courseSelection]);
-
-  useEffect(() => {
     let cancelled = false;
     setContinueState({ status: 'loading' });
-    void resolveContinueLearningDestination(progress).then((destination) => {
+    void resolveContinueLearningDestination(progress, { track: currentTrack }).then((destination) => {
       if (!cancelled) setContinueState({ status: 'ready', destination });
     }).catch(() => {
       if (!cancelled) setContinueState({ status: 'ready', destination: null });
     });
 
     return () => { cancelled = true; };
-  }, [progress.completedSessionIds, progress.learningStart]);
+  }, [currentTrack?.gradeId, currentTrack?.termId, progress.completedSessionIds, progress.learningStart]);
 
   useEffect(() => {
     let cancelled = false;
@@ -130,48 +120,17 @@ export default function HomeDashboard({ progress, onNavigate }: HomeDashboardPro
     : destination
       ? '继续学习'
       : '浏览课程';
-  const selectedGrade = curriculumManifest.grades.find(({ id }) => id === courseSelection.gradeId) ?? curriculumManifest.grades[0]!;
-  const selectedTerm = selectedGrade.terms.find(({ id }) => id === courseSelection.termId) ?? selectedGrade.terms[0]!;
-
-  function updateCourseSelection(nextGradeId: string, nextTermId?: string) {
-    const nextGrade = curriculumManifest.grades.find(({ id }) => id === nextGradeId);
-    const nextTerm = nextGrade?.terms.find(({ id }) => id === (nextTermId ?? courseSelection.termId))
-      ?? nextGrade?.terms[0];
-    if (!nextGrade || !nextTerm) return;
-    const nextSubject = nextTerm.subjects.find(({ id }) => id === courseSelection.subjectId)
-      ?? nextTerm.subjects[0];
-    if (!nextSubject) return;
-    const nextSelection = { gradeId: nextGrade.id, termId: nextTerm.id, subjectId: nextSubject.id };
-    setCourseSelection(nextSelection);
-  }
-
   return (
     <main className="home-dashboard">
       <div className="catalog-shell home-dashboard-shell">
         <header className="home-dashboard-heading">
           <h1>今天，想从哪里出发？</h1>
           <p>按自己的节奏继续学习，或去闯关试试所学。</p>
-          <div className="home-current-course" role="group" aria-label="当前课程选择">
-            <span className="eyebrow">当前课程</span>
-            <label>
-              <span id="home-current-grade-label">年级</span>
-              <Select
-                aria-label="当前年级"
-                options={curriculumManifest.grades.map(({ id, title }) => ({ key: id, label: title }))}
-                value={selectedGrade.id}
-                onChange={(gradeId) => updateCourseSelection(gradeId)}
-              />
-            </label>
-            <label>
-              <span id="home-current-term-label">学期</span>
-              <Select
-                aria-label="当前学期"
-                options={selectedGrade.terms.map(({ id, title }) => ({ key: id, label: title }))}
-                value={selectedTerm.id}
-                onChange={(termId) => updateCourseSelection(selectedGrade.id, termId)}
-              />
-            </label>
-            <span className="home-current-course-note">课程目录和闯关中心会沿用此选择。</span>
+          <div className="home-current-course" role="group" aria-label="当前学习赛道">
+            <span className="eyebrow">当前赛道</span>
+            <strong className="home-current-course-value">{trackLabel ?? '尚未设置'}</strong>
+            <Button type="default" size="small" aria-label="设置学习赛道" onClick={onOpenTrackSettings}>赛道</Button>
+            <span className="home-current-course-note">学科和单元在对应页面筛选</span>
           </div>
         </header>
 

@@ -3,6 +3,12 @@
 .settings-page-heading .eyebrow { margin-bottom: 5px; }
 .settings-page-heading h1 { margin: 2px 0 6px; color: var(--island-ink); font-size: clamp(30px, 4.2vw, 36px); }
 .settings-page-heading > p:last-child { margin: 0; color: var(--island-muted); line-height: 1.65; }
+.settings-track-section { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 0 0 24px; padding: 20px 22px; border: 1px solid var(--island-border); border-radius: 20px; background: var(--island-surface); }
+.settings-track-section h2 { margin: 0; color: var(--island-ink); font-size: 19px; font-weight: 900; }
+.settings-track-section p { margin: 6px 0 0; color: var(--island-muted); font-size: 14px; line-height: 1.5; }
+.settings-track-value { display: flex; align-items: center; gap: 12px; flex: none; }
+.settings-track-value strong { color: var(--app-accent-pressed); white-space: nowrap; }
+.settings-track-value .ui-button:focus-visible { outline: 3px solid var(--app-accent); outline-offset: 3px; }
 .settings-page .settings-panel { padding: 6px clamp(20px, 4vw, 36px); border: 1px solid var(--island-border); border-radius: 24px; background: var(--island-surface); }
 .settings-page .settings-section { gap: 10px; padding: 20px 0; }
 .settings-page .settings-section h2 { margin: 0; color: var(--island-ink); font-size: 19px; font-weight: 900; }
@@ -24,6 +30,8 @@
   .settings-page .settings-panel { padding-inline: 18px; border-radius: 20px; }
   .settings-page .theme-switcher { align-items: flex-start; flex-direction: column; width: 100%; }
   .settings-page .theme-switcher-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .settings-track-section { align-items: flex-start; flex-direction: column; gap: 14px; padding: 17px; }
+  .settings-track-value { width: 100%; justify-content: space-between; }
   .settings-page .settings-backup-link { grid-template-columns: minmax(0, 1fr); justify-items: start; }
   .settings-page .learning-start-confirmation { grid-template-columns: minmax(0, 1fr); }
   .settings-page .learning-start-confirmation p { grid-column: auto; }

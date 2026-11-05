@@ -173,7 +173,7 @@ export default function SettingsPanel({ progress, active = true, onApplyLearning
 
       <section className="settings-section" aria-labelledby="settings-progress-heading">
         <h2 id="settings-progress-heading">学习进度设置</h2>
-        <p>选择接下来要开始的位置，适合已经学过前面课程的同学。</p>
+        <p>这里的年级、学期和单元只用于设置进度起点；浏览课程仍按上方学习赛道展示。</p>
         {positions.length === 0 ? (
           <EmptyState
             className="settings-start-empty"
