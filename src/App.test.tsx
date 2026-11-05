@@ -5,6 +5,7 @@ import App from './App';
 import * as unitLoader from './content/unitLoader';
 import { curriculumManifest } from './content/curriculumManifest';
 import { saveCourseTrack } from './storage/courseTrack';
+import { saveProgress } from './storage/progress';
 
 const playedSources: string[] = [];
 
@@ -25,6 +26,7 @@ class AppTestAudio {
 describe('App', () => {
   beforeEach(() => {
     window.localStorage.clear();
+    saveProgress({ schemaVersion: 4, completedSessionIds: [], recentCompletions: [], learningStart: null });
     saveCourseTrack({ gradeId: 'grade-2', termId: 'term-1' });
     window.history.replaceState({}, '', '/');
     playedSources.length = 0;

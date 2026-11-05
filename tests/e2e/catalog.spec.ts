@@ -310,6 +310,7 @@ test('supportsKeyboardFocusReducedMotionAndNarrowScreens', async ({ page }) => {
   await installAudioSpy(page);
   await page.setViewportSize({ width: 375, height: 812 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
+  await selectCourseTrack(page, '一年级', '上学期');
   await page.goto('/courses');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 

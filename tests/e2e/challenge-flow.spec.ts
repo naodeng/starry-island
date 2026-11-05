@@ -159,24 +159,19 @@ async function readQuarantinedAttemptState(page: import('@playwright/test').Page
   }), taskId);
 }
 
-test('opens the Grade 5 Chinese pilot with matching subject routes and preserves learning progress', async ({ page }) => {
+test('opens the Grade 5 Chinese pilot on the selected track and preserves learning progress', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
   await selectCourseTrack(page, '五年级', '上学期');
   await page.goto('/challenges');
   await expect(page.getByRole('heading', { name: '闯关中心' })).toBeVisible();
+  await expect(page.locator('.challenge-track-context')).toContainText('五年级 · 上学期');
   const learningProgressBefore = await page.evaluate(() => localStorage.getItem('china-study-progress-v1'));
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 
-  const mathGroup = page.locator('.challenge-group-card').filter({ hasText: '二年级上册数学 · 第二单元' });
-  const englishGroup = page.locator('.challenge-group-card').filter({ hasText: '三年级上册英语 · 第一单元' });
+  await expect(page.locator('.challenge-group-card')).toHaveCount(1);
   const chineseGroup = page.locator('.challenge-group-card').filter({ hasText: '五年级上册语文 · 第一单元' });
-
-  await expect(mathGroup).toContainText('练习两位数加减法、进位退位和数量关系。');
-  await expect(englishGroup).toContainText('练习本单元的自我介绍、年龄和班级表达。');
   await expect(chineseGroup).toContainText('阅读本单元课文，练习文本线索、表达方法与习作。');
-  await expect(englishGroup).not.toContainText('练习两位数加减法、进位退位和数量关系。');
-  await expect(chineseGroup).not.toContainText('练习两位数加减法、进位退位和数量关系。');
 
   await chineseGroup.getByRole('button', { name: '查看挑战任务' }).click();
   await expect(page).toHaveURL('/challenges/group/grade-5-term-1-chinese-unit-01');
