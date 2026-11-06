@@ -124,13 +124,17 @@ export default function HomeDashboard({ progress, onNavigate, track, onOpenTrack
     <main className="home-dashboard">
       <div className="catalog-shell home-dashboard-shell">
         <header className="home-dashboard-heading">
-          <h1>今天，想从哪里出发？</h1>
-          <p>按自己的节奏继续学习，或去闯关试试所学。</p>
+          <div className="home-dashboard-intro">
+            <h1>今天，想从哪里出发？</h1>
+            <p>按自己的节奏继续学习，或去闯关试试所学。</p>
+          </div>
           <div className="home-current-course" role="group" aria-label="当前学习赛道">
-            <span className="eyebrow">当前赛道</span>
-            <strong className="home-current-course-value">{trackLabel ?? '尚未设置'}</strong>
-            <Button type="default" size="small" aria-label="设置学习赛道" onClick={onOpenTrackSettings}>赛道</Button>
+            <div className="home-current-course-heading">
+              <span className="eyebrow">当前赛道</span>
+              <strong className="home-current-course-value">{trackLabel ?? '尚未设置'}</strong>
+            </div>
             <span className="home-current-course-note">学科和单元在对应页面筛选</span>
+            <Button type="default" className="home-current-course-action" aria-haspopup="dialog" onClick={onOpenTrackSettings}>调整赛道</Button>
           </div>
         </header>
 
