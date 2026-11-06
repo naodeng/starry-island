@@ -6,8 +6,14 @@
 }
 
 .home-dashboard-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 72px);
   margin: 0 0 27px;
 }
+
+.home-dashboard-intro { min-width: 0; }
 
 .home-dashboard-heading h1 {
   margin: 0 0 8px;
@@ -27,21 +33,21 @@
 
 .home-current-course {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  width: fit-content;
-  max-width: 100%;
-  margin-top: 17px;
-  padding: 11px 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 154px;
+  padding: 21px 23px;
   border: 1px solid var(--island-border);
-  border-radius: 16px;
-  background: var(--island-surface);
+  border-radius: 18px;
+  background: var(--island-surface-soft);
 }
 
+.home-current-course-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; }
 .home-current-course > .eyebrow { margin: 0; color: var(--island-muted); letter-spacing: .02em; }
-.home-current-course-value { color: var(--island-ink); font-size: 15px; font-weight: 850; }
-.home-current-course-note { flex-basis: 100%; color: var(--island-muted); font-size: 12px; line-height: 1.5; }
+.home-current-course-value { color: var(--island-ink); font-size: 17px; font-weight: 850; }
+.home-current-course-note { margin: 10px 0 15px; color: var(--island-muted); font-size: 13px; line-height: 1.55; }
+.home-current-course-action { margin-top: auto; }
 
 .home-dashboard-content {
   display: grid;
@@ -297,15 +303,17 @@
 .home-dashboard-challenge-entry > button span { white-space: nowrap; }
 
 @media (max-width: 900px) {
+  .home-dashboard-heading { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .home-dashboard-content { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 }
 
 @media (max-width: 700px) {
   .home-dashboard { padding-inline: 16px; }
   .home-dashboard-shell { padding-top: 24px; }
-  .home-dashboard-heading { margin-bottom: 20px; }
+  .home-dashboard-heading { gap: 16px; margin-bottom: 20px; }
   .home-dashboard-heading h1 { font-size: 26px; }
-  .home-current-course { align-items: center; width: 100%; }
+  .home-current-course { min-height: 0; padding: 17px 18px; }
+  .home-current-course-note { margin: 8px 0 13px; font-size: 12px; }
   .home-dashboard-content { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .home-dashboard-continue,
   .home-dashboard-progress { grid-column: auto; }
@@ -320,7 +328,8 @@
 
 @media (max-width: 420px) {
   .home-dashboard-heading h1 { font-size: 24px; }
-  .home-current-course { gap: 10px; padding: 12px; }
+  .home-current-course { padding: 16px; }
+  .home-current-course-heading { gap: 8px; }
   .home-recent-list a { align-items: flex-start; flex-direction: column; gap: 5px; }
   .home-recent-copy > span { white-space: normal; }
 }

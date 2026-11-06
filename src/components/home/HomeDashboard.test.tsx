@@ -50,7 +50,7 @@ describe('HomeDashboard', () => {
 
     expect(screen.getByRole('group', { name: '当前学习赛道' })).toHaveTextContent('二年级 · 下学期');
     expect(screen.queryByRole('combobox', { name: /当前年级|当前学期/ })).not.toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: '设置学习赛道' }));
+    await user.click(screen.getByRole('button', { name: '调整赛道' }));
 
     expect(onOpenTrackSettings).toHaveBeenCalledOnce();
     expect(loadCourseTrack()).toEqual({ gradeId: 'grade-2', termId: 'term-2' });
